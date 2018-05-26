@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dice">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleDice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:fontFamily="monospace"
+                android:gravity="center_horizontal"
+                android:text="@string/hello_dice_fragment"
+                android:textAllCaps="true"
+                android:textSize="@dimen/title_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/descriptionDice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/linear_vertical_margin"
+                android:gravity="center_horizontal"
+                android:text="@string/description_dice"
+                android:textSize="@dimen/description_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/resultDice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:gravity="center_horizontal"
+                android:text="@string/result_dice"
+                android:textSize="@dimen/result_text_size"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button_throw_dice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/linear_vertical_margin"
+                android:text="@string/throw_dice" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

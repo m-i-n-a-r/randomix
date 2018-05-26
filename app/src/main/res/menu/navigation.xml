@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_roulette"
+        android:icon="@drawable/ic_roulette_black_24dp"
+        android:title="@string/title_roulette" />
+
+    <item
+        android:id="@+id/navigation_coin"
+        android:icon="@drawable/ic_coin_black_24dp"
+        android:title="@string/title_coin" />
+
+    <item
+        android:id="@+id/navigation_magic_ball"
+        android:icon="@drawable/ic_magic_ball_black_24dp"
+        android:title="@string/title_magic_ball" />
+
+    <item
+        android:id="@+id/navigation_dice"
+        android:icon="@drawable/ic_dice_black_24dp"
+        android:title="@string/title_dice" />
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="@string/title_settings" />
+
+</menu>

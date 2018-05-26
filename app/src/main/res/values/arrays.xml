@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="accents">
+        <item>Blue</item>
+        <item>Green</item>
+        <item>Yellow</item>
+        <item>Red</item>
+        <item>Violet</item>
+    </string-array>
+    <integer-array name="accentValues">
+        <item>#3546ff</item>
+        <item>#009900</item>
+        <item>#cccc00</item>
+        <item>#cc0000</item>
+        <item>#9933ff</item>
+    </integer-array>
+
+</resources>

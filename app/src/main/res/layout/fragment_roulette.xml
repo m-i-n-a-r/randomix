@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Roulette">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleRoulette"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:fontFamily="monospace"
+                android:gravity="center_horizontal"
+                android:text="@string/hello_roulette_fragment"
+                android:textAllCaps="true"
+                android:textSize="@dimen/title_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/descriptionRoulette"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/linear_vertical_margin"
+                android:gravity="center_horizontal"
+                android:text="@string/description_roulette"
+                android:textSize="@dimen/description_text_size"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imagePlaceholderRoulette"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/linear_vertical_margin"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/icon" />
+
+            <EditText
+                android:id="@+id/entry_roulette"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/linear_vertical_margin"
+                android:hint="@string/spin_roulette"
+                android:inputType="textAutoCorrect"
+                android:textAlignment="center"
+                android:maxLength="30"/>
+
+            <Button
+                android:id="@+id/button_insert_values"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/linear_vertical_margin"
+                android:text="@string/spin_roulette" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

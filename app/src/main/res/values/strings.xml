@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Randomix</string>
+    <string name="title_roulette">Roulette</string>
+    <string name="title_coin">Coin</string>
+    <string name="title_dice">Dice</string>
+    <string name="title_magic_ball">Magic Ball</string>
+    <string name="title_settings">Settings</string>
+    <string name="generic_result">The result is:</string>
+
+    <string name="description_roulette">Do you have to choose something? Are you tired of polls and bossy friends? Tell
+        roulette the options you have and it will decide for you. Is that simple!</string>
+    <string name="spin_roulette">Spin the roulette!</string>
+    <string name="insert_roulette_message">Please list below the possible choices to add in the roulette.</string>
+    <string name="hello_roulette_fragment">Roulette mode - Randomix</string>
+
+    <string name="description_coin">Flipping a coin is easy, but can help you decide whenever doing something or not.
+        Press the button and let the coin talk!</string>
+    <string name="flip_coin">Flip the coin!</string>
+    <string name="result_coin">Press the button below!</string>
+    <string name="result_positive">Head!</string>
+    <string name="result_negative">Tail!</string>
+    <string name="hello_coin_fragment">Coin mode - Randomix</string>
+
+    <string name="description_magic_ball">The magic ball will tell you the answers! Just ask something and press the button,
+        it will help you with a generic and totally affordable answer!</string>
+    <string name="shake_ball">Shake it!</string>
+    <string name="result_magic_ball">Press the button below!</string>
+    <string name="magic_answer_1">No.</string>
+    <string name="magic_answer_2">Yes!</string>
+    <string name="magic_answer_3">I don\'t think so.</string>
+    <string name="magic_answer_4">Maybe!</string>
+    <string name="magic_answer_5">This makes no sense.</string>
+    <string name="magic_answer_6">Probably..</string>
+    <string name="magic_answer_7">But.. are you sure?</string>
+    <string name="magic_answer_8">Probably yes.</string>
+    <string name="magic_answer_9">Probably no.</string>
+    <string name="magic_answer_10">Lol!</string>
+    <string name="hello_magic_ball_fragment">Magic Ball - Randomix</string>
+
+    <string name="description_dice">A dice could be useful! The app will throw one for you. Good luck!</string>
+    <string name="throw_dice">Throw the dice!</string>
+    <string name="result_dice">Press the button below!</string>
+    <string name="hello_dice_fragment">Dice mode - Randomix</string>
+
+    <string name="hello_settings_fragment">Settings - Randomix</string>
+</resources>

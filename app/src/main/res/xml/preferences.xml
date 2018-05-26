@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+        <PreferenceCategory
+            android:title="Customization"
+            android:key="customization">
+
+            <CheckBoxPreference
+                android:key="dark_theme"
+                android:summary="Enable or disable the dark theme, the app will restart"
+                android:title="Dark Theme"
+                android:defaultValue="false"/>
+
+            <ListPreference
+                android:key="accent_color"
+                android:title="Accent color"
+                android:summary="Choose the color used for the accent"
+                android:defaultValue="Blue"
+                android:entries="@array/accents"
+                android:entryValues="@array/accentValues" />
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:title="Credits and info"
+            android:key="credits_info">
+
+            <EditTextPreference
+                android:key="full_name"
+                android:title="Name"
+                android:summary="Enter Your Complete Name"
+                android:dialogTitle="Your Name"
+                android:dialogMessage="Enter Your Complete Name"
+                android:defaultValue=" "
+                android:inputType="textCapWords"/>
+
+        </PreferenceCategory>
+
+</PreferenceScreen>

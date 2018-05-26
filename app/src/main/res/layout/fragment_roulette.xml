@@ -39,20 +39,20 @@
                 android:textSize="@dimen/description_text_size"
                 android:textStyle="bold" />
 
-            <ImageView
+            <!--<ImageView
                 android:id="@+id/imagePlaceholderRoulette"
                 android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/linear_vertical_margin"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/icon" />
+                android:src="@drawable/icon" />-->
 
             <EditText
                 android:id="@+id/entry_roulette"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/linear_vertical_margin"
-                android:hint="@string/spin_roulette"
+                android:hint="@string/insert_roulette_hint"
                 android:inputType="textAutoCorrect"
                 android:textAlignment="center"
                 android:maxLength="30"/>

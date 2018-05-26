@@ -4,7 +4,10 @@ import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.Dialog;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
@@ -67,6 +70,18 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        // getSharedPreferences(MyPrefs, Context.MODE_PRIVATE); retrieves a specific shared preferences file
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        if (!sp.getBoolean("first", false)) {
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putBoolean("first", true);
+            editor.apply();
+            Intent intent = new Intent(this, IntroActivity.class); // Call the AppIntro java class
+            startActivity(intent);
+            finish();
+        }
+
         // Selects the right theme to apply
         if (PreferenceManager.getDefaultSharedPreferences(this)
                 .getBoolean("dark_theme", false)) {

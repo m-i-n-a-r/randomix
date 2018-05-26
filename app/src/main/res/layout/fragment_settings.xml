@@ -3,12 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Settings">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/titleSettings"
@@ -22,11 +28,60 @@
                 android:textSize="@dimen/title_text_size"
                 android:textStyle="bold" />
 
+            <ImageView
+                android:id="@+id/imageMinar"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:paddingBottom="6dp"
+                android:paddingTop="12dp"
+                app:srcCompat="@drawable/banner_minar"
+                android:layout_weight="0.21" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:text="@string/dev_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.21"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:textAlignment="center" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_weight="0.21" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_google_plus_black_24dp"
+                    android:id="@+id/minargp"
+                    android:layout_weight="1" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_play_store_black_24dp"
+                    android:id="@+id/minarps"
+                    android:layout_weight="1" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_xda_black_24dp"
+                    android:id="@+id/minarxda"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+
         <ListView
             android:id="@android:id/list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="200dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true" />
 

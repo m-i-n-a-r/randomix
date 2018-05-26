@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_introduction">Un\'app open source per fare scelte casuali tra numeri, opzioni o risposte. Lascia parlare la casualità!</string>
+    <string name="title_roulette">Ruota</string>
+    <string name="title_coin">Moneta</string>
+    <string name="title_dice">Dado</string>
+    <string name="title_magic_ball">Palla Magica</string>
+    <string name="title_settings">Impostazioni</string>
+    <string name="generic_result">Il risultato è:</string>
+    <string name="spin_roulette">Gira la ruota!</string>
+    <string name="insert_roulette_hint">Inserisci un\'opzione..</string>
+    <string name="hello_roulette_fragment">Modalità ruota - Randomix</string>
+    <string name="flip_coin">Lancia la moneta!</string>
+    <string name="result_coin">Premi il bottone sotto!</string>
+    <string name="result_positive">Testa!</string>
+    <string name="result_negative">Croce!</string>
+    <string name="hello_coin_fragment">Modalità moneta - Randomix</string>
+    <string name="shake_ball">Scuotila!</string>
+    <string name="result_magic_ball">Premi il bottone sotto!</string>
+    <string name="magic_answer_1">No.</string>
+    <string name="magic_answer_2">Si!</string>
+    <string name="magic_answer_3">Non penso.</string>
+    <string name="magic_answer_4">Forse!</string>
+    <string name="magic_answer_5">Questo non ha senso.</string>
+    <string name="magic_answer_6">Probabilmente..</string>
+    <string name="magic_answer_7">Ma.. sei sicuro/a?</string>
+    <string name="magic_answer_8">Probabilmente si.</string>
+    <string name="magic_answer_9">Probabilmente no.</string>
+    <string name="magic_answer_10">Lol!</string>
+    <string name="hello_magic_ball_fragment">Palla Magica - Randomix</string>
+    <string name="throw_dice">Tira il dado!</string>
+    <string name="result_dice">Premi il bottone sotto!</string>
+    <string name="hello_dice_fragment">Modalità dado - Randomix</string>
+    <string name="hello_settings_fragment">Impostazioni - Randomix</string>
+    <string name="description_roulette">Devi scegliere qualcosa? Sei stanco di fare sondaggi e degli amici che vogliono comandare? Di alla ruota le opzioni che hai e lei deciderà per te. E\' semplice!</string>
+    <string name="insert_roulette_description">Per favore inserisci qui sotto le possibili scelte da aggiungere nella ruota.</string>
+    <string name="description_coin">Tirare una moneta è semplice, ma può aiutarti a decidere se fare qualcosa o meno. Premi il bottone e fai parlare la moneta!</string>
+    <string name="description_magic_ball">La palla magica ti dirà la risposta! Chiedi semplicemente qualcosa e premi il bottone, e ti aiuterà con una risposta generica e totalmente affidabile!</string>
+    <string name="description_dice">Un dado può essere utile! L\'app ne lancerà uno per te. Buona fortuna!</string>
+    <string name="dev_name">m.i.n.a.r.</string>
+    <string name="dev_description">Sono uno studente e sviluppo app nel tempo libero. I miei lavori sono principalmente relativi alle app di personalizzazione.</string>
+    <string name="dev_gplus" translatable="false">https://plus.google.com/u/0/+RecenzTastic</string>
+    <string name="dev_xda" translatable="false">https://plus.google.com/u/0/+RecenzTastic</string>
+    <string name="dev_other_apps" translatable="false">https://plus.google.com/u/0/+RecenzTastic</string>
+</resources>

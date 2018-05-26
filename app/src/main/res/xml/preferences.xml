@@ -10,13 +10,13 @@
                 android:title="Dark Theme"
                 android:defaultValue="false"/>
 
-            <ListPreference
+            <!--<ListPreference
                 android:key="accent_color"
                 android:title="Accent color"
                 android:summary="Choose the color used for the accent"
                 android:defaultValue="Blue"
                 android:entries="@array/accents"
-                android:entryValues="@array/accentValues" />
+                android:entryValues="@array/accentValues" />-->
 
         </PreferenceCategory>
 
@@ -24,14 +24,14 @@
             android:title="Credits and info"
             android:key="credits_info">
 
-            <EditTextPreference
+            <!--<EditTextPreference
                 android:key="full_name"
                 android:title="Name"
                 android:summary="Enter Your Complete Name"
                 android:dialogTitle="Your Name"
                 android:dialogMessage="Enter Your Complete Name"
                 android:defaultValue=" "
-                android:inputType="textCapWords"/>
+                android:inputType="textCapWords"/>-->
 
         </PreferenceCategory>
 

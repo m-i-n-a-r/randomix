@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">Randomix</string>
+    <string name="app_name" translatable="false">Randomix</string>
+    <string name="app_introduction">An open source app to choose randomly between numbers, answers, options and so on. Let the randomness talk!</string>
     <string name="title_roulette">Roulette</string>
     <string name="title_coin">Coin</string>
     <string name="title_dice">Dice</string>
@@ -10,7 +11,8 @@
     <string name="description_roulette">Do you have to choose something? Are you tired of polls and bossy friends? Tell
         roulette the options you have and it will decide for you. Is that simple!</string>
     <string name="spin_roulette">Spin the roulette!</string>
-    <string name="insert_roulette_message">Please list below the possible choices to add in the roulette.</string>
+    <string name="insert_roulette_hint">Enter an option..</string>
+    <string name="insert_roulette_description">Please list below the possible choices to add in the roulette.</string>
     <string name="hello_roulette_fragment">Roulette mode - Randomix</string>
 
     <string name="description_coin">Flipping a coin is easy, but can help you decide whenever doing something or not.
@@ -43,4 +45,10 @@
     <string name="hello_dice_fragment">Dice mode - Randomix</string>
 
     <string name="hello_settings_fragment">Settings - Randomix</string>
+
+    <string name="dev_name">m.i.n.a.r.</string>
+    <string name="dev_description">I\'m a student and i develop apps in my free time. My works are mainly themes and personalization apps.</string>
+    <string name="dev_gplus" translatable="false">https://plus.google.com/u/0/+RecenzTastic</string>
+    <string name="dev_xda" translatable="false">https://plus.google.com/u/0/+RecenzTastic</string>
+    <string name="dev_other_apps" translatable="false">https://plus.google.com/u/0/+RecenzTastic</string>
 </resources>

@@ -27,6 +27,11 @@
     <string name="magic_answer_8">Probabilmente si.</string>
     <string name="magic_answer_9">Probabilmente no.</string>
     <string name="magic_answer_10">Lol!</string>
+    <string name="magic_answer_11">Ma stai scherzando?</string>
+    <string name="magic_answer_12">No, idiota.</string>
+    <string name="magic_answer_13">Ovvio, maledizione.</string>
+    <string name="magic_answer_14">Ma sei stupido?</string>
+    <string name="magic_answer_15">Lol! Che cosa cretina.</string>
     <string name="hello_magic_ball_fragment">Palla Magica - Randomix</string>
     <string name="throw_dice">Tira il dado!</string>
     <string name="result_dice">Premi il bottone sotto!</string>
@@ -39,7 +44,10 @@
     <string name="description_dice">Un dado può essere utile! L\'app ne lancerà uno per te. Buona fortuna!</string>
     <string name="dev_name">m.i.n.a.r.</string>
     <string name="dev_description">Sono uno studente e sviluppo app nel tempo libero. I miei lavori sono principalmente relativi alle app di personalizzazione.</string>
-    <string name="dev_gplus" translatable="false">https://plus.google.com/u/0/+RecenzTastic</string>
-    <string name="dev_xda" translatable="false">https://plus.google.com/u/0/+RecenzTastic</string>
-    <string name="dev_other_apps" translatable="false">https://plus.google.com/u/0/+RecenzTastic</string>
+    <string name="customization">Personalizzazione</string>
+    <string name="dark_theme_description">Attiva il tema scuro, l\'applicazione si riavvierà.</string>
+    <string name="dark_theme_name">Tema scuro</string>
+    <string name="other_options">Altre opzioni</string>
+    <string name="rude_answers_description">Attiva le risposte sgarbate per la palla magica.</string>
+    <string name="rude_answers_name">Risposte sgarbate</string>
 </resources>

@@ -36,7 +36,13 @@
     <string name="magic_answer_7">But.. are you sure?</string>
     <string name="magic_answer_8">Probably yes.</string>
     <string name="magic_answer_9">Probably no.</string>
-    <string name="magic_answer_10">Lol!</string>
+    <string name="magic_answer_10">Of course.</string>
+    <string name="magic_answer_11">You have to be kidding.</string>
+    <string name="magic_answer_12">No, idiot.</string>
+    <string name="magic_answer_13">Of course, dammit.</string>
+    <string name="magic_answer_14">Are you stupid?</string>
+    <string name="magic_answer_15">Lol! How stupid.</string>
+
     <string name="hello_magic_ball_fragment">Magic Ball - Randomix</string>
 
     <string name="description_dice">A dice could be useful! The app will throw one for you. Good luck!</string>
@@ -49,6 +55,15 @@
     <string name="dev_name">m.i.n.a.r.</string>
     <string name="dev_description">I\'m a student and i develop apps in my free time. My works are mainly themes and personalization apps.</string>
     <string name="dev_gplus" translatable="false">https://plus.google.com/u/0/+RecenzTastic</string>
-    <string name="dev_xda" translatable="false">https://plus.google.com/u/0/+RecenzTastic</string>
-    <string name="dev_other_apps" translatable="false">https://plus.google.com/u/0/+RecenzTastic</string>
+    <string name="dev_xda" translatable="false">https://forum.xda-developers.com/member.php?u=5222216</string>
+    <string name="dev_github" translatable="false">https://github.com/m-i-n-a-r</string>
+    <string name="dev_other_apps" translatable="false">https://play.google.com/store/apps/dev?id=7720251761301594831</string>
+
+    <string name="customization">Customization</string>
+    <string name="dark_theme_description">Activates the dark theme, the app will restart.</string>
+    <string name="dark_theme_name">Dark theme</string>
+    <string name="other_options">Other options</string>
+    <string name="rude_answers_description">Activate the rude answers for the magic ball.</string>
+    <string name="rude_answers_name">Rude answers</string>
+
 </resources>

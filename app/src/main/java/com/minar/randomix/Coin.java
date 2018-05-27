@@ -2,6 +2,8 @@ package com.minar.randomix;
 
 
 import android.content.Context;
+import android.graphics.drawable.Animatable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.os.Vibrator;
@@ -10,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -30,7 +33,7 @@ public class Coin extends Fragment implements OnClickListener {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_coin, container, false);
 
-        Button b = (Button) v.findViewById(R.id.button_flip_coin);
+        Button b = (Button) v.findViewById(R.id.buttonFlipCoin);
         b.setOnClickListener(this);
         return v;
     }
@@ -38,9 +41,16 @@ public class Coin extends Fragment implements OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.button_flip_coin:
+            case R.id.buttonFlipCoin:
                 Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
                 vib.vibrate(50);
+                // Start the animated vector drawable
+                ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinAnimation);
+                Drawable drawable = coinAnimation.getDrawable();
+                if (drawable instanceof Animatable) {
+                    ((Animatable) drawable).start();
+                    // TODO need to reverse this, and manage the timing
+                }
                 // Choose a random number between 0 and 1 with 50 and 50 possibilities
                 Random ran = new Random();
                 int n = ran.nextInt(2);

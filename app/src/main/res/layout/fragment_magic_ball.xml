@@ -35,16 +35,16 @@
                 android:layout_margin="@dimen/linear_vertical_margin"
                 android:gravity="center_horizontal"
                 android:text="@string/description_magic_ball"
-                android:textSize="@dimen/description_text_size"
-                android:textStyle="bold" />
+                android:textSize="@dimen/description_text_size" />
 
             <TextView
                 android:id="@+id/resultMagicBall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/linear_vertical_margin"
+                android:layout_marginBottom="@dimen/linear_vertical_margin"
                 android:gravity="center_horizontal"
-                android:text="@string/result_magic_ball"
+                android:text="@string/result_placeholder"
                 android:textSize="@dimen/result_text_size"
                 android:textStyle="bold" />
 

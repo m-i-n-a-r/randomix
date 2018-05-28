@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">Randomix</string>
     <string name="app_introduction">An open source app to choose randomly between numbers, answers, options and so on. Let the randomness talk!</string>
+    <string name="result_placeholder" translatable="false"> </string>
     <string name="title_roulette">Roulette</string>
     <string name="title_coin">Coin</string>
     <string name="title_dice">Dice</string>
@@ -18,7 +19,7 @@
     <string name="description_coin">Flipping a coin is easy, but can help you decide whenever doing something or not.
         Press the button and let the coin talk!</string>
     <string name="flip_coin">Flip the coin!</string>
-    <string name="result_coin">Press the button below!</string>
+    <string name="hint_coin">Press the button below!</string>
     <string name="result_positive">Head!</string>
     <string name="result_negative">Tail!</string>
     <string name="hello_coin_fragment">Coin mode - Randomix</string>
@@ -26,7 +27,7 @@
     <string name="description_magic_ball">The magic ball will tell you the answers! Just ask something and press the button,
         it will help you with a generic and totally affordable answer!</string>
     <string name="shake_ball">Shake it!</string>
-    <string name="result_magic_ball">Press the button below!</string>
+    <string name="hint_magic_ball">Press the button below!</string>
     <string name="magic_answer_1">No.</string>
     <string name="magic_answer_2">Yes!</string>
     <string name="magic_answer_3">I don\'t think so.</string>
@@ -47,7 +48,7 @@
 
     <string name="description_dice">A dice could be useful! The app will throw one for you. Good luck!</string>
     <string name="throw_dice">Throw the dice!</string>
-    <string name="result_dice">Press the button below!</string>
+    <string name="hint_dice">Press the button below!</string>
     <string name="hello_dice_fragment">Dice mode - Randomix</string>
 
     <string name="hello_settings_fragment">Settings - Randomix</string>
@@ -60,8 +61,10 @@
     <string name="dev_other_apps" translatable="false">https://play.google.com/store/apps/dev?id=7720251761301594831</string>
 
     <string name="customization">Customization</string>
-    <string name="dark_theme_description">Activates the dark theme, the app will restart.</string>
+    <string name="dark_theme_description">Activate the dark theme, the app will restart.</string>
     <string name="dark_theme_name">Dark theme</string>
+    <string name="accent_description">Change the default accent color.</string>
+    <string name="accent_name">Accent color</string>
     <string name="other_options">Other options</string>
     <string name="rude_answers_description">Activate the rude answers for the magic ball.</string>
     <string name="rude_answers_name">Rude answers</string>

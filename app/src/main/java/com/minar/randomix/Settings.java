@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.support.v4.content.IntentCompat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -71,12 +72,9 @@ public class Settings extends PreferenceFragment implements OnSharedPreferenceCh
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if (key.equals("dark_theme")) {
-            getActivity().finish();
-            final Intent intent = getActivity().getIntent();
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            getActivity().startActivity(intent);
-        }
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+        if (key.equals("dark_theme")) restartActivity();
+        if (key.equals("accent_color")) restartActivity();
     };
 
     @Override
@@ -109,6 +107,13 @@ public class Settings extends PreferenceFragment implements OnSharedPreferenceCh
                 startActivity(intent4);
                 break;
         }
+    }
+
+    public void restartActivity() {
+        getActivity().finish();
+        final Intent intent = getActivity().getIntent();
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        getActivity().startActivity(intent);
     }
 
 }

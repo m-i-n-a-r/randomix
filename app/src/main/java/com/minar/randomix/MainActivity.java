@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
         // getSharedPreferences(MyPrefs, Context.MODE_PRIVATE); retrieves a specific shared preferences file
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        String accent = sp.getString("accent_color", "blue");
         if (!sp.getBoolean("first", false)) {
             SharedPreferences.Editor editor = sp.edit();
             editor.putBoolean("first", true);
@@ -82,10 +83,18 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
 
-        // Selects the right theme to apply
+        // Selects the right theme to apply between light and dark
         if (PreferenceManager.getDefaultSharedPreferences(this)
                 .getBoolean("dark_theme", false)) {
             setTheme(R.style.AppTheme_dark);
+            if (accent.equals("green")) setTheme(R.style.AppTheme_dark_green);
+            if (accent.equals("red")) setTheme(R.style.AppTheme_dark_red);
+            if (accent.equals("violet")) setTheme(R.style.AppTheme_dark_violet);
+        }
+        else {
+            if (accent.equals("green")) setTheme(R.style.AppTheme_green);
+            if (accent.equals("red")) setTheme(R.style.AppTheme_red);
+            if (accent.equals("violet")) setTheme(R.style.AppTheme_violet);
         }
 
         super.onCreate(savedInstanceState);

@@ -36,7 +36,7 @@
                 android:paddingTop="12dp"
                 android:paddingRight="12dp"
                 android:paddingLeft="12dp"
-                android:tint="@color/colorAccent"
+                android:tint="?colorAccent"
                 app:srcCompat="@drawable/banner_minar"
                 android:contentDescription="@string/dev_name"
                 android:layout_weight="0.21" />
@@ -65,41 +65,45 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_google_plus_black_24dp"
-                    android:tint="@color/colorAccent"
+                    android:tint="?colorAccent"
                     android:clickable="true"
                     android:focusable="true"
                     android:layout_weight="1"
-                    android:contentDescription="@string/dev_gplus"/>
+                    android:contentDescription="@string/dev_gplus"
+                    android:background="?attr/selectableItemBackgroundBorderless" />
                 <ImageView
                     android:id="@+id/minarps"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_play_store_black_24dp"
-                    android:tint="@color/colorAccent"
+                    android:tint="?colorAccent"
                     android:clickable="true"
                     android:focusable="true"
                     android:layout_weight="1"
-                    android:contentDescription="@string/dev_other_apps"/>
+                    android:contentDescription="@string/dev_other_apps"
+                    android:background="?attr/selectableItemBackgroundBorderless" />
                 <ImageView
                     android:id="@+id/minargit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_github_black_24dp"
-                    android:tint="@color/colorAccent"
+                    android:tint="?colorAccent"
                     android:clickable="true"
                     android:focusable="true"
                     android:layout_weight="1"
-                    android:contentDescription="@string/dev_github"/>
+                    android:contentDescription="@string/dev_github"
+                    android:background="?attr/selectableItemBackgroundBorderless" />
                 <ImageView
                     android:id="@+id/minarxda"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_xda_black_24dp"
-                    android:tint="@color/colorAccent"
+                    android:tint="?colorAccent"
                     android:clickable="true"
                     android:focusable="true"
                     android:layout_weight="1"
-                    android:contentDescription="@string/dev_xda" />
+                    android:contentDescription="@string/dev_xda"
+                    android:background="?attr/selectableItemBackgroundBorderless" />
             </LinearLayout>
         </LinearLayout>
 

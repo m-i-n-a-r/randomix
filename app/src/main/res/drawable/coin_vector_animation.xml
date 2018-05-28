@@ -11,7 +11,7 @@
             <path
                 android:name="path_1"
                 android:pathData="M 12 2 C 17.53 2 22 6.47 22 12 C 22 17.53 17.53 22 12 22 C 6.47 22 2 17.53 2 12 C 2 6.47 6.47 2 12 2 M 15.59 7 L 12 10.59 L 8.41 7 L 7 8.41 L 10.59 12 L 7 15.59 L 8.41 17 L 12 13.41 L 15.59 17 L 17 15.59 L 13.41 12 L 17 8.41 L 15.59 7 Z"
-                android:fillColor="@color/colorAccent"/>
+                android:fillColor="?colorAccent"/>
         </vector>
     </aapt:attr>
     <target android:name="path_1">
@@ -27,7 +27,7 @@
                 <objectAnimator
                     android:propertyName="fillColor"
                     android:duration="2000"
-                    android:valueFrom="@color/colorAccent"
+                    android:valueFrom="?colorAccent"
                     android:valueTo="#00b359"
                     android:valueType="colorType"
                     android:interpolator="@android:interpolator/fast_out_slow_in"/>

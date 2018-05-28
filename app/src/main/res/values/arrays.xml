@@ -4,16 +4,14 @@
     <string-array name="accents">
         <item>Blue</item>
         <item>Green</item>
-        <item>Yellow</item>
         <item>Red</item>
         <item>Violet</item>
     </string-array>
     <string-array name="accentValues">
-        <item>#3546ff</item>
-        <item>#009900</item>
-        <item>#cccc00</item>
-        <item>#cc0000</item>
-        <item>#9933ff</item>
+        <item>blue</item>
+        <item>green</item>
+        <item>red</item>
+        <item>violet</item>
     </string-array>
 
 </resources>

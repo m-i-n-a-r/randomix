@@ -10,13 +10,13 @@
                 android:title="@string/dark_theme_name"
                 android:defaultValue="false"/>
 
-            <!--<ListPreference
+            <ListPreference
                 android:key="accent_color"
-                android:title="Accent color"
-                android:summary="Choose the color used for the accent"
-                android:defaultValue="Blue"
+                android:title="@string/accent_name"
+                android:summary="@string/accent_description"
+                android:defaultValue="blue"
                 android:entries="@array/accents"
-                android:entryValues="@array/accentValues" />-->
+                android:entryValues="@array/accentValues" />
 
         </PreferenceCategory>
 

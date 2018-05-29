@@ -88,11 +88,13 @@ public class MainActivity extends AppCompatActivity {
                 .getBoolean("dark_theme", false)) {
             setTheme(R.style.AppTheme_dark);
             if (accent.equals("green")) setTheme(R.style.AppTheme_dark_green);
+            if (accent.equals("orange")) setTheme(R.style.AppTheme_dark_orange);
             if (accent.equals("red")) setTheme(R.style.AppTheme_dark_red);
             if (accent.equals("violet")) setTheme(R.style.AppTheme_dark_violet);
         }
         else {
             if (accent.equals("green")) setTheme(R.style.AppTheme_green);
+            if (accent.equals("orange")) setTheme(R.style.AppTheme_orange);
             if (accent.equals("red")) setTheme(R.style.AppTheme_red);
             if (accent.equals("violet")) setTheme(R.style.AppTheme_violet);
         }

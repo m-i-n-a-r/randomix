@@ -20,6 +20,7 @@
     <color name="blueAccent">#3546ff</color>
     <color name="greenAccent">#009900</color>
     <color name="yellowAccent">#cccc00</color>
+    <color name="orangeAccent">#ff9900</color>
     <color name="redAccent">#cc0000</color>
     <color name="violetAccent">#9933ff</color>
 </resources>

@@ -82,6 +82,8 @@ public class Roulette extends Fragment implements OnClickListener, TextView.OnEd
                 vib.vibrate(30);
                 TextView t = getView().findViewById(R.id.entryRoulette);
                 currentOption = t.getText().toString();
+                // Break if the string entered is a duplicate
+                if (options.contains(currentOption)) break;
                 // Reset the text field eventually, it could contain whitespaces
                 t.setText("");
                 // If the text field isn't empty, save the option in the list and create the preview
@@ -106,6 +108,8 @@ public class Roulette extends Fragment implements OnClickListener, TextView.OnEd
 
             case R.id.buttonSpinRoulette:
                 vib.vibrate(30);
+                // Break the case if the list is empty to avoid crashes and null pointers
+                if(options.isEmpty()) break;
                 Random ran = new Random();
                 int n = ran.nextInt(options.size());
                 // Get the text view and set its value depending on n

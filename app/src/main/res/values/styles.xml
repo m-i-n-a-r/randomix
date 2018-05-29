@@ -29,6 +29,14 @@
         <item name="colorAccent">@color/greenAccent</item>
     </style>
 
+    <style name="AppTheme.dark.orange" parent="AppTheme.dark">
+        <item name="colorAccent">@color/orangeAccent</item>
+    </style>
+
+    <style name="AppTheme.orange" parent="AppTheme">
+        <item name="colorAccent">@color/orangeAccent</item>
+    </style>
+
     <style name="AppTheme.dark.red" parent="AppTheme.dark">
         <item name="colorAccent">@color/redAccent</item>
     </style>

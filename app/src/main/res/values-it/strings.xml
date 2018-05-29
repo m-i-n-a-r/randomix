@@ -9,6 +9,8 @@
     <string name="generic_result">Il risultato è:</string>
     <string name="spin_roulette">Gira la ruota!</string>
     <string name="insert_roulette_hint">Inserisci un\'opzione..</string>
+    <string name="delete_roulette_hint">Elimina l\'ultima opzione inserita.</string>
+    <string name="too_much_entries_roulette">Non puoi inserire più di 10 opzioni!</string>
     <string name="hello_roulette_fragment">Modalità ruota - Randomix</string>
     <string name="flip_coin">Lancia la moneta!</string>
     <string name="hint_coin">Premi il bottone sotto!</string>

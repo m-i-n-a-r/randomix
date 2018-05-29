@@ -13,7 +13,9 @@
         roulette the options you have and it will decide for you. Is that simple!</string>
     <string name="spin_roulette">Spin the roulette!</string>
     <string name="insert_roulette_hint">Enter an option..</string>
+    <string name="delete_roulette_hint">Delete the last option entered.</string>
     <string name="insert_roulette_description">Please list below the possible choices to add in the roulette.</string>
+    <string name="too_much_entries_roulette">You can\'t enter more than 10 options!</string>
     <string name="hello_roulette_fragment">Roulette mode - Randomix</string>
 
     <string name="description_coin">Flipping a coin is easy, but can help you decide whenever doing something or not.

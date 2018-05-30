@@ -49,7 +49,6 @@ public class Coin extends Fragment implements OnClickListener {
                 Drawable drawable = coinAnimation.getDrawable();
                 if (drawable instanceof Animatable) {
                     ((Animatable) drawable).start();
-                    // TODO need to reverse this, and manage the timing
                 }
                 // Choose a random number between 0 and 1 with 50 and 50 possibilities
                 Random ran = new Random();

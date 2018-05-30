@@ -48,6 +48,14 @@
                 android:textSize="@dimen/result_text_size"
                 android:textStyle="bold" />
 
+            <ImageView
+                android:id="@+id/magicBallAnimation"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/spin_roulette"
+                android:src="@drawable/magic_ball_vector_animation" />
+
             <Button
                 android:id="@+id/button_shake_ball"
                 android:layout_width="wrap_content"

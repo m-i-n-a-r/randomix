@@ -48,6 +48,14 @@
                 android:textSize="@dimen/result_text_size"
                 android:textStyle="bold" />
 
+            <ImageView
+                android:id="@+id/diceAnimation"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/flip_coin"
+                android:src="@drawable/dice_vector_animation" />
+
             <Button
                 android:id="@+id/button_throw_dice"
                 android:layout_width="wrap_content"

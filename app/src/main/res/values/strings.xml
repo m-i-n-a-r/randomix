@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">Randomix</string>
     <string name="app_introduction">An open source app to choose randomly between numbers, answers, options and so on. Let the randomness talk!</string>
-    <string name="result_placeholder" translatable="false"> </string>
+    <string name="result_placeholder" translatable="false"> - - - </string>
     <string name="title_roulette">Roulette</string>
     <string name="title_coin">Coin</string>
     <string name="title_dice">Dice</string>

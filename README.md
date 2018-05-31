@@ -1,5 +1,5 @@
 # Randomix
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/m-i-n-a-r/randomix/LICENSE.md)\
+[![License: MIT](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/m-i-n-a-r/randomix/LICENSE.md)\
 An open source app to choose randomly between numbers, answers, options and so on.
 
 ## Introduction

@@ -115,7 +115,7 @@ public class Roulette extends Fragment implements OnClickListener, TextView.OnEd
         TextView t = getView().findViewById(R.id.entryRoulette);
         // Delete the blank spaces between words and before and after them to avoid weird behaviors
         currentOption = t.getText().toString().trim();
-        currentOption = currentOption.replaceAll("\\s+","");
+        currentOption = currentOption.replaceAll("\\s+"," ");
         // Break if the string entered is a duplicate
         if (options.contains(currentOption)) return;
         // Reset the text field eventually, it could contain whitespaces

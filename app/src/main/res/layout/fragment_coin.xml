@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:fontFamily="monospace"
+                android:fontFamily="sans-serif-condensed"
                 android:gravity="center_horizontal"
                 android:text="@string/hello_coin_fragment"
                 android:textAllCaps="true"
@@ -32,7 +32,7 @@
             <TextView
                 android:id="@+id/descriptionCoin"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="80dp"
                 android:layout_margin="@dimen/linear_vertical_margin"
                 android:gravity="center_horizontal"
                 android:text="@string/description_coin"
@@ -41,7 +41,7 @@
             <TextView
                 android:id="@+id/resultCoin"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:layout_marginTop="@dimen/linear_vertical_margin"
                 android:layout_marginBottom="@dimen/linear_vertical_margin"
                 android:gravity="center_horizontal"

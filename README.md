@@ -1,5 +1,5 @@
 # Randomix
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/m-i-n-a-r/randomix/LICENSE.md)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/m-i-n-a-r/randomix/LICENSE.md)\
 An open source app to choose randomly between numbers, answers, options and so on.
 
 ## Introduction
@@ -21,7 +21,8 @@ The main purpose of the app is provide a random choice in different ways. The ap
 This app was written during my free time as a training. Many good devs have helped me understanding the best practices and they taught me a lot of useful tricks. 
 
 ## Download
-The app is now available through Google Play
+The app is now available through Google Play\
+\
 <a href="https://play.google.com/store/apps/details?id=com.minar.randomix">
   <img height="50" alt="Get it on Google Play"
       src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png" />

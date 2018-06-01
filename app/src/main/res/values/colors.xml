@@ -11,8 +11,8 @@
     <color name="textColorSecondary">#2f2f2f</color>
 
     <!-- dark theme colors -->
-    <color name="colorPrimaryInverse">#1f1f1f</color>
-    <color name="colorPrimaryDarkInverse">#1f1f1f</color>
+    <color name="colorPrimaryInverse">#ff000000</color>
+    <color name="colorPrimaryDarkInverse">#ff000000</color>
     <color name="textColorPrimaryInverse">#ffffff</color>
     <color name="textColorSecondaryInverse">#f0f0f0</color>
 

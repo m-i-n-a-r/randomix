@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- introduction -->
-    <color name="introBackgroundColor">#3f3f3f</color>
+    <color name="introBackgroundColor">#638fe9</color>
     <!-- basic colors -->
     <color name="colorPrimary">#fefefe</color>
     <color name="colorPrimaryDark">#fefefe</color>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_introduction">Un\'app open source per fare scelte casuali tra numeri, opzioni o risposte. Lascia parlare la casualità!</string>
+    <string name="app_intro_description">Un\'app open source per fare scelte casuali tra numeri, opzioni o risposte. Lascia parlare la casualità!</string>
     <string name="title_roulette">Ruota</string>
     <string name="title_coin">Moneta</string>
     <string name="title_dice">Dado</string>

@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.content.ContextCompat;
 import android.os.Bundle;
 import android.view.WindowManager;
 
@@ -16,20 +16,26 @@ public class IntroActivity extends AppIntro {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         // Hide the statusbar (necessary because it's white)
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        // Make the navbar transparent (necessary because it's white on android P
+        getWindow().setNavigationBarColor(ContextCompat.getColor(getBaseContext(), R.color.introBackgroundColor));
+
         super.onCreate(savedInstanceState);
 
         // Default slide
         // Just set a title, description, background and image. AppIntro will do the rest.
-        addSlide(AppIntroFragment.newInstance("RANDOMIX", getString(R.string.app_introduction), R.drawable.icon, getColor(R.color.introBackgroundColor)));
+        addSlide(AppIntroFragment.newInstance(getString(R.string.app_name).toUpperCase(), getString(R.string.intro_typeface), getString(R.string.app_intro_description), getString(R.string.intro_typeface), R.drawable.icon, getColor(R.color.introBackgroundColor), getColor(R.color.textColorPrimaryInverse), getColor(R.color.textColorSecondaryInverse)));
 
         // OPTIONAL METHODS
         // Override bar/separator color.
-        setBarColor(Color.parseColor("#3f3f3f"));
-        setSeparatorColor(Color.parseColor("#00ffffff"));
+        // Use a conversion from int to hex code string
+        setBarColor(Color.parseColor(String.format("#%06X", (0xFFFFFF & getColor(R.color.introBackgroundColor)))));
+        setSeparatorColor(Color.parseColor(String.format("#%06X", (0xFFFFFF & getColor(R.color.introBackgroundColor)))));
 
         // Hide Skip/Done button.
         showSkipButton(false);
         setProgressButtonEnabled(true);
+        // Use progress indicator instead of dots
+        setProgressIndicator();
 
         // Turn vibration on and set intensity.
         setVibrate(true);

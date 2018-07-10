@@ -16,7 +16,7 @@ public class IntroActivity extends AppIntro {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         // Hide the statusbar (necessary because it's white)
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        // Make the navbar transparent (necessary because it's white on android P
+        // Color the navbar like the background
         getWindow().setNavigationBarColor(ContextCompat.getColor(getBaseContext(), R.color.introBackgroundColor));
 
         super.onCreate(savedInstanceState);

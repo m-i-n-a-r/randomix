@@ -44,8 +44,10 @@ public class Dice extends Fragment implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button_throw_dice:
+                // Vibrate
                 Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
                 vib.vibrate(50);
+
                 // Start the animated vector drawable
                 ImageView diceAnimation = (ImageView) getView().findViewById(R.id.diceAnimation);
                 Drawable drawable = diceAnimation.getDrawable();
@@ -55,6 +57,7 @@ public class Dice extends Fragment implements OnClickListener {
                 // Choose a random number between 0 and 1 with 50 and 50 possibilities
                 Random ran = new Random();
                 int n = ran.nextInt(6) + 1;
+
                 // Get the text view and set its value depending on n
                 final TextView textViewResult = (TextView) getView().findViewById(R.id.resultDice);
                 String r = getString(R.string.generic_result) + " " + n;

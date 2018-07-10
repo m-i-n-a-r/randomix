@@ -49,14 +49,17 @@ public class MagicBall extends Fragment implements OnClickListener {
         switch (v.getId()) {
             case R.id.button_shake_ball:
                 SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+                // Vibrate
                 Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
                 vib.vibrate(50);
+
                 // Start the animated vector drawable
                 ImageView magicBallAnimation = (ImageView) getView().findViewById(R.id.magicBallAnimation);
                 Drawable drawable = magicBallAnimation.getDrawable();
                 if (drawable instanceof Animatable) {
                     ((Animatable) drawable).start();
                 }
+
                 // Initialize the answers array
                 magicAnswers[0] = getString(R.string.magic_answer_1);
                 magicAnswers[1] = getString(R.string.magic_answer_2);
@@ -74,11 +77,12 @@ public class MagicBall extends Fragment implements OnClickListener {
                 magicAnswers[12] = getString(R.string.magic_answer_13);
                 magicAnswers[13] = getString(R.string.magic_answer_14);
                 magicAnswers[14] = getString(R.string.magic_answer_15);
+
                 // Choose a random number between 0 and 10 that will correspond to the answer
                 Random ran = new Random();
                 int n;
-                if(sp.getBoolean("rude_answers",true)) n = ran.nextInt(15);
-                    else n = ran.nextInt(10);
+                if(sp.getBoolean("rude_answers",true)) n = ran.nextInt(15);else n = ran.nextInt(10);
+
                 // Get the text view and set its value depending on n
                 final TextView textViewResult = (TextView) getView().findViewById(R.id.resultMagicBall);
                 textViewResult.setText(magicAnswers[n]);

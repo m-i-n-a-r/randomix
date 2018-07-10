@@ -23,8 +23,8 @@
         Press the button and let the coin talk!</string>
     <string name="flip_coin">Flip the coin!</string>
     <string name="hint_coin">Press the button below!</string>
-    <string name="result_positive">Head!</string>
-    <string name="result_negative">Tail!</string>
+    <string name="result_head">Head!</string>
+    <string name="result_tail">Tail!</string>
     <string name="hello_coin_fragment">Coin mode - Randomix</string>
 
     <string name="description_magic_ball">The magic ball will tell you the answers! Just ask something and press the button,

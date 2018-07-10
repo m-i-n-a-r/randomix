@@ -36,7 +36,6 @@ public class Roulette extends Fragment implements OnClickListener, TextView.OnEd
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -65,6 +64,7 @@ public class Roulette extends Fragment implements OnClickListener, TextView.OnEd
                 ImageView deleteAnimation = (ImageView) getView().findViewById(R.id.deleteButton);
                 Drawable delete = deleteAnimation.getDrawable();
                 if (delete instanceof Animatable) ((Animatable) delete).start();
+                // Vibrate
                 vib.vibrate(30);
                 if (options.isEmpty()) return;
                 options.remove(options.size() - 1);
@@ -76,12 +76,14 @@ public class Roulette extends Fragment implements OnClickListener, TextView.OnEd
                 ImageView insertAnimation = (ImageView) getView().findViewById(R.id.insertButton);
                 Drawable insert = insertAnimation.getDrawable();
                 if (insert instanceof Animatable) ((Animatable) insert).start();
+                // Vibrate
                 vib.vibrate(30);
                 // Insert in both the list and the layout
                 InsertRouletteOption();
                 break;
 
             case R.id.buttonSpinRoulette:
+                // Vibrate
                 vib.vibrate(30);
                 // Break the case if the list is empty to avoid crashes and null pointers
                 if(options.isEmpty()) break;

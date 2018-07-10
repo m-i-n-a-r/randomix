@@ -11,7 +11,7 @@
             <path
                 android:name="path"
                 android:pathData="M 12 2 C 17.53 2 22 6.47 22 12 C 22 17.53 17.53 22 12 22 C 6.47 22 2 17.53 2 12 C 2 6.47 6.47 2 12 2 M 17 7 L 14.5 7 L 13.5 6 L 10.5 6 L 9.5 7 L 7 7 L 7 9 L 17 9 L 17 7 M 9 18 L 15 18 C 15.265 18 15.52 17.895 15.707 17.707 C 15.895 17.52 16 17.265 16 17 L 16 10 L 8 10 L 8 17 C 8 17.265 8.105 17.52 8.293 17.707 C 8.48 17.895 8.735 18 9 18 Z"
-                android:fillColor="#a6a6a6"/>
+                android:fillColor="@color/goodGray"/>
             <path
                 android:name="path_1"
                 android:pathData="M 17 13 L 7 13 L 7 11 L 17 11 M 12 2 C 9.349 2 6.804 3.054 4.929 4.929 C 3.054 6.804 2 9.349 2 12 C 2 14.651 3.054 17.196 4.929 19.071 C 6.804 20.946 9.349 22 12 22 C 13.755 22 15.48 21.538 17 20.66 C 18.52 19.783 19.783 18.52 20.66 17 C 21.538 15.48 22 13.755 22 12 C 22 10.245 21.538 8.52 20.66 7 C 19.783 5.48 18.52 4.217 17 3.34 C 15.48 2.462 13.755 2 12 2 Z"
@@ -41,7 +41,7 @@
                     android:propertyName="fillColor"
                     android:startOffset="100"
                     android:duration="901"
-                    android:valueFrom="#a6a6a6"
+                    android:valueFrom="@color/goodGray"
                     android:valueTo="?colorAccent"
                     android:valueType="colorType"
                     android:interpolator="@android:interpolator/fast_out_slow_in"/>
@@ -72,7 +72,7 @@
                     android:startOffset="1000"
                     android:duration="500"
                     android:valueFrom="?colorAccent"
-                    android:valueTo="#a6a6a6"
+                    android:valueTo="@color/goodGray"
                     android:valueType="colorType"
                     android:interpolator="@android:anim/accelerate_interpolator"/>
             </set>

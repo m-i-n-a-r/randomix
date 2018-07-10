@@ -14,8 +14,8 @@
     <string name="hello_roulette_fragment">Modalità ruota - Randomix</string>
     <string name="flip_coin">Lancia la moneta!</string>
     <string name="hint_coin">Premi il bottone sotto!</string>
-    <string name="result_positive">Testa!</string>
-    <string name="result_negative">Croce!</string>
+    <string name="result_head">Testa!</string>
+    <string name="result_tail">Croce!</string>
     <string name="hello_coin_fragment">Modalità moneta - Randomix</string>
     <string name="shake_ball">Scuotila!</string>
     <string name="hint_magic_ball">Premi il bottone sotto!</string>

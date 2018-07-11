@@ -3,6 +3,7 @@ package com.minar.randomix;
 
 import android.content.Context;
 import android.graphics.drawable.Animatable;
+import android.graphics.drawable.Animatable2;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -23,7 +24,10 @@ import java.util.Random;
  */
 public class Coin extends Fragment implements OnClickListener {
     // There's a difference in animations between the first flip and the others
-    private int firstFlip = 0;
+    private boolean notFirstFlip = false;
+    // Last result to select the animation. True stays for head and false stays for tail
+    private boolean lastResult;
+
     public Coin() {
         // Required empty public constructor
     }
@@ -41,45 +45,51 @@ public class Coin extends Fragment implements OnClickListener {
 
     @Override
     public void onClick(View v) {
+        // Get the textview and the imageview used for the result
+        final TextView textViewResult = (TextView) getView().findViewById(R.id.resultCoin);
+        ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinAnimation);
+
         switch (v.getId()) {
             case R.id.buttonFlipCoin:
                 // Choose a random number between 0 and 1 with 50 and 50 possibilities
                 Random ran = new Random();
                 int n = ran.nextInt(2);
-                // Get the textview and the imageview used for the result
-                final TextView textViewResult = (TextView) getView().findViewById(R.id.resultCoin);
-                ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinAnimation);
 
                 // Vibrate
                 Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
                 vib.vibrate(50);
 
+                // Reset the initial state with another animation
+                if(this.notFirstFlip) runFirstAnimation();
+
                 // Start the animated vector drawable and set the text depending on the result
                 if(n == 1) {
-                    /*if(this.firstFlip == 0) {
-                        coinAnimation.setImageResource(R.drawable.coin_head_vector_animation);
-                        ((Animatable) coinDrawable).start();
-                    }*/
                     coinAnimation.setImageResource(R.drawable.coin_head_vector_animation);
                     Drawable coinDrawable = coinAnimation.getDrawable();
                     ((Animatable) coinDrawable).start();
                     textViewResult.setText(getString(R.string.result_head));
+                    this.lastResult = true;
                 }
                 else {
-                    /*if(this.firstFlip == 0) {
-                        coinAnimation.setImageResource(R.drawable.coin_tail_vector_animation);
-                        ((Animatable) coinDrawable).start();
-                    }*/
                     coinAnimation.setImageResource(R.drawable.coin_tail_vector_animation);
                     Drawable coinDrawable = coinAnimation.getDrawable();
                     ((Animatable) coinDrawable).start();
                     textViewResult.setText(getString(R.string.result_tail));
+                    this.lastResult = false;
                 }
 
                 // Check if it's the first flip
-                if(this.firstFlip == 0) this.firstFlip = 1;
+                if(!this.notFirstFlip) this.notFirstFlip = true;
                 break;
         }
+    }
+
+    public void runFirstAnimation() {
+        ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinAnimation);
+        if (this.lastResult) coinAnimation.setImageResource(R.drawable.coin_head_to_start_vector_animation);
+        else coinAnimation.setImageResource((R.drawable.coin_tail_to_start_vector_animation));
+        Drawable coinDrawable = coinAnimation.getDrawable();
+        ((Animatable) coinDrawable).start();
     }
 
 }

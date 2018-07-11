@@ -7,7 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:statusBarColor">@color/almostWhite</item>
-        <item name="android:navigationBarColor">@color/colorPrimaryInverse</item> <!-- before P the buttons are white only! -->
+        <item name="android:navigationBarColor">@color/goodGray</item> <!-- before P the buttons are white only! -->
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
         <item name="android:textColorSecondary">@color/textColorSecondary</item>
     </style>

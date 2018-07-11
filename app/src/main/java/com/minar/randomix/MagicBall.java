@@ -81,7 +81,8 @@ public class MagicBall extends Fragment implements OnClickListener {
                 // Choose a random number between 0 and 10 that will correspond to the answer
                 Random ran = new Random();
                 int n;
-                if(sp.getBoolean("rude_answers",true)) n = ran.nextInt(15);else n = ran.nextInt(10);
+                if(sp.getBoolean("rude_answers",true)) n = ran.nextInt(15);
+                else n = ran.nextInt(10);
 
                 // Get the text view and set its value depending on n
                 final TextView textViewResult = (TextView) getView().findViewById(R.id.resultMagicBall);

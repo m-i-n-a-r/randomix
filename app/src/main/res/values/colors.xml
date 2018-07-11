@@ -8,6 +8,8 @@
     <color name="colorAccent">@color/blueAccent</color>
     <color name="almostWhite">#fbfbfb</color>
     <color name="goodGray">#a6a6a6</color>
+    <color name="positiveGreen">#00c077</color>
+    <color name="negativeRed">#ee0000</color>
     <color name="textColorPrimary">#5f5f5f</color>
     <color name="textColorSecondary">#2f2f2f</color>
 

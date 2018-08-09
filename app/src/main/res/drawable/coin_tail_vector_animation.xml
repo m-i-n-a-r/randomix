@@ -46,7 +46,7 @@
                     android:propertyName="fillColor"
                     android:duration="1000"
                     android:valueFrom="@color/goodGray"
-                    android:valueTo="@color/positiveGreen"
+                    android:valueTo="?colorAccent"
                     android:valueType="colorType"
                     android:interpolator="@android:interpolator/fast_out_slow_in"/>
             </set>
@@ -75,7 +75,7 @@
                     android:propertyName="fillColor"
                     android:startOffset="1001"
                     android:duration="999"
-                    android:valueFrom="@color/positiveGreen"
+                    android:valueFrom="?colorAccent"
                     android:valueTo="@color/negativeRed"
                     android:valueType="colorType"
                     android:interpolator="@android:interpolator/fast_out_slow_in"/>

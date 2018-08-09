@@ -63,7 +63,7 @@
                     android:startOffset="1001"
                     android:duration="999"
                     android:valueFrom="@color/negativeRed"
-                    android:valueTo="@color/positiveGreen"
+                    android:valueTo="?colorAccent"
                     android:valueType="colorType"
                     android:interpolator="@android:interpolator/fast_out_slow_in"/>
                 <objectAnimator

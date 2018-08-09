@@ -99,6 +99,14 @@
                 </LinearLayout>
             </HorizontalScrollView>
 
+            <ImageView
+                android:id="@+id/buttonSpinRoulette"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/spin_roulette"
+                android:src="@drawable/roulette_main_vector_animation" />
+
             <TextView
                 android:id="@+id/resultRoulette"
                 android:layout_width="match_parent"
@@ -109,13 +117,6 @@
                 android:text="@string/result_placeholder"
                 android:textSize="@dimen/result_text_size"
                 android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/buttonSpinRoulette"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/linear_vertical_margin"
-                android:text="@string/spin_roulette" />
 
         </LinearLayout>
 

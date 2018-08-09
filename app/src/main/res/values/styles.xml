@@ -39,12 +39,12 @@
         <item name="colorAccent">@color/orangeAccent</item>
     </style>
 
-    <style name="AppTheme.dark.red" parent="AppTheme.dark">
-        <item name="colorAccent">@color/redAccent</item>
+    <style name="AppTheme.dark.teal" parent="AppTheme.dark">
+        <item name="colorAccent">@color/tealAccent</item>
     </style>
 
-    <style name="AppTheme.red" parent="AppTheme">
-        <item name="colorAccent">@color/redAccent</item>
+    <style name="AppTheme.teal" parent="AppTheme">
+        <item name="colorAccent">@color/tealAccent</item>
     </style>
 
     <style name="AppTheme.dark.violet" parent="AppTheme.dark">

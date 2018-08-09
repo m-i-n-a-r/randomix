@@ -44,7 +44,7 @@ public class Roulette extends Fragment implements OnClickListener, TextView.OnEd
         // Set the listener
         ImageView insert = (ImageView) v.findViewById(R.id.insertButton);
         ImageView delete = (ImageView) v.findViewById(R.id.deleteButton);
-        Button spin = (Button) v.findViewById(R.id.buttonSpinRoulette);
+        ImageView spin = (ImageView) v.findViewById(R.id.buttonSpinRoulette);
         EditText textInsert = (EditText) v.findViewById(R.id.entryRoulette);
 
         insert.setOnClickListener(this);
@@ -83,6 +83,10 @@ public class Roulette extends Fragment implements OnClickListener, TextView.OnEd
                 break;
 
             case R.id.buttonSpinRoulette:
+                // Start the animated vector drawable
+                ImageView spinAnimation = (ImageView) getView().findViewById(R.id.buttonSpinRoulette);
+                Drawable spin = spinAnimation.getDrawable();
+                if (spin instanceof Animatable) ((Animatable) spin).start();
                 // Vibrate
                 vib.vibrate(30);
                 // Break the case if the list is empty to avoid crashes and null pointers

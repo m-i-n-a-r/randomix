@@ -20,7 +20,7 @@
                 <objectAnimator
                     android:propertyName="fillColor"
                     android:duration="1000"
-                    android:valueFrom="@color/positiveGreen"
+                    android:valueFrom="?colorAccent"
                     android:valueTo="@color/goodGray"
                     android:valueType="colorType"
                     android:interpolator="@android:interpolator/fast_out_slow_in"/>

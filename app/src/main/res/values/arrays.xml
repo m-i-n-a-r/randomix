@@ -5,14 +5,14 @@
         <item>Blue</item>
         <item>Green</item>
         <item>Orange</item>
-        <item>Red</item>
+        <item>Teal</item>
         <item>Violet</item>
     </string-array>
     <string-array name="accentValues">
         <item>blue</item>
         <item>green</item>
         <item>orange</item>
-        <item>red</item>
+        <item>teal</item>
         <item>violet</item>
     </string-array>
 

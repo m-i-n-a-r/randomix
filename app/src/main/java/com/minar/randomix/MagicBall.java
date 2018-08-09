@@ -19,8 +19,6 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-import static android.content.Context.MODE_PRIVATE;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -39,7 +37,7 @@ public class MagicBall extends Fragment implements OnClickListener {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_magic_ball, container, false);
 
-        Button b = (Button) v.findViewById(R.id.button_shake_ball);
+        Button b = (Button) v.findViewById(R.id.buttonShakeBall);
         b.setOnClickListener(this);
         return v;
     }
@@ -47,7 +45,7 @@ public class MagicBall extends Fragment implements OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.button_shake_ball:
+            case R.id.buttonShakeBall:
                 SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
                 // Vibrate
                 Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);

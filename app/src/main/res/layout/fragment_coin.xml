@@ -42,27 +42,23 @@
                 android:id="@+id/resultCoin"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_marginTop="@dimen/linear_vertical_margin"
                 android:layout_marginBottom="@dimen/linear_vertical_margin"
+                android:layout_marginTop="@dimen/linear_vertical_margin"
                 android:gravity="center_horizontal"
                 android:text="@string/result_placeholder"
                 android:textSize="@dimen/result_text_size"
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/coinAnimation"
+                android:id="@+id/coinButtonAnimation"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="160dp"
                 android:layout_marginTop="16dp"
+                android:clickable="true"
+                android:focusable="true"
                 android:contentDescription="@string/flip_coin"
-                android:src="@drawable/coin_head_vector_animation" />
-
-            <Button
-                android:id="@+id/buttonFlipCoin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/linear_vertical_margin"
-                android:text="@string/flip_coin" />
+                android:src="@drawable/coin_head_vector_animation"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
 
         </LinearLayout>
 

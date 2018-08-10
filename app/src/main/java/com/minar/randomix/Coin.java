@@ -37,15 +37,15 @@ public class Coin extends Fragment implements OnClickListener {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_coin, container, false);
 
-        Button b = (Button) v.findViewById(R.id.buttonFlipCoin);
-        b.setOnClickListener(this);
+        ImageView flip = (ImageView) v.findViewById(R.id.coinButtonAnimation);
+        flip.setOnClickListener(this);
         return v;
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.buttonFlipCoin:
+            case R.id.coinButtonAnimation:
                 // Vibrate
                 Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
                 vib.vibrate(50);
@@ -70,7 +70,7 @@ public class Coin extends Fragment implements OnClickListener {
     }
 
     public void runResetAnimation() {
-        ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinAnimation);
+        ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinButtonAnimation);
         if (this.lastResult) coinAnimation.setImageResource(R.drawable.coin_head_to_start_vector_animation);
         else coinAnimation.setImageResource((R.drawable.coin_tail_to_start_vector_animation));
         Drawable coinDrawable = coinAnimation.getDrawable();
@@ -80,7 +80,7 @@ public class Coin extends Fragment implements OnClickListener {
     public void flipAndRunMainAnimation() {
         // Get the textview and the imageview used for the result
         final TextView textViewResult = (TextView) getView().findViewById(R.id.resultCoin);
-        ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinAnimation);
+        ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinButtonAnimation);
         // Choose a random number between 0 and 1 with 50 and 50 possibilities
         Random ran = new Random();
         int n = ran.nextInt(2);

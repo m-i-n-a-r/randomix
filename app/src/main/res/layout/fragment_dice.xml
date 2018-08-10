@@ -49,19 +49,15 @@
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/diceAnimation"
+                android:id="@+id/diceButtonAnimation"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="160dp"
                 android:layout_marginTop="16dp"
-                android:contentDescription="@string/flip_coin"
-                android:src="@drawable/dice_vector_animation" />
-
-            <Button
-                android:id="@+id/button_throw_dice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/linear_vertical_margin"
-                android:text="@string/throw_dice" />
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/throw_dice"
+                android:src="@drawable/dice_vector_animation"
+                android:background="?attr/selectableItemBackgroundBorderless" />
 
         </LinearLayout>
 

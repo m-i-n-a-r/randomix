@@ -37,22 +37,22 @@ public class MagicBall extends Fragment implements OnClickListener {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_magic_ball, container, false);
 
-        Button b = (Button) v.findViewById(R.id.buttonShakeBall);
-        b.setOnClickListener(this);
+        ImageView shake = (ImageView) v.findViewById(R.id.magicBallButtonAnimation);
+        shake.setOnClickListener(this);
         return v;
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.buttonShakeBall:
+            case R.id.magicBallButtonAnimation:
                 SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
                 // Vibrate
                 Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
                 vib.vibrate(50);
 
                 // Start the animated vector drawable
-                ImageView magicBallAnimation = (ImageView) getView().findViewById(R.id.magicBallAnimation);
+                ImageView magicBallAnimation = (ImageView) getView().findViewById(R.id.magicBallButtonAnimation);
                 Drawable drawable = magicBallAnimation.getDrawable();
                 if (drawable instanceof Animatable) {
                     ((Animatable) drawable).start();

@@ -35,21 +35,21 @@ public class Dice extends Fragment implements OnClickListener {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_dice, container, false);
 
-        Button b = (Button) v.findViewById(R.id.button_throw_dice);
-        b.setOnClickListener(this);
+        ImageView launch = (ImageView) v.findViewById(R.id.diceButtonAnimation);
+        launch.setOnClickListener(this);
         return v;
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.button_throw_dice:
+            case R.id.diceButtonAnimation:
                 // Vibrate
                 Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
                 vib.vibrate(50);
 
                 // Start the animated vector drawable
-                ImageView diceAnimation = (ImageView) getView().findViewById(R.id.diceAnimation);
+                ImageView diceAnimation = (ImageView) getView().findViewById(R.id.diceButtonAnimation);
                 Drawable drawable = diceAnimation.getDrawable();
                 if (drawable instanceof Animatable) {
                     ((Animatable) drawable).start();

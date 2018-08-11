@@ -22,12 +22,14 @@ import java.util.Random;
  * A simple {@link Fragment} subclass.
  */
 public class Dice extends Fragment implements OnClickListener {
-
+    // There's a difference in animations between the first flip and the others
+    private boolean notFirstThrow = false;
+    // Last result to select the animation. True stays for head and false stays for tail
+    private int lastResult;
 
     public Dice() {
         // Required empty public constructor
     }
-    private int diceResult;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,22 +50,64 @@ public class Dice extends Fragment implements OnClickListener {
                 Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
                 vib.vibrate(50);
 
-                // Start the animated vector drawable
-                ImageView diceAnimation = (ImageView) getView().findViewById(R.id.diceButtonAnimation);
-                Drawable drawable = diceAnimation.getDrawable();
-                if (drawable instanceof Animatable) {
-                    ((Animatable) drawable).start();
+                // Reset the initial state with another animation
+                if(this.notFirstThrow) {
+                    runResetAnimation();
+                    // Delay the execution
+                    getView().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            throwAndRunMainAnimation();
+                        }
+                    }, 500);
                 }
-                // Choose a random number between 0 and 1 with 50 and 50 possibilities
-                Random ran = new Random();
-                int n = ran.nextInt(6) + 1;
+                else throwAndRunMainAnimation();
 
-                // Get the text view and set its value depending on n
-                final TextView textViewResult = (TextView) getView().findViewById(R.id.resultDice);
-                String r = getString(R.string.generic_result) + " " + n;
-                textViewResult.setText(r);
+                // Check if it's the first throw
+                if(!this.notFirstThrow) this.notFirstThrow = true;
                 break;
+
         }
+
+    }
+
+    public void throwAndRunMainAnimation() {
+        // Choose a random number between 1 and 6 with equal possibilities
+        Random ran = new Random();
+        int n = ran.nextInt(6) + 1;
+
+        final ImageView diceAnimation = (ImageView) getView().findViewById(R.id.diceButtonAnimation);
+
+        // Set the drawable programmatically
+        String chosenDrawable = "dice_" + n + "_vector_animation";
+        int resId = getResources().getIdentifier(chosenDrawable, "drawable", "com.minar.randomix");
+        diceAnimation.setImageResource(resId);
+
+        // Animate the drawable
+        Drawable diceDrawable = diceAnimation.getDrawable();
+        ((Animatable) diceDrawable).start();
+
+        // Get the text view and set its value depending on n
+        final TextView textViewResult = (TextView) getView().findViewById(R.id.resultDice);
+        final String r = getString(R.string.generic_result) + " " + n;
+
+        // Delay the execution
+        getView().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                textViewResult.setText(r);
+            }
+        }, 1500);
+        this.lastResult = n;
+    }
+
+    public void runResetAnimation() {
+        ImageView diceAnimation = (ImageView) getView().findViewById(R.id.diceButtonAnimation);
+        String chosenDrawable = "dice_" + this.lastResult + "_to_start_vector_animation";
+        int resId = getResources().getIdentifier(chosenDrawable, "drawable", "com.minar.randomix");
+        diceAnimation.setImageResource(resId);
+        Drawable coinDrawable = diceAnimation.getDrawable();
+        ((Animatable) coinDrawable).start();
     }
 
 }

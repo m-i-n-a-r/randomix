@@ -2,11 +2,11 @@
 <resources>
 
     <string-array name="accents">
-        <item>Blue</item>
-        <item>Green</item>
-        <item>Orange</item>
-        <item>Teal</item>
-        <item>Violet</item>
+        <item>@string/blue</item>
+        <item>@string/green</item>
+        <item>@string/orange</item>
+        <item>@string/teal</item>
+        <item>@string/violet</item>
     </string-array>
     <string-array name="accentValues">
         <item>blue</item>

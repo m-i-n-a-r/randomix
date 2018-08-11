@@ -10,6 +10,7 @@
     <string name="spin_roulette">Gira la ruota!</string>
     <string name="insert_roulette_hint">Inserisci un\'opzione..</string>
     <string name="delete_roulette_hint">Elimina l\'ultima opzione inserita.</string>
+    <string name="no_entry_roulette">Per favore, inserisci almeno due opzioni per girare la roulette!</string>
     <string name="too_much_entries_roulette">Non puoi inserire più di 10 opzioni!</string>
     <string name="hello_roulette_fragment">Modalità ruota - Randomix</string>
     <string name="flip_coin">Lancia la moneta!</string>
@@ -41,8 +42,8 @@
     <string name="hello_settings_fragment">Impostazioni - Randomix</string>
     <string name="description_roulette">Devi scegliere qualcosa? Sei stanco di fare sondaggi e degli amici che vogliono comandare? Di alla ruota le opzioni che hai e lei deciderà per te. E\' semplice!</string>
     <string name="insert_roulette_description">Per favore inserisci qui sotto le possibili scelte da aggiungere nella ruota.</string>
-    <string name="description_coin">Tirare una moneta è semplice, ma può aiutarti a decidere se fare qualcosa o meno. Premi il bottone e fai parlare la moneta!</string>
-    <string name="description_magic_ball">La palla magica ti dirà la risposta! Chiedi semplicemente qualcosa e premi il bottone, e ti aiuterà con una risposta generica e totalmente affidabile!</string>
+    <string name="description_coin">Tirare una moneta è semplice, ma può aiutarti a decidere se fare qualcosa o meno. Fai parlare la moneta!</string>
+    <string name="description_magic_ball">La palla magica ti dirà la risposta! Chiedi semplicemente qualcosa, e ti aiuterà con una risposta generica e totalmente affidabile!</string>
     <string name="description_dice">Un dado può essere utile! L\'app ne lancerà uno per te. Buona fortuna!</string>
     <string name="dev_name">m.i.n.a.r.</string>
     <string name="dev_description">Sono uno studente e sviluppo app nel tempo libero. I miei lavori sono principalmente relativi alle app di personalizzazione.</string>
@@ -51,6 +52,11 @@
     <string name="dark_theme_name">Tema scuro</string>
     <string name="accent_description">Cambia il colore dei particolari.</string>
     <string name="accent_name">Colore accent</string>
+    <string name="blue">Blu</string>
+    <string name="green">Verde</string>
+    <string name="orange">Arancione</string>
+    <string name="teal">Acqua</string>
+    <string name="violet">Viola</string>
     <string name="other_options">Altre opzioni</string>
     <string name="rude_answers_description">Attiva le risposte sgarbate per la palla magica.</string>
     <string name="rude_answers_name">Risposte sgarbate</string>

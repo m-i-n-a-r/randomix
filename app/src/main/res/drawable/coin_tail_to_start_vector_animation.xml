@@ -19,14 +19,14 @@
             <set>
                 <objectAnimator
                     android:propertyName="fillColor"
-                    android:duration="1000"
+                    android:duration="500"
                     android:valueFrom="@color/negativeRed"
                     android:valueTo="@color/goodGray"
                     android:valueType="colorType"
                     android:interpolator="@android:interpolator/fast_out_slow_in"/>
                 <objectAnimator
                     android:propertyName="pathData"
-                    android:duration="1000"
+                    android:duration="500"
                     android:valueFrom="M 15.59 17 L 12 13.41 L 8.41 17 L 7 15.59 L 10.59 12 L 7 8.41 L 8.41 7 L 12 10.59 L 15.59 7 L 15.59 7 L 17 8.41 L 13.41 12 L 17 15.59 L 15.59 17 M 12 2 C 6.47 2 2 6.47 2 12 C 2 14.782 3.131 17.295 4.959 19.107 C 6.765 20.896 9.252 22 12 22 C 13.894 22 15.663 21.476 17.171 20.565 C 18.652 19.669 19.882 18.4 20.729 16.888 C 21.539 15.443 22 13.776 22 12 C 22 10.391 21.622 8.872 20.949 7.527 C 20.045 5.719 18.61 4.225 16.847 3.248 C 15.453 2.475 13.854 2.026 12.151 2.001 C 12.1 2 12.05 2 12 2"
                     android:valueTo="M 16.23 18 L 12 15.45 L 7.77 18 L 8.89 13.19 L 7.017 11.568 L 5.16 9.96 L 10.08 9.54 L 12 5 L 13.92 9.53 L 18.84 9.95 L 18.84 9.95 L 17.029 11.518 L 15.11 13.18 L 16.23 18 M 12 2 C 6.47 2 2 6.5 2 12 C 2 14.651 3.054 17.196 4.929 19.071 C 6.804 20.946 9.349 22 12 22 C 13.755 22 15.48 21.538 17 20.66 C 18.52 19.783 19.783 18.52 20.66 17 C 21.538 15.48 22 13.755 22 12 C 22 10.245 21.538 8.52 20.66 7 C 19.783 5.48 18.52 4.217 17 3.34 C 15.48 2.462 13.755 2 12 2 C 12 2 12 2 12 2"
                     android:valueType="pathType"

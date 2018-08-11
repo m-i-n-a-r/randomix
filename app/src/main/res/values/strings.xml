@@ -11,23 +11,24 @@
     <string name="generic_result">The result is:</string>
 
     <string name="description_roulette">Do you have to choose something? Are you tired of polls and bossy friends? Tell
-        roulette the options you have and it will decide for you. Is that simple!</string>
+        roulette the options you have and it will decide for you. It\'s that simple!</string>
     <string name="spin_roulette">Spin the roulette!</string>
     <string name="insert_roulette_hint">Enter an option..</string>
     <string name="delete_roulette_hint">Delete the last option entered.</string>
     <string name="insert_roulette_description">Please list below the possible choices to add in the roulette.</string>
+    <string name="no_entry_roulette">Please, enter 2 or more options to spin the roulette!</string>
     <string name="too_much_entries_roulette">You can\'t enter more than 10 options!</string>
     <string name="hello_roulette_fragment">Roulette mode - Randomix</string>
 
     <string name="description_coin">Flipping a coin is easy, but can help you decide whenever doing something or not.
-        Press the button and let the coin talk!</string>
+        Let the coin talk!</string>
     <string name="flip_coin">Flip the coin!</string>
     <string name="hint_coin">Press the button below!</string>
     <string name="result_head">Head!</string>
     <string name="result_tail">Tail!</string>
     <string name="hello_coin_fragment">Coin mode - Randomix</string>
 
-    <string name="description_magic_ball">The magic ball will tell you the answers! Just ask something and press the button,
+    <string name="description_magic_ball">The magic ball will tell you the answers! Just ask something, and
         it will help you with a generic and totally affordable answer!</string>
     <string name="shake_ball">Shake it!</string>
     <string name="hint_magic_ball">Press the button below!</string>
@@ -68,6 +69,11 @@
     <string name="dark_theme_name">Dark theme</string>
     <string name="accent_description">Change the default accent color.</string>
     <string name="accent_name">Accent color</string>
+    <string name="blue">Blue</string>
+    <string name="green">Green</string>
+    <string name="orange">Orange</string>
+    <string name="teal">Teal</string>
+    <string name="violet">Violet</string>
     <string name="other_options">Other options</string>
     <string name="rude_answers_description">Activate the rude answers for the magic ball.</string>
     <string name="rude_answers_name">Rude answers</string>

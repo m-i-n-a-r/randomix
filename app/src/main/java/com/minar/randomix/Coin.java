@@ -59,7 +59,7 @@ public class Coin extends Fragment implements OnClickListener {
                         public void run() {
                             flipAndRunMainAnimation();
                         }
-                    }, 1000);
+                    }, 500);
                 }
                 else flipAndRunMainAnimation();
 
@@ -67,14 +67,6 @@ public class Coin extends Fragment implements OnClickListener {
                 if(!this.notFirstFlip) this.notFirstFlip = true;
                 break;
         }
-    }
-
-    public void runResetAnimation() {
-        ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinButtonAnimation);
-        if (this.lastResult) coinAnimation.setImageResource(R.drawable.coin_head_to_start_vector_animation);
-        else coinAnimation.setImageResource((R.drawable.coin_tail_to_start_vector_animation));
-        Drawable coinDrawable = coinAnimation.getDrawable();
-        ((Animatable) coinDrawable).start();
     }
 
     public void flipAndRunMainAnimation() {
@@ -89,16 +81,36 @@ public class Coin extends Fragment implements OnClickListener {
             coinAnimation.setImageResource(R.drawable.coin_head_vector_animation);
             Drawable coinDrawable = coinAnimation.getDrawable();
             ((Animatable) coinDrawable).start();
-            textViewResult.setText(getString(R.string.result_head));
+            // Delay the execution
+            getView().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    textViewResult.setText(getString(R.string.result_head));
+                }
+            }, 1500);
             this.lastResult = true;
         }
         else {
             coinAnimation.setImageResource(R.drawable.coin_tail_vector_animation);
             Drawable coinDrawable = coinAnimation.getDrawable();
             ((Animatable) coinDrawable).start();
-            textViewResult.setText(getString(R.string.result_tail));
+            // Delay the execution
+            getView().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    textViewResult.setText(getString(R.string.result_tail));
+                }
+            }, 1500);
             this.lastResult = false;
         }
+    }
+
+    public void runResetAnimation() {
+        ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinButtonAnimation);
+        if (this.lastResult) coinAnimation.setImageResource(R.drawable.coin_head_to_start_vector_animation);
+        else coinAnimation.setImageResource((R.drawable.coin_tail_to_start_vector_animation));
+        Drawable coinDrawable = coinAnimation.getDrawable();
+        ((Animatable) coinDrawable).start();
     }
 
 }

@@ -83,19 +83,27 @@ public class Roulette extends Fragment implements OnClickListener, TextView.OnEd
                 break;
 
             case R.id.buttonSpinRoulette:
+                // Break the case if the list is empty to avoid crashes and null pointers
+                if(options.isEmpty() || options.size() == 1) {
+                    Toast.makeText(getContext(), getString(R.string.no_entry_roulette), Toast.LENGTH_SHORT).show();
+                    break;
+                }
                 // Start the animated vector drawable
                 ImageView spinAnimation = (ImageView) getView().findViewById(R.id.buttonSpinRoulette);
                 Drawable spin = spinAnimation.getDrawable();
                 if (spin instanceof Animatable) ((Animatable) spin).start();
                 // Vibrate
                 vib.vibrate(30);
-                // Break the case if the list is empty to avoid crashes and null pointers
-                if(options.isEmpty()) break;
                 Random ran = new Random();
-                int n = ran.nextInt(options.size());
-                // Get the text view and set its value depending on n
+                final int n = ran.nextInt(options.size());
+                // Get the text view and set its value depending on n (using a delay)
                 final TextView textViewResult = (TextView) getView().findViewById(R.id.resultRoulette);
-                textViewResult.setText(options.get(n));
+                getView().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        textViewResult.setText(options.get(n));;
+                    }
+                }, 1500);
                 break;
         }
     }

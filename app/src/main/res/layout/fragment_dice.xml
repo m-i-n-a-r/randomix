@@ -56,7 +56,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:contentDescription="@string/throw_dice"
-                android:src="@drawable/dice_vector_animation"
+                android:src="@drawable/dice_1_vector_animation"
                 android:background="?attr/selectableItemBackgroundBorderless" />
 
         </LinearLayout>

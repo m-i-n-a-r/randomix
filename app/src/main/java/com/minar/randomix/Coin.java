@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -46,6 +48,10 @@ public class Coin extends Fragment implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.coinButtonAnimation:
+                // Make the button unclickable
+                final ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinButtonAnimation);
+                coinAnimation.setClickable(false);
+
                 // Vibrate
                 Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
                 vib.vibrate(50);
@@ -63,6 +69,13 @@ public class Coin extends Fragment implements OnClickListener {
                 }
                 else flipAndRunMainAnimation();
 
+                // Reactivate the button after the right time
+                getView().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        coinAnimation.setClickable(true);
+                    }
+                }, 2000);
                 // Check if it's the first flip
                 if(!this.notFirstFlip) this.notFirstFlip = true;
                 break;
@@ -70,22 +83,33 @@ public class Coin extends Fragment implements OnClickListener {
     }
 
     public void flipAndRunMainAnimation() {
-        // Get the textview and the imageview used for the result
+        // Get the textview and the imageview used for the result, with a simple control to avoid null object references
         final TextView textViewResult = (TextView) getView().findViewById(R.id.resultCoin);
         ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinButtonAnimation);
+
+        // Create the animations
+        final Animation animIn = new AlphaAnimation(1.0f, 0.0f);
+        animIn.setDuration(1500);
+        textViewResult.startAnimation(animIn);
+        final Animation animOut = new AlphaAnimation(0.0f, 1.0f);
+        animOut.setDuration(1000);
+
         // Choose a random number between 0 and 1 with 50 and 50 possibilities
         Random ran = new Random();
         int n = ran.nextInt(2);
+
         // Start the animated vector drawable and set the text depending on the result
         if(n == 1) {
             coinAnimation.setImageResource(R.drawable.coin_head_vector_animation);
             Drawable coinDrawable = coinAnimation.getDrawable();
             ((Animatable) coinDrawable).start();
+
             // Delay the execution
             getView().postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     textViewResult.setText(getString(R.string.result_head));
+                    textViewResult.startAnimation(animOut);
                 }
             }, 1500);
             this.lastResult = true;
@@ -94,11 +118,13 @@ public class Coin extends Fragment implements OnClickListener {
             coinAnimation.setImageResource(R.drawable.coin_tail_vector_animation);
             Drawable coinDrawable = coinAnimation.getDrawable();
             ((Animatable) coinDrawable).start();
+
             // Delay the execution
             getView().postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     textViewResult.setText(getString(R.string.result_tail));
+                    textViewResult.startAnimation(animOut);
                 }
             }, 1500);
             this.lastResult = false;

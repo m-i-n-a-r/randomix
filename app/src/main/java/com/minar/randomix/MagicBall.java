@@ -48,17 +48,18 @@ public class MagicBall extends Fragment implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.magicBallButtonAnimation:
-                SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
-                // Vibrate
-                Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
-                vib.vibrate(50);
-
-                // Start the animated vector drawable
-                ImageView magicBallAnimation = (ImageView) getView().findViewById(R.id.magicBallButtonAnimation);
+                // Start the animated vector drawable, make the button unclickable during the execution
+                final ImageView magicBallAnimation = (ImageView) getView().findViewById(R.id.magicBallButtonAnimation);
+                magicBallAnimation.setClickable(false);
                 Drawable drawable = magicBallAnimation.getDrawable();
                 if (drawable instanceof Animatable) {
                     ((Animatable) drawable).start();
                 }
+
+                SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+                // Vibrate
+                Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+                vib.vibrate(50);
 
                 // Initialize the answers array
                 magicAnswers[0] = getString(R.string.magic_answer_1);
@@ -87,22 +88,23 @@ public class MagicBall extends Fragment implements OnClickListener {
                 // Get the text view and set its value depending on n
                 final TextView textViewResult = (TextView) getView().findViewById(R.id.resultMagicBall);
 
-                // Animate the textview
-                final Animation anim = new AlphaAnimation(0.0f, 1.0f);
-                anim.setDuration(500);
-                anim.setStartOffset(20);
-                anim.setRepeatMode(Animation.REVERSE);
-                anim.setRepeatCount(Animation.INFINITE);
+                // Create the animations
+                final Animation animIn = new AlphaAnimation(1.0f, 0.0f);
+                animIn.setDuration(1500);
+                textViewResult.startAnimation(animIn);
+                final Animation animOut = new AlphaAnimation(0.0f, 1.0f);
+                animOut.setDuration(1000);
+
                 // Delay the execution
                 getView().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         textViewResult.setText(magicAnswers[n]);
-                        textViewResult.startAnimation(anim);
+                        textViewResult.startAnimation(animOut);
+                        magicBallAnimation.setClickable(true);
                     }
                 }, 1500);
                 break;
         }
     }
-
 }

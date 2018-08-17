@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,9 +24,9 @@ import java.util.Random;
  * A simple {@link Fragment} subclass.
  */
 public class Dice extends Fragment implements OnClickListener {
-    // There's a difference in animations between the first flip and the others
+    // There's a difference in animations between the first throw and the others
     private boolean notFirstThrow = false;
-    // Last result to select the animation. True stays for head and false stays for tail
+    // Last result to select the correct animation
     private int lastResult;
 
     public Dice() {
@@ -46,6 +48,10 @@ public class Dice extends Fragment implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.diceButtonAnimation:
+                // Make the button unclickable
+                final ImageView diceAnimation = (ImageView) getView().findViewById(R.id.diceButtonAnimation);
+                diceAnimation.setClickable(false);
+
                 // Vibrate
                 Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
                 vib.vibrate(50);
@@ -63,6 +69,13 @@ public class Dice extends Fragment implements OnClickListener {
                 }
                 else throwAndRunMainAnimation();
 
+                // Reactivate the button after the right time
+                getView().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        diceAnimation.setClickable(true);
+                    }
+                }, 2000);
                 // Check if it's the first throw
                 if(!this.notFirstThrow) this.notFirstThrow = true;
                 break;
@@ -91,11 +104,19 @@ public class Dice extends Fragment implements OnClickListener {
         final TextView textViewResult = (TextView) getView().findViewById(R.id.resultDice);
         final String r = getString(R.string.generic_result) + " " + n;
 
+        // Create the animations
+        final Animation animIn = new AlphaAnimation(1.0f, 0.0f);
+        animIn.setDuration(1500);
+        textViewResult.startAnimation(animIn);
+        final Animation animOut = new AlphaAnimation(0.0f, 1.0f);
+        animOut.setDuration(1000);
+
         // Delay the execution
         getView().postDelayed(new Runnable() {
             @Override
             public void run() {
                 textViewResult.setText(r);
+                textViewResult.startAnimation(animOut);
             }
         }, 1500);
         this.lastResult = n;

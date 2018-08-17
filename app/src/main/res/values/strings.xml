@@ -19,6 +19,7 @@
     <string name="no_entry_roulette">Please, enter 2 or more options to spin the roulette!</string>
     <string name="too_much_entries_roulette">You can\'t enter more than 10 options!</string>
     <string name="hello_roulette_fragment">Roulette mode - Randomix</string>
+    <string name="generic_option">Option</string>
 
     <string name="description_coin">Flipping a coin is easy, but can help you decide whenever doing something or not.
         Let the coin talk!</string>

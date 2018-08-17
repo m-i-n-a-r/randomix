@@ -13,6 +13,7 @@
     <string name="no_entry_roulette">Per favore, inserisci almeno due opzioni per girare la roulette!</string>
     <string name="too_much_entries_roulette">Non puoi inserire più di 10 opzioni!</string>
     <string name="hello_roulette_fragment">Modalità ruota - Randomix</string>
+    <string name="generic_option">Opzione</string>
     <string name="flip_coin">Lancia la moneta!</string>
     <string name="hint_coin">Premi il bottone sotto!</string>
     <string name="result_head">Testa!</string>

@@ -49,11 +49,13 @@ public class Coin extends Fragment implements OnClickListener {
         switch (v.getId()) {
             case R.id.coinButtonAnimation:
                 // Make the button unclickable
+                @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
                 final ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinButtonAnimation);
                 coinAnimation.setClickable(false);
 
                 // Vibrate
                 Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+                //noinspection ConstantConditions
                 vib.vibrate(50);
 
                 // Reset the initial state with another animation
@@ -83,9 +85,14 @@ public class Coin extends Fragment implements OnClickListener {
     }
 
     public void flipAndRunMainAnimation() {
+        // Check for fragment changes. If the fragment has changed, no further operations are needed
+        if(!isAdded()) return;
         // Get the textview and the imageview used for the result, with a simple control to avoid null object references
+        final String resultHead = getString(R.string.result_head);
+        final String resultTail = getString(R.string.result_tail);
+        @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
         final TextView textViewResult = (TextView) getView().findViewById(R.id.resultCoin);
-        ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinButtonAnimation);
+        final ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinButtonAnimation);
 
         // Create the animations
         final Animation animIn = new AlphaAnimation(1.0f, 0.0f);
@@ -108,7 +115,7 @@ public class Coin extends Fragment implements OnClickListener {
             getView().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    textViewResult.setText(getString(R.string.result_head));
+                    textViewResult.setText(resultHead);
                     textViewResult.startAnimation(animOut);
                 }
             }, 1500);
@@ -123,7 +130,7 @@ public class Coin extends Fragment implements OnClickListener {
             getView().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    textViewResult.setText(getString(R.string.result_tail));
+                    textViewResult.setText(resultTail);
                     textViewResult.startAnimation(animOut);
                 }
             }, 1500);
@@ -132,6 +139,7 @@ public class Coin extends Fragment implements OnClickListener {
     }
 
     public void runResetAnimation() {
+        @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
         ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinButtonAnimation);
         if (this.lastResult) coinAnimation.setImageResource(R.drawable.coin_head_to_start_vector_animation);
         else coinAnimation.setImageResource((R.drawable.coin_tail_to_start_vector_animation));

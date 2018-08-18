@@ -58,6 +58,7 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
     @Override
     public boolean onLongClick(View v) {
        Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+        @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
        LinearLayout optionsList = getView().findViewById(R.id.optionsListHorizontal);
        switch (v.getId()) {
            case R.id.deleteButton:
@@ -66,6 +67,7 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
                Drawable delete = deleteAnimation.getDrawable();
                if (delete instanceof Animatable) ((Animatable) delete).start();
                // Vibrate
+               // noinspection ConstantConditions
                vib.vibrate(60);
 
                // Clear the options
@@ -80,6 +82,7 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
                String option2 = getResources().getString(R.string.generic_option) + "2";
                String option3 = getResources().getString(R.string.generic_option) + "3";
                // Vibrate
+               // noinspection ConstantConditions
                vib.vibrate(60);
 
                // Insert three options manually and spin the roulette, or clear the options
@@ -103,6 +106,7 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
     @Override
     public void onClick(View v) {
         Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+        @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
         LinearLayout optionsList = getView().findViewById(R.id.optionsListHorizontal);
         switch (v.getId()) {
             case R.id.deleteButton:
@@ -111,6 +115,7 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
                 Drawable delete = deleteAnimation.getDrawable();
                 if (delete instanceof Animatable) ((Animatable) delete).start();
                 // Vibrate
+                // noinspection ConstantConditions
                 vib.vibrate(30);
                 if (options.isEmpty()) return;
                 options.remove(options.size() - 1);
@@ -123,6 +128,7 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
                 Drawable insert = insertAnimation.getDrawable();
                 if (insert instanceof Animatable) ((Animatable) insert).start();
                 // Vibrate
+                // noinspection ConstantConditions
                 vib.vibrate(30);
                 // Insert in both the list and the layout
                 InsertRouletteOption();
@@ -143,6 +149,7 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
                 if (spin instanceof Animatable) ((Animatable) spin).start();
 
                 // Vibrate
+                // noinspection ConstantConditions
                 vib.vibrate(30);
                 Random ran = new Random();
                 final int n = ran.nextInt(options.size());
@@ -173,6 +180,7 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
     // Handle the keyboard actions, like enter, done, send and so on.
     @Override
     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+        @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
         LinearLayout optionsList = getView().findViewById(R.id.optionsListHorizontal);
         if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_GO || actionId == EditorInfo.IME_ACTION_SEND) {
             // Start the animated vector drawable
@@ -187,6 +195,7 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
     }
 
     private void InsertRouletteOption() {
+        @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
         LinearLayout optionsList = getView().findViewById(R.id.optionsListHorizontal);
         TextView entry = getView().findViewById(R.id.entryRoulette);
         // Delete the blank spaces between words and before and after them to avoid weird behaviors

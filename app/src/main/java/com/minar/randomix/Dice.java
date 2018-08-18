@@ -49,16 +49,19 @@ public class Dice extends Fragment implements OnClickListener {
         switch (v.getId()) {
             case R.id.diceButtonAnimation:
                 // Make the button unclickable
+                @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
                 final ImageView diceAnimation = (ImageView) getView().findViewById(R.id.diceButtonAnimation);
                 diceAnimation.setClickable(false);
 
                 // Vibrate
                 Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+                //noinspection ConstantConditions
                 vib.vibrate(50);
 
                 // Reset the initial state with another animation
                 if(this.notFirstThrow) {
                     runResetAnimation();
+
                     // Delay the execution
                     getView().postDelayed(new Runnable() {
                         @Override
@@ -89,6 +92,9 @@ public class Dice extends Fragment implements OnClickListener {
         Random ran = new Random();
         int n = ran.nextInt(6) + 1;
 
+        // Check for fragment changes. If the fragment has changed, no further operations are needed
+        if(!isAdded()) return;
+        @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
         final ImageView diceAnimation = (ImageView) getView().findViewById(R.id.diceButtonAnimation);
 
         // Set the drawable programmatically
@@ -102,7 +108,7 @@ public class Dice extends Fragment implements OnClickListener {
 
         // Get the text view and set its value depending on n
         final TextView textViewResult = (TextView) getView().findViewById(R.id.resultDice);
-        final String r = getString(R.string.generic_result) + " " + n;
+        final String result = getString(R.string.generic_result) + " " + n;
 
         // Create the animations
         final Animation animIn = new AlphaAnimation(1.0f, 0.0f);
@@ -115,7 +121,7 @@ public class Dice extends Fragment implements OnClickListener {
         getView().postDelayed(new Runnable() {
             @Override
             public void run() {
-                textViewResult.setText(r);
+                textViewResult.setText(result);
                 textViewResult.startAnimation(animOut);
             }
         }, 1500);
@@ -123,6 +129,7 @@ public class Dice extends Fragment implements OnClickListener {
     }
 
     public void runResetAnimation() {
+        @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
         ImageView diceAnimation = (ImageView) getView().findViewById(R.id.diceButtonAnimation);
         String chosenDrawable = "dice_" + this.lastResult + "_to_start_vector_animation";
         int resId = getResources().getIdentifier(chosenDrawable, "drawable", "com.minar.randomix");

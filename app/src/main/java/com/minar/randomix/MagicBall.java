@@ -49,6 +49,7 @@ public class MagicBall extends Fragment implements OnClickListener {
         switch (v.getId()) {
             case R.id.magicBallButtonAnimation:
                 // Start the animated vector drawable, make the button unclickable during the execution
+                @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
                 final ImageView magicBallAnimation = (ImageView) getView().findViewById(R.id.magicBallButtonAnimation);
                 magicBallAnimation.setClickable(false);
                 Drawable drawable = magicBallAnimation.getDrawable();
@@ -59,6 +60,7 @@ public class MagicBall extends Fragment implements OnClickListener {
                 SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
                 // Vibrate
                 Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+                // noinspection ConstantConditions
                 vib.vibrate(50);
 
                 // Initialize the answers array

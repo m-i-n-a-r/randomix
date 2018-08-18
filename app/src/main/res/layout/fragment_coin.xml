@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -32,7 +31,7 @@
             <TextView
                 android:id="@+id/descriptionCoin"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="@dimen/text_description_height"
                 android:layout_margin="@dimen/linear_vertical_margin"
                 android:gravity="center_horizontal"
                 android:text="@string/description_coin"
@@ -41,7 +40,7 @@
             <TextView
                 android:id="@+id/resultCoin"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="@dimen/text_result_height"
                 android:layout_marginBottom="@dimen/linear_vertical_margin"
                 android:layout_marginTop="@dimen/linear_vertical_margin"
                 android:gravity="center_horizontal"
@@ -52,8 +51,8 @@
             <ImageView
                 android:id="@+id/coinButtonAnimation"
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:layout_marginTop="16dp"
+                android:layout_height="@dimen/image_button_height"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:clickable="true"
                 android:focusable="true"
                 android:contentDescription="@string/flip_coin"

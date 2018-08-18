@@ -205,14 +205,19 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
             options.add(currentOption);
             TextView optionsListEntry = new TextView(getContext());
             optionsListEntry.setText(currentOption);
+
+            // Get the margin and the padding from dimensions. Divide using the factor used in getDimension() to get the same number for every resolution
+            int margin = (int) (getResources().getDimension(R.dimen.margin_roulette_entry) / getResources().getDisplayMetrics().density);
+            int padding = (int) (getResources().getDimension(R.dimen.padding_roulette_entry) / getResources().getDisplayMetrics().density);
+
             // Other properties needed for a clean ui
             optionsListEntry.setBackgroundResource(R.drawable.rounded_corners_textview_bg);
-            optionsListEntry.setPadding(22, 22, 24, 22);
-            optionsListEntry.setTextSize(16);
+            optionsListEntry.setPadding(padding, padding, padding, padding);
+            optionsListEntry.setTextSize(getResources().getDimension(R.dimen.roulette_option_text_size) / getResources().getDisplayMetrics().density);
             // Set margins using the layout params
-            LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            llp.setMargins(10, 0, 10, 0);
-            optionsListEntry.setLayoutParams(llp);
+            LinearLayout.LayoutParams lParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            lParams.setMargins(margin, 0, margin, 0);
+            optionsListEntry.setLayoutParams(lParams);
             // Set an id
             optionsListEntry.setId(options.indexOf(currentOption));
             // Add the element to the linear layout

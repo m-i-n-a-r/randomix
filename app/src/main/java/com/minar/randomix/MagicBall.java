@@ -1,13 +1,12 @@
 package com.minar.randomix;
 
 
+import android.app.Activity;
 import android.app.Fragment;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +14,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -58,10 +56,9 @@ public class MagicBall extends Fragment implements OnClickListener {
                 }
 
                 SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
-                // Vibrate
-                Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
-                // noinspection ConstantConditions
-                vib.vibrate(50);
+                // Vibrate using the common method in MainActivity
+                Activity act = getActivity();
+                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
 
                 // Initialize the answers array
                 magicAnswers[0] = getString(R.string.magic_answer_1);

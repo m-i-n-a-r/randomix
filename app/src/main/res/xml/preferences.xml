@@ -18,6 +18,12 @@
                 android:entries="@array/accents"
                 android:entryValues="@array/accentValues" />
 
+            <SwitchPreference
+                android:key="vibration"
+                android:summary="@string/vibration_description"
+                android:title="@string/vibration_name"
+                android:defaultValue="true"/>
+
         </PreferenceCategory>
 
         <PreferenceCategory

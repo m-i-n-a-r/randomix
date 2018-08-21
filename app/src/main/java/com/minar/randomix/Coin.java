@@ -1,19 +1,17 @@
 package com.minar.randomix;
 
 
-import android.content.Context;
+import android.app.Activity;
+import android.app.Fragment;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.app.Fragment;
-import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -53,10 +51,9 @@ public class Coin extends Fragment implements OnClickListener {
                 final ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinButtonAnimation);
                 coinAnimation.setClickable(false);
 
-                // Vibrate
-                Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
-                //noinspection ConstantConditions
-                vib.vibrate(50);
+                // Vibrate using the common method in MainActivity
+                Activity act = getActivity();
+                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
 
                 // Reset the initial state with another animation
                 if(this.notFirstFlip) {

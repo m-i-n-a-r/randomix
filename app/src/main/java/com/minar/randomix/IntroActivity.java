@@ -2,10 +2,10 @@ package com.minar.randomix;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
-import android.os.Bundle;
 import android.view.WindowManager;
 
 import com.github.paolorotolo.appintro.AppIntro;

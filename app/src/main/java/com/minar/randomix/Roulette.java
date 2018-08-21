@@ -1,11 +1,15 @@
 package com.minar.randomix;
 
-import android.content.Context;
+import android.app.Activity;
+import android.app.Fragment;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.inputmethod.EditorInfo;
@@ -13,11 +17,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -57,18 +56,17 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
     }
     @Override
     public boolean onLongClick(View v) {
-       Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
-        @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
+       @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
        LinearLayout optionsList = getView().findViewById(R.id.optionsListHorizontal);
-       switch (v.getId()) {
+       Activity act = getActivity();
+        switch (v.getId()) {
            case R.id.deleteButton:
                // Start the animated vector drawable
                ImageView deleteAnimation = (ImageView) getView().findViewById(R.id.deleteButton);
                Drawable delete = deleteAnimation.getDrawable();
                if (delete instanceof Animatable) ((Animatable) delete).start();
-               // Vibrate
-               // noinspection ConstantConditions
-               vib.vibrate(60);
+               // Vibrate using the common method in MainActivity
+               if (act instanceof MainActivity) ((MainActivity) act).vibrate();
 
                // Clear the options
                if (options.isEmpty()) return true;
@@ -81,9 +79,8 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
                String option1 = getResources().getString(R.string.generic_option) + "1";
                String option2 = getResources().getString(R.string.generic_option) + "2";
                String option3 = getResources().getString(R.string.generic_option) + "3";
-               // Vibrate
-               // noinspection ConstantConditions
-               vib.vibrate(60);
+               // Vibrate using the common method in MainActivity
+               if (act instanceof MainActivity) ((MainActivity) act).vibrate();
 
                // Insert three options manually and spin the roulette, or clear the options
                if(options.isEmpty()) {
@@ -105,18 +102,17 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
     }
     @Override
     public void onClick(View v) {
-        Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+        Activity act = getActivity();
         @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
+        final ImageView deleteAnimation = (ImageView) getView().findViewById(R.id.deleteButton);
         LinearLayout optionsList = getView().findViewById(R.id.optionsListHorizontal);
         switch (v.getId()) {
             case R.id.deleteButton:
                 // Start the animated vector drawable
-                ImageView deleteAnimation = (ImageView) getView().findViewById(R.id.deleteButton);
                 Drawable delete = deleteAnimation.getDrawable();
                 if (delete instanceof Animatable) ((Animatable) delete).start();
-                // Vibrate
-                // noinspection ConstantConditions
-                vib.vibrate(30);
+                // Vibrate using the common method in MainActivity
+                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
                 if (options.isEmpty()) return;
                 options.remove(options.size() - 1);
                 optionsList.removeView(getView().findViewById(options.size()));
@@ -127,9 +123,8 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
                 ImageView insertAnimation = (ImageView) getView().findViewById(R.id.insertButton);
                 Drawable insert = insertAnimation.getDrawable();
                 if (insert instanceof Animatable) ((Animatable) insert).start();
-                // Vibrate
-                // noinspection ConstantConditions
-                vib.vibrate(30);
+                // Vibrate using the common method in MainActivity
+                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
                 // Insert in both the list and the layout
                 InsertRouletteOption();
                 break;
@@ -142,15 +137,16 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
                 }
                 // Start the animated vector drawable, make the button unclickable during the execution
                 final ImageView spinAnimation = (ImageView) getView().findViewById(R.id.buttonSpinRoulette);
+                deleteAnimation.setClickable(false);
+                deleteAnimation.setLongClickable(false);
                 spinAnimation.setClickable(false);
                 spinAnimation.setLongClickable(false);
 
                 Drawable spin = spinAnimation.getDrawable();
                 if (spin instanceof Animatable) ((Animatable) spin).start();
 
-                // Vibrate
-                // noinspection ConstantConditions
-                vib.vibrate(30);
+                // Vibrate using the common method in MainActivity
+                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
                 Random ran = new Random();
                 final int n = ran.nextInt(options.size());
 
@@ -171,6 +167,8 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
                         textViewResult.startAnimation(animOut);
                         spinAnimation.setClickable(true);
                         spinAnimation.setLongClickable(true);
+                        deleteAnimation.setClickable(true);
+                        deleteAnimation.setLongClickable(true);
                     }
                 }, 1500);
                 break;

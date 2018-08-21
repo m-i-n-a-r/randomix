@@ -51,6 +51,8 @@
     <string name="customization">Personalizzazione</string>
     <string name="dark_theme_description">Attiva il tema scuro, l\'applicazione si riavvierà.</string>
     <string name="dark_theme_name">Tema scuro</string>
+    <string name="vibration_name">Vibrazione</string>
+    <string name="vibration_description">Vibrazione quando si preme un tasto.</string>
     <string name="accent_description">Cambia il colore dei particolari.</string>
     <string name="accent_name">Colore accent</string>
     <string name="blue">Blu</string>

@@ -24,7 +24,7 @@ import java.util.Random;
  * A simple {@link Fragment} subclass.
  */
 public class MagicBall extends Fragment implements OnClickListener {
-    String[] magicAnswers = new String[15];
+    String[] magicAnswers = new String[22];
 
 
     public MagicBall() {
@@ -71,18 +71,25 @@ public class MagicBall extends Fragment implements OnClickListener {
                 magicAnswers[7] = getString(R.string.magic_answer_8);
                 magicAnswers[8] = getString(R.string.magic_answer_9);
                 magicAnswers[9] = getString(R.string.magic_answer_10);
-                // Rude answers
                 magicAnswers[10] = getString(R.string.magic_answer_11);
                 magicAnswers[11] = getString(R.string.magic_answer_12);
                 magicAnswers[12] = getString(R.string.magic_answer_13);
                 magicAnswers[13] = getString(R.string.magic_answer_14);
+                // Rude answers
                 magicAnswers[14] = getString(R.string.magic_answer_15);
+                magicAnswers[15] = getString(R.string.magic_answer_16);
+                magicAnswers[16] = getString(R.string.magic_answer_17);
+                magicAnswers[17] = getString(R.string.magic_answer_18);
+                magicAnswers[18] = getString(R.string.magic_answer_19);
+                magicAnswers[19] = getString(R.string.magic_answer_20);
+                magicAnswers[20] = getString(R.string.magic_answer_21);
+                magicAnswers[21] = getString(R.string.magic_answer_22);
 
                 // Choose a random number between 0 and 10 that will correspond to the answer
                 Random ran = new Random();
                 final int n;
-                if(sp.getBoolean("rude_answers",true)) n = ran.nextInt(15);
-                else n = ran.nextInt(10);
+                if(sp.getBoolean("rude_answers",true)) n = ran.nextInt(22);
+                else n = ran.nextInt(15);
 
                 // Get the text view and set its value depending on n
                 final TextView textViewResult = (TextView) getView().findViewById(R.id.resultMagicBall);

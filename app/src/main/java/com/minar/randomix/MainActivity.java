@@ -83,12 +83,14 @@ public class MainActivity extends AppCompatActivity {
             if (accent.equals("orange")) setTheme(R.style.AppTheme_dark_orange);
             if (accent.equals("teal")) setTheme(R.style.AppTheme_dark_teal);
             if (accent.equals("violet")) setTheme(R.style.AppTheme_dark_violet);
+            if (accent.equals("pink")) setTheme(R.style.AppTheme_dark_pink);
         }
         else {
             if (accent.equals("green")) setTheme(R.style.AppTheme_green);
             if (accent.equals("orange")) setTheme(R.style.AppTheme_orange);
             if (accent.equals("teal")) setTheme(R.style.AppTheme_teal);
             if (accent.equals("violet")) setTheme(R.style.AppTheme_violet);
+            if (accent.equals("pink")) setTheme(R.style.AppTheme_pink);
         }
 
         super.onCreate(savedInstanceState);

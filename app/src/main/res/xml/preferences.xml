@@ -24,6 +24,12 @@
                 android:title="@string/vibration_name"
                 android:defaultValue="true"/>
 
+            <SwitchPreference
+                android:key="sound"
+                android:summary="@string/sound_description"
+                android:title="@string/sound_name"
+                android:defaultValue="false"/>
+
         </PreferenceCategory>
 
         <PreferenceCategory
@@ -36,7 +42,6 @@
                 android:title="@string/rude_answers_name"
                 android:defaultValue="false"/>
 
-            <!-- TODO is this option really needed? -->
             <!--<ListPreference
                 android:key="dice_number"
                 android:summary="@string/dice_number_description"
@@ -45,6 +50,6 @@
                 android:entries="@array/diceNumber"
                 android:entryValues="@array/diceNumberValues" />-->
 
-        </PreferenceCategory>-->
+        </PreferenceCategory>
 
 </PreferenceScreen>

@@ -9,6 +9,7 @@
         <item>@string/violet</item>
         <item>@string/pink</item>
     </string-array>
+
     <string-array name="accentValues">
         <item>blue</item>
         <item>green</item>
@@ -17,5 +18,17 @@
         <item>violet</item>
         <item>pink</item>
     </string-array>
+
+    <string-array name="diceNumber">
+        <item>@string/one</item>
+        <item>@string/two</item>
+        <!--<item>@string/three</item>-->
+    </string-array>
+
+    <integer-array name="diceNumberValues">
+        <item>1</item>
+        <item>2</item>
+        <!--<item>3</item>-->
+    </integer-array>
 
 </resources>

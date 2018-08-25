@@ -4,6 +4,7 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
@@ -114,5 +115,24 @@ public class MainActivity extends AppCompatActivity {
             // Vibrate if the vibration in options is set to on
             // noinspection ConstantConditions
             vib.vibrate(30);
+    }
+
+    public void playSound(int fragmentNumber) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        if(!sp.getBoolean("sound",false)) return;
+        // Assign the sound depending on the fragment number
+        MediaPlayer mp = null;
+        if (fragmentNumber == 1) mp = MediaPlayer.create(this, R.raw.roulette_sound);
+        if (fragmentNumber == 2) mp = MediaPlayer.create(this, R.raw.coin_sound);
+        if (fragmentNumber == 3) mp = MediaPlayer.create(this, R.raw.magicball_sound);
+        if (fragmentNumber == 4) mp = MediaPlayer.create(this, R.raw.dice_sound);
+        // Play sound if the sound in options is set to on
+        // noinspection ConstantConditions
+        mp.start();
+        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            public void onCompletion(MediaPlayer mp) {
+                mp.release();
+            }
+        });
     }
 }

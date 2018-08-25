@@ -51,9 +51,12 @@ public class Coin extends Fragment implements OnClickListener {
                 final ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinButtonAnimation);
                 coinAnimation.setClickable(false);
 
-                // Vibrate using the common method in MainActivity
+                // Vibrate and play sound using the common method in MainActivity
                 Activity act = getActivity();
-                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
+                if (act instanceof MainActivity) {
+                    ((MainActivity) act).vibrate();
+                    ((MainActivity) act).playSound(2);
+                }
 
                 // Reset the initial state with another animation
                 if(this.notFirstFlip) {

@@ -111,8 +111,11 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
                 // Start the animated vector drawable
                 Drawable delete = deleteAnimation.getDrawable();
                 if (delete instanceof Animatable) ((Animatable) delete).start();
-                // Vibrate using the common method in MainActivity
-                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
+                // Vibrate and play sound using the common method in MainActivity
+                if (act instanceof MainActivity) {
+                    ((MainActivity) act).vibrate();
+                    ((MainActivity) act).playSound(1);
+                }
                 if (options.isEmpty()) return;
                 options.remove(options.size() - 1);
                 optionsList.removeView(getView().findViewById(options.size()));
@@ -123,8 +126,11 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
                 ImageView insertAnimation = (ImageView) getView().findViewById(R.id.insertButton);
                 Drawable insert = insertAnimation.getDrawable();
                 if (insert instanceof Animatable) ((Animatable) insert).start();
-                // Vibrate using the common method in MainActivity
-                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
+                // Vibrate and play sound using the common method in MainActivity
+                if (act instanceof MainActivity) {
+                    ((MainActivity) act).vibrate();
+                    ((MainActivity) act).playSound(1);
+                }
                 // Insert in both the list and the layout
                 InsertRouletteOption();
                 break;
@@ -145,8 +151,11 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
                 Drawable spin = spinAnimation.getDrawable();
                 if (spin instanceof Animatable) ((Animatable) spin).start();
 
-                // Vibrate using the common method in MainActivity
-                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
+                // Vibrate and play sound using the common method in MainActivity
+                if (act instanceof MainActivity) {
+                    ((MainActivity) act).vibrate();
+                    ((MainActivity) act).playSound(1);
+                }
                 Random ran = new Random();
                 final int n = ran.nextInt(options.size());
 

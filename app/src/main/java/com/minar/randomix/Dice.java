@@ -50,9 +50,12 @@ public class Dice extends Fragment implements OnClickListener {
                 @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
                 final ImageView diceAnimation = (ImageView) getView().findViewById(R.id.diceButtonAnimation);
                 diceAnimation.setClickable(false);
-                // Vibrate using the common method in MainActivity
+                // Vibrate and play sound using the common method in MainActivity
                 Activity act = getActivity();
-                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
+                if (act instanceof MainActivity) {
+                    ((MainActivity) act).vibrate();
+                    ((MainActivity) act).playSound(4);
+                }
 
                 // Reset the initial state with another animation
                 if(this.notFirstThrow) {

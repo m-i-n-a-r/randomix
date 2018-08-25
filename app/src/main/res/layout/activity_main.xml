@@ -10,7 +10,7 @@
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="0dp"
-        android:layout_height="52dp"
+        android:layout_height="@dimen/bottom_navbar_height"
         android:background="?android:attr/windowBackground"
         app:itemIconTint="@drawable/bottom_navbar_item"
         app:itemTextColor="@drawable/bottom_navbar_item"

@@ -31,12 +31,14 @@
             <ImageView
                 android:id="@+id/imageMinar"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:paddingBottom="6dp"
-                android:paddingTop="12dp"
-                android:paddingRight="12dp"
-                android:paddingLeft="12dp"
+                android:layout_height="@dimen/minar_banner_height"
+                android:paddingBottom="@dimen/minar_banner_padding"
+                android:paddingTop="@dimen/minar_banner_padding"
+                android:paddingRight="@dimen/minar_banner_padding"
+                android:paddingLeft="@dimen/minar_banner_padding"
                 android:tint="?colorAccent"
+                android:clickable="true"
+                android:focusable="true"
                 app:srcCompat="@drawable/banner_minar"
                 android:contentDescription="@string/dev_name"
                 android:layout_weight="0.21" />
@@ -47,19 +49,15 @@
                 android:layout_height="wrap_content"
                 android:text="@string/dev_description"
                 android:layout_weight="0.21"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
+                android:paddingLeft="@dimen/minar_description_padding"
+                android:paddingRight="@dimen/minar_description_padding"
                 android:textAlignment="center" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="16dp"
-                android:layout_weight="0.21" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp">
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="@dimen/activity_vertical_margin">
                 <ImageView
                     android:id="@+id/minargp"
                     android:layout_width="wrap_content"
@@ -111,9 +109,8 @@
             android:id="@android:id/list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="200dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_marginTop="@dimen/settings_list_margin_top"
+            android:layout_marginBottom="@dimen/bottom_navbar_height"/>
 
     </RelativeLayout>
 

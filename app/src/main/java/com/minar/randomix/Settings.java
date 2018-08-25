@@ -1,28 +1,28 @@
 package com.minar.randomix;
 
 
+import android.app.Activity;
 import android.app.Fragment;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class Settings extends PreferenceFragment implements OnSharedPreferenceChangeListener, OnClickListener {
-
+    // Easter egg stuff, why not
+    int easterEgg = 0;
 
     public Settings() {
         // Required empty public constructor
@@ -37,10 +37,12 @@ public class Settings extends PreferenceFragment implements OnSharedPreferenceCh
         addPreferencesFromResource(R.xml.preferences);
 
         // Make the icons clickable
-        ImageView l1 = (ImageView) v.findViewById(R.id.minargp);
-        ImageView l2 = (ImageView) v.findViewById(R.id.minarps);
-        ImageView l3 = (ImageView) v.findViewById(R.id.minargit);
-        ImageView l4 = (ImageView) v.findViewById(R.id.minarxda);
+        ImageView logo = v.findViewById(R.id.imageMinar);
+        ImageView l1 = v.findViewById(R.id.minargp);
+        ImageView l2 = v.findViewById(R.id.minarps);
+        ImageView l3 = v.findViewById(R.id.minargit);
+        ImageView l4 = v.findViewById(R.id.minarxda);
+        logo.setOnClickListener(this);
         l1.setOnClickListener(this);
         l2.setOnClickListener(this);
         l3.setOnClickListener(this);
@@ -66,36 +68,44 @@ public class Settings extends PreferenceFragment implements OnSharedPreferenceCh
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
         if (key.equals("dark_theme")) restartActivity();
         if (key.equals("accent_color")) restartActivity();
-    };
+    }
 
     @Override
     public void onClick(View v) {
-        Vibrator vib = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+        // Vibrate and play sound using the common method in MainActivity
+        Activity act = getActivity();
         Uri uri;
         switch (v.getId()) {
+            case R.id.imageMinar:
+                if (this.easterEgg == 3) {
+                    Toast.makeText(getContext(), getString(R.string.easter_egg), Toast.LENGTH_SHORT).show();
+                    this.easterEgg = 0;
+                    break;
+                }
+                else this.easterEgg++;
+                break;
             case R.id.minargp:
-                vib.vibrate(30);
+                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
                 uri = Uri.parse(getString(R.string.dev_gplus));
                 Intent intent1 = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent1);
                 break;
             case R.id.minarps:
-                vib.vibrate(30);
+                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
                 uri = Uri.parse(getString(R.string.dev_other_apps));
                 Intent intent2 = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent2);
                 break;
             case R.id.minargit:
-                vib.vibrate(30);
+                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
                 uri = Uri.parse(getString(R.string.dev_github));
                 Intent intent3 = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent3);
                 break;
             case R.id.minarxda:
-                vib.vibrate(30);
+                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
                 uri = Uri.parse(getString(R.string.dev_xda));
                 Intent intent4 = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent4);

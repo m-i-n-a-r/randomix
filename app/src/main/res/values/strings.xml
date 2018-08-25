@@ -72,12 +72,20 @@
     <string name="dev_xda" translatable="false">https://forum.xda-developers.com/member.php?u=5222216</string>
     <string name="dev_github" translatable="false">https://github.com/m-i-n-a-r</string>
     <string name="dev_other_apps" translatable="false">https://play.google.com/store/apps/dev?id=7720251761301594831</string>
+    <string name="easter_egg">Nice logo, huh? ;D</string>
 
     <string name="customization">Customization</string>
     <string name="dark_theme_description">Activate the dark theme, the app will restart.</string>
     <string name="dark_theme_name">Dark theme</string>
     <string name="vibration_name">Vibration</string>
     <string name="vibration_description">Vibration when a button is pressed.</string>
+    <string name="sound_name">Sounds</string>
+    <string name="sound_description">Play a sound when a button is pressed.</string>
+    <string name="dice_number_name">Dices number</string>
+    <string name="dice_number_description">Change the number of dices thrown.</string>
+    <string name="one">One</string>
+    <string name="two">Two</string>
+    <string name="three">Three</string>
     <string name="accent_description">Change the default accent color.</string>
     <string name="accent_name">Accent color</string>
     <string name="blue">Blue</string>

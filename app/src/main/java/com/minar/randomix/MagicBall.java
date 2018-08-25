@@ -56,9 +56,12 @@ public class MagicBall extends Fragment implements OnClickListener {
                 }
 
                 SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
-                // Vibrate using the common method in MainActivity
+                // Vibrate and play sound using the common method in MainActivity
                 Activity act = getActivity();
-                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
+                if (act instanceof MainActivity) {
+                    ((MainActivity) act).vibrate();
+                    ((MainActivity) act).playSound(3);
+                }
 
                 // Initialize the answers array
                 magicAnswers[0] = getString(R.string.magic_answer_1);

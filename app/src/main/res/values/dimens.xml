@@ -21,4 +21,11 @@
     <dimen name="horizontal_scroll_height">52dp</dimen>
     <dimen name="roulette_insertion_height">48dp</dimen>
 
+    <!-- Unchanged dimensions -->
+    <dimen name="minar_banner_height">56dp</dimen>
+    <dimen name="minar_banner_padding">12dp</dimen>
+    <dimen name="minar_description_padding">16dp</dimen>
+    <dimen name="settings_list_margin_top">200dp</dimen>
+    <dimen name="bottom_navbar_height">52dp</dimen>
+
 </resources>

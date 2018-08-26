@@ -28,7 +28,7 @@
                 android:key="sound"
                 android:summary="@string/sound_description"
                 android:title="@string/sound_name"
-                android:defaultValue="false"/>
+                android:defaultValue="true"/>
 
         </PreferenceCategory>
 
@@ -42,13 +42,13 @@
                 android:title="@string/rude_answers_name"
                 android:defaultValue="false"/>
 
-            <!--<ListPreference
+            <ListPreference
                 android:key="dice_number"
                 android:summary="@string/dice_number_description"
                 android:title="@string/dice_number_name"
                 android:defaultValue="1"
                 android:entries="@array/diceNumber"
-                android:entryValues="@array/diceNumberValues" />-->
+                android:entryValues="@array/diceNumberValues"/>
 
         </PreferenceCategory>
 

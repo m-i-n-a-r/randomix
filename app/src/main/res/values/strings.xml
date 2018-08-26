@@ -86,6 +86,7 @@
     <string name="one">One</string>
     <string name="two">Two</string>
     <string name="three">Three</string>
+    <string name="four">Four</string>
     <string name="accent_description">Change the default accent color.</string>
     <string name="accent_name">Accent color</string>
     <string name="blue">Blue</string>

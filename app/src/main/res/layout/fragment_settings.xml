@@ -8,13 +8,14 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <LinearLayout
-            android:orientation="vertical"
+            android:id="@+id/devStuff"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/titleSettings"
@@ -32,85 +33,89 @@
                 android:id="@+id/imageMinar"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/minar_banner_height"
-                android:paddingBottom="@dimen/minar_banner_padding"
-                android:paddingTop="@dimen/minar_banner_padding"
-                android:paddingRight="@dimen/minar_banner_padding"
-                android:paddingLeft="@dimen/minar_banner_padding"
-                android:tint="?colorAccent"
+                android:layout_weight="0.21"
                 android:clickable="true"
-                android:focusable="true"
-                app:srcCompat="@drawable/banner_minar"
                 android:contentDescription="@string/dev_name"
-                android:layout_weight="0.21" />
+                android:focusable="true"
+                android:paddingBottom="@dimen/minar_banner_padding"
+                android:paddingLeft="@dimen/minar_banner_padding"
+                android:paddingRight="@dimen/minar_banner_padding"
+                android:paddingTop="@dimen/minar_banner_padding"
+                android:tint="?colorAccent"
+                app:srcCompat="@drawable/banner_minar" />
 
             <TextView
                 android:id="@+id/descriptionMinar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/dev_description"
                 android:layout_weight="0.21"
                 android:paddingLeft="@dimen/minar_description_padding"
                 android:paddingRight="@dimen/minar_description_padding"
+                android:text="@string/dev_description"
                 android:textAlignment="center" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_marginBottom="@dimen/activity_vertical_margin">
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin">
+
                 <ImageView
                     android:id="@+id/minargp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_google_plus_black_24dp"
-                    android:tint="?colorAccent"
-                    android:clickable="true"
-                    android:focusable="true"
                     android:layout_weight="1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
                     android:contentDescription="@string/dev_gplus"
-                    android:background="?attr/selectableItemBackgroundBorderless" />
+                    android:focusable="true"
+                    android:src="@drawable/ic_google_plus_black_24dp"
+                    android:tint="?colorAccent" />
+
                 <ImageView
                     android:id="@+id/minarps"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_play_store_black_24dp"
-                    android:tint="?colorAccent"
-                    android:clickable="true"
-                    android:focusable="true"
                     android:layout_weight="1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
                     android:contentDescription="@string/dev_other_apps"
-                    android:background="?attr/selectableItemBackgroundBorderless" />
+                    android:focusable="true"
+                    android:src="@drawable/ic_play_store_black_24dp"
+                    android:tint="?colorAccent" />
+
                 <ImageView
                     android:id="@+id/minargit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_github_black_24dp"
-                    android:tint="?colorAccent"
-                    android:clickable="true"
-                    android:focusable="true"
                     android:layout_weight="1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
                     android:contentDescription="@string/dev_github"
-                    android:background="?attr/selectableItemBackgroundBorderless" />
+                    android:focusable="true"
+                    android:src="@drawable/ic_github_black_24dp"
+                    android:tint="?colorAccent" />
+
                 <ImageView
                     android:id="@+id/minarxda"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_xda_black_24dp"
-                    android:tint="?colorAccent"
-                    android:clickable="true"
-                    android:focusable="true"
                     android:layout_weight="1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
                     android:contentDescription="@string/dev_xda"
-                    android:background="?attr/selectableItemBackgroundBorderless" />
+                    android:focusable="true"
+                    android:src="@drawable/ic_xda_black_24dp"
+                    android:tint="?colorAccent" />
             </LinearLayout>
         </LinearLayout>
 
         <ListView
             android:id="@android:id/list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/settings_list_margin_top"
-            android:layout_marginBottom="@dimen/bottom_navbar_height"/>
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/bottom_navbar_height"
+            android:layout_below="@id/devStuff" />
 
     </RelativeLayout>
 

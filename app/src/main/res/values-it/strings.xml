@@ -68,6 +68,7 @@
     <string name="one">Uno</string>
     <string name="two">Due</string>
     <string name="three">Tre</string>
+    <string name="four">Quattro</string>
     <string name="accent_description">Cambia il colore dei particolari.</string>
     <string name="accent_name">Colore accent</string>
     <string name="blue">Blu</string>

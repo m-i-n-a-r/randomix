@@ -45,7 +45,7 @@
                 android:layout_marginBottom="@dimen/linear_vertical_margin"
                 android:gravity="center_horizontal"
                 android:text="@string/result_placeholder"
-                android:textSize="@dimen/result_text_size"
+                android:textSize="@dimen/magic_ball_result_text_size"
                 android:textStyle="bold"/>
 
             <ImageView
@@ -55,7 +55,7 @@
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:clickable="true"
                 android:focusable="true"
-                android:contentDescription="@string/spin_roulette"
+                android:contentDescription="@string/hint_magic_ball"
                 android:src="@drawable/magic_ball_vector_animation"
                 android:background="?attr/selectableItemBackgroundBorderless" />
 

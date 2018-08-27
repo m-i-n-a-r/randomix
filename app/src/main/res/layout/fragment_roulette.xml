@@ -26,7 +26,8 @@
                 android:text="@string/hello_roulette_fragment"
                 android:textAllCaps="true"
                 android:textSize="@dimen/title_text_size"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:maxLines="1" />
 
             <TextView
                 android:id="@+id/descriptionRoulette"
@@ -86,7 +87,8 @@
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/horizontal_scroll_height"
-                android:layout_marginTop="@dimen/linear_vertical_margin">
+                android:layout_marginTop="@dimen/linear_vertical_margin"
+                android:scrollbars="none">
 
                 <LinearLayout
                     android:id="@+id/optionsListHorizontal"
@@ -117,7 +119,7 @@
                 android:layout_marginBottom="@dimen/linear_vertical_margin"
                 android:gravity="center_horizontal"
                 android:text="@string/result_placeholder"
-                android:textSize="@dimen/generic_result_text_size"
+                android:textSize="@dimen/long_result_text_size"
                 android:textStyle="bold" />
 
         </LinearLayout>

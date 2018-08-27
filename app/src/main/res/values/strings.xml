@@ -58,8 +58,8 @@
 
     <string name="hello_magic_ball_fragment">Magic Ball - Randomix</string>
 
-    <string name="description_dice">A dice could be useful, in table games for example! The app will throw one for you.
-        Good luck!</string>
+    <string name="description_dice">A dice could be useful, in a table game for example! The app will throw one to three dices
+        for you. Select the number from settings. Good luck!</string>
     <string name="throw_dice">Throw the dice!</string>
     <string name="hint_dice">Press the button below!</string>
     <string name="hello_dice_fragment">Dice mode - Randomix</string>
@@ -86,7 +86,6 @@
     <string name="one">One</string>
     <string name="two">Two</string>
     <string name="three">Three</string>
-    <string name="four">Four</string>
     <string name="accent_description">Change the default accent color.</string>
     <string name="accent_name">Accent color</string>
     <string name="blue">Blue</string>

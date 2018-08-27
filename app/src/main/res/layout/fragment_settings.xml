@@ -27,7 +27,8 @@
                 android:text="@string/hello_settings_fragment"
                 android:textAllCaps="true"
                 android:textSize="@dimen/title_text_size"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:maxLines="1" />
 
             <ImageView
                 android:id="@+id/imageMinar"

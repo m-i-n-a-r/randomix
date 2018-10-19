@@ -1,5 +1,5 @@
 # Randomix
-[![License: MIT](https://img.shields.io/cocoapods/l/AFNetworking.svg)](https://github.com/m-i-n-a-r/randomix/LICENSE.md)\
+[![License: MIT](https://img.shields.io/cocoapods/l/AFNetworking.svg)](https://github.com/m-i-n-a-r/randomix/blob/master/LICENSE.md)\
 An open source app to choose randomly between numbers, answers, options and so on.
 
 ## Introduction

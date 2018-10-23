@@ -1,0 +1,98 @@
+<resources>
+    <string name="app_name" translatable="false">Randomix</string>
+    <string name="intro_typeface" translatable="false">roboto</string>
+    <string name="app_intro_description">Приложение с открытым исходным кодом для случайного выбора между номерами, ответами, вариантами и т. д. Пусть говорит случайность!</string>
+    <string name="result_placeholder" translatable="false"> - - - </string>
+    <string name="title_roulette">Рулетка</string>
+    <string name="title_coin">Монетка</string>
+    <string name="title_dice">Кость</string>
+    <string name="title_magic_ball">Волшебный шар</string>
+    <string name="title_settings">Настройки</string>
+    <string name="generic_result">Результат:</string>
+
+    <string name="description_roulette">Тебе нужно что то выбрать? Ты устал от опросов и настоящих друзей? Рулетка решит за тебя! Нажмите и удерживайте рулетку, чтобы добавить общие параметры или очистить их.</string>
+    <string name="spin_roulette">Крутим рулетку!</string>
+    <string name="insert_roulette_hint">Введите вариант..</string>
+    <string name="delete_roulette_hint">Удалить последнюю введенную опцию.</string>
+    <string name="insert_roulette_description">Ниже перечислены возможные варианты добавления в рулетку.</string>
+    <string name="no_entry_roulette">Пожалуйста, введите 2 и более вариантов, чтобы крутить релетку.</string>
+    <string name="too_much_entries_roulette">Вы не можете ввести более 10 вариантов</string>
+    <string name="hello_roulette_fragment">Рулетка - Randomix</string>
+    <string name="generic_option">Вариант..</string>
+
+    <string name="description_coin">Подбросить монетку легко, но она может помочь вам решить, когда что-то делать или нет. Только герб или решка. Пусть говорит монета!</string>
+    <string name="flip_coin">Подбросить монетку!</string>
+    <string name="hint_coin">Нажмите кнопку ниже!</string>
+    <string name="result_head">Герб!</string>
+    <string name="result_tail">Решка!</string>
+    <string name="hello_coin_fragment">Монетка - Randomix</string>
+
+    <string name="description_magic_ball">Волшеный шар скажет тебе ответ! Просто спроси что-нибудь, и
+        он поможет тебе получить простой и доступный ответ! Ты можешь активировать грубые ответы в настройках!</string>
+    <string name="shake_ball">Тряхни его!</string>
+    <string name="hint_magic_ball">Нажмите кнопку ниже!</string>
+    <string name="magic_answer_1">Нет.</string>
+    <string name="magic_answer_2">Да!</string>
+    <string name="magic_answer_3">Я так не думаю.</string>
+    <string name="magic_answer_4">Может быть!</string>
+    <string name="magic_answer_5">Это не имеет смысла.</string>
+    <string name="magic_answer_6">Вероятно..</string>
+    <string name="magic_answer_7">Ты серьёзно?</string>
+    <string name="magic_answer_8">Вероятно, да.</string>
+    <string name="magic_answer_9">Вероятно, нет.</string>
+    <string name="magic_answer_10">Конечно.</string>
+    <string name="magic_answer_11">Спроси себя.</string>
+    <string name="magic_answer_12">Нет, абсурд.</string>
+    <string name="magic_answer_13">Ещё как!</string>
+    <string name="magic_answer_14">Подумай над этим.</string>
+    <string name="magic_answer_15">Кто знает.</string>
+    <string name="magic_answer_16">Ты шутишь?</string>
+    <string name="magic_answer_17">Нет, идиот.</string>
+    <string name="magic_answer_18">Конечно, чёрт возьми.</string>
+    <string name="magic_answer_19">Ты дурак?</string>
+    <string name="magic_answer_20">Как глупо.</string>
+    <string name="magic_answer_21">Ты сумасшедший.</string>
+    <string name="magic_answer_22">Иди к чёрту.</string>
+
+    <string name="hello_magic_ball_fragment">Волшебный шар - Randomix</string>
+
+    <string name="description_dice">Кости могут быть полезны, например в настольной игре! Приложение бросает от одной до трёх костей для тебя. Выбери количество в настройках. Удачи!</string>
+    <string name="throw_dice">Бросай кость!</string>
+    <string name="hint_dice">Нажмите кнопку ниже!</string>
+    <string name="hello_dice_fragment">Кости - Randomix</string>
+
+    <string name="hello_settings_fragment">Настройки - Randomix</string>
+
+    <string name="dev_name">m.i.n.a.r.</string>
+    <string name="dev_description">Я студент, и я разрабатываю приложения в свободное время. Мои работы - это в основном темы и приложения для персонализации.</string>
+    <string name="dev_gplus" translatable="false">https://plus.google.com/u/0/+RecenzTastic</string>
+    <string name="dev_xda" translatable="false">https://forum.xda-developers.com/member.php?u=5222216</string>
+    <string name="dev_github" translatable="false">https://github.com/m-i-n-a-r</string>
+    <string name="dev_other_apps" translatable="false">https://play.google.com/store/apps/dev?id=7720251761301594831</string>
+    <string name="easter_egg">Классное лого, правда? ;D</string>
+
+    <string name="customization">Кастомизация</string>
+    <string name="dark_theme_description">Активировать тёмную тему, приложение будет перезапущено.</string>
+    <string name="dark_theme_name">Тёмная тема</string>
+    <string name="vibration_name">Вибрация</string>
+    <string name="vibration_description">Вибрировать при нажатой кнопке</string>
+    <string name="sound_name">Звуки</string>
+    <string name="sound_description">Играть музыку при нажатой кнопке.</string>
+    <string name="dice_number_name">Число костей</string>
+    <string name="dice_number_description">Изменить число бросков кости.</string>
+    <string name="one">Одна</string>
+    <string name="two">Два</string>
+    <string name="three">Три</string>
+    <string name="accent_description">Изменить цвет по умолчанию</string>
+    <string name="accent_name">Цвет</string>
+    <string name="blue">Синий</string>
+    <string name="green">Зелёный</string>
+    <string name="orange">Оранжевый</string>
+    <string name="teal">Нефритовый</string>
+    <string name="violet">Фиолетовый</string>
+    <string name="pink">Розовый</string>
+    <string name="app_behavior">Режим приложения</string>
+    <string name="rude_answers_description">Активировать грубые ответы для волшебного шарика.</string>
+    <string name="rude_answers_name">Грубые ответы</string>
+
+</resources>

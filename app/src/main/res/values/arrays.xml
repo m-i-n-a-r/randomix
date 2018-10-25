@@ -8,6 +8,7 @@
         <item>@string/teal</item>
         <item>@string/violet</item>
         <item>@string/pink</item>
+        <item>@string/lightBlue</item>
     </string-array>
 
     <string-array name="accentValues">
@@ -17,6 +18,7 @@
         <item>teal</item>
         <item>violet</item>
         <item>pink</item>
+        <item>lightBlue</item>
     </string-array>
 
     <string-array name="diceNumber">

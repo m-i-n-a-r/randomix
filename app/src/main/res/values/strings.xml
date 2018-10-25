@@ -94,6 +94,7 @@
     <string name="teal">Teal</string>
     <string name="violet">Violet</string>
     <string name="pink">Pink</string>
+    <string name="lightBlue">Light Blue</string>
     <string name="app_behavior">App behavior</string>
     <string name="rude_answers_description">Activate the rude answers for the magic ball.</string>
     <string name="rude_answers_name">Rude answers</string>

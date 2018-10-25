@@ -76,6 +76,7 @@
     <string name="teal">Acqua</string>
     <string name="violet">Viola</string>
     <string name="pink">Rosa</string>
+    <string name="lightBlue">Azzurro</string>
     <string name="app_behavior">Comportamento dell\'app</string>
     <string name="rude_answers_description">Attiva le risposte sgarbate per la palla magica.</string>
     <string name="rude_answers_name">Risposte sgarbate</string>

@@ -38,7 +38,7 @@ public class Settings extends PreferenceFragment implements OnSharedPreferenceCh
 
         // Make the icons clickable
         ImageView logo = v.findViewById(R.id.imageMinar);
-        ImageView l1 = v.findViewById(R.id.minargp);
+        ImageView l1 = v.findViewById(R.id.minarig);
         ImageView l2 = v.findViewById(R.id.minarps);
         ImageView l3 = v.findViewById(R.id.minargit);
         ImageView l4 = v.findViewById(R.id.minarxda);
@@ -86,9 +86,9 @@ public class Settings extends PreferenceFragment implements OnSharedPreferenceCh
                 }
                 else this.easterEgg++;
                 break;
-            case R.id.minargp:
+            case R.id.minarig:
                 if (act instanceof MainActivity) ((MainActivity) act).vibrate();
-                uri = Uri.parse(getString(R.string.dev_gplus));
+                uri = Uri.parse(getString(R.string.dev_instagram));
                 Intent intent1 = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent1);
                 break;

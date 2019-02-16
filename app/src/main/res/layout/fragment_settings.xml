@@ -62,15 +62,15 @@
                 android:layout_marginTop="@dimen/activity_vertical_margin">
 
                 <ImageView
-                    android:id="@+id/minargp"
+                    android:id="@+id/minarig"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
-                    android:contentDescription="@string/dev_gplus"
+                    android:contentDescription="@string/dev_instagram"
                     android:focusable="true"
-                    android:src="@drawable/ic_google_plus_black_24dp"
+                    android:src="@drawable/ic_instagram_black_24dp"
                     android:tint="?colorAccent" />
 
                 <ImageView

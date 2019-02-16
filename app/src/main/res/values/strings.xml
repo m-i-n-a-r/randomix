@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name" translatable="false">Randomix</string>
     <string name="intro_typeface" translatable="false">roboto</string>
     <string name="app_intro_description">An open source app to choose randomly between numbers, answers, options and so on. Let the randomness talk!</string>
@@ -68,7 +69,7 @@
 
     <string name="dev_name">m.i.n.a.r.</string>
     <string name="dev_description">I\'m a student and i develop apps in my free time. My works are mainly themes and personalization apps.</string>
-    <string name="dev_gplus" translatable="false">https://plus.google.com/u/0/+RecenzTastic</string>
+    <string name="dev_instagram" translatable="false">https://www.instagram.com/minar.tastic/</string>
     <string name="dev_xda" translatable="false">https://forum.xda-developers.com/member.php?u=5222216</string>
     <string name="dev_github" translatable="false">https://github.com/m-i-n-a-r</string>
     <string name="dev_other_apps" translatable="false">https://play.google.com/store/apps/dev?id=7720251761301594831</string>

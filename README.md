@@ -18,9 +18,7 @@ The main purpose of the app is provide a random choice in different ways. The ap
 - Simple and precise ui
 
 ## Screenshots
-![Roulette](https://i.imgur.com/pdYMTJr.jpg)
-![Settings](https://i.imgur.com/PALoS2R.jpg)
-![Dices](https://i.imgur.com/IJrMvS3.jpg)
+![Roulette](https://i.imgur.com/pdYMTJr.jpg) ![Settings](https://i.imgur.com/PALoS2R.jpg) ![Dices](https://i.imgur.com/IJrMvS3.jpg)
 
 ## Credits
 This app was written during my free time as a training. Many good devs have helped me understanding the best practices and they taught me a lot of useful tricks. A special thanks to BValeo for the russian translation. 

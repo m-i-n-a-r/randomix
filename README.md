@@ -19,9 +19,9 @@ The main purpose of the app is provide a random choice in different ways. The ap
 
 ## Screenshots
 <p align="center">
-  <img src="https://i.imgur.com/pdYMTJr.jpg" width="100" />
-  <img src="https://i.imgur.com/PALoS2R.jpg" width="100" /> 
-  <img src="https://i.imgur.com/IJrMvS3.jpg" width="100" />
+  <img src="https://i.imgur.com/pdYMTJr.jpg" width="200" />
+  <img src="https://i.imgur.com/PALoS2R.jpg" width="200" /> 
+  <img src="https://i.imgur.com/IJrMvS3.jpg" width="200" />
 </p>
 
 ## Credits

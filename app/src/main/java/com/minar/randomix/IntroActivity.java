@@ -7,10 +7,10 @@ import android.view.WindowManager;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import com.github.paolorotolo.appintro.AppIntro;
+import com.github.paolorotolo.appintro.AppIntro2;
 import com.github.paolorotolo.appintro.AppIntroFragment;
 
-public class IntroActivity extends AppIntro {
+public class IntroActivity extends AppIntro2 {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         // Hide the statusbar (necessary because it's white)
@@ -21,14 +21,13 @@ public class IntroActivity extends AppIntro {
         super.onCreate(savedInstanceState);
 
         // Default slide
-        // Just set a title, description, background and image. AppIntro will do the rest.
-        addSlide(AppIntroFragment.newInstance(getString(R.string.app_name).toUpperCase(), getString(R.string.intro_typeface), getString(R.string.app_intro_description), getString(R.string.intro_typeface), R.drawable.icon, getColor(R.color.introBackgroundColor), getColor(R.color.textColorPrimaryInverse), getColor(R.color.textColorSecondaryInverse)));
+        // Just set a title, description, background and image. AppIntro will do the rest
+        addSlide(AppIntroFragment.newInstance(getString(R.string.app_extended_name).toUpperCase(), getString(R.string.intro_typeface), getString(R.string.app_intro_description), getString(R.string.intro_typeface), R.drawable.icon, getColor(R.color.introBackgroundColor), getColor(R.color.textColorPrimaryInverse), getColor(R.color.textColorSecondaryInverse)));
 
         // OPTIONAL METHODS
         // Override bar/separator color.
         // Use a conversion from int to hex code string
         setBarColor(Color.parseColor(String.format("#%06X", (0xFFFFFF & getColor(R.color.introBackgroundColor)))));
-        setSeparatorColor(Color.parseColor(String.format("#%06X", (0xFFFFFF & getColor(R.color.introBackgroundColor)))));
 
         // Hide Skip/Done button.
         showSkipButton(false);
@@ -39,6 +38,9 @@ public class IntroActivity extends AppIntro {
         // Turn vibration on and set intensity.
         setVibrate(true);
         setVibrateIntensity(50);
+
+        // End animation
+        setSlideOverAnimation();
     }
 
     @Override

@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <!-- introduction -->
     <color name="introBackgroundColor">#638fe9</color>
+
     <!-- basic colors -->
-    <color name="colorPrimary">#fefefe</color>
-    <color name="colorPrimaryDark">#fefefe</color>
     <color name="colorAccent">@color/blueAccent</color>
     <color name="almostWhite">#fbfbfb</color>
     <color name="goodGray">#909090</color>
     <color name="goodGrayTranslucent">#99909090</color>
     <color name="positiveGreen">#00c077</color>
     <color name="negativeRed">#ee0000</color>
+
+    <!-- light theme colors -->
+    <color name="colorPrimary">#fefefe</color>
+    <color name="colorPrimaryDark">#fefefe</color>
     <color name="textColorPrimary">#5f5f5f</color>
     <color name="textColorSecondary">#2f2f2f</color>
 
@@ -29,4 +33,5 @@
     <color name="violetAccent">#9933ff</color>
     <color name="pinkAccent">#ff66cc</color>
     <color name="lightBlueAccent">#00e6e6</color>
+
 </resources>

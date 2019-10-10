@@ -6,6 +6,7 @@
     <dimen name="linear_vertical_margin">22dp</dimen>
     <dimen name="padding_roulette_entry">22dp</dimen>
     <dimen name="margin_roulette_entry">10dp</dimen>
+    <dimen name="text_box_stroke_width">4dp</dimen>
 
     <dimen name="generic_result_text_size">42sp</dimen>
     <dimen name="long_result_text_size">36sp</dimen>
@@ -20,7 +21,7 @@
     <dimen name="text_result_height">100dp</dimen>
     <dimen name="text_description_height">90dp</dimen>
     <dimen name="horizontal_scroll_height">52dp</dimen>
-    <dimen name="roulette_insertion_height">48dp</dimen>
+    <dimen name="roulette_insertion_height">92dp</dimen>
 
     <!-- Unchanged dimensions -->
     <dimen name="minar_banner_height">56dp</dimen>

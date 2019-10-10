@@ -20,6 +20,6 @@
     <dimen name="text_result_height">70dp</dimen>
     <dimen name="text_description_height">60dp</dimen>
     <dimen name="horizontal_scroll_height">40dp</dimen>
-    <dimen name="roulette_insertion_height">38dp</dimen>
+    <dimen name="roulette_insertion_height">72dp</dimen>
 
 </resources>

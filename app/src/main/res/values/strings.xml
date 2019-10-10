@@ -1,6 +1,7 @@
 <resources>
 
     <string name="app_name" translatable="false">Randomix</string>
+    <string name="app_extended_name" translatable="false">Randomix - Decision Maker</string>
     <string name="intro_typeface" translatable="false">roboto</string>
     <string name="app_intro_description">An open source app to choose randomly between numbers, answers, options and so on. Let the randomness talk!</string>
     <string name="result_placeholder" translatable="false"> - - - </string>

@@ -15,10 +15,12 @@
         android:supportsRtl="true"
         android:resizeableActivity="true"
         android:theme="@style/AppTheme">
+        <!-- windowSoftInputMode prevents the bottomnavbar from sliding up when the keyboard is open -->
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="userPortrait">
+            android:screenOrientation="userPortrait"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

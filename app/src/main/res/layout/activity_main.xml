@@ -11,7 +11,7 @@
         android:id="@+id/navigation"
         android:layout_width="0dp"
         android:layout_height="@dimen/bottom_navbar_height"
-        android:background="?android:attr/windowBackground"
+        android:background="?colorPrimary"
         app:itemIconTint="@drawable/bottom_navbar_item"
         app:itemTextColor="@drawable/bottom_navbar_item"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,13 +19,15 @@
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/navigation"
         app:labelVisibilityMode="labeled"
+        app:elevation="@dimen/bottom_navbar_elevation"
+        app:itemRippleColor="?colorAccent"
         style="@style/Widget.MaterialComponents.BottomNavigationView"/>
 
     <FrameLayout
         android:id="@+id/mainFrame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
     </FrameLayout>

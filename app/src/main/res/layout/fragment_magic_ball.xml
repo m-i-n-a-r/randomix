@@ -10,57 +10,63 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/titleMagicBall"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:fontFamily="sans-serif-condensed"
                 android:gravity="center_horizontal"
-                android:text="@string/hello_magic_ball_fragment"
-                android:textAllCaps="true"
-                android:textSize="@dimen/title_text_size"
-                android:textStyle="bold"
-                android:maxLines="1" />
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/descriptionMagicBall"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/text_description_height"
-                android:layout_margin="@dimen/linear_vertical_margin"
-                android:gravity="center_horizontal"
-                android:text="@string/description_magic_ball"
-                android:textSize="@dimen/description_text_size" />
+                <TextView
+                    android:id="@+id/titleMagicBall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_horizontal"
+                    android:maxLines="1"
+                    android:text="@string/hello_magic_ball_fragment"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/title_text_size"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/resultMagicBall"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/text_result_height"
-                android:layout_marginTop="@dimen/linear_vertical_margin"
-                android:layout_marginBottom="@dimen/linear_vertical_margin"
-                android:gravity="center_horizontal"
-                android:text="@string/result_placeholder"
-                android:textSize="@dimen/long_result_text_size"
-                android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/descriptionMagicBall"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_description_height"
+                    android:layout_margin="@dimen/linear_vertical_margin"
+                    android:gravity="center_horizontal"
+                    android:text="@string/description_magic_ball"
+                    android:textSize="@dimen/description_text_size" />
 
-            <ImageView
-                android:id="@+id/magicBallButtonAnimation"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/image_button_height"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:clickable="true"
-                android:focusable="true"
-                android:contentDescription="@string/hint_magic_ball"
-                android:src="@drawable/magic_ball_vector_animation"
-                android:background="?attr/selectableItemBackgroundBorderless" />
+                <TextView
+                    android:id="@+id/resultMagicBall"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_result_height"
+                    android:layout_marginTop="@dimen/linear_vertical_margin"
+                    android:layout_marginBottom="@dimen/linear_vertical_margin"
+                    android:gravity="center_horizontal"
+                    android:text="@string/result_placeholder"
+                    android:textSize="@dimen/long_result_text_size"
+                    android:textStyle="bold" />
 
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/magicBallButtonAnimation"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/image_button_height"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:contentDescription="@string/hint_magic_ball"
+                    android:focusable="true"
+                    android:src="@drawable/magic_ball_vector_animation" />
+
+            </LinearLayout>
+
+        </ScrollView>
 
     </RelativeLayout>
 

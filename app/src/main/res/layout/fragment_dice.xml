@@ -10,47 +10,53 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/diceSection"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/titleDice"
+            <LinearLayout
+                android:id="@+id/diceSection"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:fontFamily="sans-serif-condensed"
                 android:gravity="center_horizontal"
-                android:text="@string/hello_dice_fragment"
-                android:textAllCaps="true"
-                android:textSize="@dimen/title_text_size"
-                android:textStyle="bold"
-                android:maxLines="1"/>
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/descriptionDice"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/text_description_height"
-                android:layout_margin="@dimen/linear_vertical_margin"
-                android:gravity="center_horizontal"
-                android:text="@string/description_dice"
-                android:textSize="@dimen/description_text_size" />
+                <TextView
+                    android:id="@+id/titleDice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_horizontal"
+                    android:maxLines="1"
+                    android:text="@string/hello_dice_fragment"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/title_text_size"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/resultDice"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/text_result_height"
-                android:layout_marginTop="@dimen/linear_vertical_margin"
-                android:layout_marginBottom="@dimen/linear_vertical_margin"
-                android:gravity="center_horizontal"
-                android:text="@string/result_placeholder"
-                android:textSize="@dimen/generic_result_text_size"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/descriptionDice"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_description_height"
+                    android:layout_margin="@dimen/linear_vertical_margin"
+                    android:gravity="center_horizontal"
+                    android:text="@string/description_dice"
+                    android:textSize="@dimen/description_text_size" />
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/resultDice"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_result_height"
+                    android:layout_marginTop="@dimen/linear_vertical_margin"
+                    android:layout_marginBottom="@dimen/linear_vertical_margin"
+                    android:gravity="center_horizontal"
+                    android:text="@string/result_placeholder"
+                    android:textSize="@dimen/generic_result_text_size"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </ScrollView>
 
     </RelativeLayout>
 

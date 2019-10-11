@@ -16,9 +16,11 @@
         android:resizeableActivity="true"
         android:theme="@style/AppTheme">
         <!-- windowSoftInputMode prevents the bottomnavbar from sliding up when the keyboard is open -->
+        <!-- configChanges tells the system to not execute onDestroy() and onCreate() when split screen is triggered or resized -->
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
             android:screenOrientation="userPortrait"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>

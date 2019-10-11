@@ -88,8 +88,7 @@ public class MainActivity extends AppCompatActivity {
             if (accent.equals("violet")) setTheme(R.style.AppTheme_dark_violet);
             if (accent.equals("pink")) setTheme(R.style.AppTheme_dark_pink);
             if (accent.equals("lightBlue")) setTheme(R.style.AppTheme_dark_lightBlue);
-        }
-        else {
+        } else {
             if (accent.equals("green")) setTheme(R.style.AppTheme_green);
             if (accent.equals("orange")) setTheme(R.style.AppTheme_orange);
             if (accent.equals("teal")) setTheme(R.style.AppTheme_teal);
@@ -115,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
     public void vibrate() {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         Vibrator vib = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
-        if(sp.getBoolean("vibration",true))
+        if (sp.getBoolean("vibration", true))
             // Vibrate if the vibration in options is set to on
             // noinspection ConstantConditions
             vib.vibrate(30);
@@ -123,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void playSound(int fragmentNumber) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-        if(!sp.getBoolean("sound",false)) return;
+        if (!sp.getBoolean("sound", false)) return;
         // Assign the sound depending on the fragment number
         MediaPlayer mp = null;
         if (fragmentNumber == 1) mp = MediaPlayer.create(this, R.raw.roulette_sound);

@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/diceZone"
     android:layout_width="match_parent"
     android:layout_height="@dimen/image_button_height"
-    android:gravity="center_horizontal"
-    android:orientation="horizontal"
+    android:layout_marginBottom="@dimen/linear_vertical_margin"
+    android:background="?attr/selectableItemBackgroundBorderless"
     android:clickable="true"
     android:focusable="true"
-    android:background="?attr/selectableItemBackgroundBorderless"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:gravity="center_horizontal"
+    android:orientation="horizontal">
 
-<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/diceButtonAnimation1"
-    android:layout_width="@dimen/image_button_height"
-    android:layout_height="@dimen/image_button_height"
-    android:layout_marginTop="@dimen/activity_vertical_margin"
-    android:layout_weight="1"
-    android:contentDescription="@string/throw_dice"
-    android:src="@drawable/dice_1_vector_animation" />
+    <ImageView
+        android:id="@+id/diceButtonAnimation1"
+        android:layout_width="@dimen/image_button_height"
+        android:layout_height="@dimen/image_button_height"
+        android:layout_marginTop="@dimen/linear_vertical_margin"
+        android:layout_weight="1"
+        android:contentDescription="@string/throw_dice"
+        android:src="@drawable/dice_1_vector_animation" />
 
-<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/diceButtonAnimation2"
-    android:layout_width="@dimen/image_button_height"
-    android:layout_height="@dimen/image_button_height"
-    android:layout_marginTop="@dimen/activity_vertical_margin"
-    android:layout_weight="1"
-    android:contentDescription="@string/throw_dice"
-    android:src="@drawable/dice_1_vector_animation" />
+    <ImageView
+        android:id="@+id/diceButtonAnimation2"
+        android:layout_width="@dimen/image_button_height"
+        android:layout_height="@dimen/image_button_height"
+        android:layout_marginTop="@dimen/linear_vertical_margin"
+        android:layout_weight="1"
+        android:contentDescription="@string/throw_dice"
+        android:src="@drawable/dice_1_vector_animation" />
 
-<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/diceButtonAnimation3"
-    android:layout_width="@dimen/image_button_height"
-    android:layout_height="@dimen/image_button_height"
-    android:layout_marginTop="@dimen/activity_vertical_margin"
-    android:layout_weight="1"
-    android:contentDescription="@string/throw_dice"
-    android:src="@drawable/dice_1_vector_animation" />
+    <ImageView
+        android:id="@+id/diceButtonAnimation3"
+        android:layout_width="@dimen/image_button_height"
+        android:layout_height="@dimen/image_button_height"
+        android:layout_marginTop="@dimen/linear_vertical_margin"
+        android:layout_weight="1"
+        android:contentDescription="@string/throw_dice"
+        android:src="@drawable/dice_1_vector_animation" />
 
 </LinearLayout>

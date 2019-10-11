@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Settings">
 
     <RelativeLayout
@@ -15,8 +15,8 @@
             android:id="@+id/devStuff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="top">
+            android:layout_gravity="top"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/titleSettings"
@@ -25,11 +25,11 @@
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:fontFamily="sans-serif-condensed"
                 android:gravity="center_horizontal"
+                android:maxLines="1"
                 android:text="@string/hello_settings_fragment"
                 android:textAllCaps="true"
                 android:textSize="@dimen/title_text_size"
-                android:textStyle="bold"
-                android:maxLines="1" />
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/imageMinar"
@@ -39,10 +39,10 @@
                 android:clickable="true"
                 android:contentDescription="@string/dev_name"
                 android:focusable="true"
-                android:paddingBottom="@dimen/minar_banner_padding"
                 android:paddingLeft="@dimen/minar_banner_padding"
-                android:paddingRight="@dimen/minar_banner_padding"
                 android:paddingTop="@dimen/minar_banner_padding"
+                android:paddingRight="@dimen/minar_banner_padding"
+                android:paddingBottom="@dimen/minar_banner_padding"
                 android:tint="?colorAccent"
                 app:srcCompat="@drawable/banner_minar" />
 
@@ -59,8 +59,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/activity_vertical_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin">
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="@dimen/activity_vertical_margin">
 
                 <ImageView
                     android:id="@+id/minarig"
@@ -116,8 +116,8 @@
             android:id="@android:id/list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/bottom_navbar_height"
-            android:layout_below="@id/devStuff" />
+            android:layout_below="@id/devStuff"
+            android:layout_marginBottom="@dimen/bottom_navbar_height" />
 
     </RelativeLayout>
 

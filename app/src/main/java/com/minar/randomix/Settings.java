@@ -8,7 +8,6 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,24 +15,27 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.preference.PreferenceFragmentCompat;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Settings extends PreferenceFragment implements OnSharedPreferenceChangeListener, OnClickListener {
+public class Settings extends PreferenceFragmentCompat implements OnSharedPreferenceChangeListener, OnClickListener {
     // Easter egg stuff, why not
-    int easterEgg = 0;
+    private int easterEgg = 0;
 
     public Settings() {
         // Required empty public constructor
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        LayoutInflater inflater = getLayoutInflater();
+        ViewGroup container = (ViewGroup)getView();
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_settings, container, false);
-        // Load the preferences from an XML resource
+
         addPreferencesFromResource(R.xml.preferences);
 
         // Make the icons clickable
@@ -47,7 +49,6 @@ public class Settings extends PreferenceFragment implements OnSharedPreferenceCh
         l2.setOnClickListener(this);
         l3.setOnClickListener(this);
         l4.setOnClickListener(this);
-        return v;
     }
 
     @Override
@@ -83,8 +84,7 @@ public class Settings extends PreferenceFragment implements OnSharedPreferenceCh
                     Toast.makeText(getContext(), getString(R.string.easter_egg), Toast.LENGTH_SHORT).show();
                     this.easterEgg = 0;
                     break;
-                }
-                else this.easterEgg++;
+                } else this.easterEgg++;
                 break;
             case R.id.minarig:
                 if (act instanceof MainActivity) ((MainActivity) act).vibrate();
@@ -113,7 +113,7 @@ public class Settings extends PreferenceFragment implements OnSharedPreferenceCh
         }
     }
 
-    public void restartActivity() {
+    private void restartActivity() {
         getActivity().finish();
         final Intent intent = getActivity().getIntent();
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

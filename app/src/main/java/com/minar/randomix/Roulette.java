@@ -27,9 +27,8 @@ import java.util.Random;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Roulette extends Fragment implements OnClickListener, View.OnLongClickListener, TextView.OnEditorActionListener {
+public class Roulette extends androidx.fragment.app.Fragment implements OnClickListener, View.OnLongClickListener, TextView.OnEditorActionListener {
     private List<String> options = new ArrayList<>();
-    String currentOption = "";
 
     public Roulette() {
         // Required empty public constructor
@@ -54,56 +53,58 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
         textInsert.setOnEditorActionListener(this);
         return v;
     }
+
     @Override
     public boolean onLongClick(View v) {
-       @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
-       LinearLayout optionsList = getView().findViewById(R.id.optionsListHorizontal);
-       Activity act = getActivity();
+        @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
+                LinearLayout optionsList = getView().findViewById(R.id.optionsListHorizontal);
+        Activity act = getActivity();
         switch (v.getId()) {
-           case R.id.deleteButton:
-               // Start the animated vector drawable
-               ImageView deleteAnimation = (ImageView) getView().findViewById(R.id.deleteButton);
-               Drawable delete = deleteAnimation.getDrawable();
-               if (delete instanceof Animatable) ((Animatable) delete).start();
-               // Vibrate using the common method in MainActivity
-               if (act instanceof MainActivity) ((MainActivity) act).vibrate();
+            case R.id.deleteButton:
+                // Start the animated vector drawable
+                ImageView deleteAnimation = (ImageView) getView().findViewById(R.id.deleteButton);
+                Drawable delete = deleteAnimation.getDrawable();
+                if (delete instanceof Animatable) ((Animatable) delete).start();
+                // Vibrate using the common method in MainActivity
+                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
 
-               // Clear the options
-               if (options.isEmpty()) return true;
-               options.clear();
-               optionsList.removeAllViews();
-               break;
+                // Clear the options
+                if (options.isEmpty()) return true;
+                options.clear();
+                optionsList.removeAllViews();
+                break;
 
-           case R.id.buttonSpinRoulette:
-               TextView entry = getView().findViewById(R.id.entryRoulette);
-               String option1 = getResources().getString(R.string.generic_option) + "1";
-               String option2 = getResources().getString(R.string.generic_option) + "2";
-               String option3 = getResources().getString(R.string.generic_option) + "3";
-               // Vibrate using the common method in MainActivity
-               if (act instanceof MainActivity) ((MainActivity) act).vibrate();
+            case R.id.buttonSpinRoulette:
+                TextView entry = getView().findViewById(R.id.entryRoulette);
+                String option1 = getResources().getString(R.string.generic_option) + "1";
+                String option2 = getResources().getString(R.string.generic_option) + "2";
+                String option3 = getResources().getString(R.string.generic_option) + "3";
+                // Vibrate using the common method in MainActivity
+                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
 
-               // Insert three options manually and spin the roulette, or clear the options
-               if(options.isEmpty()) {
-                   entry.setText(option1);
-                   InsertRouletteOption();
-                   entry.setText(option2);
-                   InsertRouletteOption();
-                   entry.setText(option3);
-                   InsertRouletteOption();
-                   break;
-               }
-               else {
-                   options.clear();
-                   optionsList.removeAllViews();
-                   break;
-               }
-       }
-       return true;
+                // Insert three options manually and spin the roulette, or clear the options
+                if (options.isEmpty()) {
+                    entry.setText(option1);
+                    InsertRouletteOption();
+                    entry.setText(option2);
+                    InsertRouletteOption();
+                    entry.setText(option3);
+                    InsertRouletteOption();
+                    break;
+                } else {
+                    options.clear();
+                    optionsList.removeAllViews();
+                    break;
+                }
+        }
+        return true;
     }
+
     @Override
     public void onClick(View v) {
         Activity act = getActivity();
-        @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
+        @SuppressWarnings("ConstantConditions")
+        // Suppress warning, it's guaranteed that getView won't be null
         final ImageView deleteAnimation = (ImageView) getView().findViewById(R.id.deleteButton);
         LinearLayout optionsList = getView().findViewById(R.id.optionsListHorizontal);
         switch (v.getId()) {
@@ -137,7 +138,7 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
 
             case R.id.buttonSpinRoulette:
                 // Break the case if the list is empty to avoid crashes and null pointers
-                if(options.isEmpty() || options.size() == 1) {
+                if (options.isEmpty() || options.size() == 1) {
                     Toast.makeText(getContext(), getString(R.string.no_entry_roulette), Toast.LENGTH_SHORT).show();
                     break;
                 }
@@ -188,7 +189,7 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
     @Override
     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
         @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
-        LinearLayout optionsList = getView().findViewById(R.id.optionsListHorizontal);
+                LinearLayout optionsList = getView().findViewById(R.id.optionsListHorizontal);
         if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_GO || actionId == EditorInfo.IME_ACTION_SEND) {
             // Start the animated vector drawable
             ImageView insertAnimation = (ImageView) getView().findViewById(R.id.insertButton);
@@ -202,12 +203,13 @@ public class Roulette extends Fragment implements OnClickListener, View.OnLongCl
     }
 
     private void InsertRouletteOption() {
+        String currentOption = "";
         @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
-        LinearLayout optionsList = getView().findViewById(R.id.optionsListHorizontal);
+                LinearLayout optionsList = getView().findViewById(R.id.optionsListHorizontal);
         TextView entry = getView().findViewById(R.id.entryRoulette);
         // Delete the blank spaces between words and before and after them to avoid weird behaviors
         currentOption = entry.getText().toString().trim();
-        currentOption = currentOption.replaceAll("\\s+"," ");
+        currentOption = currentOption.replaceAll("\\s+", " ");
         // Return if the string entered is a duplicate
         if (options.contains(currentOption)) return;
         // Reset the text field eventually, it could contain whitespaces

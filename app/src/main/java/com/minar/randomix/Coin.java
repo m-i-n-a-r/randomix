@@ -21,7 +21,7 @@ import java.util.Random;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Coin extends Fragment implements OnClickListener {
+public class Coin extends androidx.fragment.app.Fragment implements OnClickListener {
     // There's a difference in animations between the first flip and the others
     private boolean notFirstFlip = false;
     // Last result to select the animation. True stays for head and false stays for tail
@@ -84,7 +84,7 @@ public class Coin extends Fragment implements OnClickListener {
         }
     }
 
-    public void flipAndRunMainAnimation() {
+    private void flipAndRunMainAnimation() {
         // Check for fragment changes. If the fragment has changed, no further operations are needed
         if(!isAdded()) return;
         // Get the textview and the imageview used for the result, with a simple control to avoid null object references
@@ -138,7 +138,7 @@ public class Coin extends Fragment implements OnClickListener {
         }
     }
 
-    public void runResetAnimation() {
+    private void runResetAnimation() {
         @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
         ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinButtonAnimation);
         if (this.lastResult) coinAnimation.setImageResource(R.drawable.coin_head_to_start_vector_animation);

@@ -113,11 +113,10 @@
         </LinearLayout>
 
         <ListView
-            android:id="@android:id/list"
+            android:id="@+id/preferenceHolder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/devStuff"
-            android:layout_marginBottom="@dimen/bottom_navbar_height" />
+            android:layout_below="@id/devStuff" />
 
     </RelativeLayout>
 

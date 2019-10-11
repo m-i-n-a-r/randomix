@@ -1,6 +1,5 @@
 package com.minar.randomix;
 
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -31,40 +30,41 @@ public class MainActivity extends AppCompatActivity {
             case R.id.navigation_roulette:
                 setTitle("Roulette"); // this will set the actionbar title
                 Roulette fragmentRoulette = new Roulette();
-                FragmentTransaction fragmentTransaction1 = getFragmentManager().beginTransaction();
+                androidx.fragment.app.FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction1.replace(R.id.mainFrame, fragmentRoulette, "Roulette");
                 fragmentTransaction1.commit();
                 return true;
             case R.id.navigation_coin:
                 setTitle("Coin"); // this will set the actionbar title
                 Coin fragmentCoin = new Coin();
-                FragmentTransaction fragmentTransaction2 = getFragmentManager().beginTransaction();
+                androidx.fragment.app.FragmentTransaction fragmentTransaction2 = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction2.replace(R.id.mainFrame, fragmentCoin, "Coin");
                 fragmentTransaction2.commit();
                 return true;
             case R.id.navigation_magic_ball:
                 setTitle("Magic Ball"); // this will set the actionbar title
                 MagicBall fragmentMagicBall = new MagicBall();
-                FragmentTransaction fragmentTransaction3 = getFragmentManager().beginTransaction();
+                androidx.fragment.app.FragmentTransaction fragmentTransaction3 = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction3.replace(R.id.mainFrame, fragmentMagicBall, "MagicBall");
                 fragmentTransaction3.commit();
                 return true;
             case R.id.navigation_dice:
                 setTitle("Dice"); // this will set the actionbar title
                 Dice fragmentDice = new Dice();
-                FragmentTransaction fragmentTransaction4 = getFragmentManager().beginTransaction();
+                androidx.fragment.app.FragmentTransaction fragmentTransaction4 = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction4.replace(R.id.mainFrame, fragmentDice, "Dice");
                 fragmentTransaction4.commit();
                 return true;
             case R.id.navigation_settings:
                 setTitle("Settings"); // this will set the actionbar title
                 Settings fragmentSettings = new Settings();
-                FragmentTransaction fragmentTransaction5 = getFragmentManager().beginTransaction();
+                androidx.fragment.app.FragmentTransaction fragmentTransaction5 = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction5.replace(R.id.mainFrame, fragmentSettings, "Settings");
                 fragmentTransaction5.commit();
                 return true;
         }
         return false;
+
     }
 
     ;

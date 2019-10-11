@@ -6,7 +6,6 @@ import android.app.Fragment;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
@@ -17,7 +16,6 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -26,13 +24,13 @@ import java.util.Random;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Dice extends Fragment implements OnClickListener {
+public class Dice extends androidx.fragment.app.Fragment implements OnClickListener {
     // There's a difference in animations between the first throw and the others
     private boolean notFirstThrow = false;
     // Last result to select the correct animation
     private int lastResult1, lastResult2, lastResult3;
-    String chosenDrawable1, chosenDrawable2, chosenDrawable3;
-    ImageView diceAnimation1, diceAnimation2 = null, diceAnimation3 = null;
+    private String chosenDrawable1, chosenDrawable2, chosenDrawable3;
+    private ImageView diceAnimation1, diceAnimation2 = null, diceAnimation3 = null;
 
     public Dice() {
         // Required empty public constructor
@@ -118,7 +116,7 @@ public class Dice extends Fragment implements OnClickListener {
 
     }
 
-    public void throwAndRunMainAnimation(int diceNumber) {
+    private void throwAndRunMainAnimation(int diceNumber) {
         // Choose a random number between 1 and 6 with equal possibilities
         int n1, n2 = 0, n3 = 0;
         Random ran = new Random();
@@ -184,7 +182,7 @@ public class Dice extends Fragment implements OnClickListener {
         this.lastResult3 = n3;
     }
 
-    public void runResetAnimation(int diceNumber) {
+    private void runResetAnimation(int diceNumber) {
         diceAnimation1 = getView().findViewById(R.id.diceButtonAnimation1);
 
         if(diceNumber > 1) diceAnimation2 = getView().findViewById(R.id.diceButtonAnimation2);

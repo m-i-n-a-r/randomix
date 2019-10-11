@@ -1,56 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <PreferenceCategory
-            android:title="@string/app_behavior"
-            android:key="app_behavior">
+    <PreferenceCategory
+        android:key="app_behavior"
+        android:title="@string/app_behavior">
 
-            <SwitchPreference
-                android:key="rude_answers"
-                android:summary="@string/rude_answers_description"
-                android:title="@string/rude_answers_name"
-                android:defaultValue="false"/>
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="rude_answers"
+            android:summary="@string/rude_answers_description"
+            android:title="@string/rude_answers_name" />
 
-            <ListPreference
-                android:key="dice_number"
-                android:summary="@string/dice_number_description"
-                android:title="@string/dice_number_name"
-                android:defaultValue="1"
-                android:entries="@array/diceNumber"
-                android:entryValues="@array/diceNumberValues"/>
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/diceNumber"
+            android:entryValues="@array/diceNumberValues"
+            android:key="dice_number"
+            android:summary="@string/dice_number_description"
+            android:title="@string/dice_number_name" />
 
-        </PreferenceCategory>
+    </PreferenceCategory>
 
-        <PreferenceCategory
-            android:title="@string/customization"
-            android:key="customization">
+    <PreferenceCategory
+        android:key="customization"
+        android:title="@string/customization">
 
-            <CheckBoxPreference
-                android:key="dark_theme"
-                android:summary="@string/dark_theme_description"
-                android:title="@string/dark_theme_name"
-                android:defaultValue="false"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="dark_theme"
+            android:summary="@string/dark_theme_description"
+            android:title="@string/dark_theme_name" />
 
-            <ListPreference
-                android:key="accent_color"
-                android:title="@string/accent_name"
-                android:summary="@string/accent_description"
-                android:defaultValue="blue"
-                android:entries="@array/accents"
-                android:entryValues="@array/accentValues" />
+        <ListPreference
+            android:defaultValue="blue"
+            android:entries="@array/accents"
+            android:entryValues="@array/accentValues"
+            android:key="accent_color"
+            android:summary="@string/accent_description"
+            android:title="@string/accent_name" />
 
-            <SwitchPreference
-                android:key="vibration"
-                android:summary="@string/vibration_description"
-                android:title="@string/vibration_name"
-                android:defaultValue="true"/>
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="vibration"
+            android:summary="@string/vibration_description"
+            android:title="@string/vibration_name" />
 
-            <SwitchPreference
-                android:key="sound"
-                android:summary="@string/sound_description"
-                android:title="@string/sound_name"
-                android:defaultValue="true"/>
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="sound"
+            android:summary="@string/sound_description"
+            android:title="@string/sound_name" />
 
-        </PreferenceCategory>
+    </PreferenceCategory>
 
 </PreferenceScreen>

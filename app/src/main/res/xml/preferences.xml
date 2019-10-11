@@ -25,7 +25,8 @@
             android:key="dice_number"
             android:summary="@string/dice_number_description"
             android:title="@string/dice_number_name"
-            app:iconSpaceReserved="false"/>
+            app:iconSpaceReserved="false"
+            android:negativeButtonText="@null"/>
 
     </PreferenceCategory>
 
@@ -48,7 +49,8 @@
             android:key="accent_color"
             android:summary="@string/accent_description"
             android:title="@string/accent_name"
-            app:iconSpaceReserved="false"/>
+            app:iconSpaceReserved="false"
+            android:negativeButtonText="@null"/>
 
         <SwitchPreference
             android:defaultValue="true"

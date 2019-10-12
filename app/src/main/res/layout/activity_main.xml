@@ -11,38 +11,37 @@
         android:id="@+id/mainFrame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:paddingBottom="@dimen/bottom_navbar_height"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:paddingBottom="@dimen/bottom_navbar_height">
-    </FrameLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <fragment
         android:id="@+id/navHostFragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
+        style="@style/Widget.MaterialComponents.BottomNavigationView"
         android:layout_width="0dp"
         android:layout_height="@dimen/bottom_navbar_height"
         android:background="?colorPrimary"
+        app:elevation="@dimen/bottom_navbar_elevation"
         app:itemIconTint="@drawable/bottom_navbar_item"
+        app:itemRippleColor="?colorAccent"
         app:itemTextColor="@drawable/bottom_navbar_item"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation"
-        app:labelVisibilityMode="labeled"
-        app:elevation="@dimen/bottom_navbar_elevation"
-        app:itemRippleColor="?colorAccent"
-        style="@style/Widget.MaterialComponents.BottomNavigationView"/>
+        app:menu="@menu/navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

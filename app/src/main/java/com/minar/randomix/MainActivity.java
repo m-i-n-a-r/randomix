@@ -7,70 +7,19 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
-import android.view.MenuItem;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            return focusOnSelectedItem(item.getItemId());
-        }
-    };
-
-    public boolean focusOnSelectedItem(int lastSelectedItem) {
-        switch (lastSelectedItem) {
-            case R.id.navigation_roulette:
-                setTitle("Roulette"); // this will set the actionbar title
-                Roulette fragmentRoulette = new Roulette();
-                androidx.fragment.app.FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction1.replace(R.id.mainFrame, fragmentRoulette, "Roulette");
-                fragmentTransaction1.commit();
-                return true;
-            case R.id.navigation_coin:
-                setTitle("Coin"); // this will set the actionbar title
-                Coin fragmentCoin = new Coin();
-                androidx.fragment.app.FragmentTransaction fragmentTransaction2 = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction2.replace(R.id.mainFrame, fragmentCoin, "Coin");
-                fragmentTransaction2.commit();
-                return true;
-            case R.id.navigation_magic_ball:
-                setTitle("Magic Ball"); // this will set the actionbar title
-                MagicBall fragmentMagicBall = new MagicBall();
-                androidx.fragment.app.FragmentTransaction fragmentTransaction3 = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction3.replace(R.id.mainFrame, fragmentMagicBall, "MagicBall");
-                fragmentTransaction3.commit();
-                return true;
-            case R.id.navigation_dice:
-                setTitle("Dice"); // this will set the actionbar title
-                Dice fragmentDice = new Dice();
-                androidx.fragment.app.FragmentTransaction fragmentTransaction4 = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction4.replace(R.id.mainFrame, fragmentDice, "Dice");
-                fragmentTransaction4.commit();
-                return true;
-            case R.id.navigation_settings:
-                setTitle("Settings"); // this will set the actionbar title
-                Settings fragmentSettings = new Settings();
-                androidx.fragment.app.FragmentTransaction fragmentTransaction5 = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction5.replace(R.id.mainFrame, fragmentSettings, "Settings");
-                fragmentTransaction5.commit();
-                return true;
-        }
-        return false;
-
-    }
-
-    ;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        NavController navController;
 
         // getSharedPreferences(MyPrefs, Context.MODE_PRIVATE); retrieves a specific shared preferences file
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
@@ -106,10 +55,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        focusOnSelectedItem(R.id.navigation_roulette);
-
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        // Get the bottom navigation bar and configure it for the navigation plugin
+        BottomNavigationView navigation = findViewById(R.id.navigation);
+        navController = Navigation.findNavController(this, R.id.navHostFragment);
+        NavigationUI.setupWithNavController(navigation, navController);
     }
 
     // Some utility functions, used from every fragment connected to this activity

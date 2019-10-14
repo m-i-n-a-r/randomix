@@ -1,9 +1,7 @@
 <resources>
 
-    <!-- Android Q theme, dark -->
+    <!-- Values for the dark theme -->
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:windowLightStatusBar">false</item>
-        <item name="android:windowLightNavigationBar">false</item>
         <item name="colorPrimary">@color/colorPrimaryInverse</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkInverse</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -12,6 +10,7 @@
         <item name="android:colorBackground">@color/colorPrimaryInverse</item>
         <item name="android:textColorPrimary">@color/textColorPrimaryInverse</item>
         <item name="android:textColorSecondary">@color/textColorSecondaryInverse</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
     </style>
 
 </resources>

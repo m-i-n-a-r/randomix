@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
+
 import androidx.preference.PreferenceFragmentCompat;
 
 
@@ -42,16 +43,20 @@ public class Settings extends PreferenceFragmentCompat implements OnSharedPrefer
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if (key.equals("dark_theme")) restartActivity();
-        if (key.equals("accent_color")) restartActivity();
+        if (getActivity() != null) {
+            if (key.equals("theme_color")) getActivity().recreate();
+            if (key.equals("accent_color")) getActivity().recreate();
+        }
     }
 
-
+    // TODO delete
     private void restartActivity() {
-        getActivity().finish();
-        final Intent intent = getActivity().getIntent();
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        getActivity().startActivity(intent);
+        if (getActivity() != null) {
+            getActivity().finish();
+            final Intent intent = getActivity().getIntent();
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            getActivity().startActivity(intent);
+        }
     }
 
 }

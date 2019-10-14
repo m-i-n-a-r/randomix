@@ -42,6 +42,16 @@
             android:title="@string/dark_theme_name"
             app:iconSpaceReserved="false"/>
 
+        <!--<ListPreference
+            android:defaultValue="system_default"
+            android:entries="@array/themes"
+            android:entryValues="@array/themeValues"
+            android:key="theme_color"
+            android:summary="@string/theme_description"
+            android:title="@string/theme_name"
+            app:iconSpaceReserved="false"
+            android:negativeButtonText="@null"/>-->
+
         <ListPreference
             android:defaultValue="blue"
             android:entries="@array/accents"

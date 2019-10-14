@@ -76,9 +76,14 @@
     <string name="teal">Acqua</string>
     <string name="violet">Viola</string>
     <string name="pink">Rosa</string>
-    <string name="lightBlue">Azzurro</string>
+    <string name="light_blue">Azzurro</string>
     <string name="app_behavior">Comportamento dell\'app</string>
     <string name="rude_answers_description">Attiva le risposte sgarbate per la palla magica.</string>
     <string name="rude_answers_name">Risposte sgarbate</string>
+    <string name="dark_theme">Scuro</string>
+    <string name="light_theme">Chiaro</string>
+    <string name="system_theme">Default di sistema</string>
+    <string name="theme_description">Usa un tema scuro, chiaro o automatico per l\'app</string>
+    <string name="theme_name">Tema dell\'app</string>
 
 </resources>

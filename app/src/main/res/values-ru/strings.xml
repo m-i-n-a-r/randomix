@@ -85,9 +85,14 @@
     <string name="teal">Нефритовый</string>
     <string name="violet">Фиолетовый</string>
     <string name="pink">Розовый</string>
-    <string name="lightBlue">синий</string>
+    <string name="light_blue">синий</string>
     <string name="app_behavior">Режим приложения</string>
     <string name="rude_answers_description">Активировать грубые ответы для волшебного шарика.</string>
     <string name="rude_answers_name">Грубые ответы</string>
+    <string name="system_theme">система</string>
+    <string name="light_theme">свет</string>
+    <string name="dark_theme">темно</string>
+    <string name="theme_name">тема приложения</string>
+    <string name="theme_description">Используйте темную, светлую или автоматическую тему приложения</string>
 
 </resources>

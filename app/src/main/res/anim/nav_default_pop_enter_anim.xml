@@ -10,7 +10,9 @@
         android:fromXScale="0.9"
         android:toXScale="1"
         android:fromYScale="0.9"
-        android:toYScale="1" />
+        android:toYScale="1"
+        android:pivotX="50%"
+        android:pivotY="50%" />
     <translate
         android:duration="200"
         android:fromXDelta="0%"

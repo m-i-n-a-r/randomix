@@ -66,8 +66,6 @@
     <string name="easter_egg">Классное лого, правда? ;D</string>
 
     <string name="customization">Кастомизация</string>
-    <string name="dark_theme_description">Активировать тёмную тему, приложение будет перезапущено.</string>
-    <string name="dark_theme_name">Тёмная тема</string>
     <string name="vibration_name">Вибрация</string>
     <string name="vibration_description">Вибрировать при нажатой кнопке</string>
     <string name="sound_name">Звуки</string>
@@ -77,7 +75,7 @@
     <string name="one">Одна</string>
     <string name="two">Два</string>
     <string name="three">Три</string>
-    <string name="accent_description">Изменить цвет по умолчанию</string>
+    <string name="accent_description">Изменить цвет по умолчанию.</string>
     <string name="accent_name">Цвет</string>
     <string name="blue">Синий</string>
     <string name="green">Зелёный</string>
@@ -91,8 +89,8 @@
     <string name="rude_answers_name">Грубые ответы</string>
     <string name="system_theme">система</string>
     <string name="light_theme">свет</string>
-    <string name="dark_theme">темно</string>
+    <string name="dark_theme">Тёмная</string>
     <string name="theme_name">тема приложения</string>
-    <string name="theme_description">Используйте темную, светлую или автоматическую тему приложения</string>
+    <string name="theme_description">Используйте темную, светлую или автоматическую тему приложения.</string>
 
 </resources>

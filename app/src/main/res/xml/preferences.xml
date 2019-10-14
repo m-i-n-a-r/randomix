@@ -4,7 +4,7 @@
 
     <com.minar.randomix.CustomAuthorPreference
         android:layout="@layout/fragment_settings"
-        android:selectable="false"/>
+        android:selectable="false" />
 
     <PreferenceCategory
         android:key="app_behavior"
@@ -16,17 +16,17 @@
             android:key="rude_answers"
             android:summary="@string/rude_answers_description"
             android:title="@string/rude_answers_name"
-            app:iconSpaceReserved="false"/>
+            app:iconSpaceReserved="false" />
 
         <ListPreference
             android:defaultValue="1"
             android:entries="@array/diceNumber"
             android:entryValues="@array/diceNumberValues"
             android:key="dice_number"
+            android:negativeButtonText="@null"
             android:summary="@string/dice_number_description"
             android:title="@string/dice_number_name"
-            app:iconSpaceReserved="false"
-            android:negativeButtonText="@null"/>
+            app:iconSpaceReserved="false" />
 
     </PreferenceCategory>
 
@@ -35,46 +35,39 @@
         android:title="@string/customization"
         app:iconSpaceReserved="false">
 
-        <!--<CheckBoxPreference
-            android:defaultValue="false"
-            android:key="dark_theme"
-            android:summary="@string/dark_theme_description"
-            android:title="@string/dark_theme_name"
-            app:iconSpaceReserved="false"/>-->
-
         <ListPreference
             android:defaultValue="system_default"
             android:entries="@array/themes"
             android:entryValues="@array/themeValues"
             android:key="theme_color"
+            android:negativeButtonText="@null"
             android:summary="@string/theme_description"
             android:title="@string/theme_name"
-            app:iconSpaceReserved="false"
-            android:negativeButtonText="@null"/>
+            app:iconSpaceReserved="false" />
 
         <ListPreference
             android:defaultValue="blue"
             android:entries="@array/accents"
             android:entryValues="@array/accentValues"
             android:key="accent_color"
+            android:negativeButtonText="@null"
             android:summary="@string/accent_description"
             android:title="@string/accent_name"
-            app:iconSpaceReserved="false"
-            android:negativeButtonText="@null"/>
+            app:iconSpaceReserved="false" />
 
         <SwitchPreference
             android:defaultValue="true"
             android:key="vibration"
             android:summary="@string/vibration_description"
             android:title="@string/vibration_name"
-            app:iconSpaceReserved="false"/>
+            app:iconSpaceReserved="false" />
 
         <SwitchPreference
             android:defaultValue="true"
             android:key="sound"
             android:summary="@string/sound_description"
             android:title="@string/sound_name"
-            app:iconSpaceReserved="false"/>
+            app:iconSpaceReserved="false" />
 
     </PreferenceCategory>
 

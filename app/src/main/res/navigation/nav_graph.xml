@@ -3,29 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/navigation_roulette">
+    app:startDestination="@id/navigationRoulette">
     <fragment
-        android:id="@+id/navigation_roulette"
+        android:id="@+id/navigationRoulette"
         android:name="com.minar.randomix.Roulette"
         android:label="fragment_roulette"
         tools:layout="@layout/fragment_roulette" />
     <fragment
-        android:id="@+id/navigation_coin"
+        android:id="@+id/navigationCoin"
         android:name="com.minar.randomix.Coin"
         android:label="fragment_coin"
         tools:layout="@layout/fragment_coin" />
     <fragment
-        android:id="@+id/navigation_magic_ball"
+        android:id="@+id/navigationMagicBall"
         android:name="com.minar.randomix.MagicBall"
         android:label="fragment_magic_ball"
         tools:layout="@layout/fragment_magic_ball" />
     <fragment
-        android:id="@+id/navigation_dice"
+        android:id="@+id/navigationDice"
         android:name="com.minar.randomix.Dice"
         android:label="fragment_dice"
         tools:layout="@layout/fragment_dice" />
     <fragment
-        android:id="@+id/navigation_settings"
+        android:id="@+id/navigationSettings"
         android:name="com.minar.randomix.Settings"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />

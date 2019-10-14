@@ -77,8 +77,6 @@
     <string name="easter_egg">Nice logo, huh? ;D</string>
 
     <string name="customization">Customization</string>
-    <string name="dark_theme_description">Activate the dark theme, the app will restart.</string>
-    <string name="dark_theme_name">Dark theme</string>
     <string name="vibration_name">Vibration</string>
     <string name="vibration_description">Vibration when a button is pressed.</string>
     <string name="sound_name">Sounds</string>
@@ -91,7 +89,7 @@
 
     <string name="accent_description">Change the default accent color.</string>
     <string name="accent_name">Accent color</string>
-    <string name="theme_description">Use a dark, light or automatic app theme</string>
+    <string name="theme_description">Use a dark, light or automatic app theme.</string>
     <string name="theme_name">App theme</string>
     <string name="blue">Blue</string>
     <string name="green">Green</string>

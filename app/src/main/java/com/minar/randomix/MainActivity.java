@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         String theme = sp.getString("theme_color", "system");
         String accent = sp.getString("accent_color", "blue");
+
         if (!sp.getBoolean("first", false)) {
             SharedPreferences.Editor editor = sp.edit();
             editor.putBoolean("first", true);

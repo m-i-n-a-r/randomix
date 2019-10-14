@@ -2,27 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_roulette"
+        android:id="@+id/navigationRoulette"
         android:icon="@drawable/ic_roulette_black_24dp"
         android:title="@string/title_roulette" />
 
     <item
-        android:id="@+id/navigation_coin"
+        android:id="@+id/navigationCoin"
         android:icon="@drawable/ic_coin_black_24dp"
         android:title="@string/title_coin" />
 
     <item
-        android:id="@+id/navigation_magic_ball"
+        android:id="@+id/navigationMagicBall"
         android:icon="@drawable/ic_magic_ball_black_24dp"
         android:title="@string/title_magic_ball" />
 
     <item
-        android:id="@+id/navigation_dice"
+        android:id="@+id/navigationDice"
         android:icon="@drawable/ic_dice_black_24dp"
         android:title="@string/title_dice" />
 
     <item
-        android:id="@+id/navigation_settings"
+        android:id="@+id/navigationSettings"
         android:icon="@drawable/ic_settings_black_24dp"
         android:title="@string/title_settings" />
 

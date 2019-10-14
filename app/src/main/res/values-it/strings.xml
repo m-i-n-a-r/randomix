@@ -57,8 +57,6 @@
     <string name="dev_description">Sono uno studente e sviluppo app nel tempo libero. I miei lavori riguardano principalmente app di personalizzazione e grafica.</string>
     <string name="easter_egg">Bel logo, eh? ;D</string>
     <string name="customization">Personalizzazione</string>
-    <string name="dark_theme_description">Attiva il tema scuro, l\'applicazione si riavvierà.</string>
-    <string name="dark_theme_name">Tema scuro</string>
     <string name="vibration_name">Vibrazione</string>
     <string name="vibration_description">Vibrazione quando si preme un tasto.</string>
     <string name="sound_name">Suoni</string>
@@ -83,7 +81,7 @@
     <string name="dark_theme">Scuro</string>
     <string name="light_theme">Chiaro</string>
     <string name="system_theme">Default di sistema</string>
-    <string name="theme_description">Usa un tema scuro, chiaro o automatico per l\'app</string>
+    <string name="theme_description">Usa un tema scuro, chiaro o automatico per l\'app.</string>
     <string name="theme_name">Tema dell\'app</string>
 
 </resources>

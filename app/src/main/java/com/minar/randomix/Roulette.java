@@ -15,9 +15,11 @@ import android.view.animation.Animation;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +59,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
     @Override
     public boolean onLongClick(View v) {
         @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
-                LinearLayout optionsList = getView().findViewById(R.id.optionsListHorizontal);
+        ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
         Activity act = getActivity();
         switch (v.getId()) {
             case R.id.deleteButton:
@@ -85,11 +87,11 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                 // Insert three options manually and spin the roulette, or clear the options
                 if (options.isEmpty()) {
                     entry.setText(option1);
-                    InsertRouletteOption();
+                    insertRouletteChip();
                     entry.setText(option2);
-                    InsertRouletteOption();
+                    insertRouletteChip();
                     entry.setText(option3);
-                    InsertRouletteOption();
+                    insertRouletteChip();
                     break;
                 } else {
                     options.clear();
@@ -106,7 +108,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
         @SuppressWarnings("ConstantConditions")
         // Suppress warning, it's guaranteed that getView won't be null
         final ImageView deleteAnimation = (ImageView) getView().findViewById(R.id.deleteButton);
-        LinearLayout optionsList = getView().findViewById(R.id.optionsListHorizontal);
+        ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
         switch (v.getId()) {
             case R.id.deleteButton:
                 // Start the animated vector drawable
@@ -118,8 +120,8 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                     ((MainActivity) act).playSound(1);
                 }
                 if (options.isEmpty()) return;
-                options.remove(options.size() - 1);
                 optionsList.removeView(getView().findViewById(options.size()));
+                options.remove(options.size() - 1);
                 break;
 
             case R.id.insertButton:
@@ -133,7 +135,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                     ((MainActivity) act).playSound(1);
                 }
                 // Insert in both the list and the layout
-                InsertRouletteOption();
+                insertRouletteChip();
                 break;
 
             case R.id.buttonSpinRoulette:
@@ -189,58 +191,59 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
     @Override
     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
         @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
-                LinearLayout optionsList = getView().findViewById(R.id.optionsListHorizontal);
+        ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
         if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_GO || actionId == EditorInfo.IME_ACTION_SEND) {
             // Start the animated vector drawable
             ImageView insertAnimation = (ImageView) getView().findViewById(R.id.insertButton);
             Drawable insert = insertAnimation.getDrawable();
             if (insert instanceof Animatable) ((Animatable) insert).start();
             // Insert in both the list and the layout
-            InsertRouletteOption();
+            insertRouletteChip();
             return true;
         }
         return false;
     }
 
-    private void InsertRouletteOption() {
+    // Insert a chip in the roulette (15 chips limit)
+    private void insertRouletteChip() {
         String currentOption = "";
         @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
-                LinearLayout optionsList = getView().findViewById(R.id.optionsListHorizontal);
         TextView entry = getView().findViewById(R.id.entryRoulette);
+        final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
+
         // Delete the blank spaces between words and before and after them to avoid weird behaviors
         currentOption = entry.getText().toString().trim();
         currentOption = currentOption.replaceAll("\\s+", " ");
+
         // Return if the string entered is a duplicate
         if (options.contains(currentOption)) return;
         // Reset the text field eventually, it could contain whitespaces
         entry.setText("");
-        // If the text field isn't empty, save the option in the list and create the preview
-        if (currentOption.trim().length() > 0) {
-            if (options.size() > 9) {
-                Toast.makeText(getContext(), getString(R.string.too_much_entries_roulette), Toast.LENGTH_SHORT).show();
-                return;
-            }
-            options.add(currentOption);
-            TextView optionsListEntry = new TextView(getContext());
-            optionsListEntry.setText(currentOption);
 
-            // Get the margin and the padding from dimensions. Divide using the factor used in getDimension() to get the same number for every resolution
-            int margin = (int) (getResources().getDimension(R.dimen.margin_roulette_entry) / getResources().getDisplayMetrics().density);
-            int padding = (int) (getResources().getDimension(R.dimen.padding_roulette_entry) / getResources().getDisplayMetrics().density);
-
-            // Other properties needed for a clean ui
-            optionsListEntry.setBackgroundResource(R.drawable.rounded_corners_textview_bg);
-            optionsListEntry.setPadding(padding, padding, padding, padding);
-            optionsListEntry.setTextSize(getResources().getDimension(R.dimen.roulette_option_text_size) / getResources().getDisplayMetrics().density);
-            // Set margins using the layout params
-            LinearLayout.LayoutParams lParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            lParams.setMargins(margin, 0, margin, 0);
-            optionsListEntry.setLayoutParams(lParams);
-            // Set an id
-            optionsListEntry.setId(options.indexOf(currentOption));
-            // Add the element to the linear layout
-            optionsList.addView(optionsListEntry);
+        // Check if the limit is reached
+        if (options.size() > 14) {
+            Toast.makeText(getContext(), getString(R.string.too_much_entries_roulette), Toast.LENGTH_SHORT).show();
+            return;
         }
+
+        // Add to the list
+        options.add(currentOption);
+
+        // Inflate the layout and its onclick action
+        LayoutInflater inflater = LayoutInflater.from(getActivity());
+        final Chip chip = (Chip)inflater.inflate(R.layout.chip_roulette, optionsList, false);
+        chip.setText(currentOption);
+        chip.setId(options.size());
+        optionsList.addView(chip);
+
+        // Remove the chip and the element from the list
+        chip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                optionsList.removeView(view);
+                options.remove(chip.getText().toString());
+            }
+        });
     }
 
 }

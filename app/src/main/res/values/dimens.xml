@@ -10,6 +10,7 @@
     <dimen name="text_box_focused_stroke_width">2dp</dimen>
     <!-- Using 0 elevation will cause a lot of weird behaviors -->
     <dimen name="bottom_navbar_elevation">0.1dp</dimen>
+    <dimen name="chip_spacing">4dp</dimen>
 
     <dimen name="generic_result_text_size">42sp</dimen>
     <dimen name="long_result_text_size">36sp</dimen>

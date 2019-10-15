@@ -115,14 +115,17 @@
                     android:layout_marginTop="@dimen/linear_vertical_margin"
                     android:scrollbars="none">
 
-                    <LinearLayout
-                        android:id="@+id/optionsListHorizontal"
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/rouletteChipList"
+                        style="@style/Widget.MaterialComponents.ChipGroup"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="@dimen/activity_horizontal_margin"
+                        android:paddingStart="@dimen/activity_horizontal_margin"
+                        app:singleLine="true"
+                        app:chipSpacing="@dimen/chip_spacing">
 
-
-                    </LinearLayout>
+                    </com.google.android.material.chip.ChipGroup>
                 </HorizontalScrollView>
 
                 <ImageView

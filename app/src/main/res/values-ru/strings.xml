@@ -67,9 +67,9 @@
 
     <string name="customization">Кастомизация</string>
     <string name="vibration_name">Вибрация</string>
-    <string name="vibration_description">Вибрировать при нажатой кнопке</string>
+    <string name="vibration_description_on">Вибрировать при нажатой кнопке</string>
     <string name="sound_name">Звуки</string>
-    <string name="sound_description">Играть музыку при нажатой кнопке.</string>
+    <string name="sound_description_on">Играть музыку при нажатой кнопке.</string>
     <string name="dice_number_name">Число костей</string>
     <string name="dice_number_description">Изменить число бросков кости.</string>
     <string name="one">Одна</string>
@@ -85,7 +85,7 @@
     <string name="pink">Розовый</string>
     <string name="light_blue">синий</string>
     <string name="app_behavior">Режим приложения</string>
-    <string name="rude_answers_description">Активировать грубые ответы для волшебного шарика.</string>
+    <string name="rude_answers_description_on">грубые ответы активированы, идиот.</string>
     <string name="rude_answers_name">Грубые ответы</string>
     <string name="system_theme">система</string>
     <string name="light_theme">свет</string>
@@ -93,5 +93,10 @@
     <string name="theme_name">тема приложения</string>
     <string name="theme_description">Используйте темную, светлую или автоматическую тему приложения.</string>
     <string name="yellow">желтый</string>
+    <string name="lime">Лайм</string>
+    <string name="red">красный</string>
+    <string name="sound_description_off">нет звука при нажатии кнопки</string>
+    <string name="vibration_description_off">нет вибрации при нажатии кнопки</string>
+    <string name="rude_answers_description_off">просто добрые и вежливые ответы.</string>
 
 </resources>

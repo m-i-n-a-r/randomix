@@ -36,13 +36,14 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
 
-        // Set the base theme
+        // Set the base theme and the accent
         if (theme.equals("system"))
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         if (theme.equals("dark"))
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         if (theme.equals("light"))
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         if (accent.equals("green")) setTheme(R.style.AppTheme_green);
         if (accent.equals("orange")) setTheme(R.style.AppTheme_orange);
         if (accent.equals("yellow")) setTheme(R.style.AppTheme_yellow);
@@ -50,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         if (accent.equals("violet")) setTheme(R.style.AppTheme_violet);
         if (accent.equals("pink")) setTheme(R.style.AppTheme_pink);
         if (accent.equals("lightBlue")) setTheme(R.style.AppTheme_lightBlue);
+        if (accent.equals("red")) setTheme(R.style.AppTheme_red);
+        if (accent.equals("lime")) setTheme(R.style.AppTheme_lime);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);

@@ -58,9 +58,9 @@
     <string name="easter_egg">Bel logo, eh? ;D</string>
     <string name="customization">Personalizzazione</string>
     <string name="vibration_name">Vibrazione</string>
-    <string name="vibration_description">Vibrazione quando si preme un tasto.</string>
+    <string name="vibration_description_on">Vibra quando si preme un tasto.</string>
     <string name="sound_name">Suoni</string>
-    <string name="sound_description">Riproduci un suono alla pressione dei tasti.</string>
+    <string name="sound_description_on">Riproduci un suono alla pressione dei tasti.</string>
     <string name="dice_number_name">Numero di dadi</string>
     <string name="dice_number_description">Cambia il numero di dadi lanciati.</string>
     <string name="one">Uno</string>
@@ -76,7 +76,7 @@
     <string name="pink">Rosa</string>
     <string name="light_blue">Azzurro</string>
     <string name="app_behavior">Comportamento dell\'app</string>
-    <string name="rude_answers_description">Attiva le risposte sgarbate per la palla magica.</string>
+    <string name="rude_answers_description_on">Risposte sgarbate attive, idiota.</string>
     <string name="rude_answers_name">Risposte sgarbate</string>
     <string name="dark_theme">Scuro</string>
     <string name="light_theme">Chiaro</string>
@@ -84,5 +84,10 @@
     <string name="theme_description">Usa un tema scuro, chiaro o automatico per l\'app.</string>
     <string name="theme_name">Tema dell\'app</string>
     <string name="yellow">Giallo</string>
+    <string name="lime">Lime</string>
+    <string name="red">Rosso</string>
+    <string name="sound_description_off">Nessun suono alla pressione dei tasti.</string>
+    <string name="vibration_description_off">Nessuna vibrazione alla pressione dei tasti</string>
+    <string name="rude_answers_description_off">Solo risposte gentili e pulite.</string>
 
 </resources>

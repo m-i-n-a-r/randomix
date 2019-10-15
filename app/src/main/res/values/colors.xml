@@ -28,11 +28,13 @@
     <color name="blueAccent">#4285f4</color>
     <color name="greenAccent">#3ddc84</color>
     <color name="yellowAccent">#f4b400</color>
-    <color name="orangeAccent">#ff5722</color>
+    <color name="orangeAccent">#ff7522</color>
     <color name="tealAccent">#009688</color>
     <color name="violetAccent">#ab47bc</color>
     <color name="pinkAccent">#ff66cc</color>
     <color name="lightBlueAccent">#29b6f6</color>
+    <color name="redAccent">#ff5252</color>
+    <color name="limeAccent">#c5de00</color>
 
     <!-- Temporary solution for the unselected stroke color for the text field TODO remove when possible -->
     <color name="mtrl_textinput_default_box_stroke_color">@color/goodGray</color>

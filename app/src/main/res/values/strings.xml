@@ -78,15 +78,18 @@
 
     <string name="customization">Customization</string>
     <string name="vibration_name">Vibration</string>
-    <string name="vibration_description">Vibration when a button is pressed.</string>
+    <string name="vibration_description_on">Vibrate when a button is pressed.</string>
+    <string name="vibration_description_off">No vibrations when a button is pressed.</string>
     <string name="sound_name">Sounds</string>
-    <string name="sound_description">Play a sound when a button is pressed.</string>
+    <string name="sound_description_on">Play a sound when a button is pressed.</string>
+    <string name="sound_description_off">No sound when a button is pressed.</string>
     <string name="dice_number_name">Dices number</string>
     <string name="dice_number_description">Change the number of dices thrown.</string>
     <string name="one">One</string>
     <string name="two">Two</string>
     <string name="three">Three</string>
 
+    <!-- accent, theme and dice number descriptions aren't used, the actual value of the preference is shown instead -->
     <string name="accent_description">Change the default accent color.</string>
     <string name="accent_name">Accent color</string>
     <string name="theme_description">Use a dark, light or automatic app theme.</string>
@@ -99,12 +102,15 @@
     <string name="violet">Violet</string>
     <string name="pink">Pink</string>
     <string name="light_blue">Light blue</string>
+    <string name="red">Red</string>
+    <string name="lime">Lime</string>
     <string name="system_theme">System default</string>
     <string name="dark_theme">Dark</string>
     <string name="light_theme">Light</string>
 
     <string name="app_behavior">App behavior</string>
-    <string name="rude_answers_description">Activate the rude answers for the magic ball.</string>
+    <string name="rude_answers_description_on">Rude answers activated, idiot.</string>
+    <string name="rude_answers_description_off">Just kind and polite answers.</string>
     <string name="rude_answers_name">Rude answers</string>
 
 </resources>

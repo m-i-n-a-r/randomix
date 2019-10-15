@@ -47,4 +47,12 @@
         <item name="colorAccent">@color/lightBlueAccent</item>
     </style>
 
+    <style name="AppTheme.red" parent="AppTheme">
+        <item name="colorAccent">@color/redAccent</item>
+    </style>
+
+    <style name="AppTheme.lime" parent="AppTheme">
+        <item name="colorAccent">@color/limeAccent</item>
+    </style>
+
 </resources>

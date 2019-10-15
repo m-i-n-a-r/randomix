@@ -92,5 +92,6 @@
     <string name="dark_theme">Тёмная</string>
     <string name="theme_name">тема приложения</string>
     <string name="theme_description">Используйте темную, светлую или автоматическую тему приложения.</string>
+    <string name="yellow">желтый</string>
 
 </resources>

@@ -120,7 +120,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                 }
                 if (options.isEmpty()) return;
 
-                Chip chip = (Chip) optionsList.getChildAt(optionsList.getChildCount()- 1);
+                Chip chip = (Chip) optionsList.getChildAt(optionsList.getChildCount() - 1);
                 removeChip(chip);
                 break;
 
@@ -206,7 +206,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
 
     // Insert a chip in the roulette (15 chips limit)
     private void insertRouletteChip() {
-        String currentOption = "";
+        String currentOption;
         @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
                 TextView entry = getView().findViewById(R.id.entryRoulette);
         final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
@@ -216,7 +216,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
         currentOption = currentOption.replaceAll("\\s+", " ");
 
         // Return if the string entered is a duplicate
-        if (options.contains(currentOption)) return;
+        if (options.contains(currentOption) || currentOption.equals("")) return;
         // Reset the text field eventually, it could contain whitespaces
         entry.setText("");
 
@@ -243,15 +243,16 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
         // Remove the chip and the element from the list
         chip.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) { removeChip(chip); }
+            public void onClick(View view) {
+                removeChip(chip);
+            }
         });
     }
 
     private void removeChip(final Chip chip) {
-        @SuppressWarnings("ConstantConditions")
-        final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
+        @SuppressWarnings("ConstantConditions") final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
         // Remove the chip with an animation
-        if(chip == null) return;
+        if (chip == null) return;
         final Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.chip_exit_anim);
         chip.startAnimation(animation);
         chip.postDelayed(new Runnable() {
@@ -260,12 +261,11 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                 optionsList.removeView(chip);
                 options.remove(chip.getText().toString());
             }
-        }, 500);
+        }, 400);
     }
 
     private void removeAllChips() {
-        @SuppressWarnings("ConstantConditions")
-        final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
+        @SuppressWarnings("ConstantConditions") final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
         final int childCount = optionsList.getChildCount();
         for (int i = 0; i < childCount; i++) {
             Chip chip = (Chip) optionsList.getChildAt(i);

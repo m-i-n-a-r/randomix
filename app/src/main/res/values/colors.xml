@@ -26,9 +26,9 @@
 
     <!-- accents -->
     <color name="blueAccent">#4285f4</color>
-    <color name="greenAccent">#0f9d58</color>
+    <color name="greenAccent">#3ddc84</color>
     <color name="yellowAccent">#f4b400</color>
-    <color name="orangeAccent">#ff3d00</color>
+    <color name="orangeAccent">#ff5722</color>
     <color name="tealAccent">#009688</color>
     <color name="violetAccent">#ab47bc</color>
     <color name="pinkAccent">#ff66cc</color>

@@ -83,5 +83,6 @@
     <string name="system_theme">Default di sistema</string>
     <string name="theme_description">Usa un tema scuro, chiaro o automatico per l\'app.</string>
     <string name="theme_name">Tema dell\'app</string>
+    <string name="yellow">Giallo</string>
 
 </resources>

@@ -17,6 +17,7 @@
         <item>@string/blue</item>
         <item>@string/green</item>
         <item>@string/orange</item>
+        <item>@string/yellow</item>
         <item>@string/teal</item>
         <item>@string/violet</item>
         <item>@string/pink</item>
@@ -27,6 +28,7 @@
         <item>blue</item>
         <item>green</item>
         <item>orange</item>
+        <item>yellow</item>
         <item>teal</item>
         <item>violet</item>
         <item>pink</item>

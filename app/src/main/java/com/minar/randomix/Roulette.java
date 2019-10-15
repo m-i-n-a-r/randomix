@@ -12,6 +12,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -42,10 +43,10 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_roulette, container, false);
         // Set the listener
-        ImageView insert = (ImageView) v.findViewById(R.id.insertButton);
-        ImageView delete = (ImageView) v.findViewById(R.id.deleteButton);
-        ImageView spin = (ImageView) v.findViewById(R.id.buttonSpinRoulette);
-        EditText textInsert = (EditText) v.findViewById(R.id.entryRoulette);
+        ImageView insert = v.findViewById(R.id.insertButton);
+        ImageView delete = v.findViewById(R.id.deleteButton);
+        ImageView spin = v.findViewById(R.id.buttonSpinRoulette);
+        EditText textInsert = v.findViewById(R.id.entryRoulette);
 
         insert.setOnClickListener(this);
         delete.setOnClickListener(this);
@@ -58,12 +59,11 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
 
     @Override
     public boolean onLongClick(View v) {
-        @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
-        ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
         Activity act = getActivity();
         switch (v.getId()) {
             case R.id.deleteButton:
                 // Start the animated vector drawable
+                @SuppressWarnings("ConstantConditions")
                 ImageView deleteAnimation = (ImageView) getView().findViewById(R.id.deleteButton);
                 Drawable delete = deleteAnimation.getDrawable();
                 if (delete instanceof Animatable) ((Animatable) delete).start();
@@ -72,11 +72,11 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
 
                 // Clear the options
                 if (options.isEmpty()) return true;
-                options.clear();
-                optionsList.removeAllViews();
+                removeAllChips();
                 break;
 
             case R.id.buttonSpinRoulette:
+                @SuppressWarnings("ConstantConditions")
                 TextView entry = getView().findViewById(R.id.entryRoulette);
                 String option1 = getResources().getString(R.string.generic_option) + "1";
                 String option2 = getResources().getString(R.string.generic_option) + "2";
@@ -94,8 +94,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                     insertRouletteChip();
                     break;
                 } else {
-                    options.clear();
-                    optionsList.removeAllViews();
+                    removeAllChips();
                     break;
                 }
         }
@@ -108,7 +107,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
         @SuppressWarnings("ConstantConditions")
         // Suppress warning, it's guaranteed that getView won't be null
         final ImageView deleteAnimation = (ImageView) getView().findViewById(R.id.deleteButton);
-        ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
+        final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
         switch (v.getId()) {
             case R.id.deleteButton:
                 // Start the animated vector drawable
@@ -120,8 +119,9 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                     ((MainActivity) act).playSound(1);
                 }
                 if (options.isEmpty()) return;
-                optionsList.removeView(getView().findViewById(options.size()));
-                options.remove(options.size() - 1);
+
+                Chip chip = (Chip) optionsList.getChildAt(optionsList.getChildCount()- 1);
+                removeChip(chip);
                 break;
 
             case R.id.insertButton:
@@ -191,7 +191,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
     @Override
     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
         @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
-        ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
+                ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
         if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_GO || actionId == EditorInfo.IME_ACTION_SEND) {
             // Start the animated vector drawable
             ImageView insertAnimation = (ImageView) getView().findViewById(R.id.insertButton);
@@ -208,7 +208,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
     private void insertRouletteChip() {
         String currentOption = "";
         @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
-        TextView entry = getView().findViewById(R.id.entryRoulette);
+                TextView entry = getView().findViewById(R.id.entryRoulette);
         final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
 
         // Delete the blank spaces between words and before and after them to avoid weird behaviors
@@ -231,19 +231,45 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
 
         // Inflate the layout and its onclick action
         LayoutInflater inflater = LayoutInflater.from(getActivity());
-        final Chip chip = (Chip)inflater.inflate(R.layout.chip_roulette, optionsList, false);
+        final Chip chip = (Chip) inflater.inflate(R.layout.chip_roulette, optionsList, false);
         chip.setText(currentOption);
         chip.setId(options.size());
+
+        // Add the chip with an animation
         optionsList.addView(chip);
+        Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.chip_enter_anim);
+        chip.startAnimation(animation);
 
         // Remove the chip and the element from the list
         chip.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                optionsList.removeView(view);
-                options.remove(chip.getText().toString());
-            }
+            public void onClick(View view) { removeChip(chip); }
         });
     }
 
+    private void removeChip(final Chip chip) {
+        @SuppressWarnings("ConstantConditions")
+        final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
+        // Remove the chip with an animation
+        if(chip == null) return;
+        final Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.chip_exit_anim);
+        chip.startAnimation(animation);
+        chip.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                optionsList.removeView(chip);
+                options.remove(chip.getText().toString());
+            }
+        }, 500);
+    }
+
+    private void removeAllChips() {
+        @SuppressWarnings("ConstantConditions")
+        final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
+        final int childCount = optionsList.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            Chip chip = (Chip) optionsList.getChildAt(i);
+            removeChip(chip);
+        }
+    }
 }

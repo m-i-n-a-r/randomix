@@ -4,6 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="@string/title_roulette"
-    app:rippleColor="?colorAccent">
+    app:rippleColor="?colorAccent"
+    app:chipBackgroundColor="@color/goodGrayTranslucent">
 
 </com.google.android.material.chip.Chip>

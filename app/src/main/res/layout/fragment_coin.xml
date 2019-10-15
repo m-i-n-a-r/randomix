@@ -1,74 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Coin">
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/bottom_navbar_height">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/titleCoin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:fontFamily="sans-serif-condensed"
                 android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:maxLines="1"
+                android:text="@string/hello_coin_fragment"
+                android:textAllCaps="true"
+                android:textSize="@dimen/title_text_size"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/titleCoin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/activity_vertical_margin"
-                    android:fontFamily="sans-serif-condensed"
-                    android:gravity="center_horizontal"
-                    android:maxLines="1"
-                    android:text="@string/hello_coin_fragment"
-                    android:textAllCaps="true"
-                    android:textSize="@dimen/title_text_size"
-                    android:textStyle="bold" />
+            <TextView
+                android:id="@+id/descriptionCoin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_description_height"
+                android:layout_margin="@dimen/linear_vertical_margin"
+                android:gravity="center_horizontal"
+                android:text="@string/description_coin"
+                android:textSize="@dimen/description_text_size" />
 
-                <TextView
-                    android:id="@+id/descriptionCoin"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/text_description_height"
-                    android:layout_margin="@dimen/linear_vertical_margin"
-                    android:gravity="center_horizontal"
-                    android:text="@string/description_coin"
-                    android:textSize="@dimen/description_text_size" />
+            <TextView
+                android:id="@+id/resultCoin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_result_height"
+                android:layout_marginTop="@dimen/linear_vertical_margin"
+                android:layout_marginBottom="@dimen/linear_vertical_margin"
+                android:gravity="center_horizontal"
+                android:text="@string/result_placeholder"
+                android:textSize="@dimen/generic_result_text_size"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/resultCoin"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/text_result_height"
-                    android:layout_marginTop="@dimen/linear_vertical_margin"
-                    android:layout_marginBottom="@dimen/linear_vertical_margin"
-                    android:gravity="center_horizontal"
-                    android:text="@string/result_placeholder"
-                    android:textSize="@dimen/generic_result_text_size"
-                    android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/coinButtonAnimation"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/image_button_height"
+                android:layout_marginTop="@dimen/linear_vertical_margin"
+                android:layout_marginBottom="@dimen/linear_vertical_margin"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="@string/flip_coin"
+                android:focusable="true"
+                android:src="@drawable/coin_head_vector_animation" />
 
-                <ImageView
-                    android:id="@+id/coinButtonAnimation"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/image_button_height"
-                    android:layout_marginTop="@dimen/linear_vertical_margin"
-                    android:layout_marginBottom="@dimen/linear_vertical_margin"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:clickable="true"
-                    android:contentDescription="@string/flip_coin"
-                    android:focusable="true"
-                    android:src="@drawable/coin_head_vector_animation" />
+        </LinearLayout>
 
-            </LinearLayout>
+    </ScrollView>
 
-        </ScrollView>
-
-    </RelativeLayout>
-
-</FrameLayout>
+</RelativeLayout>

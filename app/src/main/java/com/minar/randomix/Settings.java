@@ -22,7 +22,6 @@ public class Settings extends PreferenceFragmentCompat implements OnSharedPrefer
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.preferences, rootKey);
-
     }
 
     @Override

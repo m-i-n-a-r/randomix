@@ -11,10 +11,10 @@
     <string name="description_roulette">Тебе нужно что то выбрать? Ты устал от опросов и настоящих друзей? Рулетка решит за тебя! Нажмите и удерживайте рулетку, чтобы добавить общие параметры или очистить их.</string>
     <string name="spin_roulette">Крутим рулетку!</string>
     <string name="insert_roulette_hint">Введите вариант..</string>
-    <string name="delete_roulette_hint">Удалить последнюю введенную опцию.</string>
+    <string name="delete_roulette_hint">Удалить последнюю введенную опцию</string>
     <string name="insert_roulette_description">Ниже перечислены возможные варианты добавления в рулетку.</string>
     <string name="no_entry_roulette">Пожалуйста, введите 2 и более вариантов, чтобы крутить релетку.</string>
-    <string name="too_much_entries_roulette">Вы не можете ввести более 10 вариантов</string>
+    <string name="too_much_entries_roulette">Вы не можете ввести более 15 вариантов</string>
     <string name="hello_roulette_fragment">Рулетка - Randomix</string>
     <string name="generic_option">Вариант..</string>
 
@@ -69,13 +69,13 @@
     <string name="vibration_name">Вибрация</string>
     <string name="vibration_description_on">Вибрировать при нажатой кнопке</string>
     <string name="sound_name">Звуки</string>
-    <string name="sound_description_on">Играть музыку при нажатой кнопке.</string>
+    <string name="sound_description_on">Играть музыку при нажатой кнопке</string>
     <string name="dice_number_name">Число костей</string>
-    <string name="dice_number_description">Изменить число бросков кости.</string>
+    <string name="dice_number_description">Изменить число бросков кости</string>
     <string name="one">Одна</string>
     <string name="two">Два</string>
     <string name="three">Три</string>
-    <string name="accent_description">Изменить цвет по умолчанию.</string>
+    <string name="accent_description">Изменить цвет по умолчанию</string>
     <string name="accent_name">Цвет</string>
     <string name="blue">Синий</string>
     <string name="green">Зелёный</string>
@@ -85,18 +85,18 @@
     <string name="pink">Розовый</string>
     <string name="light_blue">синий</string>
     <string name="app_behavior">Режим приложения</string>
-    <string name="rude_answers_description_on">грубые ответы активированы, идиот.</string>
+    <string name="rude_answers_description_on">грубые ответы активированы, идиот</string>
     <string name="rude_answers_name">Грубые ответы</string>
     <string name="system_theme">система</string>
     <string name="light_theme">свет</string>
     <string name="dark_theme">Тёмная</string>
     <string name="theme_name">тема приложения</string>
-    <string name="theme_description">Используйте темную, светлую или автоматическую тему приложения.</string>
+    <string name="theme_description">Используйте темную, светлую или автоматическую тему приложения</string>
     <string name="yellow">желтый</string>
     <string name="lime">Лайм</string>
     <string name="red">красный</string>
     <string name="sound_description_off">нет звука при нажатии кнопки</string>
     <string name="vibration_description_off">нет вибрации при нажатии кнопки</string>
-    <string name="rude_answers_description_off">просто добрые и вежливые ответы.</string>
+    <string name="rude_answers_description_off">просто добрые и вежливые ответы</string>
 
 </resources>

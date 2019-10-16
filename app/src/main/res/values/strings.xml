@@ -16,10 +16,10 @@
         roulette will decide for you! Long press the roulette to Add generic options or clear them.</string>
     <string name="spin_roulette">Spin the roulette!</string>
     <string name="insert_roulette_hint">Enter an option..</string>
-    <string name="delete_roulette_hint">Delete the last option entered.</string>
+    <string name="delete_roulette_hint">Delete the last option entered</string>
     <string name="insert_roulette_description">Please list below the possible choices to add in the roulette.</string>
     <string name="no_entry_roulette">Please, enter 2 or more options to spin the roulette!</string>
-    <string name="too_much_entries_roulette">You can\'t enter more than 10 options!</string>
+    <string name="too_much_entries_roulette">You can\'t enter more than 15 options!</string>
     <string name="hello_roulette_fragment">Roulette mode - Randomix</string>
     <string name="generic_option">Option</string>
 
@@ -78,21 +78,21 @@
 
     <string name="customization">Customization</string>
     <string name="vibration_name">Vibration</string>
-    <string name="vibration_description_on">Vibrate when a button is pressed.</string>
-    <string name="vibration_description_off">No vibrations when a button is pressed.</string>
+    <string name="vibration_description_on">Vibrate when a button is pressed</string>
+    <string name="vibration_description_off">No vibrations when a button is pressed</string>
     <string name="sound_name">Sounds</string>
-    <string name="sound_description_on">Play a sound when a button is pressed.</string>
-    <string name="sound_description_off">No sound when a button is pressed.</string>
+    <string name="sound_description_on">Play a sound when a button is pressed</string>
+    <string name="sound_description_off">No sound when a button is pressed</string>
     <string name="dice_number_name">Dices number</string>
-    <string name="dice_number_description">Change the number of dices thrown.</string>
+    <string name="dice_number_description">Change the number of dices thrown</string>
     <string name="one">One</string>
     <string name="two">Two</string>
     <string name="three">Three</string>
 
     <!-- accent, theme and dice number descriptions aren't used, the actual value of the preference is shown instead -->
-    <string name="accent_description">Change the default accent color.</string>
+    <string name="accent_description">Change the default accent color</string>
     <string name="accent_name">Accent color</string>
-    <string name="theme_description">Use a dark, light or automatic app theme.</string>
+    <string name="theme_description">Use a dark, light or automatic app theme</string>
     <string name="theme_name">App theme</string>
     <string name="blue">Blue</string>
     <string name="green">Green</string>
@@ -109,8 +109,8 @@
     <string name="light_theme">Light</string>
 
     <string name="app_behavior">App behavior</string>
-    <string name="rude_answers_description_on">Rude answers activated, idiot.</string>
-    <string name="rude_answers_description_off">Just kind and polite answers.</string>
+    <string name="rude_answers_description_on">Rude answers activated, idiot</string>
+    <string name="rude_answers_description_off">Just kind and polite answers</string>
     <string name="rude_answers_name">Rude answers</string>
 
 </resources>

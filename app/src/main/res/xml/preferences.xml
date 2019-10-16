@@ -37,7 +37,7 @@
         app:iconSpaceReserved="false">
 
         <ListPreference
-            android:defaultValue="system_default"
+            android:defaultValue="system"
             android:entries="@array/themes"
             android:entryValues="@array/themeValues"
             android:key="theme_color"

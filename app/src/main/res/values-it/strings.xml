@@ -9,9 +9,9 @@
     <string name="generic_result">Il risultato è:</string>
     <string name="spin_roulette">Gira la ruota!</string>
     <string name="insert_roulette_hint">Inserisci un\'opzione..</string>
-    <string name="delete_roulette_hint">Elimina l\'ultima opzione inserita.</string>
+    <string name="delete_roulette_hint">Elimina l\'ultima opzione inserita</string>
     <string name="no_entry_roulette">Per favore, inserisci almeno due opzioni per girare la roulette!</string>
-    <string name="too_much_entries_roulette">Non puoi inserire più di 10 opzioni!</string>
+    <string name="too_much_entries_roulette">Non puoi inserire più di 15 opzioni!</string>
     <string name="hello_roulette_fragment">Modalità ruota - Randomix</string>
     <string name="generic_option">Opzione</string>
     <string name="flip_coin">Lancia la moneta!</string>
@@ -58,15 +58,15 @@
     <string name="easter_egg">Bel logo, eh? ;D</string>
     <string name="customization">Personalizzazione</string>
     <string name="vibration_name">Vibrazione</string>
-    <string name="vibration_description_on">Vibra quando si preme un tasto.</string>
+    <string name="vibration_description_on">Vibra quando si preme un tasto</string>
     <string name="sound_name">Suoni</string>
-    <string name="sound_description_on">Riproduci un suono alla pressione dei tasti.</string>
+    <string name="sound_description_on">Riproduci un suono alla pressione dei tasti</string>
     <string name="dice_number_name">Numero di dadi</string>
-    <string name="dice_number_description">Cambia il numero di dadi lanciati.</string>
+    <string name="dice_number_description">Cambia il numero di dadi lanciati</string>
     <string name="one">Uno</string>
     <string name="two">Due</string>
     <string name="three">Tre</string>
-    <string name="accent_description">Cambia il colore dei particolari.</string>
+    <string name="accent_description">Cambia il colore dei particolari</string>
     <string name="accent_name">Colore accent</string>
     <string name="blue">Blu</string>
     <string name="green">Verde</string>
@@ -76,18 +76,18 @@
     <string name="pink">Rosa</string>
     <string name="light_blue">Azzurro</string>
     <string name="app_behavior">Comportamento dell\'app</string>
-    <string name="rude_answers_description_on">Risposte sgarbate attive, idiota.</string>
+    <string name="rude_answers_description_on">Risposte sgarbate attive, idiota</string>
     <string name="rude_answers_name">Risposte sgarbate</string>
     <string name="dark_theme">Scuro</string>
     <string name="light_theme">Chiaro</string>
     <string name="system_theme">Default di sistema</string>
-    <string name="theme_description">Usa un tema scuro, chiaro o automatico per l\'app.</string>
+    <string name="theme_description">Usa un tema scuro, chiaro o automatico per l\'app</string>
     <string name="theme_name">Tema dell\'app</string>
     <string name="yellow">Giallo</string>
     <string name="lime">Lime</string>
     <string name="red">Rosso</string>
-    <string name="sound_description_off">Nessun suono alla pressione dei tasti.</string>
+    <string name="sound_description_off">Nessun suono alla pressione dei tasti</string>
     <string name="vibration_description_off">Nessuna vibrazione alla pressione dei tasti</string>
-    <string name="rude_answers_description_off">Solo risposte gentili e pulite.</string>
+    <string name="rude_answers_description_off">Solo risposte gentili e pulite</string>
 
 </resources>

@@ -112,7 +112,8 @@
                 android:paddingStart="@dimen/activity_horizontal_margin"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
                 app:chipSpacing="@dimen/chip_spacing"
-                app:singleLine="true">
+                app:singleLine="true"
+                android:animateLayoutChanges="true">
 
             </com.google.android.material.chip.ChipGroup>
         </HorizontalScrollView>

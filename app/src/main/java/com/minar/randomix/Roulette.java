@@ -106,7 +106,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
         Activity act = getActivity();
         @SuppressWarnings("ConstantConditions")
         // Suppress warning, it's guaranteed that getView won't be null
-        final ImageView deleteAnimation = (ImageView) getView().findViewById(R.id.deleteButton);
+        final ImageView deleteAnimation = getView().findViewById(R.id.deleteButton);
         final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
         switch (v.getId()) {
             case R.id.deleteButton:
@@ -126,7 +126,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
 
             case R.id.insertButton:
                 // Start the animated vector drawable
-                ImageView insertAnimation = (ImageView) getView().findViewById(R.id.insertButton);
+                ImageView insertAnimation = getView().findViewById(R.id.insertButton);
                 Drawable insert = insertAnimation.getDrawable();
                 if (insert instanceof Animatable) ((Animatable) insert).start();
                 // Vibrate and play sound using the common method in MainActivity
@@ -144,12 +144,18 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                     Toast.makeText(getContext(), getString(R.string.no_entry_roulette), Toast.LENGTH_SHORT).show();
                     break;
                 }
-                // Start the animated vector drawable, make the button unclickable during the execution
-                final ImageView spinAnimation = (ImageView) getView().findViewById(R.id.buttonSpinRoulette);
+                // Start the animated vector drawable, make the button not clickable during the execution
+                final ImageView spinAnimation = getView().findViewById(R.id.buttonSpinRoulette);
+
                 deleteAnimation.setClickable(false);
                 deleteAnimation.setLongClickable(false);
                 spinAnimation.setClickable(false);
                 spinAnimation.setLongClickable(false);
+                final int childCount = optionsList.getChildCount();
+                for (int i = 0; i < childCount; i++) {
+                    Chip option = (Chip) optionsList.getChildAt(i);
+                    option.setClickable(false);
+                }
 
                 Drawable spin = spinAnimation.getDrawable();
                 if (spin instanceof Animatable) ((Animatable) spin).start();
@@ -181,6 +187,10 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                         spinAnimation.setLongClickable(true);
                         deleteAnimation.setClickable(true);
                         deleteAnimation.setLongClickable(true);
+                        for (int i = 0; i < childCount; i++) {
+                            Chip option = (Chip) optionsList.getChildAt(i);
+                            option.setClickable(true);
+                        }
                     }
                 }, 1500);
                 break;

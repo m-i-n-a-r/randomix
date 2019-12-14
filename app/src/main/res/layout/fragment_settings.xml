@@ -65,6 +65,18 @@
             android:tint="?colorAccent" />
 
         <ImageView
+            android:id="@+id/minarpp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="@string/dev_paypal"
+            android:focusable="true"
+            android:src="@drawable/ic_paypal_black_24dp"
+            android:tint="?colorAccent" />
+
+        <ImageView
             android:id="@+id/minarps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

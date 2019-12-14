@@ -32,14 +32,16 @@ public class CustomAuthorPreference extends Preference implements View.OnClickLi
         // Make the icons clickable
         ImageView logo = v.findViewById(R.id.imageMinar);
         ImageView l1 = v.findViewById(R.id.minarig);
-        ImageView l2 = v.findViewById(R.id.minarps);
-        ImageView l3 = v.findViewById(R.id.minargit);
-        ImageView l4 = v.findViewById(R.id.minarxda);
+        ImageView l2 = v.findViewById(R.id.minarpp);
+        ImageView l3 = v.findViewById(R.id.minarps);
+        ImageView l4 = v.findViewById(R.id.minargit);
+        ImageView l5 = v.findViewById(R.id.minarxda);
         logo.setOnClickListener(this);
         l1.setOnClickListener(this);
         l2.setOnClickListener(this);
         l3.setOnClickListener(this);
         l4.setOnClickListener(this);
+        l5.setOnClickListener(this);
     }
 
     @Override
@@ -61,23 +63,29 @@ public class CustomAuthorPreference extends Preference implements View.OnClickLi
                 Intent intent1 = new Intent(Intent.ACTION_VIEW, uri);
                 getContext().startActivity(intent1);
                 break;
+            case R.id.minarpp:
+                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
+                uri = Uri.parse(getContext().getString(R.string.dev_paypal));
+                Intent intent2 = new Intent(Intent.ACTION_VIEW, uri);
+                getContext().startActivity(intent2);
+                break;
             case R.id.minarps:
                 if (act instanceof MainActivity) ((MainActivity) act).vibrate();
                 uri = Uri.parse(getContext().getString(R.string.dev_other_apps));
-                Intent intent2 = new Intent(Intent.ACTION_VIEW, uri);
-                getContext().startActivity(intent2);
+                Intent intent3 = new Intent(Intent.ACTION_VIEW, uri);
+                getContext().startActivity(intent3);
                 break;
             case R.id.minargit:
                 if (act instanceof MainActivity) ((MainActivity) act).vibrate();
                 uri = Uri.parse(getContext().getString(R.string.dev_github));
-                Intent intent3 = new Intent(Intent.ACTION_VIEW, uri);
-                getContext().startActivity(intent3);
+                Intent intent4 = new Intent(Intent.ACTION_VIEW, uri);
+                getContext().startActivity(intent4);
                 break;
             case R.id.minarxda:
                 if (act instanceof MainActivity) ((MainActivity) act).vibrate();
                 uri = Uri.parse(getContext().getString(R.string.dev_xda));
-                Intent intent4 = new Intent(Intent.ACTION_VIEW, uri);
-                getContext().startActivity(intent4);
+                Intent intent5 = new Intent(Intent.ACTION_VIEW, uri);
+                getContext().startActivity(intent5);
                 break;
         }
     }

@@ -79,9 +79,9 @@ public class MainActivity extends AppCompatActivity {
         }
         // Use a normal dialog instead of the buggy snackbar. Some texts are never used
         Rate rate = new Rate.Builder(this)
-                .setTriggerCount(3)
-                .setRepeatCount(1)
-                .setMinimumInstallTime(Math.toIntExact(TimeUnit.DAYS.toMillis(0)))
+                .setTriggerCount(10)
+                .setRepeatCount(10)
+                .setMinimumInstallTime(Math.toIntExact(TimeUnit.DAYS.toMillis(3)))
                 .setMessage(R.string.rating_message)
                 .setPositiveButton(R.string.positive_button)
                 .setCancelButton(R.string.cancel_button)

@@ -4,7 +4,7 @@ An open source app to choose randomly between numbers, answers, options and so o
 
 <p align='center'>
   <a href='https://github.com/m-i-n-a-r/randomix/blob/master/LICENSE.md'><img src='https://img.shields.io/cocoapods/l/AFNetworking.svg'/></a>
-  <img src='https://img.shields.io/badge/version-1.3.X-blue'/>
+  <img src='https://img.shields.io/badge/version-1.4.X-blue'/>
 	<img src='https://img.shields.io/badge/status-released-success'/>
 	<img src='https://img.shields.io/badge/-translations%20needed!-yellow'/>
 </p>
@@ -22,7 +22,8 @@ The main purpose of the app is provide a **random choice** in different ways. Th
 - Light and dark themes (Android 10 dark mode supported)
 - Selectable accent (no app restart needed)
 - Multiwindows support
-- First time introduction (Appintro)
+- First time introduction ([Appintro](https://github.com/AppIntro/AppIntro))
+- Rate the app dialog ([gene-rate](https://github.com/Pixplicity/gene-rate))
 - Simple and precise ui (androidx)
 - Sounds, vibration and other options
 - Small size (~3MB), optimized code
@@ -36,9 +37,6 @@ The main purpose of the app is provide a **random choice** in different ways. Th
   <img src='https://i.imgur.com/AvNt6eg.jpg' width='18%'/>
 </p>
 
-## Credits
-This app was written during my free time as a training. Many good devs have helped me understanding the best practices and they taught me a lot of useful tricks. A special thanks to BValeo for the russian translation. **Every other translation is well appreciated!**
-
 ## Download
 The app is now available through Google Play\
 \
@@ -47,3 +45,5 @@ The app is now available through Google Play\
       src='https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png' />
 </a>
 
+## Credits
+This app was written during my free time as a training. Many good devs have helped me understanding the best practices and they taught me a lot of useful tricks. A special thanks to BValeo for the russian translation. **Every other translation is well appreciated!**

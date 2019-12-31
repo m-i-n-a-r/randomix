@@ -89,5 +89,15 @@
     <string name="sound_description_off">Nessun suono alla pressione dei tasti</string>
     <string name="vibration_description_off">Nessuna vibrazione alla pressione dei tasti</string>
     <string name="rude_answers_description_off">Solo risposte gentili e pulite</string>
+    <string name="positive_button">Recensisco!</string>
+    <string name="negative_button">Sono pigro/a</string>
+    <string name="cancel_button">Nah</string>
+    <string name="rating_message">
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
+        \nOk, ora che ho la tua attenzione, potrei chiederti di lasciare una buona recensione per aiutare
+        Randomix a crescere un pochino? Lo apprezzerei davvero tanto! Ti auguro una buona giornata! :D\n
+    </string>
+    <string name="feedback_text">Ho qualcosa da dirti</string>
+    <string name="not_again_button">Non chiedere più</string>
 
 </resources>

@@ -3,7 +3,9 @@ package com.minar.randomix;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
@@ -15,6 +17,9 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.pixplicity.generate.Rate;
+
+import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,6 +66,34 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navController = Navigation.findNavController(this, R.id.navHostFragment);
         NavigationUI.setupWithNavController(navigation, navController);
+
+        // Gene-rate configuration and detect if night mode is enabled to set the appropriate theme
+        boolean isLight = false;
+        switch (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
+            case Configuration.UI_MODE_NIGHT_YES:
+                isLight = false;
+                break;
+            case Configuration.UI_MODE_NIGHT_NO:
+                isLight = true;
+                break;
+        }
+        // Use a normal dialog instead of the buggy snackbar. Some texts are never used
+        Rate rate = new Rate.Builder(this)
+                .setTriggerCount(3)
+                .setRepeatCount(1)
+                .setMinimumInstallTime(Math.toIntExact(TimeUnit.DAYS.toMillis(0)))
+                .setMessage(R.string.rating_message)
+                .setPositiveButton(R.string.positive_button)
+                .setCancelButton(R.string.cancel_button)
+                .setNegativeButton(R.string.feedback_text)
+                .setNeverAgainText(R.string.not_again_button)
+                .setFeedbackText(R.string.feedback_text)
+                .setFeedbackAction(Uri.parse("mailto:" + getResources().getString(R.string.dev_email)))
+                .setLightTheme(isLight)
+                .build();
+
+        rate.count();
+        rate.showRequest();
     }
 
     // Some utility functions, used from every fragment connected to this activity
@@ -86,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
         // noinspection ConstantConditions
         mp.start();
         mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
             public void onCompletion(MediaPlayer mp) {
                 mp.release();
             }

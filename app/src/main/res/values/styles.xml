@@ -3,11 +3,10 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:colorBackground">@color/colorPrimary</item>
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="colorPrimary">@color/colorAccent</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:statusBarColor">@color/colorBackground</item>
         <item name="android:navigationBarColor">@color/goodGray</item> <!-- before P the buttons are white only! -->
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
         <item name="android:textColorSecondary">@color/textColorSecondary</item>
@@ -21,38 +20,47 @@
     <!-- Accent styles -->
     <style name="AppTheme.green" parent="AppTheme">
         <item name="colorAccent">@color/greenAccent</item>
+        <item name="colorPrimary">@color/greenAccent</item>
     </style>
 
     <style name="AppTheme.orange" parent="AppTheme">
         <item name="colorAccent">@color/orangeAccent</item>
+        <item name="colorPrimary">@color/orangeAccent</item>
     </style>
 
     <style name="AppTheme.yellow" parent="AppTheme">
         <item name="colorAccent">@color/yellowAccent</item>
+        <item name="colorPrimary">@color/yellowAccent</item>
     </style>
 
     <style name="AppTheme.teal" parent="AppTheme">
         <item name="colorAccent">@color/tealAccent</item>
+        <item name="colorPrimary">@color/tealAccent</item>
     </style>
 
     <style name="AppTheme.violet" parent="AppTheme">
         <item name="colorAccent">@color/violetAccent</item>
+        <item name="colorPrimary">@color/violetAccent</item>
     </style>
 
     <style name="AppTheme.pink" parent="AppTheme">
         <item name="colorAccent">@color/pinkAccent</item>
+        <item name="colorPrimary">@color/pinkAccent</item>
     </style>
 
     <style name="AppTheme.lightBlue" parent="AppTheme">
         <item name="colorAccent">@color/lightBlueAccent</item>
+        <item name="colorPrimary">@color/lightBlueAccent</item>
     </style>
 
     <style name="AppTheme.red" parent="AppTheme">
         <item name="colorAccent">@color/redAccent</item>
+        <item name="colorPrimary">@color/redAccent</item>
     </style>
 
     <style name="AppTheme.lime" parent="AppTheme">
         <item name="colorAccent">@color/limeAccent</item>
+        <item name="colorPrimary">@color/limeAccent</item>
     </style>
 
 </resources>

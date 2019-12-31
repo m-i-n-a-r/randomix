@@ -7,20 +7,20 @@
     <!-- basic colors -->
     <color name="colorAccent">@color/blueAccent</color>
     <color name="almostWhite">#fbfbfb</color>
-    <color name="goodGray">#909090</color>
+    <color name="goodGray">#959595</color>
     <color name="goodGrayTranslucent">#66909090</color>
     <color name="positiveGreen">#00c077</color>
     <color name="negativeRed">#ee0000</color>
 
     <!-- light theme colors -->
+    <color name="colorBackground">#fefefe</color>
     <color name="colorPrimary">#fefefe</color>
-    <color name="colorPrimaryDark">#fefefe</color>
     <color name="textColorPrimary">#5f5f5f</color>
     <color name="textColorSecondary">#2f2f2f</color>
 
     <!-- dark theme colors -->
+    <color name="colorBackgroundInverse">#1f1f1f</color>
     <color name="colorPrimaryInverse">#1f1f1f</color>
-    <color name="colorPrimaryDarkInverse">#1f1f1f</color>
     <color name="textColorPrimaryInverse">#ffffff</color>
     <color name="textColorSecondaryInverse">#f0f0f0</color>
 

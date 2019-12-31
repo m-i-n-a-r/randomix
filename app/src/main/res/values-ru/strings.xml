@@ -7,7 +7,6 @@
     <string name="title_magic_ball">Волшебный шар</string>
     <string name="title_settings">Настройки</string>
     <string name="generic_result">Результат:</string>
-
     <string name="description_roulette">Тебе нужно что то выбрать? Ты устал от опросов и настоящих друзей? Рулетка решит за тебя! Нажмите и удерживайте рулетку, чтобы добавить общие параметры или очистить их.</string>
     <string name="spin_roulette">Крутим рулетку!</string>
     <string name="insert_roulette_hint">Введите вариант..</string>
@@ -17,14 +16,12 @@
     <string name="too_much_entries_roulette">Вы не можете ввести более 15 вариантов</string>
     <string name="hello_roulette_fragment">Рулетка - Randomix</string>
     <string name="generic_option">Вариант..</string>
-
     <string name="description_coin">Подбросить монетку легко, но она может помочь вам решить, когда что-то делать или нет. Только герб или решка. Пусть говорит монета!</string>
     <string name="flip_coin">Подбросить монетку!</string>
     <string name="hint_coin">Нажмите кнопку ниже!</string>
     <string name="result_head">Герб!</string>
     <string name="result_tail">Решка!</string>
     <string name="hello_coin_fragment">Монетка - Randomix</string>
-
     <string name="description_magic_ball">Волшеный шар скажет тебе ответ! Просто спроси что-нибудь, и
         он поможет тебе получить простой и доступный ответ! Ты можешь активировать грубые ответы в настройках!</string>
     <string name="shake_ball">Тряхни его!</string>
@@ -51,20 +48,15 @@
     <string name="magic_answer_20">Как глупо.</string>
     <string name="magic_answer_21">Ты сумасшедший.</string>
     <string name="magic_answer_22">Иди к чёрту.</string>
-
     <string name="hello_magic_ball_fragment">Волшебный шар - Randomix</string>
-
     <string name="description_dice">Кости могут быть полезны, например в настольной игре! Приложение бросает от одной до трёх костей для тебя. Выбери количество в настройках. Удачи!</string>
     <string name="throw_dice">Бросай кость!</string>
     <string name="hint_dice">Нажмите кнопку ниже!</string>
     <string name="hello_dice_fragment">Кости - Randomix</string>
-
     <string name="hello_settings_fragment">Настройки - Randomix</string>
-
     <string name="dev_name">m.i.n.a.r.</string>
     <string name="dev_description">Я студент, и я разрабатываю приложения в свободное время. Мои работы - это в основном темы и приложения для персонализации.</string>
     <string name="easter_egg">Классное лого, правда? ;D</string>
-
     <string name="customization">Кастомизация</string>
     <string name="vibration_name">Вибрация</string>
     <string name="vibration_description_on">Вибрировать при нажатой кнопке</string>
@@ -98,5 +90,15 @@
     <string name="sound_description_off">нет звука при нажатии кнопки</string>
     <string name="vibration_description_off">нет вибрации при нажатии кнопки</string>
     <string name="rude_answers_description_off">просто добрые и вежливые ответы</string>
+    <string name="positive_button">да!</string>
+    <string name="negative_button">мне лень</string>
+    <string name="cancel_button">нет</string>
+    <string name="rating_message">
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
+        \nХорошо, теперь, когда я обращаю ваше внимание, могу ли я попросить вас оставить хороший отзыв, чтобы помочь Randomix расти
+        немного? Я действительно ценю это! Хорошего дня! :D\n
+    </string>
+    <string name="feedback_text">У меня есть кое-что сказать</string>
+    <string name="not_again_button">не спрашивай снова</string>
 
 </resources>

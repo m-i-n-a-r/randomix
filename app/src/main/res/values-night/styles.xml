@@ -3,12 +3,11 @@
     <!-- Values for the dark theme -->
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowLightStatusBar">false</item>
-        <item name="colorPrimary">@color/colorPrimaryInverse</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDarkInverse</item>
+        <item name="colorPrimary">@color/colorAccent</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:navigationBarColor">@color/colorPrimaryInverse</item>
-        <item name="android:statusBarColor">@color/colorPrimaryInverse</item>
-        <item name="android:colorBackground">@color/colorPrimaryInverse</item>
+        <item name="android:statusBarColor">@color/colorBackgroundInverse</item>
+        <item name="android:colorBackground">@color/colorBackgroundInverse</item>
         <item name="android:textColorPrimary">@color/textColorPrimaryInverse</item>
         <item name="android:textColorSecondary">@color/textColorSecondaryInverse</item>
     </style>

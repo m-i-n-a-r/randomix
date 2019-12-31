@@ -64,7 +64,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
             case R.id.deleteButton:
                 // Start the animated vector drawable
                 @SuppressWarnings("ConstantConditions")
-                ImageView deleteAnimation = (ImageView) getView().findViewById(R.id.deleteButton);
+                ImageView deleteAnimation = getView().findViewById(R.id.deleteButton);
                 Drawable delete = deleteAnimation.getDrawable();
                 if (delete instanceof Animatable) ((Animatable) delete).start();
                 // Vibrate using the common method in MainActivity

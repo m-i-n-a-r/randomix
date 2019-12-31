@@ -24,7 +24,7 @@
         style="@style/Widget.MaterialComponents.BottomNavigationView"
         android:layout_width="0dp"
         android:layout_height="@dimen/bottom_navbar_height"
-        android:background="?colorPrimary"
+        android:background="?android:statusBarColor"
         app:elevation="@dimen/bottom_navbar_elevation"
         app:itemIconTint="@drawable/bottom_navbar_item"
         app:itemRippleColor="?colorAccent"

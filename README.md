@@ -27,6 +27,7 @@ The main purpose of the app is provide a **random choice** in different ways. Th
 - Simple and precise ui (androidx)
 - Sounds, vibration and other options
 - Small size (~3MB), optimized code
+- More soon!
 
 ## Screenshots
 <p align='center'>

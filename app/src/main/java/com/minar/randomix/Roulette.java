@@ -68,10 +68,9 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
         String recent = sp.getString("recent", "");
         Gson gson = new Gson();
-        Type type = new TypeToken<List<String>>() {}.getType();
+        Type type = new TypeToken<List<List<String>>>() {}.getType();
         recentList = gson.fromJson(recent, type);
         if (recentList == null) recentList = new ArrayList<>();
-        System.out.print(recentList); // TODO remove
         return v;
     }
 

@@ -39,7 +39,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/deleteButton"
+                android:id="@+id/recentButton"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/roulette_insertion_height"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
@@ -49,7 +49,7 @@
                 android:clickable="true"
                 android:contentDescription="@string/delete_roulette_hint"
                 android:focusable="true"
-                android:src="@drawable/delete_vector_animation" />
+                android:src="@drawable/recent_vector_animation" />
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"

@@ -2,9 +2,12 @@ package com.minar.randomix;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,17 +24,21 @@ import android.widget.Toast;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class Roulette extends androidx.fragment.app.Fragment implements OnClickListener, View.OnLongClickListener, TextView.OnEditorActionListener {
     private List<String> options = new ArrayList<>();
+    private List<List<String>> recentList = new ArrayList<>();
+
 
     public Roulette() {
         // Required empty public constructor
@@ -42,9 +49,11 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_roulette, container, false);
+        // Temporary list of choices
+
         // Set the listener
         ImageView insert = v.findViewById(R.id.insertButton);
-        ImageView delete = v.findViewById(R.id.deleteButton);
+        ImageView delete = v.findViewById(R.id.recentButton);
         ImageView spin = v.findViewById(R.id.buttonSpinRoulette);
         EditText textInsert = v.findViewById(R.id.entryRoulette);
 
@@ -54,6 +63,15 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
         spin.setOnClickListener(this);
         spin.setOnLongClickListener(this);
         textInsert.setOnEditorActionListener(this);
+
+        // Get the object containing the recent entries
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+        String recent = sp.getString("recent", "");
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<String>>() {}.getType();
+        recentList = gson.fromJson(recent, type);
+        if (recentList == null) recentList = new ArrayList<>();
+        System.out.print(recentList); // TODO remove
         return v;
     }
 
@@ -61,18 +79,9 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
     public boolean onLongClick(View v) {
         Activity act = getActivity();
         switch (v.getId()) {
-            case R.id.deleteButton:
-                // Start the animated vector drawable
-                @SuppressWarnings("ConstantConditions")
-                ImageView deleteAnimation = getView().findViewById(R.id.deleteButton);
-                Drawable delete = deleteAnimation.getDrawable();
-                if (delete instanceof Animatable) ((Animatable) delete).start();
+            case R.id.recentButton:
                 // Vibrate using the common method in MainActivity
                 if (act instanceof MainActivity) ((MainActivity) act).vibrate();
-
-                // Clear the options
-                if (options.isEmpty()) return true;
-                removeAllChips();
                 break;
 
             case R.id.buttonSpinRoulette:
@@ -106,22 +115,19 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
         Activity act = getActivity();
         @SuppressWarnings("ConstantConditions")
         // Suppress warning, it's guaranteed that getView won't be null
-        final ImageView deleteAnimation = getView().findViewById(R.id.deleteButton);
+        final ImageView recentAnimation = getView().findViewById(R.id.recentButton);
         final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
         switch (v.getId()) {
-            case R.id.deleteButton:
+            case R.id.recentButton:
                 // Start the animated vector drawable
-                Drawable delete = deleteAnimation.getDrawable();
+                Drawable delete = recentAnimation.getDrawable();
                 if (delete instanceof Animatable) ((Animatable) delete).start();
                 // Vibrate and play sound using the common method in MainActivity
-                if (act instanceof MainActivity) {
-                    ((MainActivity) act).vibrate();
-                    ((MainActivity) act).playSound(1);
-                }
-                if (options.isEmpty()) return;
+                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
 
-                Chip chip = (Chip) optionsList.getChildAt(optionsList.getChildCount() - 1);
-                removeChip(chip);
+                // Open a dialog with the recent searches
+
+
                 break;
 
             case R.id.insertButton:
@@ -147,8 +153,8 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                 // Start the animated vector drawable, make the button not clickable during the execution
                 final ImageView spinAnimation = getView().findViewById(R.id.buttonSpinRoulette);
 
-                deleteAnimation.setClickable(false);
-                deleteAnimation.setLongClickable(false);
+                recentAnimation.setClickable(false);
+                recentAnimation.setLongClickable(false);
                 spinAnimation.setClickable(false);
                 spinAnimation.setLongClickable(false);
                 final int childCount = optionsList.getChildCount();
@@ -185,14 +191,23 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                         textViewResult.startAnimation(animOut);
                         spinAnimation.setClickable(true);
                         spinAnimation.setLongClickable(true);
-                        deleteAnimation.setClickable(true);
-                        deleteAnimation.setLongClickable(true);
+                        recentAnimation.setClickable(true);
+                        recentAnimation.setLongClickable(true);
                         for (int i = 0; i < childCount; i++) {
                             Chip option = (Chip) optionsList.getChildAt(i);
                             option.setClickable(true);
                         }
                     }
                 }, 1500);
+
+                // Save the entries in the recent entries
+                recentList.add(options);
+                SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+                SharedPreferences.Editor editor = sp.edit();
+                Gson gson = new Gson();
+                String json = gson.toJson(recentList);
+                editor.putString("recent", json);
+                editor.apply();
                 break;
         }
     }
@@ -231,7 +246,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
         entry.setText("");
 
         // Check if the limit is reached
-        if (options.size() > 14) {
+        if (options.size() > R.dimen.option_number_roulette) {
             Toast.makeText(getContext(), getString(R.string.too_much_entries_roulette), Toast.LENGTH_SHORT).show();
             return;
         }

@@ -2,7 +2,6 @@ package com.minar.randomix;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
@@ -29,6 +28,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -125,7 +125,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                 if (act instanceof MainActivity) ((MainActivity) act).vibrate();
 
                 // Open a dialog with the recent searches
-
+                
 
                 break;
 
@@ -200,7 +200,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                 }, 1500);
 
                 // Save the entries in the recent entries
-                recentList.add(options);
+                insertInRecent(options);
                 SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
                 SharedPreferences.Editor editor = sp.edit();
                 Gson gson = new Gson();
@@ -273,6 +273,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
         });
     }
 
+    // Remove a single chip
     private void removeChip(final Chip chip) {
         @SuppressWarnings("ConstantConditions") final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
         // Remove the chip with an animation
@@ -288,6 +289,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
         }, 400);
     }
 
+    // Remove every chip in the list
     private void removeAllChips() {
         @SuppressWarnings("ConstantConditions") final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
         final int childCount = optionsList.getChildCount();
@@ -295,5 +297,19 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
             Chip chip = (Chip) optionsList.getChildAt(i);
             removeChip(chip);
         }
+    }
+
+    // Insert a new list in the recent options list
+    private void insertInRecent(List<String> newRecent) {
+        // Check if there's a duplicate and insert
+        for (List<String> elem : recentList) {
+            if (newRecent.size() != elem.size()) continue;
+            newRecent = new ArrayList<>(newRecent);
+            elem = new ArrayList<>(elem);
+            Collections.sort(newRecent);
+            Collections.sort(elem);
+            if (newRecent.equals(elem)) return;
+        }
+        recentList.add(newRecent);
     }
 }

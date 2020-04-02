@@ -22,6 +22,7 @@
     <string name="too_much_entries_roulette">You can\'t enter more than 15 options!</string>
     <string name="hello_roulette_fragment">Roulette mode - Randomix</string>
     <string name="generic_option">Option</string>
+    <string name="recent_title">Recent options, tap to restore</string>
 
     <string name="description_coin">Flipping a coin is easy, but can help you decide whenever doing something or not.
         Just head or tail. Let the coin talk!</string>

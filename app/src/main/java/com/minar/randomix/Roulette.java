@@ -18,6 +18,7 @@ import android.view.animation.AnimationUtils;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -45,11 +47,9 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_roulette, container, false);
-        // Temporary list of choices
 
         // Set the listener
         ImageView insert = v.findViewById(R.id.insertButton);
@@ -125,7 +125,8 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                 if (act instanceof MainActivity) ((MainActivity) act).vibrate();
 
                 // Open a dialog with the recent searches
-                
+                RouletteBottomSheet bottomSheet = new RouletteBottomSheet();
+                bottomSheet.show(getChildFragmentManager(), "roulette_bottom_sheet");
 
                 break;
 
@@ -174,7 +175,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                 final int n = ran.nextInt(options.size());
 
                 // Get the text view and set its value depending on n (using a delay)
-                final TextView textViewResult = (TextView) getView().findViewById(R.id.resultRoulette);
+                final TextView textViewResult = getView().findViewById(R.id.resultRoulette);
 
                 // Create the animations
                 final Animation animIn = new AlphaAnimation(1.0f, 0.0f);
@@ -214,11 +215,10 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
     // Handle the keyboard actions, like enter, done, send and so on.
     @Override
     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-        @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
-                ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
         if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_GO || actionId == EditorInfo.IME_ACTION_SEND) {
             // Start the animated vector drawable
-            ImageView insertAnimation = (ImageView) getView().findViewById(R.id.insertButton);
+            @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
+            ImageView insertAnimation = getView().findViewById(R.id.insertButton);
             Drawable insert = insertAnimation.getDrawable();
             if (insert instanceof Animatable) ((Animatable) insert).start();
             // Insert in both the list and the layout
@@ -312,4 +312,5 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
         }
         recentList.add(newRecent);
     }
+
 }

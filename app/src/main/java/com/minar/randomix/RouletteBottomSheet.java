@@ -41,6 +41,8 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
         return v;
     }
 
+    // TODO move the recent option logic in this class
+    // TODO implement an "update shared prefs" method
     // Insert the recent options in the layout
     private void addToRecentLayout(LinearLayout rouletteBottomSheet) {
         int index = 0;
@@ -49,9 +51,19 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
             TextView previousOption = new TextView(getContext());
             previousOption.setText(concatString);
             previousOption.setId(index);
+            previousOption.setTextSize(16);
+            previousOption.setPadding(0,16,0,16);
             previousOption.setGravity(Gravity.CENTER_HORIZONTAL);
+            previousOption.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    previousOption.getId();
+                    rouletteBottomSheet.removeView(previousOption);
+                }
+            });
             rouletteBottomSheet.addView(previousOption);
             index++;
         }
     }
+
 }

@@ -37,6 +37,6 @@
     <!-- Roulette Bottomsheet -->
     <dimen name="title_height">56dp</dimen>
     <dimen name="title_font_size">22sp</dimen>
-    <dimen name="peek_height">100dp</dimen>
+    <dimen name="peek_height">500dp</dimen>
 
 </resources>

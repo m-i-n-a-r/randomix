@@ -2,11 +2,10 @@ package com.minar.randomix;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.SharedPreferences;
+import android.content.Context;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,18 +17,13 @@ import android.view.animation.AnimationUtils;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -38,8 +32,7 @@ import java.util.Random;
  */
 public class Roulette extends androidx.fragment.app.Fragment implements OnClickListener, View.OnLongClickListener, TextView.OnEditorActionListener {
     private List<String> options = new ArrayList<>();
-    private List<List<String>> recentList = new ArrayList<>();
-
+    private RouletteBottomSheet bottomSheet = new RouletteBottomSheet();
 
     public Roulette() {
         // Required empty public constructor
@@ -63,13 +56,6 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
         spin.setOnLongClickListener(this);
         textInsert.setOnEditorActionListener(this);
 
-        // Get the object containing the recent entries
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
-        String recent = sp.getString("recent", "");
-        Gson gson = new Gson();
-        Type type = new TypeToken<List<List<String>>>() {}.getType();
-        recentList = gson.fromJson(recent, type);
-        if (recentList == null) recentList = new ArrayList<>();
         return v;
     }
 
@@ -124,7 +110,6 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                 if (act instanceof MainActivity) ((MainActivity) act).vibrate();
 
                 // Open a dialog with the recent searches
-                RouletteBottomSheet bottomSheet = new RouletteBottomSheet();
                 bottomSheet.show(getChildFragmentManager(), "roulette_bottom_sheet");
 
                 break;
@@ -199,14 +184,9 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                     }
                 }, 1500);
 
-                // Save the entries in the recent entries
-                insertInRecent(options);
-                SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
-                SharedPreferences.Editor editor = sp.edit();
-                Gson gson = new Gson();
-                String json = gson.toJson(recentList);
-                editor.putString("recent", json);
-                editor.apply();
+                // Insert in the recent list
+                bottomSheet.updateRecent(options, getContext());
+
                 break;
         }
     }
@@ -296,20 +276,6 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
             Chip chip = (Chip) optionsList.getChildAt(i);
             removeChip(chip);
         }
-    }
-
-    // Insert a new list in the recent options list
-    private void insertInRecent(List<String> newRecent) {
-        // Check if there's a duplicate and insert
-        for (List<String> elem : recentList) {
-            if (newRecent.size() != elem.size()) continue;
-            newRecent = new ArrayList<>(newRecent);
-            elem = new ArrayList<>(elem);
-            Collections.sort(newRecent);
-            Collections.sort(elem);
-            if (newRecent.equals(elem)) return;
-        }
-        recentList.add(newRecent);
     }
 
 }

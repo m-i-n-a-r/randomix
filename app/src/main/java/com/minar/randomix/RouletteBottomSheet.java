@@ -1,5 +1,6 @@
 package com.minar.randomix;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -18,11 +19,16 @@ import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class RouletteBottomSheet extends BottomSheetDialogFragment {
     private List<List<String>> recentList = new ArrayList<>();
+
+    public RouletteBottomSheet() {
+        // Required empty public constructor
+    }
 
     @Nullable
     @Override
@@ -41,8 +47,6 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
         return v;
     }
 
-    // TODO move the recent option logic in this class
-    // TODO implement an "update shared prefs" method
     // Insert the recent options in the layout
     private void addToRecentLayout(LinearLayout rouletteBottomSheet) {
         int index = 0;
@@ -64,6 +68,31 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
             rouletteBottomSheet.addView(previousOption);
             index++;
         }
+    }
+
+    // Update the stored value of the recent options
+    void updateRecent(List<String> options, Context context) {
+        insertInRecent(options);
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = sp.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(recentList);
+        editor.putString("recent", json);
+        editor.apply();
+    }
+
+    // Insert a new list in the recent options list
+    private void insertInRecent(List<String> newRecent) {
+        // Check if there's a duplicate and insert
+        for (List<String> elem : recentList) {
+            if (newRecent.size() != elem.size()) continue;
+            newRecent = new ArrayList<>(newRecent);
+            elem = new ArrayList<>(elem);
+            Collections.sort(newRecent);
+            Collections.sort(elem);
+            if (newRecent.equals(elem)) return;
+        }
+        recentList.add(newRecent);
     }
 
 }

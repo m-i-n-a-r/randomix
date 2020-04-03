@@ -32,7 +32,7 @@ import java.util.Random;
  */
 public class Roulette extends androidx.fragment.app.Fragment implements OnClickListener, View.OnLongClickListener, TextView.OnEditorActionListener {
     private List<String> options = new ArrayList<>();
-    private RouletteBottomSheet bottomSheet = new RouletteBottomSheet();
+    private RouletteBottomSheet bottomSheet = new RouletteBottomSheet(this);
 
     public Roulette() {
         // Required empty public constructor
@@ -79,12 +79,9 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
 
                 // Insert three options manually and spin the roulette, or clear the options
                 if (options.isEmpty()) {
-                    entry.setText(option1);
-                    insertRouletteChip();
-                    entry.setText(option2);
-                    insertRouletteChip();
-                    entry.setText(option3);
-                    insertRouletteChip();
+                    insertRouletteChip(option1);
+                    insertRouletteChip(option2);
+                    insertRouletteChip(option3);
                     break;
                 } else {
                     removeAllChips();
@@ -125,7 +122,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                     ((MainActivity) act).playSound(1);
                 }
                 // Insert in both the list and the layout
-                insertRouletteChip();
+                insertRouletteChip("");
                 break;
 
             case R.id.buttonSpinRoulette:
@@ -161,6 +158,9 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                 // Get the text view and set its value depending on n (using a delay)
                 final TextView textViewResult = getView().findViewById(R.id.resultRoulette);
 
+                // Insert in the recent list
+                bottomSheet.updateRecent(options, getContext());
+
                 // Create the animations
                 final Animation animIn = new AlphaAnimation(1.0f, 0.0f);
                 animIn.setDuration(1500);
@@ -184,9 +184,6 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                     }
                 }, 1500);
 
-                // Insert in the recent list
-                bottomSheet.updateRecent(options, getContext());
-
                 break;
         }
     }
@@ -201,27 +198,27 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
             Drawable insert = insertAnimation.getDrawable();
             if (insert instanceof Animatable) ((Animatable) insert).start();
             // Insert in both the list and the layout
-            insertRouletteChip();
+            insertRouletteChip("");
             return true;
         }
         return false;
     }
 
     // Insert a chip in the roulette (15 chips limit)
-    private void insertRouletteChip() {
+    private void insertRouletteChip(String option) {
         String currentOption;
-        @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
-                TextView entry = getView().findViewById(R.id.entryRoulette);
+        if (!option.equals("")) currentOption = option;
+        else {
+            @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
+                    TextView entry = getView().findViewById(R.id.entryRoulette);
+                    currentOption = entry.getText().toString().trim();
+                    currentOption = currentOption.replaceAll("\\s+", " ");
+                    // Return if the string entered is a duplicate, reset the text field
+                    if (options.contains(currentOption) || currentOption.equals("")) return;
+                    entry.setText("");
+        }
+        @SuppressWarnings("ConstantConditions")
         final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
-
-        // Delete the blank spaces between words and before and after them to avoid weird behaviors
-        currentOption = entry.getText().toString().trim();
-        currentOption = currentOption.replaceAll("\\s+", " ");
-
-        // Return if the string entered is a duplicate
-        if (options.contains(currentOption) || currentOption.equals("")) return;
-        // Reset the text field eventually, it could contain whitespaces
-        entry.setText("");
 
         // Check if the limit is reached
         if (options.size() > R.dimen.option_number_roulette) {
@@ -254,9 +251,13 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
 
     // Remove a single chip
     private void removeChip(final Chip chip) {
-        @SuppressWarnings("ConstantConditions") final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
+        @SuppressWarnings("ConstantConditions")
+        final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
+        final ImageView spinAnimation = getView().findViewById(R.id.buttonSpinRoulette);
         // Remove the chip with an animation
         if (chip == null) return;
+        spinAnimation.setClickable(false);
+        spinAnimation.setLongClickable(false);
         final Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.chip_exit_anim);
         chip.startAnimation(animation);
         chip.postDelayed(new Runnable() {
@@ -264,6 +265,8 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
             public void run() {
                 optionsList.removeView(chip);
                 options.remove(chip.getText().toString());
+                spinAnimation.setClickable(true);
+                spinAnimation.setLongClickable(true);
             }
         }, 400);
     }
@@ -276,6 +279,15 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
             Chip chip = (Chip) optionsList.getChildAt(i);
             removeChip(chip);
         }
+    }
+
+    // Insert a certain combination in the roulette
+    void restoreOption(List<String> option) {
+        removeAllChips();
+        for (String item : option) {
+            insertRouletteChip(item);
+        }
+        options = option;
     }
 
 }

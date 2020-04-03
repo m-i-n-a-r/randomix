@@ -99,6 +99,6 @@
     </string>
     <string name="feedback_text">Ho qualcosa da dirti</string>
     <string name="not_again_button">Non chiedere più</string>
-    <string name="recent_title">Последние параметры, нажмите, чтобы восстановить</string>
+    <string name="recent_title">Opzioni recenti, tocca per ripristinare</string>
 
 </resources>

@@ -100,5 +100,6 @@
     </string>
     <string name="feedback_text">У меня есть кое-что сказать</string>
     <string name="not_again_button">не спрашивай снова</string>
+    <string name="recent_title">Последние параметры, нажмите, чтобы восстановить</string>
 
 </resources>

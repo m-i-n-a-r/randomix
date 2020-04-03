@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,13 +22,15 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class RouletteBottomSheet extends BottomSheetDialogFragment {
     private List<List<String>> recentList = new ArrayList<>();
+    private Roulette roulette;
 
-    public RouletteBottomSheet() {
-        // Required empty public constructor
+    RouletteBottomSheet(Roulette roulette) {
+        this.roulette = roulette;
     }
 
     @Nullable
@@ -58,11 +61,15 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
             previousOption.setTextSize(16);
             previousOption.setPadding(0,16,0,16);
             previousOption.setGravity(Gravity.CENTER_HORIZONTAL);
+            // Ripple effect
+            TypedValue outValue = new TypedValue();
+            Objects.requireNonNull(getActivity()).getTheme().resolveAttribute(android.R.attr.selectableItemBackground, outValue, true);
+            previousOption.setBackgroundResource(outValue.resourceId);
             previousOption.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    previousOption.getId();
-                    rouletteBottomSheet.removeView(previousOption);
+                    int optionNumber = previousOption.getId();
+                    roulette.restoreOption(recentList.get(optionNumber));
                 }
             });
             rouletteBottomSheet.addView(previousOption);
@@ -85,12 +92,13 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
     private void insertInRecent(List<String> newRecent) {
         // Check if there's a duplicate and insert
         for (List<String> elem : recentList) {
-            if (newRecent.size() != elem.size()) continue;
-            newRecent = new ArrayList<>(newRecent);
-            elem = new ArrayList<>(elem);
-            Collections.sort(newRecent);
-            Collections.sort(elem);
-            if (newRecent.equals(elem)) return;
+            if (newRecent.size() == elem.size()) {
+                newRecent = new ArrayList<>(newRecent);
+                elem = new ArrayList<>(elem);
+                Collections.sort(newRecent);
+                Collections.sort(elem);
+                if (newRecent.equals(elem)) return;
+            }
         }
         recentList.add(newRecent);
     }

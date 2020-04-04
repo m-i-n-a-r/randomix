@@ -38,5 +38,6 @@
     <dimen name="title_height">56dp</dimen>
     <dimen name="title_font_size">22sp</dimen>
     <dimen name="peek_height">700dp</dimen>
+    <dimen name="max_recent_options">10</dimen>
 
 </resources>

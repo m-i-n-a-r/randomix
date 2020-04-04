@@ -26,7 +26,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class RouletteBottomSheet extends BottomSheetDialogFragment {
-    private List<List<String>> recentList = new ArrayList<>();
+    private List<List<String>> recentList;
     private Roulette roulette;
 
     RouletteBottomSheet(Roulette roulette) {
@@ -79,10 +79,16 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
 
     // Update the stored value of the recent options
     void updateRecent(List<String> options, Context context) {
-        insertInRecent(options);
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        SharedPreferences.Editor editor = sp.edit();
         Gson gson = new Gson();
+        if(recentList == null) {
+            String recent = sp.getString("recent", "");
+            Type type = new TypeToken<List<List<String>>>() {}.getType();
+            recentList = gson.fromJson(recent, type);
+            if (recentList == null) recentList = new ArrayList<>();
+        }
+        insertInRecent(options);
+        SharedPreferences.Editor editor = sp.edit();
         String json = gson.toJson(recentList);
         editor.putString("recent", json);
         editor.apply();
@@ -100,6 +106,8 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
                 if (newRecent.equals(elem)) return;
             }
         }
+        // Keep 10 recent only
+        if (recentList.size() > 10) recentList.remove(0);
         recentList.add(newRecent);
     }
 

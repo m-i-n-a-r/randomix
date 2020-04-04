@@ -2,7 +2,6 @@ package com.minar.randomix;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.Context;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -69,16 +68,15 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                 break;
 
             case R.id.buttonSpinRoulette:
-                @SuppressWarnings("ConstantConditions")
-                TextView entry = getView().findViewById(R.id.entryRoulette);
-                String option1 = getResources().getString(R.string.generic_option) + "1";
-                String option2 = getResources().getString(R.string.generic_option) + "2";
-                String option3 = getResources().getString(R.string.generic_option) + "3";
                 // Vibrate using the common method in MainActivity
                 if (act instanceof MainActivity) ((MainActivity) act).vibrate();
 
                 // Insert three options manually and spin the roulette, or clear the options
                 if (options.isEmpty()) {
+                    @SuppressWarnings("ConstantConditions")
+                    String option1 = getResources().getString(R.string.generic_option) + "1";
+                    String option2 = getResources().getString(R.string.generic_option) + "2";
+                    String option3 = getResources().getString(R.string.generic_option) + "3";
                     insertRouletteChip(option1);
                     insertRouletteChip(option2);
                     insertRouletteChip(option3);
@@ -127,7 +125,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
 
             case R.id.buttonSpinRoulette:
                 // Break the case if the list is empty to avoid crashes and null pointers
-                if (options.isEmpty() || options.size() == 1) {
+                if (options.size() < 2) {
                     Toast.makeText(getContext(), getString(R.string.no_entry_roulette), Toast.LENGTH_SHORT).show();
                     break;
                 }
@@ -260,11 +258,11 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
         spinAnimation.setLongClickable(false);
         final Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.chip_exit_anim);
         chip.startAnimation(animation);
+        options.remove(chip.getText().toString());
         chip.postDelayed(new Runnable() {
             @Override
             public void run() {
                 optionsList.removeView(chip);
-                options.remove(chip.getText().toString());
                 spinAnimation.setClickable(true);
                 spinAnimation.setLongClickable(true);
             }
@@ -287,7 +285,6 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
         for (String item : option) {
             insertRouletteChip(item);
         }
-        options = option;
     }
 
 }

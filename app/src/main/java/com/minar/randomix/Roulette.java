@@ -107,6 +107,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                 if (act instanceof MainActivity) ((MainActivity) act).vibrate();
 
                 // Open a dialog with the recent searches
+                if(bottomSheet.isAdded()) return;
                 bottomSheet.show(getChildFragmentManager(), "roulette_bottom_sheet");
 
                 break;
@@ -248,11 +249,11 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
         final ImageView spinAnimation = getView().findViewById(R.id.buttonSpinRoulette);
         // Remove the chip with an animation
         if (chip == null) return;
+        options.remove(chip.getText().toString());
         spinAnimation.setClickable(false);
         spinAnimation.setLongClickable(false);
         final Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.chip_exit_anim);
         chip.startAnimation(animation);
-        options.remove(chip.getText().toString());
         chip.postDelayed(() -> {
             optionsList.removeView(chip);
             spinAnimation.setClickable(true);

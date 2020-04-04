@@ -24,7 +24,6 @@
 
     <dimen name="image_button_height">160dp</dimen>
     <dimen name="text_result_height">100dp</dimen>
-    <dimen name="text_description_height">90dp</dimen>
     <dimen name="horizontal_scroll_height">52dp</dimen>
     <dimen name="roulette_insertion_height">92dp</dimen>
 

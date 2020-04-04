@@ -27,7 +27,7 @@
         <TextView
             android:id="@+id/descriptionDice"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/text_description_height"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/linear_vertical_margin"
             android:gravity="center_horizontal"
             android:text="@string/description_dice"

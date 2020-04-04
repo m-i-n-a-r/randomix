@@ -16,10 +16,6 @@ public class CustomAuthorPreference extends Preference implements View.OnClickLi
     // Easter egg stuff, why not
     private int easterEgg = 0;
 
-    public CustomAuthorPreference(Context context) {
-        super(context);
-    }
-
     public CustomAuthorPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
     }

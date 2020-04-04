@@ -37,7 +37,7 @@ public class Coin extends androidx.fragment.app.Fragment implements OnClickListe
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_coin, container, false);
 
-        ImageView flip = (ImageView) v.findViewById(R.id.coinButtonAnimation);
+        ImageView flip = v.findViewById(R.id.coinButtonAnimation);
         flip.setOnClickListener(this);
         return v;
     }
@@ -48,7 +48,7 @@ public class Coin extends androidx.fragment.app.Fragment implements OnClickListe
             case R.id.coinButtonAnimation:
                 // Make the button unclickable
                 @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
-                final ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinButtonAnimation);
+                final ImageView coinAnimation = getView().findViewById(R.id.coinButtonAnimation);
                 coinAnimation.setClickable(false);
 
                 // Vibrate and play sound using the common method in MainActivity
@@ -62,22 +62,12 @@ public class Coin extends androidx.fragment.app.Fragment implements OnClickListe
                 if(this.notFirstFlip) {
                     runResetAnimation();
                     //delay the execution
-                    getView().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            flipAndRunMainAnimation();
-                        }
-                    }, 500);
+                    getView().postDelayed(this::flipAndRunMainAnimation, 500);
                 }
                 else flipAndRunMainAnimation();
 
                 // Reactivate the button after the right time
-                getView().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        coinAnimation.setClickable(true);
-                    }
-                }, 2000);
+                getView().postDelayed(() -> coinAnimation.setClickable(true), 2000);
                 // Check if it's the first flip
                 if(!this.notFirstFlip) this.notFirstFlip = true;
                 break;
@@ -91,8 +81,8 @@ public class Coin extends androidx.fragment.app.Fragment implements OnClickListe
         final String resultHead = getString(R.string.result_head);
         final String resultTail = getString(R.string.result_tail);
         @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
-        final TextView textViewResult = (TextView) getView().findViewById(R.id.resultCoin);
-        final ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinButtonAnimation);
+        final TextView textViewResult = getView().findViewById(R.id.resultCoin);
+        final ImageView coinAnimation = getView().findViewById(R.id.coinButtonAnimation);
 
         // Create the animations
         final Animation animIn = new AlphaAnimation(1.0f, 0.0f);
@@ -112,12 +102,9 @@ public class Coin extends androidx.fragment.app.Fragment implements OnClickListe
             ((Animatable) coinDrawable).start();
 
             // Delay the execution
-            getView().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    textViewResult.setText(resultHead);
-                    textViewResult.startAnimation(animOut);
-                }
+            getView().postDelayed(() -> {
+                textViewResult.setText(resultHead);
+                textViewResult.startAnimation(animOut);
             }, 1500);
             this.lastResult = true;
         }
@@ -127,12 +114,9 @@ public class Coin extends androidx.fragment.app.Fragment implements OnClickListe
             ((Animatable) coinDrawable).start();
 
             // Delay the execution
-            getView().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    textViewResult.setText(resultTail);
-                    textViewResult.startAnimation(animOut);
-                }
+            getView().postDelayed(() -> {
+                textViewResult.setText(resultTail);
+                textViewResult.startAnimation(animOut);
             }, 1500);
             this.lastResult = false;
         }
@@ -140,7 +124,7 @@ public class Coin extends androidx.fragment.app.Fragment implements OnClickListe
 
     private void runResetAnimation() {
         @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
-        ImageView coinAnimation = (ImageView) getView().findViewById(R.id.coinButtonAnimation);
+        ImageView coinAnimation = getView().findViewById(R.id.coinButtonAnimation);
         if (this.lastResult) coinAnimation.setImageResource(R.drawable.coin_head_to_start_vector_animation);
         else coinAnimation.setImageResource((R.drawable.coin_tail_to_start_vector_animation));
         Drawable coinDrawable = coinAnimation.getDrawable();

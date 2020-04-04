@@ -118,11 +118,6 @@ public class MainActivity extends AppCompatActivity {
         // Play sound if the sound in options is set to on
         // noinspection ConstantConditions
         mp.start();
-        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                mp.release();
-            }
-        });
+        mp.setOnCompletionListener(MediaPlayer::release);
     }
 }

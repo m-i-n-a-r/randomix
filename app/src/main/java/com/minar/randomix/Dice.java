@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.Objects;
 import java.util.Random;
 
 
@@ -92,22 +93,12 @@ public class Dice extends androidx.fragment.app.Fragment implements OnClickListe
                     runResetAnimation(diceNumber);
 
                     // Delay the execution
-                    getView().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            throwAndRunMainAnimation(diceNumber);
-                        }
-                    }, 500);
+                    getView().postDelayed(() -> throwAndRunMainAnimation(diceNumber), 500);
                 }
                 else throwAndRunMainAnimation(diceNumber);
 
                 // Reactivate the button after the right time
-                getView().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        diceAnimation.setClickable(true);
-                    }
-                }, 2000);
+                getView().postDelayed(() -> diceAnimation.setClickable(true), 2000);
                 // Check if it's the first throw
                 if(!this.notFirstThrow) this.notFirstThrow = true;
                 break;
@@ -128,7 +119,7 @@ public class Dice extends androidx.fragment.app.Fragment implements OnClickListe
 
         // Check for fragment changes. If the fragment has changed, no further operations are needed
         if(!isAdded()) return;
-        diceAnimation1 = getView().findViewById(R.id.diceButtonAnimation1);
+        diceAnimation1 = Objects.requireNonNull(getView()).findViewById(R.id.diceButtonAnimation1);
 
         if(diceNumber > 1) diceAnimation2 = getView().findViewById(R.id.diceButtonAnimation2);
         if(diceNumber > 2) diceAnimation3 = getView().findViewById(R.id.diceButtonAnimation3);
@@ -170,12 +161,9 @@ public class Dice extends androidx.fragment.app.Fragment implements OnClickListe
         animOut.setDuration(1000);
 
         // Delay the execution
-        getView().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                textViewResult.setText(result);
-                textViewResult.startAnimation(animOut);
-            }
+        getView().postDelayed(() -> {
+            textViewResult.setText(result);
+            textViewResult.startAnimation(animOut);
         }, 1500);
         this.lastResult1 = n1;
         this.lastResult2 = n2;
@@ -183,7 +171,7 @@ public class Dice extends androidx.fragment.app.Fragment implements OnClickListe
     }
 
     private void runResetAnimation(int diceNumber) {
-        diceAnimation1 = getView().findViewById(R.id.diceButtonAnimation1);
+        diceAnimation1 = Objects.requireNonNull(getView()).findViewById(R.id.diceButtonAnimation1);
 
         if(diceNumber > 1) diceAnimation2 = getView().findViewById(R.id.diceButtonAnimation2);
         if(diceNumber > 2) diceAnimation3 = getView().findViewById(R.id.diceButtonAnimation3);

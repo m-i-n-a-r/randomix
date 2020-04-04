@@ -73,7 +73,6 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
 
                 // Insert three options manually and spin the roulette, or clear the options
                 if (options.isEmpty()) {
-                    @SuppressWarnings("ConstantConditions")
                     String option1 = getResources().getString(R.string.generic_option) + "1";
                     String option2 = getResources().getString(R.string.generic_option) + "2";
                     String option3 = getResources().getString(R.string.generic_option) + "3";
@@ -166,19 +165,16 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                 final Animation animOut = new AlphaAnimation(0.0f, 1.0f);
                 animOut.setDuration(1000);
 
-                getView().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        textViewResult.setText(options.get(n));
-                        textViewResult.startAnimation(animOut);
-                        spinAnimation.setClickable(true);
-                        spinAnimation.setLongClickable(true);
-                        recentAnimation.setClickable(true);
-                        recentAnimation.setLongClickable(true);
-                        for (int i = 0; i < childCount; i++) {
-                            Chip option = (Chip) optionsList.getChildAt(i);
-                            option.setClickable(true);
-                        }
+                getView().postDelayed(() -> {
+                    textViewResult.setText(options.get(n));
+                    textViewResult.startAnimation(animOut);
+                    spinAnimation.setClickable(true);
+                    spinAnimation.setLongClickable(true);
+                    recentAnimation.setClickable(true);
+                    recentAnimation.setLongClickable(true);
+                    for (int i = 0; i < childCount; i++) {
+                        Chip option = (Chip) optionsList.getChildAt(i);
+                        option.setClickable(true);
                     }
                 }, 1500);
 
@@ -239,12 +235,7 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
         chip.startAnimation(animation);
 
         // Remove the chip and the element from the list
-        chip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                removeChip(chip);
-            }
-        });
+        chip.setOnClickListener(view -> removeChip(chip));
     }
 
     // Remove a single chip
@@ -259,13 +250,10 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
         final Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.chip_exit_anim);
         chip.startAnimation(animation);
         options.remove(chip.getText().toString());
-        chip.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                optionsList.removeView(chip);
-                spinAnimation.setClickable(true);
-                spinAnimation.setLongClickable(true);
-            }
+        chip.postDelayed(() -> {
+            optionsList.removeView(chip);
+            spinAnimation.setClickable(true);
+            spinAnimation.setLongClickable(true);
         }, 400);
     }
 

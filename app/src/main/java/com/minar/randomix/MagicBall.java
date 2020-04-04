@@ -37,7 +37,7 @@ public class MagicBall extends androidx.fragment.app.Fragment implements OnClick
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_magic_ball, container, false);
 
-        ImageView shake = (ImageView) v.findViewById(R.id.magicBallButtonAnimation);
+        ImageView shake = v.findViewById(R.id.magicBallButtonAnimation);
         shake.setOnClickListener(this);
         return v;
     }
@@ -48,7 +48,7 @@ public class MagicBall extends androidx.fragment.app.Fragment implements OnClick
             case R.id.magicBallButtonAnimation:
                 // Start the animated vector drawable, make the button unclickable during the execution
                 @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
-                final ImageView magicBallAnimation = (ImageView) getView().findViewById(R.id.magicBallButtonAnimation);
+                final ImageView magicBallAnimation = getView().findViewById(R.id.magicBallButtonAnimation);
                 magicBallAnimation.setClickable(false);
                 Drawable drawable = magicBallAnimation.getDrawable();
                 if (drawable instanceof Animatable) {
@@ -95,7 +95,7 @@ public class MagicBall extends androidx.fragment.app.Fragment implements OnClick
                 else n = ran.nextInt(15);
 
                 // Get the text view and set its value depending on n
-                final TextView textViewResult = (TextView) getView().findViewById(R.id.resultMagicBall);
+                final TextView textViewResult = getView().findViewById(R.id.resultMagicBall);
 
                 // Create the animations
                 final Animation animIn = new AlphaAnimation(1.0f, 0.0f);
@@ -105,13 +105,10 @@ public class MagicBall extends androidx.fragment.app.Fragment implements OnClick
                 animOut.setDuration(1000);
 
                 // Delay the execution
-                getView().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        textViewResult.setText(magicAnswers[n]);
-                        textViewResult.startAnimation(animOut);
-                        magicBallAnimation.setClickable(true);
-                    }
+                getView().postDelayed(() -> {
+                    textViewResult.setText(magicAnswers[n]);
+                    textViewResult.startAnimation(animOut);
+                    magicBallAnimation.setClickable(true);
                 }, 1500);
                 break;
         }

@@ -34,10 +34,10 @@
     <dimen name="minar_description_padding">16dp</dimen>
     <dimen name="bottom_navbar_height">52dp</dimen>
 
-    <!-- Roulette Bottomsheet -->
+    <!-- Roulette Bottom Sheet -->
     <dimen name="title_height">56dp</dimen>
     <dimen name="title_font_size">22sp</dimen>
-    <dimen name="peek_height">700dp</dimen>
+    <dimen name="peek_height">900dp</dimen> <!-- Decrease the value leads to unexpected behaviors -->
     <dimen name="max_recent_options">10</dimen>
 
 </resources>

@@ -65,12 +65,9 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
             TypedValue outValue = new TypedValue();
             Objects.requireNonNull(getActivity()).getTheme().resolveAttribute(android.R.attr.selectableItemBackground, outValue, true);
             previousOption.setBackgroundResource(outValue.resourceId);
-            previousOption.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    int optionNumber = previousOption.getId();
-                    roulette.restoreOption(recentList.get(optionNumber));
-                }
+            previousOption.setOnClickListener(view -> {
+                int optionNumber = previousOption.getId();
+                roulette.restoreOption(recentList.get(optionNumber));
             });
             rouletteBottomSheet.addView(previousOption);
             index++;

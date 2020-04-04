@@ -65,6 +65,9 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
             case R.id.recentButton:
                 // Vibrate using the common method in MainActivity
                 if (act instanceof MainActivity) ((MainActivity) act).vibrate();
+
+                // Restore the last used options
+                bottomSheet.restoreLatest(getContext());
                 break;
 
             case R.id.buttonSpinRoulette:

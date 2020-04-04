@@ -91,6 +91,19 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
         editor.apply();
     }
 
+    void restoreLatest(Context context) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        Gson gson = new Gson();
+        if(recentList == null) {
+            String recent = sp.getString("recent", "");
+            Type type = new TypeToken<List<List<String>>>() {}.getType();
+            recentList = gson.fromJson(recent, type);
+            if (recentList == null) recentList = new ArrayList<>();
+        }
+        List<String> lastOption = recentList.get(recentList.size() - 1);
+        roulette.restoreOption(lastOption);
+    }
+
     // Insert a new list in the recent options list
     private void insertInRecent(List<String> newRecent) {
         // Check if there's a duplicate and insert

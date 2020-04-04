@@ -106,7 +106,8 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
 
     // Insert a new list in the recent options list
     private void insertInRecent(List<String> newRecent) {
-        // Check if there's a duplicate and insert
+        // Check if there's a duplicate, create a copy to avoid overwriting
+        List<String> values = new ArrayList<>(newRecent);
         for (List<String> elem : recentList) {
             if (newRecent.size() == elem.size()) {
                 newRecent = new ArrayList<>(newRecent);
@@ -117,8 +118,8 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
             }
         }
         // Keep 10 recent only
+        this.recentList.add(values);
         if (recentList.size() > 10) recentList.remove(0);
-        recentList.add(newRecent);
     }
 
 }

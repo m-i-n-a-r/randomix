@@ -39,5 +39,7 @@
     <dimen name="title_font_size">22sp</dimen>
     <dimen name="peek_height">900dp</dimen> <!-- Decrease the value leads to unexpected behaviors -->
     <dimen name="max_recent_options">10</dimen>
+    <dimen name="bottom_sheet_pill_height">36dp</dimen>
+    <dimen name="bottom_sheet_pill_width">4dp</dimen>
 
 </resources>

@@ -15,6 +15,14 @@
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         android:animateLayoutChanges="false">
 
+        <View
+            android:id="@+id/smallButtonRect"
+            android:layout_width="@dimen/bottom_sheet_pill_height"
+            android:layout_height="@dimen/bottom_sheet_pill_width"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@drawable/bottom_sheet_pill"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

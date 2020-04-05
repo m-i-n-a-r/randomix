@@ -23,7 +23,6 @@
     <dimen name="option_number_roulette">14</dimen>
 
     <dimen name="image_button_height">160dp</dimen>
-    <dimen name="text_result_height">100dp</dimen>
     <dimen name="horizontal_scroll_height">52dp</dimen>
     <dimen name="roulette_insertion_height">92dp</dimen>
 
@@ -32,6 +31,7 @@
     <dimen name="minar_banner_padding">12dp</dimen>
     <dimen name="minar_description_padding">16dp</dimen>
     <dimen name="bottom_navbar_height">52dp</dimen>
+    <dimen name="result_text_margin">42dp</dimen>
 
     <!-- Roulette Bottom Sheet -->
     <dimen name="title_height">56dp</dimen>

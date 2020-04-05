@@ -17,7 +17,6 @@
     <dimen name="max_length_roulette_entry">30</dimen>
 
     <dimen name="image_button_height">130dp</dimen>
-    <dimen name="text_result_height">70dp</dimen>
     <dimen name="horizontal_scroll_height">40dp</dimen>
     <dimen name="roulette_insertion_height">72dp</dimen>
 

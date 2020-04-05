@@ -53,12 +53,26 @@
     <string name="magic_answer_14">Think about it.</string>
     <string name="magic_answer_15">Who knows.</string>
     <string name="magic_answer_16">Are you kidding?</string>
-    <string name="magic_answer_17">No, idiot.</string>
-    <string name="magic_answer_18">Of course, dammit.</string>
-    <string name="magic_answer_19">Are you stupid?</string>
-    <string name="magic_answer_20">Lol! How stupid.</string>
-    <string name="magic_answer_21">You\'re crazy.</string>
-    <string name="magic_answer_22">Go to hell.</string>
+    <string name="magic_answer_17">As I see it, yes.</string>
+    <string name="magic_answer_18">It is certain.</string>
+    <string name="magic_answer_19">It is decidedly so.</string>
+    <string name="magic_answer_20">Outlook good.</string>
+    <string name="magic_answer_21">Signs point to yes.</string>
+    <string name="magic_answer_22">Without a doubt.</string>
+    <string name="magic_answer_23">Reply hazy, try again.</string>
+    <string name="magic_answer_24">Better not tell you now.</string>
+    <string name="magic_answer_25">Cannot predict now!</string>
+    <string name="magic_answer_26">Concentrate and ask again.</string>
+    <string name="magic_answer_27">Don\'t count on it.</string>
+    <string name="magic_answer_28">My sources say no.</string>
+    <string name="magic_answer_29">Very doubtful.</string>
+    <string name="magic_answer_30">Ask your best friend.</string>
+    <string name="magic_answer_rude_1">No, idiot.</string>
+    <string name="magic_answer_rude_2">Of course, dammit.</string>
+    <string name="magic_answer_rude_3">Are you stupid?</string>
+    <string name="magic_answer_rude_4">Lol! How stupid.</string>
+    <string name="magic_answer_rude_5">You\'re crazy.</string>
+    <string name="magic_answer_rude_6">Go to hell.</string>
 
     <string name="hello_magic_ball_fragment">Magic Ball - Randomix</string>
 

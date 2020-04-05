@@ -163,6 +163,7 @@ public class Dice extends androidx.fragment.app.Fragment implements OnClickListe
         // Delay the execution
         getView().postDelayed(() -> {
             textViewResult.setText(result);
+            textViewResult.setSelected(true);
             textViewResult.startAnimation(animOut);
         }, 1500);
         this.lastResult1 = n1;

@@ -122,6 +122,7 @@ public class MagicBall extends androidx.fragment.app.Fragment implements OnClick
                 // Delay the execution
                 getView().postDelayed(() -> {
                     textViewResult.setText(magicAnswers[n]);
+                    textViewResult.setSelected(true);
                     textViewResult.startAnimation(animOut);
                     magicBallAnimation.setClickable(true);
                 }, 1500);

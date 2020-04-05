@@ -23,6 +23,7 @@
     <string name="hello_roulette_fragment">Roulette mode - Randomix</string>
     <string name="generic_option">Option</string>
     <string name="recent_title">Recent options, tap to restore</string>
+    <string name="bottom_sheet_no_option">No recent option, spin the roulette to save the current options!</string>
 
     <string name="description_coin">Flipping a coin is easy, but can help you decide whenever doing something or not.
         Just head or tail. Let the coin talk!</string>

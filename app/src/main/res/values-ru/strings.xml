@@ -101,5 +101,6 @@
     <string name="feedback_text">У меня есть кое-что сказать</string>
     <string name="not_again_button">не спрашивай снова</string>
     <string name="recent_title">Последние параметры, нажмите, чтобы восстановить</string>
+    <string name="bottom_sheet_no_option">Нет последних опций, вращайте рулетку, чтобы сохранить текущие опции!</string>
 
 </resources>

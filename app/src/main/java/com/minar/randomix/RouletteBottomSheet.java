@@ -45,7 +45,7 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
         recentList = gson.fromJson(recent, type);
         if (recentList == null) recentList = new ArrayList<>();
         LinearLayout rouletteBottomSheet = v.findViewById(R.id.rouletteBottomSheet);
-        if (recentList.size() > 0) addToRecentLayout(rouletteBottomSheet);
+        addToRecentLayout(rouletteBottomSheet);
 
         return v;
     }
@@ -53,24 +53,35 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
     // Insert the recent options in the layout
     private void addToRecentLayout(LinearLayout rouletteBottomSheet) {
         int index = 0;
-        for (List<String> recent : recentList) {
-            String concatString= recent.stream().collect(Collectors.joining(" | "));
-            TextView previousOption = new TextView(getContext());
-            previousOption.setText(concatString);
-            previousOption.setId(index);
-            previousOption.setTextSize(16);
-            previousOption.setPadding(0,16,0,16);
-            previousOption.setGravity(Gravity.CENTER_HORIZONTAL);
-            // Ripple effect
-            TypedValue outValue = new TypedValue();
-            Objects.requireNonNull(getActivity()).getTheme().resolveAttribute(android.R.attr.selectableItemBackground, outValue, true);
-            previousOption.setBackgroundResource(outValue.resourceId);
-            previousOption.setOnClickListener(view -> {
-                int optionNumber = previousOption.getId();
-                roulette.restoreOption(recentList.get(optionNumber));
-            });
-            rouletteBottomSheet.addView(previousOption);
-            index++;
+        if (recentList == null || recentList.isEmpty()) {
+            TextView noOption = new TextView(getContext());
+            noOption.setText(getResources().getString(R.string.bottom_sheet_no_option));
+            noOption.setTextSize(16);
+            noOption.setTextColor(getResources().getColor(R.color.goodGray, Objects.requireNonNull(getActivity()).getTheme()));
+            noOption.setPadding(96, 24, 96, 24);
+            noOption.setGravity(Gravity.CENTER_HORIZONTAL);
+            rouletteBottomSheet.addView(noOption);
+        }
+        else {
+            for (List<String> recent : recentList) {
+                String concatString = recent.stream().collect(Collectors.joining(" | "));
+                TextView previousOption = new TextView(getContext());
+                previousOption.setText(concatString);
+                previousOption.setId(index);
+                previousOption.setTextSize(15);
+                previousOption.setPadding(28, 18, 28, 18);
+                previousOption.setGravity(Gravity.CENTER_HORIZONTAL);
+                // Ripple effect
+                TypedValue outValue = new TypedValue();
+                Objects.requireNonNull(getActivity()).getTheme().resolveAttribute(android.R.attr.selectableItemBackground, outValue, true);
+                previousOption.setBackgroundResource(outValue.resourceId);
+                previousOption.setOnClickListener(view -> {
+                    int optionNumber = previousOption.getId();
+                    roulette.restoreOption(recentList.get(optionNumber));
+                });
+                rouletteBottomSheet.addView(previousOption);
+                index++;
+            }
         }
     }
 

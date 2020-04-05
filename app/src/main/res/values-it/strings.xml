@@ -100,5 +100,6 @@
     <string name="feedback_text">Ho qualcosa da dirti</string>
     <string name="not_again_button">Non chiedere più</string>
     <string name="recent_title">Opzioni recenti, tocca per ripristinare</string>
+    <string name="bottom_sheet_no_option">Nessuna opzione recente, gira la roulette per salvare le opzioni correnti!</string>
 
 </resources>

@@ -35,7 +35,7 @@
         <TextView
             android:id="@+id/resultMagicBall"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/text_result_height"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/linear_vertical_margin"
             android:layout_marginBottom="@dimen/linear_vertical_margin"
             android:gravity="center_horizontal"

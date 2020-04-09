@@ -101,15 +101,15 @@
             android:tint="?colorAccent" />
 
         <ImageView
-            android:id="@+id/minarxda"
+            android:id="@+id/minarsite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
-            android:contentDescription="@string/dev_xda"
+            android:contentDescription="@string/dev_personal_site"
             android:focusable="true"
-            android:src="@drawable/ic_xda_black_24dp"
+            android:src="@drawable/ic_minar_logo_24dp"
             android:tint="?colorAccent" />
     </LinearLayout>
 </LinearLayout>

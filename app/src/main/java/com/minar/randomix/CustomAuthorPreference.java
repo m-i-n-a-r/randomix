@@ -31,7 +31,7 @@ public class CustomAuthorPreference extends Preference implements View.OnClickLi
         ImageView l2 = v.findViewById(R.id.minarpp);
         ImageView l3 = v.findViewById(R.id.minarps);
         ImageView l4 = v.findViewById(R.id.minargit);
-        ImageView l5 = v.findViewById(R.id.minarxda);
+        ImageView l5 = v.findViewById(R.id.minarsite);
         logo.setOnClickListener(this);
         l1.setOnClickListener(this);
         l2.setOnClickListener(this);
@@ -77,9 +77,9 @@ public class CustomAuthorPreference extends Preference implements View.OnClickLi
                 Intent intent4 = new Intent(Intent.ACTION_VIEW, uri);
                 getContext().startActivity(intent4);
                 break;
-            case R.id.minarxda:
+            case R.id.minarsite:
                 if (act instanceof MainActivity) ((MainActivity) act).vibrate();
-                uri = Uri.parse(getContext().getString(R.string.dev_xda));
+                uri = Uri.parse(getContext().getString(R.string.dev_personal_site));
                 Intent intent5 = new Intent(Intent.ACTION_VIEW, uri);
                 getContext().startActivity(intent5);
                 break;

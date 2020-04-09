@@ -84,9 +84,10 @@
 
     <string name="hello_settings_fragment">Settings - Randomix</string>
 
-    <string name="dev_name">m.i.n.a.r.</string>
-    <string name="dev_description">I\'m a student and i develop apps in my free time. My works are mainly themes and personalization apps.</string>
+    <string name="dev_name" translatable="false">m.i.n.a.r.</string>
+    <string name="dev_description">I\'m a polite guy and i like beautiful things, like animations, icons, sport cars and 3d printing. I work as designer and computer engineer.</string>
     <string name="dev_email" translatable="false">minar.tastic@gmail.com</string>
+    <string name="dev_personal_site" translatable="false">https://minar.ml</string>
     <string name="dev_instagram" translatable="false">https://www.instagram.com/minar.tastic/</string>
     <string name="dev_paypal" translatable="false">https://www.paypal.me/minardev</string>
     <string name="dev_xda" translatable="false">https://forum.xda-developers.com/member.php?u=5222216</string>

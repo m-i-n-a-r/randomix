@@ -16,6 +16,7 @@
         android:layout_width="@dimen/image_button_height"
         android:layout_height="@dimen/image_button_height"
         android:layout_marginTop="@dimen/linear_vertical_margin"
+        android:paddingBottom="@dimen/linear_vertical_padding"
         android:layout_weight="1"
         android:contentDescription="@string/throw_dice"
         android:src="@drawable/dice_1_vector_animation" />
@@ -25,6 +26,7 @@
         android:layout_width="@dimen/image_button_height"
         android:layout_height="@dimen/image_button_height"
         android:layout_marginTop="@dimen/linear_vertical_margin"
+        android:paddingBottom="@dimen/linear_vertical_padding"
         android:layout_weight="1"
         android:contentDescription="@string/throw_dice"
         android:src="@drawable/dice_1_vector_animation" />
@@ -34,6 +36,7 @@
         android:layout_width="@dimen/image_button_height"
         android:layout_height="@dimen/image_button_height"
         android:layout_marginTop="@dimen/linear_vertical_margin"
+        android:paddingBottom="@dimen/linear_vertical_padding"
         android:layout_weight="1"
         android:contentDescription="@string/throw_dice"
         android:src="@drawable/dice_1_vector_animation" />

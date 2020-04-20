@@ -22,7 +22,6 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class RouletteBottomSheet extends BottomSheetDialogFragment {
@@ -57,7 +56,7 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
             TextView noOption = new TextView(getContext());
             noOption.setText(getResources().getString(R.string.bottom_sheet_no_option));
             noOption.setTextSize(16);
-            noOption.setTextColor(getResources().getColor(R.color.goodGray, Objects.requireNonNull(getActivity()).getTheme()));
+            noOption.setTextColor(getResources().getColor(R.color.goodGray, requireActivity().getTheme()));
             noOption.setPadding(96, 24, 96, 24);
             noOption.setGravity(Gravity.CENTER_HORIZONTAL);
             rouletteBottomSheet.addView(noOption);
@@ -73,7 +72,7 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
                 previousOption.setGravity(Gravity.CENTER_HORIZONTAL);
                 // Ripple effect
                 TypedValue outValue = new TypedValue();
-                Objects.requireNonNull(getActivity()).getTheme().resolveAttribute(android.R.attr.selectableItemBackground, outValue, true);
+                requireActivity().getTheme().resolveAttribute(android.R.attr.selectableItemBackground, outValue, true);
                 previousOption.setBackgroundResource(outValue.resourceId);
                 previousOption.setOnClickListener(view -> {
                     int optionNumber = previousOption.getId();
@@ -111,8 +110,10 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
             recentList = gson.fromJson(recent, type);
             if (recentList == null) recentList = new ArrayList<>();
         }
-        List<String> lastOption = recentList.get(recentList.size() - 1);
-        roulette.restoreOption(lastOption);
+        if(recentList.size() > 0) {
+            List<String> lastOption = recentList.get(recentList.size() - 1);
+            roulette.restoreOption(lastOption);
+        }
     }
 
     // Insert a new list in the recent options list

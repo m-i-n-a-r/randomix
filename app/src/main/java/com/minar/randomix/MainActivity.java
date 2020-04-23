@@ -17,6 +17,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.minar.randomix.utilities.IntroActivity;
 import com.pixplicity.generate.Rate;
 
 import java.util.concurrent.TimeUnit;

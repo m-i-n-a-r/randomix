@@ -26,9 +26,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class Roulette extends androidx.fragment.app.Fragment implements OnClickListener, View.OnLongClickListener, TextView.OnEditorActionListener {
     private List<String> options = new ArrayList<>();
     private RouletteBottomSheet bottomSheet = new RouletteBottomSheet(this);
@@ -44,13 +41,13 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
 
         // Set the listener
         ImageView insert = v.findViewById(R.id.insertButton);
-        ImageView delete = v.findViewById(R.id.recentButton);
+        ImageView recent = v.findViewById(R.id.recentButton);
         ImageView spin = v.findViewById(R.id.buttonSpinRoulette);
         EditText textInsert = v.findViewById(R.id.entryRoulette);
 
         insert.setOnClickListener(this);
-        delete.setOnClickListener(this);
-        delete.setOnLongClickListener(this);
+        recent.setOnClickListener(this);
+        recent.setOnLongClickListener(this);
         spin.setOnClickListener(this);
         spin.setOnLongClickListener(this);
         textInsert.setOnEditorActionListener(this);
@@ -101,8 +98,8 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
         switch (v.getId()) {
             case R.id.recentButton:
                 // Start the animated vector drawable
-                Drawable delete = recentAnimation.getDrawable();
-                if (delete instanceof Animatable) ((Animatable) delete).start();
+                Drawable recent = recentAnimation.getDrawable();
+                if (recent instanceof Animatable) ((Animatable) recent).start();
                 // Vibrate and play sound using the common method in MainActivity
                 if (act instanceof MainActivity) ((MainActivity) act).vibrate();
 

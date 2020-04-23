@@ -17,10 +17,6 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class Coin extends androidx.fragment.app.Fragment implements OnClickListener {
     // There's a difference in animations between the first flip and the others
     private boolean notFirstFlip = false;

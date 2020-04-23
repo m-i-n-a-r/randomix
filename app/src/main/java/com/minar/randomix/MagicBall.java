@@ -19,10 +19,6 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class MagicBall extends androidx.fragment.app.Fragment implements OnClickListener {
     private String[] magicAnswers = new String[36];
 

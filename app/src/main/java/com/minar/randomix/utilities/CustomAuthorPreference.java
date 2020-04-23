@@ -1,4 +1,4 @@
-package com.minar.randomix;
+package com.minar.randomix.utilities;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceViewHolder;
+
+import com.minar.randomix.MainActivity;
+import com.minar.randomix.R;
 
 public class CustomAuthorPreference extends Preference implements View.OnClickListener {
     // Easter egg stuff, why not

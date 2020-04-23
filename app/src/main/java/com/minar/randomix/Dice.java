@@ -21,10 +21,6 @@ import android.widget.TextView;
 import java.util.Objects;
 import java.util.Random;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class Dice extends androidx.fragment.app.Fragment implements OnClickListener {
     // There's a difference in animations between the first throw and the others
     private boolean notFirstThrow = false;

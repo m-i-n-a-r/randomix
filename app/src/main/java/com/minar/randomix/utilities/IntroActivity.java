@@ -1,4 +1,4 @@
-package com.minar.randomix;
+package com.minar.randomix.utilities;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,6 +9,8 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import com.github.paolorotolo.appintro.AppIntro2;
 import com.github.paolorotolo.appintro.AppIntroFragment;
+import com.minar.randomix.MainActivity;
+import com.minar.randomix.R;
 
 public class IntroActivity extends AppIntro2 {
     @Override

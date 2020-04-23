@@ -9,10 +9,6 @@ import android.os.Bundle;
 
 import androidx.preference.PreferenceFragmentCompat;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class Settings extends PreferenceFragmentCompat implements OnSharedPreferenceChangeListener {
 
     public Settings() {

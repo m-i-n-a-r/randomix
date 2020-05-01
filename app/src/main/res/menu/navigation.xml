@@ -3,27 +3,27 @@
 
     <item
         android:id="@+id/navigationRoulette"
-        android:icon="@drawable/ic_roulette_black_24dp"
+        android:icon="@drawable/nav_animation_roulette"
         android:title="@string/title_roulette" />
 
     <item
         android:id="@+id/navigationCoin"
-        android:icon="@drawable/ic_coin_black_24dp"
+        android:icon="@drawable/nav_animation_coin"
         android:title="@string/title_coin" />
 
     <item
         android:id="@+id/navigationMagicBall"
-        android:icon="@drawable/ic_magic_ball_black_24dp"
+        android:icon="@drawable/nav_animation_magic_ball"
         android:title="@string/title_magic_ball" />
 
     <item
         android:id="@+id/navigationDice"
-        android:icon="@drawable/ic_dice_black_24dp"
+        android:icon="@drawable/nav_animation_dice"
         android:title="@string/title_dice" />
 
     <item
         android:id="@+id/navigationSettings"
-        android:icon="@drawable/ic_settings_black_24dp"
+        android:icon="@drawable/nav_animation_settings"
         android:title="@string/title_settings" />
 
 </menu>

@@ -3,6 +3,8 @@ package com.minar.randomix.utilities;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Animatable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.util.AttributeSet;
 import android.view.View;
@@ -41,6 +43,10 @@ public class CustomAuthorPreference extends Preference implements View.OnClickLi
         l3.setOnClickListener(this);
         l4.setOnClickListener(this);
         l5.setOnClickListener(this);
+        Drawable logoDrawable = logo.getDrawable();
+
+        // Delay the execution of the logo animation a bit
+        v.postDelayed(((Animatable) logoDrawable)::start, 200);
     }
 
     @Override

@@ -1,0 +1,81 @@
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:name="vector"
+            android:width="24dp"
+            android:height="24dp"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <group
+                android:name="group"
+                android:pivotX="12"
+                android:pivotY="12">
+                <path
+                    android:name="path"
+                    android:pathData="M 15.07 11.25 L 14.17 12.17 C 13.45 12.89 13 13.5 13 15 L 11 15 L 11 14.5 C 11 13.39 11.45 12.39 12.17 11.67 L 13.41 10.41 C 13.78 10.05 14 9.55 14 9 C 14 7.89 13.1 7 12 7 C 11.47 7 10.961 7.211 10.586 7.586 C 10.211 7.961 10 8.47 10 9 L 8 9 C 8 7.94 8.422 6.921 9.172 6.172 C 9.921 5.422 10.94 5 12 5 C 13.06 5 14.079 5.422 14.828 6.172 C 15.578 6.921 16 7.94 16 9 C 16 9.88 15.64 10.67 15.07 11.25 M 13 19 L 11 19 L 11 17 L 13 17 M 12 2 C 9.349 2 6.804 3.054 4.929 4.929 C 3.054 6.804 2 9.349 2 12 C 2 14.651 3.054 17.196 4.929 19.071 C 6.804 20.946 9.349 22 12 22 C 13.755 22 15.48 21.538 17 20.66 C 18.52 19.783 19.783 18.52 20.66 17 C 21.538 15.48 22 13.755 22 12 C 22 6.47 17.5 2 12 2 Z"
+                    android:fillColor="#000"
+                    android:strokeColor="#000000"
+                    android:strokeAlpha="0.4"/>
+            </group>
+        </vector>
+    </aapt:attr>
+    <target android:name="group">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:propertyName="scaleX"
+                    android:duration="250"
+                    android:valueFrom="1"
+                    android:valueTo="0.7"
+                    android:valueType="floatType"
+                    android:interpolator="@android:anim/anticipate_interpolator"/>
+                <objectAnimator
+                    android:propertyName="scaleY"
+                    android:duration="250"
+                    android:valueFrom="1"
+                    android:valueTo="0.7"
+                    android:valueType="floatType"
+                    android:interpolator="@android:anim/anticipate_interpolator"/>
+                <objectAnimator
+                    android:propertyName="scaleX"
+                    android:startOffset="250"
+                    android:duration="250"
+                    android:valueFrom="0.7"
+                    android:valueTo="1"
+                    android:valueType="floatType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                    android:propertyName="scaleY"
+                    android:startOffset="250"
+                    android:duration="250"
+                    android:valueFrom="0.7"
+                    android:valueTo="1"
+                    android:valueType="floatType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+            </set>
+        </aapt:attr>
+    </target>
+    <target android:name="path">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:propertyName="strokeWidth"
+                    android:duration="200"
+                    android:valueFrom="0"
+                    android:valueTo="2"
+                    android:valueType="floatType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                    android:propertyName="strokeWidth"
+                    android:startOffset="200"
+                    android:duration="200"
+                    android:valueFrom="2"
+                    android:valueTo="0"
+                    android:valueType="floatType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+            </set>
+        </aapt:attr>
+    </target>
+</animated-vector>

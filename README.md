@@ -4,7 +4,7 @@ An open source app to choose randomly between numbers, answers, options and so o
 
 <p align='center'>
   <a href='https://github.com/m-i-n-a-r/randomix/blob/master/LICENSE.md'><img src='https://img.shields.io/cocoapods/l/AFNetworking.svg'/></a>
-  <img src='https://img.shields.io/badge/version-1.4.X-blue'/>
+  <img src='https://img.shields.io/badge/version-1.6.X-blue'/>
 	<img src='https://img.shields.io/badge/status-released-success'/>
 	<img src='https://img.shields.io/badge/-translations%20needed!-yellow'/>
 </p>
@@ -15,7 +15,7 @@ The main purpose of the app is provide a **random choice** in different ways. Th
 
 ## Features
 - Every tab in the bottom navigation bar contains a type of random choice. The available types are:
-  - **Roulette** -> chooses between a specified number of options, entered from the user.
+  - **Roulette** -> chooses between a specified number of options, entered from the user. Includes a list of recent options to easily select and restore.
   - **Coin** -> simply flips a coin and prints the result.
   - **Dice** -> throws a dice and prints the result.
   - **Magic Ball** -> provides randomly chosen answers to any question.
@@ -27,15 +27,16 @@ The main purpose of the app is provide a **random choice** in different ways. Th
 - Simple and precise ui (androidx)
 - Sounds, vibration and other options
 - Small size (~3MB), optimized code
-- More soon!
 
 ## Screenshots
 <p align='center'>
-  <img src='https://i.imgur.com/glVoAFD.jpg' width='18%'/>
-  <img src='https://i.imgur.com/afoAWAP.jpg' width='18%'/>
-  <img src='https://i.imgur.com/WxqCbEZ.jpg' width='18%'/>
-  <img src='https://i.imgur.com/nnVdlsw.jpg' width='18%'/>
-  <img src='https://i.imgur.com/AvNt6eg.jpg' width='18%'/>
+<img src='https://i.imgur.com/EGAK1mL.png' width='22%'/>
+  <img src='https://i.imgur.com/cfYrNfv.png' width='22%'/>
+  <img src='https://i.imgur.com/aCZbxJj.png' width='22%'/>
+  <img src='https://i.imgur.com/MR926AC.png' width='22%'/>
+  <img src='https://i.imgur.com/JunGamA.png' width='22%'/>
+  <img src='https://i.imgur.com/RbSm72T.png' width='22%'/>
+  <img src='https://i.imgur.com/vHrsvIh.png' width='22%'/>
 </p>
 
 ## Download

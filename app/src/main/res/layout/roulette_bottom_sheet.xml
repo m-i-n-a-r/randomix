@@ -37,8 +37,7 @@
             android:drawableTint="?colorAccent"
             android:drawablePadding="@dimen/side_drawable_margin"
             android:textColor="?colorAccent"
-            android:textSize="@dimen/title_font_size"
-            android:textStyle="bold"/>
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
 
     </LinearLayout>
 

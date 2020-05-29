@@ -57,7 +57,7 @@
                 android:layout_width="0dp"
                 android:layout_height="@dimen/roulette_insertion_height"
                 android:layout_margin="@dimen/activity_vertical_margin"
-                android:layout_weight="0.76"
+                android:layout_weight="0.8"
                 android:hint="@string/insert_roulette_hint"
                 app:boxBackgroundColor="?android:statusBarColor"
                 app:boxCornerRadiusBottomEnd="10dp"

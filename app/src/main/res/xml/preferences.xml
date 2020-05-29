@@ -24,8 +24,7 @@
             android:entries="@array/diceNumber"
             android:entryValues="@array/diceNumberValues"
             android:key="dice_number"
-            android:negativeButtonText="@null"
-            android:summary="%s"
+            android:summary="@string/dice_number_description"
             android:title="@string/dice_number_name"
             app:iconSpaceReserved="false" />
 
@@ -41,8 +40,7 @@
             android:entries="@array/themes"
             android:entryValues="@array/themeValues"
             android:key="theme_color"
-            android:negativeButtonText="@null"
-            android:summary="%s"
+            android:summary="@string/theme_description"
             android:title="@string/theme_name"
             app:iconSpaceReserved="false" />
 
@@ -51,8 +49,7 @@
             android:entries="@array/accents"
             android:entryValues="@array/accentValues"
             android:key="accent_color"
-            android:negativeButtonText="@null"
-            android:summary="%s"
+            android:summary="@string/accent_description"
             android:title="@string/accent_name"
             app:iconSpaceReserved="false" />
 

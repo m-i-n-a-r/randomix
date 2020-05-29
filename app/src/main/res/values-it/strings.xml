@@ -65,7 +65,7 @@
     <string name="description_roulette">Devi scegliere qualcosa? Sei stanco di fare sondaggi e degli amici che vogliono comandare? Una ruota deciderà per te! Premi a lungo sulla ruota per aggiungere opzioni generiche o eliminare quelle inserite.</string>
     <string name="insert_roulette_description">Per favore inserisci qui sotto le possibili scelte da aggiungere nella ruota.</string>
     <string name="description_coin">Tirare una moneta è semplice, ma può aiutarti a decidere se fare qualcosa o meno. Semplicemente testa o croce. Fai parlare la moneta!</string>
-    <string name="description_magic_ball">La palla magica ti dirà la risposta! Chiedi semplicemente qualcosa, e ti aiuterà con una risposta generica e affidabile! Puoi attivare la maleducazione dalle impostazioni!</string>
+    <string name="description_magic_ball">La palla magica ti dirà la risposta! Chiedi semplicemente qualcosa, e ti aiuterà con una risposta generica e affidabile. Puoi attivare la maleducazione dalle impostazioni!</string>
     <string name="description_dice">Un dado può essere utile, ad esempio in un gioco da tavola! L\'app ne lancerà da uno a tre per te. Seleziona il numero dalle impostazioni. Buona fortuna!</string>
     <string name="dev_description">Sono un ragazzo educato e mi piacciono le cose belle, come animazioni, icone, macchine sportive e stampa 3d. Lavoro come designer e ingegnere informatico.</string>
     <string name="easter_egg">Bel logo, eh? ;D</string>
@@ -75,11 +75,11 @@
     <string name="sound_name">Suoni</string>
     <string name="sound_description_on">Riproduci un suono alla pressione dei tasti</string>
     <string name="dice_number_name">Numero di dadi</string>
-    <string name="dice_number_description">Cambia il numero di dadi lanciati</string>
+    <string name="dice_number_description">Cambia il numero di dadi lanciati. Attualmente %s</string>
     <string name="one">Uno</string>
     <string name="two">Due</string>
     <string name="three">Tre</string>
-    <string name="accent_description">Cambia il colore dei particolari</string>
+    <string name="accent_description">Cambia il colore dei particolari. Attualmente %s</string>
     <string name="accent_name">Colore accent</string>
     <string name="blue">Blu</string>
     <string name="green">Verde</string>
@@ -94,7 +94,7 @@
     <string name="dark_theme">Scuro</string>
     <string name="light_theme">Chiaro</string>
     <string name="system_theme">Default di sistema</string>
-    <string name="theme_description">Usa un tema scuro, chiaro o automatico per l\'app</string>
+    <string name="theme_description">Usa un tema scuro, chiaro o automatico per l\'app. Attualmente %s</string>
     <string name="theme_name">Tema dell\'app</string>
     <string name="yellow">Giallo</string>
     <string name="lime">Lime</string>

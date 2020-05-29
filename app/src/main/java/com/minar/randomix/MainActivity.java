@@ -8,13 +8,13 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Vibrator;
-import androidx.preference.PreferenceManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
+import androidx.preference.PreferenceManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.minar.randomix.utilities.IntroActivity;
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences.Editor editor = sp.edit();
             editor.putBoolean("first", true);
             editor.apply();
-            Intent intent = new Intent(this, IntroActivity.class); // Call the AppIntro java class
+            Intent intent = new Intent(this, IntroActivity.class); // Call the AppIntro activity
             startActivity(intent);
             finish();
         }

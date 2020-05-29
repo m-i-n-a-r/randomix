@@ -10,7 +10,6 @@
     <dimen name="generic_result_text_size">42sp</dimen>
     <dimen name="long_result_text_size">36sp</dimen>
     <dimen name="title_text_size">22sp</dimen>
-    <dimen name="result_description_text_size">18sp</dimen>
     <dimen name="description_text_size">14sp</dimen>
     <dimen name="roulette_option_text_size">14sp</dimen>
 

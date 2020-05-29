@@ -1,7 +1,6 @@
 package com.minar.randomix;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -79,11 +78,10 @@ public class Roulette extends androidx.fragment.app.Fragment implements OnClickL
                     insertRouletteChip(option1);
                     insertRouletteChip(option2);
                     insertRouletteChip(option3);
-                    break;
                 } else {
                     removeAllChips();
-                    break;
                 }
+                break;
         }
         return true;
     }

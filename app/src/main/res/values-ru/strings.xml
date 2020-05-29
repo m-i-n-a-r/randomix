@@ -23,7 +23,7 @@
     <string name="result_tail">Решка!</string>
     <string name="hello_coin_fragment">Монетка - Randomix</string>
     <string name="description_magic_ball">Волшеный шар скажет тебе ответ! Просто спроси что-нибудь, и
-        он поможет тебе получить простой и доступный ответ! Ты можешь активировать грубые ответы в настройках!</string>
+        он поможет тебе получить простой и доступный ответ. Ты можешь активировать грубые ответы в настройках!</string>
     <string name="shake_ball">Тряхни его!</string>
     <string name="hint_magic_ball">Нажмите кнопку ниже!</string>
     <string name="magic_answer_1">Нет.</string>
@@ -76,11 +76,11 @@
     <string name="sound_name">Звуки</string>
     <string name="sound_description_on">Играть музыку при нажатой кнопке</string>
     <string name="dice_number_name">Число костей</string>
-    <string name="dice_number_description">Изменить число бросков кости</string>
+    <string name="dice_number_description">Изменить число бросков кости. В настоящее время %s</string>
     <string name="one">Одна</string>
     <string name="two">Два</string>
     <string name="three">Три</string>
-    <string name="accent_description">Изменить цвет по умолчанию</string>
+    <string name="accent_description">Изменить цвет по умолчанию. В настоящее время %s</string>
     <string name="accent_name">Цвет</string>
     <string name="blue">Синий</string>
     <string name="green">Зелёный</string>
@@ -96,7 +96,7 @@
     <string name="light_theme">свет</string>
     <string name="dark_theme">Тёмная</string>
     <string name="theme_name">тема приложения</string>
-    <string name="theme_description">Используйте темную, светлую или автоматическую тему приложения</string>
+    <string name="theme_description">Используйте темную, светлую или автоматическую тему приложения. В настоящее время %s</string>
     <string name="yellow">желтый</string>
     <string name="lime">Лайм</string>
     <string name="red">красный</string>

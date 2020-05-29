@@ -1,5 +1,6 @@
 <resources>
 
+    <!-- Main strings -->
     <string name="app_name" translatable="false">Randomix</string>
     <string name="app_extended_name" translatable="false">Randomix - Decision Maker</string>
     <string name="app_intro_description">An open source app to choose randomly between numbers, answers, options and so on. Let the randomness talk!</string>
@@ -11,6 +12,8 @@
     <string name="title_settings">Settings</string>
     <string name="generic_result">The result is:</string>
 
+    <!-- Roulette -->
+    <string name="hello_roulette_fragment">Roulette mode - Randomix</string>
     <string name="description_roulette">Do you have to choose something? Are you tired of polls and bossy friends? A
         roulette will decide for you! Long press the roulette to Add generic options or clear them.</string>
     <string name="spin_roulette">Spin the roulette!</string>
@@ -19,21 +22,23 @@
     <string name="insert_roulette_description">Please list below the possible choices to add in the roulette.</string>
     <string name="no_entry_roulette">Please, enter 2 or more options to spin the roulette!</string>
     <string name="too_much_entries_roulette">You can\'t enter more than 15 options!</string>
-    <string name="hello_roulette_fragment">Roulette mode - Randomix</string>
     <string name="generic_option">Option</string>
     <string name="recent_title">Recent options, tap to restore</string>
     <string name="bottom_sheet_no_option">No recent option, spin the roulette to save the current options!</string>
 
+    <!-- Coin -->
+    <string name="hello_coin_fragment">Coin mode - Randomix</string>
     <string name="description_coin">Flipping a coin is easy, but can help you decide whenever doing something or not.
         Just head or tail. Let the coin talk!</string>
     <string name="flip_coin">Flip the coin!</string>
     <string name="hint_coin">Press the button below!</string>
     <string name="result_head">Head!</string>
     <string name="result_tail">Tail!</string>
-    <string name="hello_coin_fragment">Coin mode - Randomix</string>
 
+    <!-- Magic Ball -->
+    <string name="hello_magic_ball_fragment">Magic Ball - Randomix</string>
     <string name="description_magic_ball">The magic ball will tell you the answers! Just ask something, and
-        it will help you with a generic and affordable answer! You can activate its rudeness from settings!</string>
+        it will help you with a generic and affordable answer. You can activate its rudeness from settings!</string>
     <string name="shake_ball">Shake it!</string>
     <string name="hint_magic_ball">Press the button below!</string>
     <string name="magic_answer_1">No.</string>
@@ -73,16 +78,15 @@
     <string name="magic_answer_rude_5">You\'re crazy.</string>
     <string name="magic_answer_rude_6">Go to hell.</string>
 
-    <string name="hello_magic_ball_fragment">Magic Ball - Randomix</string>
-
+    <!-- Dice -->
+    <string name="hello_dice_fragment">Dice mode - Randomix</string>
     <string name="description_dice">A dice could be useful, in a table game for example! The app will throw one to three dices
         for you. Select the number from settings. Good luck!</string>
     <string name="throw_dice">Throw the dice!</string>
     <string name="hint_dice">Press the button below!</string>
-    <string name="hello_dice_fragment">Dice mode - Randomix</string>
 
+    <!-- Settings -->
     <string name="hello_settings_fragment">Settings - Randomix</string>
-
     <string name="dev_name" translatable="false">m.i.n.a.r.</string>
     <string name="dev_description">I\'m a polite guy and i like beautiful things, like animations, icons, sport cars and 3d printing. I work as designer and computer engineer.</string>
     <string name="dev_email" translatable="false">minar.tastic@gmail.com</string>
@@ -93,7 +97,6 @@
     <string name="dev_github" translatable="false">https://github.com/m-i-n-a-r</string>
     <string name="dev_other_apps" translatable="false">https://play.google.com/store/apps/dev?id=7720251761301594831</string>
     <string name="easter_egg">Nice logo, huh? ;D</string>
-
     <string name="customization">Customization</string>
     <string name="vibration_name">Vibration</string>
     <string name="vibration_description_on">Vibrate when a button is pressed</string>
@@ -102,15 +105,13 @@
     <string name="sound_description_on">Play a sound when a button is pressed</string>
     <string name="sound_description_off">No sound when a button is pressed</string>
     <string name="dice_number_name">Dices number</string>
-    <string name="dice_number_description">Change the number of dices thrown</string>
+    <string name="dice_number_description">Change the number of dices thrown. Currently %s</string>
     <string name="one">One</string>
     <string name="two">Two</string>
     <string name="three">Three</string>
-
-    <!-- accent, theme and dice number descriptions aren't used, the actual value of the preference is shown instead -->
-    <string name="accent_description">Change the default accent color</string>
+    <string name="accent_description">Change the default accent color. Currently %s</string>
     <string name="accent_name">Accent color</string>
-    <string name="theme_description">Use a dark, light or automatic app theme</string>
+    <string name="theme_description">Use a dark, light or automatic app theme. Currently %s</string>
     <string name="theme_name">App theme</string>
     <string name="blue">Blue</string>
     <string name="green">Green</string>
@@ -125,13 +126,12 @@
     <string name="system_theme">System default</string>
     <string name="dark_theme">Dark</string>
     <string name="light_theme">Light</string>
-
     <string name="app_behavior">App behavior</string>
     <string name="rude_answers_description_on">Rude answers activated, idiot</string>
     <string name="rude_answers_description_off">Just kind and polite answers</string>
     <string name="rude_answers_name">Rude answers</string>
 
-    <!-- rate app dialog -->
+    <!-- Rate app dialog -->
     <string name="positive_button">Review!</string>
     <string name="negative_button">I\'m lazy</string>
     <string name="cancel_button">Nah</string>

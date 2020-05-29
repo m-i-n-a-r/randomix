@@ -28,8 +28,7 @@ public class MagicBall extends androidx.fragment.app.Fragment implements OnClick
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_magic_ball, container, false);
 

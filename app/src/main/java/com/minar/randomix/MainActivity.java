@@ -8,7 +8,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         NavController navController;
 
-        // getSharedPreferences(MyPrefs, Context.MODE_PRIVATE); retrieves a specific shared preferences file
+        // Retrieve the shared preferences
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         String theme = sp.getString("theme_color", "system");
         String accent = sp.getString("accent_color", "blue");

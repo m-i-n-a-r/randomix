@@ -2,7 +2,6 @@ package com.minar.randomix;
 
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
@@ -18,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.Objects;
 import java.util.Random;
 
 public class Dice extends androidx.fragment.app.Fragment implements OnClickListener {
@@ -34,8 +32,7 @@ public class Dice extends androidx.fragment.app.Fragment implements OnClickListe
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_dice, container, false);
         // Get the placeholder where the correct layout will be inflated
@@ -66,39 +63,36 @@ public class Dice extends androidx.fragment.app.Fragment implements OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.diceZone:
-                // Make the button unclickable
-                @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
-                final LinearLayout diceAnimation = getView().findViewById(R.id.diceZone);
-                diceAnimation.setClickable(false);
+        if (v.getId() == R.id.diceZone) {
+            // Make the button unclickable
+            @SuppressWarnings("ConstantConditions")
+            // Suppress warning, it's guaranteed that getView won't be null
+            final LinearLayout diceAnimation = getView().findViewById(R.id.diceZone);
+            diceAnimation.setClickable(false);
 
-                // Get the shared preferences and the desired number of dices, from 1 to 3
-                SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
-                final int diceNumber = Integer.parseInt(sp.getString("dice_number", "1"));
+            // Get the shared preferences and the desired number of dices, from 1 to 3
+            SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+            final int diceNumber = Integer.parseInt(sp.getString("dice_number", "1"));
 
-                // Vibrate and play sound using the common method in MainActivity
-                Activity act = getActivity();
-                if (act instanceof MainActivity) {
-                    ((MainActivity) act).vibrate();
-                    ((MainActivity) act).playSound(4);
-                }
+            // Vibrate and play sound using the common method in MainActivity
+            Activity act = getActivity();
+            if (act instanceof MainActivity) {
+                ((MainActivity) act).vibrate();
+                ((MainActivity) act).playSound(4);
+            }
 
-                // Reset the initial state with another animation
-                if(this.notFirstThrow) {
-                    runResetAnimation(diceNumber);
+            // Reset the initial state with another animation
+            if (this.notFirstThrow) {
+                runResetAnimation(diceNumber);
 
-                    // Delay the execution
-                    getView().postDelayed(() -> throwAndRunMainAnimation(diceNumber), 500);
-                }
-                else throwAndRunMainAnimation(diceNumber);
+                // Delay the execution
+                getView().postDelayed(() -> throwAndRunMainAnimation(diceNumber), 500);
+            } else throwAndRunMainAnimation(diceNumber);
 
-                // Reactivate the button after the right time
-                getView().postDelayed(() -> diceAnimation.setClickable(true), 2000);
-                // Check if it's the first throw
-                if(!this.notFirstThrow) this.notFirstThrow = true;
-                break;
-
+            // Reactivate the button after the right time
+            getView().postDelayed(() -> diceAnimation.setClickable(true), 2000);
+            // Check if it's the first throw
+            if (!this.notFirstThrow) this.notFirstThrow = true;
         }
 
     }
@@ -115,10 +109,10 @@ public class Dice extends androidx.fragment.app.Fragment implements OnClickListe
 
         // Check for fragment changes. If the fragment has changed, no further operations are needed
         if(!isAdded()) return;
-        diceAnimation1 = Objects.requireNonNull(getView()).findViewById(R.id.diceButtonAnimation1);
+        diceAnimation1 = requireView().findViewById(R.id.diceButtonAnimation1);
 
-        if(diceNumber > 1) diceAnimation2 = getView().findViewById(R.id.diceButtonAnimation2);
-        if(diceNumber > 2) diceAnimation3 = getView().findViewById(R.id.diceButtonAnimation3);
+        if(diceNumber > 1) diceAnimation2 = requireView().findViewById(R.id.diceButtonAnimation2);
+        if(diceNumber > 2) diceAnimation3 = requireView().findViewById(R.id.diceButtonAnimation3);
 
         // Set the drawable programmatically, depending on the dices number
         chosenDrawable1 = "dice_" + n1 + "_vector_animation";
@@ -146,7 +140,7 @@ public class Dice extends androidx.fragment.app.Fragment implements OnClickListe
         }
 
         // Get the text view and set its value depending on n
-        final TextView textViewResult = getView().findViewById(R.id.resultDice);
+        final TextView textViewResult = requireView().findViewById(R.id.resultDice);
         final String result = getString(R.string.generic_result) + " " + (n1 + n2 + n3);
 
         // Create the animations
@@ -157,7 +151,7 @@ public class Dice extends androidx.fragment.app.Fragment implements OnClickListe
         animOut.setDuration(1000);
 
         // Delay the execution
-        getView().postDelayed(() -> {
+        requireView().postDelayed(() -> {
             textViewResult.setText(result);
             textViewResult.setSelected(true);
             textViewResult.startAnimation(animOut);
@@ -168,10 +162,10 @@ public class Dice extends androidx.fragment.app.Fragment implements OnClickListe
     }
 
     private void runResetAnimation(int diceNumber) {
-        diceAnimation1 = Objects.requireNonNull(getView()).findViewById(R.id.diceButtonAnimation1);
+        diceAnimation1 = requireView().findViewById(R.id.diceButtonAnimation1);
 
-        if(diceNumber > 1) diceAnimation2 = getView().findViewById(R.id.diceButtonAnimation2);
-        if(diceNumber > 2) diceAnimation3 = getView().findViewById(R.id.diceButtonAnimation3);
+        if(diceNumber > 1) diceAnimation2 = requireView().findViewById(R.id.diceButtonAnimation2);
+        if(diceNumber > 2) diceAnimation3 = requireView().findViewById(R.id.diceButtonAnimation3);
 
         // Choose the correct drawable and run the reset animation
         chosenDrawable1 = "dice_" + this.lastResult1 + "_to_start_vector_animation";

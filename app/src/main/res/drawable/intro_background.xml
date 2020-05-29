@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- The gradient must me a multiple of 45 -->
+    <gradient
+        android:angle="270"
+        android:endColor="@color/iconGreen"
+        android:startColor="@color/iconViolet" />
+</shape>

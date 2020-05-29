@@ -2,7 +2,8 @@
 <resources>
 
     <!-- introduction -->
-    <color name="introBackgroundColor">#444444</color>
+    <color name="iconGreen">#0baf70</color>
+    <color name="iconViolet">#7e41c4</color>
 
     <!-- basic colors -->
     <color name="colorAccent">@color/blueAccent</color>

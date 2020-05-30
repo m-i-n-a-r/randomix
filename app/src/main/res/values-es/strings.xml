@@ -67,7 +67,7 @@
     <string name="magic_answer_rude_4">¡Jajaja! Que estúpido.</string>
     <string name="magic_answer_rude_5">Estas loco/a.</string>
     <string name="magic_answer_rude_6">Vete al diablo.</string>
-    <string name="hello_dice_fragment">Mode dado - Randomix</string>
+    <string name="hello_dice_fragment">Modo dado - Randomix</string>
     <string name="description_dice">¡Un dado podría ser útil, en un juego de mesa, por ejemplo! La aplicación
         arrojará de uno a tres dados por ti. Seleccione el número de la configuración. ¡Buena suerte!</string>
     <string name="throw_dice">¡Tira los dados!</string>

@@ -14,14 +14,14 @@
     <string name="insert_roulette_description">Ниже перечислены возможные варианты добавления в рулетку.</string>
     <string name="no_entry_roulette">Пожалуйста, введите 2 и более вариантов, чтобы крутить релетку.</string>
     <string name="too_much_entries_roulette">Вы не можете ввести более 15 вариантов</string>
-    <string name="hello_roulette_fragment">Рулетка - Randomix</string>
+    <string name="hello_roulette_fragment">Рулетка</string>
     <string name="generic_option">Вариант..</string>
     <string name="description_coin">Подбросить монетку легко, но она может помочь вам решить, когда что-то делать или нет. Только герб или решка. Пусть говорит монета!</string>
     <string name="flip_coin">Подбросить монетку!</string>
     <string name="hint_coin">Нажмите кнопку ниже!</string>
     <string name="result_head">Герб!</string>
     <string name="result_tail">Решка!</string>
-    <string name="hello_coin_fragment">Монетка - Randomix</string>
+    <string name="hello_coin_fragment">Монетка</string>
     <string name="description_magic_ball">Волшеный шар скажет тебе ответ! Просто спроси что-нибудь, и
         он поможет тебе получить простой и доступный ответ. Ты можешь активировать грубые ответы в настройках!</string>
     <string name="shake_ball">Тряхни его!</string>
@@ -62,12 +62,12 @@
     <string name="magic_answer_rude_4">Как глупо.</string>
     <string name="magic_answer_rude_5">Ты сумасшедший.</string>
     <string name="magic_answer_rude_6">Иди к чёрту.</string>
-    <string name="hello_magic_ball_fragment">Волшебный шар - Randomix</string>
+    <string name="hello_magic_ball_fragment">Волшебный шар</string>
     <string name="description_dice">Кости могут быть полезны, например в настольной игре! Приложение бросает от одной до трёх костей для тебя. Выбери количество в настройках. Удачи!</string>
     <string name="throw_dice">Бросай кость!</string>
     <string name="hint_dice">Нажмите кнопку ниже!</string>
-    <string name="hello_dice_fragment">Кости - Randomix</string>
-    <string name="hello_settings_fragment">Настройки - Randomix</string>
+    <string name="hello_dice_fragment">Кости</string>
+    <string name="hello_settings_fragment">Настройки</string>
     <string name="dev_description">Я вежливый парень, и мне нравятся красивые вещи, такие как анимация, иконки, спортивные машины и 3D-печать. Я работаю дизайнером и компьютерным инженером.</string>
     <string name="easter_egg">Классное лого, правда? ;D</string>
     <string name="customization">Кастомизация</string>

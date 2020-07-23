@@ -2,7 +2,8 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:id="@+id/diceSection"
@@ -16,19 +17,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:fontFamily="sans-serif-condensed"
+            app:fontFamily="@font/opensans_extrabold"
             android:gravity="center_horizontal"
             android:maxLines="1"
             android:text="@string/hello_dice_fragment"
             android:textAllCaps="true"
-            android:textSize="@dimen/title_text_size"
-            android:textStyle="bold" />
+            android:textSize="@dimen/title_text_size" />
 
         <TextView
             android:id="@+id/descriptionDice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/linear_vertical_margin"
+            app:fontFamily="@font/opensans_regular"
             android:gravity="center_horizontal"
             android:text="@string/description_dice"
             android:textSize="@dimen/description_text_size" />
@@ -39,6 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/result_text_margin"
             android:layout_marginBottom="@dimen/result_text_margin"
+            app:fontFamily="@font/opensans_bold"
             android:ellipsize="marquee"
             android:marqueeRepeatLimit="marquee_forever"
             android:scrollHorizontally="true"
@@ -47,8 +49,7 @@
             android:layout_marginEnd="@dimen/activity_horizontal_margin"
             android:gravity="center_horizontal"
             android:text="@string/result_placeholder"
-            android:textSize="@dimen/generic_result_text_size"
-            android:textStyle="bold" />
+            android:textSize="@dimen/generic_result_text_size" />
 
     </LinearLayout>
 

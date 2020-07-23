@@ -16,19 +16,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:fontFamily="sans-serif-condensed"
+            app:fontFamily="@font/opensans_extrabold"
             android:gravity="center_horizontal"
             android:maxLines="1"
             android:text="@string/hello_roulette_fragment"
             android:textAllCaps="true"
-            android:textSize="@dimen/title_text_size"
-            android:textStyle="bold" />
+            android:textSize="@dimen/title_text_size" />
 
         <TextView
             android:id="@+id/descriptionRoulette"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/linear_vertical_margin"
+            app:fontFamily="@font/opensans_regular"
             android:gravity="center_horizontal"
             android:text="@string/description_roulette"
             android:textSize="@dimen/description_text_size" />
@@ -139,10 +139,10 @@
             android:layout_marginBottom="@dimen/result_text_margin"
             android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            app:fontFamily="@font/opensans_bold"
             android:gravity="center_horizontal"
             android:text="@string/result_placeholder"
-            android:textSize="@dimen/long_result_text_size"
-            android:textStyle="bold" />
+            android:textSize="@dimen/long_result_text_size" />
 
     </LinearLayout>
 

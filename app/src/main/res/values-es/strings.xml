@@ -7,7 +7,7 @@
     <string name="title_magic_ball">Bola Mágica</string>
     <string name="title_settings">Opciones</string>
     <string name="generic_result">El resultado es:</string>
-    <string name="hello_roulette_fragment">Modo ruleta - Randomix</string>
+    <string name="hello_roulette_fragment">Modo ruleta</string>
     <string name="description_roulette">¿Tienes que elegir algo? ¿Estás cansado de las encuestas y amigos mandones?
         ¡Una ruleta decidirá por ti! Mantenga presionada la ruleta para agregar opciones genéricas o borrarlas.</string>
     <string name="spin_roulette">¡Gira la ruleta!</string>
@@ -19,14 +19,14 @@
     <string name="generic_option">Opción</string>
     <string name="recent_title">Opciones recientes, toque para restaurar</string>
     <string name="bottom_sheet_no_option">Sin opción reciente, ¡gire la ruleta para guardar las opciones actuales!</string>
-    <string name="hello_coin_fragment">Modo moneda - Randomix</string>
+    <string name="hello_coin_fragment">Modo moneda</string>
     <string name="description_coin">Lanzar una moneda es fácil, pero puede ayudarte a decidir cuando haces algo o no.
         Solo cara o cruz. ¡Deja que la moneda hable!</string>
     <string name="flip_coin">¡Lanza la moneda!</string>
     <string name="hint_coin">¡Presione el botón de abajo!</string>
     <string name="result_head">¡Cara!</string>
     <string name="result_tail">¡Cruz!</string>
-    <string name="hello_magic_ball_fragment">Bola Mágica - Randomix</string>
+    <string name="hello_magic_ball_fragment">Bola Mágica</string>
     <string name="description_magic_ball">¡La bola mágica te dirá las respuestas! Simplemente pregunte algo y lo ayudará
         con una respuesta genérica y asequible. ¡Puedes activar su grosería desde la configuración!</string>
     <string name="shake_ball">¡Sacudela!</string>
@@ -67,12 +67,12 @@
     <string name="magic_answer_rude_4">¡Jajaja! Que estúpido.</string>
     <string name="magic_answer_rude_5">Estas loco/a.</string>
     <string name="magic_answer_rude_6">Vete al diablo.</string>
-    <string name="hello_dice_fragment">Modo dado - Randomix</string>
+    <string name="hello_dice_fragment">Modo dado</string>
     <string name="description_dice">¡Un dado podría ser útil, en un juego de mesa, por ejemplo! La aplicación
         arrojará de uno a tres dados por ti. Seleccione el número de la configuración. ¡Buena suerte!</string>
     <string name="throw_dice">¡Tira los dados!</string>
     <string name="hint_dice">¡Presione el botón de abajo!</string>
-    <string name="hello_settings_fragment">Opciones - Randomix</string>
+    <string name="hello_settings_fragment">Opciones</string>
     <string name="dev_description">Soy un tipo educado y me gustan las cosas bellas, como animaciones, íconos,
         autos deportivos e impresión 3D. Trabajo como diseñador e ingeniero informático.</string>
     <string name="easter_egg">Bonito logo, ¿eh? ;D</string>

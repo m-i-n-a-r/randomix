@@ -13,7 +13,7 @@
     <string name="generic_result">The result is:</string>
 
     <!-- Roulette -->
-    <string name="hello_roulette_fragment">Roulette mode - Randomix</string>
+    <string name="hello_roulette_fragment">Roulette mode</string>
     <string name="description_roulette">Do you have to choose something? Are you tired of polls and bossy friends? A
         roulette will decide for you! Long press the roulette to Add generic options or clear them.</string>
     <string name="spin_roulette">Spin the roulette!</string>
@@ -27,7 +27,7 @@
     <string name="bottom_sheet_no_option">No recent option, spin the roulette to save the current options!</string>
 
     <!-- Coin -->
-    <string name="hello_coin_fragment">Coin mode - Randomix</string>
+    <string name="hello_coin_fragment">Coin mode</string>
     <string name="description_coin">Flipping a coin is easy, but can help you decide whenever doing something or not.
         Just head or tail. Let the coin talk!</string>
     <string name="flip_coin">Flip the coin!</string>
@@ -36,7 +36,7 @@
     <string name="result_tail">Tail!</string>
 
     <!-- Magic Ball -->
-    <string name="hello_magic_ball_fragment">Magic Ball - Randomix</string>
+    <string name="hello_magic_ball_fragment">Magic Ball</string>
     <string name="description_magic_ball">The magic ball will tell you the answers! Just ask something, and
         it will help you with a generic and affordable answer. You can activate its rudeness from settings!</string>
     <string name="shake_ball">Shake it!</string>
@@ -79,14 +79,14 @@
     <string name="magic_answer_rude_6">Go to hell.</string>
 
     <!-- Dice -->
-    <string name="hello_dice_fragment">Dice mode - Randomix</string>
+    <string name="hello_dice_fragment">Dice mode</string>
     <string name="description_dice">A dice could be useful, in a table game for example! The app will throw one to three dices
         for you. Select the number from settings. Good luck!</string>
     <string name="throw_dice">Throw the dice!</string>
     <string name="hint_dice">Press the button below!</string>
 
     <!-- Settings -->
-    <string name="hello_settings_fragment">Settings - Randomix</string>
+    <string name="hello_settings_fragment">Settings</string>
     <string name="dev_name" translatable="false">m.i.n.a.r.</string>
     <string name="dev_description">I\'m a polite guy and i like beautiful things, like animations, icons, sport cars and 3d printing. I work as designer and computer engineer.</string>
     <string name="dev_email" translatable="false">minar.tastic@gmail.com</string>

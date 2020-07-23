@@ -30,8 +30,8 @@
 
     <style name="CustomShapeAppearanceBottomSheetDialog" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSizeTopRight">16dp</item>
-        <item name="cornerSizeTopLeft">16dp</item>
+        <item name="cornerSizeTopRight">@dimen/bottom_sheet_corners</item>
+        <item name="cornerSizeTopLeft">@dimen/bottom_sheet_corners</item>
         <item name="cornerSizeBottomRight">0dp</item>
         <item name="cornerSizeBottomLeft">0dp</item>
     </style>
@@ -82,4 +82,5 @@
         <item name="colorPrimary">@color/limeAccent</item>
     </style>
 
+    <dimen name="bottom_sheet_corners">16dp</dimen>
 </resources>

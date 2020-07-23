@@ -1,4 +1,4 @@
-package com.minar.randomix;
+package com.minar.randomix.fragments;
 
 
 import android.app.Activity;
@@ -14,17 +14,16 @@ import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.minar.randomix.activities.MainActivity;
+import com.minar.randomix.R;
+
 import java.util.Random;
 
-public class Coin extends androidx.fragment.app.Fragment implements OnClickListener {
+public class CoinFragment extends androidx.fragment.app.Fragment implements OnClickListener {
     // There's a difference in animations between the first flip and the others
     private boolean notFirstFlip = false;
     // Last result to select the animation. True stays for head and false stays for tail
     private boolean lastResult;
-
-    public Coin() {
-        // Required empty public constructor
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,36 +38,34 @@ public class Coin extends androidx.fragment.app.Fragment implements OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.coinButtonAnimation:
-                // Make the button unclickable
-                @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
-                final ImageView coinAnimation = getView().findViewById(R.id.coinButtonAnimation);
-                coinAnimation.setClickable(false);
+        if (v.getId() == R.id.coinButtonAnimation) { // Make the button unclickable
+            @SuppressWarnings("ConstantConditions")
+            // Suppress warning, it's guaranteed that getView won't be null
+            final ImageView coinAnimation = getView().findViewById(R.id.coinButtonAnimation);
+            coinAnimation.setClickable(false);
 
-                // Vibrate and play sound using the common method in MainActivity
-                Activity act = getActivity();
-                if (act instanceof MainActivity) {
-                    ((MainActivity) act).vibrate();
-                    ((MainActivity) act).playSound(2);
-                }
+            // Vibrate and play sound using the common method in MainActivity
+            Activity act = getActivity();
+            if (act instanceof MainActivity) {
+                ((MainActivity) act).vibrate();
+                ((MainActivity) act).playSound(2);
+            }
 
-                // Reset the initial state with another animation
-                if(this.notFirstFlip) {
-                    runResetAnimation();
-                    //delay the execution
-                    getView().postDelayed(this::flipAndRunMainAnimation, 500);
-                }
-                else flipAndRunMainAnimation();
+            // Reset the initial state with another animation
+            if (this.notFirstFlip) {
+                runResetAnimation();
+                //delay the execution
+                getView().postDelayed(this::flipAndRunMainAnimation, 500);
+            } else flipAndRunMainAnimation();
 
-                // Reactivate the button after the right time
-                getView().postDelayed(() -> coinAnimation.setClickable(true), 2000);
-                // Check if it's the first flip
-                if(!this.notFirstFlip) this.notFirstFlip = true;
-                break;
+            // Reactivate the button after the right time
+            getView().postDelayed(() -> coinAnimation.setClickable(true), 2000);
+            // Check if it's the first flip
+            if (!this.notFirstFlip) this.notFirstFlip = true;
         }
     }
 
+    // Execute the animation
     private void flipAndRunMainAnimation() {
         // Check for fragment changes. If the fragment has changed, no further operations are needed
         if(!isAdded()) return;
@@ -117,6 +114,7 @@ public class Coin extends androidx.fragment.app.Fragment implements OnClickListe
         }
     }
 
+    // Execute the reset animation
     private void runResetAnimation() {
         @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
         ImageView coinAnimation = getView().findViewById(R.id.coinButtonAnimation);

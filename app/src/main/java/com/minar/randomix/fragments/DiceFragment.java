@@ -1,4 +1,4 @@
-package com.minar.randomix;
+package com.minar.randomix.fragments;
 
 
 import android.app.Activity;
@@ -17,19 +17,19 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.minar.randomix.activities.MainActivity;
+import com.minar.randomix.R;
+
+import java.util.Objects;
 import java.util.Random;
 
-public class Dice extends androidx.fragment.app.Fragment implements OnClickListener {
+public class DiceFragment extends androidx.fragment.app.Fragment implements OnClickListener {
     // There's a difference in animations between the first throw and the others
     private boolean notFirstThrow = false;
     // Last result to select the correct animation
     private int lastResult1, lastResult2, lastResult3;
     private String chosenDrawable1, chosenDrawable2, chosenDrawable3;
     private ImageView diceAnimation1, diceAnimation2 = null, diceAnimation3 = null;
-
-    public Dice() {
-        // Required empty public constructor
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class Dice extends androidx.fragment.app.Fragment implements OnClickListe
         LinearLayout diceSection = v.findViewById(R.id.diceSection);
         // Get the shared preferences and the desired number of dices, from 1 to 3
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
-        int diceNumber = Integer.parseInt(sp.getString("dice_number", "1"));
+        int diceNumber = Integer.parseInt(Objects.requireNonNull(sp.getString("dice_number", "1")));
         // Choose the correct layout. diceNumber can only be 1, 2 or 3
         switch (diceNumber) {
             case 1:
@@ -72,7 +72,7 @@ public class Dice extends androidx.fragment.app.Fragment implements OnClickListe
 
             // Get the shared preferences and the desired number of dices, from 1 to 3
             SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
-            final int diceNumber = Integer.parseInt(sp.getString("dice_number", "1"));
+            final int diceNumber = Integer.parseInt(Objects.requireNonNull(sp.getString("dice_number", "1")));
 
             // Vibrate and play sound using the common method in MainActivity
             Activity act = getActivity();
@@ -97,6 +97,7 @@ public class Dice extends androidx.fragment.app.Fragment implements OnClickListe
 
     }
 
+    // Run the main animation based on the result
     private void throwAndRunMainAnimation(int diceNumber) {
         // Choose a random number between 1 and 6 with equal possibilities
         int n1, n2 = 0, n3 = 0;
@@ -161,6 +162,7 @@ public class Dice extends androidx.fragment.app.Fragment implements OnClickListe
         this.lastResult3 = n3;
     }
 
+    // Run the reset animation to return to the initial state
     private void runResetAnimation(int diceNumber) {
         diceAnimation1 = requireView().findViewById(R.id.diceButtonAnimation1);
 

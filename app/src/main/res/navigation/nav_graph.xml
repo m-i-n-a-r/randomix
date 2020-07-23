@@ -6,27 +6,27 @@
     app:startDestination="@id/navigationRoulette">
     <fragment
         android:id="@+id/navigationRoulette"
-        android:name="com.minar.randomix.Roulette"
+        android:name="com.minar.randomix.fragments.RouletteFragment"
         android:label="fragment_roulette"
         tools:layout="@layout/fragment_roulette" />
     <fragment
         android:id="@+id/navigationCoin"
-        android:name="com.minar.randomix.Coin"
+        android:name="com.minar.randomix.fragments.CoinFragment"
         android:label="fragment_coin"
         tools:layout="@layout/fragment_coin" />
     <fragment
         android:id="@+id/navigationMagicBall"
-        android:name="com.minar.randomix.MagicBall"
+        android:name="com.minar.randomix.fragments.MagicBallFragment"
         android:label="fragment_magic_ball"
         tools:layout="@layout/fragment_magic_ball" />
     <fragment
         android:id="@+id/navigationDice"
-        android:name="com.minar.randomix.Dice"
+        android:name="com.minar.randomix.fragments.DiceFragment"
         android:label="fragment_dice"
         tools:layout="@layout/fragment_dice" />
     <fragment
         android:id="@+id/navigationSettings"
-        android:name="com.minar.randomix.Settings"
+        android:name="com.minar.randomix.fragments.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>

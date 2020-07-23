@@ -6,8 +6,8 @@ android {
         applicationId "com.minar.randomix"
         minSdkVersion 24
         targetSdkVersion 30
-        versionCode 23
-        versionName "1.7"
+        versionCode 24
+        versionName "1.8"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     compileOptions {

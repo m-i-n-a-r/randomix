@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 
 import com.github.appintro.AppIntro;
 import com.github.appintro.AppIntroFragment;
-import com.minar.randomix.MainActivity;
+import com.minar.randomix.activities.MainActivity;
 import com.minar.randomix.R;
 
 public class IntroActivity extends AppIntro {
@@ -33,7 +33,7 @@ public class IntroActivity extends AppIntro {
                 R.font.opensans_semibold,
                 R.drawable.intro_background
         ));
-        // OPTIONAL METHODS
+
         setSkipButtonEnabled(false);
         setIndicatorEnabled(false);
         // Turn vibration on and set intensity.

@@ -1,4 +1,4 @@
-package com.minar.randomix;
+package com.minar.randomix.fragments;
 
 import android.app.Activity;
 import android.graphics.drawable.Animatable;
@@ -20,18 +20,16 @@ import android.widget.Toast;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.minar.randomix.activities.MainActivity;
+import com.minar.randomix.R;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Roulette extends androidx.fragment.app.Fragment implements OnClickListener, View.OnLongClickListener, TextView.OnEditorActionListener {
+public class RouletteFragment extends androidx.fragment.app.Fragment implements OnClickListener, View.OnLongClickListener, TextView.OnEditorActionListener {
     private List<String> options = new ArrayList<>();
     private RouletteBottomSheet bottomSheet = new RouletteBottomSheet(this);
-
-    public Roulette() {
-        // Required empty public constructor
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

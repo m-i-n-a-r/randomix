@@ -1,4 +1,4 @@
-package com.minar.randomix;
+package com.minar.randomix.fragments;
 
 
 import android.app.Activity;
@@ -8,11 +8,9 @@ import android.os.Bundle;
 
 import androidx.preference.PreferenceFragmentCompat;
 
-public class Settings extends PreferenceFragmentCompat implements OnSharedPreferenceChangeListener {
+import com.minar.randomix.R;
 
-    public Settings() {
-        // Required empty public constructor
-    }
+public class SettingsFragment extends PreferenceFragmentCompat implements OnSharedPreferenceChangeListener {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {

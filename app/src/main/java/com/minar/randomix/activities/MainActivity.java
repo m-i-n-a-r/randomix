@@ -1,4 +1,4 @@
-package com.minar.randomix;
+package com.minar.randomix.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.preference.PreferenceManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.minar.randomix.R;
 import com.minar.randomix.utilities.IntroActivity;
 import com.pixplicity.generate.Rate;
 
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Set the base theme and the accent
+        assert theme != null;
         if (theme.equals("system"))
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         if (theme.equals("dark"))
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         if (theme.equals("light"))
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
+        assert accent != null;
         if (accent.equals("green")) setTheme(R.style.AppTheme_green);
         if (accent.equals("orange")) setTheme(R.style.AppTheme_orange);
         if (accent.equals("yellow")) setTheme(R.style.AppTheme_yellow);
@@ -67,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navController = Navigation.findNavController(this, R.id.navHostFragment);
         NavigationUI.setupWithNavController(navigation, navController);
+        navigation.setOnNavigationItemReselectedListener(item -> {
+            // Just do nothing when an item is reselected from the bottom navigation bar
+        });
 
         // Gene-rate configuration and detect if night mode is enabled to set the appropriate theme
         boolean isLight = false;
@@ -103,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
         Vibrator vib = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
         if (sp.getBoolean("vibration", true))
             // Vibrate if the vibration in options is set to on
-            // noinspection ConstantConditions
             vib.vibrate(30);
     }
 

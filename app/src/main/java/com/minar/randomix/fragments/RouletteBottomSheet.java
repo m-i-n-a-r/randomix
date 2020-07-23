@@ -1,4 +1,4 @@
-package com.minar.randomix;
+package com.minar.randomix.fragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -17,6 +17,7 @@ import androidx.annotation.Nullable;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.minar.randomix.R;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -26,9 +27,9 @@ import java.util.stream.Collectors;
 
 public class RouletteBottomSheet extends BottomSheetDialogFragment {
     private List<List<String>> recentList;
-    private Roulette roulette;
+    private RouletteFragment roulette;
 
-    RouletteBottomSheet(Roulette roulette) {
+    RouletteBottomSheet(RouletteFragment roulette) {
         this.roulette = roulette;
     }
 

@@ -3,43 +3,49 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:id="@+id/rouletteBottomSheet"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/rouletteBottomSheetScrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:fitsSystemWindows="true"
-        android:orientation="vertical"
-        app:behavior_peekHeight="@dimen/peek_height"
-        app:behavior_hideable="true"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
-        android:animateLayoutChanges="false">
+        android:layout_height="wrap_content">
 
-        <View
-            android:id="@+id/smallButtonRect"
-            android:layout_width="@dimen/bottom_sheet_pill_height"
-            android:layout_height="@dimen/bottom_sheet_pill_width"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:background="@drawable/bottom_sheet_pill"/>
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/rouletteBottomSheet"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:animateLayoutChanges="false"
+            android:fitsSystemWindows="true"
             android:gravity="center_horizontal"
-            android:paddingEnd="@dimen/activity_horizontal_margin"
-            android:paddingStart="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
+            android:orientation="vertical"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            app:fontFamily="@font/opensans_bold"
-            android:text="@string/recent_title"
-            android:drawableStart="@drawable/ic_list_add_black_24dp"
-            android:drawableTint="?colorAccent"
-            android:drawablePadding="@dimen/side_drawable_margin"
-            android:textColor="?colorAccent"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+            app:behavior_hideable="true"
+            app:behavior_peekHeight="@dimen/peek_height"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
-    </LinearLayout>
+            <View
+                android:id="@+id/smallButtonRect"
+                android:layout_width="@dimen/bottom_sheet_pill_height"
+                android:layout_height="@dimen/bottom_sheet_pill_width"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@drawable/bottom_sheet_pill" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_list_add_black_24dp"
+                android:drawablePadding="@dimen/side_drawable_margin"
+                android:drawableTint="?colorAccent"
+                android:gravity="center_horizontal"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:text="@string/recent_title"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textColor="?colorAccent"
+                app:fontFamily="@font/opensans_bold" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

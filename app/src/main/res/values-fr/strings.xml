@@ -1,0 +1,141 @@
+<resources>
+
+    <!-- Main strings -->
+    <string name="app_name" translatable="false">Randomix</string>
+    <string name="app_extended_name" translatable="false">Randomix - Décisions automatiques</string>
+    <string name="app_intro_description">Une application open source pour choisir aléatoirement des nombres, réponses, options et plus encore. Laissez place au hasard!</string>
+    <string name="result_placeholder" translatable="false"> - - - </string>
+    <string name="title_roulette">Roulette</string>
+    <string name="title_coin">Pile ou face</string>
+    <string name="title_dice">Dé</string>
+    <string name="title_magic_ball">Boule Magique</string>
+    <string name="title_settings">Paramètres</string>
+    <string name="generic_result">Le résultat est:</string>
+
+    <!-- Roulette -->
+    <string name="hello_roulette_fragment">Mode roulette</string>
+    <string name="description_roulette">Vous avez quelque chose à choisir ? En avez-vous marre des sondages et des amis autoritaires ? Une roulette décidera ! Maintenez la roulette pour ajouter des options gémérisurd ou les effacer.</string>
+    <string name="spin_roulette">Faites tourner la roulette!</string>
+    <string name="insert_roulette_hint">Entrer une option..</string>
+    <string name="delete_roulette_hint">Supprimer la dernière option entrée</string>
+    <string name="insert_roulette_description">Listez ci-dessous les choix possibles de la roulette</string>
+    <string name="no_entry_roulette">Ajouter 2 options ou plus pour lancer la roulette</string>
+    <string name="too_much_entries_roulette">Vous ne pouvez pas entrer plus de 15 options !</string>
+    <string name="generic_option">Option</string>
+    <string name="recent_title">Options récentes, tapez pour restaurer</string>
+    <string name="bottom_sheet_no_option">Pas d\'otions récentes, tournez la roulette pour sauvegarder les options actuelles</string>
+
+    <!-- Coin -->
+    <string name="hello_coin_fragment">Pile ou face</string>
+    <string name="description_coin">Faire tourner une pièce est simple, mais cela peut aider à décider de faire quelque chose ou non. Juste pile ou face. Laissez la pièce choisir !</string>
+    <string name="flip_coin">Lancer</string>
+    <string name="hint_coin">Appuyer sur le bouton ci-dessous</string>
+    <string name="result_head">Pile!</string>
+    <string name="result_tail">Face!</string>
+
+    <!-- Magic Ball -->
+    <string name="hello_magic_ball_fragment">Boule magique</string>
+    <string name="description_magic_ball">La boule magique va vous donner les réponses! Demander quelque chose, et elle vous répondrra par des réponses communes. Vous pouvez activer la grossièreté dans les paramètres !</string>
+    <string name="shake_ball">Secouez la!</string>
+    <string name="hint_magic_ball">Appuyer sur le bouton ci-dessous</string>
+    <string name="magic_answer_1">Non.</string>
+    <string name="magic_answer_2">Oui!</string>
+    <string name="magic_answer_3">Je ne pense pas...</string>
+    <string name="magic_answer_4">Peut-être!</string>
+    <string name="magic_answer_5">Ca ne fait aucun sens !</string>
+    <string name="magic_answer_6">Probablement...</string>
+    <string name="magic_answer_7">Vous êtes sûr ?</string>
+    <string name="magic_answer_8">Probablement oui.</string>
+    <string name="magic_answer_9">Probablement non.</string>
+    <string name="magic_answer_10">Evidemment.</string>
+    <string name="magic_answer_11">Demandez cela à vous-même.</string>
+    <string name="magic_answer_12">Bah non, voyons...</string>
+    <string name="magic_answer_13">Oh ouais!</string>
+    <string name="magic_answer_14">Pense à ça.</string>
+    <string name="magic_answer_15">Qui sait ?</string>
+    <string name="magic_answer_16">Tu te moque de moi ?</string>
+    <string name="magic_answer_17">De ce que je peux voir, oui.</string>
+    <string name="magic_answer_18">C\'est certain.</string>
+    <string name="magic_answer_19">C\'est comme ça.</string>
+    <string name="magic_answer_20">J\'ai de belles visions.</string>
+    <string name="magic_answer_21">Les signes s\'alignent vers le oui.</string>
+    <string name="magic_answer_22">Sans un doute.</string>
+    <string name="magic_answer_23">Les réponses sont floues, reéssaye.</string>
+    <string name="magic_answer_24">Il vaudrait mieux ne pas en parler.</string>
+    <string name="magic_answer_25">Je ne peux pas prédire cela !</string>
+    <string name="magic_answer_26">Concentre-toi et repose la question.</string>
+    <string name="magic_answer_27">Ne compte pas la dessus !</string>
+    <string name="magic_answer_28">Mes sources m\'informent que non.</string>
+    <string name="magic_answer_29">Très douteux.</string>
+    <string name="magic_answer_30">Demande à un ami.</string>
+    <string name="magic_answer_rude_1">Non, débile</string>
+    <string name="magic_answer_rude_2">Bien sur que ouais !</string>
+    <string name="magic_answer_rude_3">T\'es bête ou quoi?</string>
+    <string name="magic_answer_rude_4">Lol! Qu\'est que tu es bête.</string>
+    <string name="magic_answer_rude_5">T\'es fou!</string>
+    <string name="magic_answer_rude_6">Va en enfer.</string>
+
+    <!-- Dice -->
+    <string name="hello_dice_fragment">Dé</string>
+    <string name="description_dice">Un dé peut être pratique, pour un jeu de plateau par exemple ! Cette appli va lancer un à trois dés</string>
+    <string name="throw_dice">Lancer les dés</string>
+    <string name="hint_dice">Appuyer sur le bouton ci-dessous</string>
+
+    <!-- Settings -->
+    <string name="hello_settings_fragment">Paramètres</string>
+    <string name="dev_name" translatable="false">m.i.n.a.r.</string>
+    <string name="dev_description">Je suis un garçon poli et j\'aime les belles choses, comme l\'animation, les îcones, les voitures de sport et l\'impression 3D. Je travaille en tant que designer et ingénieur informatique</string>
+    <string name="dev_email" translatable="false">minar.tastic@gmail.com</string>
+    <string name="dev_personal_site" translatable="false">https://minar.ml</string>
+    <string name="dev_instagram" translatable="false">https://www.instagram.com/minar.tastic/</string>
+    <string name="dev_paypal" translatable="false">https://www.paypal.me/minardev</string>
+    <string name="dev_xda" translatable="false">https://forum.xda-developers.com/member.php?u=5222216</string>
+    <string name="dev_github" translatable="false">https://github.com/m-i-n-a-r</string>
+    <string name="dev_other_apps" translatable="false">https://play.google.com/store/apps/dev?id=7720251761301594831</string>
+    <string name="easter_egg">Joli logo, non ? ;D</string>
+    <string name="customization">Personnalisation</string>
+    <string name="vibration_name">Vibrations</string>
+    <string name="vibration_description_on">Vibre quand un bouton est pressé</string>
+    <string name="vibration_description_off">Pas de vibrations quand un bouton est pressé</string>
+    <string name="sound_name">Sons</string>
+    <string name="sound_description_on">Joue un son quand un bouton est pressé</string>
+    <string name="sound_description_off">Pas de son quand un bouton est pressé</string>
+    <string name="dice_number_name">Nombre de dés</string>
+    <string name="dice_number_description">Change le nomnbre de dés. Actuellement %s</string>
+    <string name="one">Un</string>
+    <string name="two">Deux</string>
+    <string name="three">Trois</string>
+    <string name="accent_description">Change la couleur d\'accentuation. Actuellement %s</string>
+    <string name="accent_name">Couleur d\'accentuation</string>
+    <string name="theme_description">Utiliser un thème sombre ou clair. Currently %s</string>
+    <string name="theme_name">Thème de l\'application</string>
+    <string name="blue">Bleu</string>
+    <string name="green">Vert</string>
+    <string name="orange">Orange</string>
+    <string name="yellow">Jaune</string>
+    <string name="teal">Sarcelle</string>
+    <string name="violet">Violet</string>
+    <string name="pink">Rose</string>
+    <string name="light_blue">Bleu clair</string>
+    <string name="red">Rouge</string>
+    <string name="lime">Citron vert</string>
+    <string name="system_theme">Defaut du système</string>
+    <string name="dark_theme">Sombre</string>
+    <string name="light_theme">Clair</string>
+    <string name="app_behavior">Comportement de l\'application</string>
+    <string name="rude_answers_description_on">C\'est bon j\'ai mis les réponses grossières</string>
+    <string name="rude_answers_description_off">Justes des répoonses gentilles et polies</string>
+    <string name="rude_answers_name">Réponses grossières</string>
+
+    <!-- Rate app dialog -->
+    <string name="positive_button">Laisser un avis!</string>
+    <string name="negative_button">Je suis un flemmard</string>
+    <string name="cancel_button">Nan</string>
+    <string name="rating_message">
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
+        \nOK, maintenant que j\'ai ton attention, est-ce que je pourrai te demander de laisser une bonne note pour aider Randomix à grandir un peu ? Ca me ferait vraiment plaisir ! Passe une bonne journée !:D\n
+    </string>
+    <string name="feedback_text">J\'ai quelque chose à te dire</string>
+    <string name="not_again_button">Ne me redemande jamais ça !</string>
+
+</resources>

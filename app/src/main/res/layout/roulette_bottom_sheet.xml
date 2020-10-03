@@ -32,9 +32,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_list_add_black_24dp"
                 android:drawablePadding="@dimen/side_drawable_margin"
-                android:drawableTint="?colorAccent"
                 android:gravity="center_horizontal"
                 android:paddingStart="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
@@ -43,7 +41,9 @@
                 android:text="@string/recent_title"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                 android:textColor="?colorAccent"
-                app:fontFamily="@font/opensans_bold" />
+                app:fontFamily="@font/opensans_bold"
+                app:drawableStartCompat="@drawable/ic_list_add_black_24dp"
+                app:drawableTint="?colorAccent" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

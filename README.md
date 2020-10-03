@@ -4,7 +4,7 @@ An open source app to choose randomly between numbers, answers, options and so o
 
 <p align='center'>
   <a href='https://github.com/m-i-n-a-r/randomix/blob/master/LICENSE.md'><img src='https://img.shields.io/cocoapods/l/AFNetworking.svg'/></a>
-  <img src='https://img.shields.io/badge/version-1.7.X-blue'/>
+  <img src='https://img.shields.io/badge/version-1.9.X-blue'/>
 	<img src='https://img.shields.io/badge/status-released-success'/>
 	<img src='https://img.shields.io/badge/-translations%20needed!-yellow'/>
 </p>
@@ -12,6 +12,16 @@ An open source app to choose randomly between numbers, answers, options and so o
 ## Introduction
 This is an open source app created to experiment some new android features, but it's also available on Play Store for all users.
 The main purpose of the app is provide a **random choice** in different ways. The app contains some basic personalization options and an introduction, plus some new resources like **animated vector drawables** and full light theme. The design is a bit personal, it follows the guidelines just partially.
+
+## Translations
+
+| LANGUAGE           | STATUS   | SPECIAL THANKS |
+|:-------------------|:--------:|---------------:|
+| **English**        | complete | myself         |
+| **Italian**        | complete | myself         |
+| **Spanish**        | complete | myself         |
+| **Russian**        | complete | BValeo         |
+| **French**         | complete | Firokat        |
 
 ## Features
 - Every tab in the bottom navigation bar contains a type of random choice. The available types are:
@@ -49,4 +59,4 @@ The app is now available through Google Play\
 </a>
 
 ## Credits
-This app was written during my free time as a training. Many good devs have helped me understanding the best practices and they taught me a lot of useful tricks. A special thanks to BValeo for the russian translation. **Every other translation is well appreciated!**
+This app was written during my free time as a training. Many good devs have helped me understanding the best practices and they taught me a lot of useful tricks. **Every translation is well appreciated!**

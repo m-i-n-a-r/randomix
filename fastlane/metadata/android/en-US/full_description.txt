@@ -1,0 +1,39 @@
+<h2><b>Introduction 👋</b></h2>
+This is an app created as a demo of some Android features.
+The main purpose of the app is to provide a random choice in different ways. The app contains some basic personalization options and an introduction, plus some new resources like animated vector drawables and the full light theme. The design is a bit personal: it follows the Android guidelines, but just partially.
+  
+
+<h2><b>Why should i use Randomix? 😕</b></h2>
+Well, i'll tell you 3 main reasons:
+<ul>
+    <li> It can help you to decide randomly in 4 different ways, elegantly! </li>
+    <li> It will cost just 3MB of storage! </li>
+    <li> It's beautiful, full of animations and simple to use! </li>
+</ul>
+An example?
+&rarr; During a table game, you have to throw a dice, a coin, or choose which player should start: Randomix does it all! 
+&rarr; You're hungry but you and your friends can't decide a place to have a meal: just spin the roulette and accept its wise answer!
+&rarr; You're starting to develop apps and you need a simple app to look at, to find some inspiration and tricks: click on the Github link, and the Randomix source code is served!
+  
+
+<h2><b>Features 🎲</b></h2>
+<ul>
+    <li> Every tab in the bottom navigation bar contains a type of random choice. The available types are: </li>
+    <ul>
+        <li> Roulette &rarr; select an option from a list. </li>
+        <li> Coin &rarr; simply flips a coin and prints the result. </li>
+        <li> Dice &rarr; throws a dice and prints the result. </li>
+        <li> Magic Ball &rarr; provides randomly chosen answers to any question. </li>
+    </ul>
+    <li> The recent options used in the roulette are automatically saved and can be restored! </li>
+    <li> Light and dark themes (Android 10 automatic dark mode supported) </li>
+    <li> Selectable accent (10 choices) </li>
+    <li> Vibration and sounds </li>
+    <li> First time introduction </li>
+    <li> Multiwindows support </li>
+    <li> Simple and precise ui following the material guidelines </li>
+</ul>
+  
+
+<h2><b>Credits ⚡</b></h2>
+This app was written during my free time as a training. Many good devs have helped me understanding the best practices. Thanks to BValeo for the russian translation, and to Firokat for the french translation. And a special thanks to Stack Overflow, obviously.

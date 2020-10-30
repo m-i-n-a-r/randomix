@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 
 public class RouletteBottomSheet extends BottomSheetDialogFragment {
     private List<List<String>> recentList;
-    private RouletteFragment roulette;
+    private final RouletteFragment roulette;
 
     RouletteBottomSheet(RouletteFragment roulette) {
         this.roulette = roulette;
@@ -64,6 +64,7 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
         }
         else {
             for (List<String> recent : recentList) {
+                // The suggetion leads to a function for api26+
                 String concatString = recent.stream().collect(Collectors.joining(" | "));
                 TextView previousOption = new TextView(getContext());
                 previousOption.setText(concatString);

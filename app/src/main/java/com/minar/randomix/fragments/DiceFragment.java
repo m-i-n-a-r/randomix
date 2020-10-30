@@ -65,7 +65,6 @@ public class DiceFragment extends androidx.fragment.app.Fragment implements OnCl
     public void onClick(View v) {
         if (v.getId() == R.id.diceZone) {
             // Make the button unclickable
-            @SuppressWarnings("ConstantConditions")
             // Suppress warning, it's guaranteed that getView won't be null
             final LinearLayout diceAnimation = getView().findViewById(R.id.diceZone);
             diceAnimation.setClickable(false);

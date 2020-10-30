@@ -122,7 +122,6 @@ public class MainActivity extends AppCompatActivity {
         if (fragmentNumber == 3) mp = MediaPlayer.create(this, R.raw.magicball_sound);
         if (fragmentNumber == 4) mp = MediaPlayer.create(this, R.raw.dice_sound);
         // Play sound if the sound in options is set to on
-        // noinspection ConstantConditions
         mp.start();
         mp.setOnCompletionListener(MediaPlayer::release);
     }

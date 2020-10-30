@@ -54,44 +54,60 @@ public class CustomAuthorPreference extends Preference implements View.OnClickLi
         // Vibrate and play sound using the common method in MainActivity
         Activity act = (Activity) getContext();
         Uri uri;
-        switch (v.getId()) {
-            case R.id.imageMinar:
-                if (this.easterEgg == 3) {
-                    Toast.makeText(getContext(), getContext().getString(R.string.easter_egg), Toast.LENGTH_SHORT).show();
-                    this.easterEgg = 0;
-                    break;
-                } else this.easterEgg++;
-                break;
-            case R.id.minarig:
-                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
-                uri = Uri.parse(getContext().getString(R.string.dev_instagram));
-                Intent intent1 = new Intent(Intent.ACTION_VIEW, uri);
-                getContext().startActivity(intent1);
-                break;
-            case R.id.minarpp:
-                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
-                uri = Uri.parse(getContext().getString(R.string.dev_paypal));
-                Intent intent2 = new Intent(Intent.ACTION_VIEW, uri);
-                getContext().startActivity(intent2);
-                break;
-            case R.id.minarps:
-                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
-                uri = Uri.parse(getContext().getString(R.string.dev_other_apps));
-                Intent intent3 = new Intent(Intent.ACTION_VIEW, uri);
-                getContext().startActivity(intent3);
-                break;
-            case R.id.minargit:
-                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
-                uri = Uri.parse(getContext().getString(R.string.dev_github));
-                Intent intent4 = new Intent(Intent.ACTION_VIEW, uri);
-                getContext().startActivity(intent4);
-                break;
-            case R.id.minarsite:
-                if (act instanceof MainActivity) ((MainActivity) act).vibrate();
-                uri = Uri.parse(getContext().getString(R.string.dev_personal_site));
-                Intent intent5 = new Intent(Intent.ACTION_VIEW, uri);
-                getContext().startActivity(intent5);
-                break;
+        int pressedId = v.getId();
+
+        // Easter egg
+        if (pressedId == R.id.imageMinar) {
+            if (this.easterEgg == 3) {
+                Toast.makeText(getContext(), getContext().getString(R.string.easter_egg), Toast.LENGTH_SHORT).show();
+                this.easterEgg = 0;
+                return;
+            } else this.easterEgg++;
+            return;
+        }
+
+        // Instagram
+        if (pressedId == R.id.minarig) {
+            if (act instanceof MainActivity) ((MainActivity) act).vibrate();
+            uri = Uri.parse(getContext().getString(R.string.dev_instagram));
+            Intent intent1 = new Intent(Intent.ACTION_VIEW, uri);
+            getContext().startActivity(intent1);
+            return;
+        }
+
+        // Paypal
+        if (pressedId == R.id.minarpp) {
+            if (act instanceof MainActivity) ((MainActivity) act).vibrate();
+            uri = Uri.parse(getContext().getString(R.string.dev_paypal));
+            Intent intent2 = new Intent(Intent.ACTION_VIEW, uri);
+            getContext().startActivity(intent2);
+            return;
+        }
+
+        // Play Store other apps
+        if (pressedId == R.id.minarps) {
+            if (act instanceof MainActivity) ((MainActivity) act).vibrate();
+            uri = Uri.parse(getContext().getString(R.string.dev_other_apps));
+            Intent intent3 = new Intent(Intent.ACTION_VIEW, uri);
+            getContext().startActivity(intent3);
+            return;
+        }
+
+        // Github
+        if (pressedId == R.id.minargit) {
+            if (act instanceof MainActivity) ((MainActivity) act).vibrate();
+            uri = Uri.parse(getContext().getString(R.string.dev_github));
+            Intent intent4 = new Intent(Intent.ACTION_VIEW, uri);
+            getContext().startActivity(intent4);
+            return;
+        }
+
+        // Personal site
+        if (pressedId == R.id.minarsite) {
+            if (act instanceof MainActivity) ((MainActivity) act).vibrate();
+            uri = Uri.parse(getContext().getString(R.string.dev_personal_site));
+            Intent intent5 = new Intent(Intent.ACTION_VIEW, uri);
+            getContext().startActivity(intent5);
         }
     }
 }

@@ -22,7 +22,7 @@ import com.minar.randomix.R;
 import java.util.Random;
 
 public class MagicBallFragment extends androidx.fragment.app.Fragment implements OnClickListener {
-    private String[] magicAnswers = new String[36];
+    private final String[] magicAnswers = new String[36];
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -37,7 +37,6 @@ public class MagicBallFragment extends androidx.fragment.app.Fragment implements
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.magicBallButtonAnimation) {// Start the animated vector drawable, make the button unclickable during the execution
-            @SuppressWarnings("ConstantConditions")
             // Suppress warning, it's guaranteed that getView won't be null
             final ImageView magicBallAnimation = getView().findViewById(R.id.magicBallButtonAnimation);
             magicBallAnimation.setClickable(false);

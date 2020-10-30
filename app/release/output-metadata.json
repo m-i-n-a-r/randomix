@@ -1,19 +1,17 @@
 {
-  "version": 1,
+  "version": 2,
   "artifactType": {
     "type": "APK",
     "kind": "Directory"
   },
   "applicationId": "com.minar.randomix",
-  "variantName": "release",
+  "variantName": "processReleaseResources",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
-      "properties": [],
-      "versionCode": 25,
-      "versionName": "1.9",
-      "enabled": true,
+      "versionCode": 26,
+      "versionName": "1.10",
       "outputFile": "app-release.apk"
     }
   ]

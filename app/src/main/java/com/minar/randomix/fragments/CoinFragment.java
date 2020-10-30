@@ -39,7 +39,6 @@ public class CoinFragment extends androidx.fragment.app.Fragment implements OnCl
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.coinButtonAnimation) { // Make the button unclickable
-            @SuppressWarnings("ConstantConditions")
             // Suppress warning, it's guaranteed that getView won't be null
             final ImageView coinAnimation = getView().findViewById(R.id.coinButtonAnimation);
             coinAnimation.setClickable(false);
@@ -72,7 +71,7 @@ public class CoinFragment extends androidx.fragment.app.Fragment implements OnCl
         // Get the textview and the imageview used for the result, with a simple control to avoid null object references
         final String resultHead = getString(R.string.result_head);
         final String resultTail = getString(R.string.result_tail);
-        @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
+        // Suppress warning, it's guaranteed that getView won't be null
         final TextView textViewResult = getView().findViewById(R.id.resultCoin);
         final ImageView coinAnimation = getView().findViewById(R.id.coinButtonAnimation);
 
@@ -116,7 +115,7 @@ public class CoinFragment extends androidx.fragment.app.Fragment implements OnCl
 
     // Execute the reset animation
     private void runResetAnimation() {
-        @SuppressWarnings("ConstantConditions") // Suppress warning, it's guaranteed that getView won't be null
+        // Suppress warning, it's guaranteed that getView won't be null
         ImageView coinAnimation = getView().findViewById(R.id.coinButtonAnimation);
         if (this.lastResult) coinAnimation.setImageResource(R.drawable.coin_head_to_start_vector_animation);
         else coinAnimation.setImageResource((R.drawable.coin_tail_to_start_vector_animation));

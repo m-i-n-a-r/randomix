@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,21 +12,26 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.minar.randomix.R;
+import com.minar.randomix.adapter.RecentAdapter;
+import com.minar.randomix.utilities.OnItemClickListener;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class RouletteBottomSheet extends BottomSheetDialogFragment {
     private List<List<String>> recentList;
     private final RouletteFragment roulette;
+    private SharedPreferences sp;
+    private RecentAdapter adapter;
 
     RouletteBottomSheet(RouletteFragment roulette) {
         this.roulette = roulette;
@@ -36,23 +40,26 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        // Inflate the bottom sheet, initialize the shared preferences and the recent options list
         View v = inflater.inflate(R.layout.roulette_bottom_sheet, container, false);
-
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+        sp = PreferenceManager.getDefaultSharedPreferences(getContext());
         String recent = sp.getString("recent", "");
         Gson gson = new Gson();
         Type type = new TypeToken<List<List<String>>>() {}.getType();
         recentList = gson.fromJson(recent, type);
         if (recentList == null) recentList = new ArrayList<>();
+
+        // Take the recycler view and the main layout, and populate the recycler
+        RecyclerView recentListLayout = v.findViewById(R.id.recentList);
         LinearLayout rouletteBottomSheet = v.findViewById(R.id.rouletteBottomSheet);
-        addToRecentLayout(rouletteBottomSheet);
+        populateRecentLayout(recentListLayout, rouletteBottomSheet);
 
         return v;
     }
 
-    // Insert the recent options in the layout
-    private void addToRecentLayout(LinearLayout rouletteBottomSheet) {
-        int index = 0;
+    // Insert the recent options in the recycler view
+    private void populateRecentLayout(RecyclerView recentListLayout, LinearLayout rouletteBottomSheet) {
+        // Case 1, placeholder
         if (recentList == null || recentList.isEmpty()) {
             TextView noOption = new TextView(getContext());
             noOption.setText(getResources().getString(R.string.bottom_sheet_no_option));
@@ -62,57 +69,48 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
             noOption.setGravity(Gravity.CENTER_HORIZONTAL);
             rouletteBottomSheet.addView(noOption);
         }
+        // Case 2, populate the recycler
         else {
-            for (List<String> recent : recentList) {
-                // The suggetion leads to a function for api26+
-                String concatString = recent.stream().collect(Collectors.joining(" | "));
-                TextView previousOption = new TextView(getContext());
-                previousOption.setText(concatString);
-                previousOption.setId(index);
-                previousOption.setTextSize(15);
-                previousOption.setPadding(28, 18, 28, 18);
-                previousOption.setGravity(Gravity.CENTER_HORIZONTAL);
-                // Ripple effect
-                TypedValue outValue = new TypedValue();
-                requireActivity().getTheme().resolveAttribute(android.R.attr.selectableItemBackground, outValue, true);
-                previousOption.setBackgroundResource(outValue.resourceId);
-                previousOption.setOnClickListener(view -> {
-                    int optionNumber = previousOption.getId();
-                    roulette.restoreOption(recentList.get(optionNumber));
-                });
-                rouletteBottomSheet.addView(previousOption);
-                index++;
-            }
+            adapter = new RecentAdapter(getContext(), recentList);
+            recentListLayout.setLayoutManager(new LinearLayoutManager(requireContext()));
+            recentListLayout.setAdapter(adapter);
+            adapter.setOnItemClickListener(new OnItemClickListener() {
+                @Override
+                public void onItemClick(int position, List<String> optionList,View view) {
+                    roulette.restoreOption(optionList);
+                }
+
+                @Override
+                public void onItemLongClick(int position, View view) {
+                    deleteRecent(position, requireContext());
+                }
+            });
         }
     }
 
     // Update the stored value of the recent options
-    void updateRecent(List<String> options, Context context) {
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+    void deleteRecent(int index, Context context) {
         Gson gson = new Gson();
-        if(recentList == null) {
-            String recent = sp.getString("recent", "");
-            Type type = new TypeToken<List<List<String>>>() {}.getType();
-            recentList = gson.fromJson(recent, type);
-            if (recentList == null) recentList = new ArrayList<>();
-        }
-        insertInRecent(options);
-        SharedPreferences.Editor editor = sp.edit();
+        fetchRecentList(context);
+        recentList.remove(index);
+        adapter.notifyItemRemoved(index);
         String json = gson.toJson(recentList);
-        editor.putString("recent", json);
-        editor.apply();
+        sp.edit().putString("recent", json).apply();
     }
 
-    void restoreLatest(Context context) {
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+    // Update the stored value of the recent options
+    void updateRecent(List<String> options, Context context) {
         Gson gson = new Gson();
-        if(recentList == null) {
-            String recent = sp.getString("recent", "");
-            Type type = new TypeToken<List<List<String>>>() {}.getType();
-            recentList = gson.fromJson(recent, type);
-            if (recentList == null) recentList = new ArrayList<>();
-        }
-        if(recentList.size() > 0) {
+        fetchRecentList(context);
+        insertInRecent(options);
+        String json = gson.toJson(recentList);
+        sp.edit().putString("recent", json).apply();
+    }
+
+    // Restore the latest option list
+    void restoreLatest(Context context) {
+        fetchRecentList(context);
+        if (recentList.size() > 0) {
             List<String> lastOption = recentList.get(recentList.size() - 1);
             roulette.restoreOption(lastOption);
         }
@@ -132,8 +130,21 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
             }
         }
         // Keep 10 recent only
-        this.recentList.add(values);
+        recentList.add(values);
         if (recentList.size() > 10) recentList.remove(0);
     }
 
+    // Fetch the recent list from share preferences or initialize it
+    private void fetchRecentList(Context context) {
+        Gson gson = new Gson();
+        if (recentList == null) {
+            // Shared preferences may be null if the method is called without opening the dialog
+            if (sp == null) sp = PreferenceManager.getDefaultSharedPreferences(context);
+            String recent = sp.getString("recent", "");
+            Type type = new TypeToken<List<List<String>>>() {
+            }.getType();
+            recentList = gson.fromJson(recent, type);
+            if (recentList == null) recentList = new ArrayList<>();
+        }
+    }
 }

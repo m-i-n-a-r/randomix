@@ -4,7 +4,7 @@ An open source app to choose randomly between numbers, answers, options and so o
 
 <p align='center'>
   <a href='https://github.com/m-i-n-a-r/randomix/blob/master/LICENSE.md'><img src='https://img.shields.io/cocoapods/l/AFNetworking.svg'/></a>
-  <img src='https://img.shields.io/badge/version-1.9.X-blue'/>
+  <img src='https://img.shields.io/badge/version-1.10.X-blue'/>
 	<img src='https://img.shields.io/badge/status-released-success'/>
 	<img src='https://img.shields.io/badge/-translations%20needed!-yellow'/>
 </p>
@@ -25,7 +25,7 @@ The main purpose of the app is provide a **random choice** in different ways. Th
 
 ## Features
 - Every tab in the bottom navigation bar contains a type of random choice. The available types are:
-  - **Roulette** -> chooses between a specified number of options, entered from the user. Includes a list of recent options to easily select and restore.
+  - **Roulette** -> chooses between a specified number of options, entered from the user. Includes a list of recent options easy to select, delete or restore.
   - **Coin** -> simply flips a coin and prints the result.
   - **Dice** -> throws a dice and prints the result.
   - **Magic Ball** -> provides randomly chosen answers to any question.

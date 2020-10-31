@@ -1,0 +1,3 @@
+- Long press to delete a recent entry
+- Many small improvements
+- Some fixes

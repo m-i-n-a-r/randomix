@@ -1,3 +1,4 @@
 - Long press to delete a recent entry
 - Many small improvements
+- Optimized apk size
 - Some fixes

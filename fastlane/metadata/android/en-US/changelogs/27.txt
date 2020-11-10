@@ -1,0 +1,4 @@
+- New crimson accent
+- Recent option dialog improved and animated
+- Czech translation
+- Fixes and improvements

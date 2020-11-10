@@ -1,10 +1,8 @@
 <resources>
 
     <!-- Main strings -->
-    <string name="app_name" translatable="false">Randomix</string>
     <string name="app_extended_name" translatable="false">Randomix - Décisions automatiques</string>
     <string name="app_intro_description">Une application open source pour choisir aléatoirement des nombres, réponses, options et plus encore. Laissez place au hasard!</string>
-    <string name="result_placeholder" translatable="false"> - - - </string>
     <string name="title_roulette">Roulette</string>
     <string name="title_coin">Pile ou face</string>
     <string name="title_dice">Dé</string>

@@ -38,16 +38,16 @@
     <string name="hint_magic_ball">Appuyer sur le bouton ci-dessous</string>
     <string name="magic_answer_1">Non.</string>
     <string name="magic_answer_2">Oui!</string>
-    <string name="magic_answer_3">Je ne pense pas...</string>
+    <string name="magic_answer_3">Je ne pense pas…</string>
     <string name="magic_answer_4">Peut-être!</string>
     <string name="magic_answer_5">Ca ne fait aucun sens !</string>
-    <string name="magic_answer_6">Probablement...</string>
+    <string name="magic_answer_6">Probablement…</string>
     <string name="magic_answer_7">Vous êtes sûr ?</string>
     <string name="magic_answer_8">Probablement oui.</string>
     <string name="magic_answer_9">Probablement non.</string>
     <string name="magic_answer_10">Evidemment.</string>
     <string name="magic_answer_11">Demandez cela à vous-même.</string>
-    <string name="magic_answer_12">Bah non, voyons...</string>
+    <string name="magic_answer_12">Bah non, voyons…</string>
     <string name="magic_answer_13">Oh ouais!</string>
     <string name="magic_answer_14">Pense à ça.</string>
     <string name="magic_answer_15">Qui sait ?</string>
@@ -117,6 +117,7 @@
     <string name="light_blue">Bleu clair</string>
     <string name="red">Rouge</string>
     <string name="lime">Citron vert</string>
+    <string name="crimson">Cramoisi</string>
     <string name="system_theme">Defaut du système</string>
     <string name="dark_theme">Sombre</string>
     <string name="light_theme">Clair</string>

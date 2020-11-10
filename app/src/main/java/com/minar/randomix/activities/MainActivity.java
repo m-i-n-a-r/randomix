@@ -53,15 +53,16 @@ public class MainActivity extends AppCompatActivity {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         assert accent != null;
-        if (accent.equals("green")) setTheme(R.style.AppTheme_green);
-        if (accent.equals("orange")) setTheme(R.style.AppTheme_orange);
-        if (accent.equals("yellow")) setTheme(R.style.AppTheme_yellow);
-        if (accent.equals("teal")) setTheme(R.style.AppTheme_teal);
-        if (accent.equals("violet")) setTheme(R.style.AppTheme_violet);
-        if (accent.equals("pink")) setTheme(R.style.AppTheme_pink);
-        if (accent.equals("lightBlue")) setTheme(R.style.AppTheme_lightBlue);
-        if (accent.equals("red")) setTheme(R.style.AppTheme_red);
-        if (accent.equals("lime")) setTheme(R.style.AppTheme_lime);
+        if (accent.equals("green")) setTheme(R.style.AppTheme_Green);
+        if (accent.equals("orange")) setTheme(R.style.AppTheme_Orange);
+        if (accent.equals("yellow")) setTheme(R.style.AppTheme_Yellow);
+        if (accent.equals("teal")) setTheme(R.style.AppTheme_Teal);
+        if (accent.equals("violet")) setTheme(R.style.AppTheme_Violet);
+        if (accent.equals("pink")) setTheme(R.style.AppTheme_Pink);
+        if (accent.equals("lightBlue")) setTheme(R.style.AppTheme_LightBlue);
+        if (accent.equals("red")) setTheme(R.style.AppTheme_Red);
+        if (accent.equals("lime")) setTheme(R.style.AppTheme_Lime);
+        if (accent.equals("crimson")) setTheme(R.style.AppTheme_Crimson);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -122,7 +123,9 @@ public class MainActivity extends AppCompatActivity {
         if (fragmentNumber == 3) mp = MediaPlayer.create(this, R.raw.magicball_sound);
         if (fragmentNumber == 4) mp = MediaPlayer.create(this, R.raw.dice_sound);
         // Play sound if the sound in options is set to on
-        mp.start();
-        mp.setOnCompletionListener(MediaPlayer::release);
+        if (mp != null) {
+            mp.start();
+            mp.setOnCompletionListener(MediaPlayer::release);
+        }
     }
 }

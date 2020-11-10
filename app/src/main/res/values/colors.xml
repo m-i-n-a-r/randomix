@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- introduction -->
+    <!-- Introduction -->
     <color name="iconGreen">#0baf70</color>
     <color name="iconViolet">#7e41c4</color>
 
-    <!-- basic colors -->
+    <!-- Basic colors -->
     <color name="colorAccent">@color/blueAccent</color>
     <color name="almostWhite">#fbfbfb</color>
     <color name="goodGray">#959595</color>
@@ -13,19 +13,19 @@
     <color name="positiveGreen">#00c077</color>
     <color name="negativeRed">#ee0000</color>
 
-    <!-- light theme colors -->
+    <!-- Light theme colors -->
     <color name="colorBackground">#fefefe</color>
     <color name="colorPrimary">#fefefe</color>
     <color name="textColorPrimary">#5f5f5f</color>
     <color name="textColorSecondary">#2f2f2f</color>
 
-    <!-- dark theme colors -->
+    <!-- Dark theme colors -->
     <color name="colorBackgroundInverse">#1f1f1f</color>
     <color name="colorPrimaryInverse">#1f1f1f</color>
     <color name="textColorPrimaryInverse">#ffffff</color>
     <color name="textColorSecondaryInverse">#f0f0f0</color>
 
-    <!-- accents -->
+    <!-- Accents -->
     <color name="blueAccent">#4285f4</color>
     <color name="greenAccent">#3ddc84</color>
     <color name="yellowAccent">#f4b400</color>
@@ -36,6 +36,7 @@
     <color name="lightBlueAccent">#29b6f6</color>
     <color name="redAccent">#ff5252</color>
     <color name="limeAccent">#c5de00</color>
+    <color name="crimsonAccent">#dc143c</color>
 
     <!-- Temporary solution for the unselected stroke color for the text field (buggy for dark theme) TODO remove when possible -->
     <color name="mtrl_textinput_default_box_stroke_color">@color/goodGray</color>

@@ -2,16 +2,17 @@ package com.minar.randomix.fragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Animatable2;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -51,24 +52,30 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
 
         // Take the recycler view and the main layout, and populate the recycler
         RecyclerView recentListLayout = v.findViewById(R.id.recentList);
-        LinearLayout rouletteBottomSheet = v.findViewById(R.id.rouletteBottomSheet);
+        ConstraintLayout rouletteBottomSheet = v.findViewById(R.id.rouletteBottomSheet);
         populateRecentLayout(recentListLayout, rouletteBottomSheet);
 
+        // Animate the drawable in loop
+        ImageView noRecentImage = v.findViewById(R.id.recentImage);
+        Drawable animatedNoRecent = noRecentImage.getDrawable();
+        if (animatedNoRecent instanceof Animatable2) {
+            ((Animatable2) animatedNoRecent).registerAnimationCallback(new Animatable2.AnimationCallback() {
+                @Override
+                public void onAnimationEnd(Drawable drawable) {
+                    ((Animatable2) animatedNoRecent).start();
+                }
+            });
+            ((Animatable2) animatedNoRecent).start();
+        }
         return v;
     }
 
     // Insert the recent options in the recycler view
-    private void populateRecentLayout(RecyclerView recentListLayout, LinearLayout rouletteBottomSheet) {
+    private void populateRecentLayout(RecyclerView recentListLayout, ConstraintLayout rouletteBottomSheet) {
         // Case 1, placeholder
-        if (recentList == null || recentList.isEmpty()) {
-            TextView noOption = new TextView(getContext());
-            noOption.setText(getResources().getString(R.string.bottom_sheet_no_option));
-            noOption.setTextSize(16);
-            noOption.setTextColor(getResources().getColor(R.color.goodGray, requireActivity().getTheme()));
-            noOption.setPadding(96, 24, 96, 24);
-            noOption.setGravity(Gravity.CENTER_HORIZONTAL);
-            rouletteBottomSheet.addView(noOption);
-        }
+        if (recentList == null || recentList.isEmpty())
+            rouletteBottomSheet.findViewById(R.id.recentNoResult).setVisibility(View.VISIBLE);
+
         // Case 2, populate the recycler
         else {
             adapter = new RecentAdapter(getContext(), recentList);
@@ -147,4 +154,7 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
             if (recentList == null) recentList = new ArrayList<>();
         }
     }
+
+    // Loop an animated vector drawable
+
 }

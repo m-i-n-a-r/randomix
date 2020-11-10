@@ -8,14 +8,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/rouletteBottomSheet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
             android:fitsSystemWindows="true"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
             android:paddingBottom="@dimen/activity_vertical_margin"
             app:behavior_hideable="true"
             app:behavior_peekHeight="@dimen/peek_height"
@@ -27,35 +25,69 @@
                 android:layout_height="@dimen/bottom_sheet_pill_width"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:background="@drawable/bottom_sheet_pill" />
+                android:background="@drawable/bottom_sheet_pill"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/recentImage"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/activity_vertical_margin"
+                android:contentDescription="@string/recent_title"
+                android:padding="@dimen/linear_vertical_padding"
+                android:src="@drawable/animated_no_recent"
+                app:layout_constraintBottom_toBottomOf="@id/recentTitle"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/recentTitle" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/recentTitle"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:drawablePadding="@dimen/side_drawable_margin"
-                android:gravity="center_horizontal"
-                android:paddingStart="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingVertical="@dimen/activity_vertical_margin"
+                android:paddingStart="@dimen/side_drawable_margin"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
-                android:paddingBottom="@dimen/activity_vertical_margin"
                 android:text="@string/recent_title"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                 android:textColor="?colorAccent"
-                app:drawableStartCompat="@drawable/ic_list_add_black_24dp"
-                app:drawableTint="?colorAccent"
-                app:fontFamily="@font/opensans_bold" />
+                app:fontFamily="@font/opensans_bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/recentImage"
+                app:layout_constraintTop_toBottomOf="@id/smallButtonRect" />
 
-            <!-- A recycler is not necessary, since the max number of options is always 10 -->
+            <TextView
+                android:id="@+id/recentNoResult"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/result_text_margin"
+                android:gravity="center_horizontal"
+                android:paddingHorizontal="@dimen/result_text_margin"
+                android:paddingVertical="@dimen/activity_vertical_margin"
+                android:text="@string/bottom_sheet_no_option"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:visibility="gone"
+                app:fontFamily="@font/opensans_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recentTitle" />
+
+            <!-- A recycler is not mandatory, since the max number of options is always 10 -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recentList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clipToPadding="false"
                 android:overScrollMode="never"
-                android:paddingBottom="@dimen/linear_vertical_padding"
-                android:scrollbars="none" />
+                android:paddingVertical="@dimen/linear_vertical_padding"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recentTitle" />
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

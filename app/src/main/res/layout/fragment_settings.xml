@@ -32,8 +32,8 @@
         android:paddingTop="@dimen/minar_banner_padding"
         android:paddingRight="@dimen/minar_banner_padding"
         android:paddingBottom="@dimen/minar_banner_padding"
-        android:tint="?colorAccent"
-        android:src="@drawable/animated_logo" />
+        android:src="@drawable/animated_logo"
+        app:tint="?colorAccent" />
 
     <TextView
         android:id="@+id/descriptionMinar"
@@ -62,7 +62,7 @@
             android:contentDescription="@string/dev_instagram"
             android:focusable="true"
             android:src="@drawable/ic_instagram_black_24dp"
-            android:tint="?colorAccent" />
+            app:tint="?colorAccent" />
 
         <ImageView
             android:id="@+id/minarpp"
@@ -74,7 +74,7 @@
             android:contentDescription="@string/dev_paypal"
             android:focusable="true"
             android:src="@drawable/ic_paypal_black_24dp"
-            android:tint="?colorAccent" />
+            app:tint="?colorAccent" />
 
         <ImageView
             android:id="@+id/minarps"
@@ -86,7 +86,7 @@
             android:contentDescription="@string/dev_other_apps"
             android:focusable="true"
             android:src="@drawable/ic_play_store_black_24dp"
-            android:tint="?colorAccent" />
+            app:tint="?colorAccent" />
 
         <ImageView
             android:id="@+id/minargit"
@@ -98,7 +98,7 @@
             android:contentDescription="@string/dev_github"
             android:focusable="true"
             android:src="@drawable/ic_github_black_24dp"
-            android:tint="?colorAccent" />
+            app:tint="?colorAccent" />
 
         <ImageView
             android:id="@+id/minarsite"
@@ -110,7 +110,7 @@
             android:contentDescription="@string/dev_personal_site"
             android:focusable="true"
             android:src="@drawable/ic_minar_logo_24dp"
-            android:tint="?colorAccent" />
+            app:tint="?colorAccent" />
     </LinearLayout>
 </LinearLayout>
 

@@ -41,5 +41,6 @@
     <dimen name="bottom_sheet_pill_height">36dp</dimen>
     <dimen name="bottom_sheet_pill_width">4dp</dimen>
     <dimen name="side_drawable_margin">6dp</dimen>
+    <dimen name="max_size_icon">64dp</dimen>
 
 </resources>

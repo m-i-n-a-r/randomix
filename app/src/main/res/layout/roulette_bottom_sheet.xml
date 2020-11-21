@@ -32,14 +32,15 @@
 
             <ImageView
                 android:id="@+id/recentImage"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="@dimen/max_size_icon"
+                android:minHeight="@dimen/max_size_icon"
                 android:layout_marginStart="@dimen/activity_vertical_margin"
                 android:contentDescription="@string/recent_title"
                 android:padding="@dimen/linear_vertical_padding"
                 android:src="@drawable/animated_no_recent"
                 app:layout_constraintBottom_toBottomOf="@id/recentTitle"
-                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/recentTitle" />
 

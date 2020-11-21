@@ -6,8 +6,8 @@ android {
         applicationId "com.minar.randomix"
         minSdkVersion 24
         targetSdkVersion 30
-        versionCode 27
-        versionName "1.11"
+        versionCode 28
+        versionName "1.12"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     compileOptions {
@@ -32,7 +32,7 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment:2.3.1"
     implementation "androidx.navigation:navigation-ui:2.3.1"
     implementation "androidx.preference:preference:1.1.1"
-    testImplementation 'junit:junit:4.13'
+    testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.github.AppIntro:AppIntro:6.0.0'

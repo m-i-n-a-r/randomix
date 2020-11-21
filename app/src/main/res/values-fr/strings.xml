@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Main strings -->
-    <string name="app_extended_name" translatable="false">Randomix - Décisions automatiques</string>
+    <string name="app_extended_name">Randomix - Décisions automatiques</string>
     <string name="app_intro_description">Une application open source pour choisir aléatoirement des nombres, réponses, options et plus encore. Laissez place au hasard!</string>
     <string name="title_roulette">Roulette</string>
     <string name="title_coin">Pile ou face</string>
@@ -81,15 +81,7 @@
 
     <!-- Settings -->
     <string name="hello_settings_fragment">Paramètres</string>
-    <string name="dev_name" translatable="false">m.i.n.a.r.</string>
     <string name="dev_description">Je suis un garçon poli et j\'aime les belles choses, comme l\'animation, les îcones, les voitures de sport et l\'impression 3D. Je travaille en tant que designer et ingénieur informatique</string>
-    <string name="dev_email" translatable="false">minar.tastic@gmail.com</string>
-    <string name="dev_personal_site" translatable="false">https://minar.ml</string>
-    <string name="dev_instagram" translatable="false">https://www.instagram.com/minar.tastic/</string>
-    <string name="dev_paypal" translatable="false">https://www.paypal.me/minardev</string>
-    <string name="dev_xda" translatable="false">https://forum.xda-developers.com/member.php?u=5222216</string>
-    <string name="dev_github" translatable="false">https://github.com/m-i-n-a-r</string>
-    <string name="dev_other_apps" translatable="false">https://play.google.com/store/apps/dev?id=7720251761301594831</string>
     <string name="easter_egg">Joli logo, non ? ;D</string>
     <string name="customization">Personnalisation</string>
     <string name="vibration_name">Vibrations</string>

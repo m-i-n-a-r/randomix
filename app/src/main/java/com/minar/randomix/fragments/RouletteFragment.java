@@ -32,13 +32,14 @@ import java.util.Random;
 public class RouletteFragment extends androidx.fragment.app.Fragment implements OnClickListener, View.OnLongClickListener, TextView.OnEditorActionListener {
     private final List<String> options = new ArrayList<>();
     private final RouletteBottomSheet bottomSheet = new RouletteBottomSheet(this);
+    private SharedPreferences sp = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_roulette, container, false);
 
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+        sp = PreferenceManager.getDefaultSharedPreferences(getContext());
         // Hide description if needed
         if (sp.getBoolean("hide_descriptions", false))
             v.findViewById(R.id.descriptionRoulette).setVisibility(View.GONE);
@@ -203,13 +204,15 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
     // Insert a chip in the roulette (15 chips limit)
     private void insertRouletteChip(String option) {
         String currentOption;
+        boolean allowEquals = sp.getBoolean("allow_equals", false);
         if (!option.equals("")) currentOption = option;
         else {
             TextView entry = requireView().findViewById(R.id.entryRoulette);
             currentOption = entry.getText().toString().trim();
             currentOption = currentOption.replaceAll("\\s+", " ");
             // Return if the string entered is a duplicate, reset the text field
-            if (options.contains(currentOption) || currentOption.equals("")) return;
+            if ((!allowEquals && options.contains(currentOption)) || currentOption.equals(""))
+                return;
             entry.setText("");
         }
         final ChipGroup optionsList = requireView().findViewById(R.id.rouletteChipList);

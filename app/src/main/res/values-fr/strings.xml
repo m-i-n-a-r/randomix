@@ -120,6 +120,9 @@
     <string name="hide_descriptions_name">Cachez descriptions</string>
     <string name="hide_descriptions_description_on">Descriptions cachées</string>
     <string name="hide_descriptions_description_off">Descriptions visibles</string>
+    <string name="allow_equals_name">Autoriser options égales</string>
+    <string name="allow_equals_description_on">Options égales à la roulette autorisées</string>
+    <string name="allow_equals_description_off">Options égales à la roulette interdit</string>
 
     <!-- Rate app dialog -->
     <string name="positive_button">Laisser un avis!</string>

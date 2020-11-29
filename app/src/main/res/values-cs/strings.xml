@@ -117,4 +117,8 @@
     <string name="hide_descriptions_name">Skrýt popisy</string>
     <string name="hide_descriptions_description_on">Skryté popisy</string>
     <string name="hide_descriptions_description_off">Viditelné popisy</string>
+    <string name="allow_equals_name">Povolit stejné možnosti</string>
+    <string name="allow_equals_description_on">V ruletě jsou povoleny stejné možnosti</string>
+    <string name="allow_equals_description_off">Rovné možnosti nejsou v ruletě povoleny</string>
+
 </resources>

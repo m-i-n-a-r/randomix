@@ -123,5 +123,8 @@
     <string name="hide_descriptions_name">Ocultar descripciones</string>
     <string name="hide_descriptions_description_on">Descripciones ocultas</string>
     <string name="hide_descriptions_description_off">Descripciones visibles</string>
+    <string name="allow_equals_name">Permita opciones iguales</string>
+    <string name="allow_equals_description_on">Se permiten mismas opciones en la ruleta</string>
+    <string name="allow_equals_description_off">No se permiten mismas opciones en la ruleta</string>
 
 </resources>

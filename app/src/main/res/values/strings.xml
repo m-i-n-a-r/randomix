@@ -134,6 +134,9 @@
     <string name="hide_descriptions_name">Hide descriptions</string>
     <string name="hide_descriptions_description_on">Descriptions hidden</string>
     <string name="hide_descriptions_description_off">Descriptions visible</string>
+    <string name="allow_equals_name">Allow equal options</string>
+    <string name="allow_equals_description_on">Equal options in roulette allowed</string>
+    <string name="allow_equals_description_off">Equal options in roulette not allowed</string>
 
     <!-- Rate app dialog -->
     <string name="positive_button">Review!</string>

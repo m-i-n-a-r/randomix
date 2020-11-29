@@ -1,6 +1,5 @@
 package com.minar.randomix.fragments;
 
-
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;

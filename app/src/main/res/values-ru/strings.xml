@@ -119,5 +119,8 @@
     <string name="hide_descriptions_name">Скрыть описания</string>
     <string name="hide_descriptions_description_on">Скрытые описания</string>
     <string name="hide_descriptions_description_off">Видимые описания</string>
+    <string name="allow_equals_name">Разрешите равные возможности</string>
+    <string name="allow_equals_description_on">В рулетке разрешены равные варианты</string>
+    <string name="allow_equals_description_off">В рулетке не допускаются равные возможности</string>
 
 </resources>

@@ -36,13 +36,13 @@
             android:title="@string/hide_descriptions_name"
             app:iconSpaceReserved="false" />
 
-        <!--<SwitchPreference
+        <SwitchPreference
             android:defaultValue="false"
             android:key="allow_equals"
             android:summaryOff="@string/allow_equals_description_off"
             android:summaryOn="@string/allow_equals_description_on"
             android:title="@string/allow_equals_name"
-            app:iconSpaceReserved="false" />-->
+            app:iconSpaceReserved="false" />
 
     </PreferenceCategory>
 

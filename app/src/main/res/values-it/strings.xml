@@ -118,5 +118,8 @@
     <string name="hide_descriptions_name">Nascondi descrizioni</string>
     <string name="hide_descriptions_description_on">Descrizioni nascoste</string>
     <string name="hide_descriptions_description_off">Descrizioni visibili</string>
+    <string name="allow_equals_name">Permetti opzioni uguali</string>
+    <string name="allow_equals_description_on">Opzioni uguali nella roulette ammesse</string>
+    <string name="allow_equals_description_off">Opzioni uguali nella roulette non ammesse</string>
 
 </resources>

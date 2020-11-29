@@ -9,7 +9,7 @@
     <PreferenceCategory
         android:key="app_behavior"
         android:title="@string/app_behavior"
-        app:iconSpaceReserved="false">
+        app:icon="@drawable/ic_app_behavior_24dp">
 
         <SwitchPreference
             android:defaultValue="false"
@@ -33,7 +33,7 @@
     <PreferenceCategory
         android:key="customization"
         android:title="@string/customization"
-        app:iconSpaceReserved="false">
+        app:icon="@drawable/ic_customization_24dp">
 
         <ListPreference
             android:defaultValue="system"

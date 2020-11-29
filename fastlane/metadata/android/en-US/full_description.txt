@@ -29,6 +29,7 @@ An example?
     <li> Light and dark themes (Android 10 automatic dark mode supported) </li>
     <li> Selectable accent (10 choices) </li>
     <li> Vibration and sounds </li>
+    <li> Rude answers, allow equal options, dice number </li>
     <li> First time introduction </li>
     <li> Multiwindows support </li>
     <li> Simple and precise ui following the material guidelines </li>

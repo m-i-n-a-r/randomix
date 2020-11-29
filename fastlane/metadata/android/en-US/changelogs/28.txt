@@ -1,0 +1,4 @@
+- Allow equal options
+- Hide descriptions
+- Layout improvements
+- Replaced PayPal with Twitter

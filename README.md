@@ -4,7 +4,7 @@ An open source app to choose randomly between numbers, answers, options and so o
 
 <p align='center'>
   <a href='https://github.com/m-i-n-a-r/randomix/blob/master/LICENSE.md'><img src='https://img.shields.io/cocoapods/l/AFNetworking.svg'/></a>
-  <img src='https://img.shields.io/badge/version-1.11.X-blue'/>
+  <img src='https://img.shields.io/badge/version-1.12.X-blue'/>
 	<img src='https://img.shields.io/badge/status-released-success'/>
 	<img src='https://img.shields.io/badge/-translations%20needed!-yellow'/>
 </p>
@@ -35,7 +35,8 @@ The main purpose of the app is provide a **random choice** in different ways. Th
 - Multiwindows support
 - First time introduction ([Appintro](https://github.com/AppIntro/AppIntro))
 - Rate the app dialog ([gene-rate](https://github.com/Pixplicity/gene-rate))
-- Simple and precise ui (androidx)
+- Simple and precise ui
+- Allow equal options, dice number, rude answers
 - Sounds, vibration and other options
 - Small size (~4MB), optimized code
 - Available in many languages

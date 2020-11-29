@@ -154,7 +154,4 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
             if (recentList == null) recentList = new ArrayList<>();
         }
     }
-
-    // Loop an animated vector drawable
-
 }

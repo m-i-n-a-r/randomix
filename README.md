@@ -10,7 +10,7 @@ An open source app to choose randomly between numbers, answers, options and so o
 </p>
 
 ## Introduction
-This is an open source app created to experiment some new android features, but it's also available on Play Store for all users.
+This is an open source app created to experiment some new android features, but it's also available on Play Store and F-Droid for all users.
 The main purpose of the app is provide a **random choice** in different ways. The app contains some basic personalization options and an introduction, plus some new resources like **animated vector drawables** and full light theme. The design is a bit personal, it follows the guidelines just partially.
 
 ## Translations
@@ -52,15 +52,15 @@ The main purpose of the app is provide a **random choice** in different ways. Th
 </p>
 
 ## Download
-The app is now available through Google Play and F-Droid\
-\
+The app is now available through Google Play and F-Droid.
+
+
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
      alt="Get it on F-Droid"
-     height="80">](https://f-droid.org/it/packages/com.minar.randomix/)
-<a href='https://play.google.com/store/apps/details?id=com.minar.randomix'>
+     height="80">](https://f-droid.org/packages/com.minar.randomix/)
 [<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
      alt="Get it on Google Play"
-     height="80">](https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png')
+     height="80">](https://play.google.com/store/apps/details?id=com.minar.randomix)
 
 ## Credits
 This app was written during my free time as a training. Many good devs have helped me understanding the best practices and they taught me a lot of useful tricks. **Every translation is well appreciated!**

@@ -120,5 +120,8 @@
     </string>
     <string name="feedback_text">Tengo algo que decirte</string>
     <string name="not_again_button">Nunca preguntes de nuevo</string>
+    <string name="hide_descriptions_name">Ocultar descripciones</string>
+    <string name="hide_descriptions_description_on">Descripciones ocultas</string>
+    <string name="hide_descriptions_description_off">Descripciones visibles</string>
 
 </resources>

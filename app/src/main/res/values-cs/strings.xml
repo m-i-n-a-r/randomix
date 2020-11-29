@@ -114,4 +114,7 @@
     <string name="customization">Přizpůsobení</string>
     <string name="easter_egg">Pěkné logo, hm? ;D</string>
     <string name="flip_coin">Vyhoďte minci!</string>
+    <string name="hide_descriptions_name">Skrýt popisy</string>
+    <string name="hide_descriptions_description_on">Skryté popisy</string>
+    <string name="hide_descriptions_description_off">Viditelné popisy</string>
 </resources>

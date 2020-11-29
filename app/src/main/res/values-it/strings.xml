@@ -115,5 +115,8 @@
     <string name="not_again_button">Non chiedere più</string>
     <string name="recent_title">Opzioni recenti, tocca per ripristinare</string>
     <string name="bottom_sheet_no_option">Nessuna opzione recente, gira la roulette per salvare le opzioni correnti!</string>
+    <string name="hide_descriptions_name">Nascondi descrizioni</string>
+    <string name="hide_descriptions_description_on">Descrizioni nascoste</string>
+    <string name="hide_descriptions_description_off">Descrizioni visibili</string>
 
 </resources>

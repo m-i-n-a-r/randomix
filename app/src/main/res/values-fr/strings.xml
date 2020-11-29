@@ -117,6 +117,9 @@
     <string name="rude_answers_description_on">C\'est bon j\'ai mis les réponses grossières</string>
     <string name="rude_answers_description_off">Justes des répoonses gentilles et polies</string>
     <string name="rude_answers_name">Réponses grossières</string>
+    <string name="hide_descriptions_name">Cachez descriptions</string>
+    <string name="hide_descriptions_description_on">Descriptions cachées</string>
+    <string name="hide_descriptions_description_off">Descriptions visibles</string>
 
     <!-- Rate app dialog -->
     <string name="positive_button">Laisser un avis!</string>

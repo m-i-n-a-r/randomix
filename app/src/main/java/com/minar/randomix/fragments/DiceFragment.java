@@ -39,6 +39,10 @@ public class DiceFragment extends androidx.fragment.app.Fragment implements OnCl
         LinearLayout diceSection = v.findViewById(R.id.diceSection);
         // Get the shared preferences and the desired number of dices, from 1 to 3
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+
+        // Hide description if needed
+        if (sp.getBoolean("hide_descriptions", false))
+            v.findViewById(R.id.descriptionDice).setVisibility(View.GONE);
         int diceNumber = Integer.parseInt(Objects.requireNonNull(sp.getString("dice_number", "1")));
         // Choose the correct layout. diceNumber can only be 1, 2 or 3
         switch (diceNumber) {
@@ -64,9 +68,8 @@ public class DiceFragment extends androidx.fragment.app.Fragment implements OnCl
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.diceZone) {
-            // Make the button unclickable
-            // Suppress warning, it's guaranteed that getView won't be null
-            final LinearLayout diceAnimation = getView().findViewById(R.id.diceZone);
+            // Make the button un-clickable
+            final LinearLayout diceAnimation = requireView().findViewById(R.id.diceZone);
             diceAnimation.setClickable(false);
 
             // Get the shared preferences and the desired number of dices, from 1 to 3
@@ -85,11 +88,11 @@ public class DiceFragment extends androidx.fragment.app.Fragment implements OnCl
                 runResetAnimation(diceNumber);
 
                 // Delay the execution
-                getView().postDelayed(() -> throwAndRunMainAnimation(diceNumber), 500);
+                requireView().postDelayed(() -> throwAndRunMainAnimation(diceNumber), 500);
             } else throwAndRunMainAnimation(diceNumber);
 
             // Reactivate the button after the right time
-            getView().postDelayed(() -> diceAnimation.setClickable(true), 2000);
+            requireView().postDelayed(() -> diceAnimation.setClickable(true), 2000);
             // Check if it's the first throw
             if (!this.notFirstThrow) this.notFirstThrow = true;
         }
@@ -104,15 +107,15 @@ public class DiceFragment extends androidx.fragment.app.Fragment implements OnCl
         // Get 1, 2 or 3 numbers depending on the dices number
         n1 = ran.nextInt(6) + 1;
 
-        if(diceNumber > 1) n2 = ran.nextInt(6) + 1;
-        if(diceNumber > 2) n3 = ran.nextInt(6) + 1;
+        if (diceNumber > 1) n2 = ran.nextInt(6) + 1;
+        if (diceNumber > 2) n3 = ran.nextInt(6) + 1;
 
         // Check for fragment changes. If the fragment has changed, no further operations are needed
-        if(!isAdded()) return;
+        if (!isAdded()) return;
         diceAnimation1 = requireView().findViewById(R.id.diceButtonAnimation1);
 
-        if(diceNumber > 1) diceAnimation2 = requireView().findViewById(R.id.diceButtonAnimation2);
-        if(diceNumber > 2) diceAnimation3 = requireView().findViewById(R.id.diceButtonAnimation3);
+        if (diceNumber > 1) diceAnimation2 = requireView().findViewById(R.id.diceButtonAnimation2);
+        if (diceNumber > 2) diceAnimation3 = requireView().findViewById(R.id.diceButtonAnimation3);
 
         // Set the drawable programmatically, depending on the dices number
         chosenDrawable1 = "dice_" + n1 + "_vector_animation";
@@ -165,8 +168,8 @@ public class DiceFragment extends androidx.fragment.app.Fragment implements OnCl
     private void runResetAnimation(int diceNumber) {
         diceAnimation1 = requireView().findViewById(R.id.diceButtonAnimation1);
 
-        if(diceNumber > 1) diceAnimation2 = requireView().findViewById(R.id.diceButtonAnimation2);
-        if(diceNumber > 2) diceAnimation3 = requireView().findViewById(R.id.diceButtonAnimation3);
+        if (diceNumber > 1) diceAnimation2 = requireView().findViewById(R.id.diceButtonAnimation2);
+        if (diceNumber > 2) diceAnimation3 = requireView().findViewById(R.id.diceButtonAnimation3);
 
         // Choose the correct drawable and run the reset animation
         chosenDrawable1 = "dice_" + this.lastResult1 + "_to_start_vector_animation";
@@ -175,7 +178,7 @@ public class DiceFragment extends androidx.fragment.app.Fragment implements OnCl
         Drawable diceDrawable1 = diceAnimation1.getDrawable();
         ((Animatable) diceDrawable1).start();
 
-        if(diceNumber > 1) {
+        if (diceNumber > 1) {
             chosenDrawable2 = "dice_" + this.lastResult2 + "_to_start_vector_animation";
             int resId2 = getResources().getIdentifier(chosenDrawable2, "drawable", "com.minar.randomix");
             diceAnimation2.setImageResource(resId2);
@@ -183,7 +186,7 @@ public class DiceFragment extends androidx.fragment.app.Fragment implements OnCl
             ((Animatable) diceDrawable2).start();
         }
 
-        if(diceNumber > 2) {
+        if (diceNumber > 2) {
             chosenDrawable3 = "dice_" + this.lastResult3 + "_to_start_vector_animation";
             int resId3 = getResources().getIdentifier(chosenDrawable3, "drawable", "com.minar.randomix");
             diceAnimation3.setImageResource(resId3);

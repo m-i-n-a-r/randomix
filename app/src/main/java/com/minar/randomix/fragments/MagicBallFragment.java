@@ -29,6 +29,11 @@ public class MagicBallFragment extends androidx.fragment.app.Fragment implements
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_magic_ball, container, false);
 
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+        // Hide description if needed
+        if (sp.getBoolean("hide_descriptions", false))
+            v.findViewById(R.id.descriptionMagicBall).setVisibility(View.GONE);
+
         ImageView shake = v.findViewById(R.id.magicBallButtonAnimation);
         shake.setOnClickListener(this);
         return v;
@@ -36,9 +41,9 @@ public class MagicBallFragment extends androidx.fragment.app.Fragment implements
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.magicBallButtonAnimation) {// Start the animated vector drawable, make the button unclickable during the execution
-            // Suppress warning, it's guaranteed that getView won't be null
-            final ImageView magicBallAnimation = getView().findViewById(R.id.magicBallButtonAnimation);
+        if (v.getId() == R.id.magicBallButtonAnimation) {
+            // Start the animated vector drawable, make the button un-clickable during the execution
+            final ImageView magicBallAnimation = requireView().findViewById(R.id.magicBallButtonAnimation);
             magicBallAnimation.setClickable(false);
             Drawable drawable = magicBallAnimation.getDrawable();
             if (drawable instanceof Animatable) {
@@ -100,7 +105,7 @@ public class MagicBallFragment extends androidx.fragment.app.Fragment implements
             else n = ran.nextInt(30);
 
             // Get the text view and set its value depending on n
-            final TextView textViewResult = getView().findViewById(R.id.resultMagicBall);
+            final TextView textViewResult = requireView().findViewById(R.id.resultMagicBall);
 
             // Create the animations
             final Animation animIn = new AlphaAnimation(1.0f, 0.0f);
@@ -110,7 +115,7 @@ public class MagicBallFragment extends androidx.fragment.app.Fragment implements
             animOut.setDuration(1000);
 
             // Delay the execution
-            getView().postDelayed(() -> {
+            requireView().postDelayed(() -> {
                 textViewResult.setText(magicAnswers[n]);
                 textViewResult.setSelected(true);
                 textViewResult.startAnimation(animOut);

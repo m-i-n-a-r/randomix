@@ -1,9 +1,11 @@
 package com.minar.randomix.fragments;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,6 +37,11 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_roulette, container, false);
+
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+        // Hide description if needed
+        if (sp.getBoolean("hide_descriptions", false))
+            v.findViewById(R.id.descriptionRoulette).setVisibility(View.GONE);
 
         // Set the listener
         ImageView insert = v.findViewById(R.id.insertButton);
@@ -86,9 +93,8 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
     @Override
     public void onClick(View v) {
         Activity act = getActivity();
-        // Suppress warning, it's guaranteed that getView won't be null
-        final ImageView recentAnimation = getView().findViewById(R.id.recentButton);
-        final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
+        final ImageView recentAnimation = requireView().findViewById(R.id.recentButton);
+        final ChipGroup optionsList = requireView().findViewById(R.id.rouletteChipList);
         int pressedId = v.getId();
         // Open recent choices
         if (pressedId == R.id.recentButton) {
@@ -107,7 +113,7 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
         // Insert entry in roulette
         if (pressedId == R.id.insertButton) {
             // Start the animated vector drawable
-            ImageView insertAnimation = getView().findViewById(R.id.insertButton);
+            ImageView insertAnimation = requireView().findViewById(R.id.insertButton);
             Drawable insert = insertAnimation.getDrawable();
             if (insert instanceof Animatable) ((Animatable) insert).start();
             // Vibrate and play sound using the common method in MainActivity
@@ -128,7 +134,7 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
                 return;
             }
             // Start the animated vector drawable, make the button not clickable during the execution
-            final ImageView spinAnimation = getView().findViewById(R.id.buttonSpinRoulette);
+            final ImageView spinAnimation = requireView().findViewById(R.id.buttonSpinRoulette);
 
             recentAnimation.setClickable(false);
             recentAnimation.setLongClickable(false);
@@ -152,7 +158,7 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
             final int n = ran.nextInt(options.size());
 
             // Get the text view and set its value depending on n (using a delay)
-            final TextView textViewResult = getView().findViewById(R.id.resultRoulette);
+            final TextView textViewResult = requireView().findViewById(R.id.resultRoulette);
 
             // Insert in the recent list
             bottomSheet.updateRecent(options, getContext());
@@ -164,7 +170,7 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
             final Animation animOut = new AlphaAnimation(0.0f, 1.0f);
             animOut.setDuration(1000);
 
-            getView().postDelayed(() -> {
+            requireView().postDelayed(() -> {
                 textViewResult.setText(options.get(n));
                 textViewResult.startAnimation(animOut);
                 spinAnimation.setClickable(true);
@@ -184,8 +190,7 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
         if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_GO || actionId == EditorInfo.IME_ACTION_SEND) {
             // Start the animated vector drawable
-            // Suppress warning, it's guaranteed that getView won't be null
-            ImageView insertAnimation = getView().findViewById(R.id.insertButton);
+            ImageView insertAnimation = requireView().findViewById(R.id.insertButton);
             Drawable insert = insertAnimation.getDrawable();
             if (insert instanceof Animatable) ((Animatable) insert).start();
             // Insert in both the list and the layout
@@ -200,15 +205,14 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
         String currentOption;
         if (!option.equals("")) currentOption = option;
         else {
-            // Suppress warning, it's guaranteed that getView won't be null
-            TextView entry = getView().findViewById(R.id.entryRoulette);
+            TextView entry = requireView().findViewById(R.id.entryRoulette);
             currentOption = entry.getText().toString().trim();
             currentOption = currentOption.replaceAll("\\s+", " ");
             // Return if the string entered is a duplicate, reset the text field
             if (options.contains(currentOption) || currentOption.equals("")) return;
             entry.setText("");
         }
-        final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
+        final ChipGroup optionsList = requireView().findViewById(R.id.rouletteChipList);
 
         // Check if the limit is reached
         if (options.size() > R.dimen.option_number_roulette) {
@@ -236,8 +240,8 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
 
     // Remove a single chip
     private void removeChip(final Chip chip) {
-        final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
-        final ImageView spinAnimation = getView().findViewById(R.id.buttonSpinRoulette);
+        final ChipGroup optionsList = requireView().findViewById(R.id.rouletteChipList);
+        final ImageView spinAnimation = requireView().findViewById(R.id.buttonSpinRoulette);
         // Remove the chip with an animation
         if (chip == null) return;
         options.remove(chip.getText().toString());
@@ -254,7 +258,7 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
 
     // Remove every chip in the list
     private void removeAllChips() {
-        final ChipGroup optionsList = getView().findViewById(R.id.rouletteChipList);
+        final ChipGroup optionsList = requireView().findViewById(R.id.rouletteChipList);
         final int childCount = optionsList.getChildCount();
         for (int i = 0; i < childCount; i++) {
             Chip chip = (Chip) optionsList.getChildAt(i);

@@ -2,9 +2,11 @@ package com.minar.randomix.fragments;
 
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -31,6 +33,11 @@ public class CoinFragment extends androidx.fragment.app.Fragment implements OnCl
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_coin, container, false);
 
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+        // Hide description if needed
+        if (sp.getBoolean("hide_descriptions", false))
+            v.findViewById(R.id.descriptionCoin).setVisibility(View.GONE);
+
         ImageView flip = v.findViewById(R.id.coinButtonAnimation);
         flip.setOnClickListener(this);
         return v;
@@ -39,8 +46,7 @@ public class CoinFragment extends androidx.fragment.app.Fragment implements OnCl
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.coinButtonAnimation) { // Make the button unclickable
-            // Suppress warning, it's guaranteed that getView won't be null
-            final ImageView coinAnimation = getView().findViewById(R.id.coinButtonAnimation);
+            final ImageView coinAnimation = requireView().findViewById(R.id.coinButtonAnimation);
             coinAnimation.setClickable(false);
 
             // Vibrate and play sound using the common method in MainActivity
@@ -54,11 +60,11 @@ public class CoinFragment extends androidx.fragment.app.Fragment implements OnCl
             if (this.notFirstFlip) {
                 runResetAnimation();
                 //delay the execution
-                getView().postDelayed(this::flipAndRunMainAnimation, 500);
+                requireView().postDelayed(this::flipAndRunMainAnimation, 500);
             } else flipAndRunMainAnimation();
 
             // Reactivate the button after the right time
-            getView().postDelayed(() -> coinAnimation.setClickable(true), 2000);
+            requireView().postDelayed(() -> coinAnimation.setClickable(true), 2000);
             // Check if it's the first flip
             if (!this.notFirstFlip) this.notFirstFlip = true;
         }
@@ -67,13 +73,13 @@ public class CoinFragment extends androidx.fragment.app.Fragment implements OnCl
     // Execute the animation
     private void flipAndRunMainAnimation() {
         // Check for fragment changes. If the fragment has changed, no further operations are needed
-        if(!isAdded()) return;
-        // Get the textview and the imageview used for the result, with a simple control to avoid null object references
+        if (!isAdded()) return;
+        // Get the text and the image used for the result, with a simple control to avoid null object references
         final String resultHead = getString(R.string.result_head);
         final String resultTail = getString(R.string.result_tail);
-        // Suppress warning, it's guaranteed that getView won't be null
-        final TextView textViewResult = getView().findViewById(R.id.resultCoin);
-        final ImageView coinAnimation = getView().findViewById(R.id.coinButtonAnimation);
+
+        final TextView textViewResult = requireView().findViewById(R.id.resultCoin);
+        final ImageView coinAnimation = requireView().findViewById(R.id.coinButtonAnimation);
 
         // Create the animations
         final Animation animIn = new AlphaAnimation(1.0f, 0.0f);
@@ -87,25 +93,24 @@ public class CoinFragment extends androidx.fragment.app.Fragment implements OnCl
         int n = ran.nextInt(2);
 
         // Start the animated vector drawable and set the text depending on the result
-        if(n == 1) {
+        if (n == 1) {
             coinAnimation.setImageResource(R.drawable.coin_head_vector_animation);
             Drawable coinDrawable = coinAnimation.getDrawable();
             ((Animatable) coinDrawable).start();
 
             // Delay the execution
-            getView().postDelayed(() -> {
+            requireView().postDelayed(() -> {
                 textViewResult.setText(resultHead);
                 textViewResult.startAnimation(animOut);
             }, 1500);
             this.lastResult = true;
-        }
-        else {
+        } else {
             coinAnimation.setImageResource(R.drawable.coin_tail_vector_animation);
             Drawable coinDrawable = coinAnimation.getDrawable();
             ((Animatable) coinDrawable).start();
 
             // Delay the execution
-            getView().postDelayed(() -> {
+            requireView().postDelayed(() -> {
                 textViewResult.setText(resultTail);
                 textViewResult.startAnimation(animOut);
             }, 1500);
@@ -115,9 +120,9 @@ public class CoinFragment extends androidx.fragment.app.Fragment implements OnCl
 
     // Execute the reset animation
     private void runResetAnimation() {
-        // Suppress warning, it's guaranteed that getView won't be null
-        ImageView coinAnimation = getView().findViewById(R.id.coinButtonAnimation);
-        if (this.lastResult) coinAnimation.setImageResource(R.drawable.coin_head_to_start_vector_animation);
+        ImageView coinAnimation = requireView().findViewById(R.id.coinButtonAnimation);
+        if (this.lastResult)
+            coinAnimation.setImageResource(R.drawable.coin_head_to_start_vector_animation);
         else coinAnimation.setImageResource((R.drawable.coin_tail_to_start_vector_animation));
         Drawable coinDrawable = coinAnimation.getDrawable();
         ((Animatable) coinDrawable).start();

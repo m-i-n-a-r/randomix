@@ -38,7 +38,7 @@ The main purpose of the app is provide a **random choice** in different ways. Th
 - Simple and precise ui (androidx)
 - Sounds, vibration and other options
 - Small size (~4MB), optimized code
-- Available in English, Italian, Spanish and Russian
+- Available in many languages
 
 ## Screenshots
 <p align='center'>

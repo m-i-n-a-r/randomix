@@ -1,9 +1,5 @@
 package com.minar.randomix.utilities;
 
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,7 +11,6 @@ public class RecentUtils {
     }
 
     // Given a list of options, return the corresponding formatted string
-    @RequiresApi(api = Build.VERSION_CODES.N)
     public static String fromOptionList(List<String> optionList) {
         StringBuilder result = new StringBuilder();
         for (String option : optionList) {

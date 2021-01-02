@@ -1,0 +1,3 @@
+- Android 6 support is back
+- Some minor design improvements
+- Fixes

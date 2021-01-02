@@ -1,8 +1,11 @@
 package com.minar.randomix.utilities;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class RecentUtils {
 
@@ -12,8 +15,14 @@ public class RecentUtils {
     }
 
     // Given a list of options, return the corresponding formatted string
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public static String fromOptionList(List<String> optionList) {
-        // The suggestion leads to a function for api26+
-        return optionList.stream().collect(Collectors.joining(" | "));
+        StringBuilder result = new StringBuilder();
+        for (String option : optionList) {
+            result.append(option);
+            if (optionList.size() > optionList.indexOf(option) + 1)
+                result.append(" | ");
+        }
+        return result.toString();
     }
 }

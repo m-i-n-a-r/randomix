@@ -6,4 +6,5 @@
     android:text="@string/title_roulette"
     android:textAlignment="center"
     app:chipBackgroundColor="@color/goodGrayTranslucent"
+    app:chipSurfaceColor="?android:colorBackground"
     app:rippleColor="?colorAccent" />

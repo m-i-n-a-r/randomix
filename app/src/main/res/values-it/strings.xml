@@ -8,7 +8,7 @@
     <string name="title_settings">Impostazioni</string>
     <string name="generic_result">Il risultato è:</string>
     <string name="spin_roulette">Gira la ruota!</string>
-    <string name="insert_roulette_hint">Inserisci un\'opzione..</string>
+    <string name="insert_roulette_hint">Inserisci un\'opzione…</string>
     <string name="delete_roulette_hint">Elimina l\'ultima opzione inserita</string>
     <string name="no_entry_roulette">Per favore, inserisci almeno due opzioni per girare la roulette!</string>
     <string name="too_much_entries_roulette">Non puoi inserire più di 15 opzioni!</string>
@@ -26,7 +26,7 @@
     <string name="magic_answer_3">Io non credo.</string>
     <string name="magic_answer_4">Forse!</string>
     <string name="magic_answer_5">Non ha senso.</string>
-    <string name="magic_answer_6">Probabilmente..</string>
+    <string name="magic_answer_6">Probabilmente…</string>
     <string name="magic_answer_7">Sei sicuro/a?</string>
     <string name="magic_answer_8">Probabilmente si.</string>
     <string name="magic_answer_9">Probabilmente no.</string>

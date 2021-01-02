@@ -17,7 +17,7 @@
     <string name="description_roulette">Do you have to choose something? Are you tired of polls and bossy friends? A
         roulette will decide for you! Long press the roulette to Add generic options or clear them.</string>
     <string name="spin_roulette">Spin the roulette!</string>
-    <string name="insert_roulette_hint">Enter an option..</string>
+    <string name="insert_roulette_hint">Enter an option…</string>
     <string name="delete_roulette_hint">Delete the last option entered</string>
     <string name="insert_roulette_description">Please list below the possible choices to add in the roulette.</string>
     <string name="no_entry_roulette">Please, enter 2 or more options to spin the roulette!</string>
@@ -46,7 +46,7 @@
     <string name="magic_answer_3">I don\'t think so.</string>
     <string name="magic_answer_4">Maybe!</string>
     <string name="magic_answer_5">This makes no sense.</string>
-    <string name="magic_answer_6">Probably...</string>
+    <string name="magic_answer_6">Probably…</string>
     <string name="magic_answer_7">Are you sure?</string>
     <string name="magic_answer_8">Probably yes.</string>
     <string name="magic_answer_9">Probably no.</string>
@@ -144,7 +144,7 @@
     <string name="cancel_button">Nah</string>
     <string name="rating_message">
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
-        \nOk, now that I have your attention, may I ask you to leave a good review to help Randomix grow
+        \nOK, now that I have your attention, may I ask you to leave a good review to help Randomix grow
         a bit? I\'d really appreciate it! Have a great day! :D\n
     </string>
     <string name="feedback_text">I\'ve something to tell you</string>

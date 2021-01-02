@@ -11,7 +11,7 @@
     <string name="hello_roulette_fragment">Ruletový režim</string>
     <string name="description_roulette">Musíte si něco vybrat? Už vás unavují hlasování a panovační přátelé? Ruleta rozhodne za vás! Dlouhým stisknutím rulety přidáte obecné možnosti nebo je zrušíte.</string>
     <string name="spin_roulette">Roztočte ruletu!</string>
-    <string name="insert_roulette_hint">Zadejte možnost ..</string>
+    <string name="insert_roulette_hint">Zadejte možnost…</string>
     <string name="delete_roulette_hint">Smažte poslední zadanou možnost</string>
     <string name="insert_roulette_description">Níže prosím uveďte možné možnosti přidání do rulety.</string>
     <string name="no_entry_roulette">Chcete-li ruletu roztočit, zadejte 2 nebo více možností!</string>
@@ -43,7 +43,7 @@
     <string name="magic_answer_3">Nemyslím si to.</string>
     <string name="magic_answer_4">Možná</string>
     <string name="magic_answer_5">To nedává smysl.</string>
-    <string name="magic_answer_6">Pravděpodobně..</string>
+    <string name="magic_answer_6">Pravděpodobně…</string>
     <string name="magic_answer_7">Jste si jistý?</string>
     <string name="magic_answer_8">Pravděpodobně ano.</string>
     <string name="magic_answer_9">Pravděpodobně ne.</string>

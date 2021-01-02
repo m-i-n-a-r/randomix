@@ -11,7 +11,7 @@
     <string name="description_roulette">¿Tienes que elegir algo? ¿Estás cansado de las encuestas y amigos mandones?
         ¡Una ruleta decidirá por ti! Mantenga presionada la ruleta para agregar opciones genéricas o borrarlas.</string>
     <string name="spin_roulette">¡Gira la ruleta!</string>
-    <string name="insert_roulette_hint">Ingrese una opción..</string>
+    <string name="insert_roulette_hint">Ingrese una opción…</string>
     <string name="delete_roulette_hint">Eliminar las últimas opciones ingresadas</string>
     <string name="insert_roulette_description">Enumere a continuación las posibles opciones para agregar en la ruleta.</string>
     <string name="no_entry_roulette">¡Por favor, ingrese 2 o más opciones para girar la ruleta!</string>
@@ -36,7 +36,7 @@
     <string name="magic_answer_3">No lo creo.</string>
     <string name="magic_answer_4">¡Quizás!</string>
     <string name="magic_answer_5">Esto no tiene sentido.</string>
-    <string name="magic_answer_6">Probablemente..</string>
+    <string name="magic_answer_6">Probablemente…</string>
     <string name="magic_answer_7">Estas seguro/a?</string>
     <string name="magic_answer_8">Probablemente si.</string>
     <string name="magic_answer_9">Probablemente no.</string>

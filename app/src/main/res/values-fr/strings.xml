@@ -14,7 +14,7 @@
     <string name="hello_roulette_fragment">Mode roulette</string>
     <string name="description_roulette">Vous avez quelque chose à choisir ? En avez-vous marre des sondages et des amis autoritaires ? Une roulette décidera ! Maintenez la roulette pour ajouter des options gémérisurd ou les effacer.</string>
     <string name="spin_roulette">Faites tourner la roulette!</string>
-    <string name="insert_roulette_hint">Entrer une option..</string>
+    <string name="insert_roulette_hint">Entrer une option…</string>
     <string name="delete_roulette_hint">Supprimer la dernière option entrée</string>
     <string name="insert_roulette_description">Listez ci-dessous les choix possibles de la roulette</string>
     <string name="no_entry_roulette">Ajouter 2 options ou plus pour lancer la roulette</string>

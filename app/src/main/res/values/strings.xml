@@ -28,12 +28,12 @@
 
     <!-- Coin -->
     <string name="hello_coin_fragment">Coin mode</string>
-    <string name="description_coin">Flipping a coin is easy, but can help you decide whenever doing something or not.
-        Just head or tail. Let the coin talk!</string>
+    <string name="description_coin">Flipping a coin is easy, but can help you decide between doing something or not.
+        Just heads or tails. Let the coin talk!</string>
     <string name="flip_coin">Flip the coin!</string>
     <string name="hint_coin">Press the button below!</string>
-    <string name="result_head">Head!</string>
-    <string name="result_tail">Tail!</string>
+    <string name="result_head">Heads!</string>
+    <string name="result_tail">Tails!</string>
 
     <!-- Magic Ball -->
     <string name="hello_magic_ball_fragment">Magic Ball</string>
@@ -46,7 +46,7 @@
     <string name="magic_answer_3">I don\'t think so.</string>
     <string name="magic_answer_4">Maybe!</string>
     <string name="magic_answer_5">This makes no sense.</string>
-    <string name="magic_answer_6">Probably..</string>
+    <string name="magic_answer_6">Probably...</string>
     <string name="magic_answer_7">Are you sure?</string>
     <string name="magic_answer_8">Probably yes.</string>
     <string name="magic_answer_9">Probably no.</string>
@@ -80,7 +80,7 @@
 
     <!-- Dice -->
     <string name="hello_dice_fragment">Dice mode</string>
-    <string name="description_dice">A dice could be useful, in a table game for example! The app will throw one to three dices
+    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to three dice
         for you. Select the number from settings. Good luck!</string>
     <string name="throw_dice">Throw the dice!</string>
     <string name="hint_dice">Press the button below!</string>
@@ -88,7 +88,7 @@
     <!-- Settings -->
     <string name="hello_settings_fragment">Settings</string>
     <string name="dev_name" translatable="false">m.i.n.a.r.</string>
-    <string name="dev_description">I\'m a polite guy and i like beautiful things, like animations, icons, sport cars and 3d printing. I work as designer and computer engineer.</string>
+    <string name="dev_description">I\'m a polite guy, and I like beautiful things like animations, icons, sports cars and 3D printing. I work as a designer and computer engineer.</string>
     <string name="dev_email" translatable="false">minar.tastic@gmail.com</string>
     <string name="dev_personal_site" translatable="false">https://minar.ml</string>
     <string name="dev_instagram" translatable="false">https://www.instagram.com/minar.tastic/</string>
@@ -104,8 +104,8 @@
     <string name="sound_name">Sounds</string>
     <string name="sound_description_on">Play a sound when a button is pressed</string>
     <string name="sound_description_off">No sound when a button is pressed</string>
-    <string name="dice_number_name">Dices number</string>
-    <string name="dice_number_description">Change the number of dices thrown. Currently %s</string>
+    <string name="dice_number_name">Dice number</string>
+    <string name="dice_number_description">Change the number of dice thrown. Currently %s</string>
     <string name="one">One</string>
     <string name="two">Two</string>
     <string name="three">Three</string>
@@ -144,7 +144,7 @@
     <string name="cancel_button">Nah</string>
     <string name="rating_message">
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
-        \nOK, now that i have your attention, may i ask you to leave a good review to help Randomix grow
+        \nOk, now that I have your attention, may I ask you to leave a good review to help Randomix grow
         a bit? I\'d really appreciate it! Have a great day! :D\n
     </string>
     <string name="feedback_text">I\'ve something to tell you</string>

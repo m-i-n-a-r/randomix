@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Randomix</string>
-    <string name="app_intro_description">Aplikace s otevřeným zdrojovým kódem pro náhodný výběr mezi čísly, odpověďmi, možnostmi atd. Nechte náhodnost mluvit!</string>
+    <string name="app_intro_description">Aplikace s otevřeným zdrojovým kódem pro náhodný výběr mezi čísly, odpověďmi, možnostmi atd. Nechte promluvit náhodu!</string>
     <string name="title_roulette">Ruleta</string>
     <string name="title_coin">Mince</string>
     <string name="title_dice">Kostky</string>
@@ -12,36 +12,36 @@
     <string name="description_roulette">Musíte si něco vybrat? Už vás unavují hlasování a panovační přátelé? Ruleta rozhodne za vás! Dlouhým stisknutím rulety přidáte obecné možnosti nebo je zrušíte.</string>
     <string name="spin_roulette">Roztočte ruletu!</string>
     <string name="insert_roulette_hint">Zadejte možnost…</string>
-    <string name="delete_roulette_hint">Smažte poslední zadanou možnost</string>
-    <string name="insert_roulette_description">Níže prosím uveďte možné možnosti přidání do rulety.</string>
+    <string name="delete_roulette_hint">Smazat poslední zadanou možnost</string>
+    <string name="insert_roulette_description">Níže prosím uveďte možné volby, které se mají přidat do rulety.</string>
     <string name="no_entry_roulette">Chcete-li ruletu roztočit, zadejte 2 nebo více možností!</string>
     <string name="too_much_entries_roulette">Nemůžete zadat více než 15 možností!</string>
     <string name="generic_option">Možnost</string>
     <string name="recent_title">Poslední možnosti obnovíte klepnutím</string>
-    <string name="bottom_sheet_no_option">Žádná nedávná možnost, otočením rulety uložíte aktuální možnosti!</string>
+    <string name="bottom_sheet_no_option">Žádná nedávná možnost, aktuální možnosti uložíte roztočením rulety!</string>
     <string name="hello_coin_fragment">Režim mince</string>
-    <string name="description_coin">Odhodit minci je snadné, ale může vám pomoci rozhodnout se, kdykoli něco děláte nebo ne. Jen hlava nebo ocas. Nechte mince mluvit!</string>
-    <string name="description_magic_ball">Magická koule vám řekne odpovědi! Stačí se na něco zeptat a pomůže vám to s obecnou a dostupnou odpovědí. Jeho hrubost můžete aktivovat z nastavení!</string>
-    <string name="description_dice">Kostka může být užitečná, například ve stolní hře! Aplikace za vás hodí jednu až tři kostky. Vyberte číslo z nastavení. Hodně štěstí!</string>
-    <string name="sound_description_on">Přehrajte zvuk, když stisknete tlačítko</string>
-    <string name="dice_number_description">"Změňte počet hozených kostek. Aktuálně %s "</string>
-    <string name="accent_description">Změňte výchozí barvu zvýraznění. Aktuálně %s</string>
-    <string name="theme_description">Použijte temné, světlé nebo automatické téma aplikace. Aktuálně %s</string>
-    <string name="rude_answers_description_on">Hrubé odpovědi aktivovány, idiote</string>
+    <string name="description_coin">Hodit si mincí je snadné, ale může vám to pomoci rozhodnout se, zda něco udělat, nebo ne. Prostě panna nebo orel. Nechte promluvit minci!</string>
+    <string name="description_magic_ball">Magická koule vám řekne odpovědi! Stačí se na něco zeptat a poskytne vám obecnou a dostupnou odpověď. Nezdvořilost si můžete aktivovat v nastavení!</string>
+    <string name="description_dice">Kostky se mohou hodit, například ve stolních hrách! Aplikace za vás hodí jednu až tři kostky. Počet si vyberte v nastavení. Hodně štěstí!</string>
+    <string name="sound_description_on">Při stisknutí tlačítka přehrát zvuk</string>
+    <string name="dice_number_description">Změnit počet hozených kostek. Aktuálně %s</string>
+    <string name="accent_description">Změnit výchozí barvu zvýraznění. Aktuálně %s</string>
+    <string name="theme_description">Používat tmavý, světlý nebo automatický vzhled aplikace. Aktuálně %s</string>
+    <string name="rude_answers_description_on">Nezdvořilé odpovědi aktivovány, idiote</string>
     <string name="rude_answers_description_off">Jen laskavé a zdvořilé odpovědi</string>
     <string name="feedback_text">Musím ti něco říct</string>
     <string name="hint_coin">Stiskněte tlačítko níže!</string>
     <string name="dev_description">Jsem zdvořilý člověk a mám rád krásné věci, jako jsou animace, ikony, sportovní automobily a 3D tisk. Pracuji jako designér a počítačový inženýr.</string>
-    <string name="vibration_description_off">Žádné vibrace při stisknutí tlačítka</string>
+    <string name="vibration_description_off">Bez vibrací při stisknutí tlačítka</string>
     <string name="result_head">Hlava</string>
     <string name="result_tail">Ocas</string>
     <string name="hello_magic_ball_fragment">Kouzelná koule</string>
     <string name="shake_ball">Zatřes tím</string>
     <string name="hint_magic_ball">Stiskněte tlačítko níže!</string>
     <string name="magic_answer_1">Ne.</string>
-    <string name="magic_answer_2">Ano.</string>
+    <string name="magic_answer_2">Ano!</string>
     <string name="magic_answer_3">Nemyslím si to.</string>
-    <string name="magic_answer_4">Možná</string>
+    <string name="magic_answer_4">Možná!</string>
     <string name="magic_answer_5">To nedává smysl.</string>
     <string name="magic_answer_6">Pravděpodobně…</string>
     <string name="magic_answer_7">Jste si jistý?</string>
@@ -54,7 +54,7 @@
     <string name="magic_answer_14">Přemýšlejte o tom.</string>
     <string name="magic_answer_15">Kdo ví.</string>
     <string name="magic_answer_16">Děláš si legraci?</string>
-    <string name="magic_answer_17">Jak vidím, ano.</string>
+    <string name="magic_answer_17">Jak to vidím, ano.</string>
     <string name="magic_answer_18">Je to jisté.</string>
     <string name="magic_answer_19">Je to rozhodně tak.</string>
     <string name="magic_answer_20">Výhled dobrý.</string>
@@ -66,14 +66,14 @@
     <string name="magic_answer_26">Soustřeďte se a zeptejte se znovu.</string>
     <string name="magic_answer_27">Nespoléhejte na to.</string>
     <string name="magic_answer_28">Moje zdroje říkají ne.</string>
-    <string name="magic_answer_29">Velmi pochybný.</string>
+    <string name="magic_answer_29">Velmi pochybné.</string>
     <string name="magic_answer_30">Zeptejte se svého nejlepšího přítele.</string>
     <string name="magic_answer_rude_1">Ne, idiote.</string>
     <string name="magic_answer_rude_2">Samozřejmě, sakra.</string>
     <string name="magic_answer_rude_3">Jsi hloupý?</string>
-    <string name="magic_answer_rude_4">Lol! Jak hloupé.</string>
+    <string name="magic_answer_rude_4">Cha! Jak hloupé.</string>
     <string name="magic_answer_rude_5">Jsi blázen.</string>
-    <string name="magic_answer_rude_6">Jdi do pekla.</string>
+    <string name="magic_answer_rude_6">Jdi do háje.</string>
     <string name="hello_dice_fragment">Režim kostky</string>
     <string name="throw_dice">Hoď kostky!</string>
     <string name="hint_dice">Stiskněte tlačítko níže!</string>
@@ -85,7 +85,7 @@
     <string name="two">Dvě</string>
     <string name="three">Tři</string>
     <string name="accent_name">Barva zvýraznění</string>
-    <string name="theme_name">Téma aplikace</string>
+    <string name="theme_name">Vzhled aplikace</string>
     <string name="blue">Modrá</string>
     <string name="green">Zelená</string>
     <string name="orange">Oranžová</string>
@@ -95,20 +95,20 @@
     <string name="light_theme">Světlý</string>
     <string name="not_again_button">Už se nikdy neptat</string>
     <string name="rating_message">AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
-        \nOK, teď, když mám vaši pozornost, mohu vás požádat, abyste nechali dobrou recenzi,
-        která pomůže Randomix trochu růst? Opravdu bych to ocenil! Měj krásný zbytek dne! :D</string>
+        \nOK, teď, když mám vaši pozornost, mohu vás požádat, abyste mi dali dobrou recenzi,
+        která pomůže Randomixu trochu růst? Opravdu bych to ocenil! Mějte se hezky! :D</string>
     <string name="cancel_button">Ne</string>
     <string name="negative_button">Jsem líný</string>
     <string name="rude_answers_name">Hrubé odpovědi</string>
-    <string name="positive_button">Posouzení!</string>
-    <string name="system_theme">Výchozí systém</string>
+    <string name="positive_button">Hodnotit!</string>
+    <string name="system_theme">Výchozí podle systému</string>
     <string name="teal">Šedozelená</string>
-    <string name="violet">Fialový</string>
-    <string name="pink">Růžový</string>
+    <string name="violet">Fialová</string>
+    <string name="pink">Růžová</string>
     <string name="light_blue">Světle modrá</string>
     <string name="red">Červená</string>
-    <string name="lime">Lime</string>
-    <string name="crimson">Purpurový</string>
+    <string name="lime">Limetková</string>
+    <string name="crimson">Purpurová</string>
     <string name="vibration_description_on">Vibrace při stisknutí tlačítka</string>
     <string name="vibration_name">Vibrace</string>
     <string name="customization">Přizpůsobení</string>

@@ -1,10 +1,7 @@
 <resources>
 
     <!-- Main strings -->
-    <string name="app_name" translatable="false">Randomix</string>
-    <string name="app_extended_name" translatable="false">Randomix - Decision Maker</string>
     <string name="app_intro_description">一个用于在数字、答案、选项等之间随机选择的开源应用。让随机性发挥作用吧！</string>
-    <string name="result_placeholder" translatable="false"> - - - </string>
     <string name="title_roulette">轮盘</string>
     <string name="title_coin">硬币</string>
     <string name="title_dice">骰子</string>
@@ -83,15 +80,7 @@
 
     <!-- Settings -->
     <string name="hello_settings_fragment">设置</string>
-    <string name="dev_name" translatable="false">m.i.n.a.r.</string>
     <string name="dev_description">我是个有礼貌的人，喜欢漂亮的东西，比如动画、图标、跑车、3D打印什么的。我的工作是设计师和计算机工程师。</string>
-    <string name="dev_email" translatable="false">minar.tastic@gmail.com</string>
-    <string name="dev_personal_site" translatable="false">https://minar.ml</string>
-    <string name="dev_instagram" translatable="false">https://www.instagram.com/minar.tastic/</string>
-    <string name="dev_twitter" translatable="false">https://twitter.com/MinarTastic</string>
-    <string name="dev_xda" translatable="false">https://forum.xda-developers.com/member.php?u=5222216</string>
-    <string name="dev_github" translatable="false">https://github.com/m-i-n-a-r</string>
-    <string name="dev_other_apps" translatable="false">https://play.google.com/store/apps/dev?id=7720251761301594831</string>
     <string name="easter_egg">不错的图标，是吧？ ;D</string>
     <string name="customization">自定义</string>
     <string name="vibration_name">振动</string>

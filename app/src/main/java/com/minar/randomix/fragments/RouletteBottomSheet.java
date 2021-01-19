@@ -11,8 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -86,12 +88,29 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
                 public void onItemClick(int position, List<String> optionList,View view) {
                     roulette.restoreOption(optionList);
                 }
-
                 @Override
                 public void onItemLongClick(int position, View view) {
-                    deleteRecent(position, requireContext());
+                    // Pin this option list (i.e. avoid deletion)
+                    pinRecent(position, requireContext());
                 }
             });
+            // Create a new helper to manage the swipes
+            ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+                @Override
+                public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                    return false;
+                }
+                @Override
+                public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
+                    // Remove swiped item from list and notify the RecyclerView
+                    int position = viewHolder.getAdapterPosition();
+                    deleteRecent(position, requireContext());
+
+                }
+            };
+
+            ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
+            itemTouchHelper.attachToRecyclerView(recentListLayout);
         }
     }
 
@@ -103,6 +122,11 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
         adapter.notifyItemRemoved(index);
         String json = gson.toJson(recentList);
         sp.edit().putString("recent", json).apply();
+    }
+
+    // Pin the selected list, to change it's layout and avoid its automatic deletion
+    void pinRecent(int position, Context context) {
+
     }
 
     // Update the stored value of the recent options

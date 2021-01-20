@@ -1,0 +1,6 @@
+- Swipe to delete a recent entry, tap to restore, long press to pin*
+- Smaller text in magic ball
+- Simplified chinese translation
+- Some minor design improvements
+
+* = pinned options lists won't be automatically deleted!

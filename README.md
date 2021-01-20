@@ -27,7 +27,7 @@ The main purpose of the app is provide a **random choice** in different ways. Th
 
 ## Features
 - Every tab in the bottom navigation bar contains a type of random choice. The available types are:
-  - **Roulette** -> chooses between a specified number of options, entered from the user. Includes a list of recent options easy to select, delete or restore.
+  - **Roulette** -> chooses between a specified number of options, entered from the user. Includes a list of recent options easy to select, pin, delete or restore.
   - **Coin** -> simply flips a coin and prints the result.
   - **Dice** -> throws a dice and prints the result.
   - **Magic Ball** -> provides randomly chosen answers to any question.

@@ -48,7 +48,8 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
         sp = PreferenceManager.getDefaultSharedPreferences(getContext());
         String recent = sp.getString("recent", "");
         Gson gson = new Gson();
-        Type type = new TypeToken<List<List<String>>>() {}.getType();
+        Type type = new TypeToken<List<List<String>>>() {
+        }.getType();
         recentList = gson.fromJson(recent, type);
         if (recentList == null) recentList = new ArrayList<>();
 
@@ -78,16 +79,17 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
         if (recentList == null || recentList.isEmpty())
             rouletteBottomSheet.findViewById(R.id.recentNoResult).setVisibility(View.VISIBLE);
 
-        // Case 2, populate the recycler
+            // Case 2, populate the recycler
         else {
             adapter = new RecentAdapter(getContext(), recentList);
             recentListLayout.setLayoutManager(new LinearLayoutManager(requireContext()));
             recentListLayout.setAdapter(adapter);
             adapter.setOnItemClickListener(new OnItemClickListener() {
                 @Override
-                public void onItemClick(int position, List<String> optionList,View view) {
+                public void onItemClick(int position, List<String> optionList, View view) {
                     roulette.restoreOption(optionList);
                 }
+
                 @Override
                 public void onItemLongClick(int position, View view) {
                     // Pin this option list (i.e. avoid deletion)
@@ -100,6 +102,7 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
                 public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
                     return false;
                 }
+
                 @Override
                 public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
                     // Remove swiped item from list and notify the RecyclerView
@@ -126,7 +129,17 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
 
     // Pin the selected list, to change it's layout and avoid its automatic deletion
     void pinRecent(int position, Context context) {
+        Gson gson = new Gson();
+        fetchRecentList(context);
 
+        // I know, it's awful, but it was the only way to avoid big changes and crashes
+        if (!recentList.get(position).contains("HorribleWorkaroundToPin"))
+            recentList.get(position).add("HorribleWorkaroundToPin");
+        else recentList.get(position).remove("HorribleWorkaroundToPin");
+
+        adapter.notifyItemChanged(position);
+        String json = gson.toJson(recentList);
+        sp.edit().putString("recent", json).apply();
     }
 
     // Update the stored value of the recent options
@@ -151,18 +164,32 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
     private void insertInRecent(List<String> newRecent) {
         // Check if there's a duplicate, create a copy to avoid overwriting
         List<String> values = new ArrayList<>(newRecent);
-        for (List<String> elem : recentList) {
-            if (newRecent.size() == elem.size()) {
+        for (List<String> recent : recentList) {
+            if (newRecent.size() == recent.size() || newRecent.size() == recent.size() - 1) {
                 newRecent = new ArrayList<>(newRecent);
-                elem = new ArrayList<>(elem);
+                recent = new ArrayList<>(recent);
                 Collections.sort(newRecent);
-                Collections.sort(elem);
-                if (newRecent.equals(elem)) return;
+
+                // Don't consider the pin entry
+                recent.remove("HorribleWorkaroundToPin");
+                Collections.sort(recent);
+                if (newRecent.equals(recent)) return;
             }
         }
-        // Keep 10 recent only
-        recentList.add(values);
-        if (recentList.size() > 10) recentList.remove(0);
+        // Keep 10 recent only, avoid deleting pinned recent
+        if (recentList.size() > 9) {
+            // Remove the first non-pinned element
+            for (List<String> recent : recentList) {
+                if (!recent.contains("HorribleWorkaroundToPin")) {
+                    recentList.remove(recent);
+                    recentList.add(values);
+                    break;
+                }
+            }
+            // No element is removable, don't save
+        }
+        // Recent list not empty, save
+        else recentList.add(values);
     }
 
     // Fetch the recent list from share preferences or initialize it

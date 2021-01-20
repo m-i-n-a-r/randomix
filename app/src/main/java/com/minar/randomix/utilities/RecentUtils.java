@@ -1,5 +1,6 @@
 package com.minar.randomix.utilities;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -13,9 +14,13 @@ public class RecentUtils {
     // Given a list of options, return the corresponding formatted string
     public static String fromOptionList(List<String> optionList) {
         StringBuilder result = new StringBuilder();
-        for (String option : optionList) {
+        // Remove the awful pinning workaround
+        List<String> copy = new ArrayList<String>(optionList);
+        copy.remove("HorribleWorkaroundToPin");
+
+        for (String option : copy) {
             result.append(option);
-            if (optionList.size() > optionList.indexOf(option) + 1)
+            if (copy.size() > copy.indexOf(option) + 1)
                 result.append(" | ");
         }
         return result.toString();

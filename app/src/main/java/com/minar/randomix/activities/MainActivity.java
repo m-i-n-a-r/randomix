@@ -72,10 +72,10 @@ public class MainActivity extends AppCompatActivity {
         navController = Navigation.findNavController(this, R.id.navHostFragment);
         NavOptions options = new NavOptions.Builder()
                 .setLaunchSingleTop(true)
-                .setEnterAnim(R.anim.nav_default_enter_anim)
-                .setExitAnim(R.anim.nav_default_exit_anim)
-                .setPopEnterAnim(R.anim.nav_default_pop_enter_anim)
-                .setPopExitAnim(R.anim.nav_default_pop_exit_anim)
+                .setEnterAnim(R.anim.nav_enter_anim)
+                .setExitAnim(R.anim.nav_exit_anim)
+                .setPopEnterAnim(R.anim.nav_pop_enter_anim)
+                .setPopExitAnim(R.anim.nav_pop_exit_anim)
                 .setPopUpTo(navController.getGraph().getStartDestination(), false)
                 .build();
         // Only way to get the animations back at the moment

@@ -33,14 +33,14 @@
 
     <!-- Magic Ball -->
     <string name="hello_magic_ball_fragment">Boule magique</string>
-    <string name="description_magic_ball">La boule magique va vous donner les réponses! Demander quelque chose, et elle vous répondrra par des réponses communes. Vous pouvez activer la grossièreté dans les paramètres !</string>
+    <string name="description_magic_ball">La boule magique va donner les réponses à vos questions ! Demandez quelque chose, et elle vous répondra par des réponses génériques. Vous pouvez activer la grossièreté dans les paramètres !</string>
     <string name="shake_ball">Secouez la!</string>
-    <string name="hint_magic_ball">Appuyer sur le bouton ci-dessous</string>
+    <string name="hint_magic_ball">Appuyez sur le bouton ci-dessous</string>
     <string name="magic_answer_1">Non.</string>
     <string name="magic_answer_2">Oui!</string>
     <string name="magic_answer_3">Je ne pense pas…</string>
     <string name="magic_answer_4">Peut-être!</string>
-    <string name="magic_answer_5">Ca ne fait aucun sens !</string>
+    <string name="magic_answer_5">Ca ne fait aucun sens !</string>voc ?
     <string name="magic_answer_6">Probablement…</string>
     <string name="magic_answer_7">Vous êtes sûr ?</string>
     <string name="magic_answer_8">Probablement oui.</string>
@@ -75,7 +75,7 @@
 
     <!-- Dice -->
     <string name="hello_dice_fragment">Dé</string>
-    <string name="description_dice">Un dé peut être pratique, pour un jeu de plateau par exemple ! Cette appli va lancer un à trois dés</string>
+    <string name="description_dice">Un dé peut être pratique, pour un jeu de plateau par exemple ! Cette appli peut lancer entre 1 et 3 dés</string>
     <string name="throw_dice">Lancer les dés</string>
     <string name="hint_dice">Appuyer sur le bouton ci-dessous</string>
 

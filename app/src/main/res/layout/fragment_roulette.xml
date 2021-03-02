@@ -65,6 +65,7 @@
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
                 app:boxStrokeColor="@color/goodGray"
+                app:boxBackgroundMode="outline"
                 app:boxStrokeWidth="@dimen/text_box_stroke_width"
                 app:boxStrokeWidthFocused="@dimen/text_box_focused_stroke_width"
                 app:endIconMode="clear_text"

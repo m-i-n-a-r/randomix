@@ -12,8 +12,8 @@ import android.os.Vibrator;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.navigation.NavController;
+import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
-import androidx.navigation.ui.NavigationUI;
 import androidx.preference.PreferenceManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -70,7 +70,33 @@ public class MainActivity extends AppCompatActivity {
         // Get the bottom navigation bar and configure it for the navigation plugin
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navController = Navigation.findNavController(this, R.id.navHostFragment);
-        NavigationUI.setupWithNavController(navigation, navController);
+        NavOptions options = new NavOptions.Builder()
+                .setLaunchSingleTop(true)
+                .setEnterAnim(R.anim.nav_default_enter_anim)
+                .setExitAnim(R.anim.nav_default_exit_anim)
+                .setPopEnterAnim(R.anim.nav_default_pop_enter_anim)
+                .setPopExitAnim(R.anim.nav_default_pop_exit_anim)
+                .setPopUpTo(navController.getGraph().getStartDestination(), false)
+                .build();
+        // Only way to get the animations back at the moment
+        navigation.setOnNavigationItemSelectedListener(item -> {
+            if(item.getItemId() == R.id.navigationRoulette) {
+                navController.navigate(R.id.navigationRoulette,null,options);
+            }
+            if(item.getItemId() == R.id.navigationCoin) {
+                navController.navigate(R.id.navigationCoin,null,options);
+            }
+            if(item.getItemId() == R.id.navigationMagicBall) {
+                navController.navigate(R.id.navigationMagicBall,null,options);
+            }
+            if(item.getItemId() == R.id.navigationDice) {
+                navController.navigate(R.id.navigationDice,null,options);
+            }
+            if(item.getItemId() == R.id.navigationSettings) {
+                navController.navigate(R.id.navigationSettings,null,options);
+            }
+            return true;
+        });
         navigation.setOnNavigationItemReselectedListener(item -> {
             // Just do nothing when an item is reselected from the bottom navigation bar
         });
@@ -89,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         Rate rate = new Rate.Builder(this)
                 .setTriggerCount(10)
                 .setRepeatCount(10)
-                .setMinimumInstallTime(Math.toIntExact(TimeUnit.DAYS.toMillis(3)))
+                .setMinimumInstallTime(Integer.parseInt(String.valueOf(TimeUnit.DAYS.toMillis(3))))
                 .setMessage(R.string.rating_message)
                 .setPositiveButton(R.string.positive_button)
                 .setCancelButton(R.string.cancel_button)

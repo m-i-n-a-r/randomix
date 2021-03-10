@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.google.android.material.chip.Chip;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.minar.randomix.R;
@@ -27,6 +28,7 @@ import com.minar.randomix.utilities.OnItemClickListener;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -70,6 +72,19 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
             });
             ((Animatable2) animatedNoRecent).start();
         }
+
+        Chip lettersChip = v.findViewById(R.id.lettersChip);
+        lettersChip.setOnClickListener(view -> {
+            String alphabet = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z".toUpperCase();
+            List<String> alphabetList = new ArrayList<>(Arrays.asList(alphabet.split(",")));
+            roulette.restoreOption(alphabetList);
+        });
+        Chip numbersChip = v.findViewById(R.id.numbersChip);
+        numbersChip.setOnClickListener(view -> {
+            List<String> numbers = new ArrayList<>(100 + 1);
+            for(int i = 0; i <= 100; i++) numbers.add(String.valueOf(i));
+            roulette.restoreOption(numbers);
+        });
         return v;
     }
 

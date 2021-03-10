@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- I don't need control over the enabled state, but this is needed for the opacity -->
+    <item android:state_enabled="true"
+        android:color="?android:attr/colorAccent"
+        android:alpha="0.3" />
+    <item android:state_enabled="false"
+        android:color="?android:attr/colorAccent"
+        android:alpha="0.2" />
+</selector>

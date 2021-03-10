@@ -121,5 +121,6 @@
     <string name="allow_equals_name">Permetti opzioni uguali</string>
     <string name="allow_equals_description_on">Opzioni uguali nella roulette ammesse</string>
     <string name="allow_equals_description_off">Opzioni uguali nella roulette non ammesse</string>
+    <string name="letters_shortcut">Lettere A-Z</string>
 
 </resources>

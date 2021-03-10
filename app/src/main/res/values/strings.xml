@@ -25,6 +25,8 @@
     <string name="generic_option">Option</string>
     <string name="recent_title">Recent options, tap to restore</string>
     <string name="bottom_sheet_no_option">No recent option, spin the roulette to save the current options!</string>
+    <string name="letters_shortcut">A-Z Letters</string>
+    <string name="numbers_1_100_shortcut" translatable="false">1–100</string>
 
     <!-- Coin -->
     <string name="hello_coin_fragment">Coin mode</string>

@@ -38,7 +38,4 @@
     <color name="limeAccent">#c5de00</color>
     <color name="crimsonAccent">#dc143c</color>
 
-    <!-- Temporary solution for the unselected stroke color for the text field (buggy for dark theme) TODO remove when possible -->
-    <color name="mtrl_textinput_default_box_stroke_color">@color/goodGray</color>
-
 </resources>

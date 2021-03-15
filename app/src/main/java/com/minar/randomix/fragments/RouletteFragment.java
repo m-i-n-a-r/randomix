@@ -80,9 +80,9 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
                 String option1 = getResources().getString(R.string.generic_option) + "1";
                 String option2 = getResources().getString(R.string.generic_option) + "2";
                 String option3 = getResources().getString(R.string.generic_option) + "3";
-                insertRouletteChip(option1);
-                insertRouletteChip(option2);
-                insertRouletteChip(option3);
+                insertRouletteChip(option1, true);
+                insertRouletteChip(option2, true);
+                insertRouletteChip(option3, true);
             } else {
                 removeAllChips();
             }
@@ -123,7 +123,7 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
                 ((MainActivity) act).playSound(1);
             }
             // Insert in both the list and the layout
-            insertRouletteChip("");
+            insertRouletteChip("", true);
             return;
         }
 
@@ -195,14 +195,14 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
             Drawable insert = insertAnimation.getDrawable();
             if (insert instanceof Animatable) ((Animatable) insert).start();
             // Insert in both the list and the layout
-            insertRouletteChip("");
+            insertRouletteChip("", true);
             return true;
         }
         return false;
     }
 
     // Insert a chip in the roulette (15 chips limit)
-    private void insertRouletteChip(String option) {
+    private void insertRouletteChip(String option, boolean limitNumber) {
         String currentOption;
         boolean allowEquals = sp.getBoolean("allow_equals", false);
         if (!option.equals("")) currentOption = option;
@@ -218,8 +218,9 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
         final ChipGroup optionsList = requireView().findViewById(R.id.rouletteChipList);
 
         // Check if the limit is reached
-        if (options.size() > R.dimen.option_number_roulette) {
+        if (options.size() > 14 && limitNumber) {
             Toast.makeText(getContext(), getString(R.string.too_much_entries_roulette), Toast.LENGTH_SHORT).show();
+            System.out.println(options.toString());
             return;
         }
 
@@ -273,7 +274,7 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
     void restoreOption(List<String> option) {
         removeAllChips();
         for (String item : option) {
-            insertRouletteChip(item);
+            insertRouletteChip(item, false);
         }
     }
 

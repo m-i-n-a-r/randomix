@@ -122,5 +122,13 @@
     <string name="allow_equals_name">Разрешите равные возможности</string>
     <string name="allow_equals_description_on">В рулетке разрешены равные варианты</string>
     <string name="allow_equals_description_off">В рулетке не допускаются равные возможности</string>
+    <string name="four">Четыре</string>
+    <string name="five">Пять</string>
+    <string name="six">Шесть</string>
+    <string name="seven">Семь</string>
+    <string name="ten">Десять</string>
+    <string name="eight">Восемь</string>
+    <string name="nine">Девять</string>
+    <string name="letters_shortcut">Буквы A-Z</string>
 
 </resources>

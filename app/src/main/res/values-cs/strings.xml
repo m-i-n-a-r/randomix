@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Randomix</string>
     <string name="app_intro_description">Aplikace s otevřeným zdrojovým kódem pro náhodný výběr mezi čísly, odpověďmi, možnostmi atd. Nechte promluvit náhodu!</string>
     <string name="title_roulette">Ruleta</string>
     <string name="title_coin">Mince</string>
@@ -120,5 +119,13 @@
     <string name="allow_equals_name">Povolit stejné možnosti</string>
     <string name="allow_equals_description_on">V ruletě jsou povoleny stejné možnosti</string>
     <string name="allow_equals_description_off">Rovné možnosti nejsou v ruletě povoleny</string>
+    <string name="letters_shortcut">A-Z písmena</string>
+    <string name="four">Čtyři</string>
+    <string name="five">Pět</string>
+    <string name="six">Šest</string>
+    <string name="seven">Sedm</string>
+    <string name="eight">Osm</string>
+    <string name="nine">Devět</string>
+    <string name="ten">Deset</string>
 
 </resources>

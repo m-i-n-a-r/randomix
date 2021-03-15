@@ -133,5 +133,13 @@
     </string>
     <string name="feedback_text">我有一些事情要告诉你</string>
     <string name="not_again_button">别再问我了</string>
+    <string name="letters_shortcut">A-Z字母</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="ten">10</string>
 
 </resources>

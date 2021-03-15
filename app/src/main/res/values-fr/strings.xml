@@ -1,7 +1,6 @@
 <resources>
 
     <!-- Main strings -->
-    <string name="app_extended_name">Randomix - Décisions automatiques</string>
     <string name="app_intro_description">Une application open source pour choisir aléatoirement des nombres, réponses, options et plus encore. Laissez place au hasard!</string>
     <string name="title_roulette">Roulette</string>
     <string name="title_coin">Pile ou face</string>
@@ -134,5 +133,13 @@
     </string>
     <string name="feedback_text">J\'ai quelque chose à te dire</string>
     <string name="not_again_button">Ne me redemande jamais ça !</string>
+    <string name="four">Quatre</string>
+    <string name="five">Cinq</string>
+    <string name="six">Six</string>
+    <string name="seven">Sept</string>
+    <string name="eight">Huit</string>
+    <string name="nine">Neuf</string>
+    <string name="ten">Dix</string>
+    <string name="letters_shortcut">Lettres A-Z</string>
 
 </resources>

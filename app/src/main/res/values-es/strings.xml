@@ -126,5 +126,13 @@
     <string name="allow_equals_name">Permita opciones iguales</string>
     <string name="allow_equals_description_on">Se permiten mismas opciones en la ruleta</string>
     <string name="allow_equals_description_off">No se permiten mismas opciones en la ruleta</string>
+    <string name="letters_shortcut">Letras A-Z</string>
+    <string name="four">Cuatro</string>
+    <string name="five">Cinco</string>
+    <string name="six">Seis</string>
+    <string name="seven">Siete</string>
+    <string name="eight">Ocho</string>
+    <string name="nine">Nueve</string>
+    <string name="ten">Diez</string>
 
 </resources>

@@ -42,7 +42,7 @@
             app:fontFamily="@font/opensans_bold"
             android:gravity="center_horizontal"
             android:text="@string/result_placeholder"
-            android:textSize="@dimen/generic_result_text_size" />
+            android:textSize="@dimen/result_text_size" />
 
         <ImageView
             android:id="@+id/coinButtonAnimation"

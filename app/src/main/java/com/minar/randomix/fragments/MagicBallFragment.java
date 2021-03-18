@@ -29,7 +29,8 @@ public class MagicBallFragment extends androidx.fragment.app.Fragment implements
         View v = inflater.inflate(R.layout.fragment_magic_ball, container, false);
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
-        // Hide description if needed
+        // Hide description if needed, and save as last opened page
+        sp.edit().putString("last_page", "magicBall").apply();
         if (sp.getBoolean("hide_descriptions", false))
             v.findViewById(R.id.descriptionMagicBall).setVisibility(View.GONE);
 

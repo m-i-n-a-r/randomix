@@ -69,7 +69,8 @@ public class DiceFragment extends androidx.fragment.app.Fragment implements OnCl
         // Get the shared preferences and the desired number of dices, from 1 to 3
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
 
-        // Hide description if needed
+        // Hide description if needed, and save as last opened page
+        sp.edit().putString("last_page", "dice").apply();
         if (sp.getBoolean("hide_descriptions", false))
             v.findViewById(R.id.descriptionDice).setVisibility(View.GONE);
         int diceNumber = Integer.parseInt(Objects.requireNonNull(sp.getString("dice_number", "1")));

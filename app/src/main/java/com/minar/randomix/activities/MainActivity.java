@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         String theme = sp.getString("theme_color", "system");
         String accent = sp.getString("accent_color", "blue");
+        String lastItem = sp.getString("last_page", "roulette");
 
         if (!sp.getBoolean("first", false)) {
             SharedPreferences.Editor editor = sp.edit();
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 .setExitAnim(R.anim.nav_exit_anim)
                 .setPopEnterAnim(R.anim.nav_pop_enter_anim)
                 .setPopExitAnim(R.anim.nav_pop_exit_anim)
-                .setPopUpTo(navController.getGraph().getStartDestination(), false)
+                .setPopUpTo(navController.getGraph().getStartDestination(), true)
                 .build();
         // Only way to get the animations back at the moment
         navigation.setOnNavigationItemSelectedListener(item -> {
@@ -100,6 +101,18 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemReselectedListener(item -> {
             // Just do nothing when an item is reselected from the bottom navigation bar
         });
+        // Reopen the last selected tab
+        switch (lastItem) {
+            case "coin":
+                navigation.setSelectedItemId(R.id.navigationCoin);
+                break;
+            case "dice":
+                navigation.setSelectedItemId(R.id.navigationDice);
+                break;
+            case "magicBall":
+                navigation.setSelectedItemId(R.id.navigationMagicBall);
+                break;
+        }
 
         // Gene-rate configuration and detect if night mode is enabled to set the appropriate theme
         boolean isLight = false;

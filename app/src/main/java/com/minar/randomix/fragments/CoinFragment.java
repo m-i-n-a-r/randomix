@@ -33,7 +33,8 @@ public class CoinFragment extends androidx.fragment.app.Fragment implements OnCl
         View v = inflater.inflate(R.layout.fragment_coin, container, false);
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
-        // Hide description if needed
+        // Hide description if needed, and save as last opened page
+        sp.edit().putString("last_page", "coin").apply();
         if (sp.getBoolean("hide_descriptions", false))
             v.findViewById(R.id.descriptionCoin).setVisibility(View.GONE);
 

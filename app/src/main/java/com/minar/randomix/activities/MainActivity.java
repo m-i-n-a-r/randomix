@@ -71,13 +71,14 @@ public class MainActivity extends AppCompatActivity {
         // Get the bottom navigation bar and configure it for the navigation plugin
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navController = Navigation.findNavController(this, R.id.navHostFragment);
+
         NavOptions options = new NavOptions.Builder()
                 .setLaunchSingleTop(true)
                 .setEnterAnim(R.anim.nav_enter_anim)
                 .setExitAnim(R.anim.nav_exit_anim)
                 .setPopEnterAnim(R.anim.nav_pop_enter_anim)
                 .setPopExitAnim(R.anim.nav_pop_exit_anim)
-                .setPopUpTo(navController.getGraph().getStartDestination(), true)
+                .setPopUpTo(R.id.nav_graph, true)
                 .build();
         // Only way to get the animations back at the moment
         navigation.setOnNavigationItemSelectedListener(item -> {

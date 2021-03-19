@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import com.minar.randomix.activities.MainActivity;
 import com.minar.randomix.R;
 
@@ -75,7 +77,7 @@ public class DiceFragment extends androidx.fragment.app.Fragment implements OnCl
             v.findViewById(R.id.descriptionDice).setVisibility(View.GONE);
         int diceNumber = Integer.parseInt(Objects.requireNonNull(sp.getString("dice_number", "1")));
         // Choose the correct layout. diceNumber can only be 1, 2 or 3
-        LinearLayout diceZone;
+        ConstraintLayout diceZone;
         switch (diceNumber) {
             case 1:
                 inflater.inflate(R.layout.single_dice, diceSection);
@@ -122,7 +124,7 @@ public class DiceFragment extends androidx.fragment.app.Fragment implements OnCl
     public void onClick(View v) {
         if (v.getId() == R.id.diceZone) {
             // Make the button un-clickable
-            final LinearLayout diceAnimation = requireView().findViewById(R.id.diceZone);
+            final ConstraintLayout diceAnimation = requireView().findViewById(R.id.diceZone);
             diceAnimation.setClickable(false);
 
             // Get the shared preferences and the desired number of dices, from 1 to 11

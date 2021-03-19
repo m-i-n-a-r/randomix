@@ -1,91 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/diceZone"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/linear_vertical_margin"
-    android:layout_marginTop="@dimen/activity_vertical_margin"
     android:layout_marginHorizontal="@dimen/activity_vertical_margin"
+    android:layout_marginVertical="@dimen/linear_vertical_margin"
     android:background="?attr/selectableItemBackgroundBorderless"
     android:clickable="true"
-    android:focusable="true"
-    android:gravity="center_vertical"
-    android:orientation="vertical">
+    android:focusable="true">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:minHeight="100dp"
-        android:orientation="horizontal">
+    <ImageView
+        android:id="@+id/diceButtonAnimation1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/throw_dice"
+        android:src="@drawable/dice_1_vector_animation"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toStartOf="@id/diceButtonAnimation2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/diceButtonAnimation1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:contentDescription="@string/throw_dice"
-            android:src="@drawable/dice_1_vector_animation" />
+    <ImageView
+        android:id="@+id/diceButtonAnimation2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/throw_dice"
+        android:src="@drawable/dice_1_vector_animation"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toStartOf="@id/diceButtonAnimation3"
+        app:layout_constraintStart_toEndOf="@id/diceButtonAnimation1"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/diceButtonAnimation2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:contentDescription="@string/throw_dice"
-            android:src="@drawable/dice_1_vector_animation" />
-
-        <ImageView
-            android:id="@+id/diceButtonAnimation3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:contentDescription="@string/throw_dice"
-            android:src="@drawable/dice_1_vector_animation" />
-
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/diceButtonAnimation3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/throw_dice"
+        android:src="@drawable/dice_1_vector_animation"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/diceButtonAnimation2"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/diceButtonAnimationVs"
         android:layout_width="@dimen/max_size_icon_small"
         android:layout_height="@dimen/max_size_icon_small"
         android:layout_gravity="center_horizontal"
-        android:layout_marginVertical="@dimen/activity_vertical_margin"
         android:contentDescription="@string/three_v_three"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/diceButtonAnimation3"
         android:src="@drawable/animated_3v3_battle_bolt" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:minHeight="100dp"
-        android:orientation="horizontal">
+    <ImageView
+        android:id="@+id/diceButtonAnimation4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/throw_dice"
+        android:src="@drawable/dice_1_vector_animation"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toStartOf="@id/diceButtonAnimation5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/diceButtonAnimationVs" />
 
-        <ImageView
-            android:id="@+id/diceButtonAnimation4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:contentDescription="@string/throw_dice"
-            android:src="@drawable/dice_1_vector_animation" />
+    <ImageView
+        android:id="@+id/diceButtonAnimation5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/throw_dice"
+        android:src="@drawable/dice_1_vector_animation"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toStartOf="@id/diceButtonAnimation6"
+        app:layout_constraintStart_toEndOf="@id/diceButtonAnimation4"
+        app:layout_constraintTop_toBottomOf="@id/diceButtonAnimationVs" />
 
-        <ImageView
-            android:id="@+id/diceButtonAnimation5"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:contentDescription="@string/throw_dice"
-            android:src="@drawable/dice_1_vector_animation" />
+    <ImageView
+        android:id="@+id/diceButtonAnimation6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/throw_dice"
+        android:src="@drawable/dice_1_vector_animation"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/diceButtonAnimation5"
+        app:layout_constraintTop_toBottomOf="@id/diceButtonAnimationVs" />
 
-        <ImageView
-            android:id="@+id/diceButtonAnimation6"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:contentDescription="@string/throw_dice"
-            android:src="@drawable/dice_1_vector_animation" />
-
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

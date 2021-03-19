@@ -1,0 +1,5 @@
+- Roulette presets: 1-100 numbers, A-Z letters
+- Up to 10 dice, plus 3v3 "Risk" mode!
+- The app remembers the last tab opened
+- Tab switch animations are back
+- Many small fixes and improvements

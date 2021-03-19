@@ -26,7 +26,9 @@ An example?
         <li> Magic Ball &rarr; provides randomly chosen answers to any question. </li>
     </ul>
     <li> The recent options used in the roulette are automatically saved and can be restored! </li>
+    <li> Roulette presets, such as 1-100 numbers and letters </li>
     <li> Light and dark themes (Android 10 automatic dark mode supported) </li>
+    <li> Up to 10 dice, plus a 3v3 mode </li>
     <li> Selectable accent (10 choices) </li>
     <li> Vibration and sounds </li>
     <li> Rude answers, allow equal options, dice number </li>

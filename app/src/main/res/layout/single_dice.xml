@@ -9,16 +9,14 @@
     android:layout_marginVertical="@dimen/linear_vertical_margin"
     android:background="?attr/selectableItemBackgroundBorderless"
     android:clickable="true"
-    android:focusable="true"
-    android:maxHeight="@dimen/image_button_height">
+    android:focusable="true">
 
     <ImageView
         android:id="@+id/diceButtonAnimation1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/image_button_height"
+        android:layout_height="@dimen/image_button_height"
         android:contentDescription="@string/throw_dice"
         android:src="@drawable/dice_1_vector_animation"
-        app:layout_constraintDimensionRatio="H,1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

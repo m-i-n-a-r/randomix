@@ -33,6 +33,9 @@ The main purpose of the app is provide a **random choice** in different ways. Th
   - **Magic Ball** -> provides randomly chosen answers to any question.
 - Light and dark themes (Android 10 dark mode supported)
 - Selectable accent (no app restart needed)
+- Up to 10 dice, plus 3v3 mode
+- The app remember the last used mode
+- Roulette presets for letters and numbers
 - Multiwindows support
 - First time introduction ([Appintro](https://github.com/AppIntro/AppIntro))
 - Rate the app dialog ([gene-rate](https://github.com/Pixplicity/gene-rate))
@@ -44,13 +47,13 @@ The main purpose of the app is provide a **random choice** in different ways. Th
 
 ## Screenshots
 <p align='center'>
-  <img src='https://i.imgur.com/raYv9GL.png' width='22%'/>
-  <img src='https://i.imgur.com/cfYrNfv.png' width='22%'/>
-  <img src='https://i.imgur.com/aCZbxJj.png' width='22%'/>
-  <img src='https://i.imgur.com/MR926AC.png' width='22%'/>
-  <img src='https://i.imgur.com/JunGamA.png' width='22%'/>
-  <img src='https://i.imgur.com/Z9F3NRN.png' width='22%'/>
-  <img src='https://i.imgur.com/vHrsvIh.png' width='22%'/>
+  <img src='https://i.imgur.com/NwyG02v.png' width='22%'/>
+  <img src='https://i.imgur.com/cmLGNHE.png' width='22%'/>
+  <img src='https://i.imgur.com/5DQl2QM.png' width='22%'/>
+  <img src='https://i.imgur.com/yPcheGu.png' width='22%'/>
+  <img src='https://i.imgur.com/wtDtRNn.png' width='22%'/>
+  <img src='https://i.imgur.com/TFM5Bq2.png' width='22%'/>
+  <img src='https://i.imgur.com/Ps0Frge.png' width='22%'/>
 </p>
 
 ## Download

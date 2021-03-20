@@ -109,7 +109,7 @@
                 app:fontFamily="@font/opensans_regular"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/recentTitle" />
+                app:layout_constraintTop_toBottomOf="@id/lettersChip" />
 
             <!-- A recycler is not mandatory, since the max number of options is always 10 -->
             <androidx.recyclerview.widget.RecyclerView

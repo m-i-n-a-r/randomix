@@ -19,6 +19,7 @@
         android:src="@drawable/dice_1_vector_animation"
         app:layout_constraintDimensionRatio="H,1:1"
         app:layout_constraintEnd_toStartOf="@id/diceButtonAnimation2"
+        app:layout_constraintHeight_max="@dimen/image_button_height"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,6 +31,7 @@
         android:src="@drawable/dice_1_vector_animation"
         app:layout_constraintDimensionRatio="H,1:1"
         app:layout_constraintEnd_toStartOf="@id/diceButtonAnimation3"
+        app:layout_constraintHeight_max="@dimen/image_button_height"
         app:layout_constraintStart_toEndOf="@id/diceButtonAnimation1"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,6 +43,7 @@
         android:src="@drawable/dice_1_vector_animation"
         app:layout_constraintDimensionRatio="H,1:1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_max="@dimen/image_button_height"
         app:layout_constraintStart_toEndOf="@id/diceButtonAnimation2"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,10 +53,10 @@
         android:layout_height="@dimen/max_size_icon_small"
         android:layout_gravity="center_horizontal"
         android:contentDescription="@string/three_v_three"
-        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/animated_3v3_battle_bolt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/diceButtonAnimation3"
-        android:src="@drawable/animated_3v3_battle_bolt" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/diceButtonAnimation3" />
 
     <ImageView
         android:id="@+id/diceButtonAnimation4"
@@ -63,6 +66,7 @@
         android:src="@drawable/dice_1_vector_animation"
         app:layout_constraintDimensionRatio="H,1:1"
         app:layout_constraintEnd_toStartOf="@id/diceButtonAnimation5"
+        app:layout_constraintHeight_max="@dimen/image_button_height"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/diceButtonAnimationVs" />
 
@@ -74,6 +78,7 @@
         android:src="@drawable/dice_1_vector_animation"
         app:layout_constraintDimensionRatio="H,1:1"
         app:layout_constraintEnd_toStartOf="@id/diceButtonAnimation6"
+        app:layout_constraintHeight_max="@dimen/image_button_height"
         app:layout_constraintStart_toEndOf="@id/diceButtonAnimation4"
         app:layout_constraintTop_toBottomOf="@id/diceButtonAnimationVs" />
 
@@ -85,6 +90,7 @@
         android:src="@drawable/dice_1_vector_animation"
         app:layout_constraintDimensionRatio="H,1:1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_max="@dimen/image_button_height"
         app:layout_constraintStart_toEndOf="@id/diceButtonAnimation5"
         app:layout_constraintTop_toBottomOf="@id/diceButtonAnimationVs" />
 

@@ -40,8 +40,7 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
         View v = inflater.inflate(R.layout.fragment_roulette, container, false);
 
         sp = PreferenceManager.getDefaultSharedPreferences(getContext());
-        // Hide description if needed, and save as last opened page
-        sp.edit().putString("last_page", "roulette").apply();
+        // Hide description if needed
         if (sp.getBoolean("hide_descriptions", false))
             v.findViewById(R.id.descriptionRoulette).setVisibility(View.GONE);
 

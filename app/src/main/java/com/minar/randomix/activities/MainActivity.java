@@ -83,18 +83,24 @@ public class MainActivity extends AppCompatActivity {
         // Only way to get the animations back at the moment
         navigation.setOnNavigationItemSelectedListener(item -> {
             if(item.getItemId() == R.id.navigationRoulette) {
+                // Default starting page
+                sp.edit().putString("last_page", "roulette").apply();
                 navController.navigate(R.id.navigationRoulette,null,options);
             }
             if(item.getItemId() == R.id.navigationCoin) {
+                sp.edit().putString("last_page", "coin").apply();
                 navController.navigate(R.id.navigationCoin,null,options);
             }
             if(item.getItemId() == R.id.navigationMagicBall) {
+                sp.edit().putString("last_page", "magicBall").apply();
                 navController.navigate(R.id.navigationMagicBall,null,options);
             }
             if(item.getItemId() == R.id.navigationDice) {
+                sp.edit().putString("last_page", "dice").apply();
                 navController.navigate(R.id.navigationDice,null,options);
             }
             if(item.getItemId() == R.id.navigationSettings) {
+                sp.edit().putString("last_page", "settings").apply();
                 navController.navigate(R.id.navigationSettings,null,options);
             }
             return true;
@@ -113,6 +119,8 @@ public class MainActivity extends AppCompatActivity {
             case "magicBall":
                 navigation.setSelectedItemId(R.id.navigationMagicBall);
                 break;
+            case "settings":
+                navigation.setSelectedItemId(R.id.navigationSettings);
         }
 
         // Gene-rate configuration and detect if night mode is enabled to set the appropriate theme

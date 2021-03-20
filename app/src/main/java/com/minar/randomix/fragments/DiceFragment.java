@@ -68,15 +68,14 @@ public class DiceFragment extends androidx.fragment.app.Fragment implements OnCl
         View v = inflater.inflate(R.layout.fragment_dice, container, false);
         // Get the placeholder where the correct layout will be inflated
         LinearLayout diceSection = v.findViewById(R.id.diceSection);
-        // Get the shared preferences and the desired number of dices, from 1 to 3
+        // Get the shared preferences and the desired number of dices, from 1 to 11
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
 
-        // Hide description if needed, and save as last opened page
-        sp.edit().putString("last_page", "dice").apply();
+        // Hide description if needed
         if (sp.getBoolean("hide_descriptions", false))
             v.findViewById(R.id.descriptionDice).setVisibility(View.GONE);
         int diceNumber = Integer.parseInt(Objects.requireNonNull(sp.getString("dice_number", "1")));
-        // Choose the correct layout. diceNumber can only be 1, 2 or 3
+        // Choose the correct layout. diceNumber goes from 1 to 11
         ConstraintLayout diceZone;
         switch (diceNumber) {
             case 1:

@@ -121,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case "settings":
                 navigation.setSelectedItemId(R.id.navigationSettings);
+                break;
         }
 
         // Gene-rate configuration and detect if night mode is enabled to set the appropriate theme

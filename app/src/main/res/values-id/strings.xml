@@ -1,0 +1,158 @@
+<resources>
+
+    <!-- Main strings -->
+    <string name="app_name" translatable="false">Randomix</string>
+    <string name="app_extended_name" translatable="false">Randomix - Decision Maker</string>
+    <string name="app_intro_description">Sebuah aplikasi sumber terbuka untuk memilih secara acak antara angka, jawaban, opsi, dan seterusnya. Biarkan keacakan yang berkata!</string>
+    <string name="result_placeholder" translatable="false"> - - - </string>
+    <string name="title_roulette">Rolet</string>
+    <string name="title_coin">Koin</string>
+    <string name="title_dice">Dadu</string>
+    <string name="title_magic_ball">Bola Ajaib</string>
+    <string name="title_settings">Pengaturan</string>
+    <string name="generic_result">Hasilnya adalah:</string>
+
+    <!-- Roulette -->
+    <string name="hello_roulette_fragment">Mode Rolet</string>
+    <string name="description_roulette">Apakah Anda harus memutuskan tentang sesuatu? Apakah Anda capek dengan pemunggutan suara dan teman yang suka memerintah? Rolet ini yang akan menentukannya untuk Anda. Tekan lama roletnya untuk menambahkan opsi umum atau menghapusnya.</string>
+    <string name="spin_roulette">Putar roletnya!</string>
+    <string name="insert_roulette_hint">Masukkan sebuah opsi...</string>
+    <string name="delete_roulette_hint">Menghapus opsi terakhir yang dimasukkan</string>
+    <string name="insert_roulette_description">Silakan pilih di antara kemungkinan pilihan di bawah ini yang akan ditambahkan ke rolet.</string>
+    <string name="no_entry_roulette">Tolong, masukkan 2 atau lebih opsi untuk memutar roletnya!</string>
+    <string name="too_much_entries_roulette">Anda tidak bisa memasukkan lebih dari 15 opsi</string>
+    <string name="generic_option">Opsi</string>
+    <string name="recent_title">Opsi terbaru, ketuk untuk memulihkan</string>
+    <string name="bottom_sheet_no_option">Tidak ada opsi terbaru, putar roletnya untuk menyimpan opsi terbaru!</string>
+    <string name="letters_shortcut">Huruf A-Z</string>
+    <string name="numbers_1_100_shortcut" translatable="false">1–100</string>
+
+    <!-- Coin -->
+    <string name="hello_coin_fragment">Mode Koin</string>
+    <string name="description_coin">Melambungkan koin itu mudah tapi bisa membantu Anda menentukan antara melakukan sesuatu atau tidak. Hanya kepala dan ekor. Biarkan koinnya yang berkata!</string>
+    <string name="flip_coin">Lambungkan koinnya!</string>
+    <string name="hint_coin">Tekan tombol di bawah ini!</string>
+    <string name="result_head">Kepala</string>
+    <string name="result_tail">Ekor!</string>
+
+    <!-- Magic Ball -->
+    <string name="hello_magic_ball_fragment">Bola Ajaib</string>
+    <string name="description_magic_ball">Bola ajaib akan memberikan Anda jawabannya! Tinggal tanyakan sesuatu dan ia akan membantu Anda dengan jawaban yang umum. Anda bisa mengaktifkan kekasarannya di pengaturan!</string>
+    <string name="shake_ball">Goyangkan!</string>
+    <string name="hint_magic_ball">Tekan tombol di bawah ini!</string>
+    <string name="magic_answer_1">Tidak.</string>
+    <string name="magic_answer_2">Ya!</string>
+    <string name="magic_answer_3">Saya rasa tidak.</string>
+    <string name="magic_answer_4">Mungkin!</string>
+    <string name="magic_answer_5">Tidak masuk akal.</string>
+    <string name="magic_answer_6">Kemungkinan…</string>
+    <string name="magic_answer_7">Apakah Anda serius?</string>
+    <string name="magic_answer_8">Mungkin iya.</string>
+    <string name="magic_answer_9">Mungkin tidak.</string>
+    <string name="magic_answer_10">Tentu saja.</string>
+    <string name="magic_answer_11">Tanyakan ke diri Anda sendiri.</string>
+    <string name="magic_answer_12">Tidak, konyol.</string>
+    <string name="magic_answer_13">Tentu saja!</string>
+    <string name="magic_answer_14">Pikirkan kembali.</string>
+    <string name="magic_answer_15">Siapa tahu.</string>
+    <string name="magic_answer_16">Apakah Anda bercanda?</string>
+    <string name="magic_answer_17">Dari pandangan saya, iya.</string>
+    <string name="magic_answer_18">Sudah pasti begitu.</string>
+    <string name="magic_answer_19">Sudah ditentukan begitu.</string>
+    <string name="magic_answer_20">Dari pandangan saya, bagus.</string>
+    <string name="magic_answer_21">Pertandanya menunjuk ke iya.</string>
+    <string name="magic_answer_22">Tanpa keraguan.</string>
+    <string name="magic_answer_23">Balasannya kabur, ulangi lagi.</string>
+    <string name="magic_answer_24">Lebih baik tidak memberitahukan Anda sekarang.</string>
+    <string name="magic_answer_25">Tidak bisa diprediksi sekarang!</string>
+    <string name="magic_answer_26">Konsentrasi dan tanyakan lagi.</string>
+    <string name="magic_answer_27">Jangan mengandalkan itu.</string>
+    <string name="magic_answer_28">Sumber saya mengatakan tidak.</string>
+    <string name="magic_answer_29">Sangat meragukan.</string>
+    <string name="magic_answer_30">Tanyakan ke sahabat Anda.</string>
+    <string name="magic_answer_rude_1">Tidak, idiot.</string>
+    <string name="magic_answer_rude_2">Tentu saja, sialan.</string>
+    <string name="magic_answer_rude_3">Apakah Anda bodoh?</string>
+    <string name="magic_answer_rude_4">Wkwk! Bodoh sekali.</string>
+    <string name="magic_answer_rude_5">Anda gila.</string>
+    <string name="magic_answer_rude_6">Pergi sana ke neraka.</string>
+
+    <!-- Dice -->
+    <string name="hello_dice_fragment">Mode Dadu</string>
+    <string name="description_dice">Dadu bisa berguna, di permainan meja misalnya! Aplikasi ini akan melempar satu hingga tiga dadu untuk Anda. Pilih jumlah dadunya dari Pengaturan. Semoga berhasil!</string>
+    <string name="throw_dice">Lempar dadunya!</string>
+    <string name="hint_dice">Tekan tombol di bawah ini!</string>
+
+    <!-- Settings -->
+    <string name="hello_settings_fragment">Pengaturan</string>
+    <string name="dev_name" translatable="false">m.i.n.a.r.</string>
+    <string name="dev_description">Saya adalah laki-laki yang ramah dan suka sesuatu yang indah seperti animasi, ikon, mobil sport dan percetakan 3D. Saya bekerja sebagai desainer dan insinyur komputer.</string>
+    <string name="dev_email" translatable="false">minar.tastic@gmail.com</string>
+    <string name="dev_personal_site" translatable="false">https://minar.ml</string>
+    <string name="dev_instagram" translatable="false">https://www.instagram.com/minar.tastic/</string>
+    <string name="dev_twitter" translatable="false">https://twitter.com/MinarTastic</string>
+    <string name="dev_xda" translatable="false">https://forum.xda-developers.com/member.php?u=5222216</string>
+    <string name="dev_github" translatable="false">https://github.com/m-i-n-a-r</string>
+    <string name="dev_other_apps" translatable="false">https://play.google.com/store/apps/dev?id=7720251761301594831</string>
+    <string name="easter_egg">Logo yang bagus, huh? ;D</string>
+    <string name="customization">Kostumisasi</string>
+    <string name="vibration_name">Getaran</string>
+    <string name="vibration_description_on">Bergetar ketika tombol ditekan</string>
+    <string name="vibration_description_off">Tidak bergetar ketika tombol ditekan</string>
+    <string name="sound_name">Suara</string>
+    <string name="sound_description_on">Mainkan suara ketika tombol ditekan</string>
+    <string name="sound_description_off">Tidak ada suara ketika tombol ditekan</string>
+    <string name="dice_number_name">Jumlah Dadu</string>
+    <string name="dice_number_description">Ubah jumlah dadu yang dilempar. Saat ini %s</string>
+    <string name="one">Satu</string>
+    <string name="two">Dua</string>
+    <string name="three">Tiga</string>
+    <string name="four">Empat</string>
+    <string name="five">Lima</string>
+    <string name="six">Enam</string>
+    <string name="seven">Tujuh</string>
+    <string name="eight">Delapan</string>
+    <string name="nine">Sembilan</string>
+    <string name="ten">Sepuluh</string>
+    <string name="three_v_three" translatable="false">3 vs 3</string>
+    <string name="accent_description">Ubah warna aksen bawaan. Saat ini %s</string>
+    <string name="accent_name">Warna aksen</string>
+    <string name="theme_description">Gunakan tema aplikasi gelap, terang, atau otomatis. Saat ini %s</string>
+    <string name="theme_name">Tema aplikasi</string>
+    <string name="blue">Biru</string>
+    <string name="green">Hijau</string>
+    <string name="orange">Jingga</string>
+    <string name="yellow">Kuning</string>
+    <string name="teal">Teal</string>
+    <string name="violet">Lembayung</string>
+    <string name="pink">Merah muda</string>
+    <string name="light_blue">Biru muda</string>
+    <string name="red">Merah</string>
+    <string name="lime">Limau</string>
+    <string name="crimson">Kirmizi</string>
+    <string name="system_theme">Bawaan sistem</string>
+    <string name="dark_theme">Gelap</string>
+    <string name="light_theme">Terang</string>
+    <string name="app_behavior">Perilaku aplikasi</string>
+    <string name="rude_answers_description_on">Jawaban kasar diaktifkan, idiot</string>
+    <string name="rude_answers_description_off">Hanya jawaban yang ramah dan sopan</string>
+    <string name="rude_answers_name">Jawaban kasar</string>
+    <string name="hide_descriptions_name">Sembunyikan deskripsi</string>
+    <string name="hide_descriptions_description_on">Deskripsi disembunyikan</string>
+    <string name="hide_descriptions_description_off">Deskripsi terlihat</string>
+    <string name="allow_equals_name">Perbolehkan opsi yang sama</string>
+    <string name="allow_equals_description_on">Opsi yang sama di rolet diperbolehkan</string>
+    <string name="allow_equals_description_off">Opsi yang sama di rolet tidak diperbolehkan</string>
+
+    <!-- Rate app dialog -->
+    <string name="positive_button">Ulasan!</string>
+    <string name="negative_button">Saya malas</string>
+    <string name="cancel_button">Nah!</string>
+    <string name="rating_message">
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
+        \nOke, sekarang setelah saya mendapatkan perhatian Anda, bolehkan saya meminta Anda untuk meninggalkan ulasan yang bagus untuk membantu Randomix berkembang? Saya sangat mengapresiasinya! Semoga hari Anda menyenangkan! :D\n
+    </string>
+    <string name="feedback_text">Saya punya sesuatu untuk diberitahukan ke Anda</string>
+    <string name="not_again_button">Jangan tanya lagi</string>
+
+</resources>

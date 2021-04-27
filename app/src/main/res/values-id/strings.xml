@@ -56,18 +56,18 @@
     <string name="magic_answer_14">Pikirkan kembali.</string>
     <string name="magic_answer_15">Siapa tahu.</string>
     <string name="magic_answer_16">Apakah Anda bercanda?</string>
-    <string name="magic_answer_17">Dari pandanganku, iya.</string>
+    <string name="magic_answer_17">Dari pandangan saya, iya.</string>
     <string name="magic_answer_18">Sudah pasti begitu.</string>
     <string name="magic_answer_19">Sudah ditentukan begitu.</string>
-    <string name="magic_answer_20">Dari pandanganku, bagus.</string>
+    <string name="magic_answer_20">Dari pandangan saya, bagus.</string>
     <string name="magic_answer_21">Pertandanya menunjuk ke iya.</string>
     <string name="magic_answer_22">Tanpa keraguan.</string>
-    <string name="magic_answer_23">Balasannya kabur, ulang lagi.</string>
+    <string name="magic_answer_23">Balasannya kabur, ulangi lagi.</string>
     <string name="magic_answer_24">Lebih baik tidak memberitahukan Anda sekarang.</string>
     <string name="magic_answer_25">Tidak bisa diprediksi sekarang!</string>
     <string name="magic_answer_26">Konsentrasi dan tanyakan lagi.</string>
     <string name="magic_answer_27">Jangan mengandalkan itu.</string>
-    <string name="magic_answer_28">Sumber Saya mengatakan tidak.</string>
+    <string name="magic_answer_28">Sumber saya mengatakan tidak.</string>
     <string name="magic_answer_29">Sangat meragukan.</string>
     <string name="magic_answer_30">Tanyakan ke sahabat Anda.</string>
     <string name="magic_answer_rude_1">Tidak, idiot.</string>
@@ -79,7 +79,7 @@
 
     <!-- Dice -->
     <string name="hello_dice_fragment">Mode Dadu</string>
-    <string name="description_dice">Dadu bisa berguna, di permainan meja misalnya! Aplikasi ini akan melempar satu hingga tiga dadu untuk Anda. Pilih jumlah dadunyanya dari Pengaturan. Semoga berhasil!</string>
+    <string name="description_dice">Dadu bisa berguna, di permainan meja misalnya! Aplikasi ini akan melempar satu hingga tiga dadu untuk Anda. Pilih jumlah dadunya dari Pengaturan. Semoga berhasil!</string>
     <string name="throw_dice">Lempar dadunya!</string>
     <string name="hint_dice">Tekan tombol di bawah ini!</string>
 

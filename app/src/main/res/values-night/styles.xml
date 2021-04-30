@@ -13,6 +13,7 @@
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
         <item name="fontFamily">@font/opensans_regular</item>
         <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="alertDialogTheme">@style/DialogTheme</item>
     </style>
 
 </resources>

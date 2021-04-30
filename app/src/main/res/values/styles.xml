@@ -13,6 +13,12 @@
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
         <item name="fontFamily">@font/opensans_regular</item>
         <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="alertDialogTheme">@style/DialogTheme</item>
+    </style>
+
+    <!-- Preference dialog theme -->
+    <style name="DialogTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="dialogCornerRadius">@dimen/bottom_sheet_corners</item>
     </style>
 
     <!-- A style to use a colored bottom navbar. It needs other modifications to work properly -->

@@ -15,7 +15,7 @@ public class RecentUtils {
     public static String fromOptionList(List<String> optionList) {
         StringBuilder result = new StringBuilder();
         // Remove the awful pinning workaround
-        List<String> copy = new ArrayList<String>(optionList);
+        List<String> copy = new ArrayList<>(optionList);
         copy.remove("HorribleWorkaroundToPin");
 
         for (String option : copy) {

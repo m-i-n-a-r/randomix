@@ -33,8 +33,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class RouletteBottomSheet extends BottomSheetDialogFragment {
-    private List<List<String>> recentList;
     private final RouletteFragment roulette;
+    private List<List<String>> recentList;
     private SharedPreferences sp;
     private RecentAdapter adapter;
 
@@ -82,7 +82,7 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
         Chip numbersChip = v.findViewById(R.id.numbersChip);
         numbersChip.setOnClickListener(view -> {
             List<String> numbers = new ArrayList<>(100 + 1);
-            for(int i = 0; i <= 100; i++) numbers.add(String.valueOf(i));
+            for (int i = 0; i <= 100; i++) numbers.add(String.valueOf(i));
             roulette.restoreOption(numbers);
         });
         return v;

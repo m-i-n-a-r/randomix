@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface OnItemClickListener {
     void onItemClick(int position, List<String> recentList, View view);
+
     void onItemLongClick(int position, View view);
 }

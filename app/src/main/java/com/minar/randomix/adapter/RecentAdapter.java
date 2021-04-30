@@ -70,8 +70,7 @@ public class RecentAdapter extends RecyclerView.Adapter<RecentAdapter.RecentHold
         if (current.contains("HorribleWorkaroundToPin")) {
             holder.optionList.setTypeface(null, Typeface.BOLD);
             holder.optionList.setTextColor(getThemeAccentColor(holder.adapter.inflater.getContext()));
-        }
-        else {
+        } else {
             holder.optionList.setTypeface(null, Typeface.NORMAL);
             holder.optionList.setTextColor(getColor(holder.adapter.inflater.getContext(), R.color.goodGray));
         }
@@ -89,9 +88,9 @@ public class RecentAdapter extends RecyclerView.Adapter<RecentAdapter.RecentHold
     }
 
     // Get the accent color
-    public static int getThemeAccentColor (final Context context) {
-        final TypedValue value = new TypedValue ();
-        context.getTheme ().resolveAttribute (R.attr.colorAccent, value, true);
+    public static int getThemeAccentColor(final Context context) {
+        final TypedValue value = new TypedValue();
+        context.getTheme().resolveAttribute(R.attr.colorAccent, value, true);
         return value.data;
     }
 }

@@ -18,8 +18,8 @@ import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import com.minar.randomix.activities.MainActivity;
 import com.minar.randomix.R;
+import com.minar.randomix.activities.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;

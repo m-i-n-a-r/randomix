@@ -1,4 +1,4 @@
-package com.minar.randomix.utilities;
+package com.minar.randomix.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment;
 
 import com.github.appintro.AppIntro;
 import com.github.appintro.AppIntroFragment;
-import com.minar.randomix.activities.MainActivity;
 import com.minar.randomix.R;
+import com.minar.randomix.activities.MainActivity;
 
 public class IntroActivity extends AppIntro {
     @Override

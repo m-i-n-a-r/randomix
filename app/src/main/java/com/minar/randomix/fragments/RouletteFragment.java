@@ -22,8 +22,8 @@ import android.widget.Toast;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
-import com.minar.randomix.activities.MainActivity;
 import com.minar.randomix.R;
+import com.minar.randomix.activities.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;

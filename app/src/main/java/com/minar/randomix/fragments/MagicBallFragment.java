@@ -15,8 +15,8 @@ import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.minar.randomix.activities.MainActivity;
 import com.minar.randomix.R;
+import com.minar.randomix.activities.MainActivity;
 
 import java.util.Random;
 

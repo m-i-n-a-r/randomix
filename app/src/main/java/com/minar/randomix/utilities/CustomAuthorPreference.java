@@ -33,7 +33,7 @@ public class CustomAuthorPreference extends Preference implements View.OnClickLi
         // Make the icons clickable
         ImageView logo = v.findViewById(R.id.imageMinar);
         ImageView l1 = v.findViewById(R.id.minarig);
-        ImageView l2 = v.findViewById(R.id.minartwitter);
+        ImageView l2 = v.findViewById(R.id.minartt);
         ImageView l3 = v.findViewById(R.id.minarps);
         ImageView l4 = v.findViewById(R.id.minargit);
         ImageView l5 = v.findViewById(R.id.minarsite);
@@ -76,7 +76,7 @@ public class CustomAuthorPreference extends Preference implements View.OnClickLi
         }
 
         // Twitter
-        if (pressedId == R.id.minartwitter) {
+        if (pressedId == R.id.minartt) {
             if (act instanceof MainActivity) ((MainActivity) act).vibrate();
             uri = Uri.parse(getContext().getString(R.string.dev_twitter));
             Intent intent2 = new Intent(Intent.ACTION_VIEW, uri);

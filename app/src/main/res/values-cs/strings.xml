@@ -86,6 +86,7 @@
     <string name="accent_name">Barva zvýraznění</string>
     <string name="theme_name">Vzhled aplikace</string>
     <string name="blue">Modrá</string>
+    <string name="aqua">Aqua</string>
     <string name="green">Zelená</string>
     <string name="orange">Oranžová</string>
     <string name="yellow">Žlutá</string>

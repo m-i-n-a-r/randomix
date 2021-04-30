@@ -99,6 +99,7 @@
     <string name="theme_description">Utiliser un thème sombre ou clair. Currently %s</string>
     <string name="theme_name">Thème de l\'application</string>
     <string name="blue">Bleu</string>
+    <string name="aqua">Aqua</string>
     <string name="green">Vert</string>
     <string name="orange">Orange</string>
     <string name="yellow">Jaune</string>

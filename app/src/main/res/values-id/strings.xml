@@ -107,6 +107,7 @@
     <string name="theme_description">Gunakan tema aplikasi gelap, terang, atau otomatis. Saat ini %s</string>
     <string name="theme_name">Tema aplikasi</string>
     <string name="blue">Biru</string>
+    <string name="aqua">Aqua</string>
     <string name="green">Hijau</string>
     <string name="orange">Jingga</string>
     <string name="yellow">Kuning</string>

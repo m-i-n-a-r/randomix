@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         assert accent != null;
         if (accent.equals("green")) setTheme(R.style.AppTheme_Green);
+        if (accent.equals("aqua")) setTheme(R.style.AppTheme_Aqua);
         if (accent.equals("orange")) setTheme(R.style.AppTheme_Orange);
         if (accent.equals("yellow")) setTheme(R.style.AppTheme_Yellow);
         if (accent.equals("teal")) setTheme(R.style.AppTheme_Teal);

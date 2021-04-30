@@ -43,6 +43,11 @@
     </style>
 
     <!-- Accent styles -->
+    <style name="AppTheme.Aqua" parent="AppTheme">
+        <item name="colorAccent">@color/aquaAccent</item>
+        <item name="colorPrimary">@color/aquaAccent</item>
+    </style>
+
     <style name="AppTheme.Green" parent="AppTheme">
         <item name="colorAccent">@color/greenAccent</item>
         <item name="colorPrimary">@color/greenAccent</item>

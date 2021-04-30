@@ -83,6 +83,7 @@
     <string name="accent_description">Изменить цвет по умолчанию. В настоящее время %s</string>
     <string name="accent_name">Цвет</string>
     <string name="blue">Синий</string>
+    <string name="aqua">Aква-синий</string>
     <string name="green">Зелёный</string>
     <string name="orange">Оранжевый</string>
     <string name="teal">Нефритовый</string>

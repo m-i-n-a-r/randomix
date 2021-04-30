@@ -99,6 +99,7 @@
     <string name="theme_description">使用暗色调、亮色调或系统默认应用主题，现在是%s</string>
     <string name="theme_name">应用主题</string>
     <string name="blue">蓝色</string>
+    <string name="aqua">水色</string>
     <string name="green">绿色</string>
     <string name="orange">橙色</string>
     <string name="yellow">黄色</string>

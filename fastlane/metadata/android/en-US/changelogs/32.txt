@@ -1,0 +1,4 @@
+- New accent: aqua
+- Settings UI improved
+- Indonesian translation, translations updated
+- Many small fixes and improvements

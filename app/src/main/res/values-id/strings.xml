@@ -1,10 +1,7 @@
 <resources>
 
     <!-- Main strings -->
-    <string name="app_name" translatable="false">Randomix</string>
-    <string name="app_extended_name" translatable="false">Randomix - Decision Maker</string>
     <string name="app_intro_description">Sebuah aplikasi sumber terbuka untuk memilih secara acak antara angka, jawaban, opsi, dan seterusnya. Biarkan keacakan yang berkata!</string>
-    <string name="result_placeholder" translatable="false"> - - - </string>
     <string name="title_roulette">Rolet</string>
     <string name="title_coin">Koin</string>
     <string name="title_dice">Dadu</string>
@@ -16,7 +13,7 @@
     <string name="hello_roulette_fragment">Mode Rolet</string>
     <string name="description_roulette">Apakah Anda harus memutuskan tentang sesuatu? Apakah Anda capek dengan pemunggutan suara dan teman yang suka memerintah? Rolet ini yang akan menentukannya untuk Anda. Tekan lama roletnya untuk menambahkan opsi umum atau menghapusnya.</string>
     <string name="spin_roulette">Putar roletnya!</string>
-    <string name="insert_roulette_hint">Masukkan sebuah opsi...</string>
+    <string name="insert_roulette_hint">Masukkan sebuah opsi…</string>
     <string name="delete_roulette_hint">Menghapus opsi terakhir yang dimasukkan</string>
     <string name="insert_roulette_description">Silakan pilih di antara kemungkinan pilihan di bawah ini yang akan ditambahkan ke rolet.</string>
     <string name="no_entry_roulette">Tolong, masukkan 2 atau lebih opsi untuk memutar roletnya!</string>
@@ -25,7 +22,6 @@
     <string name="recent_title">Opsi terbaru, ketuk untuk memulihkan</string>
     <string name="bottom_sheet_no_option">Tidak ada opsi terbaru, putar roletnya untuk menyimpan opsi terbaru!</string>
     <string name="letters_shortcut">Huruf A-Z</string>
-    <string name="numbers_1_100_shortcut" translatable="false">1–100</string>
 
     <!-- Coin -->
     <string name="hello_coin_fragment">Mode Koin</string>
@@ -85,15 +81,7 @@
 
     <!-- Settings -->
     <string name="hello_settings_fragment">Pengaturan</string>
-    <string name="dev_name" translatable="false">m.i.n.a.r.</string>
     <string name="dev_description">Saya adalah laki-laki yang ramah dan suka sesuatu yang indah seperti animasi, ikon, mobil sport dan percetakan 3D. Saya bekerja sebagai desainer dan insinyur komputer.</string>
-    <string name="dev_email" translatable="false">minar.tastic@gmail.com</string>
-    <string name="dev_personal_site" translatable="false">https://minar.ml</string>
-    <string name="dev_instagram" translatable="false">https://www.instagram.com/minar.tastic/</string>
-    <string name="dev_twitter" translatable="false">https://twitter.com/MinarTastic</string>
-    <string name="dev_xda" translatable="false">https://forum.xda-developers.com/member.php?u=5222216</string>
-    <string name="dev_github" translatable="false">https://github.com/m-i-n-a-r</string>
-    <string name="dev_other_apps" translatable="false">https://play.google.com/store/apps/dev?id=7720251761301594831</string>
     <string name="easter_egg">Logo yang bagus, huh? ;D</string>
     <string name="customization">Kostumisasi</string>
     <string name="vibration_name">Getaran</string>
@@ -114,7 +102,6 @@
     <string name="eight">Delapan</string>
     <string name="nine">Sembilan</string>
     <string name="ten">Sepuluh</string>
-    <string name="three_v_three" translatable="false">3 vs 3</string>
     <string name="accent_description">Ubah warna aksen bawaan. Saat ini %s</string>
     <string name="accent_name">Warna aksen</string>
     <string name="theme_description">Gunakan tema aplikasi gelap, terang, atau otomatis. Saat ini %s</string>

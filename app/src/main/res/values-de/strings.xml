@@ -19,7 +19,7 @@
     <string name="delete_roulette_hint">Lösche die zuletzt eingegebene Option</string>
     <string name="insert_roulette_description">Bitte liste unten die Optionen auf, die zum Roulette hinzugefügt werden sollen</string>
     <string name="no_entry_roulette">Bitte, gib zwei oder mehr Optionen ein um das Roulette zu drehen!</string>
-    <string name="too_much_entries_roulette">Du kannst nicht mehr als 15 Optionen eingeben!</string>
+    <string name="too_much_entries_roulette">Du kannst nicht mehr als 30 Optionen eingeben!</string>
     <string name="generic_option">Option</string>
     <string name="recent_title">Letzte Optionen, tippe zum Wiederherstellen</string>
     <string name="bottom_sheet_no_option">Keine letzten Optionen, drehe das Roulette um die aktuellen Optionen zu speichern!</string>
@@ -27,7 +27,7 @@
 
     <!-- Coin -->
     <string name="hello_coin_fragment">Münz Modus</string>
-    <string name="description_coin">Eine Münze zu werfen ist einfach, kann dir aber dabei helfen, dich zu entscheiden, ob du etwas tust oder nicht.         Einfach Kopf oder Zahl. Lass die Münze sprechen!</string>
+    <string name="description_coin">Eine Münze zu werfen ist einfach, kann dir aber dabei helfen, dich zu entscheiden, ob du etwas tust oder nicht. Einfach Kopf oder Zahl. Lass die Münze sprechen!</string>
     <string name="flip_coin">Wirf die Münze!</string>
     <string name="hint_coin">Drücke den Knopf unten!</string>
     <string name="result_head">Kopf!</string>

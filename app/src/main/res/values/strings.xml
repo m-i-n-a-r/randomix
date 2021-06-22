@@ -21,7 +21,7 @@
     <string name="delete_roulette_hint">Delete the last option entered</string>
     <string name="insert_roulette_description">Please list below the possible choices to add in the roulette.</string>
     <string name="no_entry_roulette">Please, enter 2 or more options to spin the roulette!</string>
-    <string name="too_much_entries_roulette">You can\'t enter more than 15 options!</string>
+    <string name="too_much_entries_roulette">You can\'t enter more than 30 options!</string>
     <string name="generic_option">Option</string>
     <string name="recent_title">Recent options, tap to restore</string>
     <string name="bottom_sheet_no_option">No recent option, spin the roulette to save the current options!</string>

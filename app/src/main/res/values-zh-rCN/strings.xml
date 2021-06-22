@@ -17,7 +17,7 @@
     <string name="delete_roulette_hint">删除最后输入的一个选项</string>
     <string name="insert_roulette_description">请将可能的选项列在下方以将它们加入轮盘。</string>
     <string name="no_entry_roulette">请至少加入两个选项来转动轮盘！</string>
-    <string name="too_much_entries_roulette">你不能添加多于15个选项！</string>
+    <string name="too_much_entries_roulette">你不能添加多于30个选项！</string>
     <string name="generic_option">选项</string>
     <string name="recent_title">最近的选项组，点按以恢复</string>
     <string name="bottom_sheet_no_option">没有最近的选项组，转动轮盘来保存当前的选项组！</string>

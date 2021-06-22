@@ -15,7 +15,7 @@
     <string name="delete_roulette_hint">Eliminar las últimas opciones ingresadas</string>
     <string name="insert_roulette_description">Enumere a continuación las posibles opciones para agregar en la ruleta.</string>
     <string name="no_entry_roulette">¡Por favor, ingrese 2 o más opciones para girar la ruleta!</string>
-    <string name="too_much_entries_roulette">¡No puedes ingresar más de 15 opciones!</string>
+    <string name="too_much_entries_roulette">¡No puedes ingresar más de 30 opciones!</string>
     <string name="generic_option">Opción</string>
     <string name="recent_title">Opciones recientes, toque para restaurar</string>
     <string name="bottom_sheet_no_option">Sin opción reciente, ¡gire la ruleta para guardar las opciones actuales!</string>

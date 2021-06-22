@@ -17,7 +17,7 @@
     <string name="delete_roulette_hint">Menghapus opsi terakhir yang dimasukkan</string>
     <string name="insert_roulette_description">Silakan pilih di antara kemungkinan pilihan di bawah ini yang akan ditambahkan ke rolet.</string>
     <string name="no_entry_roulette">Tolong, masukkan 2 atau lebih opsi untuk memutar roletnya!</string>
-    <string name="too_much_entries_roulette">Anda tidak bisa memasukkan lebih dari 15 opsi</string>
+    <string name="too_much_entries_roulette">Anda tidak bisa memasukkan lebih dari 30 opsi</string>
     <string name="generic_option">Opsi</string>
     <string name="recent_title">Opsi terbaru, ketuk untuk memulihkan</string>
     <string name="bottom_sheet_no_option">Tidak ada opsi terbaru, putar roletnya untuk menyimpan opsi terbaru!</string>

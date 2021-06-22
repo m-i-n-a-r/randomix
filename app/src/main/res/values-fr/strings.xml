@@ -17,7 +17,7 @@
     <string name="delete_roulette_hint">Supprimer la dernière option entrée</string>
     <string name="insert_roulette_description">Listez ci-dessous les choix possibles de la roulette</string>
     <string name="no_entry_roulette">Ajouter 2 options ou plus pour lancer la roulette</string>
-    <string name="too_much_entries_roulette">Vous ne pouvez pas entrer plus de 15 options !</string>
+    <string name="too_much_entries_roulette">Vous ne pouvez pas entrer plus de 30 options !</string>
     <string name="generic_option">Option</string>
     <string name="recent_title">Options récentes, tapez pour restaurer</string>
     <string name="bottom_sheet_no_option">Pas d\'otions récentes, tournez la roulette pour sauvegarder les options actuelles</string>

@@ -14,7 +14,7 @@
     <string name="delete_roulette_hint">Smazat poslední zadanou možnost</string>
     <string name="insert_roulette_description">Níže prosím uveďte možné volby, které se mají přidat do rulety.</string>
     <string name="no_entry_roulette">Chcete-li ruletu roztočit, zadejte 2 nebo více možností!</string>
-    <string name="too_much_entries_roulette">Nemůžete zadat více než 15 možností!</string>
+    <string name="too_much_entries_roulette">Nemůžete zadat více než 30 možností!</string>
     <string name="generic_option">Možnost</string>
     <string name="recent_title">Poslední možnosti obnovíte klepnutím</string>
     <string name="bottom_sheet_no_option">Žádná nedávná možnost, aktuální možnosti uložíte roztočením rulety!</string>

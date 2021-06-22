@@ -11,7 +11,7 @@
     <string name="insert_roulette_hint">Inserisci un\'opzione…</string>
     <string name="delete_roulette_hint">Elimina l\'ultima opzione inserita</string>
     <string name="no_entry_roulette">Per favore, inserisci almeno due opzioni per girare la roulette!</string>
-    <string name="too_much_entries_roulette">Non puoi inserire più di 15 opzioni!</string>
+    <string name="too_much_entries_roulette">Non puoi inserire più di 30 opzioni!</string>
     <string name="hello_roulette_fragment">Modalità ruota</string>
     <string name="generic_option">Opzione</string>
     <string name="flip_coin">Lancia la moneta!</string>

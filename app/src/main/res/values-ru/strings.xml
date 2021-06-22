@@ -13,7 +13,7 @@
     <string name="delete_roulette_hint">Удалить последнюю введенную опцию</string>
     <string name="insert_roulette_description">Ниже перечислены возможные варианты добавления в рулетку.</string>
     <string name="no_entry_roulette">Пожалуйста, введите 2 и более вариантов, чтобы крутить релетку.</string>
-    <string name="too_much_entries_roulette">Вы не можете ввести более 15 вариантов</string>
+    <string name="too_much_entries_roulette">Вы не можете ввести более 30 вариантов</string>
     <string name="hello_roulette_fragment">Рулетка</string>
     <string name="generic_option">Вариант</string>
     <string name="description_coin">Подбросить монетку легко, но она может помочь вам решить, когда что-то делать или нет. Только герб или решка. Пусть говорит монета!</string>

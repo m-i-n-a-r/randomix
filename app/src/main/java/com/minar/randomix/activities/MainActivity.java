@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 .setPopUpTo(R.id.nav_graph, true)
                 .build();
         // Only way to get the animations back at the moment
-        navigation.setOnNavigationItemSelectedListener(item -> {
+        navigation.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.navigationRoulette) {
                 // Default starting page
                 sp.edit().putString("last_page", "roulette").apply();
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         });
-        navigation.setOnNavigationItemReselectedListener(item -> {
+        navigation.setOnItemReselectedListener(item -> {
             // Just do nothing when an item is reselected from the bottom navigation bar
         });
         // Reopen the last selected tab

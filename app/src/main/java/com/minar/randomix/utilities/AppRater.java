@@ -13,8 +13,8 @@ public final class AppRater {
     private static final String LAUNCH_COUNT = "launch_count";
     private static final String DATE_FIRST_LAUNCH = "date_first_launch";
 
-    private static final int DAYS_UNTIL_PROMPT = 0; // Min number of days
-    private static final int LAUNCHES_UNTIL_PROMPT = 0; // Min number of launches
+    private static final int DAYS_UNTIL_PROMPT = 2; // Min number of days
+    private static final int LAUNCHES_UNTIL_PROMPT = 3; // Min number of launches
 
     public static void appLaunched(MainActivity activity) {
         SharedPreferences prefs = activity.getSharedPreferences(APP_RATING, 0);

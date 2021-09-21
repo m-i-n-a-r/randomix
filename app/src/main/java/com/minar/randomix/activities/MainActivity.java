@@ -3,9 +3,7 @@ package com.minar.randomix.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Vibrator;
 
@@ -18,9 +16,7 @@ import androidx.preference.PreferenceManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.minar.randomix.R;
-import com.pixplicity.generate.Rate;
-
-import java.util.concurrent.TimeUnit;
+import com.minar.randomix.utilities.AppRater;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -124,33 +120,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        // Gene-rate configuration and detect if night mode is enabled to set the appropriate theme
-        boolean isLight = false;
-        switch (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
-            case Configuration.UI_MODE_NIGHT_YES:
-                isLight = false;
-                break;
-            case Configuration.UI_MODE_NIGHT_NO:
-                isLight = true;
-                break;
-        }
-        // Use a normal dialog instead of the buggy snackbar. Some texts are never used
-        Rate rate = new Rate.Builder(this)
-                .setTriggerCount(10)
-                .setRepeatCount(10)
-                .setMinimumInstallTime(Integer.parseInt(String.valueOf(TimeUnit.DAYS.toMillis(3))))
-                .setMessage(R.string.rating_message)
-                .setPositiveButton(R.string.positive_button)
-                .setCancelButton(R.string.cancel_button)
-                .setNegativeButton(R.string.feedback_text)
-                .setNeverAgainText(R.string.not_again_button)
-                .setFeedbackText(R.string.feedback_text)
-                .setFeedbackAction(Uri.parse("mailto:" + getResources().getString(R.string.dev_email)))
-                .setLightTheme(isLight)
-                .build();
-
-        rate.count();
-        rate.showRequest();
+        // Rating stuff
+        AppRater.appLaunched(this);
     }
 
     // Some utility functions, used from every fragment connected to this activity

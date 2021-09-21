@@ -1,0 +1,4 @@
+- German supported, other languages updated
+- Up to 30 options in the roulette
+- New rate dialog, less libraries and cleanup
+- Some fixes

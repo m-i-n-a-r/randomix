@@ -6,8 +6,8 @@ android {
         applicationId "com.minar.randomix"
         minSdkVersion 23
         targetSdkVersion 31
-        versionCode 34
-        versionName "1.17"
+        versionCode 35
+        versionName "1.18"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     compileOptions {
@@ -27,8 +27,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation 'com.google.android.material:material:1.6.0-alpha01'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
     implementation "androidx.navigation:navigation-fragment:2.3.5"
     implementation "androidx.navigation:navigation-ui:2.3.5"
     implementation "androidx.preference:preference:1.1.1"

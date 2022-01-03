@@ -63,7 +63,7 @@
     <string name="magic_answer_rude_5">Ты сумасшедший.</string>
     <string name="magic_answer_rude_6">Иди к чёрту.</string>
     <string name="hello_magic_ball_fragment">Волшебный шар</string>
-    <string name="description_dice">Кости могут быть полезны, например в настольной игре! Приложение бросает от одной до трёх костей для тебя. Выбери количество в настройках. Удачи!</string>
+    <string name="description_dice">Кости могут быть полезны, например в настольной игре! Приложение бросает за вас от одного до десяти кубиков. Количество выбираем в настройках. Удачи!</string>
     <string name="throw_dice">Бросай кость!</string>
     <string name="hint_dice">Нажмите кнопку ниже!</string>
     <string name="hello_dice_fragment">Кости</string>

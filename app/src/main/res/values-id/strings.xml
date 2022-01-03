@@ -75,7 +75,7 @@
 
     <!-- Dice -->
     <string name="hello_dice_fragment">Mode Dadu</string>
-    <string name="description_dice">Dadu bisa berguna, di permainan meja misalnya! Aplikasi ini akan melempar satu hingga tiga dadu untuk Anda. Pilih jumlah dadunya dari Pengaturan. Semoga berhasil!</string>
+    <string name="description_dice">Dadu bisa berguna, di permainan meja misalnya! Aplikasi ini akan melempar satu hingga sepuluh dadu untuk Anda. Pilih jumlah dadunya dari Pengaturan. Semoga berhasil!</string>
     <string name="throw_dice">Lempar dadunya!</string>
     <string name="hint_dice">Tekan tombol di bawah ini!</string>
 

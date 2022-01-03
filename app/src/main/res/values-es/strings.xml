@@ -69,7 +69,7 @@
     <string name="magic_answer_rude_6">Vete al diablo.</string>
     <string name="hello_dice_fragment">Modo dado</string>
     <string name="description_dice">¡Un dado podría ser útil, en un juego de mesa, por ejemplo! La aplicación
-        arrojará de uno a tres dados por ti. Seleccione el número de la configuración. ¡Buena suerte!</string>
+        arrojará de uno a diez dados por ti. Seleccione el número de la configuración. ¡Buena suerte!</string>
     <string name="throw_dice">¡Tira los dados!</string>
     <string name="hint_dice">¡Presione el botón de abajo!</string>
     <string name="hello_settings_fragment">Opciones</string>

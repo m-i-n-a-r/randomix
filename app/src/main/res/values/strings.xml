@@ -82,7 +82,7 @@
 
     <!-- Dice -->
     <string name="hello_dice_fragment">Dice mode</string>
-    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to three dice
+    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice
         for you. Select the number from settings. Good luck!</string>
     <string name="throw_dice">Throw the dice!</string>
     <string name="hint_dice">Press the button below!</string>

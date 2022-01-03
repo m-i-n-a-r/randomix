@@ -74,7 +74,7 @@
 
     <!-- Dice -->
     <string name="hello_dice_fragment">骰子模式</string>
-    <string name="description_dice">骰子有时候会很有用，例如在桌面游戏中！这个应用会为你投掷1到3个骰子，在设置中调整骰子的数量。祝你好运！</string>
+    <string name="description_dice">骰子有时候会很有用，例如在桌面游戏中！这个应用程序会为你扔一到十个骰子，在设置中调整骰子的数量。祝你好运！</string>
     <string name="throw_dice">掷骰子！</string>
     <string name="hint_dice">点击下方的按钮</string>
 

@@ -78,7 +78,7 @@
 
     <!-- Dice -->
     <string name="hello_dice_fragment">Würfel Modus</string>
-    <string name="description_dice">Würfel können nützlich sein, bei einem Gesellschaftsspiel zum Beispiel! Die App wirft einen bis drei Würfel
+    <string name="description_dice">Würfel können nützlich sein, bei einem Gesellschaftsspiel zum Beispiel! Die App wirft einen bis zehn Würfel
         für dich. Wähle die Anzahl in den Einstellungen aus. Viel Glück!</string>
     <string name="throw_dice">Wirf die Würfel!</string>
     <string name="hint_dice">Drücke den Knopf unten!</string>

@@ -21,7 +21,7 @@
     <string name="hello_coin_fragment">Režim mince</string>
     <string name="description_coin">Hodit si mincí je snadné, ale může vám to pomoci rozhodnout se, zda něco udělat, nebo ne. Prostě panna nebo orel. Nechte promluvit minci!</string>
     <string name="description_magic_ball">Magická koule vám řekne odpovědi! Stačí se na něco zeptat a poskytne vám obecnou a dostupnou odpověď. Nezdvořilost si můžete aktivovat v nastavení!</string>
-    <string name="description_dice">Kostky se mohou hodit, například ve stolních hrách! Aplikace za vás hodí jednu až tři kostky. Počet si vyberte v nastavení. Hodně štěstí!</string>
+    <string name="description_dice">Kostky se mohou hodit, například ve stolních hrách! Aplikace za vás hodí jednu až deseti kostky. Počet si vyberte v nastavení. Hodně štěstí!</string>
     <string name="sound_description_on">Při stisknutí tlačítka přehrát zvuk</string>
     <string name="dice_number_description">Změnit počet hozených kostek. Aktuálně %s</string>
     <string name="accent_description">Změnit výchozí barvu zvýraznění. Aktuálně %s</string>

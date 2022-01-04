@@ -11,12 +11,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.navigation.NavController;
 import androidx.navigation.NavOptions;
-import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.preference.PreferenceManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.minar.randomix.R;
 import com.minar.randomix.utilities.AppRater;
+
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -66,7 +68,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Get the bottom navigation bar and configure it for the navigation plugin
         BottomNavigationView navigation = findViewById(R.id.navigation);
-        navController = Navigation.findNavController(this, R.id.navHostFragment);
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.navHostFragment);
+        navController = Objects.requireNonNull(navHostFragment).getNavController();
 
         NavOptions options = new NavOptions.Builder()
                 .setLaunchSingleTop(true)

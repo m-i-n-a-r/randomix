@@ -7,23 +7,21 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/navHostFragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/bottom_navbar_height"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@id/navigation"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_graph" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
-        style="@style/Widget.MaterialComponents.BottomNavigationView"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/bottom_navbar_height"
+        app:itemPaddingBottom="@dimen/linear_vertical_padding"
+        app:itemPaddingTop="@dimen/linear_vertical_padding"
         android:background="?android:statusBarColor"
         app:elevation="@dimen/bottom_navbar_elevation"
         app:itemIconTint="@drawable/bottom_navbar_item"

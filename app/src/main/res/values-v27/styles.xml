@@ -17,4 +17,10 @@
         <item name="alertDialogTheme">@style/DialogTheme</item>
     </style>
 
+    <style name="SplashTheme" parent="SplashTheme.V27" />
+    <style name="SplashTheme.V27" parent="SplashTheme.Base.Legacy">
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:navigationBarColor">@color/colorBackground</item>
+    </style>
+
 </resources>

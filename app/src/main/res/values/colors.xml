@@ -7,6 +7,7 @@
 
     <!-- Basic colors -->
     <color name="colorAccent">@color/blueAccent</color>
+    <color name="colorAccentTranslucent">@color/blueAccentTranslucent</color>
     <color name="almostWhite">#fbfbfb</color>
     <color name="goodGray">#959595</color>
     <color name="goodGrayTranslucent">#66909090</color>
@@ -26,17 +27,29 @@
     <color name="textColorSecondaryInverse">#f0f0f0</color>
 
     <!-- Accents -->
-    <color name="blueAccent">#4285f4</color>
     <color name="aquaAccent">#5abf95</color>
+    <color name="aquaAccentTranslucent">#665abf95</color>
+    <color name="blueAccent">#4285f4</color>
+    <color name="blueAccentTranslucent">#664285f4</color>
     <color name="greenAccent">#3ddc84</color>
+    <color name="greenAccentTranslucent">#663ddc84</color>
     <color name="yellowAccent">#f4b400</color>
+    <color name="yellowAccentTranslucent">#66f4b400</color>
     <color name="orangeAccent">#ff7522</color>
+    <color name="orangeAccentTranslucent">#66ff7522</color>
     <color name="tealAccent">#008080</color>
+    <color name="tealAccentTranslucent">#66008080</color>
     <color name="violetAccent">#ab47bc</color>
+    <color name="violetAccentTranslucent">#66ab47bc</color>
     <color name="pinkAccent">#ff66cc</color>
+    <color name="pinkAccentTranslucent">#66ff66cc</color>
     <color name="lightBlueAccent">#29b6f6</color>
+    <color name="lightBlueAccentTranslucent">#6629b6f6</color>
     <color name="redAccent">#ff5252</color>
+    <color name="redAccentTranslucent">#66ff5252</color>
     <color name="limeAccent">#c5de00</color>
+    <color name="limeAccentTranslucent">#66c5de00</color>
     <color name="crimsonAccent">#dc143c</color>
+    <color name="crimsonAccentTranslucent">#66dc143c</color>
 
 </resources>

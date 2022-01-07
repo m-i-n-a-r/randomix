@@ -27,6 +27,9 @@
     <string name="bottom_sheet_no_option">No recent option, spin the roulette to save the current options!</string>
     <string name="letters_shortcut">A-Z Letters</string>
     <string name="numbers_1_100_shortcut" translatable="false">1–100</string>
+    <string name="range">Range</string>
+    <string name="max" translatable="false">Max</string>
+    <string name="min" translatable="false">Min</string>
 
     <!-- Coin -->
     <string name="hello_coin_fragment">Coin mode</string>

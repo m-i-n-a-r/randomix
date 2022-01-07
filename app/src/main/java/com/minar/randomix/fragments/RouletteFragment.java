@@ -3,6 +3,7 @@ package com.minar.randomix.fragments;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Animatable;
+import android.graphics.drawable.Animatable2;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -17,21 +18,29 @@ import android.view.animation.AnimationUtils;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.minar.randomix.R;
 import com.minar.randomix.activities.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class RouletteFragment extends androidx.fragment.app.Fragment implements OnClickListener, View.OnLongClickListener, TextView.OnEditorActionListener {
     private final List<String> options = new ArrayList<>();
     private final RouletteBottomSheet bottomSheet = new RouletteBottomSheet(this);
+    private boolean inRangeMode = false;
+    private EditText optionText;
+    private EditText rangeMin;
+    private EditText rangeMax;
+    private TextView result;
     private SharedPreferences sp = null;
 
     @Override
@@ -44,18 +53,53 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
         if (sp.getBoolean("hide_descriptions", false))
             v.findViewById(R.id.descriptionRoulette).setVisibility(View.GONE);
 
-        // Set the listener
+        // Set the listeners and the views
         ImageView insert = v.findViewById(R.id.insertButton);
         ImageView recent = v.findViewById(R.id.recentButton);
         ImageView spin = v.findViewById(R.id.buttonSpinRoulette);
-        EditText textInsert = v.findViewById(R.id.entryRoulette);
+        optionText = v.findViewById(R.id.entryRoulette);
+        rangeMin = v.findViewById(R.id.rangeMinRoulette);
+        rangeMax = v.findViewById(R.id.rangeMaxRoulette);
+        result = v.findViewById(R.id.resultRoulette);
+        SwitchMaterial rangeSwitch = v.findViewById(R.id.rangeSwitchRoulette);
+        ChipGroup chipList = v.findViewById(R.id.rouletteChipList);
+        ImageView range = v.findViewById(R.id.animatedRangeRoulette);
+        LinearLayout rangeArea = v.findViewById(R.id.rangeOptionRoulette);
+        LinearLayout standardArea = v.findViewById(R.id.textOptionRoulette);
+
+        // Animate the avd, even if it's initially gone
+        Drawable animatedRange = range.getDrawable();
+        if (animatedRange instanceof Animatable2) {
+            ((Animatable2) animatedRange).registerAnimationCallback(new Animatable2.AnimationCallback() {
+                @Override
+                public void onAnimationEnd(Drawable drawable) {
+                    ((Animatable2) animatedRange).start();
+                }
+            });
+            ((Animatable2) animatedRange).start();
+        }
 
         insert.setOnClickListener(this);
         recent.setOnClickListener(this);
         recent.setOnLongClickListener(this);
         spin.setOnClickListener(this);
         spin.setOnLongClickListener(this);
-        textInsert.setOnEditorActionListener(this);
+        optionText.setOnEditorActionListener(this);
+        rangeSwitch.setOnCheckedChangeListener((compoundButton, checked) -> {
+            if (checked) {
+                result.setTextSize(62);
+                rangeArea.setVisibility(View.VISIBLE);
+                standardArea.setVisibility(View.GONE);
+                chipList.setVisibility(View.INVISIBLE);
+                inRangeMode = true;
+            } else {
+                result.setTextSize(36);
+                rangeArea.setVisibility(View.GONE);
+                standardArea.setVisibility(View.VISIBLE);
+                chipList.setVisibility(View.VISIBLE);
+                inRangeMode = false;
+            }
+        });
 
         return v;
     }
@@ -63,28 +107,37 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
     @Override
     public boolean onLongClick(View v) {
         Activity act = getActivity();
+        // Vibrate using the common method in MainActivity
+        if (act instanceof MainActivity) ((MainActivity) act).vibrate();
         int pressedId = v.getId();
         if (pressedId == R.id.recentButton) {
-            // Vibrate using the common method in MainActivity
-            if (act instanceof MainActivity) ((MainActivity) act).vibrate();
             // Restore the last used options
             bottomSheet.restoreLatest(getContext());
             return true;
         }
         if (pressedId == R.id.buttonSpinRoulette) {
-            // Vibrate using the common method in MainActivity
-            if (act instanceof MainActivity) ((MainActivity) act).vibrate();
-
-            // Insert three options manually and spin the roulette, or clear the options
-            if (options.isEmpty()) {
-                String option1 = getResources().getString(R.string.generic_option) + "1";
-                String option2 = getResources().getString(R.string.generic_option) + "2";
-                String option3 = getResources().getString(R.string.generic_option) + "3";
-                insertRouletteChip(option1, true);
-                insertRouletteChip(option2, true);
-                insertRouletteChip(option3, true);
-            } else {
-                removeAllChips();
+            if (!inRangeMode) {
+                // Insert three quick options, or clear them
+                if (options.isEmpty()) {
+                    String option1 = getResources().getString(R.string.generic_option) + "1";
+                    String option2 = getResources().getString(R.string.generic_option) + "2";
+                    String option3 = getResources().getString(R.string.generic_option) + "3";
+                    insertRouletteChip(option1, true);
+                    insertRouletteChip(option2, true);
+                    insertRouletteChip(option3, true);
+                } else {
+                    removeAllChips();
+                }
+            }
+            // Populate the range text fields
+            else {
+                if (rangeMin.getText().length() != 0 || rangeMax.getText().length() != 0) {
+                    rangeMin.setText("");
+                    rangeMax.setText("");
+                } else {
+                    rangeMin.setText(String.valueOf(1));
+                    rangeMax.setText(String.valueOf(10));
+                }
             }
             return true;
         }
@@ -94,9 +147,12 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
     @Override
     public void onClick(View v) {
         Activity act = getActivity();
-        final ImageView recentAnimation = requireView().findViewById(R.id.recentButton);
-        final ChipGroup optionsList = requireView().findViewById(R.id.rouletteChipList);
+        final View view = requireView();
+        final ImageView recentAnimation = view.findViewById(R.id.recentButton);
+        final ChipGroup optionsList = view.findViewById(R.id.rouletteChipList);
+        final SwitchMaterial rangeSwitch = view.findViewById(R.id.rangeSwitchRoulette);
         int pressedId = v.getId();
+
         // Open recent choices
         if (pressedId == R.id.recentButton) {
             // Start the animated vector drawable
@@ -129,18 +185,20 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
 
         // Spin the roulette
         if (pressedId == R.id.buttonSpinRoulette) {
-            // Break the case if the list is empty to avoid crashes and null pointers
-            if (options.size() < 2) {
-                Toast.makeText(getContext(), getString(R.string.no_entry_roulette), Toast.LENGTH_SHORT).show();
-                return;
+            final ImageView spinAnimation = requireView().findViewById(R.id.buttonSpinRoulette);
+            if (!inRangeMode) {
+                // Break the case if the list is empty to avoid crashes and null pointers
+                if (options.size() < 2) {
+                    Toast.makeText(getContext(), getString(R.string.no_entry_roulette), Toast.LENGTH_SHORT).show();
+                    return;
+                }
             }
             // Start the animated vector drawable, make the button not clickable during the execution
-            final ImageView spinAnimation = requireView().findViewById(R.id.buttonSpinRoulette);
-
             recentAnimation.setClickable(false);
             recentAnimation.setLongClickable(false);
             spinAnimation.setClickable(false);
             spinAnimation.setLongClickable(false);
+            rangeSwitch.setClickable(false);
             final int childCount = optionsList.getChildCount();
             for (int i = 0; i < childCount; i++) {
                 Chip option = (Chip) optionsList.getChildAt(i);
@@ -155,29 +213,34 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
                 ((MainActivity) act).vibrate();
                 ((MainActivity) act).playSound(1);
             }
-            Random ran = new Random();
-            final int n = ran.nextInt(options.size());
-
-            // Get the text view and set its value depending on n (using a delay)
-            final TextView textViewResult = requireView().findViewById(R.id.resultRoulette);
-
-            // Insert in the recent list
-            bottomSheet.updateRecent(options, getContext());
-
+            int n;
+            if (inRangeMode) {
+                // Best way to generate number in range
+                n = ThreadLocalRandom.current().nextInt(
+                        Integer.parseInt(rangeMin.getText().toString()),
+                        Integer.parseInt(rangeMax.getText().toString()) + 1);
+            } else {
+                Random ran = new Random();
+                n = ran.nextInt(options.size());
+                // Insert in the recent list
+                bottomSheet.updateRecent(options, getContext());
+            }
             // Create the animations
             final Animation animIn = new AlphaAnimation(1.0f, 0.0f);
             animIn.setDuration(1500);
-            textViewResult.startAnimation(animIn);
+            result.startAnimation(animIn);
             final Animation animOut = new AlphaAnimation(0.0f, 1.0f);
             animOut.setDuration(1000);
 
             requireView().postDelayed(() -> {
-                textViewResult.setText(options.get(n));
-                textViewResult.startAnimation(animOut);
+                if (inRangeMode) result.setText(String.valueOf(n));
+                else result.setText(options.get(n));
+                result.startAnimation(animOut);
                 spinAnimation.setClickable(true);
                 spinAnimation.setLongClickable(true);
                 recentAnimation.setClickable(true);
                 recentAnimation.setLongClickable(true);
+                rangeSwitch.setClickable(true);
                 for (int i = 0; i < childCount; i++) {
                     Chip option = (Chip) optionsList.getChildAt(i);
                     option.setClickable(true);
@@ -207,13 +270,12 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
         boolean allowEquals = sp.getBoolean("allow_equals", false);
         if (!option.equals("")) currentOption = option;
         else {
-            TextView entry = requireView().findViewById(R.id.entryRoulette);
-            currentOption = entry.getText().toString().trim();
+            currentOption = optionText.getText().toString().trim();
             currentOption = currentOption.replaceAll("\\s+", " ");
             // Return if the string entered is a duplicate, reset the text field
             if ((!allowEquals && options.contains(currentOption)) || currentOption.equals(""))
                 return;
-            entry.setText("");
+            optionText.setText("");
         }
         final ChipGroup optionsList = requireView().findViewById(R.id.rouletteChipList);
 

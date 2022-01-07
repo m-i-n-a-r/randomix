@@ -16,24 +16,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_vertical_margin"
-            app:fontFamily="@font/opensans_extrabold"
             android:gravity="center_horizontal"
             android:maxLines="1"
             android:text="@string/hello_roulette_fragment"
             android:textAllCaps="true"
-            android:textSize="@dimen/title_text_size" />
+            android:textSize="@dimen/title_text_size"
+            app:fontFamily="@font/opensans_extrabold" />
 
         <TextView
             android:id="@+id/descriptionRoulette"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/linear_vertical_margin"
-            app:fontFamily="@font/opensans_regular"
             android:gravity="center_horizontal"
             android:text="@string/description_roulette"
-            android:textSize="@dimen/description_text_size" />
+            android:textSize="@dimen/description_text_size"
+            app:fontFamily="@font/opensans_regular" />
 
         <LinearLayout
+            android:id="@+id/textOptionRoulette"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -49,8 +50,8 @@
                 android:clickable="true"
                 android:contentDescription="@string/delete_roulette_hint"
                 android:focusable="true"
-                android:src="@drawable/recent_vector_animation"
-                android:hapticFeedbackEnabled="false"/>
+                android:hapticFeedbackEnabled="false"
+                android:src="@drawable/recent_vector_animation" />
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -59,8 +60,6 @@
                 android:layout_margin="@dimen/activity_vertical_margin"
                 android:layout_weight="0.8"
                 android:hint="@string/insert_roulette_hint"
-                app:hintEnabled="true"
-                app:expandedHintEnabled="true"
                 app:boxBackgroundColor="?android:statusBarColor"
                 app:boxCornerRadiusBottomEnd="10dp"
                 app:boxCornerRadiusBottomStart="10dp"
@@ -70,7 +69,9 @@
                 app:boxStrokeWidthFocused="@dimen/text_box_focused_stroke_width"
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/goodGray"
+                app:expandedHintEnabled="true"
                 app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
                 app:hintTextColor="?colorAccent">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -101,6 +102,111 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/rangeOptionRoulette"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/roulette_insertion_height"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:layout_weight=".45"
+                android:hint="@string/min"
+                app:boxBackgroundColor="?android:statusBarColor"
+                app:boxCornerRadiusBottomEnd="@dimen/bottom_sheet_corners"
+                app:boxCornerRadiusBottomStart="@dimen/bottom_sheet_corners"
+                app:boxCornerRadiusTopEnd="@dimen/bottom_sheet_corners"
+                app:boxCornerRadiusTopStart="@dimen/bottom_sheet_corners"
+                app:boxStrokeWidth="@dimen/text_box_stroke_width"
+                app:boxStrokeWidthFocused="@dimen/text_box_focused_stroke_width"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/goodGray"
+                app:expandedHintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="?colorAccent"
+                app:startIconDrawable="@drawable/ic_range_min_24dp"
+                app:startIconTint="@color/goodGray">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/rangeMinRoulette"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:padding="0dp"
+                    android:textAlignment="center"
+                    android:textCursorDrawable="@null" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/animatedRangeRoulette"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight=".2"
+                android:contentDescription="@string/range"
+                android:maxWidth="@dimen/max_size_icon"
+                android:maxHeight="@dimen/max_size_icon"
+                android:minWidth="@dimen/max_size_icon_small"
+                android:minHeight="@dimen/max_size_icon_small"
+                android:src="@drawable/animated_range_roulette" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/roulette_insertion_height"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:layout_weight=".45"
+                android:hint="@string/max"
+                app:boxBackgroundColor="?android:statusBarColor"
+                app:boxCornerRadiusBottomEnd="@dimen/bottom_sheet_corners"
+                app:boxCornerRadiusBottomStart="@dimen/bottom_sheet_corners"
+                app:boxCornerRadiusTopEnd="@dimen/bottom_sheet_corners"
+                app:boxCornerRadiusTopStart="@dimen/bottom_sheet_corners"
+                app:boxStrokeWidth="@dimen/text_box_stroke_width"
+                app:boxStrokeWidthFocused="@dimen/text_box_focused_stroke_width"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/goodGray"
+                app:expandedHintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="?colorAccent"
+                app:startIconDrawable="@drawable/ic_range_max_24dp"
+                app:startIconTint="@color/goodGray">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/rangeMaxRoulette"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:padding="0dp"
+                    android:textAlignment="center"
+                    android:textCursorDrawable="@null" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/rangeSwitchRoulette"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+            android:checked="false"
+            android:text="@string/range"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:switchPadding="@dimen/activity_horizontal_margin"
+            app:switchTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:useMaterialThemeColors="true" />
+
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="@dimen/horizontal_scroll_height"
@@ -111,11 +217,11 @@
                 style="@style/Widget.MaterialComponents.ChipGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
                 android:paddingStart="@dimen/activity_horizontal_margin"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
                 app:chipSpacing="@dimen/chip_spacing"
-                app:singleLine="true"
-                android:animateLayoutChanges="true">
+                app:singleLine="true">
 
             </com.google.android.material.chip.ChipGroup>
         </HorizontalScrollView>
@@ -129,21 +235,21 @@
             android:clickable="true"
             android:contentDescription="@string/spin_roulette"
             android:focusable="true"
-            android:src="@drawable/roulette_main_vector_animation"
-            android:hapticFeedbackEnabled="false"/>
+            android:hapticFeedbackEnabled="false"
+            android:src="@drawable/roulette_main_vector_animation" />
 
         <TextView
             android:id="@+id/resultRoulette"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/result_text_margin"
-            android:layout_marginBottom="@dimen/result_text_margin"
             android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/result_text_margin"
             android:layout_marginEnd="@dimen/activity_horizontal_margin"
-            app:fontFamily="@font/opensans_bold"
+            android:layout_marginBottom="@dimen/result_text_margin"
             android:gravity="center_horizontal"
             android:text="@string/result_placeholder"
-            android:textSize="@dimen/result_text_size" />
+            android:textSize="@dimen/result_text_size"
+            app:fontFamily="@font/opensans_bold" />
 
     </LinearLayout>
 

@@ -130,5 +130,6 @@
     <string name="eight">Otto</string>
     <string name="nine">Nove</string>
     <string name="ten">Dieci</string>
+    <string name="range">Intervallo</string>
 
 </resources>

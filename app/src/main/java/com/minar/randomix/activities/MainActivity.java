@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         assert accent != null;
+        if (accent.equals("blue")) setTheme(R.style.AppTheme); // Default
         if (accent.equals("green")) setTheme(R.style.AppTheme_Green);
         if (accent.equals("aqua")) setTheme(R.style.AppTheme_Aqua);
         if (accent.equals("orange")) setTheme(R.style.AppTheme_Orange);

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="GoogleAppIndexingWarning"
     package="com.minar.randomix">
 
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -14,9 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:resizeableActivity="true"
-        android:theme="@style/AppTheme"
+        android:theme="@style/SplashTheme"
         tools:ignore="UnusedAttribute">
-        <!-- windowSoftInputMode prevents the bottomnavbar from sliding up when the keyboard is open -->
+        <!-- windowSoftInputMode prevents the bottom navbar from sliding up when the keyboard is open -->
         <!-- configChanges tells the system to not execute onDestroy() and onCreate() when split screen is triggered or resized -->
         <activity
             android:name=".activities.MainActivity"
@@ -33,7 +32,8 @@
         <activity
             android:name="com.minar.randomix.activities.IntroActivity"
             android:label="@string/app_name"
-            android:screenOrientation="fullSensor"/>
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>

@@ -18,7 +18,8 @@
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
         <item name="fontFamily">@font/opensans_regular</item>
         <item name="android:fontFamily">@font/opensans_regular</item>
-        <item name="alertDialogTheme">@style/DialogTheme</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
+        <item name="alertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
     </style>
 
     <!-- Splash screen theme -->
@@ -32,7 +33,7 @@
     </style>
 
     <style name="SplashTheme.Night.Legacy">
-        <item name="android:windowBackground">@drawable/ic_launcher_foreground</item>
+        <item name="android:windowBackground">@drawable/static_randomix_dark</item>
     </style>
 
 </resources>

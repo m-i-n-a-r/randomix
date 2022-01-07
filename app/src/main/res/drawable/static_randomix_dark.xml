@@ -14,8 +14,6 @@
     <item
         android:bottom="64dp"
         android:drawable="@drawable/static_branding_image"
-        android:end="48dp"
-        android:gravity="bottom"
-        android:start="48dp"
+        android:gravity="bottom|center"
         android:top="24dp" />
 </layer-list>

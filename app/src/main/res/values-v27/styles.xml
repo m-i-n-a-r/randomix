@@ -1,12 +1,17 @@
 <resources>
 
     <!-- Android P and above application theme -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="AppTheme" parent="AppTheme.Base" />
+
+    <style name="AppTheme.Base" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:windowLightNavigationBar">true</item>
         <item name="android:navigationBarColor">@color/colorBackground</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:colorBackground">@color/colorBackground</item>
         <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorPrimaryContainer">@color/colorAccentTranslucent</item>
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorSecondaryContainer">@color/colorAccentTranslucent</item> <!-- Navbar item halo -->
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:statusBarColor">@color/colorBackground</item>
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
@@ -14,10 +19,12 @@
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
         <item name="fontFamily">@font/opensans_regular</item>
         <item name="android:fontFamily">@font/opensans_regular</item>
-        <item name="alertDialogTheme">@style/DialogTheme</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
+        <item name="alertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
     </style>
 
     <style name="SplashTheme" parent="SplashTheme.V27" />
+
     <style name="SplashTheme.V27" parent="SplashTheme.Base.Legacy">
         <item name="android:windowLightNavigationBar">true</item>
         <item name="android:navigationBarColor">@color/colorBackground</item>

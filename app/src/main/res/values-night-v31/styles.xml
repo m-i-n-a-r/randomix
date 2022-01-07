@@ -5,8 +5,8 @@
     <style name="SplashTheme" parent="SplashTheme.Night.V31" />
 
     <style name="SplashTheme.Night.V31" parent="SplashTheme.Night">
-        <item name="android:windowSplashScreenAnimatedIcon">@drawable/animated_logo</item>
-        <item name="android:windowSplashScreenAnimationDuration">1200</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/animated_randomix_logo</item>
+        <item name="android:windowSplashScreenAnimationDuration">1000</item>
         <item name="android:windowSplashScreenBrandingImage">@drawable/static_branding_image</item>
     </style>
 

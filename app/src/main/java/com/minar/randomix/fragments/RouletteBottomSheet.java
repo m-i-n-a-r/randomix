@@ -24,6 +24,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.minar.randomix.R;
 import com.minar.randomix.adapter.RecentAdapter;
+import com.minar.randomix.utilities.Constants;
 import com.minar.randomix.utilities.OnItemClickListener;
 
 import java.lang.reflect.Type;
@@ -148,9 +149,9 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
         fetchRecentList(context);
 
         // I know, it's awful, but it was the only way to avoid big changes and crashes
-        if (!recentList.get(position).contains("HorribleWorkaroundToPin"))
-            recentList.get(position).add("HorribleWorkaroundToPin");
-        else recentList.get(position).remove("HorribleWorkaroundToPin");
+        if (!recentList.get(position).contains(Constants.PIN_WORKAROUND_ENTRY))
+            recentList.get(position).add(Constants.PIN_WORKAROUND_ENTRY);
+        else recentList.get(position).remove(Constants.PIN_WORKAROUND_ENTRY);
 
         adapter.notifyItemChanged(position);
         String json = gson.toJson(recentList);
@@ -186,7 +187,7 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
                 Collections.sort(newRecent);
 
                 // Don't consider the pin entry
-                recent.remove("HorribleWorkaroundToPin");
+                recent.remove(Constants.PIN_WORKAROUND_ENTRY);
                 Collections.sort(recent);
                 if (newRecent.equals(recent)) return;
             }
@@ -195,7 +196,7 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
         if (recentList.size() > 9) {
             // Remove the first non-pinned element
             for (List<String> recent : recentList) {
-                if (!recent.contains("HorribleWorkaroundToPin")) {
+                if (!recent.contains(Constants.PIN_WORKAROUND_ENTRY)) {
                     recentList.remove(recent);
                     recentList.add(values);
                     break;

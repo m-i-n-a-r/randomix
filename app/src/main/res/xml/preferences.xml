@@ -44,6 +44,14 @@
             android:title="@string/allow_equals_name"
             app:iconSpaceReserved="false" />
 
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="remove_last"
+            android:summaryOff="@string/remove_last_description_off"
+            android:summaryOn="@string/remove_last_description_on"
+            android:title="@string/remove_last_name"
+            app:iconSpaceReserved="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

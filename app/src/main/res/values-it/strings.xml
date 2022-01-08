@@ -131,5 +131,9 @@
     <string name="nine">Nove</string>
     <string name="ten">Dieci</string>
     <string name="range">Intervallo</string>
+    <string name="wrong_range_roulette">L\'intervallo è sbagliato o vuoto, per favore inserisci entrambi i valori correttamente!</string>
+    <string name="remove_last_name">Rimuovi ultima scelta</string>
+    <string name="remove_last_description_on">Rimuovi automaticamente l\'ultima opzione scelta nella roulette</string>
+    <string name="remove_last_description_off">Non rimuovere automaticamente l\'ultima opzione scelta nella roulette</string>
 
 </resources>

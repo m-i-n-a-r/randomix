@@ -28,6 +28,7 @@
     <string name="letters_shortcut">A-Z Letters</string>
     <string name="numbers_1_100_shortcut" translatable="false">1–100</string>
     <string name="range">Range</string>
+    <string name="wrong_range_roulette">The range is wrong or empty, please enter both the values correctly!</string>
     <string name="max" translatable="false">Max</string>
     <string name="min" translatable="false">Min</string>
 
@@ -151,6 +152,9 @@
     <string name="allow_equals_name">Allow equal options</string>
     <string name="allow_equals_description_on">Equal options in roulette allowed</string>
     <string name="allow_equals_description_off">Equal options in roulette not allowed</string>
+    <string name="remove_last_name">Remove last chosen</string>
+    <string name="remove_last_description_on">Remove the last chosen option in the roulette automatically</string>
+    <string name="remove_last_description_off">Don\'t remove the last chosen option in the roulette automatically</string>
 
     <!-- Rate app dialog -->
     <string name="positive_button">Review!</string>

@@ -27,6 +27,7 @@ import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.minar.randomix.R;
 import com.minar.randomix.activities.MainActivity;
+import com.minar.randomix.utilities.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -186,10 +187,22 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
         // Spin the roulette
         if (pressedId == R.id.buttonSpinRoulette) {
             final ImageView spinAnimation = requireView().findViewById(R.id.buttonSpinRoulette);
+            int minValue = -1, maxValue = -1;
             if (!inRangeMode) {
-                // Break the case if the list is empty to avoid crashes and null pointers
+                // Send a toast if the list is empty to avoid crashes and null pointers
                 if (options.size() < 2) {
                     Toast.makeText(getContext(), getString(R.string.no_entry_roulette), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            }
+            else {
+                // Send a toast if the ranges are empty or have wrong values
+                try {
+                    minValue = Integer.parseInt(rangeMin.getText().toString());
+                    maxValue = Integer.parseInt(rangeMax.getText().toString());
+                } catch (Exception ignored) {}
+                if (minValue == -1 || maxValue == -1 || minValue >= maxValue) {
+                    Toast.makeText(getContext(), getString(R.string.wrong_range_roulette), Toast.LENGTH_SHORT).show();
                     return;
                 }
             }
@@ -216,11 +229,10 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
             int n;
             if (inRangeMode) {
                 // Best way to generate number in range
-                n = ThreadLocalRandom.current().nextInt(
-                        Integer.parseInt(rangeMin.getText().toString()),
-                        Integer.parseInt(rangeMax.getText().toString()) + 1);
+                n = ThreadLocalRandom.current().nextInt(minValue, maxValue + 1);
             } else {
                 Random ran = new Random();
+
                 n = ran.nextInt(options.size());
                 // Insert in the recent list
                 bottomSheet.updateRecent(options, getContext());
@@ -245,6 +257,9 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
                     Chip option = (Chip) optionsList.getChildAt(i);
                     option.setClickable(true);
                 }
+                // Remove the selected option from the list, if the option is enabled
+                boolean removeLast = sp.getBoolean("remove_last", false);
+                if (removeLast) removeChip((Chip) optionsList.getChildAt(n));
             }, 1500);
         }
     }
@@ -336,6 +351,8 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
     void restoreOption(List<String> option) {
         removeAllChips();
         for (String item : option) {
+            // It's awful. I know.
+            if (item.equals(Constants.PIN_WORKAROUND_ENTRY)) continue;
             insertRouletteChip(item, false);
         }
     }

@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.minar.randomix.R;
+import com.minar.randomix.utilities.Constants;
 import com.minar.randomix.utilities.OnItemClickListener;
 import com.minar.randomix.utilities.RecentUtils;
 
@@ -67,7 +68,7 @@ public class RecentAdapter extends RecyclerView.Adapter<RecentAdapter.RecentHold
     @Override
     public void onBindViewHolder(@NonNull RecentHolder holder, int position) {
         List<String> current = recentList.get(position);
-        if (current.contains("HorribleWorkaroundToPin")) {
+        if (current.contains(Constants.PIN_WORKAROUND_ENTRY)) {
             holder.optionList.setTypeface(null, Typeface.BOLD);
             holder.optionList.setTextColor(getThemeAccentColor(holder.adapter.inflater.getContext()));
         } else {

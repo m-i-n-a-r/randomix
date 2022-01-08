@@ -128,5 +128,10 @@
     <string name="eight">Osm</string>
     <string name="nine">Devět</string>
     <string name="ten">Deset</string>
+    <string name="range">Rozsah</string>
+    <string name="wrong_range_roulette">Rozsah je nesprávný nebo prázdný, zadejte prosím obě hodnoty správně!</string>
+    <string name="remove_last_name">Odstranit poslední vybraný</string>
+    <string name="remove_last_description_on">Automaticky odstraňte poslední vybranou možnost v ruletě</string>
+    <string name="remove_last_description_off">Neodstraňujte automaticky poslední zvolenou možnost v ruletě</string>
 
 </resources>

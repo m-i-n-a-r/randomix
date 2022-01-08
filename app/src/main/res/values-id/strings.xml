@@ -22,6 +22,8 @@
     <string name="recent_title">Opsi terbaru, ketuk untuk memulihkan</string>
     <string name="bottom_sheet_no_option">Tidak ada opsi terbaru, putar roletnya untuk menyimpan opsi terbaru!</string>
     <string name="letters_shortcut">Huruf A-Z</string>
+    <string name="range">Jangkauan</string>
+    <string name="wrong_range_roulette">Rentang salah atau kosong, harap masukkan kedua nilai dengan benar!</string>
 
     <!-- Coin -->
     <string name="hello_coin_fragment">Mode Koin</string>
@@ -131,6 +133,9 @@
     <string name="allow_equals_name">Perbolehkan opsi yang sama</string>
     <string name="allow_equals_description_on">Opsi yang sama di rolet diperbolehkan</string>
     <string name="allow_equals_description_off">Opsi yang sama di rolet tidak diperbolehkan</string>
+    <string name="remove_last_name">Hapus yang terakhir dipilih</string>
+    <string name="remove_last_description_on">Hapus opsi yang terakhir dipilih di roulette secara otomatis</string>
+    <string name="remove_last_description_off">Jangan hapus opsi yang terakhir dipilih di roulette secara otomatis</string>
 
     <!-- Rate app dialog -->
     <string name="positive_button">Ulasan!</string>

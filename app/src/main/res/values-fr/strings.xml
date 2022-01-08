@@ -21,6 +21,9 @@
     <string name="generic_option">Option</string>
     <string name="recent_title">Options récentes, tapez pour restaurer</string>
     <string name="bottom_sheet_no_option">Pas d\'otions récentes, tournez la roulette pour sauvegarder les options actuelles</string>
+    <string name="letters_shortcut">Lettres A-Z</string>
+    <string name="range">Varier</string>
+    <string name="wrong_range_roulette">La plage est erronée ou vide, veuillez saisir les deux valeurs correctement !</string>
 
     <!-- Coin -->
     <string name="hello_coin_fragment">Pile ou face</string>
@@ -123,6 +126,9 @@
     <string name="allow_equals_name">Autoriser options égales</string>
     <string name="allow_equals_description_on">Options égales à la roulette autorisées</string>
     <string name="allow_equals_description_off">Options égales à la roulette interdit</string>
+    <string name="remove_last_name">Supprimer le dernier choisi</string>
+    <string name="remove_last_description_on">Supprimez automatiquement la dernière option choisie dans la roulette</string>
+    <string name="remove_last_description_off">Ne supprimez pas automatiquement la dernière option choisie dans la roulette</string>
 
     <!-- Rate app dialog -->
     <string name="positive_button">Laisser un avis!</string>
@@ -141,6 +147,5 @@
     <string name="eight">Huit</string>
     <string name="nine">Neuf</string>
     <string name="ten">Dix</string>
-    <string name="letters_shortcut">Lettres A-Z</string>
 
 </resources>

@@ -135,5 +135,10 @@
     <string name="eight">Ocho</string>
     <string name="nine">Nueve</string>
     <string name="ten">Diez</string>
+    <string name="range">Rango</string>
+    <string name="wrong_range_roulette">El rango es incorrecto o está vacío, ¡ingrese ambos valores correctamente!</string>
+    <string name="remove_last_name">Eliminar último elegido</string>
+    <string name="remove_last_description_on">Elimina la última opción elegida en la ruleta automáticamente</string>
+    <string name="remove_last_description_off">No elimine la última opción elegida en la ruleta automáticamente</string>
 
 </resources>

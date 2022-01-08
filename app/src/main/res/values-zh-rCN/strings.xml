@@ -21,6 +21,8 @@
     <string name="generic_option">选项</string>
     <string name="recent_title">最近的选项组，点按以恢复</string>
     <string name="bottom_sheet_no_option">没有最近的选项组，转动轮盘来保存当前的选项组！</string>
+    <string name="range">范围</string>
+    <string name="wrong_range_roulette">范围错误或为空，请正确输入两个值！</string>
 
     <!-- Coin -->
     <string name="hello_coin_fragment">硬币模式</string>
@@ -123,6 +125,9 @@
     <string name="allow_equals_name">相同的轮盘选项</string>
     <string name="allow_equals_description_on">允许相同的轮盘选项</string>
     <string name="allow_equals_description_off">不允许相同的轮盘选项</string>
+    <string name="remove_last_name">删除最后选择。</string>
+    <string name="remove_last_description_on">自动删除轮盘赌中最后选择的选项</string>
+    <string name="remove_last_description_off">不要自动删除轮盘赌中最后选择的选项</string>
 
     <!-- Rate app dialog -->
     <string name="positive_button">去评价！</string>

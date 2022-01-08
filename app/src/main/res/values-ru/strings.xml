@@ -110,8 +110,8 @@
     <string name="cancel_button">нет</string>
     <string name="rating_message">
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
-        \nХорошо, теперь, когда я обращаю ваше внимание, могу ли я попросить вас оставить хороший отзыв, чтобы помочь Randomix расти
-        немного? Я действительно ценю это! Хорошего дня! :D\n
+        \nХорошо, теперь, когда я обращаю ваше внимание, могу ли я попросить вас оставить хороший отзыв,
+        чтобы помочь Randomix расти немного? Я действительно ценю это! Хорошего дня! :D\n
     </string>
     <string name="feedback_text">У меня есть кое-что сказать</string>
     <string name="not_again_button">не спрашивай снова</string>
@@ -131,5 +131,10 @@
     <string name="eight">Восемь</string>
     <string name="nine">Девять</string>
     <string name="letters_shortcut">Буквы A-Z</string>
+    <string name="range">Диапазон</string>
+    <string name="wrong_range_roulette">Диапазон неверный или пустой, пожалуйста, введите оба значения правильно!</string>
+    <string name="remove_last_name">Удалить последний выбранный</string>
+    <string name="remove_last_description_on">Удалить последний выбранный вариант в рулетке автоматически</string>
+    <string name="remove_last_description_off">Не удаляйте автоматически последнюю выбранную опцию в рулетке</string>
 
 </resources>

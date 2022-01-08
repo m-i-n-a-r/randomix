@@ -24,6 +24,8 @@
     <string name="recent_title">Letzte Optionen, tippe zum Wiederherstellen</string>
     <string name="bottom_sheet_no_option">Keine letzten Optionen, drehe das Roulette um die aktuellen Optionen zu speichern!</string>
     <string name="letters_shortcut">Buchstaben von A-Z</string>
+    <string name="range">Bereich</string>
+    <string name="wrong_range_roulette">Der Bereich ist falsch oder leer, bitte geben Sie beide Werte richtig ein!</string>
 
     <!-- Coin -->
     <string name="hello_coin_fragment">Münz Modus</string>
@@ -135,7 +137,11 @@
     <string name="allow_equals_name">Erlaube gleiche Optionen</string>
     <string name="allow_equals_description_on">Gleiche Optionen beim Roulette erlaubt</string>
     <string name="allow_equals_description_off">Gleiche Optionen beim Roulette nicht erlaubt</string>
+    <string name="remove_last_name">Zuletzt Ausgewählte entfernen</string>
+    <string name="remove_last_description_on">Entfernen Sie automatisch die zuletzt gewählte Option im Roulette</string>
+    <string name="remove_last_description_off">Entfernen Sie nicht automatisch die zuletzt gewählte Option im Roulette</string>
 
+    <!-- Rate app dialog -->
     <string name="positive_button">Rezension!</string>
     <string name="negative_button">Ich bin faul</string>
     <string name="cancel_button">Nah</string>

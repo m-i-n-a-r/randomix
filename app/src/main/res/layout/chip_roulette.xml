@@ -5,6 +5,8 @@
     android:layout_height="wrap_content"
     android:text="@string/title_roulette"
     android:textAlignment="center"
+    app:chipCornerRadius="@dimen/bottom_sheet_corners"
+    app:chipStrokeColor="@color/goodGrayTranslucent"
     app:chipBackgroundColor="@color/goodGrayTranslucent"
     app:chipSurfaceColor="?android:colorBackground"
     app:rippleColor="?colorAccent" />

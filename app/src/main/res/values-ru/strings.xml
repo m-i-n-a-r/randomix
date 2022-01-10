@@ -136,5 +136,6 @@
     <string name="remove_last_name">Удалить последний выбранный</string>
     <string name="remove_last_description_on">Удалить последний выбранный вариант в рулетке автоматически</string>
     <string name="remove_last_description_off">Не удаляйте автоматически последнюю выбранную опцию в рулетке</string>
+    <string name="delete_all_roulette_confirmation">Вы уверены, что хотите удалить все введенные параметры?</string>
 
 </resources>

@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.minar.randomix.R;
 import com.minar.randomix.activities.MainActivity;
@@ -127,7 +128,14 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
                     insertRouletteChip(option2, true);
                     insertRouletteChip(option3, true);
                 } else {
-                    removeAllChips();
+                    // Ask for confirmation and eventually remove every chip
+                    new MaterialAlertDialogBuilder(requireContext())
+                            // Use strings from the Android sources
+                            .setTitle(getString(android.R.string.dialog_alert_title))
+                            .setMessage(getString(R.string.delete_all_roulette_confirmation))
+                            .setPositiveButton(getString(android.R.string.ok), (dialogInterface, i) -> removeAllChips())
+                            .setNegativeButton(getString(android.R.string.cancel), (dialogInterface, i) -> {})
+                            .show();
                 }
             }
             // Populate the range text fields

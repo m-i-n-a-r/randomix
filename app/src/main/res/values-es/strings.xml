@@ -140,5 +140,6 @@
     <string name="remove_last_name">Eliminar último elegido</string>
     <string name="remove_last_description_on">Elimina la última opción elegida en la ruleta automáticamente</string>
     <string name="remove_last_description_off">No elimine la última opción elegida en la ruleta automáticamente</string>
+    <string name="delete_all_roulette_confirmation">¿Está seguro de que desea eliminar todas las opciones ingresadas?</string>
 
 </resources>

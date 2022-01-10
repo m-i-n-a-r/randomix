@@ -23,6 +23,7 @@
     <string name="bottom_sheet_no_option">没有最近的选项组，转动轮盘来保存当前的选项组！</string>
     <string name="range">范围</string>
     <string name="wrong_range_roulette">范围错误或为空，请正确输入两个值！</string>
+    <string name="delete_all_roulette_confirmation">您确定要删除所有输入的选项吗？</string>
 
     <!-- Coin -->
     <string name="hello_coin_fragment">硬币模式</string>

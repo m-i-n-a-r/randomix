@@ -24,6 +24,7 @@
     <string name="letters_shortcut">Huruf A-Z</string>
     <string name="range">Jangkauan</string>
     <string name="wrong_range_roulette">Rentang salah atau kosong, harap masukkan kedua nilai dengan benar!</string>
+    <string name="delete_all_roulette_confirmation">Apakah Anda yakin ingin menghapus semua opsi yang dimasukkan?</string>
 
     <!-- Coin -->
     <string name="hello_coin_fragment">Mode Koin</string>

@@ -133,5 +133,6 @@
     <string name="remove_last_name">Odstranit poslední vybraný</string>
     <string name="remove_last_description_on">Automaticky odstraňte poslední vybranou možnost v ruletě</string>
     <string name="remove_last_description_off">Neodstraňujte automaticky poslední zvolenou možnost v ruletě</string>
+    <string name="delete_all_roulette_confirmation">Opravdu chcete smazat všechny zadané možnosti?</string>
 
 </resources>

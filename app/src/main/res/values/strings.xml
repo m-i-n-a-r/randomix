@@ -31,6 +31,7 @@
     <string name="wrong_range_roulette">The range is wrong or empty, please enter both the values correctly!</string>
     <string name="max" translatable="false">Max</string>
     <string name="min" translatable="false">Min</string>
+    <string name="delete_all_roulette_confirmation">Are you sure you want to delete all the entered options?</string>
 
     <!-- Coin -->
     <string name="hello_coin_fragment">Coin mode</string>

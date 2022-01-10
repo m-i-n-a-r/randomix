@@ -26,6 +26,7 @@
     <string name="letters_shortcut">Buchstaben von A-Z</string>
     <string name="range">Bereich</string>
     <string name="wrong_range_roulette">Der Bereich ist falsch oder leer, bitte geben Sie beide Werte richtig ein!</string>
+    <string name="delete_all_roulette_confirmation">Möchten Sie wirklich alle eingegebenen Optionen löschen?</string>
 
     <!-- Coin -->
     <string name="hello_coin_fragment">Münz Modus</string>

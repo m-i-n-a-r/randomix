@@ -51,12 +51,13 @@ The main purpose of the app is provide a **random choice** in different ways. Th
 
 ## Screenshots
 <p align='center'>
-  <img src='https://i.imgur.com/NwyG02v.png' width='22%'/>
-  <img src='https://i.imgur.com/cmLGNHE.png' width='22%'/>
-  <img src='https://i.imgur.com/5DQl2QM.png' width='22%'/>
-  <img src='https://i.imgur.com/yPcheGu.png' width='22%'/>
-  <img src='https://i.imgur.com/wtDtRNn.png' width='22%'/>
-  <img src='https://i.imgur.com/TFM5Bq2.png' width='22%'/>
+  <img src='https://i.imgur.com/GrUTxZ8.png' width='22%'/>
+  <img src='https://i.imgur.com/NKChsm2.png' width='22%'/>
+  <img src='https://i.imgur.com/cvPcNxj.png' width='22%'/>
+  <img src='https://i.imgur.com/YUVUGvI.png' width='22%'/>
+  <img src='https://i.imgur.com/g4UxqVV.png' width='22%'/>
+  <img src='https://i.imgur.com/2SFjrLG.png' width='22%'/>
+  <img src='https://i.imgur.com/eclCXiC.png' width='22%'/>
   <img src='https://i.imgur.com/Ps0Frge.png' width='22%'/>
 </p>
 

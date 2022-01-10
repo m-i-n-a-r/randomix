@@ -73,9 +73,9 @@ The app is now available through Google Play and F-Droid.
      height="80">](https://play.google.com/store/apps/details?id=com.minar.randomix)
 
 ## Credits and contributions
-Birday uses an open source library:
+Randomix uses an open source library:
 - [App Intro](https://github.com/AppIntro/AppIntro)
 
-Currently, Birday supports the languages in the above table. If you want to translate the app in any other language or update an existing translation, just contact me or send a pull request: you'll be quoted both on Github and in the Play Store description.
+Currently, Randomix supports the languages in the above table. If you want to translate the app in any other language or update an existing translation, just contact me or send a pull request: you'll be quoted both on Github and in the Play Store description.
 
 This app was written during my free time as a training. It was first published on June 1, 2018. Many good devs have helped me understanding the best practices and they taught me a lot of useful tricks. A special thank to every contributor. and God bless Stack Overflow.

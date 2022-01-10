@@ -1,0 +1,5 @@
+- Material You! Randomix now uses the most modern design guidelines
+- Range feature, to choose one or more number in a custom range
+- Confirmation dialog when trying to delete all the options
+- Many fixes
+- Translations updated

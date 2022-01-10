@@ -41,8 +41,8 @@ The main purpose of the app is provide a **random choice** in different ways. Th
 - Custom ranges (values from 0 to 99999)
 - Multiwindows support
 - Android 12 animated splashscreen supported
-- First time introduction ([Appintro](https://github.com/AppIntro/AppIntro))
-- Rate the app dialog ([gene-rate](https://github.com/Pixplicity/gene-rate))
+- First time introduction
+- Rate the app dialog
 - Simple and precise UI, following Material You guidelines
 - Allow equal options, dice number, rude answers, remove last chosen option in the roulette
 - Sounds, vibration and other options

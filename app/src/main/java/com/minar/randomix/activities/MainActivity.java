@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         // Retrieve the shared preferences
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         String theme = sp.getString("theme_color", "system");
-        String accent = sp.getString("accent_color", "blue");
+        String accent = sp.getString("accent_color", "system");
         String lastItem = sp.getString("last_page", "roulette");
 
         if (!sp.getBoolean("first", false)) {
@@ -51,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         assert accent != null;
-        if (accent.equals("blue")) setTheme(R.style.AppTheme); // Default
+        if (accent.equals("system")) setTheme(R.style.AppTheme_System); // Default
+        if (accent.equals("blue")) setTheme(R.style.AppTheme_Blue);
         if (accent.equals("green")) setTheme(R.style.AppTheme_Green);
         if (accent.equals("aqua")) setTheme(R.style.AppTheme_Aqua);
         if (accent.equals("orange")) setTheme(R.style.AppTheme_Orange);

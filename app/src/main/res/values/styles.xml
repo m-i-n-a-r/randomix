@@ -74,6 +74,14 @@
     </style>
 
     <!-- Accent styles -->
+    <style name="AppTheme.System" parent="AppTheme">
+        <item name="colorAccent">@color/aquaAccent</item>
+        <item name="colorPrimary">@color/aquaAccent</item>
+        <item name="colorSecondary">@color/aquaAccent</item>
+        <item name="colorPrimaryContainer">@color/aquaAccentTranslucent</item>
+        <item name="colorSecondaryContainer">@color/aquaAccentTranslucent</item>
+    </style>
+
     <style name="AppTheme.Aqua" parent="AppTheme">
         <item name="colorAccent">@color/aquaAccent</item>
         <item name="colorPrimary">@color/aquaAccent</item>

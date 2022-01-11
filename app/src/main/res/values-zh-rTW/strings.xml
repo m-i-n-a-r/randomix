@@ -1,0 +1,152 @@
+<resources>
+
+    <!-- Main strings -->
+    <string name="app_intro_description">一個用於在數字、答案、選項等之間隨機選擇的開源程式。讓隨機性發揮作用吧！ </string>
+    <string name="title_roulette">輪盤</string>
+    <string name="title_coin">硬幣</string>
+    <string name="title_dice">骰子</string>
+    <string name="title_magic_ball">魔力球</string>
+    <string name="title_settings">設定</string>
+    <string name="generic_result">結果是：</string>
+
+    <!-- Roulette -->
+    <string name="hello_roulette_fragment">輪盤模式</string>
+    <string name="description_roulette">你需要做出選擇嗎？你對怎麼樣都無法做出決定的朋友們感到厭煩了嗎？輪盤會幫你做出決定！長按輪盤來新增通用的選項或將所有選項移除。 </string>
+    <string name="spin_roulette">轉啊轉！ </string>
+    <string name="insert_roulette_hint">輸入一個選項……</string>
+    <string name="delete_roulette_hint">刪除最後輸入的選項</string>
+    <string name="insert_roulette_description">請將可能的選項列在下方以將它們加入輪盤。 </string>
+    <string name="no_entry_roulette">請至少加入兩個選項來轉動輪盤！ </string>
+    <string name="too_much_entries_roulette">你不能新增多於30個選項！ </string>
+    <string name="generic_option">選項</string>
+    <string name="recent_title">最近的選項組，點按以恢復</string>
+    <string name="bottom_sheet_no_option">沒有最近的選項組，轉動輪盤來保存當前的選項組！ </string>
+    <string name="range">範圍</string>
+    <string name="wrong_range_roulette">範圍錯誤或為空，請正確輸入兩個值！ </string>
+    <string name="delete_all_roulette_confirmation">您確定要刪除所有輸入的選項嗎？ </string>
+
+    <!-- Coin -->
+    <string name="hello_coin_fragment">硬幣模式</string>
+    <string name="description_coin">"擲個硬幣很容易，但能幫你決定一件事要不要做。只有正面和反面。讓硬幣決定你的命運吧！ "</string>
+    <string name="flip_coin">擲硬幣！ </string>
+    <string name="hint_coin">點擊下方的按鈕！ </string>
+    <string name="result_head">正面！ </string>
+    <string name="result_tail">反面！ </string>
+
+    <!-- Magic Ball -->
+    <string name="hello_magic_ball_fragment">魔力球</string>
+    <string name="description_magic_ball">魔力球會告訴你答案！只需要問些什麼，它就會告訴你一個通用的答案。你甚至還可以到設定裡讓他回些幹話！</string>
+    <string name="shake_ball">搖動它！ </string>
+    <string name="hint_magic_ball">點擊下方的按鈕！ </string>
+    <string name="magic_answer_1">不是。 </string>
+    <string name="magic_answer_2">是的！ </string>
+    <string name="magic_answer_3">我不這麼認為。 </string>
+    <string name="magic_answer_4">可能吧！ </string>
+    <string name="magic_answer_5">這沒道理。 </string>
+    <string name="magic_answer_6">大概吧……</string>
+    <string name="magic_answer_7">你確定嗎？ </string>
+    <string name="magic_answer_8">大概是的。 </string>
+    <string name="magic_answer_9">大概不是。 </string>
+    <string name="magic_answer_10">當然。 </string>
+    <string name="magic_answer_11">問你自己。 </string>
+    <string name="magic_answer_12">不，荒謬。 </string>
+    <string name="magic_answer_13">當然好啦！ </string>
+    <string name="magic_answer_14">想想看。 </string>
+    <string name="magic_answer_15">誰知道呢。 </string>
+    <string name="magic_answer_16">你在開玩笑嗎？ </string>
+    <string name="magic_answer_17">就我看來，是的。 </string>
+    <string name="magic_answer_18">這很確定。 </string>
+    <string name="magic_answer_19">肯定是這樣。 </string>
+    <string name="magic_answer_20">前景不錯。 </string>
+    <string name="magic_answer_21">跡象顯示，是。 </string>
+    <string name="magic_answer_22">無需猶豫。 </string>
+    <string name="magic_answer_23">回應模糊不清，再試一次吧。 </string>
+    <string name="magic_answer_24">現在最好別告訴你。 </string>
+    <string name="magic_answer_25">現在無法預測！ </string>
+    <string name="magic_answer_26">集中精神再問一遍。 </string>
+    <string name="magic_answer_27">別指望它。 </string>
+    <string name="magic_answer_28">我的信息來源指出，不是。 </string>
+    <string name="magic_answer_29">非常可疑。 </string>
+    <string name="magic_answer_30">去問你最好的朋友吧。 </string>
+    <string name="magic_answer_rude_1">不，傻逼。</string>
+    <string name="magic_answer_rude_2">當然啦，智障。</string>
+    <string name="magic_answer_rude_3">你是傻子嗎？ </string>
+    <string name="magic_answer_rude_4">哈！真蠢。 </string>
+    <string name="magic_answer_rude_5">你他媽瘋了吧。 </string>
+    <string name="magic_answer_rude_6">去死吧。 </string>
+
+    <!-- Dice -->
+    <string name="hello_dice_fragment">骰子模式</string>
+    <string name="description_dice">骰子在某些場合如在桌遊中很有用！這個程式可為你扔一到十個骰子，在設定中調整骰子的數量。祝你好運！ </string>
+    <string name="throw_dice">擲骰子！ </string>
+    <string name="hint_dice">點擊下方的按鈕</string>
+
+    <!-- Settings -->
+    <string name="hello_settings_fragment">設定</string>
+    <string name="dev_description">我是個有禮貌的人，喜歡漂亮的東西，比如動畫、圖標、跑車、3D列印什麼的。我的工作是平面和程式設計師。 </string>
+    <string name="easter_egg">圖案不錯看吧？:D</string>
+    <string name="customization">自定義</string>
+    <string name="vibration_name">振動</string>
+    <string name="vibration_description_on">當按鈕按下時發出振動</string>
+    <string name="vibration_description_off">當按鈕按下時不會發出振動</string>
+    <string name="sound_name">音效</string>
+    <string name="sound_description_on">當按鈕按下時發出音效</string>
+    <string name="sound_description_off">當按鈕按下時不會發出音效</string>
+    <string name="dice_number_name">骰子數量</string>
+    <string name="dice_number_description">改變擲出的骰子數量，現在是%s</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="accent_description">改變預設的主題顏色，現在是%s</string>
+    <string name="accent_name">主題顏色</string>
+    <string name="blue">藍色</string>
+    <string name="aqua">水色</string>
+    <string name="green">綠色</string>
+    <string name="orange">橘色</string>
+    <string name="yellow">黃色</string>
+    <string name="teal">藍綠色</string>
+    <string name="violet">紫色</string>
+    <string name="pink">粉色</string>
+    <string name="light_blue">天藍色</string>
+    <string name="red">紅色</string>
+    <string name="lime">青黃色</string>
+    <string name="crimson">深紅色</string>
+    <string name="system_theme">系統預設</string>
+    <string name="dark_theme">暗色調</string>
+    <string name="light_theme">亮色調</string>
+    <string name="app_behavior">行為</string>
+    <string name="rude_answers_description_on">幹話模式已經啟用了，智障</string>
+    <string name="rude_answers_description_off">只有友善又禮貌的答案</string>
+    <string name="rude_answers_name">幹話模式</string>
+    <string name="hide_descriptions_name">隱藏模式說明</string>
+    <string name="hide_descriptions_description_on">模式說明被隱藏</string>
+    <string name="hide_descriptions_description_off">模式說明可見</string>
+    <string name="allow_equals_name">相同的輪盤選項</string>
+    <string name="allow_equals_description_on">允許相同的輪盤選項</string>
+    <string name="allow_equals_description_off">不允許相同的輪盤選項</string>
+    <string name="remove_last_name">刪除最後選擇。</string>
+    <string name="remove_last_description_on">自動刪除輪盤賭中最後選擇的選項</string>
+    <string name="remove_last_description_off">不要自動刪除輪盤賭中最後選擇的選項</string>
+
+    <!-- Rate app dialog -->
+    <string name="positive_button">去評價！ </string>
+    <string name="negative_button">我很懶</string>
+    <string name="cancel_button">算了，下次吧</string>
+    <string name="rating_message">
+        啊啊啊啊啊啊啊！ \n\n
+        好，現在你注意到我了，可以請你留下一個好的評價來幫助Randomix成長嗎？我會非常感激的！祝你有愉快的一天！ :D\n
+    </string>
+    <string name="feedback_text">我有一些事情要告訴你</string>
+    <string name="not_again_button">別再問我了</string>
+    <string name="letters_shortcut">A-Z 字母</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="ten">10</string>
+    <string name="theme_description">使用暗色、淺色、或自動選擇主顏色。目前設定為 %s</string>
+    <string name="theme_name">程式主題</string>
+
+</resources>

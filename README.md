@@ -26,6 +26,7 @@ The main purpose of the app is provide a **random choice** in different ways. Th
 | **Czech**             | complete | Miloš Koliáš, mormegil-cz|
 | **Simplified Chinese**| complete | pumguy                   |
 | **Indonesian**        | complete | the7thNightmare          |
+| **Chinese (Taiwan)**  | complete | Still34                  |
 
 ## Features
 - Every tab in the bottom navigation bar contains a type of random choice. The available types are:

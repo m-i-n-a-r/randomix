@@ -27,6 +27,7 @@ The main purpose of the app is provide a **random choice** in different ways. Th
 | **Simplified Chinese**| complete | pumguy                   |
 | **Indonesian**        | complete | the7thNightmare          |
 | **Chinese (Taiwan)**  | complete | Still34                  |
+| **Asturian**          | complete | Softastur                |
 
 ## Features
 - Every tab in the bottom navigation bar contains a type of random choice. The available types are:

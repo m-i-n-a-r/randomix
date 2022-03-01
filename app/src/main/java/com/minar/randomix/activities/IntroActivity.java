@@ -15,7 +15,7 @@ import com.minar.randomix.R;
 public class IntroActivity extends AppIntro {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        // Hide the statusbar (necessary because it's white)
+        // Hide the status bar (necessary because it's white)
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         // Color the navbar like the background
         getWindow().setNavigationBarColor(ContextCompat.getColor(getBaseContext(), R.color.iconGreen));

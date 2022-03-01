@@ -9,6 +9,8 @@ import androidx.preference.PreferenceFragmentCompat;
 
 import com.minar.randomix.R;
 
+import java.util.Objects;
+
 public class SettingsFragment extends PreferenceFragmentCompat implements OnSharedPreferenceChangeListener {
 
     @Override
@@ -20,7 +22,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
     public void onResume() {
         super.onResume();
         // Set up a listener whenever a key changes
-        getPreferenceScreen().getSharedPreferences()
+        Objects.requireNonNull(getPreferenceScreen().getSharedPreferences())
                 .registerOnSharedPreferenceChangeListener(this);
     }
 
@@ -28,7 +30,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
     public void onPause() {
         super.onPause();
         // Unregister the listener whenever a key changes
-        getPreferenceScreen().getSharedPreferences()
+        Objects.requireNonNull(getPreferenceScreen().getSharedPreferences())
                 .unregisterOnSharedPreferenceChangeListener(this);
     }
 

@@ -305,7 +305,6 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
         // Check if the limit is reached
         if (options.size() > 29 && limitNumber) {
             Toast.makeText(getContext(), getString(R.string.too_much_entries_roulette), Toast.LENGTH_SHORT).show();
-            System.out.println(options.toString());
             return;
         }
 

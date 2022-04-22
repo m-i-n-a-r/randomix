@@ -1,5 +1,6 @@
 <resources>
 
+    <!-- Main strings -->
     <string name="app_intro_description">Приложение с открытым исходным кодом для случайного выбора между номерами, ответами, вариантами и т. д. Пусть говорит случайность!</string>
     <string name="title_roulette">Рулетка</string>
     <string name="title_coin">Монетка</string>
@@ -7,6 +8,9 @@
     <string name="title_magic_ball">Волшебный шар</string>
     <string name="title_settings">Настройки</string>
     <string name="generic_result">Результат:</string>
+
+    <!-- Roulette -->
+    <string name="hello_roulette_fragment">Рулетка</string>
     <string name="description_roulette">Тебе нужно что-то выбрать? Ты устал от опросов и настоящих друзей? Рулетка решит за тебя! Нажмите и удерживайте рулетку, чтобы добавить общие параметры или очистить их.</string>
     <string name="spin_roulette">Крутим рулетку!</string>
     <string name="insert_roulette_hint">Введите вариант…</string>
@@ -14,14 +18,24 @@
     <string name="insert_roulette_description">Ниже перечислены возможные варианты добавления в рулетку.</string>
     <string name="no_entry_roulette">Пожалуйста, введите 2 и более вариантов, чтобы крутить рулетку.</string>
     <string name="too_much_entries_roulette">Вы не можете ввести более 30 вариантов</string>
-    <string name="hello_roulette_fragment">Рулетка</string>
     <string name="generic_option">Вариант</string>
+    <string name="recent_title">Последние параметры: нажмите, чтобы восстановить</string>
+    <string name="bottom_sheet_no_option">Нет последних параметров, вращайте рулетку, чтобы сохранить текущие параметры!</string>
+    <string name="letters_shortcut">Буквы A-Z</string>
+    <string name="range">Диапазон</string>
+    <string name="wrong_range_roulette">Диапазон неверный или пустой. Пожалуйста, введите оба значения правильно!</string>
+    <string name="delete_all_roulette_confirmation">Вы уверены, что хотите удалить все введённые параметры?</string>
+
+    <!-- Coin -->
+    <string name="hello_coin_fragment">Монетка</string>
     <string name="description_coin">Подбросить монетку легко, но она может помочь вам решить, когда что-то делать или нет. Только орёл или решка. Пусть говорит монета!</string>
     <string name="flip_coin">Подбросить монетку!</string>
     <string name="hint_coin">Нажмите кнопку ниже!</string>
     <string name="result_head">Орёл!</string>
     <string name="result_tail">Решка!</string>
-    <string name="hello_coin_fragment">Монетка</string>
+
+    <!-- Magic Ball -->
+    <string name="hello_magic_ball_fragment">Волшебный шар</string>
     <string name="description_magic_ball">Волшебный шар скажет тебе ответ! Просто спроси у него что-нибудь, и он даст тебе простой и доступный ответ. Ты можешь активировать грубые ответы в настройках!</string>
     <string name="shake_ball">Встряхни его!</string>
     <string name="hint_magic_ball">Нажмите кнопку ниже!</string>
@@ -61,19 +75,24 @@
     <string name="magic_answer_rude_4">Как глупо.</string>
     <string name="magic_answer_rude_5">Ты сумасшедший.</string>
     <string name="magic_answer_rude_6">Иди к чёрту.</string>
-    <string name="hello_magic_ball_fragment">Волшебный шар</string>
+
+    <!-- Dice -->
+    <string name="hello_dice_fragment">Кости</string>
     <string name="description_dice">Кости могут быть полезны, например, в настольной игре! Приложение бросает за вас от одного до десяти кубиков. Количество можно выбрать в настройках. Удачи!</string>
     <string name="throw_dice">Бросай кость!</string>
     <string name="hint_dice">Нажмите кнопку ниже!</string>
-    <string name="hello_dice_fragment">Кости</string>
+
+    <!-- Settings -->
     <string name="hello_settings_fragment">Настройки</string>
     <string name="dev_description">Я вежливый парень, и мне нравятся красивые вещи, такие как анимация, иконки, спортивные машины и 3D-печать. Я работаю дизайнером и компьютерным инженером.</string>
     <string name="easter_egg">Классный логотип, правда? ;D</string>
     <string name="customization">Персонализация</string>
     <string name="vibration_name">Вибрация</string>
     <string name="vibration_description_on">вибрировать при нажатой кнопке</string>
+    <string name="vibration_description_off">нет вибрации при нажатии кнопки</string>
     <string name="sound_name">Звуки</string>
     <string name="sound_description_on">играть музыку при нажатой кнопке</string>
+    <string name="sound_description_off">нет звука при нажатии кнопки</string>
     <string name="dice_number_name">Количество костей</string>
     <string name="dice_number_description">изменить количество бросаемых костей. В настоящее время %s</string>
     <string name="one">одна</string>
@@ -81,29 +100,38 @@
     <string name="three">три</string>
     <string name="accent_description">изменить цвет по умолчанию. В настоящее время %s</string>
     <string name="accent_name">Цвет</string>
+    <string name="theme_description">Используйте тёмную, светлую или автоматическую тему приложения. В настоящее время %s</string>
+    <string name="theme_name">Тема приложения</string>
     <string name="blue">синий</string>
     <string name="aqua">морской</string>
     <string name="green">зелёный</string>
     <string name="orange">оранжевый</string>
+    <string name="yellow">жёлтый</string>
     <string name="teal">нефритовый</string>
     <string name="violet">фиолетовый</string>
     <string name="pink">розовый</string>
     <string name="light_blue">светло-синий</string>
+    <string name="red">красный</string>
+    <string name="lime">лаймовый</string>
+    <string name="crimson">багровый</string>
+    <string name="system_theme">система</string>
+    <string name="dark_theme">тёмная</string>
+    <string name="light_theme">светлая</string>
     <string name="app_behavior">Режим приложения</string>
     <string name="rude_answers_description_on">грубые ответы активированы, идиот</string>
-    <string name="rude_answers_name">Грубые ответы</string>
-    <string name="system_theme">система</string>
-    <string name="light_theme">светлая</string>
-    <string name="dark_theme">тёмная</string>
-    <string name="theme_name">Тема приложения</string>
-    <string name="theme_description">Используйте тёмную, светлую или автоматическую тему приложения. В настоящее время %s</string>
-    <string name="yellow">жёлтый</string>
-    <string name="lime">лаймовый</string>
-    <string name="red">красный</string>
-    <string name="crimson">багровый</string>
-    <string name="sound_description_off">нет звука при нажатии кнопки</string>
-    <string name="vibration_description_off">нет вибрации при нажатии кнопки</string>
     <string name="rude_answers_description_off">просто добрые и вежливые ответы</string>
+    <string name="rude_answers_name">Грубые ответы</string>
+    <string name="hide_descriptions_name">Скрыть описания</string>
+    <string name="hide_descriptions_description_on">скрытые описания</string>
+    <string name="hide_descriptions_description_off">видимые описания</string>
+    <string name="allow_equals_name">Разрешите равные варианты</string>
+    <string name="allow_equals_description_on">в рулетке разрешены равные варианты</string>
+    <string name="allow_equals_description_off">в рулетке не допускаются равные варианты</string>
+    <string name="remove_last_name">Удалить последний выбранный</string>
+    <string name="remove_last_description_on">Удалить последний выбранный вариант в рулетке автоматически</string>
+    <string name="remove_last_description_off">Не удаляйте автоматически последний выбранный параметр в рулетке</string>
+
+    <!-- Rate app dialog -->
     <string name="positive_button">да!</string>
     <string name="negative_button">мне лень</string>
     <string name="cancel_button">нет</string>
@@ -114,14 +142,6 @@
     </string>
     <string name="feedback_text">Я хочу кое-что сказать</string>
     <string name="not_again_button">не спрашивай снова</string>
-    <string name="recent_title">Последние параметры: нажмите, чтобы восстановить</string>
-    <string name="bottom_sheet_no_option">Нет последних параметров, вращайте рулетку, чтобы сохранить текущие параметры!</string>
-    <string name="hide_descriptions_name">Скрыть описания</string>
-    <string name="hide_descriptions_description_on">скрытые описания</string>
-    <string name="hide_descriptions_description_off">видимые описания</string>
-    <string name="allow_equals_name">Разрешите равные варианты</string>
-    <string name="allow_equals_description_on">в рулетке разрешены равные варианты</string>
-    <string name="allow_equals_description_off">в рулетке не допускаются равные варианты</string>
     <string name="four">четыре</string>
     <string name="five">пять</string>
     <string name="six">шесть</string>
@@ -129,12 +149,5 @@
     <string name="eight">восемь</string>
     <string name="nine">девять</string>
     <string name="ten">десять</string>
-    <string name="letters_shortcut">Буквы A-Z</string>
-    <string name="range">Диапазон</string>
-    <string name="wrong_range_roulette">Диапазон неверный или пустой. Пожалуйста, введите оба значения правильно!</string>
-    <string name="remove_last_name">Удалить последний выбранный</string>
-    <string name="remove_last_description_on">Удалить последний выбранный вариант в рулетке автоматически</string>
-    <string name="remove_last_description_off">Не удаляйте автоматически последний выбранный параметр в рулетке</string>
-    <string name="delete_all_roulette_confirmation">Вы уверены, что хотите удалить все введённые параметры?</string>
 
 </resources>

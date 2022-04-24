@@ -99,6 +99,13 @@
     <string name="one">одна</string>
     <string name="two">две</string>
     <string name="three">три</string>
+    <string name="four">четыре</string>
+    <string name="five">пять</string>
+    <string name="six">шесть</string>
+    <string name="seven">семь</string>
+    <string name="eight">восемь</string>
+    <string name="nine">девять</string>
+    <string name="ten">десять</string>
     <string name="accent_description">изменить цвет по умолчанию. В настоящее время %s</string>
     <string name="accent_name">Цвет</string>
     <string name="theme_description">Используйте тёмную, светлую или автоматическую тему приложения. В настоящее время %s</string>
@@ -142,12 +149,5 @@
     </string>
     <string name="feedback_text">Я хочу кое-что сказать</string>
     <string name="not_again_button">не спрашивай снова</string>
-    <string name="four">четыре</string>
-    <string name="five">пять</string>
-    <string name="six">шесть</string>
-    <string name="seven">семь</string>
-    <string name="eight">восемь</string>
-    <string name="nine">девять</string>
-    <string name="ten">десять</string>
 
 </resources>

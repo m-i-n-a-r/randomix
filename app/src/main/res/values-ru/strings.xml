@@ -126,9 +126,9 @@
     <string name="dark_theme">тёмная</string>
     <string name="light_theme">светлая</string>
     <string name="app_behavior">Режим приложения</string>
+    <string name="rude_answers_name">Грубые ответы</string>
     <string name="rude_answers_description_on">грубые ответы активированы, идиот</string>
     <string name="rude_answers_description_off">просто добрые и вежливые ответы</string>
-    <string name="rude_answers_name">Грубые ответы</string>
     <string name="hide_descriptions_name">Скрыть описания</string>
     <string name="hide_descriptions_description_on">скрытые описания</string>
     <string name="hide_descriptions_description_off">видимые описания</string>

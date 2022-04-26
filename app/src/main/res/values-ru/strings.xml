@@ -143,10 +143,8 @@
     <string name="positive_button">да!</string>
     <string name="negative_button">мне лень</string>
     <string name="cancel_button">нет</string>
-    <string name="rating_message">
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
-        \nХорошо, теперь, когда я обращаю ваше внимание, могу ли я попросить вас оставить хороший отзыв, чтобы немного помочь Randomix? Я действительно ценю это! Хорошего дня! :D\n
-    </string>
+    <string name="rating_message">AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
+        \nХорошо, теперь, когда я обращаю ваше внимание, могу ли я попросить вас оставить хороший отзыв, чтобы немного помочь Randomix? Я действительно ценю это! Хорошего дня! :D</string>
     <string name="feedback_text">Я хочу кое-что сказать</string>
     <string name="not_again_button">не спрашивай снова</string>
 

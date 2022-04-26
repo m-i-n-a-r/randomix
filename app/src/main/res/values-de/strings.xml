@@ -12,8 +12,7 @@
 
     <!-- Roulette -->
     <string name="hello_roulette_fragment">Roulette Modus</string>
-    <string name="description_roulette">Musst du dich für etwas entscheiden? Bist du müde von Umfragen und rechthaberischen Freunden? Ein
-        Roulette wird für dich entscheiden! Drücke lange auf das Roulette, um generische Optionen hinzuzufügen oder sie zu löschen.</string>
+    <string name="description_roulette">Musst du dich für etwas entscheiden? Bist du müde von Umfragen und rechthaberischen Freunden? Ein Roulette wird für dich entscheiden! Drücke lange auf das Roulette, um generische Optionen hinzuzufügen oder sie zu löschen.</string>
     <string name="spin_roulette">Drehe das Roulette!</string>
     <string name="insert_roulette_hint">Geben Sie eine Option ein…</string>
     <string name="delete_roulette_hint">Lösche die zuletzt eingegebene Option</string>
@@ -38,8 +37,7 @@
 
     <!-- Magic Ball -->
     <string name="hello_magic_ball_fragment">Magische Kugel</string>
-    <string name="description_magic_ball">Die magische Kugel wird dir die Antworten sagen! Frag einfach etwas, und
-        er wird dir mit einer generischen und günstigen Antwort helfen. Du kannst unhöfliche Antworten in den Einstellungen aktivieren!</string>
+    <string name="description_magic_ball">Die magische Kugel wird dir die Antworten sagen! Frag einfach etwas, und er wird dir mit einer generischen und günstigen Antwort helfen. Du kannst unhöfliche Antworten in den Einstellungen aktivieren!</string>
     <string name="shake_ball">Schüttle es!</string>
     <string name="hint_magic_ball">Drücke den Knopf unten!</string>
     <string name="magic_answer_1">Nein.</string>
@@ -81,8 +79,7 @@
 
     <!-- Dice -->
     <string name="hello_dice_fragment">Würfel Modus</string>
-    <string name="description_dice">Würfel können nützlich sein, bei einem Gesellschaftsspiel zum Beispiel! Die App wirft einen bis zehn Würfel
-        für dich. Wähle die Anzahl in den Einstellungen aus. Viel Glück!</string>
+    <string name="description_dice">Würfel können nützlich sein, bei einem Gesellschaftsspiel zum Beispiel! Die App wirft einen bis zehn Würfel für dich. Wähle die Anzahl in den Einstellungen aus. Viel Glück!</string>
     <string name="throw_dice">Wirf die Würfel!</string>
     <string name="hint_dice">Drücke den Knopf unten!</string>
 
@@ -129,9 +126,9 @@
     <string name="dark_theme">Dunkel</string>
     <string name="light_theme">Hell</string>
     <string name="app_behavior">App Verhalten</string>
+    <string name="rude_answers_name">Unhöfliche Antworten</string>
     <string name="rude_answers_description_on">Unhöfliche Antworten aktiviert, Idiot</string>
     <string name="rude_answers_description_off">Nur freundliche und höfliche Antworten</string>
-    <string name="rude_answers_name">Unhöfliche Antworten</string>
     <string name="hide_descriptions_name">Beschreibungen verbergen</string>
     <string name="hide_descriptions_description_on">Beschreibungen verborgen</string>
     <string name="hide_descriptions_description_off">Beschreibungen sichtbar</string>
@@ -146,11 +143,8 @@
     <string name="positive_button">Rezension!</string>
     <string name="negative_button">Ich bin faul</string>
     <string name="cancel_button">Nah</string>
-    <string name="rating_message">
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
-        \nOK, jetzt wo ich deine Aufmerksamkeit habe, darf ich dich bitten, eine gute Bewertung zu hinterlassen, um Randomix zu helfen
-        ein bisschen zu wachsen? Ich würde es wirklich zu schätzen wissen! Habt einen tollen Tag! :D\n
-    </string>
+    <string name="rating_message">AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
+        \nOK, jetzt wo ich deine Aufmerksamkeit habe, darf ich dich bitten, eine gute Bewertung zu hinterlassen, um Randomix zu helfen ein bisschen zu wachsen? Ich würde es wirklich zu schätzen wissen! Habt einen tollen Tag! :D</string>
     <string name="feedback_text">Ich muss dir etwas sagen</string>
     <string name="not_again_button">Frag nie wieder</string>
 

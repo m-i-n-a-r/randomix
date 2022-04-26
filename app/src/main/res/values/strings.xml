@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <!-- Main strings -->
@@ -14,8 +15,7 @@
 
     <!-- Roulette -->
     <string name="hello_roulette_fragment">Roulette mode</string>
-    <string name="description_roulette">Do you have to choose something? Are you tired of polls and bossy friends? A
-        roulette will decide for you! Long press the roulette to Add generic options or clear them.</string>
+    <string name="description_roulette">Do you have to choose something? Are you tired of polls and bossy friends? A roulette will decide for you! Long press the roulette to Add generic options or clear them.</string>
     <string name="spin_roulette">Spin the roulette!</string>
     <string name="insert_roulette_hint">Enter an option…</string>
     <string name="delete_roulette_hint">Delete the last option entered</string>
@@ -35,8 +35,7 @@
 
     <!-- Coin -->
     <string name="hello_coin_fragment">Coin mode</string>
-    <string name="description_coin">Flipping a coin is easy, but can help you decide between doing something or not.
-        Just heads or tails. Let the coin talk!</string>
+    <string name="description_coin">Flipping a coin is easy, but can help you decide between doing something or not. Just heads or tails. Let the coin talk!</string>
     <string name="flip_coin">Flip the coin!</string>
     <string name="hint_coin">Press the button below!</string>
     <string name="result_head">Heads!</string>
@@ -44,8 +43,7 @@
 
     <!-- Magic Ball -->
     <string name="hello_magic_ball_fragment">Magic Ball</string>
-    <string name="description_magic_ball">The magic ball will tell you the answers! Just ask something, and
-        it will help you with a generic and affordable answer. You can activate its rudeness from settings!</string>
+    <string name="description_magic_ball">The magic ball will tell you the answers! Just ask something, and it will help you with a generic and affordable answer. You can activate its rudeness from settings!</string>
     <string name="shake_ball">Shake it!</string>
     <string name="hint_magic_ball">Press the button below!</string>
     <string name="magic_answer_1">No.</string>
@@ -87,8 +85,7 @@
 
     <!-- Dice -->
     <string name="hello_dice_fragment">Dice mode</string>
-    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice
-        for you. Select the number from settings. Good luck!</string>
+    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number from settings. Good luck!</string>
     <string name="throw_dice">Throw the dice!</string>
     <string name="hint_dice">Press the button below!</string>
 
@@ -144,9 +141,9 @@
     <string name="dark_theme">Dark</string>
     <string name="light_theme">Light</string>
     <string name="app_behavior">App behavior</string>
+    <string name="rude_answers_name">Rude answers</string>
     <string name="rude_answers_description_on">Rude answers activated, idiot</string>
     <string name="rude_answers_description_off">Just kind and polite answers</string>
-    <string name="rude_answers_name">Rude answers</string>
     <string name="hide_descriptions_name">Hide descriptions</string>
     <string name="hide_descriptions_description_on">Descriptions hidden</string>
     <string name="hide_descriptions_description_off">Descriptions visible</string>
@@ -161,11 +158,8 @@
     <string name="positive_button">Review!</string>
     <string name="negative_button">I\'m lazy</string>
     <string name="cancel_button">Nah</string>
-    <string name="rating_message">
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
-        \nOK, now that I have your attention, may I ask you to leave a good review to help Randomix grow
-        a bit? I\'d really appreciate it! Have a great day! :D\n
-    </string>
+    <string name="rating_message">AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
+        \nOK, now that I have your attention, may I ask you to leave a good review to help Randomix grow a bit? I\'d really appreciate it! Have a great day! :D</string>
     <string name="feedback_text">I\'ve something to tell you</string>
     <string name="not_again_button">Never ask again</string>
 

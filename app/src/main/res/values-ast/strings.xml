@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <!-- Main strings -->
     <string name="app_intro_description">Una aplicación de códigu abiertu qu\'escueye númberos, rempuestes y opciones al debalu. ¡Dexa que l\'azar fale!</string>
     <string name="title_roulette">Ruleta</string>
@@ -8,6 +9,7 @@
     <string name="title_magic_ball">Bola máxica</string>
     <string name="title_settings">Axustes</string>
     <string name="generic_result">El resultáu ye:</string>
+
     <!-- Roulette -->
     <string name="hello_roulette_fragment">Mou de ruleta</string>
     <string name="description_roulette">¿Tienes d\'escoyer daqué? ¿Fartesti d\'encuestes y d\'amistaes mandones? ¡La ruleta decide por ti! Tenla primida p\'amestar o quitar opciones xenériques.</string>
@@ -24,18 +26,18 @@
     <string name="range">Intervalu</string>
     <string name="wrong_range_roulette">L\'intervalu ye incorreutu o ta baleru. ¡Introduz correutamente dambos valores!</string>
     <string name="delete_all_roulette_confirmation">¿De xuru que quies desaniciar toles opciones introducíes?</string>
+
     <!-- Coin -->
     <string name="hello_coin_fragment">Mou de moneda</string>
-    <string name="description_coin">Tirar al aire una moneda ye fácil, mas pue ayudate a decidir ente facer daqué o non.
-        Cara o cruz...¡Dexa que la moneda lo diga!</string>
+    <string name="description_coin">Tirar al aire una moneda ye fácil, mas pue ayudate a decidir ente facer daqué o non. Cara o cruz...¡Dexa que la moneda lo diga!</string>
     <string name="flip_coin">¡Tira la moneda!</string>
     <string name="hint_coin">¡Primi\'l botón d\'abaxo!</string>
     <string name="result_head">¡Cara!</string>
     <string name="result_tail">¡Cruz!</string>
+
     <!-- Magic Ball -->
     <string name="hello_magic_ball_fragment">Bola máxica</string>
-    <string name="description_magic_ball">¡La bola máxica respuéndelo too! Entruga daqué y dexa que t\'ayude
-        con una rempuesta xenérica y afayadiza. ¡Nos axustes pue facer que seya tosca!</string>
+    <string name="description_magic_ball">¡La bola máxica respuéndelo too! Entruga daqué y dexa que t\'ayude con una rempuesta xenérica y afayadiza. ¡Nos axustes pue facer que seya tosca!</string>
     <string name="shake_ball">¡Ximiélgala!</string>
     <string name="hint_magic_ball">¡Primi\'l botón d\'abaxo!</string>
     <string name="magic_answer_1">Non.</string>
@@ -74,12 +76,13 @@
     <string name="magic_answer_rude_4">¡Ḥaḥa! Vaya fatada.</string>
     <string name="magic_answer_rude_5">Tas ensin cepiyar.</string>
     <string name="magic_answer_rude_6">Vete al infiernu.</string>
+
     <!-- Dice -->
     <string name="hello_dice_fragment">Mou de dau</string>
-    <string name="description_dice">El dau pue ser útil, por exemplu, nun xuegu de mesa. L\'aplicación va tirar el númberu
-        de daos qu\'esbilles nos axustes (de 1 a 10). ¡Bona suerte!</string>
+    <string name="description_dice">El dau pue ser útil, por exemplu, nun xuegu de mesa. L\'aplicación va tirar el númberu de daos qu\'esbilles nos axustes (de 1 a 10). ¡Bona suerte!</string>
     <string name="throw_dice">¡Tira\'l dau!</string>
     <string name="hint_dice">¡Primi\'l botón d\'abaxo!</string>
+
     <!-- Settings -->
     <string name="hello_settings_fragment">Axustes</string>
     <string name="dev_description">Soi un mozu educáu y préstenme les coses guapes como les animaciones, los iconos, la imprentación 3D y los coches de carreres. Trabayo como diseñador ya inxenieru informáticu.</string>
@@ -123,9 +126,9 @@
     <string name="dark_theme">Escuridá</string>
     <string name="light_theme">Claridá</string>
     <string name="app_behavior">Comportamientu de l\'aplicación</string>
+    <string name="rude_answers_name">Rempuestes tosques</string>
     <string name="rude_answers_description_on">Les rempuestes tosques tán activaes, idiota</string>
     <string name="rude_answers_description_off">Namás rempuestes formales</string>
-    <string name="rude_answers_name">Rempuestes tosques</string>
     <string name="hide_descriptions_name">Anubrir les descripciones</string>
     <string name="hide_descriptions_description_on">Les descripciones nun son visibles</string>
     <string name="hide_descriptions_description_off">Les descripciones son visibles</string>
@@ -135,14 +138,14 @@
     <string name="remove_last_name">Quitar lo último escoyío</string>
     <string name="remove_last_description_on">Quita automáticamente la última opción escoyida de la ruleta</string>
     <string name="remove_last_description_off">Nun quita automáticamente la última opción escoyida de la ruleta</string>
+
     <!-- Rate app dialog -->
     <string name="positive_button">¡Reseñar!</string>
     <string name="negative_button">Dame pereza</string>
     <string name="cancel_button">Non</string>
-    <string name="rating_message">        AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
-        \nBien, agora que tengo la to atención, ¿puedo pidite que dexes una reseña bona pa que Randomix seya
-        un poco más conocíu? ¡Voi agradecelo muncho! Ten un bon día :D\n
-    </string>
+    <string name="rating_message">AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
+        \nBien, agora que tengo la to atención, ¿puedo pidite que dexes una reseña bona pa que Randomix seya un poco más conocíu? ¡Voi agradecelo muncho! Ten un bon día :D</string>
     <string name="feedback_text">Tengo de dicite daqué</string>
     <string name="not_again_button">Nun volver entrugar</string>
+
 </resources>

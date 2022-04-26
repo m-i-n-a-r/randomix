@@ -143,10 +143,8 @@
     <string name="positive_button">¡Reseñar!</string>
     <string name="negative_button">Dame pereza</string>
     <string name="cancel_button">Non</string>
-    <string name="rating_message">
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
-        \nBien, agora que tengo la to atención, ¿puedo pidite que dexes una reseña bona pa que Randomix seya un poco más conocíu? ¡Voi agradecelo muncho! Ten un bon día :D\n
-    </string>
+    <string name="rating_message">AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
+        \nBien, agora que tengo la to atención, ¿puedo pidite que dexes una reseña bona pa que Randomix seya un poco más conocíu? ¡Voi agradecelo muncho! Ten un bon día :D</string>
     <string name="feedback_text">Tengo de dicite daqué</string>
     <string name="not_again_button">Nun volver entrugar</string>
 

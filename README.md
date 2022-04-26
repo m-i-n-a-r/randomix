@@ -29,6 +29,8 @@ The main purpose of the app is provide a **random choice** in different ways. Th
 | **Chinese (Taiwan)**  | complete | Still34                  |
 | **Asturian**          | complete | Softastur                |
 
+Special thanks to Nickoriginal for the overall improvement of each translation
+
 ## Features
 - Every tab in the bottom navigation bar contains a type of random choice. The available types are:
   - **Roulette** -> chooses between a specified number of options or a custom number range, entered from the user. Includes a list of recent options easy to select, pin, delete or restore.

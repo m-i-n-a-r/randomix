@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <!-- Main strings -->
@@ -21,6 +22,7 @@
     <string name="generic_option">选项</string>
     <string name="recent_title">最近的选项组，点按以恢复</string>
     <string name="bottom_sheet_no_option">没有最近的选项组，转动轮盘来保存当前的选项组！</string>
+    <string name="letters_shortcut">A-Z字母</string>
     <string name="range">范围</string>
     <string name="wrong_range_roulette">范围错误或为空，请正确输入两个值！</string>
     <string name="delete_all_roulette_confirmation">您确定要删除所有输入的选项吗？</string>
@@ -97,6 +99,13 @@
     <string name="one">1</string>
     <string name="two">2</string>
     <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="ten">10</string>
     <string name="accent_description">改变默认的强调色，现在是%s</string>
     <string name="accent_name">强调色</string>
     <string name="theme_description">使用暗色调、亮色调或系统默认应用主题，现在是%s</string>
@@ -117,9 +126,9 @@
     <string name="dark_theme">暗色调</string>
     <string name="light_theme">亮色调</string>
     <string name="app_behavior">应用行为</string>
+    <string name="rude_answers_name">粗鲁的答案</string>
     <string name="rude_answers_description_on">粗鲁的答案已经启用了，傻瓜</string>
     <string name="rude_answers_description_off">只有友善又礼貌的答案</string>
-    <string name="rude_answers_name">粗鲁的答案</string>
     <string name="hide_descriptions_name">隐藏模式说明</string>
     <string name="hide_descriptions_description_on">模式说明被隐藏</string>
     <string name="hide_descriptions_description_off">模式说明可见</string>
@@ -134,19 +143,9 @@
     <string name="positive_button">去评价！</string>
     <string name="negative_button">我很懒</string>
     <string name="cancel_button">算了，下次吧</string>
-    <string name="rating_message">
-        啊啊啊啊啊啊啊！\n\n
-        好，现在你注意到我了，可以请你留下一个好的评价来帮助Randomix成长吗？我会非常感激的！祝你有愉快的一天！ :D\n
-    </string>
+    <string name="rating_message">啊啊啊啊啊啊啊！\n\n
+        好，现在你注意到我了，可以请你留下一个好的评价来帮助Randomix成长吗？我会非常感激的！祝你有愉快的一天！ :D</string>
     <string name="feedback_text">我有一些事情要告诉你</string>
     <string name="not_again_button">别再问我了</string>
-    <string name="letters_shortcut">A-Z字母</string>
-    <string name="four">4</string>
-    <string name="five">5</string>
-    <string name="six">6</string>
-    <string name="seven">7</string>
-    <string name="eight">8</string>
-    <string name="nine">9</string>
-    <string name="ten">10</string>
 
 </resources>

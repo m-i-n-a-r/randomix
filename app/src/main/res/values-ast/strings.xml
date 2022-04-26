@@ -126,9 +126,9 @@
     <string name="dark_theme">Escuridá</string>
     <string name="light_theme">Claridá</string>
     <string name="app_behavior">Comportamientu de l\'aplicación</string>
+    <string name="rude_answers_name">Rempuestes tosques</string>
     <string name="rude_answers_description_on">Les rempuestes tosques tán activaes, idiota</string>
     <string name="rude_answers_description_off">Namás rempuestes formales</string>
-    <string name="rude_answers_name">Rempuestes tosques</string>
     <string name="hide_descriptions_name">Anubrir les descripciones</string>
     <string name="hide_descriptions_description_on">Les descripciones nun son visibles</string>
     <string name="hide_descriptions_description_off">Les descripciones son visibles</string>

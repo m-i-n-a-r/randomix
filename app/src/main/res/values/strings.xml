@@ -156,6 +156,9 @@
     <string name="remove_last_name">Remove last chosen</string>
     <string name="remove_last_description_on">Remove the last chosen option in the roulette automatically</string>
     <string name="remove_last_description_off">Don\'t remove the last chosen option in the roulette automatically</string>
+    <string name="shake_name">Shake to launch</string>
+    <string name="shake_description_on">Shaking the device will act like the center button</string>
+    <string name="shake_description_off">Shaking the device won\'t have any effect</string>
 
     <!-- Rate app dialog -->
     <string name="positive_button">Review!</string>

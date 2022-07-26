@@ -1,10 +1,13 @@
 package com.minar.randomix.fragments;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Animatable2;
 import android.graphics.drawable.Drawable;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.KeyEvent;
@@ -29,6 +32,7 @@ import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.minar.randomix.R;
 import com.minar.randomix.activities.MainActivity;
 import com.minar.randomix.utilities.Constants;
+import com.minar.randomix.utilities.ShakeEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +40,11 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class RouletteFragment extends androidx.fragment.app.Fragment implements OnClickListener, View.OnLongClickListener, TextView.OnEditorActionListener {
+    private MainActivity act;
+    // Shake variables
+    private boolean shakeEnabled = false;
+    private SensorManager sensorManager;
+    private ShakeEventListener sensorListener;
     private final List<String> options = new ArrayList<>();
     private final RouletteBottomSheet bottomSheet = new RouletteBottomSheet(this);
     private boolean inRangeMode = false;
@@ -44,6 +53,23 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
     private EditText rangeMax;
     private TextView result;
     private SharedPreferences sp = null;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (shakeEnabled) {
+            sensorManager.registerListener(sensorListener,
+                    sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                    SensorManager.SENSOR_DELAY_UI);
+        }
+    }
+
+    @Override
+    public void onPause() {
+        if (shakeEnabled)
+            sensorManager.unregisterListener(sensorListener);
+        super.onPause();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -103,6 +129,16 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
             }
         });
 
+        // Manage the shake to launch option and bind the activity
+        act = (MainActivity) getActivity();
+        if (act != null) {
+            shakeEnabled = act.shakeAllowed();
+            if (shakeEnabled) {
+                sensorManager = (SensorManager) act.getSystemService(Context.SENSOR_SERVICE);
+                sensorListener = new ShakeEventListener();
+                sensorListener.setOnShakeListener(this::mainThrow);
+            }
+        }
         return v;
     }
 
@@ -134,7 +170,8 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
                             .setTitle(getString(android.R.string.dialog_alert_title))
                             .setMessage(getString(R.string.delete_all_roulette_confirmation))
                             .setPositiveButton(getString(android.R.string.ok), (dialogInterface, i) -> removeAllChips())
-                            .setNegativeButton(getString(android.R.string.cancel), (dialogInterface, i) -> {})
+                            .setNegativeButton(getString(android.R.string.cancel), (dialogInterface, i) -> {
+                            })
                             .show();
                 }
             }
@@ -158,8 +195,6 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
         Activity act = getActivity();
         final View view = requireView();
         final ImageView recentAnimation = view.findViewById(R.id.recentButton);
-        final ChipGroup optionsList = view.findViewById(R.id.rouletteChipList);
-        final SwitchMaterial rangeSwitch = view.findViewById(R.id.rangeSwitchRoulette);
         int pressedId = v.getId();
 
         // Open recent choices
@@ -194,82 +229,94 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
 
         // Spin the roulette
         if (pressedId == R.id.buttonSpinRoulette) {
-            final ImageView spinAnimation = requireView().findViewById(R.id.buttonSpinRoulette);
-            int minValue = -1, maxValue = -1;
-            if (!inRangeMode) {
-                // Send a toast if the list is empty to avoid crashes and null pointers
-                if (options.size() < 2) {
-                    Toast.makeText(getContext(), getString(R.string.no_entry_roulette), Toast.LENGTH_SHORT).show();
-                    return;
-                }
+            mainThrow();
+        }
+    }
+
+    private void mainThrow() {
+        final ImageView spinAnimation = requireView().findViewById(R.id.buttonSpinRoulette);
+        final ChipGroup optionsList = requireView().findViewById(R.id.rouletteChipList);
+        final SwitchMaterial rangeSwitch = requireView().findViewById(R.id.rangeSwitchRoulette);
+        final ImageView recentAnimation = requireView().findViewById(R.id.recentButton);
+        int minValue = -1, maxValue = -1;
+        if (!inRangeMode) {
+            // Send a toast if the list is empty to avoid crashes and null pointers
+            if (options.size() < 2) {
+                Toast.makeText(getContext(), getString(R.string.no_entry_roulette), Toast.LENGTH_SHORT).show();
+                return;
             }
-            else {
-                // Send a toast if the ranges are empty or have wrong values
-                try {
-                    minValue = Integer.parseInt(rangeMin.getText().toString());
-                    maxValue = Integer.parseInt(rangeMax.getText().toString());
-                } catch (Exception ignored) {}
-                if (minValue == -1 || maxValue == -1 || minValue >= maxValue) {
-                    Toast.makeText(getContext(), getString(R.string.wrong_range_roulette), Toast.LENGTH_SHORT).show();
-                    return;
-                }
+        } else {
+            // Send a toast if the ranges are empty or have wrong values
+            try {
+                minValue = Integer.parseInt(rangeMin.getText().toString());
+                maxValue = Integer.parseInt(rangeMax.getText().toString());
+            } catch (Exception ignored) {
             }
-            // Start the animated vector drawable, make the button not clickable during the execution
-            recentAnimation.setClickable(false);
-            recentAnimation.setLongClickable(false);
-            spinAnimation.setClickable(false);
-            spinAnimation.setLongClickable(false);
-            rangeSwitch.setClickable(false);
-            final int childCount = optionsList.getChildCount();
+            if (minValue == -1 || maxValue == -1 || minValue >= maxValue) {
+                Toast.makeText(getContext(), getString(R.string.wrong_range_roulette), Toast.LENGTH_SHORT).show();
+                return;
+            }
+        }
+        // Make the button un-clickable and the device un-shakeable
+        if (shakeEnabled) sensorManager.unregisterListener(sensorListener);
+        recentAnimation.setClickable(false);
+        recentAnimation.setLongClickable(false);
+        spinAnimation.setClickable(false);
+        spinAnimation.setLongClickable(false);
+        rangeSwitch.setClickable(false);
+        final int childCount = optionsList.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            Chip option = (Chip) optionsList.getChildAt(i);
+            option.setClickable(false);
+        }
+
+        Drawable spin = spinAnimation.getDrawable();
+        if (spin instanceof Animatable) ((Animatable) spin).start();
+
+        // Vibrate and play sound using the common method in MainActivity
+        if (act != null) {
+            act.vibrate();
+            act.playSound(4);
+        }
+
+        int n;
+        if (inRangeMode) {
+            // Best way to generate number in range
+            n = ThreadLocalRandom.current().nextInt(minValue, maxValue + 1);
+        } else {
+            Random ran = new Random();
+
+            n = ran.nextInt(options.size());
+            // Insert in the recent list
+            bottomSheet.updateRecent(options, getContext());
+        }
+        // Create the animations
+        final Animation animIn = new AlphaAnimation(1.0f, 0.0f);
+        animIn.setDuration(1500);
+        result.startAnimation(animIn);
+        final Animation animOut = new AlphaAnimation(0.0f, 1.0f);
+        animOut.setDuration(1000);
+
+        requireView().postDelayed(() -> {
+            if (shakeEnabled) sensorManager.registerListener(sensorListener,
+                    sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                    SensorManager.SENSOR_DELAY_UI);
+            if (inRangeMode) result.setText(String.valueOf(n));
+            else result.setText(options.get(n));
+            result.startAnimation(animOut);
+            spinAnimation.setClickable(true);
+            spinAnimation.setLongClickable(true);
+            recentAnimation.setClickable(true);
+            recentAnimation.setLongClickable(true);
+            rangeSwitch.setClickable(true);
             for (int i = 0; i < childCount; i++) {
                 Chip option = (Chip) optionsList.getChildAt(i);
-                option.setClickable(false);
+                option.setClickable(true);
             }
-
-            Drawable spin = spinAnimation.getDrawable();
-            if (spin instanceof Animatable) ((Animatable) spin).start();
-
-            // Vibrate and play sound using the common method in MainActivity
-            if (act instanceof MainActivity) {
-                ((MainActivity) act).vibrate();
-                ((MainActivity) act).playSound(1);
-            }
-            int n;
-            if (inRangeMode) {
-                // Best way to generate number in range
-                n = ThreadLocalRandom.current().nextInt(minValue, maxValue + 1);
-            } else {
-                Random ran = new Random();
-
-                n = ran.nextInt(options.size());
-                // Insert in the recent list
-                bottomSheet.updateRecent(options, getContext());
-            }
-            // Create the animations
-            final Animation animIn = new AlphaAnimation(1.0f, 0.0f);
-            animIn.setDuration(1500);
-            result.startAnimation(animIn);
-            final Animation animOut = new AlphaAnimation(0.0f, 1.0f);
-            animOut.setDuration(1000);
-
-            requireView().postDelayed(() -> {
-                if (inRangeMode) result.setText(String.valueOf(n));
-                else result.setText(options.get(n));
-                result.startAnimation(animOut);
-                spinAnimation.setClickable(true);
-                spinAnimation.setLongClickable(true);
-                recentAnimation.setClickable(true);
-                recentAnimation.setLongClickable(true);
-                rangeSwitch.setClickable(true);
-                for (int i = 0; i < childCount; i++) {
-                    Chip option = (Chip) optionsList.getChildAt(i);
-                    option.setClickable(true);
-                }
-                // Remove the selected option from the list, if the option is enabled
-                boolean removeLast = sp.getBoolean("remove_last", false);
-                if (removeLast) removeChip((Chip) optionsList.getChildAt(n));
-            }, 1500);
-        }
+            // Remove the selected option from the list, if the option is enabled
+            boolean removeLast = sp.getBoolean("remove_last", false);
+            if (removeLast) removeChip((Chip) optionsList.getChildAt(n));
+        }, 1500);
     }
 
     // Handle the keyboard actions, like enter, done, send and so on.

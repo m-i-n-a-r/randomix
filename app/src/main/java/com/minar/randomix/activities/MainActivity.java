@@ -153,4 +153,9 @@ public class MainActivity extends AppCompatActivity {
             mp.setOnCompletionListener(MediaPlayer::release);
         }
     }
+
+    public boolean shakeAllowed() {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        return sp.getBoolean("shake", false);
+    }
 }

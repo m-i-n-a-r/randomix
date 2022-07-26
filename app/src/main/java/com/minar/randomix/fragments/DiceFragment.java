@@ -1,9 +1,11 @@
 package com.minar.randomix.fragments;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
@@ -20,6 +22,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.minar.randomix.R;
 import com.minar.randomix.activities.MainActivity;
+import com.minar.randomix.utilities.ShakeEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +30,11 @@ import java.util.Objects;
 import java.util.Random;
 
 public class DiceFragment extends androidx.fragment.app.Fragment implements OnClickListener {
+    private MainActivity act;
+    // Shake variables
+    private boolean shakeEnabled = false;
+    private SensorManager sensorManager;
+    private ShakeEventListener sensorListener;
     // There's a difference in animations between the first throw and the others
     private boolean notFirstThrow = false;
     // Last result to select the correct animation
@@ -61,6 +69,23 @@ public class DiceFragment extends androidx.fragment.app.Fragment implements OnCl
             diceAnimation9 = null,
             diceAnimation10 = null,
             vsAnimation = null;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (shakeEnabled) {
+            sensorManager.registerListener(sensorListener,
+                    sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                    SensorManager.SENSOR_DELAY_UI);
+        }
+    }
+
+    @Override
+    public void onPause() {
+        if (shakeEnabled)
+            sensorManager.unregisterListener(sensorListener);
+        super.onPause();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -116,41 +141,61 @@ public class DiceFragment extends androidx.fragment.app.Fragment implements OnCl
         }
         diceZone = v.findViewById(R.id.diceZone);
         diceZone.setOnClickListener(this);
+
+        // Manage the shake to launch option and bind the activity
+        act = (MainActivity) getActivity();
+        if (act != null) {
+            shakeEnabled = act.shakeAllowed();
+            if (shakeEnabled) {
+                sensorManager = (SensorManager) act.getSystemService(Context.SENSOR_SERVICE);
+                sensorListener = new ShakeEventListener();
+                sensorListener.setOnShakeListener(this::mainThrow);
+            }
+        }
         return v;
     }
 
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.diceZone) {
-            // Make the button un-clickable
-            final ConstraintLayout diceAnimation = requireView().findViewById(R.id.diceZone);
-            diceAnimation.setClickable(false);
+            mainThrow();
+        }
+    }
 
-            // Get the shared preferences and the desired number of dices, from 1 to 11
-            SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
-            final int diceNumber = Integer.parseInt(Objects.requireNonNull(sp.getString("dice_number", "1")));
+    // The main method of this fragment, triggered by pressing the button or shaking the device
+    private void mainThrow() {
+        // Make the button un-clickable and the device un-shakeable
+        if (shakeEnabled) sensorManager.unregisterListener(sensorListener);
+        final ConstraintLayout diceAnimation = requireView().findViewById(R.id.diceZone);
+        diceAnimation.setClickable(false);
 
-            // Vibrate and play sound using the common method in MainActivity
-            Activity act = getActivity();
-            if (act instanceof MainActivity) {
-                ((MainActivity) act).vibrate();
-                ((MainActivity) act).playSound(4);
-            }
+        // Get the shared preferences and the desired number of dices, from 1 to 11
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+        final int diceNumber = Integer.parseInt(Objects.requireNonNull(sp.getString("dice_number", "1")));
 
-            // Reset the initial state with another animation
-            if (this.notFirstThrow) {
-                runResetAnimation(diceNumber);
-
-                // Delay the execution
-                requireView().postDelayed(() -> throwAndRunMainAnimation(diceNumber), 500);
-            } else throwAndRunMainAnimation(diceNumber);
-
-            // Reactivate the button after the right time
-            requireView().postDelayed(() -> diceAnimation.setClickable(true), 2000);
-            // Check if it's the first throw
-            if (!this.notFirstThrow) this.notFirstThrow = true;
+        // Vibrate and play sound using the common method in MainActivity
+        if (act != null) {
+            act.vibrate();
+            act.playSound(4);
         }
 
+        // Reset the initial state with another animation
+        if (this.notFirstThrow) {
+            runResetAnimation(diceNumber);
+
+            // Delay the execution
+            requireView().postDelayed(() -> throwAndRunMainAnimation(diceNumber), 500);
+        } else throwAndRunMainAnimation(diceNumber);
+
+        // Reactivate the button after the right time
+        requireView().postDelayed(() -> {
+            diceAnimation.setClickable(true);
+            if (shakeEnabled) sensorManager.registerListener(sensorListener,
+                    sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                    SensorManager.SENSOR_DELAY_UI);
+        }, 2000);
+        // Check if it's the first throw
+        if (!this.notFirstThrow) this.notFirstThrow = true;
     }
 
     // Run the main animation based on the result

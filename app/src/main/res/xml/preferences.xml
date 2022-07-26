@@ -13,6 +13,14 @@
 
         <SwitchPreference
             android:defaultValue="false"
+            android:key="shake"
+            android:summaryOff="@string/shake_description_off"
+            android:summaryOn="@string/shake_description_on"
+            android:title="@string/shake_name"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreference
+            android:defaultValue="false"
             android:key="rude_answers"
             android:summaryOff="@string/rude_answers_description_off"
             android:summaryOn="@string/rude_answers_description_on"

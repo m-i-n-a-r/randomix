@@ -134,5 +134,8 @@
     <string name="remove_last_description_on">Automaticky odstraňte poslední vybranou možnost v ruletě</string>
     <string name="remove_last_description_off">Neodstraňujte automaticky poslední zvolenou možnost v ruletě</string>
     <string name="delete_all_roulette_confirmation">Opravdu chcete smazat všechny zadané možnosti?</string>
+    <string name="shake_name">Protresite za pokretanje</string>
+    <string name="shake_description_on">Protresanje uređaja djelovat će kao središnja tipka</string>
+    <string name="shake_description_off">Protresanje uređaja neće imati nikakvog učinka</string>
 
 </resources>

@@ -136,5 +136,8 @@
     <string name="remove_last_description_on">Rimuovi automaticamente l\'ultima opzione scelta nella roulette</string>
     <string name="remove_last_description_off">Non rimuovere automaticamente l\'ultima opzione scelta nella roulette</string>
     <string name="delete_all_roulette_confirmation">Sei sicuro di voler eliminare tutte le opzioni inserite?</string>
+    <string name="shake_name">Scuoti per lanciare</string>
+    <string name="shake_description_on">Scuotere il dispositivo funzionerà come il bottone centrale</string>
+    <string name="shake_description_off">Scuotere il dispositivo non avrà alcun effetto</string>
 
 </resources>

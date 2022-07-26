@@ -127,6 +127,9 @@
     <string name="remove_last_name">刪除最後選擇。</string>
     <string name="remove_last_description_on">自動刪除輪盤賭中最後選擇的選項</string>
     <string name="remove_last_description_off">不要自動刪除輪盤賭中最後選擇的選項</string>
+    <string name="shake_name">摇一摇启动</string>
+    <string name="shake_description_on">摇动设备将起到中央按钮的作用</string>
+    <string name="shake_description_off">摇晃设备不会有任何影响</string>
 
     <!-- Rate app dialog -->
     <string name="positive_button">去評價！ </string>

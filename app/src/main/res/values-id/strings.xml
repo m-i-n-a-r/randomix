@@ -137,6 +137,9 @@
     <string name="remove_last_name">Hapus yang terakhir dipilih</string>
     <string name="remove_last_description_on">Hapus opsi yang terakhir dipilih di roulette secara otomatis</string>
     <string name="remove_last_description_off">Jangan hapus opsi yang terakhir dipilih di roulette secara otomatis</string>
+    <string name="shake_name">Kocok untuk meluncurkan</string>
+    <string name="shake_description_on">Mengguncang perangkat akan bertindak seperti tombol tengah</string>
+    <string name="shake_description_off">Mengguncang perangkat tidak akan berpengaruh</string>
 
     <!-- Rate app dialog -->
     <string name="positive_button">Ulasan!</string>

@@ -137,5 +137,8 @@
     <string name="remove_last_description_on">Удалить последний выбранный вариант в рулетке автоматически</string>
     <string name="remove_last_description_off">Не удаляйте автоматически последнюю выбранную опцию в рулетке</string>
     <string name="delete_all_roulette_confirmation">Вы уверены, что хотите удалить все введенные параметры?</string>
+    <string name="shake_name">Встряхните, чтобы запустить</string>
+    <string name="shake_description_on">Встряхивание устройства будет действовать как центральная кнопка</string>
+    <string name="shake_description_off">Встряхивание устройства не будет иметь никакого эффекта</string>
 
 </resources>

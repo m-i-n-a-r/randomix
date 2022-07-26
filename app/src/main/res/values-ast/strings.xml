@@ -27,7 +27,7 @@
     <!-- Coin -->
     <string name="hello_coin_fragment">Mou de moneda</string>
     <string name="description_coin">Tirar al aire una moneda ye fácil, mas pue ayudate a decidir ente facer daqué o non.
-        Cara o cruz...¡Dexa que la moneda lo diga!</string>
+        Cara o cruz…¡Dexa que la moneda lo diga!</string>
     <string name="flip_coin">¡Tira la moneda!</string>
     <string name="hint_coin">¡Primi\'l botón d\'abaxo!</string>
     <string name="result_head">¡Cara!</string>
@@ -145,4 +145,8 @@
     </string>
     <string name="feedback_text">Tengo de dicite daqué</string>
     <string name="not_again_button">Nun volver entrugar</string>
+    <string name="shake_name">Agitar para lanzar</string>
+    <string name="shake_description_on">Sacudir el dispositivo actuará como el botón central</string>
+    <string name="shake_description_off">Sacudir el dispositivo no tendrá ningún efecto</string>
+
 </resources>

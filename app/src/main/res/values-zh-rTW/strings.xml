@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <!-- Main strings -->
@@ -21,6 +22,7 @@
     <string name="generic_option">選項</string>
     <string name="recent_title">最近的選項組，點按以恢復</string>
     <string name="bottom_sheet_no_option">沒有最近的選項組，轉動輪盤來保存當前的選項組！ </string>
+    <string name="letters_shortcut">A-Z 字母</string>
     <string name="range">範圍</string>
     <string name="wrong_range_roulette">範圍錯誤或為空，請正確輸入兩個值！ </string>
     <string name="delete_all_roulette_confirmation">您確定要刪除所有輸入的選項嗎？ </string>
@@ -97,8 +99,17 @@
     <string name="one">1</string>
     <string name="two">2</string>
     <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="ten">10</string>
     <string name="accent_description">改變預設的主題顏色，現在是%s</string>
     <string name="accent_name">主題顏色</string>
+    <string name="theme_description">使用暗色、淺色、或自動選擇主顏色。目前設定為 %s</string>
+    <string name="theme_name">程式主題</string>
     <string name="blue">藍色</string>
     <string name="aqua">水色</string>
     <string name="green">綠色</string>
@@ -115,9 +126,9 @@
     <string name="dark_theme">暗色調</string>
     <string name="light_theme">亮色調</string>
     <string name="app_behavior">行為</string>
+    <string name="rude_answers_name">幹話模式</string>
     <string name="rude_answers_description_on">幹話模式已經啟用了，智障</string>
     <string name="rude_answers_description_off">只有友善又禮貌的答案</string>
-    <string name="rude_answers_name">幹話模式</string>
     <string name="hide_descriptions_name">隱藏模式說明</string>
     <string name="hide_descriptions_description_on">模式說明被隱藏</string>
     <string name="hide_descriptions_description_off">模式說明可見</string>
@@ -135,21 +146,9 @@
     <string name="positive_button">去評價！ </string>
     <string name="negative_button">我很懶</string>
     <string name="cancel_button">算了，下次吧</string>
-    <string name="rating_message">
-        啊啊啊啊啊啊啊！ \n\n
-        好，現在你注意到我了，可以請你留下一個好的評價來幫助Randomix成長嗎？我會非常感激的！祝你有愉快的一天！ :D\n
-    </string>
+    <string name="rating_message">啊啊啊啊啊啊啊！ \n\n
+        好，現在你注意到我了，可以請你留下一個好的評價來幫助Randomix成長嗎？我會非常感激的！祝你有愉快的一天！ :D</string>
     <string name="feedback_text">我有一些事情要告訴你</string>
     <string name="not_again_button">別再問我了</string>
-    <string name="letters_shortcut">A-Z 字母</string>
-    <string name="four">4</string>
-    <string name="five">5</string>
-    <string name="six">6</string>
-    <string name="seven">7</string>
-    <string name="eight">8</string>
-    <string name="nine">9</string>
-    <string name="ten">10</string>
-    <string name="theme_description">使用暗色、淺色、或自動選擇主顏色。目前設定為 %s</string>
-    <string name="theme_name">程式主題</string>
 
 </resources>

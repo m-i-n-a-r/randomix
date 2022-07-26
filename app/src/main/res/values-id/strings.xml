@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <!-- Main strings -->
@@ -125,9 +126,9 @@
     <string name="dark_theme">Gelap</string>
     <string name="light_theme">Terang</string>
     <string name="app_behavior">Perilaku aplikasi</string>
+    <string name="rude_answers_name">Jawaban kasar</string>
     <string name="rude_answers_description_on">Jawaban kasar diaktifkan, idiot</string>
     <string name="rude_answers_description_off">Hanya jawaban yang ramah dan sopan</string>
-    <string name="rude_answers_name">Jawaban kasar</string>
     <string name="hide_descriptions_name">Sembunyikan deskripsi</string>
     <string name="hide_descriptions_description_on">Deskripsi disembunyikan</string>
     <string name="hide_descriptions_description_off">Deskripsi terlihat</string>
@@ -145,10 +146,8 @@
     <string name="positive_button">Ulasan!</string>
     <string name="negative_button">Saya malas</string>
     <string name="cancel_button">Nah!</string>
-    <string name="rating_message">
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
-        \nOke, sekarang setelah saya mendapatkan perhatian Anda, bolehkan saya meminta Anda untuk meninggalkan ulasan yang bagus untuk membantu Randomix berkembang? Saya sangat mengapresiasinya! Semoga hari Anda menyenangkan! :D\n
-    </string>
+    <string name="rating_message">AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
+        \nOke, sekarang setelah saya mendapatkan perhatian Anda, bolehkan saya meminta Anda untuk meninggalkan ulasan yang bagus untuk membantu Randomix berkembang? Saya sangat mengapresiasinya! Semoga hari Anda menyenangkan! :D</string>
     <string name="feedback_text">Saya punya sesuatu untuk diberitahukan ke Anda</string>
     <string name="not_again_button">Jangan tanya lagi</string>
 

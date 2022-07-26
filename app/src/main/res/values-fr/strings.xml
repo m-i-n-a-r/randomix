@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <!-- Main strings -->
@@ -98,6 +99,13 @@
     <string name="one">Un</string>
     <string name="two">Deux</string>
     <string name="three">Trois</string>
+    <string name="four">Quatre</string>
+    <string name="five">Cinq</string>
+    <string name="six">Six</string>
+    <string name="seven">Sept</string>
+    <string name="eight">Huit</string>
+    <string name="nine">Neuf</string>
+    <string name="ten">Dix</string>
     <string name="accent_description">Change la couleur d\'accentuation. Actuellement %s</string>
     <string name="accent_name">Couleur d\'accentuation</string>
     <string name="theme_description">Utiliser un thème sombre ou clair. Currently %s</string>
@@ -118,9 +126,9 @@
     <string name="dark_theme">Sombre</string>
     <string name="light_theme">Clair</string>
     <string name="app_behavior">Comportement de l\'application</string>
+    <string name="rude_answers_name">Réponses grossières</string>
     <string name="rude_answers_description_on">C\'est bon j\'ai mis les réponses grossières</string>
     <string name="rude_answers_description_off">Justes des répoonses gentilles et polies</string>
-    <string name="rude_answers_name">Réponses grossières</string>
     <string name="hide_descriptions_name">Cachez descriptions</string>
     <string name="hide_descriptions_description_on">Descriptions cachées</string>
     <string name="hide_descriptions_description_off">Descriptions visibles</string>
@@ -138,18 +146,9 @@
     <string name="positive_button">Laisser un avis!</string>
     <string name="negative_button">Je suis un flemmard</string>
     <string name="cancel_button">Nan</string>
-    <string name="rating_message">
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
-        \nOK, maintenant que j\'ai ton attention, est-ce que je pourrai te demander de laisser une bonne note pour aider Randomix à grandir un peu ? Ca me ferait vraiment plaisir ! Passe une bonne journée !:D\n
-    </string>
+    <string name="rating_message">AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
+        \nOK, maintenant que j\'ai ton attention, est-ce que je pourrai te demander de laisser une bonne note pour aider Randomix à grandir un peu ? Ca me ferait vraiment plaisir ! Passe une bonne journée !:D</string>
     <string name="feedback_text">J\'ai quelque chose à te dire</string>
     <string name="not_again_button">Ne me redemande jamais ça !</string>
-    <string name="four">Quatre</string>
-    <string name="five">Cinq</string>
-    <string name="six">Six</string>
-    <string name="seven">Sept</string>
-    <string name="eight">Huit</string>
-    <string name="nine">Neuf</string>
-    <string name="ten">Dix</string>
 
 </resources>

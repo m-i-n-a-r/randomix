@@ -276,7 +276,7 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
         // Vibrate and play sound using the common method in MainActivity
         if (act != null) {
             act.vibrate();
-            act.playSound(4);
+            act.playSound(1);
         }
 
         int n;

@@ -96,7 +96,7 @@ public class CoinFragment extends androidx.fragment.app.Fragment implements OnCl
         // Vibrate and play sound using the common method in MainActivity
         if (act != null) {
             act.vibrate();
-            act.playSound(4);
+            act.playSound(2);
         }
 
         // Reset the initial state with another animation

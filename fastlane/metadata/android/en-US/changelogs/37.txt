@@ -1,0 +1,3 @@
+- Shake to launch option
+- Fixes
+- New translations

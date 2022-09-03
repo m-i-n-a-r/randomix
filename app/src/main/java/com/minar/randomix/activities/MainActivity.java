@@ -42,31 +42,63 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Set the base theme and the accent
-        if (theme.equals("system"))
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-        if (theme.equals("dark"))
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        if (theme.equals("light"))
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
-        switch (accent) {
-            case "monet": setTheme(R.style.AppTheme_Monet);
-            case "system": setTheme(R.style.AppTheme_System); // Default
+        switch (theme) {
+            case "system":
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                break;
+            case "dark":
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                break;
+            case "light":
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                break;
         }
-        if (accent.equals("monet")) setTheme(R.style.AppTheme_Monet);
-        if (accent.equals("system")) setTheme(R.style.AppTheme_System); // Default
-        if (accent.equals("blue")) setTheme(R.style.AppTheme_Blue);
-        if (accent.equals("green")) setTheme(R.style.AppTheme_Green);
-        if (accent.equals("aqua")) setTheme(R.style.AppTheme_Aqua);
-        if (accent.equals("orange")) setTheme(R.style.AppTheme_Orange);
-        if (accent.equals("yellow")) setTheme(R.style.AppTheme_Yellow);
-        if (accent.equals("teal")) setTheme(R.style.AppTheme_Teal);
-        if (accent.equals("violet")) setTheme(R.style.AppTheme_Violet);
-        if (accent.equals("pink")) setTheme(R.style.AppTheme_Pink);
-        if (accent.equals("lightBlue")) setTheme(R.style.AppTheme_LightBlue);
-        if (accent.equals("red")) setTheme(R.style.AppTheme_Red);
-        if (accent.equals("lime")) setTheme(R.style.AppTheme_Lime);
-        if (accent.equals("crimson")) setTheme(R.style.AppTheme_Crimson);
+
+        // TODO Allow Monet on Android 12+ only
+        switch (accent) {
+            case "monet":
+                setTheme(R.style.AppTheme_Monet);
+                break;
+            case "system":
+                setTheme(R.style.AppTheme_System); // Default
+                break;
+            case "blue":
+                setTheme(R.style.AppTheme_Blue);
+                break;
+            case "green":
+                setTheme(R.style.AppTheme_Green);
+                break;
+            case "aqua":
+                setTheme(R.style.AppTheme_Aqua);
+                break;
+            case "orange":
+                setTheme(R.style.AppTheme_Orange);
+                break;
+            case "yellow":
+                setTheme(R.style.AppTheme_Yellow);
+                break;
+            case "teal":
+                setTheme(R.style.AppTheme_Teal);
+                break;
+            case "violet":
+                setTheme(R.style.AppTheme_Violet);
+                break;
+            case "pink":
+                setTheme(R.style.AppTheme_Pink);
+                break;
+            case "lightBlue":
+                setTheme(R.style.AppTheme_LightBlue);
+                break;
+            case "red":
+                setTheme(R.style.AppTheme_Red);
+                break;
+            case "lime":
+                setTheme(R.style.AppTheme_Lime);
+                break;
+            case "crimson":
+                setTheme(R.style.AppTheme_Crimson);
+                break;
+        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);

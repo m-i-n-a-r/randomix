@@ -22,6 +22,17 @@
         <item name="alertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
     </style>
 
+    <!-- Monet theme -->
+    <style name="AppTheme.Monet" parent="Theme.Material3.DynamicColors.DayNight">
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
+        <item name="fontFamily">@font/opensans_regular</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog.Monet</item>
+        <item name="alertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog.Monet</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <!-- Splash screen theme -->
     <style name="SplashTheme" parent="SplashTheme.Base.Legacy" />
 
@@ -45,6 +56,12 @@
         <!-- Remove the accent-ish tint -->
         <item name="backgroundTint">?colorBackgroundFloating</item>
         <item name="android:background">?colorBackgroundFloating</item>
+    </style>
+
+    <!-- Preference dialog theme -->
+    <style name="ThemeOverlay.App.MaterialAlertDialog.Monet" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="alertDialogStyle">@style/MaterialAlertDialog.App</item>
+        <item name="dialogCornerRadius">@dimen/bottom_sheet_corners</item>
     </style>
 
     <!-- Note: shape appearance doesn't work with the preference dialogs (they're not material) -->

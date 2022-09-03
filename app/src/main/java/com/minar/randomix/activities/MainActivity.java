@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Set the base theme and the accent
-        assert theme != null;
         if (theme.equals("system"))
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         if (theme.equals("dark"))
@@ -50,7 +49,11 @@ public class MainActivity extends AppCompatActivity {
         if (theme.equals("light"))
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
-        assert accent != null;
+        switch (accent) {
+            case "monet": setTheme(R.style.AppTheme_Monet);
+            case "system": setTheme(R.style.AppTheme_System); // Default
+        }
+        if (accent.equals("monet")) setTheme(R.style.AppTheme_Monet);
         if (accent.equals("system")) setTheme(R.style.AppTheme_System); // Default
         if (accent.equals("blue")) setTheme(R.style.AppTheme_Blue);
         if (accent.equals("green")) setTheme(R.style.AppTheme_Green);

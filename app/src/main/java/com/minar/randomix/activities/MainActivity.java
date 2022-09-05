@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Vibrator;
 
@@ -28,7 +29,19 @@ public class MainActivity extends AppCompatActivity {
 
         // Retrieve the shared preferences
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-        String theme = sp.getString("theme_color", "system");
+        // Initialize the accent depending on the Android version
+        String theme;
+        switch (Build.VERSION.SDK_INT) {
+            case 32:
+                theme = sp.getString("theme_color", "monet");
+                break;
+            case 31:
+                theme = sp.getString("theme_color", "system");
+                break;
+            default:
+                theme = sp.getString("theme_color", "blue");
+                break;
+        }
         String accent = sp.getString("accent_color", "system");
         String lastItem = sp.getString("last_page", "roulette");
 
@@ -54,13 +67,13 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        // Monet on Android 12+ only
+        // Monet on Android 12+ only, system on Android 11+
         switch (accent) {
             case "monet":
                 setTheme(R.style.AppTheme_Monet);
                 break;
             case "system":
-                setTheme(R.style.AppTheme_System); // Default
+                setTheme(R.style.AppTheme_System);
                 break;
             case "blue":
                 setTheme(R.style.AppTheme_Blue);

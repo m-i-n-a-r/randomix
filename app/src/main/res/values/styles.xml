@@ -25,7 +25,8 @@
     <!-- Monet theme -->
     <style name="AppTheme.Monet" parent="Theme.Material3.DynamicColors.DayNight">
         <item name="android:windowLightStatusBar">true</item>
-        <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogMonet</item>
         <item name="fontFamily">@font/opensans_regular</item>
         <item name="android:fontFamily">@font/opensans_regular</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog.Monet</item>
@@ -78,6 +79,14 @@
         <item name="shapeAppearance">@style/ShapeAppearance.App.LargeComponent</item>
         <!-- Remove the accent-ish tint -->
         <item name="backgroundTint">?colorBackgroundFloating</item>
+    </style>
+
+    <style name="CustomBottomSheetDialogMonet" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheet</item>
+    </style>
+
+    <style name="CustomBottomSheetMonet" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="shapeAppearance">@style/ShapeAppearance.App.LargeComponent</item>
     </style>
 
     <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">

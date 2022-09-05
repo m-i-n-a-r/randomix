@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        // TODO Allow Monet on Android 12+ only
+        // Monet on Android 12+ only
         switch (accent) {
             case "monet":
                 setTheme(R.style.AppTheme_Monet);

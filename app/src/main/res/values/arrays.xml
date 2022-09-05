@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <string-array name="themes">
         <item>@string/system_theme</item>
@@ -13,9 +13,7 @@
         <item>light</item>
     </string-array>
 
-    <string-array name="accents">
-        <item>@string/monet</item>
-        <item>@string/system_theme</item>
+    <string-array name="accents" tools:ignore="InconsistentArrays">
         <item>@string/blue</item>
         <item>@string/aqua</item>
         <item>@string/green</item>
@@ -30,9 +28,7 @@
         <item>@string/crimson</item>
     </string-array>
 
-    <string-array name="accentValues">
-        <item>monet</item>
-        <item>system</item>
+    <string-array name="accentValues" tools:ignore="InconsistentArrays">
         <item>blue</item>
         <item>aqua</item>
         <item>green</item>

@@ -20,6 +20,7 @@
         <item name="android:fontFamily">@font/opensans_regular</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
         <item name="alertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
+        <item name="switchStyle">@style/Widget.Material3.CompoundButton.MaterialSwitch</item>
     </style>
 
     <!-- Monet theme -->
@@ -32,6 +33,7 @@
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog.Monet</item>
         <item name="alertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog.Monet</item>
         <item name="windowNoTitle">true</item>
+        <item name="switchStyle">@style/Widget.Material3.CompoundButton.MaterialSwitch</item>
     </style>
 
     <!-- Splash screen theme -->

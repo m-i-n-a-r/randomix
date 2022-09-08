@@ -1,5 +1,6 @@
 package com.minar.randomix.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Animatable;
@@ -87,6 +88,7 @@ public class DiceFragment extends androidx.fragment.app.Fragment implements OnCl
         super.onPause();
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -199,7 +201,9 @@ public class DiceFragment extends androidx.fragment.app.Fragment implements OnCl
     }
 
     // Run the main animation based on the result
+    @SuppressLint("DiscouragedApi")
     private void throwAndRunMainAnimation(int diceNumber) {
+
         // Choose a random number between 1 and 6 with equal possibilities
         Random ran = new Random();
         List<Integer> diceResults = new ArrayList<>();
@@ -358,6 +362,7 @@ public class DiceFragment extends androidx.fragment.app.Fragment implements OnCl
     }
 
     // Run the reset animation to return to the initial state
+    @SuppressLint("DiscouragedApi")
     private void runResetAnimation(int diceNumber) {
         diceAnimation1 = requireView().findViewById(R.id.diceButtonAnimation1);
         if (diceNumber > 1) diceAnimation2 = requireView().findViewById(R.id.diceButtonAnimation2);

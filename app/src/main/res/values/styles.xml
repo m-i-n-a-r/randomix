@@ -57,7 +57,7 @@
     <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="colorOnSurface">?colorAccent</item>
         <item name="alertDialogStyle">@style/MaterialAlertDialog.App</item>
-        <item name="dialogCornerRadius">@dimen/bottom_sheet_corners</item>
+        <item name="dialogCornerRadius">@dimen/dialog_corners</item>
         <!-- Remove the accent-ish tint -->
         <item name="backgroundTint">?colorBackgroundFloating</item>
         <item name="android:background">?colorBackgroundFloating</item>
@@ -66,10 +66,8 @@
     <!-- Preference dialog theme -->
     <style name="ThemeOverlay.App.MaterialAlertDialog.Monet" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="alertDialogStyle">@style/MaterialAlertDialog.App</item>
-        <item name="dialogCornerRadius">@dimen/bottom_sheet_corners</item>
-        <item name="backgroundTint">@android:color/transparent</item>
-        <item name="android:background">@android:color/transparent</item>
-        <item name="android:windowBackground">@drawable/dialog_bg_monet</item>
+        <item name="dialogCornerRadius">@dimen/dialog_corners</item>
+        <item name="android:background">@drawable/dialog_bg_monet</item>
     </style>
 
     <!-- Note: shape appearance doesn't work with the preference dialogs (they're not material) -->
@@ -98,12 +96,12 @@
 
     <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">@dimen/bottom_sheet_corners</item>
+        <item name="cornerSize">@dimen/dialog_corners</item>
     </style>
 
     <style name="ShapeAppearance.App.LargeComponent" parent="ShapeAppearance.Material3.LargeComponent">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">@dimen/bottom_sheet_corners</item>
+        <item name="cornerSize">@dimen/dialog_corners</item>
     </style>
 
     <!-- Bottom navigation for non-monet accents -->

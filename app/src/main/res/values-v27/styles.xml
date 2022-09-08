@@ -21,6 +21,8 @@
         <item name="android:fontFamily">@font/opensans_regular</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
         <item name="alertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
+        <item name="switchStyle">@style/CustomMaterialSwitch</item>
+        <item name="bottomNavigationStyle">@style/CustomBottomNavigation</item>
     </style>
 
     <style name="SplashTheme" parent="SplashTheme.V27" />

@@ -67,6 +67,9 @@
     <style name="ThemeOverlay.App.MaterialAlertDialog.Monet" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="alertDialogStyle">@style/MaterialAlertDialog.App</item>
         <item name="dialogCornerRadius">@dimen/bottom_sheet_corners</item>
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@drawable/dialog_bg_monet</item>
     </style>
 
     <!-- Note: shape appearance doesn't work with the preference dialogs (they're not material) -->

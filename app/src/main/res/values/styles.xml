@@ -15,12 +15,14 @@
         <item name="android:navigationBarColor">@color/goodGray</item> <!-- before P the buttons are white only! -->
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
         <item name="android:textColorSecondary">@color/textColorSecondary</item>
+        <item name="android:textColorTertiary">@color/textColorSecondary</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
         <item name="fontFamily">@font/opensans_regular</item>
         <item name="android:fontFamily">@font/opensans_regular</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
         <item name="alertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
-        <item name="switchStyle">@style/Widget.Material3.CompoundButton.MaterialSwitch</item>
+        <item name="switchStyle">@style/CustomMaterialSwitch</item>
+        <item name="bottomNavigationStyle">@style/CustomBottomNavigation</item>
     </style>
 
     <!-- Monet theme -->
@@ -84,7 +86,7 @@
     </style>
 
     <style name="CustomBottomSheetDialogMonet" parent="ThemeOverlay.Material3.BottomSheetDialog">
-        <item name="bottomSheetStyle">@style/CustomBottomSheet</item>
+        <item name="bottomSheetStyle">@style/CustomBottomSheetMonet</item>
     </style>
 
     <style name="CustomBottomSheetMonet" parent="Widget.Material3.BottomSheet.Modal">
@@ -99,6 +101,19 @@
     <style name="ShapeAppearance.App.LargeComponent" parent="ShapeAppearance.Material3.LargeComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">@dimen/bottom_sheet_corners</item>
+    </style>
+
+    <!-- Bottom navigation for non-monet accents -->
+    <style name="CustomBottomNavigation" parent="Widget.Material3.BottomNavigationView">
+        <item name="backgroundTint">?android:statusBarColor</item>
+    </style>
+
+    <!-- Switch for non-monet accents -->
+    <style name="CustomMaterialSwitch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="thumbTint">?colorAccent</item>
+        <item name="thumbIconTint">?colorSurface</item>
+        <item name="trackTint">@color/goodGrayTranslucent</item>
+        <item name="trackDecorationTint">?colorAccent</item>
     </style>
 
     <!-- Accent styles -->

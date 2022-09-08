@@ -25,10 +25,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.widget.SwitchCompat;
+
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.google.android.material.materialswitch.MaterialSwitch;
 import com.minar.randomix.R;
 import com.minar.randomix.activities.MainActivity;
 import com.minar.randomix.utilities.Constants;
@@ -89,7 +90,7 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
         rangeMin = v.findViewById(R.id.rangeMinRoulette);
         rangeMax = v.findViewById(R.id.rangeMaxRoulette);
         result = v.findViewById(R.id.resultRoulette);
-        MaterialSwitch rangeSwitch = v.findViewById(R.id.rangeSwitchRoulette);
+        SwitchCompat rangeSwitch = v.findViewById(R.id.rangeSwitchRoulette);
         ChipGroup chipList = v.findViewById(R.id.rouletteChipList);
         ImageView range = v.findViewById(R.id.animatedRangeRoulette);
         LinearLayout rangeArea = v.findViewById(R.id.rangeOptionRoulette);
@@ -236,7 +237,7 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
     private void mainThrow() {
         final ImageView spinAnimation = requireView().findViewById(R.id.buttonSpinRoulette);
         final ChipGroup optionsList = requireView().findViewById(R.id.rouletteChipList);
-        final MaterialSwitch rangeSwitch = requireView().findViewById(R.id.rangeSwitchRoulette);
+        final SwitchCompat rangeSwitch = requireView().findViewById(R.id.rangeSwitchRoulette);
         final ImageView recentAnimation = requireView().findViewById(R.id.recentButton);
         int minValue = -1, maxValue = -1;
         if (!inRangeMode) {

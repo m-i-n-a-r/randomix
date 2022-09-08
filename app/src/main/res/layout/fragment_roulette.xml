@@ -191,7 +191,7 @@
 
         </LinearLayout>
 
-        <com.google.android.material.materialswitch.MaterialSwitch
+        <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/rangeSwitchRoulette"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -200,8 +200,7 @@
             android:text="@string/range"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             app:switchPadding="@dimen/activity_horizontal_margin"
-            app:switchTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-            app:useMaterialThemeColors="true" />
+            app:switchTextAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
 
         <HorizontalScrollView
             android:layout_width="match_parent"

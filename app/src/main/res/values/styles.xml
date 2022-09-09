@@ -107,6 +107,7 @@
     <!-- Bottom navigation for non-monet accents -->
     <style name="CustomBottomNavigation" parent="Widget.Material3.BottomNavigationView">
         <item name="backgroundTint">?android:statusBarColor</item>
+        <item name="itemTextColor">@drawable/bottom_navbar_item</item>
     </style>
 
     <!-- Switch for non-monet accents -->

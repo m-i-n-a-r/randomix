@@ -11,7 +11,7 @@
             <path
                 android:name="path_1"
                 android:pathData="M 12 19.2 C 9.5 19.2 7.29 17.92 6 16 C 6.03 14 10 12.9 12 12.9 C 14 12.9 17.97 14 18 16 C 16.71 17.92 14.5 19.2 12 19.2 M 12 5 C 12.795 5 13.559 5.316 14.121 5.879 C 14.684 6.441 15 7.205 15 8 C 15 8.795 14.684 9.559 14.121 10.121 C 13.559 10.684 12.795 11 12 11 C 11.205 11 10.441 10.684 9.879 10.121 C 9.316 9.559 9 8.795 9 8 C 9 7.205 9.316 6.441 9.879 5.879 C 10.441 5.316 11.205 5 12 5 M 12 2 C 9.349 2 6.804 3.054 4.929 4.929 C 3.054 6.804 2 9.349 2 12 C 2 14.651 3.054 17.196 4.929 19.071 C 6.804 20.946 9.349 22 12 22 C 13.755 22 15.48 21.538 17 20.66 C 18.52 19.783 19.783 18.52 20.66 17 C 21.538 15.48 22 13.755 22 12 C 22 6.47 17.5 2 12 2 Z"
-                android:fillColor="@color/goodGray"/>
+                android:fillColor="?attr/colorOutline"/>
         </vector>
     </aapt:attr>
     <target android:name="path_1">
@@ -21,7 +21,7 @@
                     android:propertyName="fillColor"
                     android:duration="500"
                     android:valueFrom="?colorAccent"
-                    android:valueTo="@color/goodGray"
+                    android:valueTo="?attr/colorOutline"
                     android:valueType="colorType"
                     android:interpolator="@android:interpolator/fast_out_slow_in"/>
                 <objectAnimator

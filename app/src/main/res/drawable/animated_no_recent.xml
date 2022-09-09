@@ -37,14 +37,14 @@
                     android:startOffset="100"
                     android:duration="650"
                     android:valueFrom="?colorAccent"
-                    android:valueTo="@color/goodGray"
+                    android:valueTo="?attr/colorOutline"
                     android:valueType="colorType"
                     android:interpolator="@android:interpolator/fast_out_slow_in"/>
                 <objectAnimator
                     android:propertyName="fillColor"
                     android:startOffset="750"
                     android:duration="650"
-                    android:valueFrom="@color/goodGray"
+                    android:valueFrom="?attr/colorOutline"
                     android:valueTo="?colorAccent"
                     android:valueType="colorType"
                     android:interpolator="@android:interpolator/fast_out_slow_in"/>

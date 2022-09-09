@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.color.MaterialColors;
 import com.minar.randomix.R;
 import com.minar.randomix.utilities.Constants;
 import com.minar.randomix.utilities.OnItemClickListener;
@@ -73,7 +74,7 @@ public class RecentAdapter extends RecyclerView.Adapter<RecentAdapter.RecentHold
             holder.optionList.setTextColor(getThemeAccentColor(holder.adapter.inflater.getContext()));
         } else {
             holder.optionList.setTypeface(null, Typeface.NORMAL);
-            holder.optionList.setTextColor(getColor(holder.adapter.inflater.getContext(), R.color.goodGray));
+            holder.optionList.setTextColor(MaterialColors.getColor(holder.itemView, R.attr.colorOutline));
         }
         holder.optionList.setText(RecentUtils.fromOptionList(current));
     }

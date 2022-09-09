@@ -8,8 +8,12 @@
         <item name="colorPrimary">@color/colorAccent</item>
         <item name="colorPrimaryContainer">@color/colorAccentTranslucent</item>
         <item name="colorSecondary">@color/colorAccent</item>
-        <item name="colorSecondaryContainer">@color/colorAccentTranslucent</item> <!-- Navbar item halo -->
+        <item name="colorOutline">@color/goodGray</item>
+        <!-- Navbar item halo -->
+        <item name="colorSecondaryContainer">@color/colorAccentTranslucent</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorTertiary">@color/colorAccent</item>
+        <item name="colorTertiaryContainer">@color/colorAccentTranslucent</item>
         <item name="android:navigationBarColor">@color/colorPrimaryInverse</item>
         <item name="android:statusBarColor">@color/colorBackgroundInverse</item>
         <item name="android:colorBackground">@color/colorBackgroundInverse</item>
@@ -32,10 +36,12 @@
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogMonet</item>
         <item name="fontFamily">@font/opensans_regular</item>
         <item name="android:fontFamily">@font/opensans_regular</item>
-        <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog.Monet</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog.Monet
+        </item>
         <item name="alertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog.Monet</item>
         <item name="windowNoTitle">true</item>
         <item name="switchStyle">@style/Widget.Material3.CompoundButton.MaterialSwitch</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
     </style>
 
     <!-- Splash screen theme -->

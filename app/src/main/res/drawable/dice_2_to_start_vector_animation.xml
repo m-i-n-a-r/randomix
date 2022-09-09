@@ -28,7 +28,7 @@
                     android:propertyName="fillColor"
                     android:duration="300"
                     android:valueFrom="?colorAccent"
-                    android:valueTo="@color/goodGray"
+                    android:valueTo="?attr/colorOutline"
                     android:valueType="colorType"
                     android:interpolator="@android:interpolator/fast_out_slow_in"/>
             </set>

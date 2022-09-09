@@ -11,11 +11,11 @@
             <path
                 android:name="path"
                 android:pathData="M 16.23 18 L 12 15.45 L 7.77 18 L 8.89 13.19 L 5.16 9.96 L 10.08 9.54 L 12 5 L 13.92 9.53 L 18.84 9.95 L 15.11 13.18 L 16.23 18 M 12 2 C 6.47 2 2 6.5 2 12 C 2 14.651 3.054 17.196 4.929 19.071 C 6.804 20.946 9.349 22 12 22 C 13.755 22 15.48 21.538 17 20.66 C 18.52 19.783 19.783 18.52 20.66 17 C 21.538 15.48 22 13.755 22 12 C 22 10.245 21.538 8.52 20.66 7 C 19.783 5.48 18.52 4.217 17 3.34 C 15.48 2.462 13.755 2 12 2 Z"
-                android:fillColor="@color/goodGray"/>
+                android:fillColor="?attr/colorOutline"/>
             <path
                 android:name="path_2"
                 android:pathData="M 12 2 C 17.53 2 22 6.47 22 12 C 22 17.53 17.53 22 12 22 C 6.47 22 2 17.53 2 12 C 2 6.47 6.47 2 12 2 M 15.59 7 L 12 10.59 L 8.41 7 L 7 8.41 L 10.59 12 L 7 15.59 L 8.41 17 L 12 13.41 L 15.59 17 L 17 15.59 L 13.41 12 L 17 8.41 L 15.59 7 Z"
-                android:fillColor="@color/goodGray"
+                android:fillColor="?attr/colorOutline"
                 android:fillAlpha="0"/>
         </vector>
     </aapt:attr>
@@ -33,7 +33,7 @@
                 <objectAnimator
                     android:propertyName="fillColor"
                     android:duration="1000"
-                    android:valueFrom="@color/goodGray"
+                    android:valueFrom="?attr/colorOutline"
                     android:valueTo="@color/negativeRed"
                     android:valueType="colorType"
                     android:interpolator="@android:interpolator/fast_out_slow_in"/>

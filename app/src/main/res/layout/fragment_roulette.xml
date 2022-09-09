@@ -19,9 +19,9 @@
             android:gravity="center_horizontal"
             android:maxLines="1"
             android:text="@string/hello_roulette_fragment"
-            android:textAllCaps="true"
+            android:textColor="?android:textColorPrimary"
             android:textSize="@dimen/title_text_size"
-            app:fontFamily="@font/opensans_extrabold" />
+            app:fontFamily="@font/opensans_semibold" />
 
         <TextView
             android:id="@+id/descriptionRoulette"
@@ -68,7 +68,7 @@
                 app:boxStrokeWidth="@dimen/text_box_stroke_width"
                 app:boxStrokeWidthFocused="@dimen/text_box_focused_stroke_width"
                 app:endIconMode="clear_text"
-                app:endIconTint="@color/goodGray"
+                app:endIconTint="?attr/colorOutline"
                 app:expandedHintEnabled="true"
                 app:hintAnimationEnabled="true"
                 app:hintEnabled="true"
@@ -129,7 +129,7 @@
                 app:hintEnabled="true"
                 app:hintTextColor="?colorAccent"
                 app:startIconDrawable="@drawable/ic_range_min_24dp"
-                app:startIconTint="@color/goodGray">
+                app:startIconTint="?attr/colorOutline">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/rangeMinRoulette"
@@ -175,7 +175,7 @@
                 app:hintEnabled="true"
                 app:hintTextColor="?colorAccent"
                 app:startIconDrawable="@drawable/ic_range_max_24dp"
-                app:startIconTint="@color/goodGray">
+                app:startIconTint="?attr/colorOutline">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/rangeMaxRoulette"

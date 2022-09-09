@@ -55,7 +55,7 @@
                 android:paddingEnd="@dimen/activity_horizontal_margin"
                 android:text="@string/app_name"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                android:textColor="?colorAccent"
+                android:textColor="?attr/colorPrimary"
                 app:fontFamily="@font/opensans_bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/rateImage"

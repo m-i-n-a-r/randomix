@@ -55,7 +55,7 @@
                 android:paddingEnd="@dimen/activity_horizontal_margin"
                 android:text="@string/recent_title"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                android:textColor="?colorAccent"
+                android:textColor="?attr/colorPrimary"
                 app:fontFamily="@font/opensans_bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/recentImage"
@@ -67,37 +67,37 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_roulette_entry"
                 android:text="@string/letters_shortcut"
-                android:textColor="?colorAccent"
+                android:textColor="?attr/colorPrimary"
                 app:chipBackgroundColor="@drawable/chip_bg_state_list"
                 app:chipCornerRadius="@dimen/dialog_corners"
                 app:chipIcon="@drawable/insert_vector_animation"
                 app:chipIconEnabled="true"
-                app:chipIconTint="?colorAccent"
+                app:chipIconTint="?attr/colorPrimary"
                 app:chipStrokeWidth="0dp"
                 app:chipSurfaceColor="@android:color/transparent"
                 app:layout_constraintEnd_toStartOf="@id/numbersChip"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/recentTitle"
                 app:layout_constraintVertical_chainStyle="spread"
-                app:rippleColor="?colorAccent" />
+                app:rippleColor="?attr/colorPrimary" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/numbersChip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/numbers_1_100_shortcut"
-                android:textColor="?colorAccent"
+                android:textColor="?attr/colorPrimary"
                 app:chipBackgroundColor="@drawable/chip_bg_state_list"
                 app:chipCornerRadius="@dimen/dialog_corners"
                 app:chipIcon="@drawable/insert_vector_animation"
                 app:chipIconEnabled="true"
-                app:chipIconTint="?colorAccent"
+                app:chipIconTint="?attr/colorPrimary"
                 app:chipStrokeWidth="0dp"
                 app:chipSurfaceColor="@android:color/transparent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/lettersChip"
                 app:layout_constraintTop_toTopOf="@id/lettersChip"
-                app:rippleColor="?colorAccent" />
+                app:rippleColor="?attr/colorPrimary" />
 
             <TextView
                 android:id="@+id/recentNoResult"

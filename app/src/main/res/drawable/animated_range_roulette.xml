@@ -11,8 +11,8 @@
             <path
                 android:name="range"
                 android:pathData="M 10 8 L 6 8 L 12 2 L 18 8 L 14 8 L 14 16 L 18 16 L 12 22 L 6 16 L 10 16 L 10 8 Z"
-                android:fillColor="?colorAccent"
-                android:strokeColor="?colorAccent"/>
+                android:fillColor="?attr/colorPrimary"
+                android:strokeColor="?attr/colorPrimary"/>
         </vector>
     </aapt:attr>
     <target android:name="range">

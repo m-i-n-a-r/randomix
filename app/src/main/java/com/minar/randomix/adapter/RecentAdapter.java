@@ -92,7 +92,7 @@ public class RecentAdapter extends RecyclerView.Adapter<RecentAdapter.RecentHold
     // Get the accent color
     public static int getThemeAccentColor(final Context context) {
         final TypedValue value = new TypedValue();
-        context.getTheme().resolveAttribute(R.attr.colorAccent, value, true);
+        context.getTheme().resolveAttribute(R.attr.colorPrimary, value, true);
         return value.data;
     }
 }

@@ -62,7 +62,7 @@
 
     <!-- Preference dialog theme -->
     <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
-        <item name="colorOnSurface">?colorAccent</item>
+        <item name="colorOnSurface">?attr/colorPrimary</item>
         <item name="alertDialogStyle">@style/MaterialAlertDialog.App</item>
         <item name="dialogCornerRadius">@dimen/dialog_corners</item>
         <!-- Remove the accent-ish tint -->
@@ -119,10 +119,10 @@
 
     <!-- Switch for non-monet accents -->
     <style name="CustomMaterialSwitch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
-        <item name="thumbTint">?colorAccent</item>
+        <item name="thumbTint">?attr/colorPrimary</item>
         <item name="thumbIconTint">?colorSurface</item>
         <item name="trackTint">@color/goodGrayTranslucent</item>
-        <item name="trackDecorationTint">?colorAccent</item>
+        <item name="trackDecorationTint">?attr/colorPrimary</item>
     </style>
 
     <!-- Accent styles -->

@@ -69,7 +69,7 @@
                     android:startOffset="1250"
                     android:duration="500"
                     android:valueFrom="?attr/colorOutline"
-                    android:valueTo="?colorAccent"
+                    android:valueTo="?attr/colorPrimary"
                     android:valueType="colorType"
                     android:interpolator="@android:interpolator/fast_out_slow_in"/>
             </set>

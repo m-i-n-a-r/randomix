@@ -72,7 +72,7 @@
                 app:expandedHintEnabled="true"
                 app:hintAnimationEnabled="true"
                 app:hintEnabled="true"
-                app:hintTextColor="?colorAccent">
+                app:hintTextColor="?attr/colorPrimary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/entryRoulette"
@@ -127,7 +127,7 @@
                 app:expandedHintEnabled="true"
                 app:hintAnimationEnabled="true"
                 app:hintEnabled="true"
-                app:hintTextColor="?colorAccent"
+                app:hintTextColor="?attr/colorPrimary"
                 app:startIconDrawable="@drawable/ic_range_min_24dp"
                 app:startIconTint="?attr/colorOutline">
 
@@ -173,7 +173,7 @@
                 app:expandedHintEnabled="true"
                 app:hintAnimationEnabled="true"
                 app:hintEnabled="true"
-                app:hintTextColor="?colorAccent"
+                app:hintTextColor="?attr/colorPrimary"
                 app:startIconDrawable="@drawable/ic_range_max_24dp"
                 app:startIconTint="?attr/colorOutline">
 

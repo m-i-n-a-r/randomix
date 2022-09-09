@@ -40,14 +40,14 @@
                     android:propertyName="fillColor"
                     android:duration="1000"
                     android:valueFrom="?attr/colorOutline"
-                    android:valueTo="?colorAccent"
+                    android:valueTo="?attr/colorPrimary"
                     android:valueType="colorType"
                     android:interpolator="@android:interpolator/fast_out_slow_in"/>
                 <objectAnimator
                     android:propertyName="fillColor"
                     android:startOffset="1000"
                     android:duration="1000"
-                    android:valueFrom="?colorAccent"
+                    android:valueFrom="?attr/colorPrimary"
                     android:valueTo="?attr/colorOutline"
                     android:valueType="colorType"
                     android:interpolator="@android:interpolator/fast_out_slow_in"/>

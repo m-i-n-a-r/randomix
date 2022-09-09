@@ -51,7 +51,7 @@
                 <objectAnimator
                     android:propertyName="strokeColor"
                     android:duration="1000"
-                    android:valueFrom="?colorAccent"
+                    android:valueFrom="?attr/colorPrimary"
                     android:valueTo="@color/positiveGreen"
                     android:valueType="colorType"
                     android:interpolator="@android:anim/linear_interpolator"/>

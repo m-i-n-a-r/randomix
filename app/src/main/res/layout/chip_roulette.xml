@@ -8,6 +8,7 @@
     android:textColor="?attr/colorSurface"
     app:chipBackgroundColor="?attr/colorOutline"
     app:chipCornerRadius="@dimen/dialog_corners"
-    app:chipStrokeWidth="0dp"
+    app:chipStrokeColor="?attr/colorBackgroundFloating"
+    app:chipStrokeWidth="@dimen/text_box_stroke_width"
     app:chipSurfaceColor="@android:color/transparent"
-    app:rippleColor="?colorAccent" />
+    app:rippleColor="?attr/colorPrimary" />

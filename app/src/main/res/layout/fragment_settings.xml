@@ -34,7 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleSettings"
-        app:tint="?colorAccent" />
+        app:tint="?attr/colorPrimary" />
 
     <TextView
         android:id="@+id/descriptionMinar"
@@ -63,7 +63,7 @@
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/descriptionMinar"
-        app:tint="?colorAccent" />
+        app:tint="?attr/colorPrimary" />
 
     <ImageView
         android:id="@+id/minartt"
@@ -80,7 +80,7 @@
         app:layout_constraintEnd_toStartOf="@id/minarps"
         app:layout_constraintStart_toEndOf="@id/minarig"
         app:layout_constraintTop_toTopOf="@id/minarig"
-        app:tint="?colorAccent" />
+        app:tint="?attr/colorPrimary" />
 
     <ImageView
         android:id="@+id/minarps"
@@ -97,7 +97,7 @@
         app:layout_constraintEnd_toStartOf="@id/minargit"
         app:layout_constraintStart_toEndOf="@id/minartt"
         app:layout_constraintTop_toTopOf="@id/minarig"
-        app:tint="?colorAccent" />
+        app:tint="?attr/colorPrimary" />
 
     <ImageView
         android:id="@+id/minargit"
@@ -114,7 +114,7 @@
         app:layout_constraintEnd_toStartOf="@id/minarsite"
         app:layout_constraintStart_toEndOf="@id/minarps"
         app:layout_constraintTop_toTopOf="@id/minarig"
-        app:tint="?colorAccent" />
+        app:tint="?attr/colorPrimary" />
 
     <ImageView
         android:id="@+id/minarsite"
@@ -131,6 +131,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/minargit"
         app:layout_constraintTop_toTopOf="@id/minarig"
-        app:tint="?colorAccent" />
+        app:tint="?attr/colorPrimary" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,39 +29,37 @@ public class MainActivity extends AppCompatActivity {
 
         // Retrieve the shared preferences
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-        // Initialize the accent depending on the Android version
-        String accent;
-        switch (Build.VERSION.SDK_INT) {
-            case 23:
-            case 24:
-            case 25:
-            case 26:
-            case 27:
-            case 28:
-            case 29:
-                sp.edit().putString("accent_color", "blue").apply();
-                accent = sp.getString("accent_color", "blue");
-                break;
-            case 31:
-                sp.edit().putString("accent_color", "system").apply();
-                accent = sp.getString("accent_color", "system");
-                break;
-            default:
-                sp.edit().putString("accent_color", "monet").apply();
-                accent = sp.getString("accent_color", "monet");
-                break;
-        }
-        String theme = sp.getString("theme_color", "system");
-        String lastItem = sp.getString("last_page", "roulette");
 
         if (!sp.getBoolean("first", false)) {
             SharedPreferences.Editor editor = sp.edit();
+            // Set default accent
+            switch (Build.VERSION.SDK_INT) {
+                case 23:
+                case 24:
+                case 25:
+                case 26:
+                case 27:
+                case 28:
+                case 29:
+                    editor.putString("accent_color", "blue");
+                    break;
+                case 31:
+                    editor.putString("accent_color", "system");
+                    break;
+                default:
+                    editor.putString("accent_color", "monet");
+                    break;
+            }
             editor.putBoolean("first", true);
             editor.apply();
             Intent intent = new Intent(this, IntroActivity.class); // Call the AppIntro activity
             startActivity(intent);
             finish();
         }
+
+        String accent = sp.getString("accent_color", "blue");
+        String theme = sp.getString("theme_color", "system");
+        String lastItem = sp.getString("last_page", "roulette");
 
         // Set the base theme and the accent
         switch (theme) {

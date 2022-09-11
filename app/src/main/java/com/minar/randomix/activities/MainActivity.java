@@ -16,6 +16,8 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.preference.PreferenceManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.color.DynamicColors;
+import com.google.android.material.elevation.SurfaceColors;
 import com.minar.randomix.R;
 import com.minar.randomix.utilities.AppRater;
 
@@ -178,6 +180,12 @@ public class MainActivity extends AppCompatActivity {
             case "settings":
                 navigation.setSelectedItemId(R.id.navigationSettings);
                 break;
+        }
+
+        // Navigation bar management (if executed before, it doesn't work)
+        if (accent.equals("monet")) {
+            DynamicColors.applyToActivityIfAvailable(this);
+            getWindow().setNavigationBarColor(SurfaceColors.SURFACE_2.getColor(this));
         }
 
         // Rating stuff

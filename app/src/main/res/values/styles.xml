@@ -10,6 +10,7 @@
         <item name="colorPrimaryContainer">@color/colorAccentTranslucent</item>
         <item name="colorSecondary">@color/colorAccent</item>
         <item name="colorOutline">@color/goodGray</item>
+        <item name="colorSurfaceVariant">@color/goodGrayTranslucent</item>
         <!-- Navbar item halo -->
         <item name="colorSecondaryContainer">@color/colorAccentTranslucent</item>
         <item name="colorAccent">@color/colorAccent</item>

@@ -33,7 +33,7 @@
     <!-- Roulette Bottom Sheet -->
     <dimen name="dialog_corners">16dp</dimen>
     <dimen name="title_height">56dp</dimen>
-    <dimen name="peek_height">900dp</dimen> <!-- Decrease the value leads to unexpected behaviors -->
+    <dimen name="peek_height">550dp</dimen>
     <dimen name="max_recent_options">10</dimen>
     <dimen name="bottom_sheet_pill_height">36dp</dimen>
     <dimen name="bottom_sheet_pill_width">4dp</dimen>

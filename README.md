@@ -4,14 +4,14 @@ An open source app to choose randomly between numbers, answers, options and so o
 
 <p align='center'>
   <a href='https://github.com/m-i-n-a-r/randomix/blob/master/LICENSE.md'><img src='https://img.shields.io/cocoapods/l/AFNetworking.svg'/></a>
-  <img src='https://img.shields.io/badge/version-2.1.X-blue'/>
+  <img src='https://img.shields.io/badge/version-2.3.X-blue'/>
 	<img src='https://img.shields.io/badge/status-released-success'/>
 	<img src='https://img.shields.io/badge/-translations%20needed!-yellow'/>
 </p>
 
 ## Introduction
 This is an open source app created to experiment some new android features, but it's also available on Play Store and F-Droid for all users.
-The main purpose of the app is provide a **random choice** in different ways. The app contains some basic personalization options and an introduction, plus some new resources like **animated vector drawables** and full light theme. The design is a bit personal, it follows the guidelines just partially.
+The main purpose of the app is provide a **random choice** in different ways. The app contains some basic personalization options and an introduction, plus a lot of **animated vector drawables**. The design is a bit personal, but it mostly follows the guidelines.
 
 ## Translations
 
@@ -38,20 +38,23 @@ Special thanks to Nickoriginal for the overall improvement of each translation
   - **Dice** -> throws a chosen number of dice and prints the result.
   - **Magic Ball** -> provides randomly chosen answers to any question.
 - Light and dark themes (Automatic dark mode supported)
-- Selectable accent (no app restart needed, system accent supported on Android 12+)
-- Up to 10 dice, plus 3v3 mode
+- Full Material You support
+- Selectable accent (no app restart needed)
+- Up to 10 dice, 3v3 mode
 - The app remember the last used mode
 - Roulette presets for letters and numbers
 - Custom ranges (values from 0 to 99999)
 - Multiwindows support
 - Android 12 animated splashscreen supported
+- Android 13 per-app language support
+- Android 13 themed icon support
 - First time introduction
 - Rate the app dialog
-- Simple and precise UI, following Material You guidelines
+- Simple and precise UI, following Google guidelines
 - Allow equal options, dice number, rude answers, remove last chosen option in the roulette
 - Sounds, vibration and other options
 - Small size (~4MB), optimized code
-- Available in many languages
+- Available in many languages (see the table above)
 
 ## Screenshots
 <p align='center'>

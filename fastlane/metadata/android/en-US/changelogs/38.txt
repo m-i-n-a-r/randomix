@@ -1,0 +1,4 @@
+- Full Material You support
+- Android 13 per-app language support
+- Android 13 themed icon support
+- Fixes and a lot of UI improvements

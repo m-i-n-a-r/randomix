@@ -30,7 +30,8 @@ An example?
     <li> Shake to launch option </li>
     <li> Light and dark themes, Material You </li>
     <li> Up to 10 dice, plus a 3v3 mode </li>
-    <li> Selectable accent or automatic accent (10+ choices) </li>
+    <li> Selectable accent </li>
+    <li> Android 13 per-app language and themed icon support </li>
     <li> Vibration and sounds </li>
     <li> Rude answers, allow equal options, dice number </li>
     <li> First time introduction </li>

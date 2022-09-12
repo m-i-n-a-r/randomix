@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.minar.randomix.R;
@@ -38,7 +39,22 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         Activity activity = getActivity();
         if (activity != null) {
-            if (key.equals("theme_color")) activity.recreate();
+            if (key.equals("theme_color")) {
+                switch (sharedPreferences.getString("theme_color", "")) {
+                    case "dark": {
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                        break;
+                    }
+                    case "light": {
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                        break;
+                    }
+                    default: {
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                        break;
+                    }
+                }
+            }
             if (key.equals("accent_color")) activity.recreate();
         }
     }

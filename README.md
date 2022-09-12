@@ -58,14 +58,14 @@ Special thanks to Nickoriginal for the overall improvement of each translation
 
 ## Screenshots
 <p align='center'>
-  <img src='https://i.imgur.com/GrUTxZ8.png' width='22%'/>
-  <img src='https://i.imgur.com/NKChsm2.png' width='22%'/>
-  <img src='https://i.imgur.com/cvPcNxj.png' width='22%'/>
-  <img src='https://i.imgur.com/YUVUGvI.png' width='22%'/>
-  <img src='https://i.imgur.com/g4UxqVV.png' width='22%'/>
-  <img src='https://i.imgur.com/2SFjrLG.png' width='22%'/>
-  <img src='https://i.imgur.com/eclCXiC.png' width='22%'/>
-  <img src='https://i.imgur.com/Ps0Frge.png' width='22%'/>
+  <img src='https://i.imgur.com/C61kjuo.png' width='22%'/>
+  <img src='https://i.imgur.com/FCe38ow.png' width='22%'/>
+  <img src='https://i.imgur.com/vr4tYQ9.png' width='22%'/>
+  <img src='https://i.imgur.com/0PZaSPX.png' width='22%'/>
+  <img src='https://i.imgur.com/8TRHXEu.png' width='22%'/>
+  <img src='https://i.imgur.com/DbjhZEl.png' width='22%'/>
+  <img src='https://i.imgur.com/aMeqjeY.png' width='22%'/>
+  <img src='https://i.imgur.com/XjAqpM0.png' width='22%'/>
 </p>
 
 ## Download

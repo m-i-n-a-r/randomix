@@ -14,9 +14,8 @@
         android:gravity="center_horizontal"
         android:maxLines="1"
         android:text="@string/hello_settings_fragment"
-        android:textColor="?android:textColorPrimary"
+        android:textColor="?attr/colorOnSurface"
         android:textSize="@dimen/title_text_size"
-        app:fontFamily="@font/opensans_semibold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -44,8 +43,8 @@
         android:scrollbars="none"
         android:text="@string/dev_description"
         android:textAlignment="center"
+        android:textColor="?attr/colorOnBackground"
         app:layout_constraintTop_toBottomOf="@id/imageMinar" />
-
 
     <ImageView
         android:id="@+id/minarig"

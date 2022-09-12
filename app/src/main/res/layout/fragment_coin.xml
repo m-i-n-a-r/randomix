@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -19,9 +18,8 @@
             android:gravity="center_horizontal"
             android:maxLines="1"
             android:text="@string/hello_coin_fragment"
-            android:textColor="?android:textColorPrimary"
-            android:textSize="@dimen/title_text_size"
-            app:fontFamily="@font/opensans_semibold" />
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="@dimen/title_text_size" />
 
         <TextView
             android:id="@+id/descriptionCoin"
@@ -30,8 +28,8 @@
             android:layout_margin="@dimen/linear_vertical_margin"
             android:gravity="center_horizontal"
             android:text="@string/description_coin"
-            android:textSize="@dimen/description_text_size"
-            app:fontFamily="@font/opensans_regular" />
+            android:textColor="?attr/colorOnBackground"
+            android:textSize="@dimen/description_text_size" />
 
         <TextView
             android:id="@+id/resultCoin"
@@ -42,7 +40,7 @@
             android:gravity="center_horizontal"
             android:text="@string/result_placeholder"
             android:textSize="@dimen/result_text_size"
-            app:fontFamily="@font/opensans_bold" />
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/coinButtonAnimation"

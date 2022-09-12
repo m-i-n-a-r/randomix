@@ -51,9 +51,8 @@
                 android:paddingStart="@dimen/side_drawable_margin"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
                 android:text="@string/app_name"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                 android:textColor="?attr/colorPrimary"
-                app:fontFamily="@font/opensans_bold"
+                android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/rateImage"
                 app:layout_constraintTop_toBottomOf="@id/dragHandle" />
@@ -65,8 +64,7 @@
                 android:paddingHorizontal="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
                 android:text="@string/rating_message"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-                app:fontFamily="@font/opensans_regular"
+                android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rateTitle" />

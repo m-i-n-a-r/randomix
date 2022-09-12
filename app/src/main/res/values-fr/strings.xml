@@ -143,8 +143,8 @@
     <string name="shake_description_off">Secouer l\'appareil n\'aura aucun effet</string>
 
     <!-- Rate app dialog -->
-    <string name="positive_button">Laisser un avis!</string>
-    <string name="negative_button">Je suis un flemmard</string>
+    <string name="review">Laisser un avis!</string>
+    <string name="no_lazy">Je suis un flemmard</string>
     <string name="cancel_button">Nan</string>
     <string name="rating_message">AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
         \nOK, maintenant que j\'ai ton attention, est-ce que je pourrai te demander de laisser une bonne note pour aider Randomix à grandir un peu ? Ca me ferait vraiment plaisir ! Passe une bonne journée !:D</string>

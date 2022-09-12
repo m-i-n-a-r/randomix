@@ -143,8 +143,8 @@
     <string name="shake_description_off">Mengguncang perangkat tidak akan berpengaruh</string>
 
     <!-- Rate app dialog -->
-    <string name="positive_button">Ulasan!</string>
-    <string name="negative_button">Saya malas</string>
+    <string name="review">Ulasan!</string>
+    <string name="no_lazy">Saya malas</string>
     <string name="cancel_button">Nah!</string>
     <string name="rating_message">AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
         \nOke, sekarang setelah saya mendapatkan perhatian Anda, bolehkan saya meminta Anda untuk meninggalkan ulasan yang bagus untuk membantu Randomix berkembang? Saya sangat mengapresiasinya! Semoga hari Anda menyenangkan! :D</string>

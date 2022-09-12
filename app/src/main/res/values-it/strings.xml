@@ -143,8 +143,8 @@
     <string name="shake_description_off">Scuotere il dispositivo non avrà alcun effetto</string>
 
     <!-- Rate app dialog -->
-    <string name="positive_button">Recensisco!</string>
-    <string name="negative_button">Sono pigro/a</string>
+    <string name="review">Recensisco!</string>
+    <string name="no_lazy">Sono pigro/a</string>
     <string name="cancel_button">Nah</string>
     <string name="rating_message">AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
         \nOk, ora che ho la tua attenzione, potrei chiederti di lasciare una buona recensione per aiutare Randomix a crescere un pochino? Lo apprezzerei davvero tanto! Ti auguro una buona giornata! :D</string>

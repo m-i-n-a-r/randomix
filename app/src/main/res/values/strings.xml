@@ -159,8 +159,8 @@
     <string name="shake_description_off">Shaking the device won\'t have any effect</string>
 
     <!-- Rate app dialog -->
-    <string name="positive_button">Review!</string>
-    <string name="negative_button">I\'m lazy</string>
+    <string name="review">Review!</string>
+    <string name="no_lazy">I\'m lazy</string>
     <string name="cancel_button">Nah</string>
     <string name="rating_message">AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
         \nOK, now that I have your attention, may I ask you to leave a good review to help Randomix grow a bit? I\'d really appreciate it! Have a great day! :D</string>

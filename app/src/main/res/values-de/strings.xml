@@ -143,8 +143,8 @@
     <string name="shake_description_off">Ein Schütteln des Geräts hat keine Wirkung</string>
 
     <!-- Rate app dialog -->
-    <string name="positive_button">Rezension!</string>
-    <string name="negative_button">Ich bin faul</string>
+    <string name="review">Rezension!</string>
+    <string name="no_lazy">Ich bin faul</string>
     <string name="cancel_button">Nah</string>
     <string name="rating_message">AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
         \nOK, jetzt wo ich deine Aufmerksamkeit habe, darf ich dich bitten, eine gute Bewertung zu hinterlassen, um Randomix zu helfen ein bisschen zu wachsen? Ich würde es wirklich zu schätzen wissen! Habt einen tollen Tag! :D</string>

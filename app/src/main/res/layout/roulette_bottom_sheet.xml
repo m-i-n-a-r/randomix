@@ -1,7 +1,10 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:clipChildren="false"
+    android:paddingBottom="@dimen/linear_vertical_margin">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/rouletteBottomSheetScrollView"
@@ -14,11 +17,11 @@
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
             android:fitsSystemWindows="true"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            app:behavior_hideable="true"
-            app:behavior_peekHeight="@dimen/peek_height"
+            android:paddingBottom="@dimen/linear_vertical_margin"
             app:behavior_fitToContents="false"
             app:behavior_halfExpandedRatio="0.2"
+            app:behavior_hideable="true"
+            app:behavior_peekHeight="@dimen/peek_height"
             app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
             <com.google.android.material.bottomsheet.BottomSheetDragHandleView
@@ -53,8 +56,8 @@
                 android:paddingStart="@dimen/side_drawable_margin"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
                 android:text="@string/recent_title"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
                 android:textColor="?attr/colorPrimary"
-                android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/recentImage"
                 app:layout_constraintTop_toBottomOf="@id/dragHandle" />
@@ -106,8 +109,8 @@
                 android:paddingHorizontal="@dimen/result_text_margin"
                 android:paddingVertical="@dimen/activity_vertical_margin"
                 android:text="@string/bottom_sheet_no_option"
+                android:textColor="?attr/colorOnSurface"
                 android:visibility="gone"
-                android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/lettersChip" />

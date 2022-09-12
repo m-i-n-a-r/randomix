@@ -143,8 +143,8 @@
     <string name="shake_description_off">摇晃设备不会有任何影响</string>
 
     <!-- Rate app dialog -->
-    <string name="positive_button">去評價！ </string>
-    <string name="negative_button">我很懶</string>
+    <string name="review">去評價！ </string>
+    <string name="no_lazy">我很懶</string>
     <string name="cancel_button">算了，下次吧</string>
     <string name="rating_message">啊啊啊啊啊啊啊！ \n\n
         好，現在你注意到我了，可以請你留下一個好的評價來幫助Randomix成長嗎？我會非常感激的！祝你有愉快的一天！ :D</string>

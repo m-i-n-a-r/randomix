@@ -142,8 +142,8 @@
     <string name="shake_description_off">Protresanje uređaja neće imati nikakvog učinka</string>
 
     <!-- Rate app dialog -->
-    <string name="positive_button">Hodnotit!</string>
-    <string name="negative_button">Jsem líný</string>
+    <string name="review">Hodnotit!</string>
+    <string name="no_lazy">Jsem líný</string>
     <string name="cancel_button">Ne</string>
     <string name="rating_message">AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
         \nOK, teď, když mám vaši pozornost, mohu vás požádat, abyste mi dali dobrou recenzi, která pomůže Randomixu trochu růst? Opravdu bych to ocenil! Mějte se hezky! :D</string>

@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/activity_vertical_margin"
-                android:contentDescription="@string/recent_title"
+                android:contentDescription="@string/review"
                 android:maxWidth="@dimen/max_size_icon"
                 android:maxHeight="@dimen/max_size_icon"
                 android:minWidth="@dimen/max_size_icon_small"
@@ -51,8 +51,8 @@
                 android:paddingStart="@dimen/side_drawable_margin"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
                 android:text="@string/app_name"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
                 android:textColor="?attr/colorPrimary"
-                android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/rateImage"
                 app:layout_constraintTop_toBottomOf="@id/dragHandle" />
@@ -64,7 +64,7 @@
                 android:paddingHorizontal="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
                 android:text="@string/rating_message"
-                android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
+                android:textColor="?attr/colorOnSurface"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rateTitle" />
@@ -80,22 +80,22 @@
 
             <Button
                 android:id="@+id/positiveButton"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                android:text="@string/positive_button"
+                android:text="@string/review"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/neverAgainCheckbox" />
 
             <Button
                 android:id="@+id/negativeButton"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/negative_button"
+                android:text="@string/no_lazy"
                 app:layout_constraintBottom_toBottomOf="@id/positiveButton"
                 app:layout_constraintEnd_toStartOf="@id/positiveButton"
                 app:layout_constraintTop_toTopOf="@id/positiveButton" />

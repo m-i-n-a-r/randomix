@@ -4,7 +4,7 @@ An open source app to choose randomly between numbers, answers, options and so o
 
 <p align='center'>
   <a href='https://github.com/m-i-n-a-r/randomix/blob/master/LICENSE.md'><img src='https://img.shields.io/cocoapods/l/AFNetworking.svg'/></a>
-  <img src='https://img.shields.io/badge/version-2.3.X-blue'/>
+  <img src='https://img.shields.io/github/v/release/m-i-n-a-r/randomix'/>
 	<img src='https://img.shields.io/badge/status-released-success'/>
 	<img src='https://img.shields.io/badge/-translations%20needed!-yellow'/>
 </p>

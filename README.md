@@ -5,15 +5,14 @@ An open source app to choose randomly between numbers, answers, options and so o
 <p align='center'>
   <a href='https://github.com/m-i-n-a-r/randomix/blob/master/LICENSE.md'><img src='https://img.shields.io/cocoapods/l/AFNetworking.svg'/></a>
   <img src='https://img.shields.io/github/v/release/m-i-n-a-r/randomix'/>
-	<img src='https://img.shields.io/badge/status-released-success'/>
-	<img src='https://img.shields.io/badge/-translations%20needed!-yellow'/>
+  <a title="Crowdin" target="_blank" href="https://crowdin.com/project/randomix"><img src="https://badges.crowdin.net/randomix/localized.svg"></a>
 </p>
 
 ## Introduction
 This is an open source app created to experiment some new android features, but it's also available on Play Store and F-Droid for all users.
 The main purpose of the app is provide a **random choice** in different ways. The app contains some basic personalization options and an introduction, plus a lot of **animated vector drawables**. The design is a bit personal, but it mostly follows the guidelines.
 
-## Translations
+## Translations (refer to [Crowdin](https://crwd.in/randomix))
 
 | LANGUAGE              | STATUS   | SPECIAL THANKS           |
 |:----------------------|:--------:|:------------------------:|

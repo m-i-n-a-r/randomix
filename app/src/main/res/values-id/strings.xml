@@ -135,7 +135,7 @@
     <string name="shake_name">Kocok untuk meluncurkan</string>
     <string name="shake_description_on">Mengguncang perangkat akan bertindak seperti tombol tengah</string>
     <string name="shake_description_off">Mengguncang perangkat tidak akan berpengaruh</string>
-    <!-- Rate app dialog -->
+    <!-- Rate app dialog, misc -->
     <string name="review">Ulasan!</string>
     <string name="no_lazy">Saya malas</string>
     <string name="cancel_button">Nah!</string>
@@ -143,4 +143,5 @@
         \nOke, sekarang setelah saya mendapatkan perhatian Anda, bolehkan saya meminta Anda untuk meninggalkan ulasan yang bagus untuk membantu Randomix berkembang? Saya sangat mengapresiasinya! Semoga hari Anda menyenangkan! :D</string>
     <string name="feedback_text">Saya punya sesuatu untuk diberitahukan ke Anda</string>
     <string name="not_again_button">Jangan tanya lagi</string>
+    <string name="translate_app">Translate the app</string>
 </resources>

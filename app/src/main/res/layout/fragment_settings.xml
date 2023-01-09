@@ -56,7 +56,7 @@
         android:focusable="true"
         android:paddingVertical="@dimen/activity_vertical_margin"
         android:src="@drawable/ic_instagram_black_24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/translateButton"
         app:layout_constraintEnd_toStartOf="@id/minartt"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"

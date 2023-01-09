@@ -1,170 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- Main strings -->
-    <string name="app_name" translatable="false">Randomix</string>
-    <string name="app_extended_name" translatable="false">Randomix - Tomador de decisões</string>
-    <string name="app_intro_description">Um aplicativo de código aberto para escolher aleatoriamente entre números, respostas, opções e assim por diante. Deixe a aleatoriedade falar!</string>
-    <string name="result_placeholder" translatable="false"> - - - </string>
-    <string name="title_roulette">Roleta</string>
-    <string name="title_coin">Moeda</string>
-    <string name="title_dice">Dados</string>
-    <string name="title_magic_ball">Bola mágica</string>
-    <string name="title_settings">Configurações</string>
-    <string name="generic_result">O resultado é:</string>
-
+    <string name="app_intro_description">An open source app to choose randomly between numbers, answers, options and so on. Let the randomness talk!</string>
+    <string name="title_roulette">Roulette</string>
+    <string name="title_coin">Coin</string>
+    <string name="title_dice">Dice</string>
+    <string name="title_magic_ball">Magic Ball</string>
+    <string name="title_settings">Settings</string>
+    <string name="generic_result">The result is:</string>
     <!-- Roulette -->
-    <string name="hello_roulette_fragment">Modo roleta</string>
-    <string name="description_roulette">Você tem que escolher alguma coisa? Você está cansado de enquetes e amigos mandões? Uma roleta decidirá por você! Pressione e segure a roleta para adicionar opções genéricas ou desmarque-as.</string>
-    <string name="spin_roulette">Gire a roleta!</string>
-    <string name="insert_roulette_hint">Insira uma opção…</string>
-    <string name="delete_roulette_hint">Deletar a última opção inserida</string>
-    <string name="insert_roulette_description">Por favor, liste abaixo as opções possíveis para adicionar na roleta.</string>
-    <string name="no_entry_roulette">Por favor, digite 2 ou mais opções para girar a roleta!</string>
-    <string name="too_much_entries_roulette">Você não pode inserir mais de 30 opções!</string>
-    <string name="generic_option">Opções</string>
-    <string name="recent_title">Opções recentes, clique para restaurar</string>
-    <string name="bottom_sheet_no_option">Nenhuma opção recente, gire a roleta para salvar as opções atuais!</string>
-    <string name="letters_shortcut">Letras A-Z</string>
-    <string name="numbers_1_100_shortcut" translatable="false">1–100</string>
-    <string name="range">Intervalo</string>
-    <string name="wrong_range_roulette">O intervalo está errado ou vazio, insira ambos os valores corretamente!</string>
-    <string name="max" translatable="false">Máximo</string>
-    <string name="min" translatable="false">mínimo</string>
-    <string name="delete_all_roulette_confirmation">Tem certeza de que deseja excluir todas as opções inseridas?</string>
-
+    <string name="hello_roulette_fragment">Roulette mode</string>
+    <string name="description_roulette">Do you have to choose something? Are you tired of polls and bossy friends? A roulette will decide for you! Long press the roulette to Add generic options or clear them.</string>
+    <string name="spin_roulette">Spin the roulette!</string>
+    <string name="insert_roulette_hint">Enter an option…</string>
+    <string name="delete_roulette_hint">Delete the last option entered</string>
+    <string name="insert_roulette_description">Please list below the possible choices to add in the roulette.</string>
+    <string name="no_entry_roulette">Please, enter 2 or more options to spin the roulette!</string>
+    <string name="too_much_entries_roulette">You can\'t enter more than 30 options!</string>
+    <string name="generic_option">Option</string>
+    <string name="recent_title">Recent options, tap to restore</string>
+    <string name="bottom_sheet_no_option">No recent option, spin the roulette to save the current options!</string>
+    <string name="letters_shortcut">A-Z Letters</string>
+    <string name="range">Range</string>
+    <string name="wrong_range_roulette">The range is wrong or empty, please enter both the values correctly!</string>
+    <string name="delete_all_roulette_confirmation">Are you sure you want to delete all the entered options?</string>
     <!-- Coin -->
-    <string name="hello_coin_fragment">Modo moeda</string>
-    <string name="description_coin">Lançar uma moeda é fácil, mas pode ajudá-lo a decidir entre fazer algo ou não. Apenas cara ou coroa. Deixe a moeda falar!</string>
-    <string name="flip_coin">Jogue a moeda!</string>
-    <string name="hint_coin">Aperte o botão abaixo!</string>
-    <string name="result_head">Cara!</string>
-    <string name="result_tail">Coroa!</string>
-
+    <string name="hello_coin_fragment">Coin mode</string>
+    <string name="description_coin">Flipping a coin is easy, but can help you decide between doing something or not. Just heads or tails. Let the coin talk!</string>
+    <string name="flip_coin">Flip the coin!</string>
+    <string name="hint_coin">Press the button below!</string>
+    <string name="result_head">Heads!</string>
+    <string name="result_tail">Tails!</string>
     <!-- Magic Ball -->
-    <string name="hello_magic_ball_fragment">Bola mágica</string>
-    <string name="description_magic_ball">A bola mágica lhe dirá as respostas! Basta perguntar algo e isso o ajudará com uma resposta genérica e acessível. Você pode ativar sua grosseria nas configurações!</string>
-    <string name="shake_ball">Sacuda ela!</string>
-    <string name="hint_magic_ball">Aperte o botão abaixo!</string>
-    <string name="magic_answer_1">Não.</string>
-    <string name="magic_answer_2">Sim!</string>
-    <string name="magic_answer_3">Eu acho que não.</string>
-    <string name="magic_answer_4">Talvez!</string>
-    <string name="magic_answer_5">Isso não faz o menor sentido.</string>
-    <string name="magic_answer_6">Provavelmente…</string>
-    <string name="magic_answer_7">Você tem certeza?</string>
-    <string name="magic_answer_8">Provavelmente sim.</string>
-    <string name="magic_answer_9">Provavelmente não.</string>
-    <string name="magic_answer_10">Com certeza.</string>
-    <string name="magic_answer_11">Pergunte a si mesmo.</string>
-    <string name="magic_answer_12">Não, absurdo.</string>
-    <string name="magic_answer_13">Isso aí!</string>
-    <string name="magic_answer_14">Pense nisso.</string>
-    <string name="magic_answer_15">Quem sabe.</string>
-    <string name="magic_answer_16">Você está de brincadeira?</string>
-    <string name="magic_answer_17">Pelo que vejo, sim.</string>
-    <string name="magic_answer_18">É certo que sim.</string>
-    <string name="magic_answer_19">É decididamente assim.</string>
-    <string name="magic_answer_20">Perspectivas boas.</string>
-    <string name="magic_answer_21">Os sinais indicam que sim.</string>
-    <string name="magic_answer_22">Sem dúvida.</string>
-    <string name="magic_answer_23">Resposta confusa, tente novamente.</string>
+    <string name="hello_magic_ball_fragment">Magic Ball</string>
+    <string name="description_magic_ball">The magic ball will tell you the answers! Just ask something, and it will help you with a generic and affordable answer. You can activate its rudeness from settings!</string>
+    <string name="shake_ball">Shake it!</string>
+    <string name="hint_magic_ball">Press the button below!</string>
+    <string name="magic_answer_1">No.</string>
+    <string name="magic_answer_2">Yes!</string>
+    <string name="magic_answer_3">I don\'t think so.</string>
+    <string name="magic_answer_4">Maybe!</string>
+    <string name="magic_answer_5">This makes no sense.</string>
+    <string name="magic_answer_6">Probably…</string>
+    <string name="magic_answer_7">Are you sure?</string>
+    <string name="magic_answer_8">Probably yes.</string>
+    <string name="magic_answer_9">Probably no.</string>
+    <string name="magic_answer_10">Of course.</string>
+    <string name="magic_answer_11">Ask it yourself.</string>
+    <string name="magic_answer_12">No, absurd.</string>
+    <string name="magic_answer_13">Hell yeah!</string>
+    <string name="magic_answer_14">Think about it.</string>
+    <string name="magic_answer_15">Who knows.</string>
+    <string name="magic_answer_16">Are you kidding?</string>
+    <string name="magic_answer_17">As I see it, yes.</string>
+    <string name="magic_answer_18">It is certain.</string>
+    <string name="magic_answer_19">It is decidedly so.</string>
+    <string name="magic_answer_20">Outlook good.</string>
+    <string name="magic_answer_21">Signs point to yes.</string>
+    <string name="magic_answer_22">Without a doubt.</string>
+    <string name="magic_answer_23">Reply hazy, try again.</string>
     <string name="magic_answer_24">Better not tell you now.</string>
-    <string name="magic_answer_25">Não é possível prever agora!</string>
-    <string name="magic_answer_26">Concentre-se e pergunte novamente.</string>
-    <string name="magic_answer_27">Não conte com isso.</string>
-    <string name="magic_answer_28">Minhas fontes dizem não.</string>
-    <string name="magic_answer_29">Muito duvidoso.</string>
-    <string name="magic_answer_30">Pergunte ao seu melhor amigo.</string>
-    <string name="magic_answer_rude_1">Não, idiota.</string>
-    <string name="magic_answer_rude_2">Claro, caramba.</string>
-    <string name="magic_answer_rude_3">Você é estúpido?</string>
-    <string name="magic_answer_rude_4">Lol! Quanta estupidez em uma pergunta.</string>
-    <string name="magic_answer_rude_5">Você é louco.</string>
-    <string name="magic_answer_rude_6">Vá para o inferno.</string>
-
+    <string name="magic_answer_25">Cannot predict now!</string>
+    <string name="magic_answer_26">Concentrate and ask again.</string>
+    <string name="magic_answer_27">Don\'t count on it.</string>
+    <string name="magic_answer_28">My sources say no.</string>
+    <string name="magic_answer_29">Very doubtful.</string>
+    <string name="magic_answer_30">Ask your best friend.</string>
+    <string name="magic_answer_rude_1">No, idiot.</string>
+    <string name="magic_answer_rude_2">Of course, dammit.</string>
+    <string name="magic_answer_rude_3">Are you stupid?</string>
+    <string name="magic_answer_rude_4">Lol! How stupid.</string>
+    <string name="magic_answer_rude_5">You\'re crazy.</string>
+    <string name="magic_answer_rude_6">Go to hell.</string>
     <!-- Dice -->
-    <string name="hello_dice_fragment">Modo dado</string>
-    <string name="description_dice">Os dados podem ser úteis, em um jogo de mesa, por exemplo! O aplicativo lançará de um a dez dados para você. Selecione o número nas configurações. Boa sorte!</string>
-    <string name="throw_dice">Jogue os dados!</string>
-    <string name="hint_dice">Aperte o botão abaixo!</string>
-
+    <string name="hello_dice_fragment">Dice mode</string>
+    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number from settings. Good luck!</string>
+    <string name="throw_dice">Throw the dice!</string>
+    <string name="hint_dice">Press the button below!</string>
     <!-- Settings -->
-    <string name="hello_settings_fragment">Configurações</string>
-    <string name="dev_name" translatable="false">m.i.n.a.r.</string>
-    <string name="dev_description">Sou um cara educado e gosto de coisas bonitas como animações, ícones, carros esportivos e impressão 3D. Trabalho como designer e engenheiro de computação.</string>
-    <string name="dev_email" translatable="false">minar.tastic@gmail.com</string>
-    <string name="dev_personal_site" translatable="false">https://minar.ml</string>
-    <string name="dev_instagram" translatable="false">https://www.instagram.com/minar.tastic/</string>
-    <string name="dev_twitter" translatable="false">https://twitter.com/MinarTastic</string>
-    <string name="dev_xda" translatable="false">https://forum.xda-developers.com/member.php?u=5222216</string>
-    <string name="dev_github" translatable="false">https://github.com/m-i-n-a-r</string>
-    <string name="dev_other_apps" translatable="false">https://play.google.com/store/apps/dev?id=7720251761301594831</string>
-    <string name="easter_egg">Bela logotipo, hein? ;D</string>
-    <string name="customization">Costumização</string>
-    <string name="vibration_name">Vibração</string>
-    <string name="vibration_description_on">Vibrar quando um botão é pressionado</string>
-    <string name="vibration_description_off">Sem vibrações quando um botão é pressionado</string>
-    <string name="sound_name">Sons</string>
-    <string name="sound_description_on">Reproduzir um som quando um botão é pressionado</string>
-    <string name="sound_description_off">Sem som quando um botão é pressionado</string>
-    <string name="dice_number_name">Número do dado</string>
-    <string name="dice_number_description">Altere o número de dados lançados. Atualmente: %s</string>
-    <string name="one">Um</string>
-    <string name="two">Dois</string>
-    <string name="three">Três</string>
-    <string name="four">Quatro</string>
-    <string name="five">Cinco</string>
-    <string name="six">Seis</string>
-    <string name="seven">Sete</string>
-    <string name="eight">Oito</string>
-    <string name="nine">Nove</string>
-    <string name="ten">Dez</string>
-    <string name="three_v_three" translatable="false">3 vs 3</string>
-    <string name="accent_description">Altere a cor de destaque padrão. Atualmente: %s</string>
-    <string name="accent_name">Cor de destaque</string>
-    <string name="theme_description">Use um tema de aplicativo escuro, claro ou automático. Atualmente: %s</string>
-    <string name="theme_name">Tema do aplicativo</string>
-    <string name="blue">Azul</string>
+    <string name="hello_settings_fragment">Settings</string>
+    <string name="dev_description">I\'m a polite guy, and I like beautiful things like animations, icons, sports cars and 3D printing. I work as a designer and computer engineer.</string>
+    <string name="easter_egg">Nice logo, huh? ;D</string>
+    <string name="customization">Customization</string>
+    <string name="vibration_name">Vibration</string>
+    <string name="vibration_description_on">Vibrate when a button is pressed</string>
+    <string name="vibration_description_off">No vibrations when a button is pressed</string>
+    <string name="sound_name">Sounds</string>
+    <string name="sound_description_on">Play a sound when a button is pressed</string>
+    <string name="sound_description_off">No sound when a button is pressed</string>
+    <string name="dice_number_name">Dice number</string>
+    <string name="dice_number_description">Change the number of dice thrown. Currently %s</string>
+    <string name="one">One</string>
+    <string name="two">Two</string>
+    <string name="three">Three</string>
+    <string name="four">Four</string>
+    <string name="five">Five</string>
+    <string name="six">Six</string>
+    <string name="seven">Seven</string>
+    <string name="eight">Eight</string>
+    <string name="nine">Nine</string>
+    <string name="ten">Ten</string>
+    <string name="accent_description">Change the default accent color. Currently %s</string>
+    <string name="accent_name">Accent color</string>
+    <string name="theme_description">Use a dark, light or automatic app theme. Currently %s</string>
+    <string name="theme_name">App theme</string>
+    <string name="blue">Blue</string>
     <string name="aqua">Aqua</string>
-    <string name="green">Verde</string>
-    <string name="orange">Laranja</string>
-    <string name="yellow">Amarelo</string>
+    <string name="green">Green</string>
+    <string name="orange">Orange</string>
+    <string name="yellow">Yellow</string>
     <string name="teal">Teal</string>
-    <string name="violet">Violeta</string>
-    <string name="pink">Rosa</string>
-    <string name="light_blue">Azul claro</string>
-    <string name="red">Vermelho</string>
-    <string name="lime">Limão</string>
-    <string name="crimson">Carmesim</string>
-    <string name="monet" translatable="false">Monet</string>
-    <string name="system_theme">Padrão do sistema</string>
-    <string name="dark_theme">Escuro</string>
-    <string name="light_theme">Claro</string>
-    <string name="app_behavior">Comportamento do App</string>
-    <string name="rude_answers_name">Respostas rudes</string>
-    <string name="rude_answers_description_on">Respostas rudes ativadas, idiota</string>
-    <string name="rude_answers_description_off">Apenas respostas gentis e educadas</string>
-    <string name="hide_descriptions_name">Ocultar descrições</string>
-    <string name="hide_descriptions_description_on">Descrições ocultas</string>
-    <string name="hide_descriptions_description_off">Descrições visíveis</string>
-    <string name="allow_equals_name">Permitir opções iguais</string>
-    <string name="allow_equals_description_on">Opções iguais na roleta permitidas</string>
-    <string name="allow_equals_description_off">Opções iguais na roleta não são permitidas</string>
-    <string name="remove_last_name">Remover último escolhido</string>
-    <string name="remove_last_description_on">Remova a última opção escolhida na roleta automaticamente</string>
-    <string name="remove_last_description_off">Não remova a última opção escolhida na roleta automaticamente</string>
-    <string name="shake_name">Agite para lançar</string>
-    <string name="shake_description_on">Agitar o dispositivo funcionará como o botão central</string>
-    <string name="shake_description_off">Agitar o dispositivo não terá nenhum efeito</string>
-
+    <string name="violet">Violet</string>
+    <string name="pink">Pink</string>
+    <string name="light_blue">Light blue</string>
+    <string name="red">Red</string>
+    <string name="lime">Lime</string>
+    <string name="crimson">Crimson</string>
+    <string name="system_theme">System default</string>
+    <string name="dark_theme">Dark</string>
+    <string name="light_theme">Light</string>
+    <string name="app_behavior">App behavior</string>
+    <string name="rude_answers_name">Rude answers</string>
+    <string name="rude_answers_description_on">Rude answers activated, idiot</string>
+    <string name="rude_answers_description_off">Just kind and polite answers</string>
+    <string name="hide_descriptions_name">Hide descriptions</string>
+    <string name="hide_descriptions_description_on">Descriptions hidden</string>
+    <string name="hide_descriptions_description_off">Descriptions visible</string>
+    <string name="allow_equals_name">Allow equal options</string>
+    <string name="allow_equals_description_on">Equal options in roulette allowed</string>
+    <string name="allow_equals_description_off">Equal options in roulette not allowed</string>
+    <string name="remove_last_name">Remove last chosen</string>
+    <string name="remove_last_description_on">Remove the last chosen option in the roulette automatically</string>
+    <string name="remove_last_description_off">Don\'t remove the last chosen option in the roulette automatically</string>
+    <string name="shake_name">Shake to launch</string>
+    <string name="shake_description_on">Shaking the device will act like the center button</string>
+    <string name="shake_description_off">Shaking the device won\'t have any effect</string>
     <!-- Rate app dialog -->
-    <string name="review">Avalie!</string>
-    <string name="no_lazy">Tenho preguiça</string>
+    <string name="review">Review!</string>
+    <string name="no_lazy">I\'m lazy</string>
     <string name="cancel_button">Nah</string>
     <string name="rating_message">AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
-        \nOK, agora que tenho a sua atenção, posso pedir-lhe para deixar um bom comentário para ajudar a Randomix a crescer um pouco? Eu realmente aprecio isso! Tenha um ótimo dia! :D</string>
-    <string name="feedback_text">Eu tenho algo para te dizer</string>
-    <string name="not_again_button">Nunca pergunte novamente</string>
-
+        \nOK, now that I have your attention, may I ask you to leave a good review to help Randomix grow a bit? I\'d really appreciate it! Have a great day! :D</string>
+    <string name="feedback_text">I\'ve something to tell you</string>
+    <string name="not_again_button">Never ask again</string>
 </resources>

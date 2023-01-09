@@ -135,7 +135,7 @@
     <string name="shake_name">Scuoti per lanciare</string>
     <string name="shake_description_on">Scuotere il dispositivo funzionerà come il bottone centrale</string>
     <string name="shake_description_off">Scuotere il dispositivo non avrà alcun effetto</string>
-    <!-- Rate app dialog -->
+    <!-- Rate app dialog, misc -->
     <string name="review">Recensisco!</string>
     <string name="no_lazy">Sono pigro/a</string>
     <string name="cancel_button">Nah</string>
@@ -143,4 +143,5 @@
         \nOk, ora che ho la tua attenzione, potrei chiederti di lasciare una buona recensione per aiutare Randomix a crescere un pochino? Lo apprezzerei davvero tanto! Ti auguro una buona giornata! :D</string>
     <string name="feedback_text">Ho qualcosa da dirti</string>
     <string name="not_again_button">Non chiedere più</string>
+    <string name="translate_app">Translate the app</string>
 </resources>

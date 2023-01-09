@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -38,12 +39,15 @@ public class CustomAuthorPreference extends Preference implements View.OnClickLi
         ImageView l3 = v.findViewById(R.id.minarps);
         ImageView l4 = v.findViewById(R.id.minargit);
         ImageView l5 = v.findViewById(R.id.minarsite);
+        Button translate = v.findViewById(R.id.translateButton);
+
         logo.setOnClickListener(this);
         l1.setOnClickListener(this);
         l2.setOnClickListener(this);
         l3.setOnClickListener(this);
         l4.setOnClickListener(this);
         l5.setOnClickListener(this);
+        translate.setOnClickListener(this);
         Drawable logoDrawable = logo.getDrawable();
 
         // Delay the execution of the logo animation a bit
@@ -64,6 +68,15 @@ public class CustomAuthorPreference extends Preference implements View.OnClickLi
                 this.easterEgg = 0;
                 return;
             } else this.easterEgg++;
+            return;
+        }
+
+        // Translate the app
+        if (pressedId == R.id.translateButton) {
+            if (act instanceof MainActivity) ((MainActivity) act).vibrate();
+            uri = Uri.parse(getContext().getString(R.string.dev_crowdin));
+            Intent intent1 = new Intent(Intent.ACTION_VIEW, uri);
+            getContext().startActivity(intent1);
             return;
         }
 

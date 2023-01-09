@@ -20,7 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <ImageView
         android:id="@+id/imageMinar"
         android:layout_width="match_parent"
@@ -131,5 +130,23 @@
         app:layout_constraintStart_toEndOf="@id/minargit"
         app:layout_constraintTop_toTopOf="@id/minarig"
         app:tint="?attr/colorPrimary" />
+
+    <Button
+        android:id="@+id/translateButton"
+        style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/linear_vertical_padding"
+        android:contentDescription="@string/translate_app"
+        android:paddingVertical="@dimen/linear_vertical_padding"
+        android:text="@string/translate_app"
+        android:textColor="?attr/colorPrimary"
+        android:tint="?attr/colorPrimary"
+        app:icon="@drawable/ic_translate_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/minarsite"
+        app:rippleColor="?attr/colorPrimary" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- Main strings -->
     <string name="app_intro_description">一個用於在數字、答案、選項等之間隨機選擇的開源程式。讓隨機性發揮作用吧！ </string>
     <string name="title_roulette">輪盤</string>
@@ -9,7 +8,6 @@
     <string name="title_magic_ball">魔力球</string>
     <string name="title_settings">設定</string>
     <string name="generic_result">結果是：</string>
-
     <!-- Roulette -->
     <string name="hello_roulette_fragment">輪盤模式</string>
     <string name="description_roulette">你需要做出選擇嗎？你對怎麼樣都無法做出決定的朋友們感到厭煩了嗎？輪盤會幫你做出決定！長按輪盤來新增通用的選項或將所有選項移除。 </string>
@@ -26,15 +24,13 @@
     <string name="range">範圍</string>
     <string name="wrong_range_roulette">範圍錯誤或為空，請正確輸入兩個值！ </string>
     <string name="delete_all_roulette_confirmation">您確定要刪除所有輸入的選項嗎？ </string>
-
     <!-- Coin -->
     <string name="hello_coin_fragment">硬幣模式</string>
-    <string name="description_coin">"擲個硬幣很容易，但能幫你決定一件事要不要做。只有正面和反面。讓硬幣決定你的命運吧！ "</string>
+    <string name="description_coin">擲個硬幣很容易，但能幫你決定一件事要不要做。只有正面和反面。讓硬幣決定你的命運吧！ </string>
     <string name="flip_coin">擲硬幣！ </string>
     <string name="hint_coin">點擊下方的按鈕！ </string>
     <string name="result_head">正面！ </string>
     <string name="result_tail">反面！ </string>
-
     <!-- Magic Ball -->
     <string name="hello_magic_ball_fragment">魔力球</string>
     <string name="description_magic_ball">魔力球會告訴你答案！只需要問些什麼，它就會告訴你一個通用的答案。你甚至還可以到設定裡讓他回些幹話！</string>
@@ -76,13 +72,11 @@
     <string name="magic_answer_rude_4">哈！真蠢。 </string>
     <string name="magic_answer_rude_5">你他媽瘋了吧。 </string>
     <string name="magic_answer_rude_6">去死吧。 </string>
-
     <!-- Dice -->
     <string name="hello_dice_fragment">骰子模式</string>
     <string name="description_dice">骰子在某些場合如在桌遊中很有用！這個程式可為你扔一到十個骰子，在設定中調整骰子的數量。祝你好運！ </string>
     <string name="throw_dice">擲骰子！ </string>
     <string name="hint_dice">點擊下方的按鈕</string>
-
     <!-- Settings -->
     <string name="hello_settings_fragment">設定</string>
     <string name="dev_description">我是個有禮貌的人，喜歡漂亮的東西，比如動畫、圖標、跑車、3D列印什麼的。我的工作是平面和程式設計師。 </string>
@@ -141,7 +135,6 @@
     <string name="shake_name">摇一摇启动</string>
     <string name="shake_description_on">摇动设备将起到中央按钮的作用</string>
     <string name="shake_description_off">摇晃设备不会有任何影响</string>
-
     <!-- Rate app dialog -->
     <string name="review">去評價！ </string>
     <string name="no_lazy">我很懶</string>
@@ -150,5 +143,4 @@
         好，現在你注意到我了，可以請你留下一個好的評價來幫助Randomix成長嗎？我會非常感激的！祝你有愉快的一天！ :D</string>
     <string name="feedback_text">我有一些事情要告訴你</string>
     <string name="not_again_button">別再問我了</string>
-
 </resources>

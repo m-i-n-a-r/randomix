@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- Main strings -->
     <string name="app_intro_description">Приложение с открытым исходным кодом для случайного выбора между номерами, ответами, вариантами и т. д. Пусть говорит случайность!</string>
     <string name="title_roulette">Рулетка</string>
@@ -9,7 +8,6 @@
     <string name="title_magic_ball">Волшебный шар</string>
     <string name="title_settings">Настройки</string>
     <string name="generic_result">Результат:</string>
-
     <!-- Roulette -->
     <string name="hello_roulette_fragment">Рулетка</string>
     <string name="description_roulette">Тебе нужно что-то выбрать? Ты устал от опросов и настоящих друзей? Рулетка решит за тебя! Нажмите и удерживайте рулетку, чтобы добавить общие параметры или очистить их.</string>
@@ -26,7 +24,6 @@
     <string name="range">Диапазон</string>
     <string name="wrong_range_roulette">Диапазон неверный или пустой. Пожалуйста, введите оба значения правильно!</string>
     <string name="delete_all_roulette_confirmation">Вы уверены, что хотите удалить все введённые параметры?</string>
-
     <!-- Coin -->
     <string name="hello_coin_fragment">Монетка</string>
     <string name="description_coin">Подбросить монетку легко, но она может помочь вам решить, когда что-то делать или нет. Только орёл или решка. Пусть говорит монета!</string>
@@ -34,7 +31,6 @@
     <string name="hint_coin">Нажмите кнопку ниже!</string>
     <string name="result_head">Орёл!</string>
     <string name="result_tail">Решка!</string>
-
     <!-- Magic Ball -->
     <string name="hello_magic_ball_fragment">Волшебный шар</string>
     <string name="description_magic_ball">Волшебный шар скажет тебе ответ! Просто спроси у него что-нибудь, и он даст тебе простой и доступный ответ. Ты можешь активировать грубые ответы в настройках!</string>
@@ -76,13 +72,11 @@
     <string name="magic_answer_rude_4">Как глупо.</string>
     <string name="magic_answer_rude_5">Ты сумасшедший.</string>
     <string name="magic_answer_rude_6">Иди к чёрту.</string>
-
     <!-- Dice -->
     <string name="hello_dice_fragment">Кости</string>
     <string name="description_dice">Кости могут быть полезны, например, в настольной игре! Приложение бросает за вас от одного до десяти кубиков. Количество можно выбрать в настройках. Удачи!</string>
     <string name="throw_dice">Бросай кость!</string>
     <string name="hint_dice">Нажмите кнопку ниже!</string>
-
     <!-- Settings -->
     <string name="hello_settings_fragment">Настройки</string>
     <string name="dev_description">Я вежливый парень, и мне нравятся красивые вещи, такие как анимация, иконки, спортивные машины и 3D-печать. Я работаю дизайнером и компьютерным инженером.</string>
@@ -141,7 +135,6 @@
     <string name="shake_name">Встряхните, чтобы запустить</string>
     <string name="shake_description_on">Встряхивание устройства будет действовать как центральная кнопка</string>
     <string name="shake_description_off">Встряхивание устройства не будет иметь никакого эффекта</string>
-
     <!-- Rate app dialog -->
     <string name="review">да!</string>
     <string name="no_lazy">мне лень</string>
@@ -150,5 +143,4 @@
         \nХорошо, теперь, когда я обращаю ваше внимание, могу ли я попросить вас оставить хороший отзыв, чтобы немного помочь Randomix? Я действительно ценю это! Хорошего дня! :D</string>
     <string name="feedback_text">Я хочу кое-что сказать</string>
     <string name="not_again_button">не спрашивай снова</string>
-
 </resources>

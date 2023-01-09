@@ -8,7 +8,6 @@
     <string name="title_magic_ball">Kouzelná koule</string>
     <string name="title_settings">Nastavení</string>
     <string name="generic_result">Výsledek je:</string>
-
     <!-- Roulette -->
     <string name="hello_roulette_fragment">Ruletový režim</string>
     <string name="description_roulette">Musíte si něco vybrat? Už vás unavují hlasování a panovační přátelé? Ruleta rozhodne za vás! Dlouhým stisknutím rulety přidáte obecné možnosti nebo je zrušíte.</string>
@@ -25,7 +24,6 @@
     <string name="range">Rozsah</string>
     <string name="wrong_range_roulette">Rozsah je nesprávný nebo prázdný, zadejte prosím obě hodnoty správně!</string>
     <string name="delete_all_roulette_confirmation">Opravdu chcete smazat všechny zadané možnosti?</string>
-
     <!-- Coin -->
     <string name="hello_coin_fragment">Režim mince</string>
     <string name="description_coin">Hodit si mincí je snadné, ale může vám to pomoci rozhodnout se, zda něco udělat, nebo ne. Prostě panna nebo orel. Nechte promluvit minci!</string>
@@ -33,7 +31,6 @@
     <string name="hint_coin">Stiskněte tlačítko níže!</string>
     <string name="result_head">Hlava</string>
     <string name="result_tail">Ocas</string>
-
     <!-- Magic Ball -->
     <string name="hello_magic_ball_fragment">Kouzelná koule</string>
     <string name="description_magic_ball">Magická koule vám řekne odpovědi! Stačí se na něco zeptat a poskytne vám obecnou a dostupnou odpověď. Nezdvořilost si můžete aktivovat v nastavení!</string>
@@ -75,13 +72,11 @@
     <string name="magic_answer_rude_4">Cha! Jak hloupé.</string>
     <string name="magic_answer_rude_5">Jsi blázen.</string>
     <string name="magic_answer_rude_6">Jdi do háje.</string>
-
     <!-- Dice -->
     <string name="hello_dice_fragment">Režim kostky</string>
     <string name="description_dice">Kostky se mohou hodit, například ve stolních hrách! Aplikace za vás hodí jednu až deseti kostky. Počet si vyberte v nastavení. Hodně štěstí!</string>
     <string name="throw_dice">Hoď kostky!</string>
     <string name="hint_dice">Stiskněte tlačítko níže!</string>
-
     <!-- Settings -->
     <string name="hello_settings_fragment">Možnosti</string>
     <string name="dev_description">Jsem zdvořilý člověk a mám rád krásné věci, jako jsou animace, ikony, sportovní automobily a 3D tisk. Pracuji jako designér a počítačový inženýr.</string>
@@ -140,7 +135,6 @@
     <string name="shake_name">Protresite za pokretanje</string>
     <string name="shake_description_on">Protresanje uređaja djelovat će kao središnja tipka</string>
     <string name="shake_description_off">Protresanje uređaja neće imati nikakvog učinka</string>
-
     <!-- Rate app dialog -->
     <string name="review">Hodnotit!</string>
     <string name="no_lazy">Jsem líný</string>
@@ -149,5 +143,4 @@
         \nOK, teď, když mám vaši pozornost, mohu vás požádat, abyste mi dali dobrou recenzi, která pomůže Randomixu trochu růst? Opravdu bych to ocenil! Mějte se hezky! :D</string>
     <string name="feedback_text">Musím ti něco říct</string>
     <string name="not_again_button">Už se nikdy neptat</string>
-
 </resources>

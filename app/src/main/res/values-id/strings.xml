@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- Main strings -->
     <string name="app_intro_description">Sebuah aplikasi sumber terbuka untuk memilih secara acak antara angka, jawaban, opsi, dan seterusnya. Biarkan keacakan yang berkata!</string>
     <string name="title_roulette">Rolet</string>
@@ -9,7 +8,6 @@
     <string name="title_magic_ball">Bola Ajaib</string>
     <string name="title_settings">Pengaturan</string>
     <string name="generic_result">Hasilnya adalah:</string>
-
     <!-- Roulette -->
     <string name="hello_roulette_fragment">Mode Rolet</string>
     <string name="description_roulette">Apakah Anda harus memutuskan tentang sesuatu? Apakah Anda capek dengan pemunggutan suara dan teman yang suka memerintah? Rolet ini yang akan menentukannya untuk Anda. Tekan lama roletnya untuk menambahkan opsi umum atau menghapusnya.</string>
@@ -26,7 +24,6 @@
     <string name="range">Jangkauan</string>
     <string name="wrong_range_roulette">Rentang salah atau kosong, harap masukkan kedua nilai dengan benar!</string>
     <string name="delete_all_roulette_confirmation">Apakah Anda yakin ingin menghapus semua opsi yang dimasukkan?</string>
-
     <!-- Coin -->
     <string name="hello_coin_fragment">Mode Koin</string>
     <string name="description_coin">Melambungkan koin itu mudah tapi bisa membantu Anda menentukan antara melakukan sesuatu atau tidak. Hanya kepala dan ekor. Biarkan koinnya yang berkata!</string>
@@ -34,7 +31,6 @@
     <string name="hint_coin">Tekan tombol di bawah ini!</string>
     <string name="result_head">Kepala</string>
     <string name="result_tail">Ekor!</string>
-
     <!-- Magic Ball -->
     <string name="hello_magic_ball_fragment">Bola Ajaib</string>
     <string name="description_magic_ball">Bola ajaib akan memberikan Anda jawabannya! Tinggal tanyakan sesuatu dan ia akan membantu Anda dengan jawaban yang umum. Anda bisa mengaktifkan kekasarannya di pengaturan!</string>
@@ -76,13 +72,11 @@
     <string name="magic_answer_rude_4">Wkwk! Bodoh sekali.</string>
     <string name="magic_answer_rude_5">Anda gila.</string>
     <string name="magic_answer_rude_6">Pergi sana ke neraka.</string>
-
     <!-- Dice -->
     <string name="hello_dice_fragment">Mode Dadu</string>
     <string name="description_dice">Dadu bisa berguna, di permainan meja misalnya! Aplikasi ini akan melempar satu hingga sepuluh dadu untuk Anda. Pilih jumlah dadunya dari Pengaturan. Semoga berhasil!</string>
     <string name="throw_dice">Lempar dadunya!</string>
     <string name="hint_dice">Tekan tombol di bawah ini!</string>
-
     <!-- Settings -->
     <string name="hello_settings_fragment">Pengaturan</string>
     <string name="dev_description">Saya adalah laki-laki yang ramah dan suka sesuatu yang indah seperti animasi, ikon, mobil sport dan percetakan 3D. Saya bekerja sebagai desainer dan insinyur komputer.</string>
@@ -141,7 +135,6 @@
     <string name="shake_name">Kocok untuk meluncurkan</string>
     <string name="shake_description_on">Mengguncang perangkat akan bertindak seperti tombol tengah</string>
     <string name="shake_description_off">Mengguncang perangkat tidak akan berpengaruh</string>
-
     <!-- Rate app dialog -->
     <string name="review">Ulasan!</string>
     <string name="no_lazy">Saya malas</string>
@@ -150,5 +143,4 @@
         \nOke, sekarang setelah saya mendapatkan perhatian Anda, bolehkan saya meminta Anda untuk meninggalkan ulasan yang bagus untuk membantu Randomix berkembang? Saya sangat mengapresiasinya! Semoga hari Anda menyenangkan! :D</string>
     <string name="feedback_text">Saya punya sesuatu untuk diberitahukan ke Anda</string>
     <string name="not_again_button">Jangan tanya lagi</string>
-
 </resources>

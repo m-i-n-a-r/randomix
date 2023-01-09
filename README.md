@@ -22,6 +22,7 @@ The main purpose of the app is provide a **random choice** in different ways. Th
 | **German**            | deep-ocean-fish, julius-d|
 | **Russian**           | BValeo                   |
 | **French**            | Firokat                  |
+| **Portuguese**        | Kiskadee-dev             |
 | **Brazilian**         | Kiskadee-dev             |
 | **Czech**             | Miloš Koliáš, mormegil-cz|
 | **Simplified Chinese**| pumguy                   |

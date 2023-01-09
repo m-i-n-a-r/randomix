@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- Main strings -->
     <string name="app_intro_description">Une application open source pour choisir aléatoirement des nombres, réponses, options et plus encore. Laissez place au hasard!</string>
     <string name="title_roulette">Roulette</string>
@@ -9,7 +8,6 @@
     <string name="title_magic_ball">Boule Magique</string>
     <string name="title_settings">Paramètres</string>
     <string name="generic_result">Le résultat est:</string>
-
     <!-- Roulette -->
     <string name="hello_roulette_fragment">Mode roulette</string>
     <string name="description_roulette">Vous avez quelque chose à choisir ? En avez-vous marre des sondages et des amis autoritaires ? Une roulette décidera ! Maintenez la roulette pour ajouter des options gémérisurd ou les effacer.</string>
@@ -19,14 +17,13 @@
     <string name="insert_roulette_description">Listez ci-dessous les choix possibles de la roulette</string>
     <string name="no_entry_roulette">Ajouter 2 options ou plus pour lancer la roulette</string>
     <string name="too_much_entries_roulette">Vous ne pouvez pas entrer plus de 30 options !</string>
-    <string name="generic_option">Option</string>
+    <string name="generic_option">Options</string>
     <string name="recent_title">Options récentes, tapez pour restaurer</string>
     <string name="bottom_sheet_no_option">Pas d\'otions récentes, tournez la roulette pour sauvegarder les options actuelles</string>
     <string name="letters_shortcut">Lettres A-Z</string>
     <string name="range">Varier</string>
     <string name="wrong_range_roulette">La plage est erronée ou vide, veuillez saisir les deux valeurs correctement !</string>
     <string name="delete_all_roulette_confirmation">Êtes-vous sûr de vouloir supprimer toutes les options saisies ?</string>
-
     <!-- Coin -->
     <string name="hello_coin_fragment">Pile ou face</string>
     <string name="description_coin">Faire tourner une pièce est simple, mais cela peut aider à décider de faire quelque chose ou non. Juste pile ou face. Laissez la pièce choisir !</string>
@@ -34,7 +31,6 @@
     <string name="hint_coin">Appuyer sur le bouton ci-dessous</string>
     <string name="result_head">Pile!</string>
     <string name="result_tail">Face!</string>
-
     <!-- Magic Ball -->
     <string name="hello_magic_ball_fragment">Boule magique</string>
     <string name="description_magic_ball">La boule magique va donner les réponses à vos questions ! Demandez quelque chose, et elle vous répondra par des réponses génériques. Vous pouvez activer la grossièreté dans les paramètres !</string>
@@ -44,7 +40,7 @@
     <string name="magic_answer_2">Oui!</string>
     <string name="magic_answer_3">Je ne pense pas…</string>
     <string name="magic_answer_4">Peut-être!</string>
-    <string name="magic_answer_5">Ca ne fait aucun sens !</string>voc ?
+    <string name="magic_answer_5">Ca ne fait aucun sens !</string>
     <string name="magic_answer_6">Probablement…</string>
     <string name="magic_answer_7">Vous êtes sûr ?</string>
     <string name="magic_answer_8">Probablement oui.</string>
@@ -76,13 +72,11 @@
     <string name="magic_answer_rude_4">Lol! Qu\'est que tu es bête.</string>
     <string name="magic_answer_rude_5">T\'es fou!</string>
     <string name="magic_answer_rude_6">Va en enfer.</string>
-
     <!-- Dice -->
     <string name="hello_dice_fragment">Dé</string>
     <string name="description_dice">Un dé peut être pratique, pour un jeu de plateau par exemple ! Cette appli peut lancer entre 1 et 10 dés</string>
     <string name="throw_dice">Lancer les dés</string>
     <string name="hint_dice">Appuyer sur le bouton ci-dessous</string>
-
     <!-- Settings -->
     <string name="hello_settings_fragment">Paramètres</string>
     <string name="dev_description">Je suis un garçon poli et j\'aime les belles choses, comme l\'animation, les îcones, les voitures de sport et l\'impression 3D. Je travaille en tant que designer et ingénieur informatique</string>
@@ -141,7 +135,6 @@
     <string name="shake_name">Secouez pour lancer</string>
     <string name="shake_description_on">Secouer l\'appareil agira comme le bouton central</string>
     <string name="shake_description_off">Secouer l\'appareil n\'aura aucun effet</string>
-
     <!-- Rate app dialog -->
     <string name="review">Laisser un avis!</string>
     <string name="no_lazy">Je suis un flemmard</string>
@@ -150,5 +143,4 @@
         \nOK, maintenant que j\'ai ton attention, est-ce que je pourrai te demander de laisser une bonne note pour aider Randomix à grandir un peu ? Ca me ferait vraiment plaisir ! Passe une bonne journée !:D</string>
     <string name="feedback_text">J\'ai quelque chose à te dire</string>
     <string name="not_again_button">Ne me redemande jamais ça !</string>
-
 </resources>

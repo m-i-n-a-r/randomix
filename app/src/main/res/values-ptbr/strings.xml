@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- Main strings -->
-    <string name="app_name" translatable="false">Randomix</string>
-    <string name="app_extended_name" translatable="false">Randomix - Tomador de decisões</string>
     <string name="app_intro_description">Um aplicativo de código aberto para escolher aleatoriamente entre números, respostas, opções e assim por diante. Deixe a aleatoriedade falar!</string>
-    <string name="result_placeholder" translatable="false"> - - - </string>
     <string name="title_roulette">Roleta</string>
     <string name="title_coin">Moeda</string>
     <string name="title_dice">Dados</string>
     <string name="title_magic_ball">Bola mágica</string>
     <string name="title_settings">Configurações</string>
     <string name="generic_result">O resultado é:</string>
-
     <!-- Roulette -->
     <string name="hello_roulette_fragment">Modo roleta</string>
     <string name="description_roulette">Você tem que escolher alguma coisa? Você está cansado de enquetes e amigos mandões? Uma roleta decidirá por você! Pressione e segure a roleta para adicionar opções genéricas ou desmarque-as.</string>
@@ -26,13 +21,9 @@
     <string name="recent_title">Opções recentes, clique para restaurar</string>
     <string name="bottom_sheet_no_option">Nenhuma opção recente, gire a roleta para salvar as opções atuais!</string>
     <string name="letters_shortcut">Letras A-Z</string>
-    <string name="numbers_1_100_shortcut" translatable="false">1–100</string>
     <string name="range">Intervalo</string>
     <string name="wrong_range_roulette">O intervalo está errado ou vazio, insira ambos os valores corretamente!</string>
-    <string name="max" translatable="false">Máximo</string>
-    <string name="min" translatable="false">mínimo</string>
     <string name="delete_all_roulette_confirmation">Tem certeza de que deseja excluir todas as opções inseridas?</string>
-
     <!-- Coin -->
     <string name="hello_coin_fragment">Modo moeda</string>
     <string name="description_coin">Lançar uma moeda é fácil, mas pode ajudá-lo a decidir entre fazer algo ou não. Apenas cara ou coroa. Deixe a moeda falar!</string>
@@ -40,7 +31,6 @@
     <string name="hint_coin">Aperte o botão abaixo!</string>
     <string name="result_head">Cara!</string>
     <string name="result_tail">Coroa!</string>
-
     <!-- Magic Ball -->
     <string name="hello_magic_ball_fragment">Bola mágica</string>
     <string name="description_magic_ball">A bola mágica lhe dirá as respostas! Basta perguntar algo e isso o ajudará com uma resposta genérica e acessível. Você pode ativar sua grosseria nas configurações!</string>
@@ -69,7 +59,7 @@
     <string name="magic_answer_21">Os sinais indicam que sim.</string>
     <string name="magic_answer_22">Sem dúvida.</string>
     <string name="magic_answer_23">Resposta confusa, tente novamente.</string>
-    <string name="magic_answer_24">Better not tell you now.</string>
+    <string name="magic_answer_24">Melhor não te contar agora.</string>
     <string name="magic_answer_25">Não é possível prever agora!</string>
     <string name="magic_answer_26">Concentre-se e pergunte novamente.</string>
     <string name="magic_answer_27">Não conte com isso.</string>
@@ -82,24 +72,14 @@
     <string name="magic_answer_rude_4">Lol! Quanta estupidez em uma pergunta.</string>
     <string name="magic_answer_rude_5">Você é louco.</string>
     <string name="magic_answer_rude_6">Vá para o inferno.</string>
-
     <!-- Dice -->
     <string name="hello_dice_fragment">Modo dado</string>
     <string name="description_dice">Os dados podem ser úteis, em um jogo de mesa, por exemplo! O aplicativo lançará de um a dez dados para você. Selecione o número nas configurações. Boa sorte!</string>
     <string name="throw_dice">Jogue os dados!</string>
     <string name="hint_dice">Aperte o botão abaixo!</string>
-
     <!-- Settings -->
     <string name="hello_settings_fragment">Configurações</string>
-    <string name="dev_name" translatable="false">m.i.n.a.r.</string>
     <string name="dev_description">Sou um cara educado e gosto de coisas bonitas como animações, ícones, carros esportivos e impressão 3D. Trabalho como designer e engenheiro de computação.</string>
-    <string name="dev_email" translatable="false">minar.tastic@gmail.com</string>
-    <string name="dev_personal_site" translatable="false">https://minar.ml</string>
-    <string name="dev_instagram" translatable="false">https://www.instagram.com/minar.tastic/</string>
-    <string name="dev_twitter" translatable="false">https://twitter.com/MinarTastic</string>
-    <string name="dev_xda" translatable="false">https://forum.xda-developers.com/member.php?u=5222216</string>
-    <string name="dev_github" translatable="false">https://github.com/m-i-n-a-r</string>
-    <string name="dev_other_apps" translatable="false">https://play.google.com/store/apps/dev?id=7720251761301594831</string>
     <string name="easter_egg">Bela logotipo, hein? ;D</string>
     <string name="customization">Costumização</string>
     <string name="vibration_name">Vibração</string>
@@ -120,24 +100,22 @@
     <string name="eight">Oito</string>
     <string name="nine">Nove</string>
     <string name="ten">Dez</string>
-    <string name="three_v_three" translatable="false">3 vs 3</string>
     <string name="accent_description">Altere a cor de destaque padrão. Atualmente: %s</string>
     <string name="accent_name">Cor de destaque</string>
     <string name="theme_description">Use um tema de aplicativo escuro, claro ou automático. Atualmente: %s</string>
     <string name="theme_name">Tema do aplicativo</string>
     <string name="blue">Azul</string>
-    <string name="aqua">Aqua</string>
+    <string name="aqua">Água</string>
     <string name="green">Verde</string>
     <string name="orange">Laranja</string>
     <string name="yellow">Amarelo</string>
-    <string name="teal">Teal</string>
+    <string name="teal">Turquesa</string>
     <string name="violet">Violeta</string>
     <string name="pink">Rosa</string>
     <string name="light_blue">Azul claro</string>
     <string name="red">Vermelho</string>
     <string name="lime">Limão</string>
     <string name="crimson">Carmesim</string>
-    <string name="monet" translatable="false">Monet</string>
     <string name="system_theme">Padrão do sistema</string>
     <string name="dark_theme">Escuro</string>
     <string name="light_theme">Claro</string>
@@ -157,14 +135,12 @@
     <string name="shake_name">Agite para lançar</string>
     <string name="shake_description_on">Agitar o dispositivo funcionará como o botão central</string>
     <string name="shake_description_off">Agitar o dispositivo não terá nenhum efeito</string>
-
     <!-- Rate app dialog -->
     <string name="review">Avalie!</string>
     <string name="no_lazy">Tenho preguiça</string>
-    <string name="cancel_button">Nah</string>
+    <string name="cancel_button">Não</string>
     <string name="rating_message">AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
         \nOK, agora que tenho a sua atenção, posso pedir-lhe para deixar um bom comentário para ajudar a Randomix a crescer um pouco? Eu realmente aprecio isso! Tenha um ótimo dia! :D</string>
     <string name="feedback_text">Eu tenho algo para te dizer</string>
     <string name="not_again_button">Nunca pergunte novamente</string>
-
 </resources>

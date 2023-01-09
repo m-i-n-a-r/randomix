@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- Main strings -->
     <string name="app_intro_description">Un\'app open source per fare scelte casuali tra numeri, opzioni o risposte. Lascia parlare la casualità!</string>
     <string name="title_roulette">Ruota</string>
@@ -9,7 +8,6 @@
     <string name="title_magic_ball">Palla Magica</string>
     <string name="title_settings">Impostazioni</string>
     <string name="generic_result">Il risultato è:</string>
-
     <!-- Roulette -->
     <string name="hello_roulette_fragment">Modalità ruota</string>
     <string name="description_roulette">Devi scegliere qualcosa? Sei stanco di fare sondaggi e degli amici che vogliono comandare? Una ruota deciderà per te! Premi a lungo sulla ruota per aggiungere opzioni generiche o eliminare quelle inserite.</string>
@@ -26,7 +24,6 @@
     <string name="range">Intervallo</string>
     <string name="wrong_range_roulette">L\'intervallo è sbagliato o vuoto, per favore inserisci entrambi i valori correttamente!</string>
     <string name="delete_all_roulette_confirmation">Sei sicuro di voler eliminare tutte le opzioni inserite?</string>
-
     <!-- Coin -->
     <string name="hello_coin_fragment">Modalità moneta</string>
     <string name="description_coin">Tirare una moneta è semplice, ma può aiutarti a decidere se fare qualcosa o meno. Semplicemente testa o croce. Fai parlare la moneta!</string>
@@ -34,7 +31,6 @@
     <string name="hint_coin">Premi il bottone sotto!</string>
     <string name="result_head">Testa!</string>
     <string name="result_tail">Croce!</string>
-
     <!-- Magic Ball -->
     <string name="hello_magic_ball_fragment">Palla Magica</string>
     <string name="description_magic_ball">La palla magica ti dirà la risposta! Chiedi semplicemente qualcosa, e ti aiuterà con una risposta generica e affidabile. Puoi attivare la maleducazione dalle impostazioni!</string>
@@ -76,13 +72,11 @@
     <string name="magic_answer_rude_4">Lol! Che idiozia.</string>
     <string name="magic_answer_rude_5">Tu sei pazzo/a.</string>
     <string name="magic_answer_rude_6">Va all\'inferno.</string>
-
     <!-- Dice -->
     <string name="hello_dice_fragment">Modalità dado</string>
     <string name="description_dice">Un dado può essere utile, ad esempio in un gioco da tavola! L\'app ne lancerà da uno a dieci per te. Seleziona il numero dalle impostazioni. Buona fortuna!</string>
     <string name="throw_dice">Tira il dado!</string>
     <string name="hint_dice">Premi il bottone sotto!</string>
-
     <!-- Settings -->
     <string name="hello_settings_fragment">Impostazioni</string>
     <string name="dev_description">Sono un ragazzo educato e mi piacciono le cose belle, come animazioni, icone, macchine sportive e stampa 3d. Lavoro come designer e ingegnere informatico.</string>
@@ -141,7 +135,6 @@
     <string name="shake_name">Scuoti per lanciare</string>
     <string name="shake_description_on">Scuotere il dispositivo funzionerà come il bottone centrale</string>
     <string name="shake_description_off">Scuotere il dispositivo non avrà alcun effetto</string>
-
     <!-- Rate app dialog -->
     <string name="review">Recensisco!</string>
     <string name="no_lazy">Sono pigro/a</string>
@@ -150,5 +143,4 @@
         \nOk, ora che ho la tua attenzione, potrei chiederti di lasciare una buona recensione per aiutare Randomix a crescere un pochino? Lo apprezzerei davvero tanto! Ti auguro una buona giornata! :D</string>
     <string name="feedback_text">Ho qualcosa da dirti</string>
     <string name="not_again_button">Non chiedere più</string>
-
 </resources>

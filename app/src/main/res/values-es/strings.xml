@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- Main strings -->
     <string name="app_intro_description">Una aplicación de código abierto para elegir al azar entre números, respuestas, opciones, etc. ¡Que hable la aleatoriedad!</string>
     <string name="title_roulette">Ruleta</string>
@@ -9,7 +8,6 @@
     <string name="title_magic_ball">Bola Mágica</string>
     <string name="title_settings">Opciones</string>
     <string name="generic_result">El resultado es:</string>
-
     <!-- Roulette -->
     <string name="hello_roulette_fragment">Modo ruleta</string>
     <string name="description_roulette">¿Tienes que elegir algo? ¿Estás cansado de las encuestas y amigos mandones? ¡Una ruleta decidirá por ti! Mantenga presionada la ruleta para agregar opciones genéricas o borrarlas.</string>
@@ -26,7 +24,6 @@
     <string name="range">Rango</string>
     <string name="wrong_range_roulette">El rango es incorrecto o está vacío, ¡ingrese ambos valores correctamente!</string>
     <string name="delete_all_roulette_confirmation">¿Está seguro de que desea eliminar todas las opciones ingresadas?</string>
-
     <!-- Coin -->
     <string name="hello_coin_fragment">Modo moneda</string>
     <string name="description_coin">Lanzar una moneda es fácil, pero puede ayudarte a decidir cuando haces algo o no. Solo cara o cruz. ¡Deja que la moneda hable!</string>
@@ -34,7 +31,6 @@
     <string name="hint_coin">¡Presione el botón de abajo!</string>
     <string name="result_head">¡Cara!</string>
     <string name="result_tail">¡Cruz!</string>
-
     <!-- Magic Ball -->
     <string name="hello_magic_ball_fragment">Bola Mágica</string>
     <string name="description_magic_ball">¡La bola mágica te dirá las respuestas! Simplemente pregunte algo y lo ayudará con una respuesta genérica y asequible. ¡Puedes activar su grosería desde la configuración!</string>
@@ -76,13 +72,11 @@
     <string name="magic_answer_rude_4">¡Jajaja! Que estúpido.</string>
     <string name="magic_answer_rude_5">Estas loco/a.</string>
     <string name="magic_answer_rude_6">Vete al diablo.</string>
-
     <!-- Dice -->
     <string name="hello_dice_fragment">Modo dado</string>
     <string name="description_dice">¡Un dado podría ser útil, en un juego de mesa, por ejemplo! La aplicación arrojará de uno a diez dados por ti. Seleccione el número de la configuración. ¡Buena suerte!</string>
     <string name="throw_dice">¡Tira los dados!</string>
     <string name="hint_dice">¡Presione el botón de abajo!</string>
-
     <!-- Settings -->
     <string name="hello_settings_fragment">Opciones</string>
     <string name="dev_description">Soy un tipo educado y me gustan las cosas bellas, como animaciones, íconos, autos deportivos e impresión 3D. Trabajo como diseñador e ingeniero informático.</string>
@@ -141,7 +135,6 @@
     <string name="shake_name">Agitar para lanzar</string>
     <string name="shake_description_on">Sacudir el dispositivo actuará como el botón central</string>
     <string name="shake_description_off">Sacudir el dispositivo no tendrá ningún efecto</string>
-
     <!-- Rate app dialog -->
     <string name="review">Revisalo!</string>
     <string name="no_lazy">Soy perezoso/a</string>
@@ -150,5 +143,4 @@
         \nBien, ahora que tengo su atención, ¿puedo pedirle que deje una buena reseña para ayudar a Randomix a crecer un poco? Realmente lo apreciaría! ¡Que tengas un gran día! :D</string>
     <string name="feedback_text">Tengo algo que decirte</string>
     <string name="not_again_button">Nunca preguntes de nuevo</string>
-
 </resources>

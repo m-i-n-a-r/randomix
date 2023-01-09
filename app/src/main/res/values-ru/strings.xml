@@ -135,7 +135,7 @@
     <string name="shake_name">Встряхните, чтобы запустить</string>
     <string name="shake_description_on">Встряхивание устройства будет действовать как центральная кнопка</string>
     <string name="shake_description_off">Встряхивание устройства не будет иметь никакого эффекта</string>
-    <!-- Rate app dialog -->
+    <!-- Rate app dialog, misc -->
     <string name="review">да!</string>
     <string name="no_lazy">мне лень</string>
     <string name="cancel_button">нет</string>
@@ -143,4 +143,5 @@
         \nХорошо, теперь, когда я обращаю ваше внимание, могу ли я попросить вас оставить хороший отзыв, чтобы немного помочь Randomix? Я действительно ценю это! Хорошего дня! :D</string>
     <string name="feedback_text">Я хочу кое-что сказать</string>
     <string name="not_again_button">не спрашивай снова</string>
+    <string name="translate_app">Translate the app</string>
 </resources>

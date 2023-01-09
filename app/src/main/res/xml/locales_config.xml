@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- TODO Double check -->
 <locale-config xmlns:android="http://schemas.android.com/apk/res/android">
     <locale android:name="ast" /> <!-- Asturian -->
     <locale android:name="cs" /> <!-- Czech -->
@@ -8,8 +7,10 @@
     <locale android:name="es" /> <!-- Spanish (Spain) -->
     <locale android:name="fr" /> <!-- French (France) -->
     <locale android:name="id" /> <!-- Indonesian -->
+    <locale android:name="pt" /> <!-- Portuguese -->
     <locale android:name="it" /> <!-- Italian -->
     <locale android:name="ru" /> <!-- Russian -->
     <locale android:name="zh-CN" /> <!-- Chinese (Simplified) -->
     <locale android:name="zh-TW" /> <!-- Chinese (Traditional) -->
+    <locale android:name="pt-BR" /> <!-- Brazilian -->
 </locale-config>

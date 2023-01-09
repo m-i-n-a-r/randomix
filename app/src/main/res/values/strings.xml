@@ -100,6 +100,7 @@
     <string name="dev_xda" translatable="false">https://forum.xda-developers.com/member.php?u=5222216</string>
     <string name="dev_github" translatable="false">https://github.com/m-i-n-a-r</string>
     <string name="dev_other_apps" translatable="false">https://play.google.com/store/apps/dev?id=7720251761301594831</string>
+    <string name="dev_crowdin" translatable="false">https://crwd.in/randomix</string>
     <string name="easter_egg">Nice logo, huh? ;D</string>
     <string name="customization">Customization</string>
     <string name="vibration_name">Vibration</string>
@@ -158,7 +159,7 @@
     <string name="shake_description_on">Shaking the device will act like the center button</string>
     <string name="shake_description_off">Shaking the device won\'t have any effect</string>
 
-    <!-- Rate app dialog -->
+    <!-- Rate app dialog, misc -->
     <string name="review">Review!</string>
     <string name="no_lazy">I\'m lazy</string>
     <string name="cancel_button">Nah</string>
@@ -166,5 +167,6 @@
         \nOK, now that I have your attention, may I ask you to leave a good review to help Randomix grow a bit? I\'d really appreciate it! Have a great day! :D</string>
     <string name="feedback_text">I\'ve something to tell you</string>
     <string name="not_again_button">Never ask again</string>
+    <string name="translate_app">Translate the app</string>
 
 </resources>

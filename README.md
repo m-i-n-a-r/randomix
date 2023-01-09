@@ -14,19 +14,21 @@ The main purpose of the app is provide a **random choice** in different ways. Th
 
 ## Translations (refer to [Crowdin](https://crwd.in/randomix))
 
-| LANGUAGE              | STATUS   | SPECIAL THANKS           |
-|:----------------------|:--------:|:------------------------:|
-| **English**           | complete | myself, cosmojg          |
-| **Italian**           | complete | myself                   |
-| **Spanish**           | complete | myself                   |
-| **German**            | complete | deep-ocean-fish, julius-d|
-| **Russian**           | complete | BValeo                   |
-| **French**            | complete | Firokat                  |
-| **Czech**             | complete | Miloš Koliáš, mormegil-cz|
-| **Simplified Chinese**| complete | pumguy                   |
-| **Indonesian**        | complete | the7thNightmare          |
-| **Chinese (Taiwan)**  | complete | Still34                  |
-| **Asturian**          | complete | Softastur                |
+| LANGUAGE              | SPECIAL THANKS           |
+|:----------------------|-------------------------:|
+| **English**           | myself, cosmojg          |
+| **Italian**           | myself                   |
+| **Spanish**           | myself                   |
+| **German**            | deep-ocean-fish, julius-d|
+| **Russian**           | BValeo                   |
+| **French**            | Firokat                  |
+| **Portuguese**        | Kiskadee-dev             |
+| **Brazilian**         | Kiskadee-dev             |
+| **Czech**             | Miloš Koliáš, mormegil-cz|
+| **Simplified Chinese**| pumguy                   |
+| **Indonesian**        | the7thNightmare          |
+| **Chinese (Taiwan)**  | Still34                  |
+| **Asturian**          | Softastur                |
 
 Special thanks to Nickoriginal for the overall improvement of each translation
 

@@ -29,6 +29,12 @@ The main purpose of the app is provide a **random choice** in different ways. Th
 | **Indonesian**        | the7thNightmare          |
 | **Chinese (Taiwan)**  | Still34                  |
 | **Asturian**          | Softastur                |
+| **English (GB)**      | SecularSteve             |
+| **Dutch**             | SecularSteve             |
+| **Bosnian**           | SecularSteve             |
+| **Croatian**          | SecularSteve             |
+| **Serbian**           | SecularSteve             |
+| **Serbian (latin)**   | SecularSteve             |
 
 Special thanks to Nickoriginal for the overall improvement of each translation
 

@@ -81,7 +81,7 @@
     <string name="hello_settings_fragment">Settings</string>
     <string name="dev_description">I\'m a polite guy, and I like beautiful things like animations, icons, sports cars and 3D printing. I work as a designer and computer engineer.</string>
     <string name="easter_egg">Nice logo, huh? ;D</string>
-    <string name="customization">Customization</string>
+    <string name="customization">Customisation</string>
     <string name="vibration_name">Vibration</string>
     <string name="vibration_description_on">Vibrate when a button is pressed</string>
     <string name="vibration_description_off">No vibrations when a button is pressed</string>
@@ -100,8 +100,8 @@
     <string name="eight">Eight</string>
     <string name="nine">Nine</string>
     <string name="ten">Ten</string>
-    <string name="accent_description">Change the default accent color. Currently %s</string>
-    <string name="accent_name">Accent color</string>
+    <string name="accent_description">Change the default accent colour. Currently %s</string>
+    <string name="accent_name">Accent colour</string>
     <string name="theme_description">Use a dark, light or automatic app theme. Currently %s</string>
     <string name="theme_name">App theme</string>
     <string name="blue">Blue</string>
@@ -119,7 +119,7 @@
     <string name="system_theme">System default</string>
     <string name="dark_theme">Dark</string>
     <string name="light_theme">Light</string>
-    <string name="app_behavior">App behavior</string>
+    <string name="app_behavior">App behaviour</string>
     <string name="rude_answers_name">Rude answers</string>
     <string name="rude_answers_description_on">Rude answers activated, idiot</string>
     <string name="rude_answers_description_off">Just kind and polite answers</string>
@@ -133,7 +133,7 @@
     <string name="remove_last_description_on">Remove the last chosen option in the roulette automatically</string>
     <string name="remove_last_description_off">Don\'t remove the last chosen option in the roulette automatically</string>
     <string name="shake_name">Shake to launch</string>
-    <string name="shake_description_on">Shaking the device will act like the center button</string>
+    <string name="shake_description_on">Shaking the device will act like the centre button</string>
     <string name="shake_description_off">Shaking the device won\'t have any effect</string>
     <!-- Rate app dialog, misc -->
     <string name="review">Review!</string>

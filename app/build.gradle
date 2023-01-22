@@ -8,7 +8,7 @@ android {
         targetSdkVersion 33
         versionCode 39
         versionName "2.4"
-        resConfigs 'en', 'ast', 'cs', 'de', 'es', 'fr', 'id', 'it', 'ru', 'pt', 'pt-rBR', 'zh-rCN', 'zh-rTW'
+        resConfigs 'en', 'en-rGB', 'ast', 'bs', 'cs', 'de', 'es', 'fr', 'hr', 'id', 'it', 'nl', 'ru', 'pt', 'pt-rBR', 'sr', 'sr-rCS', 'zh-rCN', 'zh-rTW'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     compileOptions {

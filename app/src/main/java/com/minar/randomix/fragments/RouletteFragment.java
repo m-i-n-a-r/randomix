@@ -203,7 +203,7 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
             // Start the animated vector drawable
             Drawable recent = recentAnimation.getDrawable();
             if (recent instanceof Animatable) ((Animatable) recent).start();
-            // Vibrate and play sound using the common method in MainActivity
+            // Vibrate using the common method in MainActivity
             if (act instanceof MainActivity) ((MainActivity) act).vibrate();
 
             // Open a dialog with the recent searches

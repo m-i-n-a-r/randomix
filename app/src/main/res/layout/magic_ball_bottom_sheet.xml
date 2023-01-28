@@ -2,17 +2,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:clipToPadding="false"
     android:clipChildren="false"
+    android:clipToPadding="false"
     android:paddingBottom="@dimen/linear_vertical_margin">
 
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/rouletteBottomSheetScrollView"
+        android:id="@+id/magicBallBottomSheetScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/rouletteBottomSheet"
+            android:id="@+id/magicBallBottomSheet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/activity_vertical_margin"
-                android:contentDescription="@string/recent_title"
+                android:contentDescription="@string/custom_answers"
                 android:maxWidth="@dimen/max_size_icon"
                 android:maxHeight="@dimen/max_size_icon"
                 android:minWidth="@dimen/max_size_icon_small"
@@ -55,78 +55,96 @@
                 android:paddingVertical="@dimen/activity_vertical_margin"
                 android:paddingStart="@dimen/side_drawable_margin"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
-                android:text="@string/recent_title"
+                android:text="@string/custom_answers"
                 android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
                 android:textColor="?attr/colorPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/recentImage"
                 app:layout_constraintTop_toBottomOf="@id/dragHandle" />
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/lettersChip"
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/customAnswerTextLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_roulette_entry"
-                android:text="@string/letters_shortcut"
-                android:textColor="?attr/colorPrimary"
-                app:chipBackgroundColor="@drawable/chip_bg_state_list"
-                app:chipCornerRadius="@dimen/dialog_corners"
-                app:chipIcon="@drawable/insert_vector_animation"
-                app:chipIconEnabled="true"
-                app:chipIconTint="?attr/colorPrimary"
-                app:chipStrokeWidth="0dp"
-                app:chipSurfaceColor="@android:color/transparent"
-                app:layout_constraintEnd_toStartOf="@id/numbersChip"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/recentTitle"
-                app:layout_constraintVertical_chainStyle="spread"
-                app:rippleColor="?attr/colorPrimary" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/numbersChip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/numbers_1_100_shortcut"
-                android:textColor="?attr/colorPrimary"
-                app:chipBackgroundColor="@drawable/chip_bg_state_list"
-                app:chipCornerRadius="@dimen/dialog_corners"
-                app:chipIcon="@drawable/insert_vector_animation"
-                app:chipIconEnabled="true"
-                app:chipIconTint="?attr/colorPrimary"
-                app:chipStrokeWidth="0dp"
-                app:chipSurfaceColor="@android:color/transparent"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:hint="@string/insert_answer_hint"
+                android:paddingHorizontal="@dimen/activity_horizontal_margin"
+                app:boxBackgroundColor="?android:statusBarColor"
+                app:boxCornerRadiusBottomEnd="@dimen/dialog_corners"
+                app:boxCornerRadiusBottomStart="@dimen/dialog_corners"
+                app:boxCornerRadiusTopEnd="@dimen/dialog_corners"
+                app:boxCornerRadiusTopStart="@dimen/dialog_corners"
+                app:boxStrokeWidth="@dimen/text_box_stroke_width"
+                app:boxStrokeWidthFocused="@dimen/text_box_focused_stroke_width"
+                app:endIconDrawable="@drawable/insert_vector_animation"
+                app:endIconMode="custom"
+                app:endIconTint="?attr/colorOutline"
+                app:expandedHintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="?attr/colorPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/lettersChip"
-                app:layout_constraintTop_toTopOf="@id/lettersChip"
-                app:rippleColor="?attr/colorPrimary" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recentTitle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/customAnswerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:imeOptions="actionDone"
+                    android:inputType="textAutoCorrect"
+                    android:maxLength="50"
+                    android:padding="0dp"
+                    android:textAlignment="center" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/customAnswerChipGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingHorizontal="@dimen/activity_horizontal_margin"
+                android:paddingVertical="@dimen/activity_vertical_margin"
+                app:layout_constraintBottom_toTopOf="@id/customAnswerSwitch"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/customAnswerTextLayout" />
 
             <TextView
-                android:id="@+id/recentNoResult"
+                android:id="@+id/customAnswersEmptyPlaceholder"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/result_text_margin"
                 android:gravity="center_horizontal"
                 android:paddingHorizontal="@dimen/result_text_margin"
                 android:paddingVertical="@dimen/activity_vertical_margin"
-                android:text="@string/bottom_sheet_no_option"
+                android:text="@string/no_answers_magic_ball"
+                android:textAlignment="center"
                 android:textColor="?attr/colorOnSurface"
-                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/customAnswerSwitch"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/lettersChip" />
+                app:layout_constraintTop_toBottomOf="@id/customAnswerTextLayout" />
 
-            <!-- A recycler is not mandatory, since the max number of options is always 10 -->
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recentList"
-                android:layout_width="match_parent"
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/customAnswerSwitch"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clipToPadding="false"
-                android:overScrollMode="never"
-                android:paddingVertical="@dimen/linear_vertical_padding"
-                android:scrollbars="none"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:checked="true"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:text="@string/use_custom_answers"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textColor="?attr/colorOutline"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/lettersChip" />
+                app:switchTextAppearance="@style/TextAppearance.Material3.BodyMedium" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

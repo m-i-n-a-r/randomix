@@ -72,10 +72,10 @@
     <string name="magic_answer_rude_4">Lol! Qu\'est que tu es bête.</string>
     <string name="magic_answer_rude_5">T\'es fou!</string>
     <string name="magic_answer_rude_6">Va en enfer.</string>
-    <string name="no_answers_magic_ball">No custom answers. Add one from the above text field. You can delete them by tapping on them.</string>
-    <string name="custom_answers">Custom answers</string>
-    <string name="use_custom_answers">Use custom answers</string>
-    <string name="insert_answer_hint">Insert an answer…</string>
+    <string name="no_answers_magic_ball">Aucune réponse personnalisée. Ajoutez-en une dans le champ de texte ci-dessus. Vous pouvez les supprimer en appuyant dessus.</string>
+    <string name="custom_answers">Réponses personnalisées</string>
+    <string name="use_custom_answers">Utiliser les réponses personnalisées</string>
+    <string name="insert_answer_hint">Insérer une réponse…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Dé</string>
     <string name="description_dice">Un dé peut être pratique, pour un jeu de plateau par exemple ! Cette appli peut lancer entre 1 et 10 dés</string>

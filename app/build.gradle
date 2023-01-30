@@ -6,8 +6,8 @@ android {
         applicationId "com.minar.randomix"
         minSdkVersion 23
         targetSdkVersion 33
-        versionCode 39
-        versionName "2.4"
+        versionCode 40
+        versionName "2.5"
         resConfigs 'en', 'en-rGB', 'ast', 'bs', 'cs', 'de', 'es', 'fr', 'hr', 'id', 'it', 'nl', 'ru', 'pt', 'pt-rBR', 'sr', 'sr-rCS', 'zh-rCN', 'zh-rTW'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

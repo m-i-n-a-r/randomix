@@ -72,6 +72,10 @@
     <string name="magic_answer_rude_4">Lol! Wat dom.</string>
     <string name="magic_answer_rude_5">Je bent gek.</string>
     <string name="magic_answer_rude_6">Ga naar de hel.</string>
+    <string name="no_answers_magic_ball">Geen aangepaste antwoorden. Voeg er één toe uit het bovenstaande tekstveld. U kunt deze verwijderen door erop te tikken.</string>
+    <string name="custom_answers">Aangepaste antwoorden</string>
+    <string name="use_custom_answers">Gebruik aangepaste antwoorden</string>
+    <string name="insert_answer_hint">Voeg een antwoord toe…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Dobbelsteen modus</string>
     <string name="description_dice">Dobbelstenen kunnen handig zijn, in een tafelspel bijvoorbeeld! De app gooit één tot tien dobbelstenen voor je. Selecteer het aantal bij instellingen. Veel succes!</string>

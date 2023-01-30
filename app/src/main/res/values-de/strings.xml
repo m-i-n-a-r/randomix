@@ -72,6 +72,10 @@
     <string name="magic_answer_rude_4">Lol! Wie dumm.</string>
     <string name="magic_answer_rude_5">Du bist verrückt.</string>
     <string name="magic_answer_rude_6">Fahr zur Hölle.</string>
+    <string name="no_answers_magic_ball">Keine benutzerdefinierten Antworten. Fügen Sie eine aus dem oberen Textfeld hinzu. Sie können sie löschen, indem Sie auf sie tippen.</string>
+    <string name="custom_answers">Benutzerdefinierte Antworten</string>
+    <string name="use_custom_answers">Eigene Antworten verwenden</string>
+    <string name="insert_answer_hint">Eine Antwort einfügen…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Würfel Modus</string>
     <string name="description_dice">Würfel können nützlich sein, bei einem Gesellschaftsspiel zum Beispiel! Die App wirft einen bis zehn Würfel für dich. Wähle die Anzahl in den Einstellungen aus. Viel Glück!</string>

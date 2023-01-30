@@ -51,8 +51,9 @@ public class MagicBallBottomSheet extends BottomSheetDialogFragment {
         sp = PreferenceManager.getDefaultSharedPreferences(getContext());
         boolean customActive = sp.getBoolean("custom_answers_active", false);
         String customAnswers = sp.getString("custom_answers", "");
+        loadedAnswers.clear();
         Collections.addAll(loadedAnswers, customAnswers.split(";"));
-        loadedAnswers.remove("");
+        loadedAnswers.remove(""); // Ensure no empty elements are saved
         placeholder = v.findViewById(R.id.customAnswersEmptyPlaceholder);
 
         // Animate the drawable in loop
@@ -72,6 +73,9 @@ public class MagicBallBottomSheet extends BottomSheetDialogFragment {
         answerChips = v.findViewById(R.id.customAnswerChipGroup);
         answerText = v.findViewById(R.id.customAnswerText);
         TextInputLayout answerTextLayout = v.findViewById(R.id.customAnswerTextLayout);
+        answerTextLayout.setEndIconOnClickListener(v1 -> {
+            insertAnswerChip(""); // Empty answer = take it from the text field
+        });
         answerText.setOnEditorActionListener(((v1, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_GO || actionId == EditorInfo.IME_ACTION_SEND) {
                 // Insert in both the list and the layout
@@ -81,20 +85,10 @@ public class MagicBallBottomSheet extends BottomSheetDialogFragment {
             return false;
         }));
 
-        // Manage placeholder and chips
-        managePlaceholder();
-        if (!loadedAnswers.isEmpty())
-            for (String s : loadedAnswers.toArray(new String[0])) {
-                System.out.println("Inserting: " + s);
-                insertAnswerChip(s);
-            }
-
         // Manage the switch
         customAnswersSwitch = v.findViewById(R.id.customAnswerSwitch);
-        if (!customActive || loadedAnswers.size() < 3)
-            customAnswersSwitch.setActivated(false);
-        else
-            customAnswersSwitch.setActivated(false);
+        customAnswersSwitch.setChecked(customActive);
+        customAnswersSwitch.setEnabled(loadedAnswers.size() >= 3);
         customAnswersSwitch.setOnCheckedChangeListener((buttonView, checked) -> {
             if (checked) {
                 magicBall.setCustomAnswers(loadedAnswers.toArray(new String[0]));
@@ -103,13 +97,21 @@ public class MagicBallBottomSheet extends BottomSheetDialogFragment {
             }
         });
 
+        // Manage placeholder and chips
+        managePlaceholder();
+        if (!loadedAnswers.isEmpty()) {
+            for (String s : loadedAnswers) {
+                insertAnswerChip(s);
+            }
+        }
+
         return v;
     }
 
     // Insert the chip for a custom answer
     private void insertAnswerChip(String answer) {
         String currentAnswer;
-        if (!answer.equals("")) currentAnswer = answer;
+        if (!answer.isEmpty()) currentAnswer = answer;
         else {
             currentAnswer = answerText.getText().toString().trim();
             currentAnswer = currentAnswer.replaceAll("\\s+", " ");
@@ -117,19 +119,22 @@ public class MagicBallBottomSheet extends BottomSheetDialogFragment {
         }
 
         // Check if the limit is reached
-        if (loadedAnswers.size() > 150) {
+        if (loadedAnswers.size() > 50 || currentAnswer.isEmpty() || currentAnswer.equals(" ")) {
             return;
         }
 
-        // Add to the list
-        loadedAnswers.add(currentAnswer);
+        // Add to the list if the answer is not empty
+        if (answer.isEmpty()) {
+            loadedAnswers.add(currentAnswer);
+        }
+        if (loadedAnswers.size() > 2) customAnswersSwitch.setEnabled(true);
         managePlaceholder();
 
         // Inflate the layout and its onclick action
         LayoutInflater inflater = LayoutInflater.from(getActivity());
         final Chip chip = (Chip) inflater.inflate(R.layout.chip_roulette, answerChips, false);
         chip.setText(currentAnswer);
-        chip.setId(loadedAnswers.size());
+        chip.setId(loadedAnswers.size() + 100);
 
         // Add the chip with an animation
         answerChips.addView(chip);
@@ -145,13 +150,11 @@ public class MagicBallBottomSheet extends BottomSheetDialogFragment {
         // Remove the chip with an animation
         if (chip == null) return;
         loadedAnswers.remove(chip.getText().toString());
+        if (!(loadedAnswers.size() > 2)) customAnswersSwitch.setEnabled(false);
         final Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.chip_exit_anim);
         chip.startAnimation(animation);
         managePlaceholder();
-        chip.postDelayed(() -> {
-            answerChips.removeView(chip);
-            magicBall.setCustomAnswers(loadedAnswers.toArray(new String[0]));
-        }, 400);
+        chip.postDelayed(() -> answerChips.removeView(chip), 400);
     }
 
     // Evaluate the visibility of the placeholder
@@ -171,9 +174,15 @@ public class MagicBallBottomSheet extends BottomSheetDialogFragment {
         editor.putBoolean("custom_answers_active", customAnswersSwitch.isChecked());
         StringBuilder answersString = new StringBuilder();
         for (String s : loadedAnswers) {
-            answersString.append(s).append(";");
+            String answer = s.replace(";", "");
+            answersString.append(answer).append(";");
         }
         editor.putString("custom_answers", answersString.toString());
+
+        // Set the custom answers to make sure they are updated
+        if (customAnswersSwitch.isChecked())
+            magicBall.setCustomAnswers(loadedAnswers.toArray(new String[0]));
+
         editor.apply();
         super.onDismiss(dialog);
     }

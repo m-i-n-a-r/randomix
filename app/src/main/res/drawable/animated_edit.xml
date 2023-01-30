@@ -1,0 +1,71 @@
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:name="animated_edit"
+            android:width="24dp"
+            android:height="24dp"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <group
+                android:name="pen_group"
+                android:pivotX="12"
+                android:pivotY="12">
+                <path
+                    android:name="pen"
+                    android:pathData="M 12 2 C 6.47 2 2 6.47 2 12 C 2 17.53 6.47 22 12 22 C 17.53 22 22 17.53 22 12 C 22 6.47 17.53 2 12 2 M 15.1 7.07 C 15.24 7.07 15.38 7.12 15.5 7.23 L 16.77 8.5 C 17 8.72 17 9.07 16.77 9.28 L 15.77 10.28 L 13.72 8.23 L 14.72 7.23 C 14.82 7.12 14.96 7.07 15.1 7.07 M 13.13 8.81 L 15.19 10.87 L 9.13 16.93 L 7.07 16.93 L 7.07 14.87 L 13.13 8.81 Z"
+                    android:fillColor="?attr/colorOutline"
+                    android:strokeAlpha="0"/>
+            </group>
+        </vector>
+    </aapt:attr>
+    <target android:name="pen">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:propertyName="pathData"
+                    android:startOffset="1000"
+                    android:duration="500"
+                    android:valueFrom="M 12 2 C 6.47 2 2 6.47 2 12 C 2 17.53 6.47 22 12 22 C 17.53 22 22 17.53 22 12 C 22 6.47 17.53 2 12 2 M 15.1 7.07 C 15.24 7.07 15.38 7.12 15.5 7.23 L 16.77 8.5 C 17 8.72 17 9.07 16.77 9.28 L 15.77 10.28 L 13.72 8.23 L 14.72 7.23 C 14.82 7.12 14.96 7.07 15.1 7.07 M 13.13 8.81 L 13.13 8.81 L 15.19 10.87 L 9.13 16.93 L 7.07 16.93 L 7.07 14.87 L 13.13 8.81"
+                    android:valueTo="M 12 2 C 6.47 2 2 6.47 2 12 C 2 17.53 6.47 22 12 22 C 17.53 22 22 17.53 22 12 C 22 6.47 17.53 2 12 2 M 14.518 7.648 C 14.658 7.648 14.798 7.698 14.918 7.808 L 16.188 9.078 C 16.418 9.298 16.418 9.648 16.188 9.858 L 15.188 10.858 L 13.138 8.808 L 14.138 7.808 C 14.238 7.698 14.378 7.648 14.518 7.648 M 13.13 8.81 L 14.16 9.84 L 15.19 10.87 L 9.13 16.93 L 7.07 16.93 L 7.07 14.87 L 13.13 8.81"
+                    android:valueType="pathType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                    android:propertyName="pathData"
+                    android:startOffset="1500"
+                    android:duration="500"
+                    android:valueFrom="M 12 2 C 6.47 2 2 6.47 2 12 C 2 17.53 6.47 22 12 22 C 17.53 22 22 17.53 22 12 C 22 6.47 17.53 2 12 2 M 14.518 7.648 C 14.658 7.648 14.798 7.698 14.918 7.808 L 16.188 9.078 C 16.418 9.298 16.418 9.648 16.188 9.858 L 15.188 10.858 L 13.138 8.808 L 14.138 7.808 C 14.238 7.698 14.378 7.648 14.518 7.648 M 13.13 8.81 L 14.16 9.84 L 15.19 10.87 L 9.13 16.93 L 7.07 16.93 L 7.07 14.87 L 13.13 8.81"
+                    android:valueTo="M 12 2 C 6.47 2 2 6.47 2 12 C 2 17.53 6.47 22 12 22 C 17.53 22 22 17.53 22 12 C 22 6.47 17.53 2 12 2 M 15.1 7.07 C 15.24 7.07 15.38 7.12 15.5 7.23 L 16.77 8.5 C 17 8.72 17 9.07 16.77 9.28 L 15.77 10.28 L 13.72 8.23 L 14.72 7.23 C 14.82 7.12 14.96 7.07 15.1 7.07 M 13.13 8.81 L 13.13 8.81 L 15.19 10.87 L 9.13 16.93 L 7.07 16.93 L 7.07 14.87 L 13.13 8.81"
+                    android:valueType="pathType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                    android:propertyName="fillColor"
+                    android:duration="1000"
+                    android:valueFrom="?attr/colorOutline"
+                    android:valueTo="?attr/colorPrimary"
+                    android:valueType="colorType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                    android:propertyName="fillColor"
+                    android:startOffset="1000"
+                    android:duration="1000"
+                    android:valueFrom="?attr/colorPrimary"
+                    android:valueTo="?attr/colorOutline"
+                    android:valueType="colorType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+            </set>
+        </aapt:attr>
+    </target>
+    <target android:name="pen_group">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:propertyName="rotation"
+                android:duration="1000"
+                android:valueFrom="0"
+                android:valueTo="360"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+        </aapt:attr>
+    </target>
+</animated-vector>

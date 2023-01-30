@@ -71,7 +71,7 @@
             android:focusable="true"
             android:hapticFeedbackEnabled="false"
             android:padding="@dimen/activity_horizontal_margin"
-            android:src="@drawable/recent_vector_animation" />
+            android:src="@drawable/animated_edit" />
 
     </LinearLayout>
 

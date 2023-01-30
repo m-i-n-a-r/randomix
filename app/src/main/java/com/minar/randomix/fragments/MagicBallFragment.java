@@ -22,6 +22,7 @@ import com.minar.randomix.R;
 import com.minar.randomix.activities.MainActivity;
 import com.minar.randomix.utilities.ShakeEventListener;
 
+import java.util.Collections;
 import java.util.Random;
 
 public class MagicBallFragment extends androidx.fragment.app.Fragment implements OnClickListener {
@@ -30,7 +31,7 @@ public class MagicBallFragment extends androidx.fragment.app.Fragment implements
     private boolean shakeEnabled = false;
     private SensorManager sensorManager;
     private ShakeEventListener sensorListener;
-    private String[] magicAnswers = new String[36];
+    private String[] magicAnswers;
     private final MagicBallBottomSheet bottomSheet = new MagicBallBottomSheet(this);
     private String[] customAnswers = null;
 
@@ -119,6 +120,11 @@ public class MagicBallFragment extends androidx.fragment.app.Fragment implements
             ((Animatable) drawable).start();
         }
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+        boolean customAnswersEnabled = sp.getBoolean("custom_answers_active", false);
+        if (customAnswersEnabled) {
+            String customAnswers = sp.getString("custom_answers", "");
+            if (!customAnswers.isEmpty()) this.customAnswers = customAnswers.split(";");
+        }
 
         // Vibrate and play sound using the common method in MainActivity
         if (act != null) {
@@ -129,6 +135,7 @@ public class MagicBallFragment extends androidx.fragment.app.Fragment implements
         // Initialize the answers array
         if (customAnswers != null) magicAnswers = customAnswers;
         else {
+            magicAnswers = new String[36];
             magicAnswers[0] = getString(R.string.magic_answer_1);
             magicAnswers[1] = getString(R.string.magic_answer_2);
             magicAnswers[2] = getString(R.string.magic_answer_3);
@@ -172,9 +179,12 @@ public class MagicBallFragment extends androidx.fragment.app.Fragment implements
         // Choose a random number between 0 and the answer number
         Random ran = new Random();
         final int n;
-        if (sp.getBoolean("rude_answers", true)) n = ran.nextInt(36);
-        else n = ran.nextInt(30);
-
+        if (customAnswers != null && customAnswers.length > 2)
+            n = ran.nextInt(customAnswers.length);
+        else {
+            if (sp.getBoolean("rude_answers", true)) n = ran.nextInt(36);
+            else n = ran.nextInt(30);
+        }
         // Get the text view and set its value depending on n
         final TextView textViewResult = requireView().findViewById(R.id.resultMagicBall);
 

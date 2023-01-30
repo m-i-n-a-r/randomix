@@ -203,7 +203,7 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
             // Start the animated vector drawable
             Drawable recent = recentAnimation.getDrawable();
             if (recent instanceof Animatable) ((Animatable) recent).start();
-            // Vibrate and play sound using the common method in MainActivity
+            // Vibrate using the common method in MainActivity
             if (act instanceof MainActivity) ((MainActivity) act).vibrate();
 
             // Open a dialog with the recent searches
@@ -361,7 +361,7 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
 
         // Inflate the layout and its onclick action
         LayoutInflater inflater = LayoutInflater.from(getActivity());
-        final Chip chip = (Chip) inflater.inflate(R.layout.chip_roulette, optionsList, false);
+        final Chip chip = (Chip) inflater.inflate(R.layout.custom_chip, optionsList, false);
         chip.setText(currentOption);
         chip.setId(options.size());
 

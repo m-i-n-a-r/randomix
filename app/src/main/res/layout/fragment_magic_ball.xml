@@ -60,6 +60,19 @@
             android:focusable="true"
             android:src="@drawable/magic_ball_vector_animation" />
 
+        <ImageView
+            android:id="@+id/magicBallRecentButton"
+            android:layout_width="@dimen/roulette_insertion_height"
+            android:layout_height="@dimen/roulette_insertion_height"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="@string/recent_title"
+            android:focusable="true"
+            android:hapticFeedbackEnabled="false"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:src="@drawable/animated_edit" />
+
     </LinearLayout>
 
 </ScrollView>

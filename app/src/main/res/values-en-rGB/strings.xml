@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- Main strings -->
-    <string name="app_name" translatable="false">Randomix</string>
-    <string name="app_extended_name" translatable="false">Randomix - Decision Maker</string>
     <string name="app_intro_description">An open source app to choose randomly between numbers, answers, options and so on. Let the randomness talk!</string>
-    <string name="result_placeholder" translatable="false"> - - - </string>
     <string name="title_roulette">Roulette</string>
     <string name="title_coin">Coin</string>
     <string name="title_dice">Dice</string>
     <string name="title_magic_ball">Magic Ball</string>
     <string name="title_settings">Settings</string>
     <string name="generic_result">The result is:</string>
-
     <!-- Roulette -->
     <string name="hello_roulette_fragment">Roulette mode</string>
     <string name="description_roulette">Do you have to choose something? Are you tired of polls and bossy friends? A roulette will decide for you! Long press the roulette to Add generic options or clear them.</string>
@@ -26,13 +21,9 @@
     <string name="recent_title">Recent options, tap to restore</string>
     <string name="bottom_sheet_no_option">No recent option, spin the roulette to save the current options!</string>
     <string name="letters_shortcut">A-Z Letters</string>
-    <string name="numbers_1_100_shortcut" translatable="false">1–100</string>
     <string name="range">Range</string>
     <string name="wrong_range_roulette">The range is wrong or empty, please enter both the values correctly!</string>
-    <string name="max" translatable="false">Max</string>
-    <string name="min" translatable="false">Min</string>
     <string name="delete_all_roulette_confirmation">Are you sure you want to delete all the entered options?</string>
-
     <!-- Coin -->
     <string name="hello_coin_fragment">Coin mode</string>
     <string name="description_coin">Flipping a coin is easy, but can help you decide between doing something or not. Just heads or tails. Let the coin talk!</string>
@@ -40,7 +31,6 @@
     <string name="hint_coin">Press the button below!</string>
     <string name="result_head">Heads!</string>
     <string name="result_tail">Tails!</string>
-
     <!-- Magic Ball -->
     <string name="hello_magic_ball_fragment">Magic Ball</string>
     <string name="description_magic_ball">The magic ball will tell you the answers! Just ask something, and it will help you with a generic and affordable answer. You can activate its rudeness from settings!</string>
@@ -86,27 +76,16 @@
     <string name="custom_answers">Custom answers</string>
     <string name="use_custom_answers">Use custom answers</string>
     <string name="insert_answer_hint">Insert an answer…</string>
-
     <!-- Dice -->
     <string name="hello_dice_fragment">Dice mode</string>
     <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number from settings. Good luck!</string>
     <string name="throw_dice">Throw the dice!</string>
     <string name="hint_dice">Press the button below!</string>
-
     <!-- Settings -->
     <string name="hello_settings_fragment">Settings</string>
-    <string name="dev_name" translatable="false">m.i.n.a.r.</string>
     <string name="dev_description">I\'m a polite guy, and I like beautiful things like animations, icons, sports cars and 3D printing. I work as a designer and computer engineer.</string>
-    <string name="dev_email" translatable="false">minar.tastic@gmail.com</string>
-    <string name="dev_personal_site" translatable="false">https://minar.ml</string>
-    <string name="dev_instagram" translatable="false">https://www.instagram.com/minar.tastic/</string>
-    <string name="dev_twitter" translatable="false">https://twitter.com/MinarTastic</string>
-    <string name="dev_xda" translatable="false">https://forum.xda-developers.com/member.php?u=5222216</string>
-    <string name="dev_github" translatable="false">https://github.com/m-i-n-a-r</string>
-    <string name="dev_other_apps" translatable="false">https://play.google.com/store/apps/dev?id=7720251761301594831</string>
-    <string name="dev_crowdin" translatable="false">https://crwd.in/randomix</string>
     <string name="easter_egg">Nice logo, huh? ;D</string>
-    <string name="customization">Customization</string>
+    <string name="customization">Customisation</string>
     <string name="vibration_name">Vibration</string>
     <string name="vibration_description_on">Vibrate when a button is pressed</string>
     <string name="vibration_description_off">No vibrations when a button is pressed</string>
@@ -125,9 +104,8 @@
     <string name="eight">Eight</string>
     <string name="nine">Nine</string>
     <string name="ten">Ten</string>
-    <string name="three_v_three" translatable="false">3 vs 3</string>
-    <string name="accent_description">Change the default accent color. Currently %s</string>
-    <string name="accent_name">Accent color</string>
+    <string name="accent_description">Change the default accent colour. Currently %s</string>
+    <string name="accent_name">Accent colour</string>
     <string name="theme_description">Use a dark, light or automatic app theme. Currently %s</string>
     <string name="theme_name">App theme</string>
     <string name="blue">Blue</string>
@@ -142,11 +120,10 @@
     <string name="red">Red</string>
     <string name="lime">Lime</string>
     <string name="crimson">Crimson</string>
-    <string name="monet" translatable="false">Monet</string>
     <string name="system_theme">System default</string>
     <string name="dark_theme">Dark</string>
     <string name="light_theme">Light</string>
-    <string name="app_behavior">App behavior</string>
+    <string name="app_behavior">App behaviour</string>
     <string name="rude_answers_name">Rude answers</string>
     <string name="rude_answers_description_on">Rude answers activated, idiot</string>
     <string name="rude_answers_description_off">Just kind and polite answers</string>
@@ -160,9 +137,8 @@
     <string name="remove_last_description_on">Remove the last chosen option in the roulette automatically</string>
     <string name="remove_last_description_off">Don\'t remove the last chosen option in the roulette automatically</string>
     <string name="shake_name">Shake to launch</string>
-    <string name="shake_description_on">Shaking the device will act like the center button</string>
+    <string name="shake_description_on">Shaking the device will act like the centre button</string>
     <string name="shake_description_off">Shaking the device won\'t have any effect</string>
-
     <!-- Rate app dialog, misc -->
     <string name="review">Review!</string>
     <string name="no_lazy">I\'m lazy</string>
@@ -172,5 +148,4 @@
     <string name="feedback_text">I\'ve something to tell you</string>
     <string name="not_again_button">Never ask again</string>
     <string name="translate_app">Translate the app</string>
-
 </resources>

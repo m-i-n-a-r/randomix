@@ -1,0 +1,155 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:paddingBottom="@dimen/linear_vertical_margin">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/magicBallBottomSheetScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/magicBallBottomSheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:paddingBottom="@dimen/linear_vertical_margin"
+            app:behavior_fitToContents="false"
+            app:behavior_halfExpandedRatio="0.2"
+            app:behavior_hideable="true"
+            app:behavior_peekHeight="@dimen/peek_height"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+                android:id="@+id/dragHandle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/recentImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_vertical_margin"
+                android:contentDescription="@string/custom_answers"
+                android:maxWidth="@dimen/max_size_icon"
+                android:maxHeight="@dimen/max_size_icon"
+                android:minWidth="@dimen/max_size_icon_small"
+                android:minHeight="@dimen/max_size_icon_small"
+                android:padding="@dimen/linear_vertical_padding"
+                android:src="@drawable/animated_no_recent"
+                app:layout_constraintBottom_toBottomOf="@id/recentTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/recentTitle" />
+
+            <TextView
+                android:id="@+id/recentTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/activity_vertical_margin"
+                android:paddingStart="@dimen/side_drawable_margin"
+                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:text="@string/custom_answers"
+                android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+                android:textColor="?attr/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/recentImage"
+                app:layout_constraintTop_toBottomOf="@id/dragHandle" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/customAnswerTextLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:hint="@string/insert_answer_hint"
+                android:paddingHorizontal="@dimen/activity_horizontal_margin"
+                app:boxBackgroundColor="?android:statusBarColor"
+                app:boxCornerRadiusBottomEnd="@dimen/rounded_corners"
+                app:boxCornerRadiusBottomStart="@dimen/rounded_corners"
+                app:boxCornerRadiusTopEnd="@dimen/rounded_corners"
+                app:boxCornerRadiusTopStart="@dimen/rounded_corners"
+                app:boxStrokeWidth="@dimen/text_box_stroke_width"
+                app:boxStrokeWidthFocused="@dimen/text_box_focused_stroke_width"
+                app:endIconDrawable="@drawable/insert_vector_animation"
+                app:endIconMode="custom"
+                app:endIconTint="?attr/colorOutline"
+                app:expandedHintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="?attr/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recentTitle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/customAnswerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:imeOptions="actionDone"
+                    android:inputType="textAutoCorrect"
+                    android:maxLength="60"
+                    android:padding="0dp"
+                    android:textAlignment="center" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/customAnswerChipGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingHorizontal="@dimen/activity_horizontal_margin"
+                android:paddingVertical="@dimen/activity_vertical_margin"
+                app:chipSpacing="@dimen/chip_spacing"
+                app:chipSpacingHorizontal="@dimen/chip_spacing"
+                app:chipSpacingVertical="@dimen/chip_spacing"
+                app:flow_horizontalAlign="center"
+                app:layout_constraintBottom_toTopOf="@id/customAnswerSwitch"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/customAnswerTextLayout" />
+
+            <TextView
+                android:id="@+id/customAnswersEmptyPlaceholder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/result_text_margin"
+                android:gravity="center_horizontal"
+                android:paddingHorizontal="@dimen/result_text_margin"
+                android:paddingVertical="@dimen/activity_vertical_margin"
+                android:text="@string/no_answers_magic_ball"
+                android:textAlignment="center"
+                android:textColor="?attr/colorOnSurface"
+                app:layout_constraintBottom_toTopOf="@id/customAnswerSwitch"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/customAnswerTextLayout" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/customAnswerSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:checked="true"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:text="@string/use_custom_answers"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textColor="?attr/colorOutline"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:switchTextAppearance="@style/TextAppearance.Material3.BodyMedium" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

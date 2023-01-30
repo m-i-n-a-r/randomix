@@ -6,9 +6,9 @@ android {
         applicationId "com.minar.randomix"
         minSdkVersion 23
         targetSdkVersion 33
-        versionCode 39
-        versionName "2.4"
-        resConfigs 'en', 'ast', 'cs', 'de', 'es', 'fr', 'id', 'it', 'ru', 'pt', 'pt-rBR', 'zh-rCN', 'zh-rTW'
+        versionCode 40
+        versionName "2.5"
+        resConfigs 'en', 'en-rGB', 'ast', 'bs', 'cs', 'de', 'es', 'fr', 'hr', 'id', 'it', 'nl', 'ru', 'pt', 'pt-rBR', 'sr', 'sr-rCS', 'zh-rCN', 'zh-rTW'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     compileOptions {
@@ -29,7 +29,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.google.android.material:material:1.8.0-rc01'
+    implementation 'com.google.android.material:material:1.9.0-alpha01'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation "androidx.navigation:navigation-fragment:2.5.3"
     implementation "androidx.navigation:navigation-ui:2.5.3"

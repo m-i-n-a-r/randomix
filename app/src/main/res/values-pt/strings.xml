@@ -72,6 +72,10 @@
     <string name="magic_answer_rude_4">Lol! Quanta estupidez em uma pergunta.</string>
     <string name="magic_answer_rude_5">Você é louco.</string>
     <string name="magic_answer_rude_6">Vá para o inferno.</string>
+    <string name="no_answers_magic_ball">Nenhuma resposta personalizada. Adicione uma no campo de texto acima. Você pode excluí-las tocando nelas.</string>
+    <string name="custom_answers">Respostas personalizadas</string>
+    <string name="use_custom_answers">Usar respostas personalizadas</string>
+    <string name="insert_answer_hint">Insira uma resposta…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Modo dado</string>
     <string name="description_dice">Os dados podem ser úteis, em um jogo de mesa, por exemplo! O aplicativo lançará de um a dez dados para você. Selecione o número nas configurações. Boa sorte!</string>

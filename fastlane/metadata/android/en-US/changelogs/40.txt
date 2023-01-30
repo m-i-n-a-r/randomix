@@ -1,0 +1,3 @@
+- New custom answers support for the magic ball
+- New translations
+- Fixes

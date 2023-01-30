@@ -31,7 +31,7 @@
     <dimen name="result_text_margin">42dp</dimen>
 
     <!-- Roulette Bottom Sheet -->
-    <dimen name="dialog_corners">16dp</dimen>
+    <dimen name="rounded_corners">16dp</dimen>
     <dimen name="title_height">56dp</dimen>
     <dimen name="peek_height">550dp</dimen>
     <dimen name="max_recent_options">10</dimen>

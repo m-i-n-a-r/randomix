@@ -119,7 +119,7 @@ public class MagicBallBottomSheet extends BottomSheetDialogFragment {
         }
 
         // Check if the limit is reached
-        if (loadedAnswers.size() > 50 || currentAnswer.isEmpty() || currentAnswer.equals(" ")) {
+        if (loadedAnswers.size() > 100 || currentAnswer.isEmpty() || currentAnswer.equals(" ")) {
             return;
         }
 
@@ -127,14 +127,18 @@ public class MagicBallBottomSheet extends BottomSheetDialogFragment {
         if (answer.isEmpty()) {
             loadedAnswers.add(currentAnswer);
         }
-        if (loadedAnswers.size() > 2) customAnswersSwitch.setEnabled(true);
+        if (loadedAnswers.size() > 2) {
+            customAnswersSwitch.setEnabled(true);
+            if (customAnswersSwitch.isChecked())
+                magicBall.setCustomAnswers(loadedAnswers.toArray(new String[0]));
+        }
         managePlaceholder();
 
         // Inflate the layout and its onclick action
         LayoutInflater inflater = LayoutInflater.from(getActivity());
-        final Chip chip = (Chip) inflater.inflate(R.layout.chip_roulette, answerChips, false);
+        final Chip chip = (Chip) inflater.inflate(R.layout.custom_chip, answerChips, false);
         chip.setText(currentAnswer);
-        chip.setId(loadedAnswers.size() + 100);
+        chip.setId(loadedAnswers.size());
 
         // Add the chip with an animation
         answerChips.addView(chip);
@@ -150,7 +154,10 @@ public class MagicBallBottomSheet extends BottomSheetDialogFragment {
         // Remove the chip with an animation
         if (chip == null) return;
         loadedAnswers.remove(chip.getText().toString());
-        if (!(loadedAnswers.size() > 2)) customAnswersSwitch.setEnabled(false);
+        if (loadedAnswers.size() < 2) {
+            customAnswersSwitch.setEnabled(false);
+            magicBall.setCustomAnswers(null);
+        }
         final Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.chip_exit_anim);
         chip.startAnimation(animation);
         managePlaceholder();
@@ -180,8 +187,9 @@ public class MagicBallBottomSheet extends BottomSheetDialogFragment {
         editor.putString("custom_answers", answersString.toString());
 
         // Set the custom answers to make sure they are updated
-        if (customAnswersSwitch.isChecked())
+        if (customAnswersSwitch.isChecked() && customAnswersSwitch.isEnabled())
             magicBall.setCustomAnswers(loadedAnswers.toArray(new String[0]));
+        else magicBall.setCustomAnswers(null);
 
         editor.apply();
         super.onDismiss(dialog);

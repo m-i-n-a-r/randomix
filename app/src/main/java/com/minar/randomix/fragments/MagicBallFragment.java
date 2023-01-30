@@ -22,7 +22,6 @@ import com.minar.randomix.R;
 import com.minar.randomix.activities.MainActivity;
 import com.minar.randomix.utilities.ShakeEventListener;
 
-import java.util.Collections;
 import java.util.Random;
 
 public class MagicBallFragment extends androidx.fragment.app.Fragment implements OnClickListener {
@@ -133,7 +132,7 @@ public class MagicBallFragment extends androidx.fragment.app.Fragment implements
         }
 
         // Initialize the answers array
-        if (customAnswers != null) magicAnswers = customAnswers;
+        if (customAnswers != null && customAnswers.length > 2) magicAnswers = customAnswers;
         else {
             magicAnswers = new String[36];
             magicAnswers[0] = getString(R.string.magic_answer_1);

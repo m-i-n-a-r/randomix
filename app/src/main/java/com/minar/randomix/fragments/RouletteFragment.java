@@ -361,7 +361,7 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
 
         // Inflate the layout and its onclick action
         LayoutInflater inflater = LayoutInflater.from(getActivity());
-        final Chip chip = (Chip) inflater.inflate(R.layout.chip_roulette, optionsList, false);
+        final Chip chip = (Chip) inflater.inflate(R.layout.custom_chip, optionsList, false);
         chip.setText(currentOption);
         chip.setId(options.size());
 

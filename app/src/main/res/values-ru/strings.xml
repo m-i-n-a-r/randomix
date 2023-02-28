@@ -10,11 +10,11 @@
     <string name="generic_result">Результат:</string>
     <!-- Roulette -->
     <string name="hello_roulette_fragment">Рулетка</string>
-    <string name="description_roulette">Тебе нужно что-то выбрать? Ты устал от опросов и настоящих друзей? Рулетка решит за тебя! Нажмите и удерживайте рулетку, чтобы добавить общие параметры или очистить их.</string>
+    <string name="description_roulette">Тебе нужно сделать выбор? Устал от постоянного конфликта и от гордых друзей? Рулетка сделает за тебя решение! Нажмите и удерживайте палец на рулетке чтобы добавить или очистить варианты выбора.</string>
     <string name="spin_roulette">Крутим рулетку!</string>
     <string name="insert_roulette_hint">Введите вариант…</string>
     <string name="delete_roulette_hint">Удалить последний введённый вариант</string>
-    <string name="insert_roulette_description">Ниже перечислены возможные варианты добавления в рулетку.</string>
+    <string name="insert_roulette_description">Пожалуйста, введите ниже все возможные варианты выбора для рулетки.</string>
     <string name="no_entry_roulette">Пожалуйста, введите 2 и более вариантов, чтобы крутить рулетку.</string>
     <string name="too_much_entries_roulette">Вы не можете ввести более 30 вариантов</string>
     <string name="generic_option">Вариант</string>

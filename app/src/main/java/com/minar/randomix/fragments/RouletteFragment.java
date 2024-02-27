@@ -1,5 +1,7 @@
 package com.minar.randomix.fragments;
 
+import static androidx.preference.PreferenceManager.getDefaultSharedPreferences;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -9,7 +11,6 @@ import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -77,7 +78,7 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_roulette, container, false);
 
-        sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+        sp = getDefaultSharedPreferences(requireContext());
         // Hide description if needed
         if (sp.getBoolean("hide_descriptions", false))
             v.findViewById(R.id.descriptionRoulette).setVisibility(View.GONE);
@@ -282,7 +283,7 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
 
         int n;
         if (inRangeMode) {
-            // Best way to generate number in range
+            // Best way to generate number in range TODO not so best, it's bugged!
             n = ThreadLocalRandom.current().nextInt(minValue, maxValue + 1);
         } else {
             Random ran = new Random();

@@ -1,11 +1,12 @@
 package com.minar.randomix.fragments;
 
+import static androidx.preference.PreferenceManager.getDefaultSharedPreferences;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Animatable2;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,7 +49,7 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // Inflate the bottom sheet, initialize the shared preferences and the recent options list
         View v = inflater.inflate(R.layout.roulette_bottom_sheet, container, false);
-        sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+        sp = getDefaultSharedPreferences(requireContext());
         String recent = sp.getString("recent", "");
         Gson gson = new Gson();
         Type type = new TypeToken<List<List<String>>>() {
@@ -213,7 +214,7 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
         Gson gson = new Gson();
         if (recentList == null) {
             // Shared preferences may be null if the method is called without opening the dialog
-            if (sp == null) sp = PreferenceManager.getDefaultSharedPreferences(context);
+            if (sp == null) sp = getDefaultSharedPreferences(context);
             String recent = sp.getString("recent", "");
             Type type = new TypeToken<List<List<String>>>() {
             }.getType();

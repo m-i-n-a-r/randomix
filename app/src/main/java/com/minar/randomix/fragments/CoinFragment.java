@@ -1,5 +1,7 @@
 package com.minar.randomix.fragments;
 
+import static androidx.preference.PreferenceManager.getDefaultSharedPreferences;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Animatable;
@@ -7,7 +9,6 @@ import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -57,7 +58,7 @@ public class CoinFragment extends androidx.fragment.app.Fragment implements OnCl
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_coin, container, false);
 
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+        SharedPreferences sp = getDefaultSharedPreferences(requireContext());
         // Hide description if needed
         if (sp.getBoolean("hide_descriptions", false))
             v.findViewById(R.id.descriptionCoin).setVisibility(View.GONE);

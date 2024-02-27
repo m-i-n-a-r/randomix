@@ -1,5 +1,7 @@
 package com.minar.randomix.fragments;
 
+import static androidx.preference.PreferenceManager.getDefaultSharedPreferences;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,7 +10,6 @@ import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -56,7 +57,7 @@ public class MagicBallFragment extends androidx.fragment.app.Fragment implements
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_magic_ball, container, false);
 
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+        SharedPreferences sp = getDefaultSharedPreferences(requireContext());
         // Hide description if needed
         if (sp.getBoolean("hide_descriptions", false))
             v.findViewById(R.id.descriptionMagicBall).setVisibility(View.GONE);
@@ -118,7 +119,7 @@ public class MagicBallFragment extends androidx.fragment.app.Fragment implements
         if (drawable instanceof Animatable) {
             ((Animatable) drawable).start();
         }
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+        SharedPreferences sp = getDefaultSharedPreferences(requireContext());
         boolean customAnswersEnabled = sp.getBoolean("custom_answers_active", false);
         if (customAnswersEnabled) {
             String customAnswers = sp.getString("custom_answers", "");

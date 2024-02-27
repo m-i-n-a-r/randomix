@@ -1,5 +1,7 @@
 package com.minar.randomix.fragments;
 
+import static androidx.preference.PreferenceManager.getDefaultSharedPreferences;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,7 +10,6 @@ import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -96,7 +97,7 @@ public class DiceFragment extends androidx.fragment.app.Fragment implements OnCl
         // Get the placeholder where the correct layout will be inflated
         LinearLayout diceSection = v.findViewById(R.id.diceSection);
         // Get the shared preferences and the desired number of dices, from 1 to 11
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+        SharedPreferences sp = getDefaultSharedPreferences(requireContext());
 
         // Hide description if needed
         if (sp.getBoolean("hide_descriptions", false))
@@ -172,7 +173,7 @@ public class DiceFragment extends androidx.fragment.app.Fragment implements OnCl
         diceAnimation.setClickable(false);
 
         // Get the shared preferences and the desired number of dices, from 1 to 11
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+        SharedPreferences sp = getDefaultSharedPreferences(requireContext());
         final int diceNumber = Integer.parseInt(Objects.requireNonNull(sp.getString("dice_number", "1")));
 
         // Vibrate and play sound using the common method in MainActivity

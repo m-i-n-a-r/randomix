@@ -1,11 +1,12 @@
 package com.minar.randomix.fragments;
 
+import static androidx.preference.PreferenceManager.getDefaultSharedPreferences;
+
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Animatable2;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,7 +49,7 @@ public class MagicBallBottomSheet extends BottomSheetDialogFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // Inflate the bottom sheet, initialize the shared preferences and the recent options list
         View v = inflater.inflate(R.layout.magic_ball_bottom_sheet, container, false);
-        sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+        sp = getDefaultSharedPreferences(requireContext());
         boolean customActive = sp.getBoolean("custom_answers_active", false);
         String customAnswers = sp.getString("custom_answers", "");
         loadedAnswers.clear();

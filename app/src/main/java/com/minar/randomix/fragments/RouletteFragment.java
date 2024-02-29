@@ -39,7 +39,6 @@ import com.minar.randomix.utilities.ShakeEventListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class RouletteFragment extends androidx.fragment.app.Fragment implements OnClickListener, View.OnLongClickListener, TextView.OnEditorActionListener {
     private MainActivity act;
@@ -282,12 +281,11 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
         }
 
         int n;
+        Random ran = new Random();
         if (inRangeMode) {
-            // Best way to generate number in range TODO not so best, it's bugged!
-            n = ThreadLocalRandom.current().nextInt(minValue, maxValue + 1);
+            // ThreadLocalRandom only works on specific Android versions, I can't use it now
+            n = ran.nextInt(maxValue - minValue + 1) + minValue;
         } else {
-            Random ran = new Random();
-
             n = ran.nextInt(options.size());
             // Insert in the recent list
             bottomSheet.updateRecent(options, getContext());

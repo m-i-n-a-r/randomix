@@ -19,8 +19,6 @@ import com.minar.randomix.utilities.RecentUtils;
 
 import java.util.List;
 
-import static androidx.core.content.ContextCompat.getColor;
-
 public class RecentAdapter extends RecyclerView.Adapter<RecentAdapter.RecentHolder> {
     private final List<List<String>> recentList;
     private final LayoutInflater inflater;
@@ -74,7 +72,7 @@ public class RecentAdapter extends RecyclerView.Adapter<RecentAdapter.RecentHold
             holder.optionList.setTextColor(getThemeAccentColor(holder.adapter.inflater.getContext()));
         } else {
             holder.optionList.setTypeface(null, Typeface.NORMAL);
-            holder.optionList.setTextColor(MaterialColors.getColor(holder.itemView, R.attr.colorOutline));
+            holder.optionList.setTextColor(MaterialColors.getColor(holder.itemView, com.google.android.material.R.attr.colorOutline));
         }
         holder.optionList.setText(RecentUtils.fromOptionList(current));
     }
@@ -92,7 +90,7 @@ public class RecentAdapter extends RecyclerView.Adapter<RecentAdapter.RecentHold
     // Get the accent color
     public static int getThemeAccentColor(final Context context) {
         final TypedValue value = new TypedValue();
-        context.getTheme().resolveAttribute(R.attr.colorPrimary, value, true);
+        context.getTheme().resolveAttribute(com.google.android.material.R.attr.colorPrimary, value, true);
         return value.data;
     }
 }

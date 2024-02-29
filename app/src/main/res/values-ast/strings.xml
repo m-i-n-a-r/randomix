@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Main strings -->
-    <string name="app_intro_description">Una aplicación de códigu abiertu qu\'escueye númberos, rempuestes ya opciones al debalu. ¡Dexa que l\'azar fale!</string>
+    <string name="app_intro_description">Una aplicación de códigu abiertu qu\'escueye númberos, rempuestes y opciones al debalu. ¡Dexa que l\'azar fale!</string>
     <string name="title_roulette">Ruleta</string>
     <string name="title_coin">Moneda</string>
     <string name="title_dice">Dau</string>
     <string name="title_magic_ball">Bola máxica</string>
-    <string name="title_settings">Configuración</string>
+    <string name="title_settings">Axustes</string>
     <string name="generic_result">El resultáu ye:</string>
     <!-- Roulette -->
     <string name="hello_roulette_fragment">Mou de ruleta</string>
-    <string name="description_roulette">¿Tienes d\'escoyer daqué? ¿Fartesti d\'encuestes ya d\'amistaes mandones? ¡La ruleta decide por ti! Tenla primida p\'amestar o quitar opciones xenériques.</string>
+    <string name="description_roulette">¿Tienes d\'escoyer daqué? ¿Fartesti d\'encuestes y d\'amistaes mandones? ¡La ruleta decide por ti! Tenla primida p\'amestar o quitar opciones xenériques.</string>
     <string name="spin_roulette">¡Xira la ruleta!</string>
     <string name="insert_roulette_hint">Introduz una opción…</string>
     <string name="delete_roulette_hint">Desanicia la última opción introducida</string>
@@ -26,14 +26,15 @@
     <string name="delete_all_roulette_confirmation">¿De xuru que quies desaniciar toles opciones introducíes?</string>
     <!-- Coin -->
     <string name="hello_coin_fragment">Mou de moneda</string>
-    <string name="description_coin">Tirar al aire una moneda ye fácil, mas pue ayudate a decidir ente facer daqué o non. Cara o cruz… ¡Dexa que la moneda lo diga!</string>
+    <string name="description_coin">Tirar al aire una moneda ye fácil, mas pue ayudate a decidir ente facer daqué o non.
+        Cara o cruz…¡Dexa que la moneda lo diga!</string>
     <string name="flip_coin">¡Tira la moneda!</string>
     <string name="hint_coin">¡Primi\'l botón d\'abaxo!</string>
     <string name="result_head">¡Cara!</string>
     <string name="result_tail">¡Cruz!</string>
     <!-- Magic Ball -->
     <string name="hello_magic_ball_fragment">Bola máxica</string>
-    <string name="description_magic_ball">¡La bola máxica respuende a too! Entruga daqué ya dexa que t\'ayude con una rempuesta xenérica ya afayadiza. ¡Na configuración pues facer que seya tosca!</string>
+    <string name="description_magic_ball">¡La bola máxica respuéndelo too! Entruga daqué y dexa que t\'ayude con una rempuesta xenérica y afayadiza. ¡Nos axustes pue facer que seya tosca!</string>
     <string name="shake_ball">¡Ximiélgala!</string>
     <string name="hint_magic_ball">¡Primi\'l botón d\'abaxo!</string>
     <string name="magic_answer_1">Non.</string>
@@ -61,9 +62,9 @@
     <string name="magic_answer_23">Ye confuso, volvi entrugar.</string>
     <string name="magic_answer_24">Meyor nun lo digo agora.</string>
     <string name="magic_answer_25">¡Nun soi a predicilo!</string>
-    <string name="magic_answer_26">Concéntrate ya volvi entrugar.</string>
+    <string name="magic_answer_26">Concéntrate y volvi entrugar.</string>
     <string name="magic_answer_27">Nun cuentes con ello.</string>
-    <string name="magic_answer_28">Les fontes dícenme que non.</string>
+    <string name="magic_answer_28">Les mios fontes dicen que non.</string>
     <string name="magic_answer_29">Ye mui duldoso.</string>
     <string name="magic_answer_30">Entrúgalo a les amistaes.</string>
     <string name="magic_answer_rude_1">Non, idiota.</string>
@@ -78,12 +79,12 @@
     <string name="insert_answer_hint">Inxerta una rempuesta…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Mou de dau</string>
-    <string name="description_dice">El dau pue ser útil, por exemplu, nun xuegu de mesa. L\'aplicación tira\'l númberu de daos que seleiciones na configuración (de 1 a 10). ¡Bona suerte!</string>
+    <string name="description_dice">El dau pue ser útil, por exemplu, nun xuegu de mesa. L\'aplicación va tirar el númberu de daos qu\'esbilles nos axustes (de 1 a 10). ¡Bona suerte!</string>
     <string name="throw_dice">¡Tira\'l dau!</string>
     <string name="hint_dice">¡Primi\'l botón d\'abaxo!</string>
     <!-- Settings -->
-    <string name="hello_settings_fragment">Configuración</string>
-    <string name="dev_description">Soi un mozu educáu ya préstenme les coses guapes como les animaciones, los iconos, la imprentación 3D ya los coches de carreres. Trabayo como diseñador ya inxenieru informáticu.</string>
+    <string name="hello_settings_fragment">Axustes</string>
+    <string name="dev_description">Soi un mozu educáu y préstenme les coses guapes como les animaciones, los iconos, la imprentación 3D y los coches de carreres. Trabayo como diseñador ya inxenieru informáticu.</string>
     <string name="easter_egg">El logotipu ye guapu, ¿eh? ;D</string>
     <string name="customization">Personalización</string>
     <string name="vibration_name">Vibración</string>
@@ -94,7 +95,7 @@
     <string name="sound_description_off">Nun reproduz nengún soníu al primir dalgún botón</string>
     <string name="dice_number_name">Númberu del dau</string>
     <string name="dice_number_description">Camuda\'l númberu del dau tiráu. L\'actual ye: %s</string>
-    <string name="one">Unu</string>
+    <string name="one">Un</string>
     <string name="two">Dos</string>
     <string name="three">Trés</string>
     <string name="four">Cuatro</string>
@@ -136,16 +137,16 @@
     <string name="remove_last_name">Quitar lo último escoyío</string>
     <string name="remove_last_description_on">Quita automáticamente la última opción escoyida de la ruleta</string>
     <string name="remove_last_description_off">Nun quita automáticamente la última opción escoyida de la ruleta</string>
-    <string name="shake_name">Ximielgar el preséu</string>
-    <string name="shake_description_on">Al ximielgar el preséu emúlase l\'aición del botón central</string>
-    <string name="shake_description_off">Al ximielgar el preséu nun s\'aiciona nada</string>
+    <string name="shake_name">Agitar para lanzar</string>
+    <string name="shake_description_on">Sacudir el dispositivo actuará como el botón central</string>
+    <string name="shake_description_off">Sacudir el dispositivo no tendrá ningún efecto</string>
     <!-- Rate app dialog, misc -->
-    <string name="review">¡Reseña!</string>
+    <string name="review">¡Reseñar!</string>
     <string name="no_lazy">Dame pereza</string>
     <string name="cancel_button">Non</string>
     <string name="rating_message">AAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n
         \nBien, agora que tengo la to atención, ¿puedo pidite que dexes una reseña bona pa que Randomix seya un poco más conocíu? ¡Voi agradecelo muncho! Ten un bon día :D</string>
     <string name="feedback_text">Tengo de dicite daqué</string>
     <string name="not_again_button">Nun volver entrugar</string>
-    <string name="translate_app">Traducir l\'aplicación</string>
+    <string name="translate_app">Traducir l\'app</string>
 </resources>

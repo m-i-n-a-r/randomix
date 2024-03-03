@@ -8,7 +8,7 @@ android {
         targetSdkVersion 34
         versionCode 41
         versionName "2.6"
-        resConfigs 'en', 'en-rGB', 'ast', 'bs', 'cs', 'de', 'es', 'fr', 'hr', 'id', 'it', 'nl', 'ru', 'pt', 'pt-rBR', 'sr', 'sr-rCS', 'uk-rUA', 'zh-rCN', 'zh-rTW'
+        resourceConfigurations += ['en', 'en-rGB', 'ast', 'bs', 'cs', 'de', 'es', 'fr', 'hr', 'id', 'it', 'nl', 'ru', 'pt', 'pt-rBR', 'sr', 'sr-rCS', 'uk-rUA', 'zh-rCN', 'zh-rTW']
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     compileOptions {

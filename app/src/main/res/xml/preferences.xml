@@ -27,6 +27,7 @@
             android:title="@string/rude_answers_name"
             app:iconSpaceReserved="false" />
 
+        <!-- TODO Remove entirely
         <ListPreference
             android:defaultValue="1"
             android:entries="@array/diceNumber"
@@ -34,7 +35,7 @@
             android:key="dice_number"
             android:summary="@string/dice_number_description"
             android:title="@string/dice_number_name"
-            app:iconSpaceReserved="false" />
+            app:iconSpaceReserved="false" />-->
 
         <SwitchPreferenceCompat
             android:defaultValue="false"

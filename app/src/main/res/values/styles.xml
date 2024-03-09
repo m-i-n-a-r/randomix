@@ -110,6 +110,16 @@
         <item name="cornerSize">@dimen/rounded_corners</item>
     </style>
 
+    <style name="Widget.App.Button.OutlinedButton.IconOnly" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="iconPadding">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
     <!-- Bottom navigation for non-monet accents -->
     <style name="CustomBottomNavigation" parent="Widget.Material3.BottomNavigationView">
         <item name="backgroundTint">?android:statusBarColor</item>

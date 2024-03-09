@@ -162,9 +162,13 @@ public class UniversalDiceFragment extends androidx.fragment.app.Fragment implem
     }
 
     // Run a roll-like animation for a given drawable
-    private void runRollAnimation(ImageView image) {
+    private void runRollAnimation(ImageView image, Boolean reverse) {
         // Setup the preview view (one single screenshot, less time wasted)
-        ObjectAnimator animation = ObjectAnimator.ofFloat(image, "rotationX", 0.0f, 1800f);
+        ObjectAnimator animation;
+        if (reverse)
+            animation = ObjectAnimator.ofFloat(image, "rotationX", 0.0f, 1800f);
+        else
+            animation = ObjectAnimator.ofFloat(image, "rotationX", 0.0f, -1800f);
         animation.setDuration(3000);
         animation.setInterpolator(new BounceInterpolator());
         animation.start();

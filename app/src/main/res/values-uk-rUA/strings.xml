@@ -66,7 +66,7 @@
     <string name="magic_answer_27">На це не розраховуйте.</string>
     <string name="magic_answer_28">Мої ресурси заперечують.</string>
     <string name="magic_answer_29">Дуже сумнівно.</string>
-    <string name="magic_answer_30">Запитай свого кращого друга.</string>
+    <string name="magic_answer_30">Ask your best friend.</string>
     <string name="magic_answer_rude_1">Ні, ідіот.</string>
     <string name="magic_answer_rude_2">Звісно, чорт забирай.</string>
     <string name="magic_answer_rude_3">Чи ти дурень?</string>
@@ -114,10 +114,10 @@
     <string name="green">Зелена</string>
     <string name="orange">Помаранчева</string>
     <string name="yellow">Жовта</string>
-    <string name="teal">Смарагдовий</string>
-    <string name="violet">Ліловий</string>
-    <string name="pink">Рожевий</string>
-    <string name="light_blue">Світло-блакитний</string>
+    <string name="teal">Teal</string>
+    <string name="violet">Violet</string>
+    <string name="pink">Pink</string>
+    <string name="light_blue">Light blue</string>
     <string name="red">Red</string>
     <string name="lime">Lime</string>
     <string name="crimson">Crimson</string>

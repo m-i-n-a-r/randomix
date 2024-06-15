@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment;
 
 import com.github.appintro.AppIntro;
 import com.github.appintro.AppIntroFragment;
+import com.github.appintro.model.SliderPage;
+import com.github.appintro.model.SliderPagerBuilder;
 import com.minar.randomix.R;
 
 public class IntroActivity extends AppIntro {
@@ -21,21 +23,23 @@ public class IntroActivity extends AppIntro {
         getWindow().setNavigationBarColor(ContextCompat.getColor(getBaseContext(), R.color.iconGreen));
         super.onCreate(savedInstanceState);
 
-        addSlide(AppIntroFragment.newInstance(
-                getString(R.string.app_name).toUpperCase(),
-                getString(R.string.app_intro_description),
-                R.drawable.intro_icon,
-                getColor(R.color.iconGreen),
-                getColor(R.color.textColorPrimaryInverse),
-                getColor(R.color.textColorSecondaryInverse),
-                R.font.opensans_semibold,
-                R.font.opensans_semibold,
-                R.drawable.intro_background
-        ));
+        SliderPage pageOne = new SliderPagerBuilder()
+                .title(getString(R.string.app_name).toUpperCase())
+                .description(getString(R.string.app_intro_description))
+                .imageDrawable(R.drawable.intro_icon)
+                .titleTypefaceFontRes(R.font.opensans_semibold)
+                .descriptionTypefaceFontRes(R.font.opensans_semibold)
+                .backgroundColorRes(R.color.textColorPrimaryInverse)
+                .titleColorRes(R.color.textColorSecondaryInverse)
+                .backgroundDrawable(R.drawable.intro_background)
+                .build();
 
         setSkipButtonEnabled(false);
         setIndicatorEnabled(false);
-        // Turn vibration on and set intensity.
+        showStatusBar(false);
+        addSlide(AppIntroFragment.createInstance(pageOne));
+
+        // Turn vibration on and set intensity
         setVibrate(true);
         setVibrateDuration(50);
     }

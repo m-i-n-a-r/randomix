@@ -146,6 +146,7 @@
     <string name="system_theme">System default</string>
     <string name="dark_theme">Dark</string>
     <string name="light_theme">Light</string>
+    <string name="amoled_theme" translatable="false">Amoled</string>
     <string name="app_behavior">App behavior</string>
     <string name="rude_answers_name">Rude answers</string>
     <string name="rude_answers_description_on">Rude answers activated, idiot</string>

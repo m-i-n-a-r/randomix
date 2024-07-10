@@ -43,6 +43,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
                 switch (sharedPreferences.getString("theme_color", "")) {
                     case "dark": {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                        activity.recreate();
                         break;
                     }
                     case "light": {
@@ -51,6 +52,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
                     }
                     default: {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                        activity.recreate();
                         break;
                     }
                 }

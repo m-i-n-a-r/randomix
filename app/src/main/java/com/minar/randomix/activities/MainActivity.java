@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             case "system":
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
                 break;
-            case "dark":
+            case "dark", "black":
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                 break;
             case "light":
@@ -76,50 +76,99 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        // Monet on Android 12+ only, system on Android 11+
-        switch (accent) {
-            case "monet":
-                setTheme(R.style.AppTheme_Monet);
-                break;
-            case "system":
-                setTheme(R.style.AppTheme_System);
-                break;
-            case "blue":
-                setTheme(R.style.AppTheme_Blue);
-                break;
-            case "green":
-                setTheme(R.style.AppTheme_Green);
-                break;
-            case "aqua":
-                setTheme(R.style.AppTheme_Aqua);
-                break;
-            case "orange":
-                setTheme(R.style.AppTheme_Orange);
-                break;
-            case "yellow":
-                setTheme(R.style.AppTheme_Yellow);
-                break;
-            case "teal":
-                setTheme(R.style.AppTheme_Teal);
-                break;
-            case "violet":
-                setTheme(R.style.AppTheme_Violet);
-                break;
-            case "pink":
-                setTheme(R.style.AppTheme_Pink);
-                break;
-            case "lightBlue":
-                setTheme(R.style.AppTheme_LightBlue);
-                break;
-            case "red":
-                setTheme(R.style.AppTheme_Red);
-                break;
-            case "lime":
-                setTheme(R.style.AppTheme_Lime);
-                break;
-            case "crimson":
-                setTheme(R.style.AppTheme_Crimson);
-                break;
+        // Set an amoled theme or a normal theme depending on amoled mode
+        if (theme.equals("black")) {
+            switch (accent) {
+                case "monet":
+                    setTheme(R.style.AppTheme_Monet_PerfectDark);
+                    break;
+                case "system":
+                    setTheme(R.style.AppTheme_System_PerfectDark);
+                    break;
+                case "blue":
+                    setTheme(R.style.AppTheme_Blue_PerfectDark);
+                    break;
+                case "green":
+                    setTheme(R.style.AppTheme_Green_PerfectDark);
+                    break;
+                case "aqua":
+                    setTheme(R.style.AppTheme_Aqua_PerfectDark);
+                    break;
+                case "orange":
+                    setTheme(R.style.AppTheme_Orange_PerfectDark);
+                    break;
+                case "yellow":
+                    setTheme(R.style.AppTheme_Yellow_PerfectDark);
+                    break;
+                case "teal":
+                    setTheme(R.style.AppTheme_Teal_PerfectDark);
+                    break;
+                case "violet":
+                    setTheme(R.style.AppTheme_Violet_PerfectDark);
+                    break;
+                case "pink":
+                    setTheme(R.style.AppTheme_Pink_PerfectDark);
+                    break;
+                case "lightBlue":
+                    setTheme(R.style.AppTheme_LightBlue_PerfectDark);
+                    break;
+                case "red":
+                    setTheme(R.style.AppTheme_Red_PerfectDark);
+                    break;
+                case "lime":
+                    setTheme(R.style.AppTheme_Lime_PerfectDark);
+                    break;
+                case "crimson":
+                    setTheme(R.style.AppTheme_Crimson_PerfectDark);
+                    break;
+            }
+        }
+        else {
+            // Monet on Android 12+ only, system on Android 11+
+            switch (accent) {
+                case "monet":
+                    setTheme(R.style.AppTheme_Monet);
+                    break;
+                case "system":
+                    setTheme(R.style.AppTheme_System);
+                    break;
+                case "blue":
+                    setTheme(R.style.AppTheme_Blue);
+                    break;
+                case "green":
+                    setTheme(R.style.AppTheme_Green);
+                    break;
+                case "aqua":
+                    setTheme(R.style.AppTheme_Aqua);
+                    break;
+                case "orange":
+                    setTheme(R.style.AppTheme_Orange);
+                    break;
+                case "yellow":
+                    setTheme(R.style.AppTheme_Yellow);
+                    break;
+                case "teal":
+                    setTheme(R.style.AppTheme_Teal);
+                    break;
+                case "violet":
+                    setTheme(R.style.AppTheme_Violet);
+                    break;
+                case "pink":
+                    setTheme(R.style.AppTheme_Pink);
+                    break;
+                case "lightBlue":
+                    setTheme(R.style.AppTheme_LightBlue);
+                    break;
+                case "red":
+                    setTheme(R.style.AppTheme_Red);
+                    break;
+                case "lime":
+                    setTheme(R.style.AppTheme_Lime);
+                    break;
+                case "crimson":
+                    setTheme(R.style.AppTheme_Crimson);
+                    break;
+            }
         }
 
         super.onCreate(savedInstanceState);

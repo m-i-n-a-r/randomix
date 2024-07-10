@@ -4,8 +4,8 @@ android {
     defaultConfig {
         applicationId "com.minar.randomix"
         minSdkVersion 23
-        compileSdk 34
-        targetSdkVersion 34
+        compileSdk 35
+        targetSdkVersion 35
         versionCode 41
         versionName "2.6"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -37,11 +37,11 @@ dependencies {
     implementation "androidx.navigation:navigation-ui:2.7.7"
     implementation "androidx.preference:preference:1.2.1"
     implementation 'com.github.AppIntro:AppIntro:6.3.1'
-    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.google.code.gson:gson:2.11.0'
     implementation 'androidx.core:core-splashscreen:1.0.1'
 
     // Test dependencies
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 }

@@ -17,6 +17,7 @@
             android:summaryOff="@string/shake_description_off"
             android:summaryOn="@string/shake_description_on"
             android:title="@string/shake_name"
+            android:widgetLayout="@layout/preference_switch_widget"
             app:iconSpaceReserved="false" />
 
         <SwitchPreferenceCompat
@@ -25,6 +26,7 @@
             android:summaryOff="@string/rude_answers_description_off"
             android:summaryOn="@string/rude_answers_description_on"
             android:title="@string/rude_answers_name"
+            android:widgetLayout="@layout/preference_switch_widget"
             app:iconSpaceReserved="false" />
 
         <!-- TODO Remove entirely
@@ -43,6 +45,7 @@
             android:summaryOff="@string/hide_descriptions_description_off"
             android:summaryOn="@string/hide_descriptions_description_on"
             android:title="@string/hide_descriptions_name"
+            android:widgetLayout="@layout/preference_switch_widget"
             app:iconSpaceReserved="false" />
 
         <SwitchPreferenceCompat
@@ -51,6 +54,7 @@
             android:summaryOff="@string/allow_equals_description_off"
             android:summaryOn="@string/allow_equals_description_on"
             android:title="@string/allow_equals_name"
+            android:widgetLayout="@layout/preference_switch_widget"
             app:iconSpaceReserved="false" />
 
         <SwitchPreferenceCompat
@@ -59,6 +63,7 @@
             android:summaryOff="@string/remove_last_description_off"
             android:summaryOn="@string/remove_last_description_on"
             android:title="@string/remove_last_name"
+            android:widgetLayout="@layout/preference_switch_widget"
             app:iconSpaceReserved="false" />
 
     </PreferenceCategory>
@@ -92,6 +97,7 @@
             android:summaryOff="@string/vibration_description_off"
             android:summaryOn="@string/vibration_description_on"
             android:title="@string/vibration_name"
+            android:widgetLayout="@layout/preference_switch_widget"
             app:iconSpaceReserved="false" />
 
         <SwitchPreferenceCompat
@@ -100,6 +106,7 @@
             android:summaryOff="@string/sound_description_off"
             android:summaryOn="@string/sound_description_on"
             android:title="@string/sound_name"
+            android:widgetLayout="@layout/preference_switch_widget"
             app:iconSpaceReserved="false" />
 
     </PreferenceCategory>

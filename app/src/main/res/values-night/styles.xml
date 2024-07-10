@@ -18,6 +18,7 @@
         <item name="android:navigationBarColor">@color/colorPrimaryInverse</item>
         <item name="android:statusBarColor">@color/colorBackgroundInverse</item>
         <item name="android:colorBackground">@color/colorBackgroundInverse</item>
+        <item name="colorOnPrimary">@color/colorBackgroundInverse</item>
         <item name="android:textColorPrimary">@color/textColorPrimaryInverse</item>
         <item name="android:textColorSecondary">@color/textColorSecondaryInverse</item>
         <item name="android:textColorTertiary">@color/textColorSecondaryInverse</item>
@@ -59,8 +60,8 @@
 
     <!-- Black themes, one for each accent, sadly -->
     <style name="AppTheme.Monet.PerfectDark" parent="AppTheme.Monet">
+        <item name="android:statusBarColor">@android:color/black</item>
         <item name="android:colorBackground">@android:color/black</item>
-        <item name="colorSurfaceContainerLow">@android:color/black</item>
         <item name="colorSurface">@android:color/black</item>
         <item name="colorSurfaceVariant">@android:color/black</item>
         <item name="colorContainer">@android:color/black</item>
@@ -73,8 +74,8 @@
     </style>
 
     <style name="AppTheme.System.PerfectDark" parent="AppTheme.System">
+        <item name="android:statusBarColor">@android:color/black</item>
         <item name="android:colorBackground">@android:color/black</item>
-        <item name="colorSurfaceContainerLow">@android:color/black</item>
         <item name="colorSurfaceVariant">@android:color/black</item>
         <item name="colorSurface">@android:color/black</item>
         <item name="colorContainer">@android:color/black</item>
@@ -87,8 +88,8 @@
     </style>
 
     <style name="AppTheme.Aqua.PerfectDark" parent="AppTheme.Base">
+        <item name="android:statusBarColor">@android:color/black</item>
         <item name="android:colorBackground">@android:color/black</item>
-        <item name="colorSurfaceContainerLow">@android:color/black</item>
         <item name="colorSurface">@android:color/black</item>
         <item name="colorSurfaceVariant">@android:color/black</item>
         <item name="colorContainer">@android:color/black</item>
@@ -101,8 +102,8 @@
     </style>
 
     <style name="AppTheme.Blue.PerfectDark" parent="AppTheme.Blue">
+        <item name="android:statusBarColor">@android:color/black</item>
         <item name="android:colorBackground">@android:color/black</item>
-        <item name="colorSurfaceContainerLow">@android:color/black</item>
         <item name="colorSurface">@android:color/black</item>
         <item name="colorContainer">@android:color/black</item>
         <item name="colorSurfaceVariant">@android:color/black</item>
@@ -115,8 +116,8 @@
     </style>
 
     <style name="AppTheme.Green.PerfectDark" parent="AppTheme.Green">
+        <item name="android:statusBarColor">@android:color/black</item>
         <item name="android:colorBackground">@android:color/black</item>
-        <item name="colorSurfaceContainerLow">@android:color/black</item>
         <item name="colorSurface">@android:color/black</item>
         <item name="colorContainer">@android:color/black</item>
         <item name="colorSurfaceVariant">@android:color/black</item>
@@ -129,8 +130,8 @@
     </style>
 
     <style name="AppTheme.Orange.PerfectDark" parent="AppTheme.Orange">
+        <item name="android:statusBarColor">@android:color/black</item>
         <item name="android:colorBackground">@android:color/black</item>
-        <item name="colorSurfaceContainerLow">@android:color/black</item>
         <item name="colorSurface">@android:color/black</item>
         <item name="colorContainer">@android:color/black</item>
         <item name="colorSurfaceVariant">@android:color/black</item>
@@ -143,8 +144,8 @@
     </style>
 
     <style name="AppTheme.Yellow.PerfectDark" parent="AppTheme.Yellow">
+        <item name="android:statusBarColor">@android:color/black</item>
         <item name="android:colorBackground">@android:color/black</item>
-        <item name="colorSurfaceContainerLow">@android:color/black</item>
         <item name="colorSurface">@android:color/black</item>
         <item name="colorContainer">@android:color/black</item>
         <item name="colorSurfaceVariant">@android:color/black</item>
@@ -157,8 +158,8 @@
     </style>
 
     <style name="AppTheme.Teal.PerfectDark" parent="AppTheme.Teal">
+        <item name="android:statusBarColor">@android:color/black</item>
         <item name="android:colorBackground">@android:color/black</item>
-        <item name="colorSurfaceContainerLow">@android:color/black</item>
         <item name="colorSurface">@android:color/black</item>
         <item name="colorContainer">@android:color/black</item>
         <item name="colorSurfaceVariant">@android:color/black</item>
@@ -171,8 +172,8 @@
     </style>
 
     <style name="AppTheme.Violet.PerfectDark" parent="AppTheme.Violet">
+        <item name="android:statusBarColor">@android:color/black</item>
         <item name="android:colorBackground">@android:color/black</item>
-        <item name="colorSurfaceContainerLow">@android:color/black</item>
         <item name="colorSurface">@android:color/black</item>
         <item name="colorContainer">@android:color/black</item>
         <item name="colorSurfaceVariant">@android:color/black</item>
@@ -185,8 +186,8 @@
     </style>
 
     <style name="AppTheme.Pink.PerfectDark" parent="AppTheme.Pink">
+        <item name="android:statusBarColor">@android:color/black</item>
         <item name="android:colorBackground">@android:color/black</item>
-        <item name="colorSurfaceContainerLow">@android:color/black</item>
         <item name="colorSurface">@android:color/black</item>
         <item name="colorContainer">@android:color/black</item>
         <item name="colorSurfaceVariant">@android:color/black</item>
@@ -199,8 +200,8 @@
     </style>
 
     <style name="AppTheme.LightBlue.PerfectDark" parent="AppTheme.LightBlue">
+        <item name="android:statusBarColor">@android:color/black</item>
         <item name="android:colorBackground">@android:color/black</item>
-        <item name="colorSurfaceContainerLow">@android:color/black</item>
         <item name="colorSurface">@android:color/black</item>
         <item name="colorContainer">@android:color/black</item>
         <item name="colorSurfaceVariant">@android:color/black</item>
@@ -213,8 +214,8 @@
     </style>
 
     <style name="AppTheme.Red.PerfectDark" parent="AppTheme.Red">
+        <item name="android:statusBarColor">@android:color/black</item>
         <item name="android:colorBackground">@android:color/black</item>
-        <item name="colorSurfaceContainerLow">@android:color/black</item>
         <item name="colorSurface">@android:color/black</item>
         <item name="colorContainer">@android:color/black</item>
         <item name="colorSurfaceVariant">@android:color/black</item>
@@ -227,8 +228,8 @@
     </style>
 
     <style name="AppTheme.Lime.PerfectDark" parent="AppTheme.Lime">
+        <item name="android:statusBarColor">@android:color/black</item>
         <item name="android:colorBackground">@android:color/black</item>
-        <item name="colorSurfaceContainerLow">@android:color/black</item>
         <item name="colorSurface">@android:color/black</item>
         <item name="colorContainer">@android:color/black</item>
         <item name="colorSurfaceVariant">@android:color/black</item>
@@ -241,8 +242,8 @@
     </style>
 
     <style name="AppTheme.Crimson.PerfectDark" parent="AppTheme.Crimson">
+        <item name="android:statusBarColor">@android:color/black</item>
         <item name="android:colorBackground">@android:color/black</item>
-        <item name="colorSurfaceContainerLow">@android:color/black</item>
         <item name="colorSurface">@android:color/black</item>
         <item name="colorContainer">@android:color/black</item>
         <item name="colorSurfaceVariant">@android:color/black</item>
@@ -252,6 +253,7 @@
         <item name="materialSwitchStyle">@style/CustomMaterialAmoledSwitch</item>
         <item name="colorSurfaceContainerHigh">@android:color/black</item>
         <item name="colorSurfaceContainerHighest">@android:color/black</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
     </style>
 
     <!-- Splash screen theme -->

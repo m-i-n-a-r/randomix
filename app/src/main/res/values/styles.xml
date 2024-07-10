@@ -11,6 +11,7 @@
         <item name="colorSecondary">@color/colorAccent</item>
         <item name="colorOutline">@color/goodGray</item>
         <item name="colorSurfaceVariant">@color/goodGrayTranslucent</item>
+        <item name="colorSurfaceContainerHighest">@color/goodGrayTranslucent</item>
         <!-- Navbar item halo -->
         <item name="colorSecondaryContainer">@color/colorAccentTranslucent</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -141,6 +142,7 @@
         <item name="colorSecondary">@color/aquaAccent</item>
         <item name="colorPrimaryContainer">@color/aquaAccentTranslucent</item>
         <item name="colorSecondaryContainer">@color/aquaAccentTranslucent</item>
+        <item name="colorSurfaceContainerLow">@color/aquaAccentTransparent</item>
         <item name="colorTertiary">@color/aquaAccent</item>
         <item name="colorTertiaryContainer">@color/aquaAccentTranslucent</item>
     </style>
@@ -151,6 +153,7 @@
         <item name="colorSecondary">@color/aquaAccent</item>
         <item name="colorPrimaryContainer">@color/aquaAccentTranslucent</item>
         <item name="colorSecondaryContainer">@color/aquaAccentTranslucent</item>
+        <item name="colorSurfaceContainerLow">@color/aquaAccentTransparent</item>
         <item name="colorTertiary">@color/aquaAccent</item>
         <item name="colorTertiaryContainer">@color/aquaAccentTranslucent</item>
     </style>
@@ -161,6 +164,7 @@
         <item name="colorSecondary">@color/blueAccent</item>
         <item name="colorPrimaryContainer">@color/blueAccentTranslucent</item>
         <item name="colorSecondaryContainer">@color/blueAccentTranslucent</item>
+        <item name="colorSurfaceContainerLow">@color/blueAccentTransparent</item>
         <item name="colorTertiary">@color/blueAccent</item>
         <item name="colorTertiaryContainer">@color/blueAccentTranslucent</item>
     </style>
@@ -171,6 +175,7 @@
         <item name="colorSecondary">@color/greenAccent</item>
         <item name="colorPrimaryContainer">@color/greenAccentTranslucent</item>
         <item name="colorSecondaryContainer">@color/greenAccentTranslucent</item>
+        <item name="colorSurfaceContainerLow">@color/greenAccentTransparent</item>
         <item name="colorTertiary">@color/greenAccent</item>
         <item name="colorTertiaryContainer">@color/greenAccentTranslucent</item>
     </style>
@@ -181,6 +186,7 @@
         <item name="colorSecondary">@color/orangeAccent</item>
         <item name="colorPrimaryContainer">@color/orangeAccentTranslucent</item>
         <item name="colorSecondaryContainer">@color/orangeAccentTranslucent</item>
+        <item name="colorSurfaceContainerLow">@color/orangeAccentTransparent</item>
         <item name="colorTertiary">@color/orangeAccent</item>
         <item name="colorTertiaryContainer">@color/orangeAccentTranslucent</item>
     </style>
@@ -191,6 +197,7 @@
         <item name="colorSecondary">@color/yellowAccent</item>
         <item name="colorPrimaryContainer">@color/yellowAccentTranslucent</item>
         <item name="colorSecondaryContainer">@color/yellowAccentTranslucent</item>
+        <item name="colorSurfaceContainerLow">@color/yellowAccentTransparent</item>
         <item name="colorTertiary">@color/yellowAccent</item>
         <item name="colorTertiaryContainer">@color/yellowAccentTranslucent</item>
     </style>
@@ -201,6 +208,7 @@
         <item name="colorSecondary">@color/tealAccent</item>
         <item name="colorPrimaryContainer">@color/tealAccentTranslucent</item>
         <item name="colorSecondaryContainer">@color/tealAccentTranslucent</item>
+        <item name="colorSurfaceContainerLow">@color/tealAccentTransparent</item>
         <item name="colorTertiary">@color/tealAccent</item>
         <item name="colorTertiaryContainer">@color/tealAccentTranslucent</item>
     </style>
@@ -211,6 +219,7 @@
         <item name="colorSecondary">@color/violetAccent</item>
         <item name="colorPrimaryContainer">@color/violetAccentTranslucent</item>
         <item name="colorSecondaryContainer">@color/violetAccentTranslucent</item>
+        <item name="colorSurfaceContainerLow">@color/violetAccentTransparent</item>
         <item name="colorTertiary">@color/violetAccent</item>
         <item name="colorTertiaryContainer">@color/violetAccentTranslucent</item>
     </style>
@@ -221,6 +230,7 @@
         <item name="colorSecondary">@color/pinkAccent</item>
         <item name="colorPrimaryContainer">@color/pinkAccentTranslucent</item>
         <item name="colorSecondaryContainer">@color/pinkAccentTranslucent</item>
+        <item name="colorSurfaceContainerLow">@color/pinkAccentTransparent</item>
         <item name="colorTertiary">@color/pinkAccent</item>
         <item name="colorTertiaryContainer">@color/pinkAccentTranslucent</item>
     </style>
@@ -231,6 +241,7 @@
         <item name="colorSecondary">@color/lightBlueAccent</item>
         <item name="colorPrimaryContainer">@color/lightBlueAccentTranslucent</item>
         <item name="colorSecondaryContainer">@color/lightBlueAccentTranslucent</item>
+        <item name="colorSurfaceContainerLow">@color/lightBlueAccentTransparent</item>
         <item name="colorTertiary">@color/lightBlueAccent</item>
         <item name="colorTertiaryContainer">@color/lightBlueAccentTranslucent</item>
     </style>
@@ -241,6 +252,7 @@
         <item name="colorSecondary">@color/redAccent</item>
         <item name="colorPrimaryContainer">@color/redAccentTranslucent</item>
         <item name="colorSecondaryContainer">@color/redAccentTranslucent</item>
+        <item name="colorSurfaceContainerLow">@color/redAccentTransparent</item>
         <item name="colorTertiary">@color/redAccent</item>
         <item name="colorTertiaryContainer">@color/redAccentTranslucent</item>
     </style>
@@ -251,6 +263,7 @@
         <item name="colorSecondary">@color/limeAccent</item>
         <item name="colorPrimaryContainer">@color/limeAccentTranslucent</item>
         <item name="colorSecondaryContainer">@color/limeAccentTranslucent</item>
+        <item name="colorSurfaceContainerLow">@color/limeAccentTransparent</item>
         <item name="colorTertiary">@color/limeAccent</item>
         <item name="colorTertiaryContainer">@color/limeAccentTranslucent</item>
     </style>
@@ -261,6 +274,7 @@
         <item name="colorSecondary">@color/crimsonAccent</item>
         <item name="colorPrimaryContainer">@color/crimsonAccentTranslucent</item>
         <item name="colorSecondaryContainer">@color/crimsonAccentTranslucent</item>
+        <item name="colorSurfaceContainerLow">@color/crimsonAccentTransparent</item>
         <item name="colorTertiary">@color/crimsonAccent</item>
         <item name="colorTertiaryContainer">@color/crimsonAccentTranslucent</item>
     </style>

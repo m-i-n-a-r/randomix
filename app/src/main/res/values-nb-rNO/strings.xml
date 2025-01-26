@@ -2,22 +2,22 @@
 <resources>
     <!-- Main strings -->
     <string name="app_intro_description">An open source app to choose randomly between numbers, answers, options and so on. Let the randomness talk!</string>
-    <string name="title_roulette">Roulette</string>
+    <string name="title_roulette">Lykkehjul</string>
     <string name="title_coin">Coin</string>
     <string name="title_dice">Dice</string>
     <string name="title_magic_ball">Magic Ball</string>
-    <string name="title_settings">Settings</string>
-    <string name="generic_result">The result is:</string>
+    <string name="title_settings">Innstillinger</string>
+    <string name="generic_result">Resultat:</string>
     <!-- Roulette -->
     <string name="hello_roulette_fragment">Roulette mode</string>
     <string name="description_roulette">Do you have to choose something? Are you tired of polls and bossy friends? A roulette will decide for you! Long press the roulette to Add generic options or clear them.</string>
     <string name="spin_roulette">Spin the roulette!</string>
-    <string name="insert_roulette_hint">Enter an option…</string>
-    <string name="delete_roulette_hint">Delete the last option entered</string>
+    <string name="insert_roulette_hint">Legg inn et alternativ…</string>
+    <string name="delete_roulette_hint">Slett forrige alternativ lagt til</string>
     <string name="insert_roulette_description">Please list below the possible choices to add in the roulette.</string>
     <string name="no_entry_roulette">Please, enter 2 or more options to spin the roulette!</string>
-    <string name="too_much_entries_roulette">You can\'t enter more than 30 options!</string>
-    <string name="generic_option">Option</string>
+    <string name="too_much_entries_roulette">Du kan ikke legge inn mer enn 30 alternativer!</string>
+    <string name="generic_option">Alternativ</string>
     <string name="recent_title">Recent options, tap to restore</string>
     <string name="bottom_sheet_no_option">No recent option, spin the roulette to save the current options!</string>
     <string name="letters_shortcut">A-Z Letters</string>

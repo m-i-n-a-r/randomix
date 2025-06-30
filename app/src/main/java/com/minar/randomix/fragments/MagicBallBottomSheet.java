@@ -167,7 +167,7 @@ public class MagicBallBottomSheet extends BottomSheetDialogFragment {
 
     // Evaluate the visibility of the placeholder
     private void managePlaceholder() {
-        if (loadedAnswers.size() == 0) {
+        if (loadedAnswers.isEmpty()) {
             answerChips.setVisibility(View.GONE);
             placeholder.setVisibility(View.VISIBLE);
         } else {

@@ -114,24 +114,29 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
                 }
             });
             // Create a new helper to manage the swipes
-            ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
-                @Override
-                public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
-                    return false;
-                }
-
-                @Override
-                public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
-                    // Remove swiped item from list and notify the RecyclerView
-                    int position = viewHolder.getAdapterPosition();
-                    deleteRecent(position, requireContext());
-
-                }
-            };
-
-            ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
+            ItemTouchHelper itemTouchHelper = getItemTouchHelper();
             itemTouchHelper.attachToRecyclerView(recentListLayout);
         }
+    }
+
+    @NonNull
+    private ItemTouchHelper getItemTouchHelper() {
+        ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
+                // Remove swiped item from list and notify the RecyclerView
+                int position = viewHolder.getAdapterPosition();
+                deleteRecent(position, requireContext());
+
+            }
+        };
+
+        return new ItemTouchHelper(simpleItemTouchCallback);
     }
 
     // Update the stored value of the recent options
@@ -171,7 +176,7 @@ public class RouletteBottomSheet extends BottomSheetDialogFragment {
     // Restore the latest option list
     void restoreLatest(Context context) {
         fetchRecentList(context);
-        if (recentList.size() > 0) {
+        if (!recentList.isEmpty()) {
             List<String> lastOption = recentList.get(recentList.size() - 1);
             roulette.restoreOption(lastOption);
         }

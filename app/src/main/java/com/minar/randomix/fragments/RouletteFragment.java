@@ -338,12 +338,12 @@ public class RouletteFragment extends androidx.fragment.app.Fragment implements 
     private void insertRouletteChip(String option, boolean limitNumber) {
         String currentOption;
         boolean allowEquals = sp.getBoolean("allow_equals", false);
-        if (!option.equals("")) currentOption = option;
+        if (!option.isEmpty()) currentOption = option;
         else {
             currentOption = optionText.getText().toString().trim();
             currentOption = currentOption.replaceAll("\\s+", " ");
             // Return if the string entered is a duplicate, reset the text field
-            if ((!allowEquals && options.contains(currentOption)) || currentOption.equals(""))
+            if ((!allowEquals && options.contains(currentOption)) || currentOption.isEmpty())
                 return;
             optionText.setText("");
         }

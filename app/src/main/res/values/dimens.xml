@@ -7,8 +7,8 @@
     <dimen name="linear_vertical_padding">8dp</dimen>
     <dimen name="padding_roulette_entry">22dp</dimen>
     <dimen name="margin_roulette_entry">10dp</dimen>
-    <dimen name="text_box_stroke_width">3dp</dimen>
-    <dimen name="text_box_focused_stroke_width">2dp</dimen>
+    <dimen name="text_box_stroke_width">2dp</dimen>
+    <dimen name="text_box_focused_stroke_width">3dp</dimen>
     <!-- Using 0 elevation will cause a lot of weird behaviors -->
     <dimen name="bottom_navbar_elevation">0.1dp</dimen>
     <dimen name="chip_spacing">4dp</dimen>

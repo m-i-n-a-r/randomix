@@ -174,4 +174,24 @@
     <string name="not_again_button">Never ask again</string>
     <string name="translate_app">Translate the app</string>
 
+    <!-- Universal Dice Fragment -->
+    <string name="label_dice_type">Dice type</string>
+    <string name="label_dice_count">Number of dice</string>
+    <string name="dice_d4"  translatable="false">D4</string>
+    <string name="dice_d6"  translatable="false">D6</string>
+    <string name="dice_d8"  translatable="false">D8</string>
+    <string name="dice_d10" translatable="false">D10</string>
+    <string name="dice_d12" translatable="false">D12</string>
+    <string name="dice_d20" translatable="false">D20</string>
+    <string name="one_numeral" translatable="false">1</string>
+    <string name="two_numeral" translatable="false">2</string>
+    <string name="three_numeral" translatable="false">3</string>
+    <string name="four_numeral" translatable="false">4</string>
+    <string name="five_numeral" translatable="false">5</string>
+    <string name="six_numeral" translatable="false">6</string>
+    <string name="seven_numeral" translatable="false">7</string>
+    <string name="eight_numeral" translatable="false">8</string>
+    <string name="nine_numeral" translatable="false">9</string>
+    <string name="ten_numeral" translatable="false">10</string>
+
 </resources>

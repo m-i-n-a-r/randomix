@@ -12,14 +12,14 @@
         android:title="@string/title_coin" />
 
     <item
-        android:id="@+id/navigationMagicBall"
-        android:icon="@drawable/nav_animation_magic_ball"
-        android:title="@string/title_magic_ball" />
-
-    <item
         android:id="@+id/navigationDice"
         android:icon="@drawable/nav_animation_dice"
         android:title="@string/title_dice" />
+
+    <item
+        android:id="@+id/navigationMagicBall"
+        android:icon="@drawable/nav_animation_magic_ball"
+        android:title="@string/title_magic_ball" />
 
     <item
         android:id="@+id/navigationSettings"

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Single die result card, used in UniversalDiceFragment result grid -->
+<com.google.android.material.chip.Chip xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/diceCardRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:checkable="false"
+    android:clickable="false"
+    android:focusable="false"
+    android:textSize="16sp"
+    android:textStyle="bold"
+    android:textColor="?attr/colorOnSurface"
+    app:chipBackgroundColor="?attr/colorSurfaceVariant"
+    app:chipCornerRadius="12dp"
+    app:chipMinHeight="44dp"
+    app:chipStartPadding="12dp"
+    app:chipEndPadding="12dp">
+
+    <!-- We embed the background and value via code since Chip is self-contained,
+         but we expose these child IDs via the inflated view's tag for code access.
+         The Chip itself acts as the card. We set text programmatically. -->
+
+</com.google.android.material.chip.Chip>

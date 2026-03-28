@@ -14,8 +14,8 @@
         android:gravity="center_horizontal"
         android:maxLines="1"
         android:text="@string/hello_settings_fragment"
-        android:textColor="?attr/colorOnSurface"
-        android:textSize="@dimen/title_text_size"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium.Emphasized"
+        android:textColor="?attr/colorTertiary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

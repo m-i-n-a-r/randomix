@@ -15,7 +15,6 @@
             android:id="@+id/magicBallBottomSheet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fitsSystemWindows="true"
             android:paddingBottom="@dimen/linear_vertical_margin"
             app:behavior_fitToContents="false"
             app:behavior_halfExpandedRatio="0.2"

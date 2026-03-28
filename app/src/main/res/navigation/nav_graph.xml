@@ -15,15 +15,15 @@
         android:label="fragment_coin"
         tools:layout="@layout/fragment_coin" />
     <fragment
+        android:id="@+id/navigationDice"
+        android:name="com.minar.randomix.fragments.UniversalDiceFragment"
+        android:label="fragment_dice"
+        tools:layout="@layout/fragment_universal_dice" />
+    <fragment
         android:id="@+id/navigationMagicBall"
         android:name="com.minar.randomix.fragments.MagicBallFragment"
         android:label="fragment_magic_ball"
         tools:layout="@layout/fragment_magic_ball" />
-    <fragment
-        android:id="@+id/navigationDice"
-        android:name="com.minar.randomix.fragments.DiceFragment"
-        android:label="fragment_dice"
-        tools:layout="@layout/fragment_dice" />
     <fragment
         android:id="@+id/navigationSettings"
         android:name="com.minar.randomix.fragments.SettingsFragment"

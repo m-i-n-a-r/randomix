@@ -1,34 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/diceSection"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/titleDice"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:gravity="center_horizontal"
             android:maxLines="1"
             android:text="@string/hello_dice_fragment"
-            android:textColor="?attr/colorOnSurface"
-            android:textSize="@dimen/title_text_size"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium.Emphasized"
+            android:textColor="?attr/colorTertiary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/descriptionDice"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/linear_vertical_margin"
             android:gravity="center_horizontal"
@@ -39,14 +36,44 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/titleDice" />
 
+        <FrameLayout
+            android:id="@+id/diceDisplayZone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/descriptionDice">
+
+            <ImageView
+                android:id="@+id/universalDiceAnimation"
+                android:layout_width="@dimen/image_button_height"
+                android:layout_height="@dimen/image_button_height"
+                android:layout_gravity="center"
+                android:contentDescription="@string/throw_dice"
+                android:src="@drawable/ic_dice_d6" />
+
+            <include
+                android:id="@+id/risikoLayout"
+                layout="@layout/triple_v_triple_dice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/linear_vertical_margin"
+                android:layout_marginBottom="@dimen/linear_vertical_margin"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
         <TextView
             android:id="@+id/resultDice"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="@dimen/result_text_margin"
-            android:layout_marginEnd="@dimen/activity_horizontal_margin"
-            android:layout_marginBottom="@dimen/result_text_margin"
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="4dp"
             android:ellipsize="marquee"
             android:gravity="center_horizontal"
             android:marqueeRepeatLimit="marquee_forever"
@@ -57,123 +84,225 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/descriptionDice" />
+            app:layout_constraintTop_toBottomOf="@id/diceDisplayZone" />
 
-        <ImageView
-            android:id="@+id/universalDiceAnimation"
-            android:layout_width="@dimen/image_button_height"
-            android:layout_height="@dimen/image_button_height"
-            android:layout_marginTop="@dimen/linear_vertical_margin"
-            android:layout_marginBottom="@dimen/linear_vertical_margin"
-            android:contentDescription="@string/throw_dice"
-            android:src="@drawable/ic_dice_d6"
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/diceResultCards"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="4dp"
+            app:chipSpacingHorizontal="4dp"
+            app:chipSpacingVertical="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/resultDice" />
 
+        <TextView
+            android:id="@+id/labelDiceType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="16dp"
+            android:letterSpacing="0.06"
+            android:text="@string/label_dice_type"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/diceResultCards" />
+
         <com.google.android.material.button.MaterialButtonToggleGroup
             android:id="@+id/diceTypeSelection"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/activity_vertical_margin"
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="6dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/universalDiceAnimation"
+            app:layout_constraintTop_toBottomOf="@id/labelDiceType"
+            app:selectionRequired="true"
             app:singleSelection="true">
 
             <Button
                 android:id="@+id/diceTypeSelection4"
                 style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
                 android:layout_weight="1"
-                app:icon="@drawable/ic_dice_d4" />
+                android:contentDescription="@string/dice_d4"
+                app:icon="@drawable/ic_dice_d4"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp" />
 
             <Button
                 android:id="@+id/diceTypeSelection6"
                 style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
                 android:layout_weight="1"
-                app:icon="@drawable/ic_dice_d6" />
+                android:contentDescription="@string/dice_d6"
+                app:icon="@drawable/ic_dice_d6"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp" />
 
             <Button
                 android:id="@+id/diceTypeSelection8"
                 style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
                 android:layout_weight="1"
-                app:icon="@drawable/ic_dice_d8" />
+                android:contentDescription="@string/dice_d8"
+                app:icon="@drawable/ic_dice_d8"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp" />
 
             <Button
                 android:id="@+id/diceTypeSelection10"
                 style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
                 android:layout_weight="1"
-                app:icon="@drawable/ic_dice_d10" />
+                android:contentDescription="@string/dice_d10"
+                app:icon="@drawable/ic_dice_d10"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp" />
 
             <Button
                 android:id="@+id/diceTypeSelection12"
                 style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
                 android:layout_weight="1"
-                app:icon="@drawable/ic_dice_d12" />
+                android:contentDescription="@string/dice_d12"
+                app:icon="@drawable/ic_dice_d12"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp" />
 
             <Button
                 android:id="@+id/diceTypeSelection20"
                 style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
                 android:layout_weight="1"
-                app:icon="@drawable/ic_dice_d20" />
+                android:contentDescription="@string/dice_d20"
+                app:icon="@drawable/ic_dice_d20"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp" />
+
         </com.google.android.material.button.MaterialButtonToggleGroup>
 
-        <com.google.android.material.button.MaterialButtonToggleGroup
-            android:id="@+id/diceNumberSelection"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/labelDiceCount"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="16dp"
+            android:letterSpacing="0.06"
+            android:text="@string/label_dice_count"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/diceTypeSelection" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/diceCountChipGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="24dp"
+            app:chipSpacingHorizontal="4dp"
+            app:chipSpacingVertical="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/diceTypeSelection"
+            app:layout_constraintTop_toBottomOf="@id/labelDiceCount"
+            app:selectionRequired="true"
+            app:singleLine="false"
             app:singleSelection="true">
 
-            <Button
-                android:id="@+id/diceNumberSelection1"
-                style="?attr/materialButtonOutlinedStyle"
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCount1"
+                style="@style/Widget.Material3.Chip.Filter"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/one" />
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/one_numeral" />
 
-            <Button
-                android:id="@+id/diceNumberSelection2"
-                style="?attr/materialButtonOutlinedStyle"
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCount2"
+                style="@style/Widget.Material3.Chip.Filter"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/two" />
+                android:layout_height="wrap_content"
+                android:text="@string/two_numeral" />
 
-            <Button
-                android:id="@+id/diceNumberSelection3"
-                style="?attr/materialButtonOutlinedStyle"
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCount3"
+                style="@style/Widget.Material3.Chip.Filter"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/three" />
+                android:layout_height="wrap_content"
+                android:text="@string/three_numeral" />
 
-            <Button
-                android:id="@+id/diceNumberSelection3vs"
-                style="?attr/materialButtonOutlinedStyle"
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCount4"
+                style="@style/Widget.Material3.Chip.Filter"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/four_numeral" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCount5"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/five_numeral" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCount6"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/six_numeral" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCount7"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/seven_numeral" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCount8"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/eight_numeral" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCount9"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nine_numeral" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCount10"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ten_numeral" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCountRisiko"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/three_v_three" />
 
-        </com.google.android.material.button.MaterialButtonToggleGroup>
+        </com.google.android.material.chip.ChipGroup>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

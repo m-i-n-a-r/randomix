@@ -26,6 +26,11 @@
     <color name="textColorPrimaryInverse">#ffffff</color>
     <color name="textColorSecondaryInverse">#f0f0f0</color>
 
+    <!-- AMOLED / PerfectDark colors -->
+    <color name="amoledBlack">#000000</color>
+    <color name="amoledSurface">#0d0d0d</color>
+    <color name="amoledSurfaceVariant">#1a1a1a</color>
+
     <!-- Accents -->
     <color name="aquaAccent">#5abf95</color>
     <color name="aquaAccentTranslucent">#665abf95</color>

@@ -18,8 +18,8 @@
             android:gravity="center_horizontal"
             android:maxLines="1"
             android:text="@string/hello_coin_fragment"
-            android:textColor="?attr/colorOnSurface"
-            android:textSize="@dimen/title_text_size" />
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium.Emphasized"
+            android:textColor="?attr/colorTertiary" />
 
         <TextView
             android:id="@+id/descriptionCoin"

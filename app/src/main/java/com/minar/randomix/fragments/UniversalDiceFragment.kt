@@ -1,5 +1,6 @@
 package com.minar.randomix.fragments
 
+import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import android.content.Context
@@ -50,10 +51,9 @@ class UniversalDiceFragment : Fragment() {
     private var selectedDiceCount = 1   // 0 = risiko mode
     private var isAnimating       = false
 
-    // Views – assigned in onCreateView
+    // Views – bound in onCreateView
     private lateinit var mainDiceImage:        ImageView
-    private lateinit var singleDiceWrapper:    View         // the FrameLayout around the single die
-    private lateinit var risikoLayout:         View         // included triple_v_triple_dice root
+    private lateinit var risikoLayout:         View
     private lateinit var resultText:           TextView
     private lateinit var diceTypeGroup:        MaterialButtonToggleGroup
     private lateinit var countChipGroup:       ChipGroup
@@ -83,19 +83,15 @@ class UniversalDiceFragment : Fragment() {
         // Bind views
         val displayZone      = v.findViewById<View>(R.id.diceDisplayZone)
         mainDiceImage        = v.findViewById(R.id.universalDiceAnimation)
-        // The include tag with android:id="risikoLayout" overrides the root id of triple_v_triple_dice
         risikoLayout         = v.findViewById(R.id.risikoLayout)
-        // The FrameLayout is the diceDisplayZone itself; we hide/show its children in code
-        singleDiceWrapper    = mainDiceImage   // kept for clarity, same instance
         resultText           = v.findViewById(R.id.resultDice)
         diceTypeGroup        = v.findViewById(R.id.diceTypeSelection)
         countChipGroup       = v.findViewById(R.id.diceCountChipGroup)
         resultCardsContainer = v.findViewById(R.id.diceResultCards)
 
-        // The risiko layout must not steal clicks from the outer zone
         risikoLayout.isClickable = false
 
-        // Restore saved selection
+        // Restore saved state
         selectedDiceType  = runCatching {
             DiceType.valueOf(sp.getString("ud_dice_type", "D6") ?: "D6")
         }.getOrDefault(DiceType.D6)
@@ -119,7 +115,7 @@ class UniversalDiceFragment : Fragment() {
         return v
     }
 
-    // ── Type toggle setup ─────────────────────────────────────────────────────
+    // ── Type toggle ───────────────────────────────────────────────────────────
 
     private fun setupDiceTypeToggle() {
         val typeMap = mapOf(
@@ -143,32 +139,29 @@ class UniversalDiceFragment : Fragment() {
         }
     }
 
-    // ── Count ChipGroup setup ─────────────────────────────────────────────────
+    // ── Count chips ───────────────────────────────────────────────────────────
 
     private fun setupCountChips() {
-        // Map chip id → dice count (0 = risiko mode)
         val chipToCount = mapOf(
-            R.id.chipCount1     to 1,
-            R.id.chipCount2     to 2,
-            R.id.chipCount3     to 3,
-            R.id.chipCount4     to 4,
-            R.id.chipCount5     to 5,
-            R.id.chipCount6     to 6,
-            R.id.chipCount7     to 7,
-            R.id.chipCount8     to 8,
-            R.id.chipCount9     to 9,
-            R.id.chipCount10    to 10,
+            R.id.chipCount1      to 1,
+            R.id.chipCount2      to 2,
+            R.id.chipCount3      to 3,
+            R.id.chipCount4      to 4,
+            R.id.chipCount5      to 5,
+            R.id.chipCount6      to 6,
+            R.id.chipCount7      to 7,
+            R.id.chipCount8      to 8,
+            R.id.chipCount9      to 9,
+            R.id.chipCount10     to 10,
             R.id.chipCountRisiko to 0,
         )
 
-        // Pre-select the saved state
-        val targetId = chipToCount.entries
-            .firstOrNull { it.value == selectedDiceCount }?.key
-        if (targetId != null) countChipGroup.check(targetId)
+        chipToCount.entries.firstOrNull { it.value == selectedDiceCount }
+            ?.let { countChipGroup.check(it.key) }
 
         countChipGroup.setOnCheckedStateChangeListener { _, checkedIds ->
-            val id = checkedIds.firstOrNull() ?: return@setOnCheckedStateChangeListener
-            val count = chipToCount[id] ?: return@setOnCheckedStateChangeListener
+            val id    = checkedIds.firstOrNull() ?: return@setOnCheckedStateChangeListener
+            val count = chipToCount[id]           ?: return@setOnCheckedStateChangeListener
             selectedDiceCount = count
             applyDiceMode()
             savePrefs()
@@ -177,14 +170,23 @@ class UniversalDiceFragment : Fragment() {
 
     // ── Mode application ──────────────────────────────────────────────────────
 
-    /** Show single-die or risiko layout, update the displayed icon. */
+    /**
+     * Switch between single-die mode and risiko (3 vs 3) mode.
+     * When risiko is active the type toggle is disabled + dimmed, because
+     * the risiko layout always uses D6.
+     */
     private fun applyDiceMode() {
         if (isRisikoMode) {
             mainDiceImage.visibility = View.GONE
             risikoLayout.visibility  = View.VISIBLE
+            // Lock the type selector: risiko is always D6
+            diceTypeGroup.isEnabled = false
+            diceTypeGroup.alpha     = 0.38f   // Material "disabled" opacity
         } else {
             risikoLayout.visibility  = View.GONE
             mainDiceImage.visibility = View.VISIBLE
+            diceTypeGroup.isEnabled = true
+            diceTypeGroup.alpha     = 1f
             updateMainDiceImage()
         }
     }
@@ -216,7 +218,6 @@ class UniversalDiceFragment : Fragment() {
         else throwNormal()
     }
 
-    /** Normal throw: 1-10 dice of the selected type, with color-tint animation. */
     private fun throwNormal() {
         val results = List(selectedDiceCount) { Random.nextInt(selectedDiceType.sides) + 1 }
         animateSingleDie(mainDiceImage) {
@@ -228,9 +229,8 @@ class UniversalDiceFragment : Fragment() {
     }
 
     private fun throwRisiko() {
-        val results = List(6) { Random.nextInt(6) + 1 }   // always D6
+        val results = List(6) { Random.nextInt(6) + 1 }
 
-        // Bind the 6 dice image views from the included layout
         val dice = (1..6).map { i ->
             requireView().findViewById<ImageView>(
                 resources.getIdentifier("diceButtonAnimation$i", "id", requireContext().packageName)
@@ -238,26 +238,22 @@ class UniversalDiceFragment : Fragment() {
         }
         val vsAnim = requireView().findViewById<ImageView>(R.id.diceButtonAnimationVs)
 
-        // Start the animated vector drawables (same approach as original DiceFragment)
         results.forEachIndexed { i, value ->
-            val drawableName = "dice_${value}_vector_animation"
-            val resId = resources.getIdentifier(drawableName, "drawable", requireContext().packageName)
+            val resId = resources.getIdentifier(
+                "dice_${value}_vector_animation", "drawable", requireContext().packageName
+            )
             dice[i].setImageResource(resId)
             (dice[i].drawable as? Animatable)?.start()
         }
         (vsAnim.drawable as? Animatable)?.start()
 
-        // Show the result text after the animation settles
-        val team1 = results.take(3).sum()
-        val team2 = results.drop(3).sum()
-        val breakdown1 = results.take(3).joinToString("+")
-        val breakdown2 = results.drop(3).joinToString("+")
-        val resultStr = "${getString(R.string.generic_result)} $breakdown1 ($team1) — $breakdown2 ($team2)"
-
+        val team1      = results.take(3).sum()
+        val team2      = results.drop(3).sum()
+        val resultStr  = "${getString(R.string.generic_result)} $team1 — $team2"
         animateResultText(resultStr)
 
         requireView().postDelayed({
-            resultCardsContainer.removeAllViews()   // no chips in risiko mode
+            resultCardsContainer.removeAllViews()
             isAnimating = false
             if (shakeEnabled) registerShake()
         }, 1800)
@@ -266,83 +262,95 @@ class UniversalDiceFragment : Fragment() {
     // ── Animations ────────────────────────────────────────────────────────────
 
     /**
-     * Single-die animation: icon color pulses gray → colorPrimary → gray
-     * while the image spins around the Y axis.
+     * Die animation combining:
+     *   • spin (rotationY)        – the main visual
+     *   • shake (scaleX / scaleY) – the "bouncy roll" effect from the original DiceFragment
+     *   • colour tint             – gray → colorPrimary → gray
+     * All three run in parallel via AnimatorSet, then [onEnd] is called.
      */
     private fun animateSingleDie(view: ImageView, onEnd: () -> Unit) {
-        val gray = 0xFF9E9E9E.toInt()   // Material Gray 500
+        val gray    = 0xFF9E9E9E.toInt()   // Material Gray 500
         val primary = MaterialColors.getColor(view, com.google.android.material.R.attr.colorPrimaryFixed)
+        val totalMs = 750L
 
         // Apply initial gray tint
         view.setColorFilter(gray, PorterDuff.Mode.SRC_IN)
 
-        val spinDuration = 700L
-
         // Spin
-        ObjectAnimator.ofFloat(view, "rotationY", 0f, 720f).apply {
-            duration    = spinDuration
+        val spin = ObjectAnimator.ofFloat(view, "rotationY", 0f, 720f).apply {
+            duration     = totalMs
             interpolator = DecelerateInterpolator()
-            start()
         }
+        // Shake X
+        val shakeX = ObjectAnimator.ofFloat(view, "scaleX", 1f, 1.25f, 0.85f, 1.1f, 0.95f, 1f).apply {
+            duration = totalMs
+        }
+        // Shake Y
+        val shakeY = ObjectAnimator.ofFloat(view, "scaleY", 1f, 1.25f, 0.85f, 1.1f, 0.95f, 1f).apply {
+            duration = totalMs
+        }
+        AnimatorSet().apply { play(spin).with(shakeX).with(shakeY); start() }
 
-        // Color: gray → primary (first half)
+        // Colour: gray → primary (first half)
         ValueAnimator.ofArgb(gray, primary).apply {
-            duration = spinDuration / 2
+            duration = totalMs / 2
             addUpdateListener { view.setColorFilter(it.animatedValue as Int, PorterDuff.Mode.SRC_IN) }
             start()
         }
-
-        // Color: primary → gray (second half)
+        // Colour: primary → gray (second half)
         view.postDelayed({
             if (!isAdded) return@postDelayed
             ValueAnimator.ofArgb(primary, gray).apply {
-                duration = spinDuration / 2
+                duration = totalMs / 2
                 addUpdateListener { view.setColorFilter(it.animatedValue as Int, PorterDuff.Mode.SRC_IN) }
                 start()
             }
-        }, spinDuration / 2)
+        }, totalMs / 2)
 
-        // Callback and cleanup
+        // Cleanup + callback
         view.postDelayed({
             view.clearColorFilter()
             onEnd()
-        }, spinDuration + 100)
+        }, totalMs + 80)
     }
 
     // ── Result display ────────────────────────────────────────────────────────
 
+    /**
+     * Shows the total in [resultText] and individual values as chips.
+     * The result string is always just the total — individual values are already
+     * visible in the chips below the text, so there's no need to repeat them.
+     */
     private fun showNormalResults(results: List<Int>) {
-        val total         = results.sum()
-        val individualStr = if (results.size > 1) results.joinToString(" + ") + " = " else ""
-        val resultStr     = "${getString(R.string.generic_result)} $individualStr$total"
-
+        val total     = results.sum()
+        val resultStr = "${getString(R.string.generic_result)} $total"
         animateResultText(resultStr)
         buildResultChips(results)
     }
 
-    private fun animateResultText(resultStr: String) {
+    private fun animateResultText(text: String) {
         val animIn  = AlphaAnimation(1f, 0f).apply { duration = 300 }
         val animOut = AlphaAnimation(0f, 1f).apply { duration = 400 }
         resultText.startAnimation(animIn)
         resultText.postDelayed({
-            resultText.text       = resultStr
+            resultText.text       = text
             resultText.isSelected = true
             resultText.startAnimation(animOut)
         }, 300)
     }
 
     /**
-     * Per-die chips: max-value chips use colorPrimary, others use colorSurfaceVariant.
-     * Not shown in risiko mode.
+     * One chip per die; max-value chips are highlighted with colorPrimary.
+     * Hidden when rolling a single die (the total text is sufficient).
      */
     private fun buildResultChips(results: List<Int>) {
         resultCardsContainer.removeAllViews()
         if (results.size <= 1) return
 
-        val primary    = com.google.android.material.R.attr.colorPrimaryFixed
-        val surface    = com.google.android.material.R.attr.colorSurfaceVariant
-        val onPrimary  = com.google.android.material.R.attr.colorOnPrimary
-        val onSurface  = com.google.android.material.R.attr.colorOnSurfaceVariant
+        val primary   = com.google.android.material.R.attr.colorPrimaryFixed
+        val surface   = com.google.android.material.R.attr.colorSurfaceVariant
+        val onPrimary = com.google.android.material.R.attr.colorOnPrimary
+        val onSurface = com.google.android.material.R.attr.colorOnSurfaceVariant
 
         results.forEachIndexed { i, value ->
             val isMax   = value == selectedDiceType.sides
@@ -370,7 +378,7 @@ class UniversalDiceFragment : Fragment() {
         }
     }
 
-    // ── Sensor helper ─────────────────────────────────────────────────────────
+    // ── Sensor ────────────────────────────────────────────────────────────────
 
     private fun registerShake() {
         sensorManager.registerListener(

@@ -7,7 +7,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/titleDice"
@@ -27,7 +27,8 @@
             android:id="@+id/descriptionDice"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/linear_vertical_margin"
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="8dp"
             android:gravity="center_horizontal"
             android:text="@string/description_dice"
             android:textColor="?attr/colorOnBackground"
@@ -35,6 +36,24 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/titleDice" />
+
+        <TextView
+            android:id="@+id/resultDice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/result_text_margin"
+            android:ellipsize="marquee"
+            android:gravity="center_horizontal"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="@string/result_placeholder"
+            android:textSize="@dimen/result_text_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/descriptionDice" />
 
         <FrameLayout
             android:id="@+id/diceDisplayZone"
@@ -47,7 +66,7 @@
             android:padding="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/descriptionDice">
+            app:layout_constraintTop_toBottomOf="@id/resultDice">
 
             <ImageView
                 android:id="@+id/universalDiceAnimation"
@@ -62,29 +81,10 @@
                 layout="@layout/triple_v_triple_dice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/linear_vertical_margin"
-                android:layout_marginBottom="@dimen/linear_vertical_margin"
+                android:layout_marginVertical="@dimen/linear_vertical_margin"
                 android:visibility="gone" />
 
         </FrameLayout>
-
-        <TextView
-            android:id="@+id/resultDice"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="4dp"
-            android:ellipsize="marquee"
-            android:gravity="center_horizontal"
-            android:marqueeRepeatLimit="marquee_forever"
-            android:scrollHorizontally="true"
-            android:singleLine="true"
-            android:text="@string/result_placeholder"
-            android:textSize="@dimen/result_text_size"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/diceDisplayZone" />
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/diceResultCards"
@@ -96,31 +96,27 @@
             app:chipSpacingVertical="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/resultDice" />
+            app:layout_constraintTop_toBottomOf="@id/diceDisplayZone" />
 
-        <TextView
-            android:id="@+id/labelDiceType"
+        <Space
+            android:id="@+id/verticalSpacer"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="16dp"
-            android:letterSpacing="0.06"
-            android:text="@string/label_dice_type"
-            android:textColor="?attr/colorPrimary"
-            android:textSize="11sp"
-            android:textStyle="bold"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/diceTypeSelection"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_default="spread"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/diceResultCards" />
+            app:layout_constraintTop_toBottomOf="@id/diceDisplayZone" />
 
         <com.google.android.material.button.MaterialButtonToggleGroup
             android:id="@+id/diceTypeSelection"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@id/diceCountChipGroup"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/labelDiceType"
             app:selectionRequired="true"
             app:singleSelection="true">
 
@@ -192,33 +188,19 @@
 
         </com.google.android.material.button.MaterialButtonToggleGroup>
 
-        <TextView
-            android:id="@+id/labelDiceCount"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="16dp"
-            android:letterSpacing="0.06"
-            android:text="@string/label_dice_count"
-            android:textColor="?attr/colorPrimary"
-            android:textSize="11sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/diceTypeSelection" />
-
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/diceCountChipGroup"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
             android:layout_marginTop="6dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="16dp"
             app:chipSpacingHorizontal="4dp"
             app:chipSpacingVertical="2dp"
+            app:flow_horizontalAlign="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/labelDiceCount"
             app:selectionRequired="true"
             app:singleLine="false"
             app:singleSelection="true">

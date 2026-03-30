@@ -148,4 +148,7 @@
     <string name="feedback_text">Ik heb je iets te vertellen</string>
     <string name="not_again_button">Nooit meer vragen</string>
     <string name="translate_app">Vertaal de app</string>
+    <!-- Universal Dice Fragment -->
+    <string name="label_dice_type">Dice type</string>
+    <string name="label_dice_count">Number of dice</string>
 </resources>

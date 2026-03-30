@@ -1,9 +1,5 @@
 <resources>
 
-    <!-- ================================================================ -->
-    <!-- Base application theme                                           -->
-    <!-- ================================================================ -->
-
     <style name="AppTheme" parent="AppTheme.Base" />
 
     <style name="AppTheme.Base" parent="Theme.Material3.DayNight.NoActionBar">
@@ -25,17 +21,11 @@
         <item name="android:textColorSecondary">@color/textColorSecondary</item>
         <item name="android:textColorTertiary">@color/textColorSecondary</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
-        <item name="fontFamily">@font/opensans_regular</item>
-        <item name="android:fontFamily">@font/opensans_regular</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
         <item name="alertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
         <item name="switchStyle">@style/CustomMaterialSwitch</item>
         <item name="bottomNavigationStyle">@style/CustomBottomNavigation</item>
     </style>
-
-    <!-- ================================================================ -->
-    <!-- Monet (dynamic color) themes                                     -->
-    <!-- ================================================================ -->
 
     <style name="AppTheme.Monet" parent="Theme.Material3.DynamicColors.DayNight">
         <item name="android:windowLightStatusBar">true</item>
@@ -64,10 +54,6 @@
         <item name="switchStyle">@style/Widget.Material3.CompoundButton.MaterialSwitch</item>
     </style>
 
-    <!-- ================================================================ -->
-    <!-- PerfectDark (AMOLED) base                                        -->
-    <!-- ================================================================ -->
-
     <style name="AppTheme.PerfectDark" parent="AppTheme.Base">
         <item name="android:colorBackground">@color/amoledBlack</item>
         <item name="android:statusBarColor">@color/amoledBlack</item>
@@ -84,10 +70,6 @@
         <item name="colorBackgroundFloating">@color/amoledSurface</item>
     </style>
 
-    <!-- ================================================================ -->
-    <!-- Splash screen                                                    -->
-    <!-- ================================================================ -->
-
     <style name="SplashTheme" parent="SplashTheme.Base.Legacy" />
 
     <style name="SplashTheme.Base" parent="Theme.Material3.DayNight.NoActionBar">
@@ -101,10 +83,6 @@
     <style name="SplashTheme.Base.Legacy">
         <item name="android:windowBackground">@drawable/static_randomix_light</item>
     </style>
-
-    <!-- ================================================================ -->
-    <!-- Dialogs                                                          -->
-    <!-- ================================================================ -->
 
     <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="colorOnSurface">?attr/colorPrimary</item>
@@ -124,10 +102,6 @@
         <item name="shapeAppearance">@style/ShapeAppearance.App.MediumComponent</item>
         <item name="shapeAppearanceOverlay">@null</item>
     </style>
-
-    <!-- ================================================================ -->
-    <!-- Bottom sheets                                                    -->
-    <!-- ================================================================ -->
 
     <style name="CustomBottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/CustomBottomSheet</item>
@@ -155,10 +129,6 @@
         <item name="backgroundTint">@color/amoledSurface</item>
     </style>
 
-    <!-- ================================================================ -->
-    <!-- Shapes                                                           -->
-    <!-- ================================================================ -->
-
     <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">@dimen/rounded_corners</item>
@@ -168,10 +138,6 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">@dimen/rounded_corners</item>
     </style>
-
-    <!-- ================================================================ -->
-    <!-- Widgets                                                          -->
-    <!-- ================================================================ -->
 
     <style name="Widget.App.Button.OutlinedButton.IconOnly" parent="Widget.Material3.Button.OutlinedButton">
         <item name="iconPadding">0dp</item>

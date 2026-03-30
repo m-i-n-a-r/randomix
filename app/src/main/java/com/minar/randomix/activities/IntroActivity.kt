@@ -20,8 +20,6 @@ class IntroActivity : AppIntro() {
             .title(getString(R.string.app_name).uppercase())
             .description(getString(R.string.app_intro_description))
             .imageDrawable(R.drawable.intro_icon)
-            .titleTypefaceFontRes(R.font.opensans_semibold)
-            .descriptionTypefaceFontRes(R.font.opensans_semibold)
             .backgroundColorRes(R.color.textColorPrimaryInverse)
             .titleColorRes(R.color.textColorSecondaryInverse)
             .backgroundDrawable(R.drawable.intro_background)

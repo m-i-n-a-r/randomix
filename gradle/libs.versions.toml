@@ -1,7 +1,7 @@
 [versions]
 agp = "9.1.0"
 
-material = "1.14.0-alpha01"
+material = "1.14.0-alpha10"
 constraintlayout = "2.2.1"
 navigation = "2.9.7"
 preference = "1.2.1"

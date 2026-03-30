@@ -1,6 +1,5 @@
 package com.minar.randomix.fragments
 
-import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import android.content.Context
@@ -27,39 +26,39 @@ import com.minar.randomix.activities.MainActivity
 import com.minar.randomix.utilities.ShakeEventListener
 import kotlin.random.Random
 
-// ── Dice type ─────────────────────────────────────────────────────────────────
+// Available dice types
 
 enum class DiceType(val sides: Int, val iconRes: Int) {
-    D4 (4,  R.drawable.ic_dice_d4),
-    D6 (6,  R.drawable.ic_dice_d6),
-    D8 (8,  R.drawable.ic_dice_d8),
+    D4(4, R.drawable.ic_dice_d4),
+    D6(6, R.drawable.ic_dice_d6),
+    D8(8, R.drawable.ic_dice_d8),
     D10(10, R.drawable.ic_dice_d10),
     D12(12, R.drawable.ic_dice_d12),
     D20(20, R.drawable.ic_dice_d20),
 }
 
-// ── Fragment ──────────────────────────────────────────────────────────────────
+// Fragments
 
 class UniversalDiceFragment : Fragment() {
 
     private var act: MainActivity? = null
-    private var shakeEnabled   = false
-    private lateinit var sensorManager:  SensorManager
+    private var shakeEnabled = false
+    private lateinit var sensorManager: SensorManager
     private lateinit var sensorListener: ShakeEventListener
 
-    private var selectedDiceType  = DiceType.D6
+    private var selectedDiceType = DiceType.D6
     private var selectedDiceCount = 1   // 0 = risiko mode
-    private var isAnimating       = false
+    private var isAnimating = false
 
     // Views – bound in onCreateView
-    private lateinit var mainDiceImage:        ImageView
-    private lateinit var risikoLayout:         View
-    private lateinit var resultText:           TextView
-    private lateinit var diceTypeGroup:        MaterialButtonToggleGroup
-    private lateinit var countChipGroup:       ChipGroup
+    private lateinit var mainDiceImage: ImageView
+    private lateinit var risikoLayout: View
+    private lateinit var resultText: TextView
+    private lateinit var diceTypeGroup: MaterialButtonToggleGroup
+    private lateinit var countChipGroup: ChipGroup
     private lateinit var resultCardsContainer: ChipGroup
 
-    // ── Lifecycle ─────────────────────────────────────────────────────────────
+    // Lifecycle
 
     override fun onResume() {
         super.onResume()
@@ -74,25 +73,25 @@ class UniversalDiceFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        val v  = inflater.inflate(R.layout.fragment_universal_dice, container, false)
+        val v = inflater.inflate(R.layout.fragment_universal_dice, container, false)
         val sp = PreferenceManager.getDefaultSharedPreferences(requireContext())
 
         if (sp.getBoolean("hide_descriptions", false))
             v.findViewById<View>(R.id.descriptionDice).visibility = View.GONE
 
         // Bind views
-        val displayZone      = v.findViewById<View>(R.id.diceDisplayZone)
-        mainDiceImage        = v.findViewById(R.id.universalDiceAnimation)
-        risikoLayout         = v.findViewById(R.id.risikoLayout)
-        resultText           = v.findViewById(R.id.resultDice)
-        diceTypeGroup        = v.findViewById(R.id.diceTypeSelection)
-        countChipGroup       = v.findViewById(R.id.diceCountChipGroup)
+        val displayZone = v.findViewById<View>(R.id.diceDisplayZone)
+        mainDiceImage = v.findViewById(R.id.universalDiceAnimation)
+        risikoLayout = v.findViewById(R.id.risikoLayout)
+        resultText = v.findViewById(R.id.resultDice)
+        diceTypeGroup = v.findViewById(R.id.diceTypeSelection)
+        countChipGroup = v.findViewById(R.id.diceCountChipGroup)
         resultCardsContainer = v.findViewById(R.id.diceResultCards)
 
         risikoLayout.isClickable = false
 
         // Restore saved state
-        selectedDiceType  = runCatching {
+        selectedDiceType = runCatching {
             DiceType.valueOf(sp.getString("ud_dice_type", "D6") ?: "D6")
         }.getOrDefault(DiceType.D6)
         selectedDiceCount = sp.getInt("ud_dice_count", 1).coerceIn(0, 10)
@@ -108,20 +107,20 @@ class UniversalDiceFragment : Fragment() {
         act?.let { a ->
             shakeEnabled = a.shakeAllowed()
             if (shakeEnabled) {
-                sensorManager  = a.getSystemService(Context.SENSOR_SERVICE) as SensorManager
+                sensorManager = a.getSystemService(Context.SENSOR_SERVICE) as SensorManager
                 sensorListener = ShakeEventListener().also { it.setOnShakeListener(::mainThrow) }
             }
         }
         return v
     }
 
-    // ── Type toggle ───────────────────────────────────────────────────────────
+    // Type toggle
 
     private fun setupDiceTypeToggle() {
         val typeMap = mapOf(
-            R.id.diceTypeSelection4  to DiceType.D4,
-            R.id.diceTypeSelection6  to DiceType.D6,
-            R.id.diceTypeSelection8  to DiceType.D8,
+            R.id.diceTypeSelection4 to DiceType.D4,
+            R.id.diceTypeSelection6 to DiceType.D6,
+            R.id.diceTypeSelection8 to DiceType.D8,
             R.id.diceTypeSelection10 to DiceType.D10,
             R.id.diceTypeSelection12 to DiceType.D12,
             R.id.diceTypeSelection20 to DiceType.D20,
@@ -139,20 +138,20 @@ class UniversalDiceFragment : Fragment() {
         }
     }
 
-    // ── Count chips ───────────────────────────────────────────────────────────
+    // Count chips
 
     private fun setupCountChips() {
         val chipToCount = mapOf(
-            R.id.chipCount1      to 1,
-            R.id.chipCount2      to 2,
-            R.id.chipCount3      to 3,
-            R.id.chipCount4      to 4,
-            R.id.chipCount5      to 5,
-            R.id.chipCount6      to 6,
-            R.id.chipCount7      to 7,
-            R.id.chipCount8      to 8,
-            R.id.chipCount9      to 9,
-            R.id.chipCount10     to 10,
+            R.id.chipCount1 to 1,
+            R.id.chipCount2 to 2,
+            R.id.chipCount3 to 3,
+            R.id.chipCount4 to 4,
+            R.id.chipCount5 to 5,
+            R.id.chipCount6 to 6,
+            R.id.chipCount7 to 7,
+            R.id.chipCount8 to 8,
+            R.id.chipCount9 to 9,
+            R.id.chipCount10 to 10,
             R.id.chipCountRisiko to 0,
         )
 
@@ -160,33 +159,27 @@ class UniversalDiceFragment : Fragment() {
             ?.let { countChipGroup.check(it.key) }
 
         countChipGroup.setOnCheckedStateChangeListener { _, checkedIds ->
-            val id    = checkedIds.firstOrNull() ?: return@setOnCheckedStateChangeListener
-            val count = chipToCount[id]           ?: return@setOnCheckedStateChangeListener
+            val id = checkedIds.firstOrNull() ?: return@setOnCheckedStateChangeListener
+            val count = chipToCount[id] ?: return@setOnCheckedStateChangeListener
             selectedDiceCount = count
             applyDiceMode()
             savePrefs()
         }
     }
 
-    // ── Mode application ──────────────────────────────────────────────────────
-
-    /**
-     * Switch between single-die mode and risiko (3 vs 3) mode.
-     * When risiko is active the type toggle is disabled + dimmed, because
-     * the risiko layout always uses D6.
-     */
+    // Mode application
     private fun applyDiceMode() {
         if (isRisikoMode) {
             mainDiceImage.visibility = View.GONE
-            risikoLayout.visibility  = View.VISIBLE
+            risikoLayout.visibility = View.VISIBLE
             // Lock the type selector: risiko is always D6
             diceTypeGroup.isEnabled = false
-            diceTypeGroup.alpha     = 0.38f   // Material "disabled" opacity
+            diceTypeGroup.alpha = 0.38f   // Material "disabled" opacity
         } else {
-            risikoLayout.visibility  = View.GONE
+            risikoLayout.visibility = View.GONE
             mainDiceImage.visibility = View.VISIBLE
             diceTypeGroup.isEnabled = true
-            diceTypeGroup.alpha     = 1f
+            diceTypeGroup.alpha = 1f
             updateMainDiceImage()
         }
     }
@@ -199,13 +192,13 @@ class UniversalDiceFragment : Fragment() {
 
     private fun savePrefs() {
         PreferenceManager.getDefaultSharedPreferences(requireContext()).edit().apply {
-            putString("ud_dice_type",  selectedDiceType.name)
-            putInt("ud_dice_count",    selectedDiceCount)
+            putString("ud_dice_type", selectedDiceType.name)
+            putInt("ud_dice_count", selectedDiceCount)
             apply()
         }
     }
 
-    // ── Throw logic ───────────────────────────────────────────────────────────
+    // Throw
 
     private fun mainThrow() {
         if (isAnimating) return
@@ -221,7 +214,9 @@ class UniversalDiceFragment : Fragment() {
     private fun throwNormal() {
         val results = List(selectedDiceCount) { Random.nextInt(selectedDiceType.sides) + 1 }
         animateSingleDie(mainDiceImage) {
-            if (!isAdded) { isAnimating = false; return@animateSingleDie }
+            if (!isAdded) {
+                isAnimating = false; return@animateSingleDie
+            }
             showNormalResults(results)
             isAnimating = false
             if (shakeEnabled) registerShake()
@@ -247,9 +242,9 @@ class UniversalDiceFragment : Fragment() {
         }
         (vsAnim.drawable as? Animatable)?.start()
 
-        val team1      = results.take(3).sum()
-        val team2      = results.drop(3).sum()
-        val resultStr  = "${getString(R.string.generic_result)} $team1 — $team2"
+        val team1 = results.take(3).sum()
+        val team2 = results.drop(3).sum()
+        val resultStr = "${getString(R.string.generic_result)} $team1 — $team2"
         animateResultText(resultStr)
 
         requireView().postDelayed({
@@ -259,53 +254,65 @@ class UniversalDiceFragment : Fragment() {
         }, 1800)
     }
 
-    // ── Animations ────────────────────────────────────────────────────────────
-
-    /**
-     * Die animation combining:
-     *   • spin (rotationY)        – the main visual
-     *   • shake (scaleX / scaleY) – the "bouncy roll" effect from the original DiceFragment
-     *   • colour tint             – gray → colorPrimary → gray
-     * All three run in parallel via AnimatorSet, then [onEnd] is called.
-     */
+    // Dice animation
     private fun animateSingleDie(view: ImageView, onEnd: () -> Unit) {
-        val gray    = 0xFF9E9E9E.toInt()   // Material Gray 500
-        val primary = MaterialColors.getColor(view, com.google.android.material.R.attr.colorPrimaryFixed)
-        val totalMs = 750L
+        val gray = 0xFF9E9E9E.toInt()
+        val primary =
+            MaterialColors.getColor(view, com.google.android.material.R.attr.colorPrimaryFixed)
 
-        // Apply initial gray tint
+        val shakeDuration = 280L
+        val spinDuration = 1150L
+        val totalMs = shakeDuration + spinDuration
+
         view.setColorFilter(gray, PorterDuff.Mode.SRC_IN)
 
-        // Spin
-        val spin = ObjectAnimator.ofFloat(view, "rotationY", 0f, 720f).apply {
-            duration     = totalMs
-            interpolator = DecelerateInterpolator()
-        }
-        // Shake X
-        val shakeX = ObjectAnimator.ofFloat(view, "scaleX", 1f, 1.25f, 0.85f, 1.1f, 0.95f, 1f).apply {
-            duration = totalMs
-        }
-        // Shake Y
-        val shakeY = ObjectAnimator.ofFloat(view, "scaleY", 1f, 1.25f, 0.85f, 1.1f, 0.95f, 1f).apply {
-            duration = totalMs
-        }
-        AnimatorSet().apply { play(spin).with(shakeX).with(shakeY); start() }
-
-        // Colour: gray → primary (first half)
-        ValueAnimator.ofArgb(gray, primary).apply {
-            duration = totalMs / 2
-            addUpdateListener { view.setColorFilter(it.animatedValue as Int, PorterDuff.Mode.SRC_IN) }
+        // Phase 1: rapid vertical shake – simulates hand agitating the die
+        ObjectAnimator.ofFloat(view, "translationY", 0f, -20f, 16f, -12f, 8f, -4f, 0f).apply {
+            duration = shakeDuration
+            // LinearInterpolator keeps each micro-bounce equally snappy
+            interpolator = android.view.animation.LinearInterpolator()
             start()
         }
-        // Colour: primary → gray (second half)
+
+        // Phase 2: 360° clockwise roll + color pulse, starts when shake ends
         view.postDelayed({
             if (!isAdded) return@postDelayed
-            ValueAnimator.ofArgb(primary, gray).apply {
-                duration = totalMs / 2
-                addUpdateListener { view.setColorFilter(it.animatedValue as Int, PorterDuff.Mode.SRC_IN) }
+
+            // Clockwise spin, fast start → slow stop (quadratic deceleration)
+            ObjectAnimator.ofFloat(view, "rotation", 0f, 360f).apply {
+                duration = spinDuration
+                interpolator = DecelerateInterpolator(2f)
                 start()
             }
-        }, totalMs / 2)
+
+            // Color: gray → primary (first half of spin)
+            ValueAnimator.ofArgb(gray, primary).apply {
+                duration = spinDuration / 2
+                addUpdateListener {
+                    view.setColorFilter(
+                        it.animatedValue as Int,
+                        PorterDuff.Mode.SRC_IN
+                    )
+                }
+                start()
+            }
+
+            // Color: primary → gray (second half of spin)
+            view.postDelayed({
+                if (!isAdded) return@postDelayed
+                ValueAnimator.ofArgb(primary, gray).apply {
+                    duration = spinDuration / 2
+                    addUpdateListener {
+                        view.setColorFilter(
+                            it.animatedValue as Int,
+                            PorterDuff.Mode.SRC_IN
+                        )
+                    }
+                    start()
+                }
+            }, spinDuration / 2)
+
+        }, shakeDuration)
 
         // Cleanup + callback
         view.postDelayed({
@@ -314,55 +321,45 @@ class UniversalDiceFragment : Fragment() {
         }, totalMs + 80)
     }
 
-    // ── Result display ────────────────────────────────────────────────────────
-
-    /**
-     * Shows the total in [resultText] and individual values as chips.
-     * The result string is always just the total — individual values are already
-     * visible in the chips below the text, so there's no need to repeat them.
-     */
+    // Results
     private fun showNormalResults(results: List<Int>) {
-        val total     = results.sum()
+        val total = results.sum()
         val resultStr = "${getString(R.string.generic_result)} $total"
         animateResultText(resultStr)
         buildResultChips(results)
     }
 
     private fun animateResultText(text: String) {
-        val animIn  = AlphaAnimation(1f, 0f).apply { duration = 300 }
+        val animIn = AlphaAnimation(1f, 0f).apply { duration = 300 }
         val animOut = AlphaAnimation(0f, 1f).apply { duration = 400 }
         resultText.startAnimation(animIn)
         resultText.postDelayed({
-            resultText.text       = text
+            resultText.text = text
             resultText.isSelected = true
             resultText.startAnimation(animOut)
         }, 300)
     }
 
-    /**
-     * One chip per die; max-value chips are highlighted with colorPrimary.
-     * Hidden when rolling a single die (the total text is sufficient).
-     */
     private fun buildResultChips(results: List<Int>) {
         resultCardsContainer.removeAllViews()
         if (results.size <= 1) return
 
-        val primary   = com.google.android.material.R.attr.colorPrimaryFixed
-        val surface   = com.google.android.material.R.attr.colorSurfaceVariant
+        val primary = com.google.android.material.R.attr.colorPrimaryFixed
+        val surface = com.google.android.material.R.attr.colorSurfaceVariant
         val onPrimary = com.google.android.material.R.attr.colorOnPrimary
         val onSurface = com.google.android.material.R.attr.colorOnSurfaceVariant
 
         results.forEachIndexed { i, value ->
-            val isMax   = value == selectedDiceType.sides
-            val bgAttr  = if (isMax) primary else surface
+            val isMax = value == selectedDiceType.sides
+            val bgAttr = if (isMax) primary else surface
             val txtAttr = if (isMax) onPrimary else onSurface
 
             val chip = Chip(requireContext()).apply {
-                text        = value.toString()
+                text = value.toString()
                 isCheckable = false
                 isClickable = false
                 isFocusable = false
-                textSize    = 15f
+                textSize = 15f
                 chipBackgroundColor = android.content.res.ColorStateList.valueOf(
                     MaterialColors.getColor(this, bgAttr)
                 )
@@ -377,8 +374,6 @@ class UniversalDiceFragment : Fragment() {
             }, i * 55L)
         }
     }
-
-    // ── Sensor ────────────────────────────────────────────────────────────────
 
     private fun registerShake() {
         sensorManager.registerListener(

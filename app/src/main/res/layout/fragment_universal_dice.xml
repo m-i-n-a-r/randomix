@@ -41,8 +41,10 @@
             android:id="@+id/resultDice"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/result_text_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/result_text_margin"
             android:ellipsize="marquee"
             android:gravity="center_horizontal"
             android:marqueeRepeatLimit="marquee_forever"
@@ -59,11 +61,12 @@
             android:id="@+id/diceDisplayZone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="@dimen/linear_vertical_margin"
+            android:layout_marginBottom="@dimen/linear_vertical_margin"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
             android:focusable="true"
-            android:padding="12dp"
+            android:paddingHorizontal="@dimen/activity_horizontal_margin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/resultDice">
@@ -73,8 +76,10 @@
                 android:layout_width="@dimen/image_button_height"
                 android:layout_height="@dimen/image_button_height"
                 android:layout_gravity="center"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="@string/throw_dice"
-                android:src="@drawable/ic_dice_d6" />
+                android:src="@drawable/ic_dice_d6"
+                android:tint="?attr/colorOutline" />
 
             <include
                 android:id="@+id/risikoLayout"
@@ -122,14 +127,15 @@
 
             <Button
                 android:id="@+id/diceTypeSelection4"
-                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                style="@style/Widget.Material3Expressive.Button.OutlinedButton"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/dice_d4"
                 app:icon="@drawable/ic_dice_d4"
                 app:iconGravity="textStart"
-                app:iconPadding="0dp" />
+                app:iconPadding="0dp"
+                app:strokeWidth="2dp" />
 
             <Button
                 android:id="@+id/diceTypeSelection6"
@@ -197,7 +203,6 @@
             android:layout_marginBottom="16dp"
             app:chipSpacingHorizontal="4dp"
             app:chipSpacingVertical="2dp"
-            app:flow_horizontalAlign="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

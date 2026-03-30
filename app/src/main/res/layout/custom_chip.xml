@@ -7,10 +7,6 @@
     android:text="@string/title_roulette"
     android:textAlignment="center"
     android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-    android:textColor="?attr/colorSurface"
     app:chipBackgroundColor="@android:color/transparent"
-    app:chipCornerRadius="@dimen/rounded_corners"
-    app:chipStrokeColor="?attr/colorSurfaceVariant"
     app:chipStrokeWidth="@dimen/text_box_stroke_width"
-    app:chipSurfaceColor="?attr/colorOutline"
     app:rippleColor="?attr/colorPrimary" />

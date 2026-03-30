@@ -2,7 +2,7 @@
 
     <style name="AppTheme" parent="AppTheme.Base" />
 
-    <style name="AppTheme.Base" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="AppTheme.Base" parent="Theme.Material3Expressive.DayNight.NoActionBar">
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:colorBackground">@color/colorBackground</item>
         <item name="colorPrimary">@color/colorAccent</item>
@@ -27,7 +27,7 @@
         <item name="bottomNavigationStyle">@style/CustomBottomNavigation</item>
     </style>
 
-    <style name="AppTheme.Monet" parent="Theme.Material3.DynamicColors.DayNight">
+    <style name="AppTheme.Monet" parent="Theme.Material3Expressive.DynamicColors.DayNight.NoActionBar">
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogMonet</item>
@@ -38,7 +38,7 @@
         <item name="android:navigationBarColor">?attr/colorSurface</item>
     </style>
 
-    <style name="AppTheme.Monet.PerfectDark" parent="Theme.Material3.DynamicColors.DayNight">
+    <style name="AppTheme.Monet.PerfectDark" parent="Theme.Material3Expressive.DynamicColors.DayNight.NoActionBar">
         <item name="android:colorBackground">@color/amoledBlack</item>
         <item name="android:statusBarColor">@color/amoledBlack</item>
         <item name="android:navigationBarColor">@color/amoledBlack</item>
@@ -72,7 +72,7 @@
 
     <style name="SplashTheme" parent="SplashTheme.Base.Legacy" />
 
-    <style name="SplashTheme.Base" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="SplashTheme.Base" parent="Theme.Material3Expressive.DayNight.NoActionBar">
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:statusBarColor">@color/colorBackground</item>
         <item name="android:colorBackground">@color/colorBackground</item>
@@ -84,7 +84,7 @@
         <item name="android:windowBackground">@drawable/static_randomix_light</item>
     </style>
 
-    <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+    <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.Material3Expressive.MaterialAlertDialog">
         <item name="colorOnSurface">?attr/colorPrimary</item>
         <item name="alertDialogStyle">@style/MaterialAlertDialog.App</item>
         <item name="dialogCornerRadius">@dimen/rounded_corners</item>
@@ -92,13 +92,13 @@
         <item name="android:background">?colorBackgroundFloating</item>
     </style>
 
-    <style name="ThemeOverlay.App.MaterialAlertDialog.Monet" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+    <style name="ThemeOverlay.App.MaterialAlertDialog.Monet" parent="ThemeOverlay.Material3Expressive.MaterialAlertDialog">
         <item name="alertDialogStyle">@style/MaterialAlertDialog.App</item>
         <item name="dialogCornerRadius">@dimen/rounded_corners</item>
         <item name="android:background">@drawable/dialog_bg_monet</item>
     </style>
 
-    <style name="MaterialAlertDialog.App" parent="MaterialAlertDialog.Material3">
+    <style name="MaterialAlertDialog.App" parent="MaterialAlertDialog.Material3Expressive">
         <item name="shapeAppearance">@style/ShapeAppearance.App.MediumComponent</item>
         <item name="shapeAppearanceOverlay">@null</item>
     </style>
@@ -139,17 +139,7 @@
         <item name="cornerSize">@dimen/rounded_corners</item>
     </style>
 
-    <style name="Widget.App.Button.OutlinedButton.IconOnly" parent="Widget.Material3.Button.OutlinedButton">
-        <item name="iconPadding">0dp</item>
-        <item name="android:insetTop">0dp</item>
-        <item name="android:insetBottom">0dp</item>
-        <item name="android:paddingLeft">12dp</item>
-        <item name="android:paddingRight">12dp</item>
-        <item name="android:minWidth">48dp</item>
-        <item name="android:minHeight">48dp</item>
-    </style>
-
-    <style name="CustomBottomNavigation" parent="Widget.Material3.BottomNavigationView">
+    <style name="CustomBottomNavigation" parent="Widget.Material3Expressive.BottomNavigationView">
         <item name="backgroundTint">?android:statusBarColor</item>
         <item name="itemTextColor">@drawable/bottom_navbar_item</item>
     </style>
@@ -160,10 +150,6 @@
         <item name="trackTint">@color/goodGrayTranslucent</item>
         <item name="trackDecorationTint">?attr/colorPrimary</item>
     </style>
-
-    <!-- ================================================================ -->
-    <!-- Accent sub-themes — NORMAL                                       -->
-    <!-- ================================================================ -->
 
     <style name="AppTheme.System" parent="AppTheme">
         <item name="colorAccent">@color/aquaAccent</item>
@@ -308,9 +294,7 @@
         <item name="colorTertiaryContainer">@color/crimsonAccentTranslucent</item>
     </style>
 
-    <!-- ================================================================ -->
-    <!-- Accent sub-themes — PERFECTDARK (AMOLED true-black)             -->
-    <!-- ================================================================ -->
+    <!-- Amoled themes -->
 
     <style name="AppTheme.System.PerfectDark" parent="AppTheme.PerfectDark">
         <item name="colorAccent">@color/aquaAccent</item>
@@ -440,6 +424,23 @@
         <item name="colorSecondaryContainer">@color/crimsonAccentTranslucent</item>
         <item name="colorTertiary">@color/crimsonAccent</item>
         <item name="colorTertiaryContainer">@color/crimsonAccentTranslucent</item>
+    </style>
+
+    <!-- Style for custom chip -->
+    <style name="Widget.App.Chip.Outline" parent="Widget.Material3.Chip.Filter">
+        <item name="android:textAppearance">@style/TextAppearance.Material3.BodySmall</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:ellipsize">end</item>
+        <item name="chipStrokeWidth">@dimen/text_box_stroke_width</item>
+        <item name="rippleColor">?attr/colorPrimary</item>
+    </style>
+
+    <!-- Button group colors -->
+    <style name="ThemeOverlay.App.ToggleButton.Outlined" parent="">
+        <item name="colorContainerChecked">?attr/colorPrimaryContainer</item>
+        <item name="colorOnContainerChecked">?attr/colorOnPrimaryContainer</item>
+        <item name="colorContainerUnchecked">@android:color/transparent</item>
+        <item name="colorOnContainerUnchecked">?attr/colorOnSurface</item>
     </style>
 
 </resources>

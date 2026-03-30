@@ -3,6 +3,7 @@ package com.minar.randomix.fragments
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.PorterDuff
 import android.graphics.drawable.Animatable
 import android.hardware.Sensor
@@ -15,6 +16,7 @@ import android.view.animation.AlphaAnimation
 import android.view.animation.DecelerateInterpolator
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.view.ContextThemeWrapper
 import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
 import com.google.android.material.button.MaterialButtonToggleGroup
@@ -257,8 +259,7 @@ class UniversalDiceFragment : Fragment() {
     // Dice animation
     private fun animateSingleDie(view: ImageView, onEnd: () -> Unit) {
         val gray = 0xFF9E9E9E.toInt()
-        val primary =
-            MaterialColors.getColor(view, com.google.android.material.R.attr.colorPrimaryFixed)
+        val primary = MaterialColors.getColor(view, com.google.android.material.R.attr.colorPrimaryFixed)
 
         val shakeDuration = 280L
         val spinDuration = 1150L
@@ -266,56 +267,51 @@ class UniversalDiceFragment : Fragment() {
 
         view.setColorFilter(gray, PorterDuff.Mode.SRC_IN)
 
-        // Phase 1: rapid vertical shake – simulates hand agitating the die
         ObjectAnimator.ofFloat(view, "translationY", 0f, -20f, 16f, -12f, 8f, -4f, 0f).apply {
             duration = shakeDuration
-            // LinearInterpolator keeps each micro-bounce equally snappy
             interpolator = android.view.animation.LinearInterpolator()
             start()
         }
 
-        // Phase 2: 360° clockwise roll + color pulse, starts when shake ends
         view.postDelayed({
             if (!isAdded) return@postDelayed
 
-            // Clockwise spin, fast start → slow stop (quadratic deceleration)
+            view.pivotX = view.width / 2f
+            view.pivotY = if (selectedDiceType == DiceType.D4) view.height * (14f / 24f)
+            else view.height / 2f
+
             ObjectAnimator.ofFloat(view, "rotation", 0f, 360f).apply {
                 duration = spinDuration
                 interpolator = DecelerateInterpolator(2f)
                 start()
             }
 
-            // Color: gray → primary (first half of spin)
-            ValueAnimator.ofArgb(gray, primary).apply {
-                duration = spinDuration / 2
-                addUpdateListener {
-                    view.setColorFilter(
-                        it.animatedValue as Int,
-                        PorterDuff.Mode.SRC_IN
-                    )
-                }
+            ObjectAnimator.ofFloat(view, "translationX", 0f, 18f, 0f).apply {
+                duration = spinDuration
+                interpolator = DecelerateInterpolator(2f)
                 start()
             }
 
-            // Color: primary → gray (second half of spin)
+            ValueAnimator.ofArgb(gray, primary).apply {
+                duration = spinDuration / 2
+                addUpdateListener { view.setColorFilter(it.animatedValue as Int, PorterDuff.Mode.SRC_IN) }
+                start()
+            }
+
             view.postDelayed({
                 if (!isAdded) return@postDelayed
                 ValueAnimator.ofArgb(primary, gray).apply {
                     duration = spinDuration / 2
-                    addUpdateListener {
-                        view.setColorFilter(
-                            it.animatedValue as Int,
-                            PorterDuff.Mode.SRC_IN
-                        )
-                    }
+                    addUpdateListener { view.setColorFilter(it.animatedValue as Int, PorterDuff.Mode.SRC_IN) }
                     start()
                 }
             }, spinDuration / 2)
 
         }, shakeDuration)
 
-        // Cleanup + callback
         view.postDelayed({
+            view.pivotX = view.width / 2f
+            view.pivotY = view.height / 2f
             view.clearColorFilter()
             onEnd()
         }, totalMs + 80)
@@ -353,14 +349,13 @@ class UniversalDiceFragment : Fragment() {
             val isMax = value == selectedDiceType.sides
             val bgAttr = if (isMax) primary else surface
             val txtAttr = if (isMax) onPrimary else onSurface
-
-            val chip = Chip(requireContext()).apply {
+            val chip = Chip(ContextThemeWrapper(requireContext(), R.style.Widget_App_Chip_Outline)).apply {
                 text = value.toString()
                 isCheckable = false
                 isClickable = false
                 isFocusable = false
-                textSize = 15f
-                chipBackgroundColor = android.content.res.ColorStateList.valueOf(
+                chipStrokeWidth = 0f
+                chipBackgroundColor = ColorStateList.valueOf(
                     MaterialColors.getColor(this, bgAttr)
                 )
                 setTextColor(MaterialColors.getColor(this, txtAttr))

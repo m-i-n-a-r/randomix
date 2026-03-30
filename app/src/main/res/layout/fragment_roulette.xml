@@ -194,9 +194,9 @@
             android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
             android:checked="false"
             android:text="@string/range"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge.Emphasized"
             app:switchPadding="@dimen/activity_horizontal_margin"
-            app:switchTextAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+            app:switchTextAppearance="@style/TextAppearance.Material3.BodyLarge.Emphasized" />
 
         <HorizontalScrollView
             android:layout_width="match_parent"
@@ -209,8 +209,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:animateLayoutChanges="true"
-                android:paddingStart="@dimen/activity_horizontal_margin"
-                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:paddingHorizontal="@dimen/activity_horizontal_margin"
                 app:chipSpacing="@dimen/chip_spacing"
                 app:singleLine="true">
 
@@ -233,10 +232,8 @@
             android:id="@+id/resultRoulette"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="@dimen/result_text_margin"
-            android:layout_marginEnd="@dimen/activity_horizontal_margin"
-            android:layout_marginBottom="@dimen/result_text_margin"
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+            android:layout_marginVertical="@dimen/result_text_margin"
             android:gravity="center_horizontal"
             android:text="@string/result_placeholder"
             android:textSize="@dimen/result_text_size"

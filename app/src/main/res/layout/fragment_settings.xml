@@ -133,7 +133,7 @@
 
     <Button
         android:id="@+id/translateButton"
-        style="@style/Widget.Material3.Button.TonalButton.Icon"
+        style="@style/Widget.Material3Expressive.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="@dimen/linear_vertical_padding"
@@ -149,6 +149,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/minarsite"
-        app:rippleColor="?attr/colorPrimary" />
+        app:rippleColor="?attr/colorPrimary"
+        app:strokeWidth="@dimen/text_box_stroke_width" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

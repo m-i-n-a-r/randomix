@@ -3,7 +3,7 @@
     <!-- Android P and above application theme -->
     <style name="AppTheme" parent="AppTheme.Base" />
 
-    <style name="AppTheme.Base" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="AppTheme.Base" parent="Theme.Material3Expressive.DayNight.NoActionBar">
         <item name="android:windowLightNavigationBar">true</item>
         <item name="android:navigationBarColor">@color/colorBackground</item>
         <item name="android:windowLightStatusBar">true</item>

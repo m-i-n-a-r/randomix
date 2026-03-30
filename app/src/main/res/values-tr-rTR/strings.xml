@@ -148,4 +148,7 @@
     <string name="feedback_text">Sana söylemek istediğim bir şey var</string>
     <string name="not_again_button">Bir daha sorma</string>
     <string name="translate_app">Uygulamayı çevir</string>
+    <!-- Universal Dice Fragment -->
+    <string name="label_dice_type">Dice type</string>
+    <string name="label_dice_count">Number of dice</string>
 </resources>

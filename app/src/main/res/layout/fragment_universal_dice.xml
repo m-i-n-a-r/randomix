@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="ScrollViewSize">
 
         <TextView
             android:id="@+id/titleDice"
@@ -59,13 +61,13 @@
 
         <FrameLayout
             android:id="@+id/diceDisplayZone"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
-            android:focusable="true"
             android:clipChildren="false"
             android:clipToPadding="false"
+            android:focusable="true"
             android:paddingHorizontal="@dimen/activity_horizontal_margin"
             android:paddingVertical="@dimen/linear_vertical_margin"
             app:layout_constraintEnd_toEndOf="parent"
@@ -93,24 +95,23 @@
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/diceResultCards"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="4dp"
-            app:chipSpacingHorizontal="4dp"
-            app:chipSpacingVertical="4dp"
+            android:layout_marginVertical="@dimen/chip_spacing"
+            app:chipSpacingHorizontal="@dimen/chip_spacing"
+            app:chipSpacingVertical="@dimen/chip_spacing"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/diceDisplayZone" />
 
         <Space
             android:id="@+id/verticalSpacer"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/diceTypeSelection"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_default="spread"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/diceTypeSelection"
             app:layout_constraintTop_toBottomOf="@id/diceResultCards" />
 
         <com.google.android.material.button.MaterialButtonToggleGroup
@@ -119,7 +120,8 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
             android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toTopOf="@id/verticalSpacer"
+            app:layout_constraintTop_toBottomOf="@id/verticalSpacer"
+            app:layout_constraintBottom_toTopOf="@id/diceCountChipGroup"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:selectionRequired="true"
@@ -213,10 +215,10 @@
             android:layout_marginVertical="@dimen/linear_vertical_margin"
             app:chipSpacingHorizontal="@dimen/chip_spacing"
             app:chipSpacingVertical="@dimen/chip_spacing"
-            app:flow_horizontalAlign="center"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/diceTypeSelection"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:selectionRequired="true"
             app:singleLine="false"
             app:singleSelection="true">

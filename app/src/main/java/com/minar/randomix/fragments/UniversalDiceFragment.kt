@@ -176,7 +176,7 @@ class UniversalDiceFragment : Fragment() {
             risikoLayout.visibility = View.VISIBLE
             // Lock the type selector: risiko is always D6
             diceTypeGroup.isEnabled = false
-            diceTypeGroup.alpha = 0.38f   // Material "disabled" opacity
+            diceTypeGroup.alpha = 0.38f
         } else {
             risikoLayout.visibility = View.GONE
             mainDiceImage.visibility = View.VISIBLE
@@ -228,19 +228,29 @@ class UniversalDiceFragment : Fragment() {
     private fun throwRisiko() {
         val results = List(6) { Random.nextInt(6) + 1 }
 
-        val dice = (1..6).map { i ->
-            requireView().findViewById<ImageView>(
-                resources.getIdentifier("diceButtonAnimation$i", "id", requireContext().packageName)
-            )
-        }
+        val diceViews = listOf(
+            R.id.diceButtonAnimation1,
+            R.id.diceButtonAnimation2,
+            R.id.diceButtonAnimation3,
+            R.id.diceButtonAnimation4,
+            R.id.diceButtonAnimation5,
+            R.id.diceButtonAnimation6,
+        ).map { requireView().findViewById<ImageView>(it) }
+
+        val diceDrawables = listOf(
+            R.drawable.dice_1_vector_animation,
+            R.drawable.dice_2_vector_animation,
+            R.drawable.dice_3_vector_animation,
+            R.drawable.dice_4_vector_animation,
+            R.drawable.dice_5_vector_animation,
+            R.drawable.dice_6_vector_animation,
+        )
+
         val vsAnim = requireView().findViewById<ImageView>(R.id.diceButtonAnimationVs)
 
         results.forEachIndexed { i, value ->
-            val resId = resources.getIdentifier(
-                "dice_${value}_vector_animation", "drawable", requireContext().packageName
-            )
-            dice[i].setImageResource(resId)
-            (dice[i].drawable as? Animatable)?.start()
+            diceViews[i].setImageResource(diceDrawables[value - 1])
+            (diceViews[i].drawable as? Animatable)?.start()
         }
         (vsAnim.drawable as? Animatable)?.start()
 

@@ -89,7 +89,7 @@ class RouletteBottomSheet(private val roulette: RouletteFragment) : BottomSheetD
         val callback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
             override fun onMove(rv: RecyclerView, vh: RecyclerView.ViewHolder, t: RecyclerView.ViewHolder) = false
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, swipeDir: Int) {
-                deleteRecent(viewHolder.adapterPosition, requireContext())
+                deleteRecent(viewHolder.bindingAdapterPosition, requireContext())
             }
         }
         return ItemTouchHelper(callback)

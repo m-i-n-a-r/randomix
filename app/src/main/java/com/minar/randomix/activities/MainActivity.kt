@@ -18,6 +18,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.preference.PreferenceManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.color.DynamicColors
+import com.google.android.material.navigation.NavigationBarView
 import com.minar.randomix.R
 import com.minar.randomix.utilities.AppRater
 
@@ -97,7 +98,7 @@ class MainActivity : AppCompatActivity() {
 
         val fragmentContainer =
             findViewById<androidx.fragment.app.FragmentContainerView>(R.id.navHostFragment)
-        val navigation = findViewById<BottomNavigationView>(R.id.navigation)
+        val navigation = findViewById<NavigationBarView>(R.id.navigation)
 
         ViewCompat.setOnApplyWindowInsetsListener(fragmentContainer) { view, insets ->
             val top = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top
@@ -105,10 +106,19 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        ViewCompat.setOnApplyWindowInsetsListener(navigation) { view, insets ->
-            val bottom = insets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom
-            view.setPadding(view.paddingLeft, view.paddingTop, view.paddingRight, bottom)
-            insets
+        if (navigation is BottomNavigationView) {
+            ViewCompat.setOnApplyWindowInsetsListener(navigation) { view, insets ->
+                val bottom = insets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom
+                view.setPadding(view.paddingLeft, view.paddingTop, view.paddingRight, bottom)
+                insets
+            }
+        } else {
+            ViewCompat.setOnApplyWindowInsetsListener(navigation) { view, insets ->
+                val top = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top
+                val left = insets.getInsets(WindowInsetsCompat.Type.displayCutout()).left
+                view.setPadding(left, top, view.paddingRight, view.paddingBottom)
+                insets
+            }
         }
 
         val navHostFragment =

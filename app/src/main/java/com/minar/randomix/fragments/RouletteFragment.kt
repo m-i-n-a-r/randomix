@@ -16,17 +16,21 @@ import android.view.ViewGroup
 import android.view.animation.AlphaAnimation
 import android.view.animation.AnimationUtils
 import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.SwitchCompat
+import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.minar.randomix.R
 import com.minar.randomix.activities.MainActivity
 import com.minar.randomix.utilities.Constants
@@ -47,6 +51,10 @@ class RouletteFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
     private lateinit var rangeMin: EditText
     private lateinit var rangeMax: EditText
     private lateinit var result: TextView
+    private lateinit var rangeSwitch: SwitchCompat
+    private lateinit var chipList: ChipGroup
+    private lateinit var rangeArea: LinearLayout
+    private lateinit var standardArea: LinearLayout
     private var sp: SharedPreferences? = null
 
     override fun onResume() {
@@ -60,6 +68,7 @@ class RouletteFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
 
     override fun onPause() {
         if (shakeEnabled) sensorManager.unregisterListener(sensorListener)
+        saveState()
         super.onPause()
     }
 
@@ -77,11 +86,11 @@ class RouletteFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
         rangeMin = v.findViewById(R.id.rangeMinRoulette)
         rangeMax = v.findViewById(R.id.rangeMaxRoulette)
         result = v.findViewById(R.id.resultRoulette)
-        val rangeSwitch = v.findViewById<SwitchCompat>(R.id.rangeSwitchRoulette)
-        val chipList = v.findViewById<ChipGroup>(R.id.rouletteChipList)
+        rangeSwitch = v.findViewById(R.id.rangeSwitchRoulette)
+        chipList = v.findViewById(R.id.rouletteChipList)
+        rangeArea = v.findViewById(R.id.rangeOptionRoulette)
+        standardArea = v.findViewById(R.id.textOptionRoulette)
         val range = v.findViewById<ImageView>(R.id.animatedRangeRoulette)
-        val rangeArea = v.findViewById<LinearLayout>(R.id.rangeOptionRoulette)
-        val standardArea = v.findViewById<LinearLayout>(R.id.textOptionRoulette)
 
         val animatedRange = range.drawable
         if (animatedRange is Animatable2) {
@@ -122,7 +131,44 @@ class RouletteFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
                 sensorListener = ShakeEventListener().also { it.setOnShakeListener(::mainThrow) }
             }
         }
+
         return v
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        restoreState()
+    }
+
+    private fun saveState() {
+        val currentMin = if (::rangeMin.isInitialized) rangeMin.text.toString() else ""
+        val currentMax = if (::rangeMax.isInitialized) rangeMax.text.toString() else ""
+        sp?.edit {
+            putBoolean("roulette_range_mode", inRangeMode)
+            putString("roulette_range_min", currentMin)
+            putString("roulette_range_max", currentMax)
+            putString("roulette_options", Gson().toJson(options))
+        }
+    }
+
+    private fun restoreState() {
+        val savedRangeMode = sp?.getBoolean("roulette_range_mode", false) ?: false
+        val savedMin = sp?.getString("roulette_range_min", "") ?: ""
+        val savedMax = sp?.getString("roulette_range_max", "") ?: ""
+        val savedOptionsJson = sp?.getString("roulette_options", null)
+
+        if (savedRangeMode) rangeSwitch.isChecked = true
+
+        if (savedMin.isNotEmpty()) rangeMin.setText(savedMin)
+        if (savedMax.isNotEmpty()) rangeMax.setText(savedMax)
+
+        if (!savedOptionsJson.isNullOrEmpty()) {
+            val savedOptions: List<String> = Gson().fromJson(
+                savedOptionsJson,
+                object : TypeToken<List<String>>() {}.type
+            ) ?: emptyList()
+            for (option in savedOptions) insertRouletteChip(option, false)
+        }
     }
 
     @SuppressLint("SetTextI18n")
@@ -182,9 +228,11 @@ class RouletteFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
     }
 
     private fun mainThrow() {
+        val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(requireView().windowToken, 0)
+
         val spinAnimation = requireView().findViewById<ImageView>(R.id.buttonSpinRoulette)
         val optionsList = requireView().findViewById<ChipGroup>(R.id.rouletteChipList)
-        val rangeSwitch = requireView().findViewById<SwitchCompat>(R.id.rangeSwitchRoulette)
         val recentAnimation = requireView().findViewById<ImageView>(R.id.recentButton)
 
         var minValue = -1; var maxValue = -1

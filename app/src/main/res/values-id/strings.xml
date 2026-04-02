@@ -18,8 +18,8 @@
     <string name="no_entry_roulette">Tolong, masukkan 2 atau lebih opsi untuk memutar roletnya!</string>
     <string name="too_much_entries_roulette">Anda tidak bisa memasukkan lebih dari 30 opsi</string>
     <string name="generic_option">Opsi</string>
-    <string name="recent_title">Recent options</string>
-    <string name="recent_description">Tap a chip to add a predefined set. Long press on a recent option set to pin it, tap to restore it or swipe to delete it.</string>
+    <string name="recent_title">Opsi terbaru</string>
+    <string name="recent_description">Ketuk chip untuk menambahkan kumpulan yang telah ditentukan. Tekan lama kumpulan opsi terbaru untuk menyematkannya, ketuk untuk memulihkannya atau geser untuk menghapusnya.</string>
     <string name="bottom_sheet_no_option">Tidak ada opsi terbaru, putar roletnya untuk menyimpan opsi terbaru!</string>
     <string name="letters_shortcut">Huruf A-Z</string>
     <string name="range">Jangkauan</string>
@@ -79,7 +79,7 @@
     <string name="insert_answer_hint">Insert an answer…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Mode Dadu</string>
-    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number and type below. Good luck!</string>
+    <string name="description_dice">Dadu bisa berguna, di permainan meja misalnya! Aplikasi ini akan melempar satu hingga sepuluh dadu untuk Anda. Pilih jumlah dadunya dari Pengaturan. Semoga berhasil!</string>
     <string name="throw_dice">Lempar dadunya!</string>
     <string name="hint_dice">Tekan tombol di bawah ini!</string>
     <!-- Settings -->

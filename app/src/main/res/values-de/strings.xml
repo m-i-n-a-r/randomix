@@ -18,8 +18,8 @@
     <string name="no_entry_roulette">Bitte, gib zwei oder mehr Optionen ein um das Roulette zu drehen!</string>
     <string name="too_much_entries_roulette">Du kannst nicht mehr als 30 Optionen eingeben!</string>
     <string name="generic_option">Optionen</string>
-    <string name="recent_title">Recent options</string>
-    <string name="recent_description">Tap a chip to add a predefined set. Long press on a recent option set to pin it, tap to restore it or swipe to delete it.</string>
+    <string name="recent_title">Letzte Optionen</string>
+    <string name="recent_description">Tippe auf einen Chip, um einen vordefinierten Satz hinzuzufügen. Halte einen kürzlich verwendeten Optionssatz gedrückt, um ihn anzuheften, tippe zum Wiederherstellen oder wische zum Löschen.</string>
     <string name="bottom_sheet_no_option">Keine letzten Optionen, drehe das Roulette um die aktuellen Optionen zu speichern!</string>
     <string name="letters_shortcut">Buchstaben von A-Z</string>
     <string name="range">Bereich</string>
@@ -79,7 +79,7 @@
     <string name="insert_answer_hint">Eine Antwort einfügen…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Würfel Modus</string>
-    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number and type below. Good luck!</string>
+    <string name="description_dice">Würfel kann zum Beispiel nützlich sein, in einem Tischspiel! Die App wirft ein bis zehn Würfel. Wähle die Nummer und tippe unten. Viel Glück!</string>
     <string name="throw_dice">Wirf die Würfel!</string>
     <string name="hint_dice">Drücke den Knopf unten!</string>
     <!-- Settings -->

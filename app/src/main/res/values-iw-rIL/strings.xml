@@ -18,7 +18,8 @@
     <string name="no_entry_roulette">אנא, הזן 2 אפשרויות או יותר כדי לסובב את הרולטה!</string>
     <string name="too_much_entries_roulette">אתה לא יכול להזין יותר מ- 30 אפשרויות!</string>
     <string name="generic_option">אפשרות</string>
-    <string name="recent_title">אפשרויות אחרונות, הקש כדי לשחזר</string>
+    <string name="recent_title">Recent options</string>
+    <string name="recent_description">Tap a chip to add a predefined set. Long press on a recent option set to pin it, tap to restore it or swipe to delete it.</string>
     <string name="bottom_sheet_no_option">אין אפשרות אחרונה, סובב את הרולטה כדי לשמור את האפשרויות הנוכחיות!</string>
     <string name="letters_shortcut">אותיות A-Z</string>
     <string name="range">טווח</string>
@@ -78,7 +79,7 @@
     <string name="insert_answer_hint">הוסף תשובה…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">מצב קוביות</string>
-    <string name="description_dice">קוביות יכולות להיות שימושיות, במשחק שולחן למשל! האפליקציה תזרוק עבורכם קובייה מאחת עד עשר. בחר את המספר בהגדרות. בהצלחה!</string>
+    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number and type below. Good luck!</string>
     <string name="throw_dice">זרוק קוביה!</string>
     <string name="hint_dice">לחץ על הכפתור למטה!</string>
     <!-- Settings -->
@@ -149,6 +150,4 @@
     <string name="not_again_button">אל תשאל שוב</string>
     <string name="translate_app">עזור לתרם את היישום</string>
     <!-- Universal Dice Fragment -->
-    <string name="label_dice_type">Dice type</string>
-    <string name="label_dice_count">Number of dice</string>
 </resources>

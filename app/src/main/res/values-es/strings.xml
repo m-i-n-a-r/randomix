@@ -18,8 +18,8 @@
     <string name="no_entry_roulette">¡Por favor, ingrese 2 o más opciones para girar la ruleta!</string>
     <string name="too_much_entries_roulette">¡No puedes ingresar más de 30 opciones!</string>
     <string name="generic_option">Opción</string>
-    <string name="recent_title">Recent options</string>
-    <string name="recent_description">Tap a chip to add a predefined set. Long press on a recent option set to pin it, tap to restore it or swipe to delete it.</string>
+    <string name="recent_title">Opciones recientes</string>
+    <string name="recent_description">Toque una ficha para agregar un conjunto predefinido. Pulsación larga en una opción reciente configurada para fijarla, tocar para restaurarla o deslizar para eliminarla.</string>
     <string name="bottom_sheet_no_option">Sin opción reciente, ¡gire la ruleta para guardar las opciones actuales!</string>
     <string name="letters_shortcut">Letras A-Z</string>
     <string name="range">Rango</string>
@@ -79,7 +79,7 @@
     <string name="insert_answer_hint">Inserte una respuesta…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Modo dado</string>
-    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number and type below. Good luck!</string>
+    <string name="description_dice">Dice puede ser útil, en un juego de mesa, por ejemplo! La aplicación te lanzará uno a diez dados. Selecciona el número y escribe debajo. ¡Buena suerte!</string>
     <string name="throw_dice">¡Tira los dados!</string>
     <string name="hint_dice">¡Presione el botón de abajo!</string>
     <!-- Settings -->

@@ -18,8 +18,8 @@
     <string name="no_entry_roulette">Будь ласка, введіть 2 або більше варіантів, щоб крутити рулетку!</string>
     <string name="too_much_entries_roulette">Ви не можете ввести більше ніж 30 варіантів!</string>
     <string name="generic_option">Варіант</string>
-    <string name="recent_title">Recent options</string>
-    <string name="recent_description">Tap a chip to add a predefined set. Long press on a recent option set to pin it, tap to restore it or swipe to delete it.</string>
+    <string name="recent_title">Останні варіанти</string>
+    <string name="recent_description">Торкніться чіпа, щоб додати попередньо визначений набір. Натисніть і утримуйте останній набір параметрів, щоб закріпити його, торкніться для відновлення або проведіть для видалення.</string>
     <string name="bottom_sheet_no_option">Немає останніх варіантів, крутіть рулетку, щоб зберегти поточні варіанти!</string>
     <string name="letters_shortcut">Літери А-Z</string>
     <string name="range">Діапазон</string>
@@ -80,7 +80,7 @@
     <string name="insert_answer_hint">Вставити відповідь…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Режим костей</string>
-    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number and type below. Good luck!</string>
+    <string name="description_dice">Кості можуть бути корисні, наприклад, у настільній грі! Застосунок кине від одного до десяти кубиків для вас. Виберіть число в налаштуваннях. Хай щастить!</string>
     <string name="throw_dice">Киньте кості!</string>
     <string name="hint_dice">Натисніть на кнопку нижче!</string>
     <!-- Settings -->

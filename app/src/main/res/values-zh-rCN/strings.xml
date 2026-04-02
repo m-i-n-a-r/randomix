@@ -18,8 +18,8 @@
     <string name="no_entry_roulette">请至少加入两个选项来转动轮盘！</string>
     <string name="too_much_entries_roulette">你不能添加多于30个选项！</string>
     <string name="generic_option">选项</string>
-    <string name="recent_title">Recent options</string>
-    <string name="recent_description">Tap a chip to add a predefined set. Long press on a recent option set to pin it, tap to restore it or swipe to delete it.</string>
+    <string name="recent_title">最近的选项组</string>
+    <string name="recent_description">点击选项卡以添加预定义集合。长按最近的选项集合可将其固定，点击可恢复，滑动可删除。</string>
     <string name="bottom_sheet_no_option">没有最近的选项组，转动轮盘来保存当前的选项组！</string>
     <string name="letters_shortcut">A-Z字母</string>
     <string name="range">范围</string>
@@ -79,7 +79,7 @@
     <string name="insert_answer_hint">输入一个答案……</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">骰子模式</string>
-    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number and type below. Good luck!</string>
+    <string name="description_dice">在桌面游戏中，恐怕很有用！这个应用会为你扔出一只十个细胞。 选择下面的号码和类型。祝您好运！</string>
     <string name="throw_dice">掷骰子！</string>
     <string name="hint_dice">点击下方的按钮</string>
     <!-- Settings -->

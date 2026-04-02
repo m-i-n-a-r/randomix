@@ -18,8 +18,8 @@
     <string name="no_entry_roulette">Voer a.u.b. 2 of meer opties in om de roulette te draaien!</string>
     <string name="too_much_entries_roulette">Je kan niet meer dan 30 opties invoeren!</string>
     <string name="generic_option">Optie</string>
-    <string name="recent_title">Recent options</string>
-    <string name="recent_description">Tap a chip to add a predefined set. Long press on a recent option set to pin it, tap to restore it or swipe to delete it.</string>
+    <string name="recent_title">Recente opties</string>
+    <string name="recent_description">Tik op een chip om een vooraf gedefinieerde set toe te voegen. Houd een recente optieset ingedrukt om hem vast te zetten, tik om hem te herstellen of veeg om hem te verwijderen.</string>
     <string name="bottom_sheet_no_option">Geen recente optie, draai de roulette om de huidige opties op te slaan!</string>
     <string name="letters_shortcut">A-Z Letters</string>
     <string name="range">Bereik</string>
@@ -79,7 +79,7 @@
     <string name="insert_answer_hint">Voeg een antwoord toe…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Dobbelsteen modus</string>
-    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number and type below. Good luck!</string>
+    <string name="description_dice">Dice kan nuttig zijn, bijvoorbeeld in een tafelspel! De app zal er één naar tien dobbelstenen voor je gooien. Selecteer het nummer en type hieronder. Veel succes!</string>
     <string name="throw_dice">Gooi de dobbelstenen!</string>
     <string name="hint_dice">Druk op de knop hieronder!</string>
     <!-- Settings -->

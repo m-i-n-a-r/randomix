@@ -148,4 +148,7 @@
     <string name="feedback_text">我有一些事情要告诉你</string>
     <string name="not_again_button">别再问我了</string>
     <string name="translate_app">翻译此应用</string>
+    <!-- Universal Dice Fragment -->
+    <string name="label_dice_type">Dice type</string>
+    <string name="label_dice_count">Number of dice</string>
 </resources>

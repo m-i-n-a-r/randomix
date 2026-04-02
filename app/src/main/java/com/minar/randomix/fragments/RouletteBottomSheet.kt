@@ -57,6 +57,12 @@ class RouletteBottomSheet(private val roulette: RouletteFragment) : BottomSheetD
             val numbers = (0..100).map { it.toString() }.toMutableList()
             roulette.restoreOption(numbers)
         }
+        v.findViewById<Chip>(R.id.cardsChip).setOnClickListener {
+            val suits = listOf("♠", "♥", "♦", "♣")
+            val values = listOf("A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K")
+            val deck = suits.flatMap { suit -> values.map { value -> "$value$suit" } }.toMutableList()
+            roulette.restoreOption(deck)
+        }
         return v
     }
 

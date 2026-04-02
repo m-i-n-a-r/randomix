@@ -13,6 +13,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
+import com.google.android.material.snackbar.Snackbar
 import com.minar.randomix.R
 import com.minar.randomix.activities.MainActivity
 import com.minar.randomix.utilities.ShakeEventListener
@@ -26,6 +27,7 @@ class CoinFragment : Fragment(), View.OnClickListener {
     private lateinit var sensorListener: ShakeEventListener
     private var notFirstFlip = false
     private var lastResult = false
+    private var streakCount = 0
 
     override fun onResume() {
         super.onResume()
@@ -41,7 +43,11 @@ class CoinFragment : Fragment(), View.OnClickListener {
         super.onPause()
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         val v = inflater.inflate(R.layout.fragment_coin, container, false)
         val sp = PreferenceManager.getDefaultSharedPreferences(requireContext())
 
@@ -106,23 +112,62 @@ class CoinFragment : Fragment(), View.OnClickListener {
         val n = Random().nextInt(2)
         val resId: Int
         val result: String
+        val isHead: Boolean
 
         if (n == 1) {
             resId = R.drawable.coin_head_vector_animation
             result = resultHead
-            lastResult = true
+            isHead = true
         } else {
             resId = R.drawable.coin_tail_vector_animation
             result = resultTail
-            lastResult = false
+            isHead = false
         }
+
+        if (notFirstFlip && isHead == lastResult) streakCount++ else streakCount = 1
+        lastResult = isHead
 
         coinAnimation.setImageResource(resId)
         (coinAnimation.drawable as? Animatable)?.start()
 
+        val currentStreak = streakCount
         requireView().postDelayed({
             textViewResult.text = result
             textViewResult.startAnimation(animOut)
+            when (currentStreak) {
+                3 -> {
+                    Snackbar.make(
+                        requireView(),
+                        "🔥 Three in a row!",
+                        Snackbar.LENGTH_LONG
+                    ).show()
+                }
+
+                5 -> {
+                    Snackbar.make(requireView(), "🤯 FIVE IN A ROW!", Snackbar.LENGTH_LONG)
+                        .show()
+                }
+
+                10 -> {
+                    Snackbar.make(
+                        requireView(),
+                        "TEN? Seriously? Are you mad bro?",
+                        Snackbar.LENGTH_LONG
+                    )
+                        .show()
+                }
+
+                20 -> {
+                    Snackbar.make(
+                        requireView(),
+                        "This is literally impossible. It won't happen. No. Way. You can only" +
+                                " see this part of the easter egg in the source code. And if you " +
+                                "see this: star the repo!",
+                        Snackbar.LENGTH_LONG
+                    )
+                        .show()
+                }
+            }
         }, 1500)
     }
 

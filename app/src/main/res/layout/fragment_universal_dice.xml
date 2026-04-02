@@ -99,9 +99,9 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
             android:layout_marginVertical="@dimen/chip_spacing"
-            app:chipSpacingHorizontal="@dimen/chip_spacing"
             android:clipChildren="false"
             android:clipToPadding="false"
+            app:chipSpacingHorizontal="@dimen/chip_spacing"
             app:chipSpacingVertical="@dimen/chip_spacing"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -111,9 +111,9 @@
             android:id="@+id/verticalSpacer"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/diceTypeSelection"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/diceTypeSelection"
             app:layout_constraintTop_toBottomOf="@id/diceResultCards" />
 
         <com.google.android.material.button.MaterialButtonToggleGroup
@@ -122,10 +122,10 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@id/verticalSpacer"
             app:layout_constraintBottom_toTopOf="@id/diceCountChipGroup"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/verticalSpacer"
             app:selectionRequired="true"
             app:singleSelection="true">
 
@@ -212,17 +212,18 @@
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/diceCountChipGroup"
             android:layout_width="wrap_content"
-            android:clipChildren="false"
-            android:clipToPadding="false"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
             android:layout_marginVertical="@dimen/linear_vertical_margin"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:gravity="center"
             app:chipSpacingHorizontal="@dimen/chip_spacing"
             app:chipSpacingVertical="@dimen/chip_spacing"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/diceTypeSelection"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:selectionRequired="true"
             app:singleLine="false"
             app:singleSelection="true">

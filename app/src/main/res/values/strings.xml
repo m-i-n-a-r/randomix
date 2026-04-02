@@ -23,7 +23,8 @@
     <string name="no_entry_roulette">Please, enter 2 or more options to spin the roulette!</string>
     <string name="too_much_entries_roulette">You can\'t enter more than 30 options!</string>
     <string name="generic_option">Option</string>
-    <string name="recent_title">Recent options, tap to restore</string>
+    <string name="recent_title">Recent options</string>
+    <string name="recent_description">Tap a chip to add a predefined set. Long press on a recent option set to pin it, tap to restore it or swipe to delete it.</string>
     <string name="bottom_sheet_no_option">No recent option, spin the roulette to save the current options!</string>
     <string name="letters_shortcut">A-Z Letters</string>
     <string name="numbers_1_100_shortcut" translatable="false">1–100</string>
@@ -89,7 +90,7 @@
 
     <!-- Dice -->
     <string name="hello_dice_fragment">Dice mode</string>
-    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number from settings. Good luck!</string>
+    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number and type below. Good luck!</string>
     <string name="throw_dice">Throw the dice!</string>
     <string name="hint_dice">Press the button below!</string>
 
@@ -164,9 +165,6 @@
     <string name="shake_name">Shake to launch</string>
     <string name="shake_description_on">Shaking the device will act like the center button</string>
     <string name="shake_description_off">Shaking the device won\'t have any effect</string>
-    <string name="hide_on_scroll_title">Hide navbar on scroll</string>
-    <string name="hide_on_scroll_description_on">Hide the bottom navbar when you scroll</string>
-    <string name="hide_on_scroll_description_off">The bottom navbar will always be visible</string>
 
     <!-- Rate app dialog, misc -->
     <string name="review">Review!</string>
@@ -179,8 +177,6 @@
     <string name="translate_app">Translate the app</string>
 
     <!-- Universal Dice Fragment -->
-    <string name="label_dice_type">Dice type</string>
-    <string name="label_dice_count">Number of dice</string>
     <string name="dice_d4"  translatable="false">D4</string>
     <string name="dice_d6"  translatable="false">D6</string>
     <string name="dice_d8"  translatable="false">D8</string>

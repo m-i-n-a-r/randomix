@@ -13,15 +13,6 @@
 
         <SwitchPreferenceCompat
             android:defaultValue="false"
-            android:key="hide_scroll"
-            android:summaryOff="@string/hide_on_scroll_description_off"
-            android:summaryOn="@string/hide_on_scroll_description_on"
-            android:title="@string/hide_on_scroll_title"
-            android:widgetLayout="@layout/preference_switch_widget"
-            app:iconSpaceReserved="false" />
-
-        <SwitchPreferenceCompat
-            android:defaultValue="false"
             android:key="shake"
             android:summaryOff="@string/shake_description_off"
             android:summaryOn="@string/shake_description_on"

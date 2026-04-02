@@ -20,7 +20,7 @@
         <!-- configChanges tells the system to not execute onDestroy() and onCreate() when split screen is triggered or resized -->
         <activity
             android:name=".activities.MainActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
+            android:configChanges="keyboardHidden|screenSize|screenLayout"
             android:exported="true"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>

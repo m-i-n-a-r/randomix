@@ -8,17 +8,14 @@ import android.os.Vibrator
 import android.os.VibratorManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.edit
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.updatePadding
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
 import androidx.preference.PreferenceManager
-import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.color.DynamicColors
 import com.minar.randomix.R
@@ -27,12 +24,10 @@ import com.minar.randomix.utilities.AppRater
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Edge-to-edge: let content draw behind status bar and navigation bar
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
         val sp = PreferenceManager.getDefaultSharedPreferences(this)
 
-        // First-launch: set defaults and show intro
         if (!sp.getBoolean("first", false)) {
             sp.edit {
                 putString(
@@ -53,7 +48,6 @@ class MainActivity : AppCompatActivity() {
         val theme    = sp.getString("theme_color",  "system")  ?: "system"
         val lastItem = sp.getString("last_page",    "roulette") ?: "roulette"
 
-        // Night mode
         AppCompatDelegate.setDefaultNightMode(
             when (theme) {
                 "light"          -> AppCompatDelegate.MODE_NIGHT_NO
@@ -62,7 +56,6 @@ class MainActivity : AppCompatActivity() {
             }
         )
 
-        // Theme
         setTheme(
             if (theme == "black") when (accent) {
                 "monet"     -> R.style.AppTheme_Monet_PerfectDark
@@ -100,38 +93,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Monet dynamic colors
         if (accent == "monet") DynamicColors.applyToActivityIfAvailable(this)
 
         val fragmentContainer =
             findViewById<androidx.fragment.app.FragmentContainerView>(R.id.navHostFragment)
-        val bottomBar = findViewById<BottomAppBar>(R.id.bottomBar)
         val navigation = findViewById<BottomNavigationView>(R.id.navigation)
-        val hideOnScroll = sp.getBoolean("hide_scroll", false)
 
-        // Insets
         ViewCompat.setOnApplyWindowInsetsListener(fragmentContainer) { view, insets ->
             val top = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top
             view.setPadding(view.paddingLeft, top, view.paddingRight, view.paddingBottom)
             insets
         }
 
-        ViewCompat.setOnApplyWindowInsetsListener(bottomBar) { view, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(navigation) { view, insets ->
             val bottom = insets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom
             view.setPadding(view.paddingLeft, view.paddingTop, view.paddingRight, bottom)
             insets
         }
-
-        if (!hideOnScroll) {
-            bottomBar.addOnLayoutChangeListener { v, _, _, _, _, _, _, _, _ ->
-                fragmentContainer.updatePadding(bottom = v.height)
-            }
-        } else {
-            bottomBar.hideOnScroll = true
-            fragmentContainer.updatePadding(bottom = 0)
-        }
-
-        // Navigation controller
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
@@ -161,9 +139,8 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-        navigation.setOnItemReselectedListener { /* no-op */ }
+        navigation.setOnItemReselectedListener { }
 
-        // Restore last tab
         when (lastItem) {
             "coin"      -> navigation.selectedItemId = R.id.navigationCoin
             "dice"      -> navigation.selectedItemId = R.id.navigationDice
@@ -173,8 +150,6 @@ class MainActivity : AppCompatActivity() {
 
         AppRater.appLaunched(this)
     }
-
-    // ── Utility helpers called from fragments ─────────────────────────────────
 
     fun vibrate() {
         val sp = PreferenceManager.getDefaultSharedPreferences(this)

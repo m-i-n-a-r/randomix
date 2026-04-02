@@ -72,10 +72,10 @@
     <string name="magic_answer_rude_4">Лол! Како тупаво.</string>
     <string name="magic_answer_rude_5">Полудио си.</string>
     <string name="magic_answer_rude_6">Иди у пакао.</string>
-    <string name="no_answers_magic_ball">No custom answers. Add one from the above text field. You can delete them by tapping on them.</string>
-    <string name="custom_answers">Custom answers</string>
-    <string name="use_custom_answers">Use custom answers</string>
-    <string name="insert_answer_hint">Insert an answer…</string>
+    <string name="no_answers_magic_ball">Нема прилагођених одговора. Додајте један из горњег текстуалног поља. Можете их обрисати тако што ћете их додирнути.</string>
+    <string name="custom_answers">Прилагођени одговори</string>
+    <string name="use_custom_answers">Користите прилагођене одговоре</string>
+    <string name="insert_answer_hint">Убаците одговор…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Мод за коцке</string>
     <string name="description_dice">Коцке могу бити корисне, на столној игри например! Апликација ће једну до десет коцких за вас бацити. Одаберите количину у подешавањима. Сретно!</string>
@@ -147,4 +147,7 @@
     <string name="feedback_text">Морам ти нешто рећи</string>
     <string name="not_again_button">Никад ме више то не питај</string>
     <string name="translate_app">Преведите апликацију</string>
+    <!-- Universal Dice Fragment -->
+    <string name="label_dice_type">Dice type</string>
+    <string name="label_dice_count">Number of dice</string>
 </resources>

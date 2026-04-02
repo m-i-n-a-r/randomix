@@ -148,4 +148,7 @@
     <string name="feedback_text">Musím ti něco říct</string>
     <string name="not_again_button">Už se nikdy neptat</string>
     <string name="translate_app">Přelož aplikaci</string>
+    <!-- Universal Dice Fragment -->
+    <string name="label_dice_type">Dice type</string>
+    <string name="label_dice_count">Number of dice</string>
 </resources>

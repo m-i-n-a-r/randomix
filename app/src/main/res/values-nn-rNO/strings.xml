@@ -18,7 +18,8 @@
     <string name="no_entry_roulette">Please, enter 2 or more options to spin the roulette!</string>
     <string name="too_much_entries_roulette">You can\'t enter more than 30 options!</string>
     <string name="generic_option">Option</string>
-    <string name="recent_title">Recent options, tap to restore</string>
+    <string name="recent_title">Recent options</string>
+    <string name="recent_description">Tap a chip to add a predefined set. Long press on a recent option set to pin it, tap to restore it or swipe to delete it.</string>
     <string name="bottom_sheet_no_option">No recent option, spin the roulette to save the current options!</string>
     <string name="letters_shortcut">A-Z Letters</string>
     <string name="range">Range</string>
@@ -78,7 +79,7 @@
     <string name="insert_answer_hint">Insert an answer…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Dice mode</string>
-    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number from settings. Good luck!</string>
+    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number and type below. Good luck!</string>
     <string name="throw_dice">Throw the dice!</string>
     <string name="hint_dice">Press the button below!</string>
     <!-- Settings -->
@@ -149,6 +150,4 @@
     <string name="not_again_button">Never ask again</string>
     <string name="translate_app">Translate the app</string>
     <!-- Universal Dice Fragment -->
-    <string name="label_dice_type">Dice type</string>
-    <string name="label_dice_count">Number of dice</string>
 </resources>

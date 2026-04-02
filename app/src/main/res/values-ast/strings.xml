@@ -18,7 +18,8 @@
     <string name="no_entry_roulette">¡Introduz 2 o más opciones pa xirar la ruleta!</string>
     <string name="too_much_entries_roulette">¡Nun pues introducir más de 30 opciones!</string>
     <string name="generic_option">Opción</string>
-    <string name="recent_title">Opciones de recién, toca pa restaurales</string>
+    <string name="recent_title">Recent options</string>
+    <string name="recent_description">Tap a chip to add a predefined set. Long press on a recent option set to pin it, tap to restore it or swipe to delete it.</string>
     <string name="bottom_sheet_no_option">Nun hai nenguna opción recién. ¡Xira la ruleta pa guardar les opciones actuales!</string>
     <string name="letters_shortcut">De l\'A a la Z</string>
     <string name="range">Intervalu</string>
@@ -79,7 +80,7 @@
     <string name="insert_answer_hint">Inxerta una rempuesta…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Mou de dau</string>
-    <string name="description_dice">El dau pue ser útil, por exemplu, nun xuegu de mesa. L\'aplicación va tirar el númberu de daos qu\'esbilles nos axustes (de 1 a 10). ¡Bona suerte!</string>
+    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number and type below. Good luck!</string>
     <string name="throw_dice">¡Tira\'l dau!</string>
     <string name="hint_dice">¡Primi\'l botón d\'abaxo!</string>
     <!-- Settings -->
@@ -150,6 +151,4 @@
     <string name="not_again_button">Nun volver entrugar</string>
     <string name="translate_app">Traducir l\'app</string>
     <!-- Universal Dice Fragment -->
-    <string name="label_dice_type">Dice type</string>
-    <string name="label_dice_count">Number of dice</string>
 </resources>

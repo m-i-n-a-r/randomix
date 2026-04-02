@@ -18,8 +18,8 @@
     <string name="no_entry_roulette">Ajouter 2 options ou plus pour lancer la roulette</string>
     <string name="too_much_entries_roulette">Vous ne pouvez pas entrer plus de 30 options !</string>
     <string name="generic_option">Options</string>
-    <string name="recent_title">Recent options</string>
-    <string name="recent_description">Tap a chip to add a predefined set. Long press on a recent option set to pin it, tap to restore it or swipe to delete it.</string>
+    <string name="recent_title">Options récentes</string>
+    <string name="recent_description">Appuyez sur une puce pour ajouter un ensemble prédéfini. Appuyez longuement sur un ensemble d\'options récent pour l\'épingler, appuyez pour le restaurer ou faites glisser pour le supprimer.</string>
     <string name="bottom_sheet_no_option">Pas d\'otions récentes, tournez la roulette pour sauvegarder les options actuelles</string>
     <string name="letters_shortcut">Lettres A-Z</string>
     <string name="range">Varier</string>
@@ -79,7 +79,7 @@
     <string name="insert_answer_hint">Insérer une réponse…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Dé</string>
-    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number and type below. Good luck!</string>
+    <string name="description_dice">Les dés peuvent être utiles, dans un jeu de table par exemple ! L\'application lancera un à dix dés pour vous. Sélectionnez le nombre et tapez ci-dessous. Bonne chance !</string>
     <string name="throw_dice">Lancer les dés</string>
     <string name="hint_dice">Appuyer sur le bouton ci-dessous</string>
     <!-- Settings -->

@@ -18,7 +18,8 @@
     <string name="no_entry_roulette">請至少加入兩個選項來轉動輪盤！ </string>
     <string name="too_much_entries_roulette">你不能新增多於30個選項！ </string>
     <string name="generic_option">選項</string>
-    <string name="recent_title">最近的選項組，點按以恢復</string>
+    <string name="recent_title">Recent options</string>
+    <string name="recent_description">Tap a chip to add a predefined set. Long press on a recent option set to pin it, tap to restore it or swipe to delete it.</string>
     <string name="bottom_sheet_no_option">沒有最近的選項組，轉動輪盤來保存當前的選項組！ </string>
     <string name="letters_shortcut">A-Z 字母</string>
     <string name="range">範圍</string>
@@ -78,7 +79,7 @@
     <string name="insert_answer_hint">Insert an answer…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">骰子模式</string>
-    <string name="description_dice">骰子在某些場合如在桌遊中很有用！這個程式可為你扔一到十個骰子，在設定中調整骰子的數量。祝你好運！ </string>
+    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number and type below. Good luck!</string>
     <string name="throw_dice">擲骰子！ </string>
     <string name="hint_dice">點擊下方的按鈕</string>
     <!-- Settings -->
@@ -149,6 +150,4 @@
     <string name="not_again_button">別再問我了</string>
     <string name="translate_app">翻譯應用程式</string>
     <!-- Universal Dice Fragment -->
-    <string name="label_dice_type">Dice type</string>
-    <string name="label_dice_count">Number of dice</string>
 </resources>

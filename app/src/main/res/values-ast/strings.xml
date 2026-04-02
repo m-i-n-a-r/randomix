@@ -19,6 +19,7 @@
     <string name="too_much_entries_roulette">¡Nun pues introducir más de 30 opciones!</string>
     <string name="generic_option">Opción</string>
     <string name="recent_title">Opciones de recién, toca pa restaurales</string>
+    <string name="recent_description">Toca un chip pa amestar un conxuntu predefiníu. Mantén pulsáu un conxuntu d\'opciones recientes pa fixalu, tócalu pa restauralu oeslízalu pa desanicialu.</string>
     <string name="bottom_sheet_no_option">Nun hai nenguna opción recién. ¡Xira la ruleta pa guardar les opciones actuales!</string>
     <string name="letters_shortcut">De l\'A a la Z</string>
     <string name="range">Intervalu</string>
@@ -150,6 +151,4 @@
     <string name="not_again_button">Nun volver entrugar</string>
     <string name="translate_app">Traducir l\'app</string>
     <!-- Universal Dice Fragment -->
-    <string name="label_dice_type">Dice type</string>
-    <string name="label_dice_count">Number of dice</string>
 </resources>

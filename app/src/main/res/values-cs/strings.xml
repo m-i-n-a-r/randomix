@@ -18,7 +18,8 @@
     <string name="no_entry_roulette">Chcete-li ruletu roztočit, zadejte 2 nebo více možností!</string>
     <string name="too_much_entries_roulette">Nemůžete zadat více než 30 možností!</string>
     <string name="generic_option">Možnost</string>
-    <string name="recent_title">Poslední možnosti obnovíte klepnutím</string>
+    <string name="recent_title">Možnosti Nedávných</string>
+    <string name="recent_description">Klepnutím na čip přidáte předdefinovanou sadu. Dlouhým stiskem nedávné sady možností ji připnete, klepnutím ji obnovíte nebo přejetím odstraníte.</string>
     <string name="bottom_sheet_no_option">Žádná nedávná možnost, aktuální možnosti uložíte roztočením rulety!</string>
     <string name="letters_shortcut">A-Z písmena</string>
     <string name="range">Rozsah</string>
@@ -149,6 +150,4 @@
     <string name="not_again_button">Už se nikdy neptat</string>
     <string name="translate_app">Přelož aplikaci</string>
     <!-- Universal Dice Fragment -->
-    <string name="label_dice_type">Dice type</string>
-    <string name="label_dice_count">Number of dice</string>
 </resources>

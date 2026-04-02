@@ -18,7 +18,8 @@
     <string name="no_entry_roulette">Per favore, inserisci almeno due opzioni per girare la roulette!</string>
     <string name="too_much_entries_roulette">Non puoi inserire più di 30 opzioni!</string>
     <string name="generic_option">Opzione</string>
-    <string name="recent_title">Opzioni recenti, tocca per ripristinare</string>
+    <string name="recent_title">Opzioni recenti</string>
+    <string name="recent_description">Tocca un chip per aggiungere un set predefinito. Premi a lungo su un\'opzione recente impostata per bloccarla, tocca per ripristinarla o scorri per eliminarla.</string>
     <string name="bottom_sheet_no_option">Nessuna opzione recente, gira la roulette per salvare le opzioni correnti!</string>
     <string name="letters_shortcut">Lettere A-Z</string>
     <string name="range">Intervallo</string>
@@ -78,7 +79,7 @@
     <string name="insert_answer_hint">Inserisci una risposta…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Modalità dado</string>
-    <string name="description_dice">Un dado può essere utile, ad esempio in un gioco da tavola! L\'app ne lancerà da uno a dieci per te. Seleziona il numero dalle impostazioni. Buona fortuna!</string>
+    <string name="description_dice">Un dado può essere utile, ad esempio in un gioco da tavola! L\'app ne lancerà da uno a dieci per te. Seleziona il numero e il tipo di dado qui sotto. Buona fortuna!</string>
     <string name="throw_dice">Tira il dado!</string>
     <string name="hint_dice">Premi il bottone sotto!</string>
     <!-- Settings -->
@@ -149,6 +150,4 @@
     <string name="not_again_button">Non chiedere più</string>
     <string name="translate_app">Traduci l\'app</string>
     <!-- Universal Dice Fragment -->
-    <string name="label_dice_type">Dice type</string>
-    <string name="label_dice_count">Number of dice</string>
 </resources>

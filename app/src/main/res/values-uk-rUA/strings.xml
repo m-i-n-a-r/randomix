@@ -18,7 +18,8 @@
     <string name="no_entry_roulette">Будь ласка, введіть 2 або більше варіантів, щоб крутити рулетку!</string>
     <string name="too_much_entries_roulette">Ви не можете ввести більше ніж 30 варіантів!</string>
     <string name="generic_option">Варіант</string>
-    <string name="recent_title">Останні варіанти, натисніть, щоб відновити</string>
+    <string name="recent_title">Останні варіанти</string>
+    <string name="recent_description">Торкніться чіпа, щоб додати попередньо визначений набір. Натисніть і утримуйте останній набір параметрів, щоб закріпити його, торкніться для відновлення або проведіть для видалення.</string>
     <string name="bottom_sheet_no_option">Немає останніх варіантів, крутіть рулетку, щоб зберегти поточні варіанти!</string>
     <string name="letters_shortcut">Літери А-Z</string>
     <string name="range">Діапазон</string>
@@ -150,6 +151,4 @@
     <string name="not_again_button">Ніколи більше не питайте</string>
     <string name="translate_app">Перекладіть застосунок</string>
     <!-- Universal Dice Fragment -->
-    <string name="label_dice_type">Dice type</string>
-    <string name="label_dice_count">Number of dice</string>
 </resources>

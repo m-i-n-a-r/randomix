@@ -18,7 +18,8 @@
     <string name="no_entry_roulette">Por favor, digite 2 ou mais opções para girar a roleta!</string>
     <string name="too_much_entries_roulette">Você não pode inserir mais de 30 opções!</string>
     <string name="generic_option">Opções</string>
-    <string name="recent_title">Opções recentes, clique para restaurar</string>
+    <string name="recent_title">Opções recentes</string>
+    <string name="recent_description">Toque num chip para adicionar um conjunto predefinido. Prima longamente um conjunto de opções recente para o fixar, toque para o restaurar ou deslize para o eliminar.</string>
     <string name="bottom_sheet_no_option">Nenhuma opção recente, gire a roleta para salvar as opções atuais!</string>
     <string name="letters_shortcut">Letras A-Z</string>
     <string name="range">Intervalo</string>
@@ -78,7 +79,7 @@
     <string name="insert_answer_hint">Insira uma resposta…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Modo dado</string>
-    <string name="description_dice">Os dados podem ser úteis, em um jogo de mesa, por exemplo! O aplicativo lançará de um a dez dados para você. Selecione o número nas configurações. Boa sorte!</string>
+    <string name="description_dice">Os dados podem ser úteis, num jogo de mesas, por exemplo! O aplicativo lançará um a dez dados para você. Selecione o número e o tipo abaixo. Boa sorte!</string>
     <string name="throw_dice">Jogue os dados!</string>
     <string name="hint_dice">Aperte o botão abaixo!</string>
     <!-- Settings -->
@@ -149,6 +150,4 @@
     <string name="not_again_button">Nunca pergunte novamente</string>
     <string name="translate_app">Traduzir a aplicação</string>
     <!-- Universal Dice Fragment -->
-    <string name="label_dice_type">Dice type</string>
-    <string name="label_dice_count">Number of dice</string>
 </resources>

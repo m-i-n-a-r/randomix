@@ -18,7 +18,8 @@
     <string name="no_entry_roulette">Molim vas, unesite dvije ili više postavkih da okrenete ruletu!</string>
     <string name="too_much_entries_roulette">Ne možete unijeti više od 30 postavkih!</string>
     <string name="generic_option">Postavka</string>
-    <string name="recent_title">Nedavne postavke, tapnite za obnovu</string>
+    <string name="recent_title">Nedavne postavke</string>
+    <string name="recent_description">Tapnite čip da dodate unaprijed definiran skup. Dugo pritisnite nedavni skup opcija da ga prikvačite, tapnite da ga obnovite ili prevucite da ga obrišete.</string>
     <string name="bottom_sheet_no_option">Nema nedavnih postavkih, okrenite ruletu da spasite trenutačne postavke!</string>
     <string name="letters_shortcut">A-Z Slova</string>
     <string name="range">Opseg</string>
@@ -149,6 +150,4 @@
     <string name="not_again_button">Nikad me to više ne pitaj</string>
     <string name="translate_app">Prevedite aplikaciju</string>
     <!-- Universal Dice Fragment -->
-    <string name="label_dice_type">Dice type</string>
-    <string name="label_dice_count">Number of dice</string>
 </resources>

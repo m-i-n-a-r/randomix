@@ -18,7 +18,8 @@
     <string name="no_entry_roulette">Ajouter 2 options ou plus pour lancer la roulette</string>
     <string name="too_much_entries_roulette">Vous ne pouvez pas entrer plus de 30 options !</string>
     <string name="generic_option">Options</string>
-    <string name="recent_title">Options récentes, tapez pour restaurer</string>
+    <string name="recent_title">Options récentes</string>
+    <string name="recent_description">Appuyez sur une puce pour ajouter un ensemble prédéfini. Appuyez longuement sur un ensemble d\'options récent pour l\'épingler, appuyez pour le restaurer ou faites glisser pour le supprimer.</string>
     <string name="bottom_sheet_no_option">Pas d\'otions récentes, tournez la roulette pour sauvegarder les options actuelles</string>
     <string name="letters_shortcut">Lettres A-Z</string>
     <string name="range">Varier</string>
@@ -78,7 +79,7 @@
     <string name="insert_answer_hint">Insérer une réponse…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Dé</string>
-    <string name="description_dice">Un dé peut être pratique, pour un jeu de plateau par exemple ! Cette appli peut lancer entre 1 et 10 dés</string>
+    <string name="description_dice">Les dés peuvent être utiles, dans un jeu de table par exemple ! L\'application lancera un à dix dés pour vous. Sélectionnez le nombre et tapez ci-dessous. Bonne chance !</string>
     <string name="throw_dice">Lancer les dés</string>
     <string name="hint_dice">Appuyer sur le bouton ci-dessous</string>
     <!-- Settings -->
@@ -149,6 +150,4 @@
     <string name="not_again_button">Ne me redemande jamais ça !</string>
     <string name="translate_app">Traduire l\'application</string>
     <!-- Universal Dice Fragment -->
-    <string name="label_dice_type">Dice type</string>
-    <string name="label_dice_count">Number of dice</string>
 </resources>

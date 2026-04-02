@@ -18,7 +18,8 @@
     <string name="no_entry_roulette">¡Por favor, ingrese 2 o más opciones para girar la ruleta!</string>
     <string name="too_much_entries_roulette">¡No puedes ingresar más de 30 opciones!</string>
     <string name="generic_option">Opción</string>
-    <string name="recent_title">Opciones recientes, toque para restaurar</string>
+    <string name="recent_title">Opciones recientes</string>
+    <string name="recent_description">Toque una ficha para agregar un conjunto predefinido. Pulsación larga en una opción reciente configurada para fijarla, tocar para restaurarla o deslizar para eliminarla.</string>
     <string name="bottom_sheet_no_option">Sin opción reciente, ¡gire la ruleta para guardar las opciones actuales!</string>
     <string name="letters_shortcut">Letras A-Z</string>
     <string name="range">Rango</string>
@@ -78,7 +79,7 @@
     <string name="insert_answer_hint">Inserte una respuesta…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Modo dado</string>
-    <string name="description_dice">¡Un dado podría ser útil, en un juego de mesa, por ejemplo! La aplicación arrojará de uno a diez dados por ti. Seleccione el número de la configuración. ¡Buena suerte!</string>
+    <string name="description_dice">Dice puede ser útil, en un juego de mesa, por ejemplo! La aplicación te lanzará uno a diez dados. Selecciona el número y escribe debajo. ¡Buena suerte!</string>
     <string name="throw_dice">¡Tira los dados!</string>
     <string name="hint_dice">¡Presione el botón de abajo!</string>
     <!-- Settings -->
@@ -149,6 +150,4 @@
     <string name="not_again_button">Nunca preguntes de nuevo</string>
     <string name="translate_app">Traducir la app</string>
     <!-- Universal Dice Fragment -->
-    <string name="label_dice_type">Dice type</string>
-    <string name="label_dice_count">Number of dice</string>
 </resources>

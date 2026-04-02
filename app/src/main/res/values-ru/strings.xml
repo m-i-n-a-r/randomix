@@ -18,7 +18,8 @@
     <string name="no_entry_roulette">Пожалуйста, введите 2 и более вариантов, чтобы крутить рулетку.</string>
     <string name="too_much_entries_roulette">Вы не можете ввести более 30 вариантов</string>
     <string name="generic_option">Вариант</string>
-    <string name="recent_title">Последние параметры: нажмите, чтобы восстановить</string>
+    <string name="recent_title">Недавние настройки</string>
+    <string name="recent_description">Нажмите на чип, чтобы добавить предустановленный набор. Удерживайте недавний набор параметров, чтобы закрепить его, нажмите для восстановления или смахните для удаления.</string>
     <string name="bottom_sheet_no_option">Нет последних параметров, вращайте рулетку, чтобы сохранить текущие параметры!</string>
     <string name="letters_shortcut">Буквы A-Z</string>
     <string name="range">Диапазон</string>
@@ -78,7 +79,7 @@
     <string name="insert_answer_hint">Вставить ответ…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Кости</string>
-    <string name="description_dice">Кости могут быть полезны, например, в настольной игре! Приложение бросает за вас от одного до десяти кубиков. Количество можно выбрать в настройках. Удачи!</string>
+    <string name="description_dice">Кости могут быть полезными, например, в настольной игре! Приложение выбросит одну на десять костей для вас. Выберите номер и введите ниже. Удачи!</string>
     <string name="throw_dice">Бросай кость!</string>
     <string name="hint_dice">Нажмите кнопку ниже!</string>
     <!-- Settings -->
@@ -149,6 +150,4 @@
     <string name="not_again_button">не спрашивай снова</string>
     <string name="translate_app">Перевести приложение</string>
     <!-- Universal Dice Fragment -->
-    <string name="label_dice_type">Dice type</string>
-    <string name="label_dice_count">Number of dice</string>
 </resources>

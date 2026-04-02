@@ -18,7 +18,8 @@
     <string name="no_entry_roulette">Tolong, masukkan 2 atau lebih opsi untuk memutar roletnya!</string>
     <string name="too_much_entries_roulette">Anda tidak bisa memasukkan lebih dari 30 opsi</string>
     <string name="generic_option">Opsi</string>
-    <string name="recent_title">Opsi terbaru, ketuk untuk memulihkan</string>
+    <string name="recent_title">Opsi terbaru</string>
+    <string name="recent_description">Ketuk chip untuk menambahkan kumpulan yang telah ditentukan. Tekan lama kumpulan opsi terbaru untuk menyematkannya, ketuk untuk memulihkannya atau geser untuk menghapusnya.</string>
     <string name="bottom_sheet_no_option">Tidak ada opsi terbaru, putar roletnya untuk menyimpan opsi terbaru!</string>
     <string name="letters_shortcut">Huruf A-Z</string>
     <string name="range">Jangkauan</string>
@@ -149,6 +150,4 @@
     <string name="not_again_button">Jangan tanya lagi</string>
     <string name="translate_app">Terjemahkan aplikasi</string>
     <!-- Universal Dice Fragment -->
-    <string name="label_dice_type">Dice type</string>
-    <string name="label_dice_count">Number of dice</string>
 </resources>

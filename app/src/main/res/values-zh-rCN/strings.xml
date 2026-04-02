@@ -18,7 +18,8 @@
     <string name="no_entry_roulette">请至少加入两个选项来转动轮盘！</string>
     <string name="too_much_entries_roulette">你不能添加多于30个选项！</string>
     <string name="generic_option">选项</string>
-    <string name="recent_title">最近的选项组，点按以恢复</string>
+    <string name="recent_title">最近的选项组</string>
+    <string name="recent_description">点击选项卡以添加预定义集合。长按最近的选项集合可将其固定，点击可恢复，滑动可删除。</string>
     <string name="bottom_sheet_no_option">没有最近的选项组，转动轮盘来保存当前的选项组！</string>
     <string name="letters_shortcut">A-Z字母</string>
     <string name="range">范围</string>
@@ -78,7 +79,7 @@
     <string name="insert_answer_hint">输入一个答案……</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">骰子模式</string>
-    <string name="description_dice">骰子有时候会很有用，例如在桌面游戏中！这个应用程序会为你扔一到十个骰子，在设置中调整骰子的数量。祝你好运！</string>
+    <string name="description_dice">在桌面游戏中，恐怕很有用！这个应用会为你扔出一只十个细胞。 选择下面的号码和类型。祝您好运！</string>
     <string name="throw_dice">掷骰子！</string>
     <string name="hint_dice">点击下方的按钮</string>
     <!-- Settings -->
@@ -149,6 +150,4 @@
     <string name="not_again_button">别再问我了</string>
     <string name="translate_app">翻译此应用</string>
     <!-- Universal Dice Fragment -->
-    <string name="label_dice_type">Dice type</string>
-    <string name="label_dice_count">Number of dice</string>
 </resources>

@@ -18,8 +18,8 @@
     <string name="no_entry_roulette">Lütfen ruleti çevirmek için 2 veya daha fazla seçenek girin!</string>
     <string name="too_much_entries_roulette">30\'dan fazla seçenek giremezsiniz!</string>
     <string name="generic_option">Seçenek</string>
-    <string name="recent_title">Recent options</string>
-    <string name="recent_description">Tap a chip to add a predefined set. Long press on a recent option set to pin it, tap to restore it or swipe to delete it.</string>
+    <string name="recent_title">Son kullanılan seçenekler</string>
+    <string name="recent_description">Önceden tanımlanmış bir küme eklemek için bir çipe dokunun. Son seçenek kümesini sabitlemek için uzun basın, geri yüklemek için dokunun veya silmek için kaydırın.</string>
     <string name="bottom_sheet_no_option">Son kullanılan seçenek yok, mevcut seçenekleri kaydetmek için ruleti çevirin!</string>
     <string name="letters_shortcut">A-Z Harfler</string>
     <string name="range">Aralık</string>
@@ -79,7 +79,7 @@
     <string name="insert_answer_hint">Bir cevap girin…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Zar modu</string>
-    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number and type below. Good luck!</string>
+    <string name="description_dice">Zarlar, örneğin bir masa oyununda faydalı olabilir! Uygulama sizin için birden ona kadar zar atar. Sayıyı ayarlardan seçin. Bol şans!</string>
     <string name="throw_dice">Zarları at!</string>
     <string name="hint_dice">Aşağıdaki düğmeye basın!</string>
     <!-- Settings -->

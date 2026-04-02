@@ -75,7 +75,7 @@ class MagicBallBottomSheet(private val magicBall: MagicBallFragment) : BottomShe
     }
 
     private fun insertAnswerChip(answer: String) {
-        val currentAnswer = if (answer.isNotEmpty()) answer else {
+        val currentAnswer = answer.ifEmpty {
             val t = answerText.text.toString().trim().replace("\\s+".toRegex(), " ")
             answerText.setText("")
             t

@@ -41,6 +41,7 @@ class SettingsFragment : PreferenceFragmentCompat(),
                 }
             }
             "accent_color" -> activity.recreate()
+            "hide_scroll"  -> activity.recreate()
         }
     }
 }

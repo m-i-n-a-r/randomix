@@ -2,7 +2,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <string-array name="accents" tools:ignore="InconsistentArrays">
-        <item>@string/system_theme</item>
         <item>@string/blue</item>
         <item>@string/aqua</item>
         <item>@string/green</item>
@@ -18,7 +17,6 @@
     </string-array>
 
     <string-array name="accentValues" tools:ignore="InconsistentArrays">
-        <item>system</item>
         <item>blue</item>
         <item>aqua</item>
         <item>green</item>

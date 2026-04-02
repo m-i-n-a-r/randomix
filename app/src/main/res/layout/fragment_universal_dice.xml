@@ -95,11 +95,13 @@
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/diceResultCards"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
             android:layout_marginVertical="@dimen/chip_spacing"
             app:chipSpacingHorizontal="@dimen/chip_spacing"
+            android:clipChildren="false"
+            android:clipToPadding="false"
             app:chipSpacingVertical="@dimen/chip_spacing"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -209,7 +211,9 @@
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/diceCountChipGroup"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
             android:layout_marginVertical="@dimen/linear_vertical_margin"

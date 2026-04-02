@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  Edge-to-edge layout:
-  • NavHostFragment fills from top of screen down to the TOP of BottomNav (0dp height via constraints).
-    Top padding for the status bar is applied in code via WindowInsets.
-  • BottomNavigationView is wrap_content and constrained to the bottom of the parent.
-    Bottom padding for the navigation bar is applied in code via WindowInsets,
-    so the view's background extends behind the gesture nav area.
--->
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
@@ -15,26 +7,39 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
+    <!-- Ambient blob background – always behind every fragment -->
+    <com.minar.randomix.utilities.BlobBackgroundView
+        android:id="@+id/blobBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/navHostFragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_graph" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigation"
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomBar"
+        style="@style/Widget.Material3.BottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:labelVisibilityMode="labeled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation" />
+        android:layout_gravity="bottom"
+        app:backgroundTint="?attr/colorSurfaceVariant"
+        app:title="@string/app_name">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_navbar_height"
+            android:background="@android:color/transparent"
+            app:itemPaddingBottom="@dimen/bottom_navbar_item_padding"
+            app:itemPaddingTop="@dimen/bottom_navbar_item_padding"
+            app:labelVisibilityMode="selected"
+            app:menu="@menu/navigation" />
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

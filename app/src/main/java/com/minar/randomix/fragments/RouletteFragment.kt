@@ -252,7 +252,7 @@ class RouletteFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
 
     private fun insertRouletteChip(option: String, limitNumber: Boolean) {
         val allowEquals = sp?.getBoolean("allow_equals", false) ?: false
-        val currentOption = if (option.isNotEmpty()) option else {
+        val currentOption = option.ifEmpty {
             val t = optionText.text.toString().trim().replace("\\s+".toRegex(), " ")
             if ((!allowEquals && options.contains(t)) || t.isEmpty()) return
             optionText.setText("")

@@ -54,7 +54,7 @@
                 android:paddingStart="@dimen/side_drawable_margin"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
                 android:text="@string/custom_answers"
-                android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge.Emphasized"
                 android:textColor="?attr/colorPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/recentImage"

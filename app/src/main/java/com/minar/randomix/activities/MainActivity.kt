@@ -8,14 +8,17 @@ import android.os.Vibrator
 import android.os.VibratorManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.edit
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
 import androidx.preference.PreferenceManager
+import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.color.DynamicColors
 import com.minar.randomix.R
@@ -34,8 +37,7 @@ class MainActivity : AppCompatActivity() {
             sp.edit {
                 putString(
                     "accent_color", when (Build.VERSION.SDK_INT) {
-                        in 23..29 -> "blue"
-                        31        -> "system"
+                        in 23..31 -> "blue"
                         else      -> "monet"
                     }
                 )
@@ -64,7 +66,6 @@ class MainActivity : AppCompatActivity() {
         setTheme(
             if (theme == "black") when (accent) {
                 "monet"     -> R.style.AppTheme_Monet_PerfectDark
-                "system"    -> R.style.AppTheme_System_PerfectDark
                 "blue"      -> R.style.AppTheme_Blue_PerfectDark
                 "green"     -> R.style.AppTheme_Green_PerfectDark
                 "aqua"      -> R.style.AppTheme_Aqua_PerfectDark
@@ -80,7 +81,6 @@ class MainActivity : AppCompatActivity() {
                 else        -> R.style.AppTheme_Blue_PerfectDark
             } else when (accent) {
                 "monet"     -> R.style.AppTheme_Monet
-                "system"    -> R.style.AppTheme_System
                 "blue"      -> R.style.AppTheme_Blue
                 "green"     -> R.style.AppTheme_Green
                 "aqua"      -> R.style.AppTheme_Aqua
@@ -103,26 +103,36 @@ class MainActivity : AppCompatActivity() {
         // Monet dynamic colors
         if (accent == "monet") DynamicColors.applyToActivityIfAvailable(this)
 
+        val fragmentContainer =
+            findViewById<androidx.fragment.app.FragmentContainerView>(R.id.navHostFragment)
+        val bottomBar = findViewById<BottomAppBar>(R.id.bottomBar)
+        val navigation = findViewById<BottomNavigationView>(R.id.navigation)
+        val hideOnScroll = sp.getBoolean("hide_scroll", false)
+
         // Insets
-        // Status bar → top padding on the fragment container so that fragment
-        // content starts below the status bar without touching every fragment layout.
-        val fragmentContainer = findViewById<androidx.fragment.app.FragmentContainerView>(R.id.navHostFragment)
         ViewCompat.setOnApplyWindowInsetsListener(fragmentContainer) { view, insets ->
             val top = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top
             view.setPadding(view.paddingLeft, top, view.paddingRight, view.paddingBottom)
             insets
         }
 
-        // Navigation bar → bottom padding on BottomNavigationView so its
-        // background fills the gesture/button nav bar area correctly.
-        val navigation = findViewById<BottomNavigationView>(R.id.navigation)
-        ViewCompat.setOnApplyWindowInsetsListener(navigation) { view, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(bottomBar) { view, insets ->
             val bottom = insets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom
             view.setPadding(view.paddingLeft, view.paddingTop, view.paddingRight, bottom)
             insets
         }
 
+        if (!hideOnScroll) {
+            bottomBar.addOnLayoutChangeListener { v, _, _, _, _, _, _, _, _ ->
+                fragmentContainer.updatePadding(bottom = v.height)
+            }
+        } else {
+            bottomBar.hideOnScroll = true
+            fragmentContainer.updatePadding(bottom = 0)
+        }
+
         // Navigation controller
+
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
         val navController: NavController = navHostFragment.navController
@@ -164,7 +174,7 @@ class MainActivity : AppCompatActivity() {
         AppRater.appLaunched(this)
     }
 
-    // Utility helpers called from fragments
+    // ── Utility helpers called from fragments ─────────────────────────────────
 
     fun vibrate() {
         val sp = PreferenceManager.getDefaultSharedPreferences(this)

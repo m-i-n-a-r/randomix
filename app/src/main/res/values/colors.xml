@@ -11,6 +11,7 @@
     <color name="almostWhite">#fbfbfb</color>
     <color name="goodGray">#959595</color>
     <color name="goodGrayTranslucent">#66909090</color>
+    <color name="goodGrayTransparent">#33909090</color>
     <color name="positiveGreen">#00c077</color>
     <color name="negativeRed">#ee0000</color>
 
@@ -35,49 +36,73 @@
     <color name="aquaAccent">#5abf95</color>
     <color name="aquaAccentTranslucent">#665abf95</color>
     <color name="aquaAccentTransparent">#225abf95</color>
+    <color name="aquaAccentSuperLight">#B4FFE0</color>
+    <color name="aquaAccentSuperDark">#204234</color>
 
     <color name="blueAccent">#4285f4</color>
     <color name="blueAccentTranslucent">#664285f4</color>
     <color name="blueAccentTransparent">#224285f4</color>
+    <color name="blueAccentSuperLight">#C6DBFF</color>
+    <color name="blueAccentSuperDark">#112340</color>
 
     <color name="greenAccent">#3ddc84</color>
     <color name="greenAccentTranslucent">#663ddc84</color>
     <color name="greenAccentTransparent">#223ddc84</color>
+    <color name="greenAccentSuperLight">#ADFDD1</color>
+    <color name="greenAccentSuperDark">#143E27</color>
 
     <color name="yellowAccent">#f4b400</color>
     <color name="yellowAccentTranslucent">#66f4b400</color>
     <color name="yellowAccentTransparent">#22f4b400</color>
+    <color name="yellowAccentSuperLight">#FFF1C8</color>
+    <color name="yellowAccentSuperDark">#3E3008</color>
 
     <color name="orangeAccent">#ff7522</color>
     <color name="orangeAccentTranslucent">#66ff7522</color>
     <color name="orangeAccentTransparent">#22ff7522</color>
+    <color name="orangeAccentSuperLight">#FFD2B8</color>
+    <color name="orangeAccentSuperDark">#3C1C08</color>
 
     <color name="tealAccent">#008080</color>
     <color name="tealAccentTranslucent">#66008080</color>
     <color name="tealAccentTransparent">#22008080</color>
+    <color name="tealAccentSuperLight">#96D1D1</color>
+    <color name="tealAccentSuperDark">#003C3C</color>
 
     <color name="violetAccent">#ab47bc</color>
     <color name="violetAccentTranslucent">#66ab47bc</color>
     <color name="violetAccentTransparent">#22ab47bc</color>
+    <color name="violetAccentSuperLight">#F8D1FF</color>
+    <color name="violetAccentSuperDark">#37173C</color>
 
     <color name="pinkAccent">#ff66cc</color>
     <color name="pinkAccentTranslucent">#66ff66cc</color>
     <color name="pinkAccentTransparent">#22ff66cc</color>
+    <color name="pinkAccentSuperLight">#FDD9F1</color>
+    <color name="pinkAccentSuperDark">#331629</color>
 
     <color name="lightBlueAccent">#29b6f6</color>
     <color name="lightBlueAccentTranslucent">#6629b6f6</color>
     <color name="lightBlueAccentTransparent">#2229b6f6</color>
+    <color name="lightBlueAccentSuperLight">#CAEFFF</color>
+    <color name="lightBlueAccentSuperDark">#0B2B3A</color>
 
     <color name="redAccent">#ff5252</color>
     <color name="redAccentTranslucent">#66ff5252</color>
     <color name="redAccentTransparent">#22ff5252</color>
+    <color name="redAccentSuperLight">#FDD6D6</color>
+    <color name="redAccentSuperDark">#381313</color>
 
     <color name="limeAccent">#b5ee00</color>
     <color name="limeAccentTranslucent">#66b5ee00</color>
     <color name="limeAccentTransparent">#22b5ee00</color>
+    <color name="limeAccentSuperLight">#ECFBBD</color>
+    <color name="limeAccentSuperDark">#283501</color>
 
     <color name="crimsonAccent">#dc143c</color>
     <color name="crimsonAccentTranslucent">#66dc143c</color>
     <color name="crimsonAccentTransparent">#22dc143c</color>
+    <color name="crimsonAccentSuperLight">#E2A4B0</color>
+    <color name="crimsonAccentSuperDark">#3A0610</color>
 
 </resources>

@@ -26,7 +26,6 @@
         <item name="colorOnBackground">@color/textColorSecondary</item>
         <item name="materialSwitchStyle">@style/CustomMaterialSwitch</item>
         <item name="bottomNavigationStyle">@style/CustomBottomNavigation</item>
-        <item name="bottomAppBarStyle">@style/CustomBottomAppBar</item>
         <item name="colorOutline">@color/goodGray</item>
         <item name="colorSurfaceVariant">@color/goodGrayTranslucent</item>
         <item name="colorSurface">@color/almostWhite</item>

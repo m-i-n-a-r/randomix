@@ -27,6 +27,15 @@
         <item name="alertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
         <item name="switchStyle">@style/CustomMaterialSwitch</item>
         <item name="bottomNavigationStyle">@style/CustomBottomNavigation</item>
+        <!-- New items TODO check -->
+        <item name="colorSurfaceContainerLow">@color/colorBackgroundInverse</item>
+        <item name="colorOutlineVariant">?attr/colorSurfaceVariant</item>
+        <item name="colorOnSecondary">@color/textColorPrimary</item>
+        <item name="colorOnSurfaceVariant">@color/textColorPrimaryInverse</item>
+        <item name="colorOnBackground">@color/textColorSecondaryInverse</item>
+        <item name="materialSwitchStyle">@style/CustomMaterialSwitch</item>
+        <item name="colorSurface">@color/almostBlack</item>
+        <item name="colorOnSurface">@color/textColorPrimaryInverse</item>
     </style>
 
     <!-- Monet theme -->

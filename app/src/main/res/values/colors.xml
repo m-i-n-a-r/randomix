@@ -9,6 +9,7 @@
     <color name="colorAccent">@color/blueAccent</color>
     <color name="colorAccentTranslucent">@color/blueAccentTranslucent</color>
     <color name="almostWhite">#fbfbfb</color>
+    <color name="almostBlack">#0b0b0b</color>
     <color name="goodGray">#959595</color>
     <color name="goodGrayTranslucent">#66909090</color>
     <color name="goodGrayTransparent">#33909090</color>

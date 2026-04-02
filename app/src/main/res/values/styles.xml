@@ -28,7 +28,6 @@
         <item name="colorOnBackground">@color/textColorSecondary</item>
         <item name="materialSwitchStyle">@style/CustomMaterialSwitch</item>
         <item name="bottomNavigationStyle">@style/CustomBottomNavigation</item>
-        <item name="bottomAppBarStyle">@style/CustomBottomAppBar</item>
         <item name="colorOutline">@color/goodGray</item>
         <item name="colorSurfaceVariant">@color/goodGrayTranslucent</item>
     </style>
@@ -75,10 +74,6 @@
         <item name="android:textColorTertiary">@color/textColorSecondaryInverse</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogDark</item>
         <item name="colorBackgroundFloating">@color/amoledSurface</item>
-    </style>
-
-    <style name="CustomBottomAppBar" parent="Widget.Material3.BottomAppBar">
-        <item name="android:backgroundTint">?attr/colorPrimaryVariant</item>
     </style>
 
     <style name="CustomBottomAppBarAmoled" parent="Widget.Material3.BottomAppBar">
@@ -155,7 +150,7 @@
     </style>
 
     <style name="CustomBottomNavigation" parent="Widget.Material3Expressive.BottomNavigationView">
-        <item name="backgroundTint">?android:statusBarColor</item>
+        <item name="backgroundTint">?attr/colorSurface</item>
         <item name="itemTextColor">@drawable/bottom_navbar_item</item>
     </style>
 
@@ -174,6 +169,9 @@
         <item name="colorSurfaceContainerLow">@color/aquaAccentTransparent</item>
         <item name="colorTertiary">@color/aquaAccent</item>
         <item name="colorTertiaryContainer">@color/aquaAccentTranslucent</item>
+        <item name="colorPrimaryVariant">@color/aquaAccentTransparent</item>
+        <item name="colorPrimaryFixed">@color/aquaAccent</item>
+        <item name="colorOnPrimaryContainer">@color/aquaAccent</item>
     </style>
 
     <style name="AppTheme.Blue" parent="AppTheme">
@@ -197,6 +195,9 @@
         <item name="colorSurfaceContainerLow">@color/greenAccentTransparent</item>
         <item name="colorTertiary">@color/greenAccent</item>
         <item name="colorTertiaryContainer">@color/greenAccentTranslucent</item>
+        <item name="colorPrimaryVariant">@color/greenAccentTransparent</item>
+        <item name="colorPrimaryFixed">@color/greenAccent</item>
+        <item name="colorOnPrimaryContainer">@color/greenAccent</item>
     </style>
 
     <style name="AppTheme.Orange" parent="AppTheme">
@@ -208,6 +209,9 @@
         <item name="colorSurfaceContainerLow">@color/orangeAccentTransparent</item>
         <item name="colorTertiary">@color/orangeAccent</item>
         <item name="colorTertiaryContainer">@color/orangeAccentTranslucent</item>
+        <item name="colorPrimaryVariant">@color/orangeAccentTransparent</item>
+        <item name="colorPrimaryFixed">@color/orangeAccent</item>
+        <item name="colorOnPrimaryContainer">@color/orangeAccent</item>
     </style>
 
     <style name="AppTheme.Yellow" parent="AppTheme">
@@ -219,6 +223,9 @@
         <item name="colorSurfaceContainerLow">@color/yellowAccentTransparent</item>
         <item name="colorTertiary">@color/yellowAccent</item>
         <item name="colorTertiaryContainer">@color/yellowAccentTranslucent</item>
+        <item name="colorPrimaryVariant">@color/yellowAccentTransparent</item>
+        <item name="colorPrimaryFixed">@color/yellowAccent</item>
+        <item name="colorOnPrimaryContainer">@color/yellowAccent</item>
     </style>
 
     <style name="AppTheme.Teal" parent="AppTheme">
@@ -230,6 +237,9 @@
         <item name="colorSurfaceContainerLow">@color/tealAccentTransparent</item>
         <item name="colorTertiary">@color/tealAccent</item>
         <item name="colorTertiaryContainer">@color/tealAccentTranslucent</item>
+        <item name="colorPrimaryVariant">@color/tealAccentTransparent</item>
+        <item name="colorPrimaryFixed">@color/tealAccent</item>
+        <item name="colorOnPrimaryContainer">@color/tealAccent</item>
     </style>
 
     <style name="AppTheme.Violet" parent="AppTheme">
@@ -241,6 +251,9 @@
         <item name="colorSurfaceContainerLow">@color/violetAccentTransparent</item>
         <item name="colorTertiary">@color/violetAccent</item>
         <item name="colorTertiaryContainer">@color/violetAccentTranslucent</item>
+        <item name="colorPrimaryVariant">@color/violetAccentTransparent</item>
+        <item name="colorPrimaryFixed">@color/violetAccent</item>
+        <item name="colorOnPrimaryContainer">@color/violetAccent</item>
     </style>
 
     <style name="AppTheme.Pink" parent="AppTheme">
@@ -252,6 +265,9 @@
         <item name="colorSurfaceContainerLow">@color/pinkAccentTransparent</item>
         <item name="colorTertiary">@color/pinkAccent</item>
         <item name="colorTertiaryContainer">@color/pinkAccentTranslucent</item>
+        <item name="colorPrimaryVariant">@color/pinkAccentTransparent</item>
+        <item name="colorPrimaryFixed">@color/pinkAccent</item>
+        <item name="colorOnPrimaryContainer">@color/pinkAccent</item>
     </style>
 
     <style name="AppTheme.LightBlue" parent="AppTheme">
@@ -263,6 +279,9 @@
         <item name="colorSurfaceContainerLow">@color/lightBlueAccentTransparent</item>
         <item name="colorTertiary">@color/lightBlueAccent</item>
         <item name="colorTertiaryContainer">@color/lightBlueAccentTranslucent</item>
+        <item name="colorPrimaryVariant">@color/lightBlueAccentTransparent</item>
+        <item name="colorPrimaryFixed">@color/lightBlueAccent</item>
+        <item name="colorOnPrimaryContainer">@color/lightBlueAccent</item>
     </style>
 
     <style name="AppTheme.Red" parent="AppTheme">
@@ -274,6 +293,9 @@
         <item name="colorSurfaceContainerLow">@color/redAccentTransparent</item>
         <item name="colorTertiary">@color/redAccent</item>
         <item name="colorTertiaryContainer">@color/redAccentTranslucent</item>
+        <item name="colorPrimaryVariant">@color/redAccentTransparent</item>
+        <item name="colorPrimaryFixed">@color/redAccent</item>
+        <item name="colorOnPrimaryContainer">@color/redAccent</item>
     </style>
 
     <style name="AppTheme.Lime" parent="AppTheme">
@@ -285,6 +307,9 @@
         <item name="colorSurfaceContainerLow">@color/limeAccentTransparent</item>
         <item name="colorTertiary">@color/limeAccent</item>
         <item name="colorTertiaryContainer">@color/limeAccentTranslucent</item>
+        <item name="colorPrimaryVariant">@color/limeAccentTransparent</item>
+        <item name="colorPrimaryFixed">@color/limeAccent</item>
+        <item name="colorOnPrimaryContainer">@color/limeAccent</item>
     </style>
 
     <style name="AppTheme.Crimson" parent="AppTheme">
@@ -296,6 +321,9 @@
         <item name="colorSurfaceContainerLow">@color/crimsonAccentTransparent</item>
         <item name="colorTertiary">@color/crimsonAccent</item>
         <item name="colorTertiaryContainer">@color/crimsonAccentTranslucent</item>
+        <item name="colorPrimaryVariant">@color/crimsonAccentTransparent</item>
+        <item name="colorPrimaryFixed">@color/crimsonAccent</item>
+        <item name="colorOnPrimaryContainer">@color/crimsonAccent</item>
     </style>
 
     <!-- Amoled themes -->

@@ -193,5 +193,6 @@
     <string name="eight_numeral" translatable="false">8</string>
     <string name="nine_numeral" translatable="false">9</string>
     <string name="ten_numeral" translatable="false">10</string>
+    <string name="cards" translatable="false">🃏</string>
 
 </resources>

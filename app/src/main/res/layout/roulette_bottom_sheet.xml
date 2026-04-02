@@ -115,7 +115,7 @@
                 android:id="@+id/cardsChip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="🃏"
+                android:text="@string/cards"
                 android:textColor="?attr/colorPrimary"
                 app:chipBackgroundColor="@drawable/chip_bg_state_list"
                 app:chipIcon="@drawable/insert_vector_animation"

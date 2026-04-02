@@ -18,7 +18,8 @@
     <string name="no_entry_roulette">Молим вас, унесите двоје или више поставких да окренете рулету!</string>
     <string name="too_much_entries_roulette">Не можете унети више од 30 поставких!</string>
     <string name="generic_option">Поставка</string>
-    <string name="recent_title">Скорашње поставке, тапните да обновите</string>
+    <string name="recent_title">Recent options</string>
+    <string name="recent_description">Tap a chip to add a predefined set. Long press on a recent option set to pin it, tap to restore it or swipe to delete it.</string>
     <string name="bottom_sheet_no_option">Нема скорашњих поставких, окрените рулету да спасите тренутачне поставке!</string>
     <string name="letters_shortcut">A-Z Слова</string>
     <string name="range">Опсег</string>
@@ -78,7 +79,7 @@
     <string name="insert_answer_hint">Убаците одговор…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Мод за коцке</string>
-    <string name="description_dice">Коцке могу бити корисне, на столној игри например! Апликација ће једну до десет коцких за вас бацити. Одаберите количину у подешавањима. Сретно!</string>
+    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number and type below. Good luck!</string>
     <string name="throw_dice">Баците коцке!</string>
     <string name="hint_dice">Притисните дугме испод!</string>
     <!-- Settings -->
@@ -148,6 +149,4 @@
     <string name="not_again_button">Никад ме више то не питај</string>
     <string name="translate_app">Преведите апликацију</string>
     <!-- Universal Dice Fragment -->
-    <string name="label_dice_type">Dice type</string>
-    <string name="label_dice_count">Number of dice</string>
 </resources>

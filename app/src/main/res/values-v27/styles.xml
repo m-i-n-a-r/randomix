@@ -22,8 +22,6 @@
         <item name="android:textColorTertiary">@color/textColorSecondary</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
         <item name="alertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
-        <item name="colorSurface">@color/colorBackground</item>
-        <item name="colorOnSurface">@color/textColorPrimary</item>
         <item name="colorOnSurfaceVariant">@color/textColorPrimary</item>
         <item name="colorOnBackground">@color/textColorSecondary</item>
         <item name="materialSwitchStyle">@style/CustomMaterialSwitch</item>

@@ -2,6 +2,7 @@ package com.minar.randomix.fragments
 
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.PorterDuff
@@ -51,6 +52,7 @@ class UniversalDiceFragment : Fragment() {
     private var selectedDiceType = DiceType.D6
     private var selectedDiceCount = 1   // 0 = risiko mode
     private var isAnimating = false
+    private var lastResults = listOf<Int>()
 
     // Views – bound in onCreateView
     private lateinit var mainDiceImage: ImageView
@@ -201,7 +203,6 @@ class UniversalDiceFragment : Fragment() {
     }
 
     // Throw
-
     private fun mainThrow() {
         if (isAnimating) return
         isAnimating = true
@@ -209,7 +210,14 @@ class UniversalDiceFragment : Fragment() {
         act?.vibrate()
         act?.playSound(4)
 
-        if (isRisikoMode) throwRisiko()
+        if (isRisikoMode) {
+            // Reset the initial state with another animation
+            if (lastResults.isNotEmpty()) {
+                runRisikoResetAnimation()
+                // Delay the execution
+                requireView().postDelayed({ throwRisiko() }, 500)
+            } else throwRisiko()
+        }
         else throwNormal()
     }
 
@@ -256,6 +264,8 @@ class UniversalDiceFragment : Fragment() {
 
         val team1 = results.take(3).sum()
         val team2 = results.drop(3).sum()
+        // Update last results used to animate the reset
+        lastResults = results
         val resultStr = "${getString(R.string.generic_result)} $team1 — $team2"
         animateResultText(resultStr)
 
@@ -269,7 +279,8 @@ class UniversalDiceFragment : Fragment() {
     // Dice animation
     private fun animateSingleDie(view: ImageView, onEnd: () -> Unit) {
         val gray = 0xFF9E9E9E.toInt()
-        val primary = MaterialColors.getColor(view, com.google.android.material.R.attr.colorPrimaryFixed)
+        val primary =
+            MaterialColors.getColor(view, com.google.android.material.R.attr.colorPrimaryFixed)
 
         val shakeDuration = 280L
         val spinDuration = 1150L
@@ -304,7 +315,12 @@ class UniversalDiceFragment : Fragment() {
 
             ValueAnimator.ofArgb(gray, primary).apply {
                 duration = spinDuration / 2
-                addUpdateListener { view.setColorFilter(it.animatedValue as Int, PorterDuff.Mode.SRC_IN) }
+                addUpdateListener {
+                    view.setColorFilter(
+                        it.animatedValue as Int,
+                        PorterDuff.Mode.SRC_IN
+                    )
+                }
                 start()
             }
 
@@ -312,7 +328,12 @@ class UniversalDiceFragment : Fragment() {
                 if (!isAdded) return@postDelayed
                 ValueAnimator.ofArgb(primary, gray).apply {
                     duration = spinDuration / 2
-                    addUpdateListener { view.setColorFilter(it.animatedValue as Int, PorterDuff.Mode.SRC_IN) }
+                    addUpdateListener {
+                        view.setColorFilter(
+                            it.animatedValue as Int,
+                            PorterDuff.Mode.SRC_IN
+                        )
+                    }
                     start()
                 }
             }, spinDuration / 2)
@@ -359,18 +380,19 @@ class UniversalDiceFragment : Fragment() {
             val isMax = value == selectedDiceType.sides
             val bgAttr = if (isMax) primary else surface
             val txtAttr = if (isMax) onPrimary else onSurface
-            val chip = Chip(ContextThemeWrapper(requireContext(), R.style.Widget_App_Chip_Outline)).apply {
-                text = value.toString()
-                isCheckable = false
-                isClickable = false
-                isFocusable = false
-                chipStrokeWidth = 0f
-                chipBackgroundColor = ColorStateList.valueOf(
-                    MaterialColors.getColor(this, bgAttr)
-                )
-                setTextColor(MaterialColors.getColor(this, txtAttr))
-                alpha = 0f
-            }
+            val chip =
+                Chip(ContextThemeWrapper(requireContext(), R.style.Widget_App_Chip_Outline)).apply {
+                    text = value.toString()
+                    isCheckable = false
+                    isClickable = false
+                    isFocusable = false
+                    chipStrokeWidth = 0f
+                    chipBackgroundColor = ColorStateList.valueOf(
+                        MaterialColors.getColor(this, bgAttr)
+                    )
+                    setTextColor(MaterialColors.getColor(this, txtAttr))
+                    alpha = 0f
+                }
             resultCardsContainer.addView(chip)
             chip.postDelayed({
                 if (!isAdded) return@postDelayed
@@ -387,4 +409,30 @@ class UniversalDiceFragment : Fragment() {
             SensorManager.SENSOR_DELAY_UI
         )
     }
+
+    // Run the reset animation to return to the initial state
+    @SuppressLint("DiscouragedApi")
+    private fun runRisikoResetAnimation() {
+        val diceAnimations = listOf<ImageView>(
+            requireView().findViewById(R.id.diceButtonAnimation1),
+            requireView().findViewById(R.id.diceButtonAnimation2),
+            requireView().findViewById(R.id.diceButtonAnimation3),
+            requireView().findViewById(R.id.diceButtonAnimation4),
+            requireView().findViewById(R.id.diceButtonAnimation5),
+            requireView().findViewById(R.id.diceButtonAnimation6)
+        )
+        // Choose the correct drawable and run the reset animation
+        for ((index, result) in lastResults.withIndex()) {
+            val chosenDrawable = "dice_" + result + "_to_start_vector_animation"
+            val resId = resources.getIdentifier(
+                chosenDrawable,
+                "drawable",
+                "com.minar.randomix"
+            )
+            diceAnimations[index].setImageResource(resId)
+            val diceDrawable1 = diceAnimations[index].drawable
+            (diceDrawable1 as Animatable).start()
+        }
+    }
+
 }

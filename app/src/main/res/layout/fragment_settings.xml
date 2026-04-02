@@ -73,7 +73,7 @@
         android:contentDescription="@string/dev_twitter"
         android:focusable="true"
         android:padding="@dimen/activity_vertical_margin"
-        android:src="@drawable/ic_twitter_black_24dp"
+        android:src="@drawable/ic_telegram_24dp"
         app:layout_constraintBottom_toBottomOf="@id/minarig"
         app:layout_constraintEnd_toStartOf="@id/minarps"
         app:layout_constraintStart_toEndOf="@id/minarig"

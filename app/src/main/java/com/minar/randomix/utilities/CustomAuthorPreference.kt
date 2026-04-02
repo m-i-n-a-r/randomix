@@ -48,7 +48,7 @@ class CustomAuthorPreference(context: Context, attrs: AttributeSet) :
             }
             R.id.translateButton -> openUrl(act, R.string.dev_crowdin)
             R.id.minarig -> openUrl(act, R.string.dev_instagram)
-            R.id.minartt -> openUrl(act, R.string.dev_twitter)
+            R.id.minartt -> openUrl(act, R.string.dev_telegram)
             R.id.minarps -> openUrl(act, R.string.dev_other_apps)
             R.id.minargit -> openUrl(act, R.string.dev_github)
             R.id.minarsite -> openUrl(act, R.string.dev_personal_site)

@@ -150,4 +150,6 @@
     <string name="not_again_button">Nikad me to više ne pitaj</string>
     <string name="translate_app">Prevedite aplikaciju</string>
     <!-- Universal Dice Fragment -->
+    <string name="blob_name">Pozadina Random Blobs</string>
+    <string name="blob_description">Nasumična pokretna pozadina, iz estetskih razloga</string>
 </resources>

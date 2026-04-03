@@ -150,4 +150,6 @@
     <string name="not_again_button">別再問我了</string>
     <string name="translate_app">翻譯應用程式</string>
     <!-- Universal Dice Fragment -->
+    <string name="blob_name">Random Blobs 背景</string>
+    <string name="blob_description">隨機移動的背景，用於美觀目的</string>
 </resources>

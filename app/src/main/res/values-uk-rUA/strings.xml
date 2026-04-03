@@ -151,4 +151,6 @@
     <string name="not_again_button">Ніколи більше не питайте</string>
     <string name="translate_app">Перекладіть застосунок</string>
     <!-- Universal Dice Fragment -->
+    <string name="blob_name">Фон Random Blobs</string>
+    <string name="blob_description">Випадковий рухомий фон, з естетичною метою</string>
 </resources>

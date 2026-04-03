@@ -150,4 +150,6 @@
     <string name="not_again_button">Už se nikdy neptat</string>
     <string name="translate_app">Přelož aplikaci</string>
     <!-- Universal Dice Fragment -->
+    <string name="blob_name">Random Blobs background</string>
+    <string name="blob_description">A random moving background, for aesthetic purposes</string>
 </resources>

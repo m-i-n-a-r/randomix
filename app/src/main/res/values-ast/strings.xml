@@ -151,6 +151,6 @@
     <string name="not_again_button">Nun volver entrugar</string>
     <string name="translate_app">Traducir l\'app</string>
     <!-- Universal Dice Fragment -->
-    <string name="blob_name">Random Blobs background</string>
-    <string name="blob_description">A random moving background, for aesthetic purposes</string>
+    <string name="blob_name">Fondu de Random Blobs</string>
+    <string name="blob_description">Un fondu en movimientu aleatoriu, por motivos estéticos</string>
 </resources>

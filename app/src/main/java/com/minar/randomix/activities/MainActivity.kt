@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                 putString(
                     "accent_color", when (Build.VERSION.SDK_INT) {
                         in 23..31 -> "blue"
-                        else      -> "monet"
+                        else -> "monet"
                     }
                 )
                 putBoolean("first", true)
@@ -45,49 +45,49 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        val accent   = sp.getString("accent_color", "blue")    ?: "blue"
-        val theme    = sp.getString("theme_color",  "system")  ?: "system"
-        val lastItem = sp.getString("last_page",    "roulette") ?: "roulette"
+        val accent = sp.getString("accent_color", "blue") ?: "blue"
+        val theme = sp.getString("theme_color", "system") ?: "system"
+        val lastItem = sp.getString("last_page", "roulette") ?: "roulette"
 
         AppCompatDelegate.setDefaultNightMode(
             when (theme) {
-                "light"          -> AppCompatDelegate.MODE_NIGHT_NO
-                "dark", "black"  -> AppCompatDelegate.MODE_NIGHT_YES
-                else             -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+                "light" -> AppCompatDelegate.MODE_NIGHT_NO
+                "dark", "black" -> AppCompatDelegate.MODE_NIGHT_YES
+                else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
             }
         )
 
         setTheme(
             if (theme == "black") when (accent) {
-                "monet"     -> R.style.AppTheme_Monet_PerfectDark
-                "blue"      -> R.style.AppTheme_Blue_PerfectDark
-                "green"     -> R.style.AppTheme_Green_PerfectDark
-                "aqua"      -> R.style.AppTheme_Aqua_PerfectDark
-                "orange"    -> R.style.AppTheme_Orange_PerfectDark
-                "yellow"    -> R.style.AppTheme_Yellow_PerfectDark
-                "teal"      -> R.style.AppTheme_Teal_PerfectDark
-                "violet"    -> R.style.AppTheme_Violet_PerfectDark
-                "pink"      -> R.style.AppTheme_Pink_PerfectDark
+                "monet" -> R.style.AppTheme_Monet_PerfectDark
+                "blue" -> R.style.AppTheme_Blue_PerfectDark
+                "green" -> R.style.AppTheme_Green_PerfectDark
+                "aqua" -> R.style.AppTheme_Aqua_PerfectDark
+                "orange" -> R.style.AppTheme_Orange_PerfectDark
+                "yellow" -> R.style.AppTheme_Yellow_PerfectDark
+                "teal" -> R.style.AppTheme_Teal_PerfectDark
+                "violet" -> R.style.AppTheme_Violet_PerfectDark
+                "pink" -> R.style.AppTheme_Pink_PerfectDark
                 "lightBlue" -> R.style.AppTheme_LightBlue_PerfectDark
-                "red"       -> R.style.AppTheme_Red_PerfectDark
-                "lime"      -> R.style.AppTheme_Lime_PerfectDark
-                "crimson"   -> R.style.AppTheme_Crimson_PerfectDark
-                else        -> R.style.AppTheme_Blue_PerfectDark
+                "red" -> R.style.AppTheme_Red_PerfectDark
+                "lime" -> R.style.AppTheme_Lime_PerfectDark
+                "crimson" -> R.style.AppTheme_Crimson_PerfectDark
+                else -> R.style.AppTheme_Blue_PerfectDark
             } else when (accent) {
-                "monet"     -> R.style.AppTheme_Monet
-                "blue"      -> R.style.AppTheme_Blue
-                "green"     -> R.style.AppTheme_Green
-                "aqua"      -> R.style.AppTheme_Aqua
-                "orange"    -> R.style.AppTheme_Orange
-                "yellow"    -> R.style.AppTheme_Yellow
-                "teal"      -> R.style.AppTheme_Teal
-                "violet"    -> R.style.AppTheme_Violet
-                "pink"      -> R.style.AppTheme_Pink
+                "monet" -> R.style.AppTheme_Monet
+                "blue" -> R.style.AppTheme_Blue
+                "green" -> R.style.AppTheme_Green
+                "aqua" -> R.style.AppTheme_Aqua
+                "orange" -> R.style.AppTheme_Orange
+                "yellow" -> R.style.AppTheme_Yellow
+                "teal" -> R.style.AppTheme_Teal
+                "violet" -> R.style.AppTheme_Violet
+                "pink" -> R.style.AppTheme_Pink
                 "lightBlue" -> R.style.AppTheme_LightBlue
-                "red"       -> R.style.AppTheme_Red
-                "lime"      -> R.style.AppTheme_Lime
-                "crimson"   -> R.style.AppTheme_Crimson
-                else        -> R.style.AppTheme_Blue
+                "red" -> R.style.AppTheme_Red
+                "lime" -> R.style.AppTheme_Lime
+                "crimson" -> R.style.AppTheme_Crimson
+                else -> R.style.AppTheme_Blue
             }
         )
 
@@ -136,12 +136,12 @@ class MainActivity : AppCompatActivity() {
 
         navigation.setOnItemSelectedListener { item ->
             val pageKey = when (item.itemId) {
-                R.id.navigationRoulette  -> "roulette"
-                R.id.navigationCoin      -> "coin"
+                R.id.navigationRoulette -> "roulette"
+                R.id.navigationCoin -> "coin"
                 R.id.navigationMagicBall -> "magicBall"
-                R.id.navigationDice      -> "dice"
-                R.id.navigationSettings  -> "settings"
-                else                     -> null
+                R.id.navigationDice -> "dice"
+                R.id.navigationSettings -> "settings"
+                else -> null
             }
             pageKey?.let {
                 sp.edit { putString("last_page", it) }
@@ -152,27 +152,42 @@ class MainActivity : AppCompatActivity() {
         navigation.setOnItemReselectedListener { }
 
         when (lastItem) {
-            "coin"      -> navigation.selectedItemId = R.id.navigationCoin
-            "dice"      -> navigation.selectedItemId = R.id.navigationDice
+            "coin" -> navigation.selectedItemId = R.id.navigationCoin
+            "dice" -> navigation.selectedItemId = R.id.navigationDice
             "magicBall" -> navigation.selectedItemId = R.id.navigationMagicBall
-            "settings"  -> navigation.selectedItemId = R.id.navigationSettings
+            "settings" -> navigation.selectedItemId = R.id.navigationSettings
         }
 
         AppRater.appLaunched(this)
     }
 
+    // Vibrate using a standard vibration pattern
+    // or use system Haptic feedback if vibration is disabled
     fun vibrate() {
         val sp = PreferenceManager.getDefaultSharedPreferences(this)
-        if (!sp.getBoolean("vibration", true)) return
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            val vm = getSystemService(VIBRATOR_MANAGER_SERVICE) as VibratorManager
-            vm.defaultVibrator.vibrate(
-                VibrationEffect.createOneShot(30, VibrationEffect.DEFAULT_AMPLITUDE)
-            )
+        val active = sp.getBoolean("vibration", true)
+        if (!active) return
+
+        // Deprecated for no reason
+        val vib = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            val vibratorManager =
+                this.getSystemService(VIBRATOR_MANAGER_SERVICE) as VibratorManager
+            vibratorManager.defaultVibrator
         } else {
             @Suppress("DEPRECATION")
-            (getSystemService(VIBRATOR_SERVICE) as Vibrator).vibrate(30)
+            getSystemService(VIBRATOR_SERVICE) as Vibrator
         }
+
+        // Create a short vibration for earlier Android versions
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R && Build.VERSION.SDK_INT > 26)
+            vib.vibrate(VibrationEffect.createOneShot(30, VibrationEffect.DEFAULT_AMPLITUDE))
+        // Or use system Haptic feedback if available
+        else
+            if (Build.VERSION.SDK_INT >= 30 && vib.areEffectsSupported(VibrationEffect.EFFECT_CLICK)[0] == Vibrator.VIBRATION_EFFECT_SUPPORT_YES)
+                vib.vibrate(VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK))
+            else
+                @Suppress("DEPRECATION")
+                vib.vibrate(30)
     }
 
     fun playSound(fragmentNumber: Int) {

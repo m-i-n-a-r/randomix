@@ -3,9 +3,9 @@
 An open source app to choose randomly between numbers, answers, options and so on.
 
 <p align='center'>
-  <a href='https://github.com/m-i-n-a-r/randomix/blob/master/LICENSE.md'><img src='https://img.shields.io/cocoapods/l/AFNetworking.svg'/></a>
-  <img src='https://img.shields.io/github/v/release/m-i-n-a-r/randomix'/>
-  <a title="Crowdin" target="_blank" href="https://crowdin.com/project/randomix"><img src="https://badges.crowdin.net/randomix/localized.svg"></a>
+  <a href='https://github.com/m-i-n-a-r/randomix/blob/master/LICENSE.md'><img src='https://img.shields.io/cocoapods/l/AFNetworking.svg' alt=""/></a>
+  <img src='https://img.shields.io/github/v/release/m-i-n-a-r/randomix' alt=""/>
+  <a title="Crowdin" target="_blank" href="https://crowdin.com/project/randomix"><img src="https://badges.crowdin.net/randomix/localized.svg" alt=""></a>
 </p>
 
 ## Introduction
@@ -16,7 +16,7 @@ The main purpose of the app is provide a **random choice** in different ways. Th
 basic personalization options and an introduction, plus a lot of **animated vector drawables**. The
 design is a bit personal, but it mostly follows the guidelines.
 
-## Translations (refer to [Crowdin](https://crwd.in/randomix))
+## Translations (refer to [Crowdin](https://crowdin.com/project/randomix))
 
 | LANGUAGE               |            SPECIAL THANKS |
 |:-----------------------|--------------------------:|
@@ -74,14 +74,14 @@ Special thanks to Nickoriginal for the overall improvement of each translation
 ## Screenshots
 
 <p align='center'>
-  <img src='https://i.imgur.com/tDc3Tb2.jpg' width='22%'/>
-  <img src='https://i.imgur.com/FCe38ow.png' width='22%'/>
-  <img src='https://i.imgur.com/vr4tYQ9.png' width='22%'/>
-  <img src='https://i.imgur.com/0PZaSPX.png' width='22%'/>
-  <img src='https://i.imgur.com/8TRHXEu.png' width='22%'/>
-  <img src='https://i.imgur.com/DbjhZEl.png' width='22%'/>
-  <img src='https://i.imgur.com/aMeqjeY.png' width='22%'/>
-  <img src='https://i.imgur.com/XjAqpM0.png' width='22%'/>
+  <img src='https://i.imgur.com/tDc3Tb2.jpg' width='22%' alt=""/>
+  <img src='https://i.imgur.com/FCe38ow.png' width='22%' alt=""/>
+  <img src='https://i.imgur.com/vr4tYQ9.png' width='22%' alt=""/>
+  <img src='https://i.imgur.com/0PZaSPX.png' width='22%' alt=""/>
+  <img src='https://i.imgur.com/8TRHXEu.png' width='22%' alt=""/>
+  <img src='https://i.imgur.com/DbjhZEl.png' width='22%' alt=""/>
+  <img src='https://i.imgur.com/aMeqjeY.png' width='22%' alt=""/>
+  <img src='https://i.imgur.com/XjAqpM0.png' width='22%' alt=""/>
 </p>
 
 ## Download

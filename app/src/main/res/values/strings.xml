@@ -106,7 +106,7 @@
     <string name="dev_github" translatable="false">https://github.com/m-i-n-a-r</string>
     <string name="dev_other_apps" translatable="false">https://play.google.com/store/apps/dev?id=7720251761301594831</string>
     <string name="dev_telegram" translatable="false">https://t.me/minartastic</string>
-    <string name="dev_crowdin" translatable="false">https://crwd.in/randomix</string>
+    <string name="dev_crowdin" translatable="false">https://crowdin.com/project/randomix</string>
     <string name="easter_egg">Nice logo, huh? ;D</string>
     <string name="customization">Customization</string>
     <string name="vibration_name">Vibration</string>

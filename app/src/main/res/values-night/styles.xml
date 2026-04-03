@@ -12,7 +12,6 @@
         <item name="colorSurfaceVariant">@color/goodGrayTranslucent</item>
         <!-- Navbar item halo -->
         <item name="colorSecondaryContainer">@color/colorAccentTranslucent</item>
-        <item name="colorAccent">@color/colorAccent</item>
         <item name="colorTertiary">@color/colorAccent</item>
         <item name="colorTertiaryContainer">@color/colorAccentTranslucent</item>
         <item name="android:navigationBarColor">@color/colorPrimaryInverse</item>
@@ -25,10 +24,7 @@
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
         <item name="alertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
-        <item name="switchStyle">@style/CustomMaterialSwitch</item>
         <item name="bottomNavigationStyle">@style/CustomBottomNavigation</item>
-        <!-- New items TODO check -->
-        <item name="colorSurfaceContainerLow">@color/colorBackgroundInverse</item>
         <item name="colorOutlineVariant">?attr/colorSurfaceVariant</item>
         <item name="colorOnSecondary">@color/textColorPrimary</item>
         <item name="colorOnSurfaceVariant">@color/textColorPrimaryInverse</item>
@@ -36,6 +32,8 @@
         <item name="materialSwitchStyle">@style/CustomMaterialSwitch</item>
         <item name="colorSurface">@color/almostBlack</item>
         <item name="colorOnSurface">@color/textColorPrimaryInverse</item>
+        <item name="android:dialogPreferenceStyle">@style/ThemeOverlay.App.PreferenceDialog.Monet
+        </item>
     </style>
 
     <!-- Monet theme -->

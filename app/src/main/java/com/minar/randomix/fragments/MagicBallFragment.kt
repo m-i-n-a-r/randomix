@@ -90,7 +90,7 @@ class MagicBallFragment : Fragment(), View.OnClickListener {
         val customAnswersEnabled = sp.getBoolean("custom_answers_active", false)
         if (customAnswersEnabled) {
             val raw = sp.getString("custom_answers", "") ?: ""
-            if (raw.isNotEmpty()) customAnswers = raw.split(";").toTypedArray()
+            if (raw.isNotEmpty()) customAnswers = raw.split(";").filter { it.isNotEmpty() }.toTypedArray()
         }
 
         act?.vibrate()
@@ -100,7 +100,7 @@ class MagicBallFragment : Fragment(), View.OnClickListener {
         val n: Int
         val ran = Random()
 
-        if (customAnswers != null && customAnswers!!.size > 2) {
+        if (customAnswers != null && customAnswers!!.size >= 2) {
             answers = customAnswers!!
             n = ran.nextInt(answers.size)
         } else {

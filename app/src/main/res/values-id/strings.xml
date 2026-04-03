@@ -150,6 +150,6 @@
     <string name="not_again_button">Jangan tanya lagi</string>
     <string name="translate_app">Terjemahkan aplikasi</string>
     <!-- Universal Dice Fragment -->
-    <string name="blob_name">Random Blobs background</string>
-    <string name="blob_description">A random moving background, for aesthetic purposes</string>
+    <string name="blob_name">Latar belakang Random Blobs</string>
+    <string name="blob_description">Latar belakang bergerak acak, untuk tujuan estetika</string>
 </resources>

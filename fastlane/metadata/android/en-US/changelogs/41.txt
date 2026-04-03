@@ -1,0 +1,9 @@
+- New translations
+- New random blobs background
+- New black Amoled theme
+- A lot of fixes
+- The roulette remembers the last range/options and mode
+- Cards quick option in roulette
+- Material Expressive
+- Dice type and number
+- New animations here and there

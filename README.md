@@ -49,14 +49,14 @@ Special thanks to Nickoriginal for the overall improvement of each translation
       entered from the user. Includes a list of recent options easy to select, pin, delete or
       restore.
     - **Coin** -> simply flips a coin and prints the result.
-    - **Dice** -> throws a chosen number of dice and prints the result.
+    - **Dice** -> throws a chosen number/type of dice and prints the result.
     - **Magic Ball** -> provides randomly chosen answers to any question.
-- Light and dark themes (Automatic dark mode supported)
+- Light, dark and Amoled themes (Automatic dark mode supported)
 - Full Material You support
 - Selectable accent (no app restart needed)
-- Up to 10 dice, 3v3 mode
-- The app remember the last used mode
-- Roulette presets for letters and numbers
+- Up to 10 dice, 3v3 mode, d4, d6, d10, d12, d20
+- The app remembers the last used mode
+- Roulette presets for letters, cards and numbers
 - Custom ranges (values from 0 to 99999)
 - Customizable magic ball answers
 - Multiwindows support

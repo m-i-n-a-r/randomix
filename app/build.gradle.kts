@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 plugins {
     alias(libs.plugins.android.application)
 }
@@ -11,7 +13,7 @@ android {
         minSdk = 23
         targetSdk = 36
         versionCode = 41
-        versionName = "2.6"
+        versionName = "3.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -32,6 +34,10 @@ android {
 
     lint {
         abortOnError = false
+    }
+
+    androidResources {
+        generateLocaleConfig = true
     }
 }
 

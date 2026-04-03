@@ -150,6 +150,6 @@
     <string name="not_again_button">Bir daha sorma</string>
     <string name="translate_app">Uygulamayı çevir</string>
     <!-- Universal Dice Fragment -->
-    <string name="blob_name">Random Blobs background</string>
-    <string name="blob_description">A random moving background, for aesthetic purposes</string>
+    <string name="blob_name">Random Blobs arka planı</string>
+    <string name="blob_description">Estetik amaçlı rastgele hareketli bir arka plan</string>
 </resources>

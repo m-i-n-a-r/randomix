@@ -150,6 +150,6 @@
     <string name="not_again_button">Frag nie wieder</string>
     <string name="translate_app">Übersetze die App</string>
     <!-- Universal Dice Fragment -->
-    <string name="blob_name">Random Blobs background</string>
-    <string name="blob_description">A random moving background, for aesthetic purposes</string>
+    <string name="blob_name">Random Blobs-Hintergrund</string>
+    <string name="blob_description">Ein zufällig bewegter Hintergrund, aus ästhetischen Gründen</string>
 </resources>

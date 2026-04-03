@@ -83,6 +83,14 @@
 
         <SwitchPreferenceCompat
             android:defaultValue="true"
+            android:key="blob"
+            android:title="@string/blob_name"
+            android:summary="@string/blob_description"
+            android:widgetLayout="@layout/preference_switch_widget"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
             android:key="vibration"
             android:summaryOff="@string/vibration_description_off"
             android:summaryOn="@string/vibration_description_on"

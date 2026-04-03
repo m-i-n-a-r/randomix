@@ -194,5 +194,7 @@
     <string name="nine_numeral" translatable="false">9</string>
     <string name="ten_numeral" translatable="false">10</string>
     <string name="cards" translatable="false">🃏</string>
+    <string name="blob_name">Random Blobs background</string>
+    <string name="blob_description">A random moving background, for aesthetic purposes</string>
 
 </resources>

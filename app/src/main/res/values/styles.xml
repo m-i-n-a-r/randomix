@@ -449,7 +449,7 @@
     <style name="ThemeOverlay.App.ToggleButton.Outlined" parent="">
         <item name="colorContainerChecked">?attr/colorPrimaryContainer</item>
         <item name="colorOnContainerChecked">?attr/colorOnPrimaryContainer</item>
-        <item name="colorContainerUnchecked">@android:color/transparent</item>
+        <item name="colorContainerUnchecked">?attr/colorSurface</item>
         <item name="colorOnContainerUnchecked">?attr/colorOnSurface</item>
     </style>
 

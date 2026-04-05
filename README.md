@@ -74,14 +74,18 @@ Special thanks to Nickoriginal for the overall improvement of each translation
 ## Screenshots
 
 <p align='center'>
-  <img src='https://i.imgur.com/tDc3Tb2.jpg' width='22%' alt=""/>
-  <img src='https://i.imgur.com/FCe38ow.png' width='22%' alt=""/>
-  <img src='https://i.imgur.com/vr4tYQ9.png' width='22%' alt=""/>
-  <img src='https://i.imgur.com/0PZaSPX.png' width='22%' alt=""/>
-  <img src='https://i.imgur.com/8TRHXEu.png' width='22%' alt=""/>
-  <img src='https://i.imgur.com/DbjhZEl.png' width='22%' alt=""/>
-  <img src='https://i.imgur.com/aMeqjeY.png' width='22%' alt=""/>
-  <img src='https://i.imgur.com/XjAqpM0.png' width='22%' alt=""/>
+<p align="center">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/01.png" width="19%" alt="01"/>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/02.png" width="19%" alt="02"/>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/03.png" width="19%" alt="03"/>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/04.png" width="19%" alt="04"/>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/05.png" width="19%" alt="05"/>
+
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/06.png" width="19%" alt="06"/>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/07.png" width="19%" alt="07"/>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/08.png" width="19%" alt="08"/>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/09.png" width="19%" alt="09"/>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/10.png" width="19%" alt="10"/>
 </p>
 
 ## Download

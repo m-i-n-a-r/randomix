@@ -278,7 +278,7 @@ class UniversalDiceFragment : Fragment() {
 
     // Dice animation
     private fun animateSingleDie(view: ImageView, onEnd: () -> Unit) {
-        val gray = 0xFF9E9E9E.toInt()
+        val gray = MaterialColors.getColor(view, com.google.android.material.R.attr.colorOutline)
         val primary =
             MaterialColors.getColor(view, com.google.android.material.R.attr.colorPrimaryFixed)
 

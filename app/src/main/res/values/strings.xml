@@ -23,7 +23,8 @@
     <string name="no_entry_roulette">Please, enter 2 or more options to spin the roulette!</string>
     <string name="too_much_entries_roulette">You can\'t enter more than 30 options!</string>
     <string name="generic_option">Option</string>
-    <string name="recent_title">Recent options, tap to restore</string>
+    <string name="recent_title">Recent options</string>
+    <string name="recent_description">Tap a chip to add a predefined set. Long press on a recent option set to pin it, tap to restore it or swipe to delete it.</string>
     <string name="bottom_sheet_no_option">No recent option, spin the roulette to save the current options!</string>
     <string name="letters_shortcut">A-Z Letters</string>
     <string name="numbers_1_100_shortcut" translatable="false">1–100</string>
@@ -89,7 +90,7 @@
 
     <!-- Dice -->
     <string name="hello_dice_fragment">Dice mode</string>
-    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number from settings. Good luck!</string>
+    <string name="description_dice">Dice can be useful, in a table game for example! The app will throw one to ten dice for you. Select the number and type below. Good luck!</string>
     <string name="throw_dice">Throw the dice!</string>
     <string name="hint_dice">Press the button below!</string>
 
@@ -98,13 +99,14 @@
     <string name="dev_name" translatable="false">m.i.n.a.r.</string>
     <string name="dev_description">I\'m a polite guy, and I like beautiful things like animations, icons, sports cars and 3D printing. I work as a designer and computer engineer.</string>
     <string name="dev_email" translatable="false">minar.tastic@gmail.com</string>
-    <string name="dev_personal_site" translatable="false">https://minar.ml</string>
+    <string name="dev_personal_site" translatable="false">https://minar-portfolio.web.app</string>
     <string name="dev_instagram" translatable="false">https://www.instagram.com/minar.tastic/</string>
     <string name="dev_twitter" translatable="false">https://twitter.com/MinarTastic</string>
     <string name="dev_xda" translatable="false">https://forum.xda-developers.com/member.php?u=5222216</string>
     <string name="dev_github" translatable="false">https://github.com/m-i-n-a-r</string>
     <string name="dev_other_apps" translatable="false">https://play.google.com/store/apps/dev?id=7720251761301594831</string>
-    <string name="dev_crowdin" translatable="false">https://crwd.in/randomix</string>
+    <string name="dev_telegram" translatable="false">https://t.me/minartastic</string>
+    <string name="dev_crowdin" translatable="false">https://crowdin.com/project/randomix</string>
     <string name="easter_egg">Nice logo, huh? ;D</string>
     <string name="customization">Customization</string>
     <string name="vibration_name">Vibration</string>
@@ -146,6 +148,7 @@
     <string name="system_theme">System default</string>
     <string name="dark_theme">Dark</string>
     <string name="light_theme">Light</string>
+    <string name="amoled_theme" translatable="false">Amoled</string>
     <string name="app_behavior">App behavior</string>
     <string name="rude_answers_name">Rude answers</string>
     <string name="rude_answers_description_on">Rude answers activated, idiot</string>
@@ -172,5 +175,26 @@
     <string name="feedback_text">I\'ve something to tell you</string>
     <string name="not_again_button">Never ask again</string>
     <string name="translate_app">Translate the app</string>
+
+    <!-- Universal Dice Fragment -->
+    <string name="dice_d4"  translatable="false">D4</string>
+    <string name="dice_d6"  translatable="false">D6</string>
+    <string name="dice_d8"  translatable="false">D8</string>
+    <string name="dice_d10" translatable="false">D10</string>
+    <string name="dice_d12" translatable="false">D12</string>
+    <string name="dice_d20" translatable="false">D20</string>
+    <string name="one_numeral" translatable="false">1</string>
+    <string name="two_numeral" translatable="false">2</string>
+    <string name="three_numeral" translatable="false">3</string>
+    <string name="four_numeral" translatable="false">4</string>
+    <string name="five_numeral" translatable="false">5</string>
+    <string name="six_numeral" translatable="false">6</string>
+    <string name="seven_numeral" translatable="false">7</string>
+    <string name="eight_numeral" translatable="false">8</string>
+    <string name="nine_numeral" translatable="false">9</string>
+    <string name="ten_numeral" translatable="false">10</string>
+    <string name="cards" translatable="false">🃏</string>
+    <string name="blob_name">Random Blobs background</string>
+    <string name="blob_description">A random moving background, for aesthetic purposes</string>
 
 </resources>

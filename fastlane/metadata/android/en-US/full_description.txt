@@ -28,8 +28,8 @@ An example?
     <li> The recent options used in the roulette are automatically saved and can be restored! </li>
     <li> Roulette presets, such as 1-100 numbers and letters </li>
     <li> Shake to launch option </li>
-    <li> Light and dark themes, Material You </li>
-    <li> Up to 10 dice, plus a 3v3 mode </li>
+    <li> Light, dark and Amoled themes, Material You </li>
+    <li> Up to 10 dice and different dice types, plus a 3v3 mode </li>
     <li> Selectable accent </li>
     <li> Android 13 per-app language and themed icon support </li>
     <li> Vibration and sounds </li>

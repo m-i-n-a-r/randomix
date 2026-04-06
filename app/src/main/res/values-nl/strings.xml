@@ -18,7 +18,8 @@
     <string name="no_entry_roulette">Voer a.u.b. 2 of meer opties in om de roulette te draaien!</string>
     <string name="too_much_entries_roulette">Je kan niet meer dan 30 opties invoeren!</string>
     <string name="generic_option">Optie</string>
-    <string name="recent_title">Recente opties, tik om te herstellen</string>
+    <string name="recent_title">Recente opties</string>
+    <string name="recent_description">Tik op een chip om een vooraf gedefinieerde set toe te voegen. Houd een recente optieset ingedrukt om hem vast te zetten, tik om hem te herstellen of veeg om hem te verwijderen.</string>
     <string name="bottom_sheet_no_option">Geen recente optie, draai de roulette om de huidige opties op te slaan!</string>
     <string name="letters_shortcut">A-Z Letters</string>
     <string name="range">Bereik</string>
@@ -78,7 +79,7 @@
     <string name="insert_answer_hint">Voeg een antwoord toe…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Dobbelsteen modus</string>
-    <string name="description_dice">Dobbelstenen kunnen handig zijn, in een tafelspel bijvoorbeeld! De app gooit één tot tien dobbelstenen voor je. Selecteer het aantal bij instellingen. Veel succes!</string>
+    <string name="description_dice">Dice kan nuttig zijn, bijvoorbeeld in een tafelspel! De app zal er één naar tien dobbelstenen voor je gooien. Selecteer het nummer en type hieronder. Veel succes!</string>
     <string name="throw_dice">Gooi de dobbelstenen!</string>
     <string name="hint_dice">Druk op de knop hieronder!</string>
     <!-- Settings -->
@@ -148,4 +149,7 @@
     <string name="feedback_text">Ik heb je iets te vertellen</string>
     <string name="not_again_button">Nooit meer vragen</string>
     <string name="translate_app">Vertaal de app</string>
+    <!-- Universal Dice Fragment -->
+    <string name="blob_name">Random Blobs achtergrond</string>
+    <string name="blob_description">Een willekeurig bewegende achtergrond, voor esthetische doeleinden</string>
 </resources>

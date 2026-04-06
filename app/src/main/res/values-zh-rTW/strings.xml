@@ -18,7 +18,8 @@
     <string name="no_entry_roulette">請至少加入兩個選項來轉動輪盤！ </string>
     <string name="too_much_entries_roulette">你不能新增多於30個選項！ </string>
     <string name="generic_option">選項</string>
-    <string name="recent_title">最近的選項組，點按以恢復</string>
+    <string name="recent_title">最近的選項組</string>
+    <string name="recent_description">點擊選項卡以新增預定義集合。長按最近的選項集合可將其固定，點擊可還原，滑動可刪除。</string>
     <string name="bottom_sheet_no_option">沒有最近的選項組，轉動輪盤來保存當前的選項組！ </string>
     <string name="letters_shortcut">A-Z 字母</string>
     <string name="range">範圍</string>
@@ -148,4 +149,7 @@
     <string name="feedback_text">我有一些事情要告訴你</string>
     <string name="not_again_button">別再問我了</string>
     <string name="translate_app">翻譯應用程式</string>
+    <!-- Universal Dice Fragment -->
+    <string name="blob_name">Random Blobs 背景</string>
+    <string name="blob_description">隨機移動的背景，用於美觀目的</string>
 </resources>

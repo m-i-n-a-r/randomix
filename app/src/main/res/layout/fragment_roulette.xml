@@ -19,8 +19,8 @@
             android:gravity="center_horizontal"
             android:maxLines="1"
             android:text="@string/hello_roulette_fragment"
-            android:textColor="?attr/colorOnSurface"
-            android:textSize="@dimen/title_text_size" />
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium.Emphasized"
+            android:textColor="?attr/colorTertiary" />
 
         <TextView
             android:id="@+id/descriptionRoulette"
@@ -59,7 +59,6 @@
                 android:layout_margin="@dimen/activity_vertical_margin"
                 android:layout_weight="0.8"
                 android:hint="@string/insert_roulette_hint"
-                app:boxBackgroundColor="?android:statusBarColor"
                 app:boxCornerRadiusBottomEnd="@dimen/rounded_corners"
                 app:boxCornerRadiusBottomStart="@dimen/rounded_corners"
                 app:boxCornerRadiusTopEnd="@dimen/rounded_corners"
@@ -115,7 +114,6 @@
                 android:layout_margin="@dimen/activity_vertical_margin"
                 android:layout_weight=".45"
                 android:hint="@string/min"
-                app:boxBackgroundColor="?android:statusBarColor"
                 app:boxCornerRadiusBottomEnd="@dimen/rounded_corners"
                 app:boxCornerRadiusBottomStart="@dimen/rounded_corners"
                 app:boxCornerRadiusTopEnd="@dimen/rounded_corners"
@@ -160,7 +158,6 @@
                 android:layout_margin="@dimen/activity_vertical_margin"
                 android:layout_weight=".45"
                 android:hint="@string/max"
-                app:boxBackgroundColor="?android:statusBarColor"
                 app:boxCornerRadiusBottomEnd="@dimen/rounded_corners"
                 app:boxCornerRadiusBottomStart="@dimen/rounded_corners"
                 app:boxCornerRadiusTopEnd="@dimen/rounded_corners"
@@ -187,16 +184,16 @@
 
         </LinearLayout>
 
-        <androidx.appcompat.widget.SwitchCompat
+        <com.google.android.material.materialswitch.MaterialSwitch
             android:id="@+id/rangeSwitchRoulette"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
             android:checked="false"
             android:text="@string/range"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge.Emphasized"
             app:switchPadding="@dimen/activity_horizontal_margin"
-            app:switchTextAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+            app:switchTextAppearance="@style/TextAppearance.Material3.BodyLarge.Emphasized" />
 
         <HorizontalScrollView
             android:layout_width="match_parent"
@@ -209,8 +206,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:animateLayoutChanges="true"
-                android:paddingStart="@dimen/activity_horizontal_margin"
-                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:paddingHorizontal="@dimen/activity_horizontal_margin"
                 app:chipSpacing="@dimen/chip_spacing"
                 app:singleLine="true">
 
@@ -233,10 +229,8 @@
             android:id="@+id/resultRoulette"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="@dimen/result_text_margin"
-            android:layout_marginEnd="@dimen/activity_horizontal_margin"
-            android:layout_marginBottom="@dimen/result_text_margin"
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+            android:layout_marginVertical="@dimen/result_text_margin"
             android:gravity="center_horizontal"
             android:text="@string/result_placeholder"
             android:textSize="@dimen/result_text_size"

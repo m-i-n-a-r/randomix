@@ -21,45 +21,71 @@
             </group>
         </vector>
     </aapt:attr>
+
     <target android:name="group">
         <aapt:attr name="android:animation">
             <set>
                 <objectAnimator
-                    android:propertyName="scaleX"
-                    android:duration="250"
-                    android:valueFrom="1"
-                    android:valueTo="0.7"
-                    android:valueType="floatType"
-                    android:interpolator="@android:anim/anticipate_interpolator"/>
-                <objectAnimator
-                    android:propertyName="scaleY"
-                    android:duration="250"
-                    android:valueFrom="1"
-                    android:valueTo="0.7"
-                    android:valueType="floatType"
-                    android:interpolator="@android:anim/anticipate_interpolator"/>
-                <objectAnimator
-                    android:propertyName="scaleX"
-                    android:startOffset="250"
-                    android:duration="250"
-                    android:valueFrom="0.7"
-                    android:valueTo="1"
+                    android:propertyName="rotation"
+                    android:duration="80"
+                    android:valueFrom="0"
+                    android:valueTo="18"
                     android:valueType="floatType"
                     android:interpolator="@android:interpolator/fast_out_slow_in"/>
                 <objectAnimator
-                    android:propertyName="scaleY"
-                    android:startOffset="250"
-                    android:duration="250"
-                    android:valueFrom="0.7"
-                    android:valueTo="1"
+                    android:propertyName="rotation"
+                    android:startOffset="80"
+                    android:duration="150"
+                    android:valueFrom="18"
+                    android:valueTo="-14"
+                    android:valueType="floatType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                    android:propertyName="rotation"
+                    android:startOffset="230"
+                    android:duration="120"
+                    android:valueFrom="-14"
+                    android:valueTo="9"
+                    android:valueType="floatType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                    android:propertyName="rotation"
+                    android:startOffset="350"
+                    android:duration="90"
+                    android:valueFrom="9"
+                    android:valueTo="-4"
+                    android:valueType="floatType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                    android:propertyName="rotation"
+                    android:startOffset="440"
+                    android:duration="60"
+                    android:valueFrom="-4"
+                    android:valueTo="0"
                     android:valueType="floatType"
                     android:interpolator="@android:interpolator/fast_out_slow_in"/>
             </set>
         </aapt:attr>
     </target>
+
     <target android:name="path">
         <aapt:attr name="android:animation">
             <set>
+                <objectAnimator
+                    android:propertyName="fillAlpha"
+                    android:duration="160"
+                    android:valueFrom="1"
+                    android:valueTo="0.3"
+                    android:valueType="floatType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                    android:propertyName="fillAlpha"
+                    android:startOffset="160"
+                    android:duration="200"
+                    android:valueFrom="0.3"
+                    android:valueTo="1"
+                    android:valueType="floatType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
                 <objectAnimator
                     android:propertyName="strokeWidth"
                     android:duration="200"

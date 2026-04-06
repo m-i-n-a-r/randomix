@@ -15,7 +15,6 @@
             android:id="@+id/magicBallBottomSheet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fitsSystemWindows="true"
             android:paddingBottom="@dimen/linear_vertical_margin"
             app:behavior_fitToContents="false"
             app:behavior_halfExpandedRatio="0.2"
@@ -55,7 +54,7 @@
                 android:paddingStart="@dimen/side_drawable_margin"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
                 android:text="@string/custom_answers"
-                android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge.Emphasized"
                 android:textColor="?attr/colorPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/recentImage"
@@ -132,7 +131,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/customAnswerTextLayout" />
 
-            <androidx.appcompat.widget.SwitchCompat
+            <com.google.android.material.materialswitch.MaterialSwitch
                 android:id="@+id/customAnswerSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

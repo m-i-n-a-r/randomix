@@ -3,9 +3,9 @@
 An open source app to choose randomly between numbers, answers, options and so on.
 
 <p align='center'>
-  <a href='https://github.com/m-i-n-a-r/randomix/blob/master/LICENSE.md'><img src='https://img.shields.io/cocoapods/l/AFNetworking.svg'/></a>
-  <img src='https://img.shields.io/github/v/release/m-i-n-a-r/randomix'/>
-  <a title="Crowdin" target="_blank" href="https://crowdin.com/project/randomix"><img src="https://badges.crowdin.net/randomix/localized.svg"></a>
+  <a href='https://github.com/m-i-n-a-r/randomix/blob/master/LICENSE.md'><img src='https://img.shields.io/cocoapods/l/AFNetworking.svg' alt=""/></a>
+  <img src='https://img.shields.io/github/v/release/m-i-n-a-r/randomix' alt=""/>
+  <a title="Crowdin" target="_blank" href="https://crowdin.com/project/randomix"><img src="https://badges.crowdin.net/randomix/localized.svg" alt=""></a>
 </p>
 
 ## Introduction
@@ -16,7 +16,7 @@ The main purpose of the app is provide a **random choice** in different ways. Th
 basic personalization options and an introduction, plus a lot of **animated vector drawables**. The
 design is a bit personal, but it mostly follows the guidelines.
 
-## Translations (refer to [Crowdin](https://crwd.in/randomix))
+## Translations (refer to [Crowdin](https://crowdin.com/project/randomix))
 
 | LANGUAGE               |            SPECIAL THANKS |
 |:-----------------------|--------------------------:|
@@ -49,14 +49,14 @@ Special thanks to Nickoriginal for the overall improvement of each translation
       entered from the user. Includes a list of recent options easy to select, pin, delete or
       restore.
     - **Coin** -> simply flips a coin and prints the result.
-    - **Dice** -> throws a chosen number of dice and prints the result.
+    - **Dice** -> throws a chosen number/type of dice and prints the result.
     - **Magic Ball** -> provides randomly chosen answers to any question.
-- Light and dark themes (Automatic dark mode supported)
+- Light, dark and Amoled themes (Automatic dark mode supported)
 - Full Material You support
 - Selectable accent (no app restart needed)
-- Up to 10 dice, 3v3 mode
-- The app remember the last used mode
-- Roulette presets for letters and numbers
+- Up to 10 dice, 3v3 mode, d4, d6, d10, d12, d20
+- The app remembers the last used mode
+- Roulette presets for letters, cards and numbers
 - Custom ranges (values from 0 to 99999)
 - Customizable magic ball answers
 - Multiwindows support
@@ -74,14 +74,18 @@ Special thanks to Nickoriginal for the overall improvement of each translation
 ## Screenshots
 
 <p align='center'>
-  <img src='https://i.imgur.com/tDc3Tb2.jpg' width='22%'/>
-  <img src='https://i.imgur.com/FCe38ow.png' width='22%'/>
-  <img src='https://i.imgur.com/vr4tYQ9.png' width='22%'/>
-  <img src='https://i.imgur.com/0PZaSPX.png' width='22%'/>
-  <img src='https://i.imgur.com/8TRHXEu.png' width='22%'/>
-  <img src='https://i.imgur.com/DbjhZEl.png' width='22%'/>
-  <img src='https://i.imgur.com/aMeqjeY.png' width='22%'/>
-  <img src='https://i.imgur.com/XjAqpM0.png' width='22%'/>
+<p align="center">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/01.png" width="19%" alt="01"/>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/02.png" width="19%" alt="02"/>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/03.png" width="19%" alt="03"/>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/04.png" width="19%" alt="04"/>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/05.png" width="19%" alt="05"/>
+
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/06.png" width="19%" alt="06"/>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/07.png" width="19%" alt="07"/>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/08.png" width="19%" alt="08"/>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/09.png" width="19%" alt="09"/>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/10.png" width="19%" alt="10"/>
 </p>
 
 ## Download

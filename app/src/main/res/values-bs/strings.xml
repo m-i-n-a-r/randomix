@@ -18,7 +18,8 @@
     <string name="no_entry_roulette">Molim vas, unesite dvije ili više postavkih da okrenete ruletu!</string>
     <string name="too_much_entries_roulette">Ne možete unijeti više od 30 postavkih!</string>
     <string name="generic_option">Postavka</string>
-    <string name="recent_title">Nedavne postavke, tapnite za obnovu</string>
+    <string name="recent_title">Nedavne postavke</string>
+    <string name="recent_description">Tapnite čip da dodate unaprijed definiran skup. Dugo pritisnite nedavni skup opcija da ga prikvačite, tapnite da ga obnovite ili prevucite da ga obrišete.</string>
     <string name="bottom_sheet_no_option">Nema nedavnih postavkih, okrenite ruletu da spasite trenutačne postavke!</string>
     <string name="letters_shortcut">A-Z Slova</string>
     <string name="range">Opseg</string>
@@ -72,10 +73,10 @@
     <string name="magic_answer_rude_4">Lol! Kako tupavo.</string>
     <string name="magic_answer_rude_5">Poludio si.</string>
     <string name="magic_answer_rude_6">Idi u pakao.</string>
-    <string name="no_answers_magic_ball">No custom answers. Add one from the above text field. You can delete them by tapping on them.</string>
-    <string name="custom_answers">Custom answers</string>
-    <string name="use_custom_answers">Use custom answers</string>
-    <string name="insert_answer_hint">Insert an answer…</string>
+    <string name="no_answers_magic_ball">Nema prilagođenih odgovora. Dodajte jedan iz gornjeg tekstualnog polja. Možete ih izbrisati dodirom na njih.</string>
+    <string name="custom_answers">Prilagođeni odgovori</string>
+    <string name="use_custom_answers">Koristite prilagođene odgovore</string>
+    <string name="insert_answer_hint">Umetnite odgovor…</string>
     <!-- Dice -->
     <string name="hello_dice_fragment">Mod za kocke</string>
     <string name="description_dice">Kocke mogu biti korisne, na stolnoj igri naprimjer! Aplikacija će jednu do deset kockih za vas baciti. Odaberite količinu u podešavanjima. Sretno!</string>
@@ -148,4 +149,7 @@
     <string name="feedback_text">Moram ti nešto reći</string>
     <string name="not_again_button">Nikad me to više ne pitaj</string>
     <string name="translate_app">Prevedite aplikaciju</string>
+    <!-- Universal Dice Fragment -->
+    <string name="blob_name">Pozadina Random Blobs</string>
+    <string name="blob_description">Nasumična pokretna pozadina, iz estetskih razloga</string>
 </resources>

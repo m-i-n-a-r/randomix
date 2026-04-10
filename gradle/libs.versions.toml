@@ -1,7 +1,7 @@
 [versions]
 agp = "9.1.0"
 
-material = "1.14.0-alpha10"
+material = "1.14.0-beta01"
 constraintlayout = "2.2.1"
 navigation = "2.9.7"
 preference = "1.2.1"
@@ -29,5 +29,5 @@ espresso-core = { group = "androidx.test.espresso", name = "espresso-core", vers
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
-versions = { id = "com.github.ben-manes.versions", version = "0.51.0" }
-version-catalog-update = { id = "nl.littlerobots.version-catalog-update",  version = "0.8.5" }
+versions = { id = "com.github.ben-manes.versions", version = "0.53.0" }
+version-catalog-update = { id = "nl.littlerobots.version-catalog-update",  version = "1.1.0" }

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- No toolbar and no back arrow on purpose: the page is dismissed with the back gesture or the
+     navbar button, and the navigation animators in nav_graph animate it -->
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/aboutScroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:clipToPadding="false"
+    android:scrollbars="none"
+    tools:context=".fragments.AboutFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageMinar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/minar_banner_height"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:clickable="true"
+            android:contentDescription="@string/dev_name"
+            android:focusable="true"
+            android:padding="@dimen/minar_banner_padding"
+            android:src="@drawable/animated_logo"
+            app:tint="?attr/colorPrimary" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/descriptionMinar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/minar_description_padding"
+            android:text="@string/dev_description"
+            android:textAlignment="center"
+            android:textAppearance="?attr/textAppearanceBodyLarge"
+            android:textColor="?attr/colorOnSurfaceVariant" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/minarig"
+                style="@style/Widget.App.AuthorLink"
+                android:contentDescription="@string/dev_instagram"
+                android:src="@drawable/ic_instagram_black_24dp" />
+
+            <ImageView
+                android:id="@+id/minartg"
+                style="@style/Widget.App.AuthorLink"
+                android:contentDescription="@string/dev_telegram"
+                android:src="@drawable/ic_telegram_24dp" />
+
+            <ImageView
+                android:id="@+id/minarps"
+                style="@style/Widget.App.AuthorLink"
+                android:contentDescription="@string/dev_other_apps"
+                android:src="@drawable/ic_play_store_black_24dp" />
+
+            <ImageView
+                android:id="@+id/minargit"
+                style="@style/Widget.App.AuthorLink"
+                android:contentDescription="@string/dev_github"
+                android:src="@drawable/ic_github_black_24dp" />
+
+            <ImageView
+                android:id="@+id/minarsite"
+                style="@style/Widget.App.AuthorLink"
+                android:contentDescription="@string/dev_personal_site"
+                android:src="@drawable/ic_minar_logo_24dp" />
+
+        </LinearLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/about_row_padding_horizontal"
+            android:layout_marginVertical="@dimen/activity_vertical_margin" />
+
+        <LinearLayout
+            android:id="@+id/aboutRows"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

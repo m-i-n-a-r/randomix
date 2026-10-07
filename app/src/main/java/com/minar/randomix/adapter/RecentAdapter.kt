@@ -1,78 +1,58 @@
 package com.minar.randomix.adapter
 
-import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.Typeface
-import android.util.TypedValue
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.color.MaterialColors
 import com.minar.randomix.R
-import com.minar.randomix.utilities.Constants
-import com.minar.randomix.utilities.OnItemClickListener
+import com.minar.randomix.databinding.ItemRecentListBinding
 import com.minar.randomix.utilities.RecentUtils
+import com.minar.randomix.utilities.getThemeColor
 
 class RecentAdapter(
-    context: Context,
-    private val recentList: List<List<String>>
+    private val recentList: List<List<String>>,
+    private val onClick: (List<String>) -> Unit,
+    private val onLongClick: (Int) -> Unit,
 ) : RecyclerView.Adapter<RecentAdapter.RecentHolder>() {
 
-    private val inflater: LayoutInflater = LayoutInflater.from(context)
-    private var listener: OnItemClickListener? = null
-
-    inner class RecentHolder(itemView: View, val adapter: RecentAdapter) :
-        RecyclerView.ViewHolder(itemView), View.OnClickListener, View.OnLongClickListener {
-
-        val optionList: TextView = itemView.findViewById(R.id.recentText)
+    inner class RecentHolder(val binding: ItemRecentListBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         init {
-            itemView.setOnClickListener(this)
-            itemView.setOnLongClickListener(this)
-        }
-
-        override fun onClick(v: View) {
-            val position = layoutPosition
-            listener?.onItemClick(position, recentList[position], v)
-        }
-
-        override fun onLongClick(v: View): Boolean {
-            listener?.onItemLongClick(layoutPosition, v)
-            return true
+            binding.root.setOnClickListener {
+                val position = bindingAdapterPosition
+                if (position != RecyclerView.NO_POSITION) onClick(recentList[position])
+            }
+            binding.root.setOnLongClickListener {
+                val position = bindingAdapterPosition
+                if (position != RecyclerView.NO_POSITION) onLongClick(position)
+                true
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecentHolder {
-        val view = inflater.inflate(R.layout.item_recent_list, parent, false)
-        return RecentHolder(view, this)
+        val inflater = LayoutInflater.from(parent.context)
+        return RecentHolder(ItemRecentListBinding.inflate(inflater, parent, false))
     }
 
+    // A pinned set is filled like a checked segment, with a pin at its end
     override fun onBindViewHolder(holder: RecentHolder, position: Int) {
         val current = recentList[position]
-        if (current.contains(Constants.PIN_WORKAROUND_ENTRY)) {
-            holder.optionList.setTypeface(null, Typeface.BOLD)
-            holder.optionList.setTextColor(getThemeAccentColor(holder.adapter.inflater.context))
-        } else {
-            holder.optionList.setTypeface(null, Typeface.NORMAL)
-            holder.optionList.setTextColor(
-                MaterialColors.getColor(holder.itemView, com.google.android.material.R.attr.colorOutline)
+        val pinned = RecentUtils.isPinned(current)
+        val context = holder.itemView.context
+        holder.binding.recentCard.setCardBackgroundColor(
+            if (pinned) ColorStateList.valueOf(
+                getThemeColor(com.google.android.material.R.attr.colorSecondaryContainer, context)
             )
-        }
-        holder.optionList.text = RecentUtils.fromOptionList(current)
+            else context.getColorStateList(R.color.inner_card_background)
+        )
+        holder.binding.recentText.setTypeface(null, if (pinned) Typeface.BOLD else Typeface.NORMAL)
+        holder.binding.recentText.text = RecentUtils.fromOptionList(current)
+        holder.binding.recentPin.isVisible = pinned
     }
 
     override fun getItemCount(): Int = recentList.size
-
-    fun setOnItemClickListener(l: OnItemClickListener) {
-        listener = l
-    }
-
-    companion object {
-        fun getThemeAccentColor(context: Context): Int {
-            val value = TypedValue()
-            context.theme.resolveAttribute(com.google.android.material.R.attr.colorPrimaryFixed, value, true)
-            return value.data
-        }
-    }
 }

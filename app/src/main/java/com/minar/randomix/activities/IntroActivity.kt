@@ -2,7 +2,6 @@ package com.minar.randomix.activities
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.github.appintro.AppIntro
 import com.github.appintro.AppIntroFragment
@@ -12,9 +11,8 @@ import com.minar.randomix.R
 class IntroActivity : AppIntro() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        window.navigationBarColor = ContextCompat.getColor(this, R.color.iconGreen)
-
         super.onCreate(savedInstanceState)
+        setNavBarColorRes(R.color.iconGreen)
 
         val pageOne = SliderPagerBuilder()
             .title(getString(R.string.app_name).uppercase())

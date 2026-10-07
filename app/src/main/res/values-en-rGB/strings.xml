@@ -152,4 +152,21 @@
     <!-- Universal Dice Fragment -->
     <string name="blob_name">Random Blobs background</string>
     <string name="blob_description">A random moving background, for aesthetic purposes</string>
+    <string name="roulette_mode_options">Options</string>
+    <string name="delete_all_roulette">Delete all the options</string>
+    <string name="about_share_text">Randomix, let the randomness talk: %1$s</string>
+    <string name="about_translate_summary">Help bring Randomix to your language on Crowdin</string>
+    <string name="back">Back</string>
+    <string name="about_title">About</string>
+    <string name="about_version">Version</string>
+    <string name="about_language_title">Language</string>
+    <string name="about_language_summary">Pick the language used by Randomix</string>
+    <string name="about_rate_title">Rate the app</string>
+    <string name="about_rate_summary">Leave a review on the Play Store</string>
+    <string name="about_share_title">Share Randomix</string>
+    <string name="about_share_summary">Tell a friend about the app</string>
+    <string name="about_no_app_found">No app can handle this, sorry!</string>
+    <string name="about_contact_title">Contact the developer</string>
+    <string name="amoled_description_on">The dark theme uses pure black, ideal for OLED screens</string>
+    <string name="amoled_description_off">The dark theme uses the standard dark surfaces</string>
 </resources>

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/magicBallScroll"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,69 +15,50 @@
 
         <TextView
             android:id="@+id/titleMagicBall"
+            style="@style/Widget.App.PageTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:gravity="center_horizontal"
-            android:maxLines="1"
-            android:text="@string/hello_magic_ball_fragment"
-            android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium.Emphasized"
-            android:textColor="?attr/colorTertiary" />
+            android:text="@string/hello_magic_ball_fragment" />
 
         <TextView
             android:id="@+id/descriptionMagicBall"
+            style="@style/Widget.App.PageDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/linear_vertical_margin"
-            android:gravity="center_horizontal"
-            android:text="@string/description_magic_ball"
-            android:textColor="?attr/colorOnBackground"
-            android:textSize="@dimen/description_text_size" />
+            android:text="@string/description_magic_ball" />
 
         <TextView
             android:id="@+id/resultMagicBall"
+            style="@style/Widget.App.PageResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="@dimen/result_text_margin"
-            android:layout_marginEnd="@dimen/activity_horizontal_margin"
-            android:layout_marginBottom="@dimen/result_text_margin"
             android:ellipsize="marquee"
-            android:gravity="center_horizontal"
             android:marqueeRepeatLimit="marquee_forever"
             android:scrollHorizontally="true"
             android:singleLine="true"
-            android:text="@string/result_placeholder"
-            android:textSize="@dimen/result_text_size"
-            android:textStyle="bold" />
+            android:text="@string/result_placeholder" />
 
         <ImageView
             android:id="@+id/magicBallButtonAnimation"
             android:layout_width="match_parent"
             android:layout_height="@dimen/image_button_height"
-            android:layout_marginTop="@dimen/linear_vertical_margin"
-            android:layout_marginBottom="@dimen/linear_vertical_margin"
+            android:layout_marginVertical="@dimen/linear_vertical_margin"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
-            android:contentDescription="@string/hint_magic_ball"
-            android:focusable="true"
-            android:src="@drawable/magic_ball_vector_animation" />
-
-        <ImageView
-            android:id="@+id/magicBallRecentButton"
-            android:layout_width="@dimen/roulette_insertion_height"
-            android:layout_height="@dimen/roulette_insertion_height"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:clickable="true"
-            android:contentDescription="@string/recent_title"
+            android:contentDescription="@string/shake_ball"
             android:focusable="true"
             android:hapticFeedbackEnabled="false"
-            android:padding="@dimen/activity_horizontal_margin"
-            android:src="@drawable/animated_edit" />
+            android:src="@drawable/magic_ball_vector_animation" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/magicBallCustomAnswersButton"
+            style="@style/Widget.Material3Expressive.Button.TonalButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hapticFeedbackEnabled="false"
+            android:text="@string/custom_answers"
+            app:icon="@drawable/animated_edit" />
 
     </LinearLayout>
 
 </ScrollView>
-
-

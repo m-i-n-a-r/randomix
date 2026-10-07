@@ -1,6 +1,5 @@
 package com.minar.randomix.fragments
 
-import android.content.DialogInterface
 import android.content.SharedPreferences
 import android.graphics.drawable.Animatable2
 import android.graphics.drawable.Drawable
@@ -10,122 +9,113 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.view.inputmethod.EditorInfo
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.appcompat.widget.SwitchCompat
+import androidx.core.content.edit
+import androidx.core.view.isVisible
 import androidx.preference.PreferenceManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.chip.Chip
-import com.google.android.material.chip.ChipGroup
-import com.google.android.material.textfield.TextInputLayout
 import com.minar.randomix.R
-import androidx.core.content.edit
+import com.minar.randomix.databinding.MagicBallBottomSheetBinding
 
-class MagicBallBottomSheet(private val magicBall: MagicBallFragment) : BottomSheetDialogFragment() {
-
+// The custom answers of the magic ball, saved as soon as they change: the ball reads them on
+// every throw, so nothing has to be handed back
+class MagicBallBottomSheet : BottomSheetDialogFragment() {
+    private var _binding: MagicBallBottomSheetBinding? = null
+    private val binding get() = _binding!!
     private lateinit var sp: SharedPreferences
-    private lateinit var answerText: EditText
-    private val loadedAnswers = mutableListOf<String>()
-    private lateinit var answerChips: ChipGroup
-    private lateinit var placeholder: TextView
-    private lateinit var customAnswersSwitch: SwitchCompat
+    private val answers = mutableListOf<String>()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        val v = inflater.inflate(R.layout.magic_ball_bottom_sheet, container, false)
+    companion object {
+        const val TAG = "magic_ball_bottom_sheet"
+        const val MAX_ANSWERS = 100
+        const val CHIP_EXIT_DURATION = 400L
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = MagicBallBottomSheetBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         sp = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        answers.clear()
+        answers.addAll(MagicBallFragment.loadCustomAnswers(sp))
 
-        val customActive = sp.getBoolean("custom_answers_active", false)
-        val customAnswers = sp.getString("custom_answers", "") ?: ""
-        loadedAnswers.clear()
-        loadedAnswers.addAll(customAnswers.split(";").filter { it.isNotEmpty() })
-        placeholder = v.findViewById(R.id.customAnswersEmptyPlaceholder)
-
-        val noRecentImage = v.findViewById<ImageView>(R.id.recentImage)
-        val animatedNoRecent = noRecentImage.drawable
-        if (animatedNoRecent is Animatable2) {
-            animatedNoRecent.registerAnimationCallback(object : Animatable2.AnimationCallback() {
-                override fun onAnimationEnd(drawable: Drawable) { animatedNoRecent.start() }
+        val animatedImage = binding.customAnswersImage.drawable
+        if (animatedImage is Animatable2) {
+            animatedImage.registerAnimationCallback(object : Animatable2.AnimationCallback() {
+                override fun onAnimationEnd(drawable: Drawable) = animatedImage.start()
             })
-            animatedNoRecent.start()
+            animatedImage.start()
         }
 
-        answerChips = v.findViewById(R.id.customAnswerChipGroup)
-        answerText = v.findViewById(R.id.customAnswerText)
-        val answerTextLayout = v.findViewById<TextInputLayout>(R.id.customAnswerTextLayout)
-        answerTextLayout.setEndIconOnClickListener { insertAnswerChip("") }
-        answerText.setOnEditorActionListener { _, actionId, _ ->
-            if (actionId in listOf(EditorInfo.IME_ACTION_DONE, EditorInfo.IME_ACTION_GO, EditorInfo.IME_ACTION_SEND)) {
-                insertAnswerChip(""); true
-            } else false
+        binding.customAnswerTextLayout.setEndIconOnClickListener { insertTypedAnswer() }
+        binding.customAnswerText.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId != EditorInfo.IME_ACTION_DONE) return@setOnEditorActionListener false
+            insertTypedAnswer()
+            true
         }
 
-        customAnswersSwitch = v.findViewById(R.id.customAnswerSwitch)
-        customAnswersSwitch.isChecked = customActive
-        customAnswersSwitch.isEnabled = loadedAnswers.size >= 3
-        customAnswersSwitch.setOnCheckedChangeListener { _, checked ->
-            if (checked) magicBall.setCustomAnswers(loadedAnswers.toTypedArray())
-            else magicBall.setCustomAnswers(null)
-        }
+        binding.customAnswerSwitch.isChecked = sp.getBoolean("custom_answers_active", false)
+        binding.customAnswerSwitch.setOnCheckedChangeListener { _, _ -> save() }
 
-        managePlaceholder()
-        loadedAnswers.forEach { insertAnswerChip(it) }
-
-        return v
+        answers.forEach(::addAnswerChip)
+        updateState()
     }
 
-    private fun insertAnswerChip(answer: String) {
-        val currentAnswer = answer.ifEmpty {
-            val t = answerText.text.toString().trim().replace("\\s+".toRegex(), " ")
-            answerText.setText("")
-            t
-        }
-        if (loadedAnswers.size > 100 || currentAnswer.isEmpty() || currentAnswer == " ") return
-        if (answer.isEmpty()) loadedAnswers.add(currentAnswer)
-        if (loadedAnswers.size > 2) {
-            customAnswersSwitch.isEnabled = true
-            if (customAnswersSwitch.isChecked) magicBall.setCustomAnswers(loadedAnswers.toTypedArray())
-        }
-        managePlaceholder()
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
-        val chip = LayoutInflater.from(activity).inflate(R.layout.custom_chip, answerChips, false) as Chip
-        chip.text = currentAnswer
-        chip.id = loadedAnswers.size
-        answerChips.addView(chip)
+    private fun insertTypedAnswer() {
+        val answer = binding.customAnswerText.text.toString().trim()
+            .replace("\\s+".toRegex(), " ")
+            .replace(";", "")
+        binding.customAnswerText.setText("")
+        if (answer.isEmpty() || answers.size >= MAX_ANSWERS) return
+        answers.add(answer)
+        addAnswerChip(answer)
+        updateState()
+        save()
+    }
+
+    private fun addAnswerChip(answer: String) {
+        val chip = layoutInflater.inflate(
+            R.layout.custom_chip, binding.customAnswerChipGroup, false
+        ) as Chip
+        chip.text = answer
+        chip.setOnClickListener { removeAnswerChip(chip) }
+        chip.setOnCloseIconClickListener { removeAnswerChip(chip) }
+        binding.customAnswerChipGroup.addView(chip)
         chip.startAnimation(AnimationUtils.loadAnimation(context, R.anim.chip_enter_anim))
-        chip.setOnClickListener { removeChip(chip) }
     }
 
-    private fun removeChip(chip: Chip) {
-        loadedAnswers.remove(chip.text.toString())
-        if (loadedAnswers.size < 2) {
-            customAnswersSwitch.isEnabled = false
-            magicBall.setCustomAnswers(null)
-        }
+    private fun removeAnswerChip(chip: Chip) {
+        if (chip.getTag(R.id.tag_chip_removing) == true) return
+        chip.setTag(R.id.tag_chip_removing, true)
+        answers.remove(chip.text.toString())
         chip.startAnimation(AnimationUtils.loadAnimation(context, R.anim.chip_exit_anim))
-        managePlaceholder()
-        chip.postDelayed({ answerChips.removeView(chip) }, 400)
+        chip.postDelayed({ _binding?.customAnswerChipGroup?.removeView(chip) }, CHIP_EXIT_DURATION)
+        updateState()
+        save()
     }
 
-    private fun managePlaceholder() {
-        if (loadedAnswers.isEmpty()) {
-            answerChips.visibility = View.GONE
-            placeholder.visibility = View.VISIBLE
-        } else {
-            answerChips.visibility = View.VISIBLE
-            placeholder.visibility = View.GONE
-        }
+    // The custom answers can only be used when there are enough of them to choose from
+    private fun updateState() {
+        val enough = answers.size >= MagicBallFragment.MIN_CUSTOM_ANSWERS
+        binding.customAnswerSwitch.isEnabled = enough
+        if (!enough) binding.customAnswerSwitch.isChecked = false
+        binding.customAnswersEmptyPlaceholder.isVisible = answers.isEmpty()
     }
 
-    override fun onDismiss(dialog: DialogInterface) {
-        sp.edit {
-            putBoolean("custom_answers_active", customAnswersSwitch.isChecked)
-            val answersString = loadedAnswers.joinToString(";") { it.replace(";", "") } + ";"
-            putString("custom_answers", answersString)
-            if (customAnswersSwitch.isChecked && customAnswersSwitch.isEnabled)
-                magicBall.setCustomAnswers(loadedAnswers.toTypedArray())
-            else magicBall.setCustomAnswers(null)
-        }
-        super.onDismiss(dialog)
+    private fun save() = sp.edit {
+        putBoolean("custom_answers_active", binding.customAnswerSwitch.isChecked)
+        putString("custom_answers", answers.joinToString(";") + ";")
     }
 }

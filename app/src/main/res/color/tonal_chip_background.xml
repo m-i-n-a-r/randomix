@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A chip sits on the same veil as the fields, and is filled with the primary when checked, like
+     the selected segment of the type selector next to it -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="?attr/colorPrimary" android:state_checked="true" />
+    <item android:alpha="0.38" android:color="?attr/colorSecondaryContainer" android:state_enabled="false" />
+    <item android:alpha="0.55" android:color="?attr/colorSecondaryContainer" />
+</selector>

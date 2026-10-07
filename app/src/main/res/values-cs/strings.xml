@@ -152,4 +152,21 @@
     <!-- Universal Dice Fragment -->
     <string name="blob_name">Pozadí Random Blobs</string>
     <string name="blob_description">Náhodně se pohybující pozadí, z estetických důvodů</string>
+    <string name="back">Zpět</string>
+    <string name="about_title">O aplikaci</string>
+    <string name="about_version">Verze</string>
+    <string name="about_language_title">Jazyk</string>
+    <string name="about_language_summary">Vyberte jazyk aplikace Randomix</string>
+    <string name="about_rate_title">Ohodnotit aplikaci</string>
+    <string name="about_rate_summary">Napište recenzi v Obchodě Play</string>
+    <string name="about_share_title">Sdílet Randomix</string>
+    <string name="about_share_summary">Doporučte aplikaci příteli</string>
+    <string name="about_no_app_found">Žádná aplikace nemůže tuto akci provést!</string>
+    <string name="about_contact_title">Kontaktovat vývojáře</string>
+    <string name="amoled_description_on">Tmavý motiv používá čistě černou barvu, ideální pro OLED displeje</string>
+    <string name="amoled_description_off">Tmavý motiv používá standardní tmavé plochy</string>
+    <string name="roulette_mode_options">Možnosti</string>
+    <string name="delete_all_roulette">Smazat všechny možnosti</string>
+    <string name="about_share_text">Randomix, nech promluvit náhodu: %1$s</string>
+    <string name="about_translate_summary">Pomoz přeložit Randomix do svého jazyka na Crowdinu</string>
 </resources>

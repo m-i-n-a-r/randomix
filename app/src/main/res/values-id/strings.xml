@@ -152,4 +152,21 @@
     <!-- Universal Dice Fragment -->
     <string name="blob_name">Latar belakang Random Blobs</string>
     <string name="blob_description">Latar belakang bergerak acak, untuk tujuan estetika</string>
+    <string name="roulette_mode_options">Opsi</string>
+    <string name="delete_all_roulette">Hapus semua opsi</string>
+    <string name="about_share_text">Randomix, biarkan keacakan yang bicara: %1$s</string>
+    <string name="about_translate_summary">Bantu terjemahkan Randomix ke bahasamu di Crowdin</string>
+    <string name="back">Kembali</string>
+    <string name="about_title">Tentang</string>
+    <string name="about_version">Versi</string>
+    <string name="about_language_title">Bahasa</string>
+    <string name="about_language_summary">Pilih bahasa yang digunakan Randomix</string>
+    <string name="about_rate_title">Beri nilai aplikasi</string>
+    <string name="about_rate_summary">Tulis ulasan di Play Store</string>
+    <string name="about_share_title">Bagikan Randomix</string>
+    <string name="about_share_summary">Ceritakan aplikasi ini ke teman</string>
+    <string name="about_no_app_found">Tidak ada aplikasi yang bisa membuka ini, maaf!</string>
+    <string name="about_contact_title">Hubungi pengembang</string>
+    <string name="amoled_description_on">Tema gelap memakai hitam pekat, ideal untuk layar OLED</string>
+    <string name="amoled_description_off">Tema gelap memakai permukaan gelap standar</string>
 </resources>

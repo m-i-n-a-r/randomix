@@ -5,41 +5,89 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="linear_vertical_margin">22dp</dimen>
     <dimen name="linear_vertical_padding">8dp</dimen>
-    <dimen name="padding_roulette_entry">22dp</dimen>
-    <dimen name="margin_roulette_entry">10dp</dimen>
-    <dimen name="text_box_stroke_width">1.5dp</dimen>
-    <dimen name="text_box_focused_stroke_width">2.5dp</dimen>
-    <!-- Using 0 elevation will cause a lot of weird behaviors -->
-    <dimen name="bottom_navbar_elevation">0.1dp</dimen>
-    <dimen name="chip_spacing">4dp</dimen>
+    <dimen name="card_margin">6dp</dimen>
+    <dimen name="card_padding">8dp</dimen>
+    <dimen name="card_stroke">2dp</dimen>
+    <dimen name="rounded_corners">16dp</dimen>
+    <dimen name="chip_spacing">6dp</dimen>
+    <dimen name="chip_close_icon_size">16dp</dimen>
+    <dimen name="settings_row_padding">16dp</dimen>
 
-    <dimen name="result_big_text_size">40sp</dimen>
+    <!-- Tool pages -->
     <dimen name="result_text_size">34sp</dimen>
-    <dimen name="title_text_size">24sp</dimen>
-    <dimen name="description_text_size">14sp</dimen>
-    <dimen name="roulette_option_text_size">14sp</dimen>
-    <dimen name="max_length_roulette_entry">30</dimen>
+    <dimen name="result_range_text_size">62sp</dimen>
+    <dimen name="result_text_margin">32dp</dimen>
     <dimen name="image_button_height">160dp</dimen>
-    <dimen name="horizontal_scroll_height">52dp</dimen>
-    <dimen name="roulette_insertion_height">92dp</dimen>
+    <!-- The six dice of 3 vs 3, three on a row -->
+    <dimen name="risiko_die_max_size">120dp</dimen>
+    <dimen name="risiko_die_spacing">10dp</dimen>
+    <!-- The square buttons next to the option field, as tall as the field itself -->
+    <dimen name="field_button_size">56dp</dimen>
+    <dimen name="field_button_icon_padding">10dp</dimen>
+    <dimen name="range_icon_size">48dp</dimen>
+    <dimen name="dice_type_height">48dp</dimen>
 
     <!-- Unchanged dimensions -->
-    <dimen name="minar_banner_height">72dp</dimen>
+    <dimen name="minar_banner_height">84dp</dimen>
     <dimen name="minar_banner_padding">12dp</dimen>
     <dimen name="minar_description_padding">16dp</dimen>
-    <dimen name="bottom_navbar_height">80dp</dimen>
-    <dimen name="result_text_margin">42dp</dimen>
+    <!-- Concentric with the tonal card: its radius minus the padding the field sits at -->
+    <dimen name="text_field_corner">@dimen/tonal_card_radius_inner</dimen>
+    <dimen name="chip_corner">14dp</dimen>
+    <dimen name="chip_row_fading_edge">24dp</dimen>
+    <dimen name="cursor_size">2.5dp</dimen>
+    <dimen name="bottom_sheet_icon_size">40dp</dimen>
 
-    <!-- Roulette Bottom Sheet -->
-    <dimen name="rounded_corners">16dp</dimen>
-    <dimen name="title_height">56dp</dimen>
-    <dimen name="peek_height">550dp</dimen>
-    <dimen name="max_recent_options">10</dimen>
-    <dimen name="bottom_sheet_pill_height">36dp</dimen>
-    <dimen name="bottom_sheet_pill_width">4dp</dimen>
-    <dimen name="side_drawable_margin">6dp</dimen>
-    <dimen name="max_size_icon">64dp</dimen>
-    <dimen name="max_size_icon_small">48dp</dimen>
-    <dimen name="bottom_navbar_item_padding">12dp</dimen>
+    <!-- Floating navbar -->
+    <dimen name="nav_pill_corner">28dp</dimen>
+    <dimen name="nav_pill_padding">8dp</dimen>
+    <dimen name="nav_tab_corner">20dp</dimen>
+    <dimen name="nav_tab_height">48dp</dimen>
+    <!-- Four destinations share the pill and the whole bar must fit a 360dp wide screen, so the
+         tabs are tight here. Wider screens get more room, see values-w400dp -->
+    <dimen name="nav_tab_padding">10dp</dimen>
+    <dimen name="nav_tab_spacing">2dp</dimen>
+    <dimen name="nav_tab_icon_size">24dp</dimen>
+    <dimen name="nav_tab_label_margin">8dp</dimen>
+    <dimen name="nav_tab_label_max_width">72dp</dimen>
+    <dimen name="nav_action_size">56dp</dimen>
+    <dimen name="nav_action_corner">20dp</dimen>
+    <dimen name="nav_action_icon_size">28dp</dimen>
+    <!-- The canvas of a standard icon, the one drawn at the size above -->
+    <dimen name="nav_action_icon_canvas">24dp</dimen>
+    <dimen name="floating_navbar_margin">8dp</dimen>
+    <dimen name="floating_navbar_elevation">6dp</dimen>
+    <!-- Room left below the content so it can scroll clear of the floating navbar -->
+    <dimen name="floating_navbar_space">88dp</dimen>
+
+    <!-- About page -->
+    <dimen name="about_row_padding_horizontal">24dp</dimen>
+    <dimen name="about_row_padding_vertical">14dp</dimen>
+    <dimen name="about_row_icon_margin">16dp</dimen>
+
+    <!-- How far a secondary page travels sideways: at least the width of the window, redefined
+         for every wider window. The back gesture maps its progress onto this distance, so a
+         shorter one would stop the page halfway and then make it vanish -->
+    <dimen name="nav_slide_distance">480dp</dimen>
+    <!-- The page underneath only drifts, it must never leave the screen -->
+    <dimen name="nav_slide_parallax">-64dp</dimen>
+
+    <!-- Tonal elevated cards, the look replacing the outlined ones -->
+    <dimen name="tonal_card_radius">28dp</dimen>
+    <dimen name="tonal_card_elevation">6dp</dimen>
+    <dimen name="tonal_card_radius_inner">20dp</dimen>
+    <!-- The settings as tiles: the corners of a group, those between its tiles, the gap between
+         the tiles and the space after the last one -->
+    <dimen name="preference_tile_radius">24dp</dimen>
+    <dimen name="preference_tile_radius_inner">6dp</dimen>
+    <dimen name="preference_tile_gap">3dp</dimen>
+    <dimen name="preference_tile_group_end">12dp</dimen>
+    <!-- The title of a group: its icon lines up with the text of the tiles, 16dp of margin and
+         16dp of padding -->
+    <dimen name="preference_category_padding_start">32dp</dimen>
+    <dimen name="preference_category_padding_top">16dp</dimen>
+    <dimen name="preference_category_padding_bottom">14dp</dimen>
+    <dimen name="preference_category_icon_size">24dp</dimen>
+    <dimen name="preference_category_icon_gap">14dp</dimen>
 
 </resources>

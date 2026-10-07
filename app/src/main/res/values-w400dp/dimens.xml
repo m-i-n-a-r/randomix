@@ -1,0 +1,7 @@
+<resources>
+    <!-- Enough room for roomier tabs and longer labels -->
+    <dimen name="nav_tab_padding">12dp</dimen>
+    <dimen name="nav_tab_spacing">4dp</dimen>
+    <dimen name="nav_tab_label_max_width">96dp</dimen>
+    <dimen name="floating_navbar_margin">12dp</dimen>
+</resources>

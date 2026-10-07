@@ -1,161 +1,101 @@
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:clipToPadding="false"
-    android:clipChildren="false"
-    android:paddingBottom="@dimen/linear_vertical_margin">
+    android:layout_height="wrap_content">
 
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/rouletteBottomSheetScrollView"
+    <LinearLayout
+        android:id="@+id/rouletteBottomSheet"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/linear_vertical_margin">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/rouletteBottomSheet"
+        <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:animateLayoutChanges="true"
-            android:paddingBottom="@dimen/linear_vertical_margin"
-            app:behavior_fitToContents="false"
-            app:behavior_halfExpandedRatio="0.2"
-            app:behavior_hideable="true"
-            app:behavior_peekHeight="@dimen/peek_height"
-            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
-
-            <com.google.android.material.bottomsheet.BottomSheetDragHandleView
-                android:id="@+id/dragHandle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/recentImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/activity_vertical_margin"
-                android:contentDescription="@string/recent_title"
-                android:maxWidth="@dimen/max_size_icon"
-                android:maxHeight="@dimen/max_size_icon"
-                android:minWidth="@dimen/max_size_icon_small"
-                android:minHeight="@dimen/max_size_icon_small"
-                android:padding="@dimen/linear_vertical_padding"
-                android:src="@drawable/animated_no_recent"
-                app:layout_constraintBottom_toBottomOf="@id/recentTitle"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/recentTitle" />
+                android:layout_width="@dimen/bottom_sheet_icon_size"
+                android:layout_height="@dimen/bottom_sheet_icon_size"
+                android:importantForAccessibility="no"
+                android:src="@drawable/animated_no_recent" />
 
             <TextView
-                android:id="@+id/recentTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:paddingVertical="@dimen/activity_vertical_margin"
-                android:paddingStart="@dimen/side_drawable_margin"
-                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:layout_weight="1"
+                android:paddingHorizontal="@dimen/activity_horizontal_margin"
                 android:text="@string/recent_title"
-                android:textAppearance="@style/TextAppearance.Material3.TitleLarge.Emphasized"
-                android:textColor="?attr/colorPrimary"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/recentImage"
-                app:layout_constraintTop_toBottomOf="@id/dragHandle" />
+                android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall" />
 
-            <TextView
-                android:id="@+id/recentDescription"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/result_text_margin"
-                android:paddingHorizontal="@dimen/result_text_margin"
-                android:paddingVertical="@dimen/activity_vertical_margin"
-                android:text="@string/recent_description"
-                android:textAlignment="center"
-                android:textColor="?attr/colorOnSurface"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/recentTitle" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/recent_description"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            app:chipSpacingHorizontal="@dimen/chip_spacing">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/lettersChip"
+                style="@style/Widget.App.Chip.Tonal.Shortcut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_roulette_entry"
-                android:text="@string/letters_shortcut"
-                android:textColor="?attr/colorPrimary"
-                app:chipBackgroundColor="@drawable/chip_bg_state_list"
-                app:chipIcon="@drawable/insert_vector_animation"
-                app:chipIconEnabled="true"
-                app:chipIconTint="?attr/colorPrimary"
-                app:chipStrokeWidth="0dp"
-                app:chipSurfaceColor="@android:color/transparent"
-                app:layout_constraintEnd_toStartOf="@id/numbersChip"
-                app:layout_constraintHorizontal_chainStyle="spread"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/recentDescription"
-                app:rippleColor="?attr/colorPrimary" />
+                android:text="@string/letters_shortcut" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/numbersChip"
+                style="@style/Widget.App.Chip.Tonal.Shortcut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/numbers_1_100_shortcut"
-                android:textColor="?attr/colorPrimary"
-                app:chipBackgroundColor="@drawable/chip_bg_state_list"
-                app:chipIcon="@drawable/insert_vector_animation"
-                app:chipIconEnabled="true"
-                app:chipIconTint="?attr/colorPrimary"
-                app:chipStrokeWidth="0dp"
-                app:chipSurfaceColor="@android:color/transparent"
-                app:layout_constraintEnd_toStartOf="@id/cardsChip"
-                app:layout_constraintStart_toEndOf="@id/lettersChip"
-                app:layout_constraintTop_toTopOf="@id/lettersChip"
-                app:rippleColor="?attr/colorPrimary" />
+                android:text="@string/numbers_1_100_shortcut" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/cardsChip"
+                style="@style/Widget.App.Chip.Tonal.Shortcut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cards"
-                android:textColor="?attr/colorPrimary"
-                app:chipBackgroundColor="@drawable/chip_bg_state_list"
-                app:chipIcon="@drawable/insert_vector_animation"
-                app:chipIconEnabled="true"
-                app:chipIconTint="?attr/colorPrimary"
-                app:chipStrokeWidth="0dp"
-                app:chipSurfaceColor="@android:color/transparent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/numbersChip"
-                app:layout_constraintTop_toTopOf="@id/lettersChip"
-                app:rippleColor="?attr/colorPrimary" />
+                android:text="@string/cards" />
 
-            <TextView
-                android:id="@+id/recentNoResult"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/result_text_margin"
-                android:gravity="center_horizontal"
-                android:paddingHorizontal="@dimen/result_text_margin"
-                android:paddingVertical="@dimen/activity_vertical_margin"
-                android:text="@string/bottom_sheet_no_option"
-                android:textColor="?attr/colorOnSurface"
-                android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cardsChip" />
+        </com.google.android.material.chip.ChipGroup>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recentList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clipToPadding="false"
-                android:overScrollMode="never"
-                android:paddingVertical="@dimen/linear_vertical_padding"
-                android:scrollbars="none"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cardsChip" />
+        <TextView
+            android:id="@+id/recentNoResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/linear_vertical_margin"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="@dimen/linear_vertical_margin"
+            android:text="@string/bottom_sheet_no_option"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:textColor="?attr/colorOutline"
+            android:visibility="gone" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recentList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

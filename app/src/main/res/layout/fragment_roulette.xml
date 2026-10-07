@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rouletteScroll"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fillViewport="true">
 
     <LinearLayout
+        android:id="@+id/rouletteContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
@@ -13,211 +16,230 @@
 
         <TextView
             android:id="@+id/titleRoulette"
+            style="@style/Widget.App.PageTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:gravity="center_horizontal"
-            android:maxLines="1"
-            android:text="@string/hello_roulette_fragment"
-            android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium.Emphasized"
-            android:textColor="?attr/colorTertiary" />
+            android:text="@string/hello_roulette_fragment" />
 
         <TextView
             android:id="@+id/descriptionRoulette"
+            style="@style/Widget.App.PageDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/linear_vertical_margin"
-            android:gravity="center_horizontal"
-            android:text="@string/description_roulette"
-            android:textColor="?attr/colorOnBackground"
-            android:textSize="@dimen/description_text_size" />
+            android:text="@string/description_roulette" />
 
-        <LinearLayout
-            android:id="@+id/textOptionRoulette"
+        <!-- The options: a field to add them, or the two bounds of the range, and their chips -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/rouletteCard"
+            style="@style/Widget.App.CardView.Tonal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginHorizontal="@dimen/card_margin">
 
-            <ImageView
-                android:id="@+id/recentButton"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/roulette_insertion_height"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_weight="0.12"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:clickable="true"
-                android:contentDescription="@string/recent_title"
-                android:focusable="true"
-                android:hapticFeedbackEnabled="false"
-                android:src="@drawable/recent_vector_animation" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/roulette_insertion_height"
-                android:layout_margin="@dimen/activity_vertical_margin"
-                android:layout_weight="0.8"
-                android:hint="@string/insert_roulette_hint"
-                app:boxCornerRadiusBottomEnd="@dimen/rounded_corners"
-                app:boxCornerRadiusBottomStart="@dimen/rounded_corners"
-                app:boxCornerRadiusTopEnd="@dimen/rounded_corners"
-                app:boxCornerRadiusTopStart="@dimen/rounded_corners"
-                app:boxStrokeWidth="@dimen/text_box_stroke_width"
-                app:boxStrokeWidthFocused="@dimen/text_box_focused_stroke_width"
-                app:endIconMode="clear_text"
-                app:endIconTint="?attr/colorOutline"
-                app:expandedHintEnabled="true"
-                app:hintAnimationEnabled="true"
-                app:hintEnabled="true"
-                app:hintTextColor="?attr/colorPrimary">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/entryRoulette"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:imeOptions="actionDone"
-                    android:inputType="textAutoCorrect"
-                    android:maxLength="20"
-                    android:padding="0dp"
-                    android:textAlignment="center" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <ImageView
-                android:id="@+id/insertButton"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/roulette_insertion_height"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                android:layout_weight="0.12"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:clickable="true"
-                android:contentDescription="@string/insert_roulette_hint"
-                android:focusable="true"
-                android:src="@drawable/insert_vector_animation" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/rangeOptionRoulette"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:baselineAligned="false"
-            android:orientation="horizontal"
-            android:visibility="gone">
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/roulette_insertion_height"
-                android:layout_margin="@dimen/activity_vertical_margin"
-                android:layout_weight=".45"
-                android:hint="@string/min"
-                app:boxCornerRadiusBottomEnd="@dimen/rounded_corners"
-                app:boxCornerRadiusBottomStart="@dimen/rounded_corners"
-                app:boxCornerRadiusTopEnd="@dimen/rounded_corners"
-                app:boxCornerRadiusTopStart="@dimen/rounded_corners"
-                app:boxStrokeWidth="@dimen/text_box_stroke_width"
-                app:boxStrokeWidthFocused="@dimen/text_box_focused_stroke_width"
-                app:expandedHintEnabled="true"
-                app:hintAnimationEnabled="true"
-                app:hintEnabled="true"
-                app:hintTextColor="?attr/colorPrimary"
-                app:startIconDrawable="@drawable/ic_range_min_24dp"
-                app:startIconTint="?attr/colorOutline">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/rangeMinRoulette"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:inputType="number"
-                    android:maxLength="5"
-                    android:padding="0dp"
-                    android:textAlignment="center" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <ImageView
-                android:id="@+id/animatedRangeRoulette"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight=".2"
-                android:contentDescription="@string/range"
-                android:maxWidth="@dimen/max_size_icon"
-                android:maxHeight="@dimen/max_size_icon"
-                android:minWidth="@dimen/max_size_icon_small"
-                android:minHeight="@dimen/max_size_icon_small"
-                android:src="@drawable/animated_range_roulette" />
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/roulette_insertion_height"
-                android:layout_margin="@dimen/activity_vertical_margin"
-                android:layout_weight=".45"
-                android:hint="@string/max"
-                app:boxCornerRadiusBottomEnd="@dimen/rounded_corners"
-                app:boxCornerRadiusBottomStart="@dimen/rounded_corners"
-                app:boxCornerRadiusTopEnd="@dimen/rounded_corners"
-                app:boxCornerRadiusTopStart="@dimen/rounded_corners"
-                app:boxStrokeWidth="@dimen/text_box_stroke_width"
-                app:boxStrokeWidthFocused="@dimen/text_box_focused_stroke_width"
-                app:expandedHintEnabled="true"
-                app:hintAnimationEnabled="true"
-                app:hintEnabled="true"
-                app:hintTextColor="?attr/colorPrimary"
-                app:startIconDrawable="@drawable/ic_range_max_24dp"
-                app:startIconTint="?attr/colorOutline">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/rangeMaxRoulette"
+                <!-- What the roulette picks from: the options below, or a range of numbers -->
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.App.CardView.Tonal.Inner"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:inputType="number"
-                    android:maxLength="5"
-                    android:padding="0dp"
-                    android:textAlignment="center" />
+                    android:layout_height="@dimen/dice_type_height"
+                    android:layout_marginBottom="@dimen/card_padding">
 
-            </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.button.MaterialButtonToggleGroup
+                        android:id="@+id/rouletteModeSelection"
+                        style="@style/Widget.Material3.MaterialButtonGroup.Connected"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:spacing="0dp"
+                        app:checkedButton="@id/rouletteModeOptions"
+                        app:innerCornerSize="@dimen/tonal_card_radius_inner"
+                        app:selectionRequired="true"
+                        app:shapeAppearance="@style/ShapeAppearance.App.TonalInner"
+                        app:singleSelection="true">
 
-        </LinearLayout>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/rouletteModeOptions"
+                            style="@style/Widget.App.Button.TonalButton.Segment"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/roulette_mode_options" />
 
-        <com.google.android.material.materialswitch.MaterialSwitch
-            android:id="@+id/rangeSwitchRoulette"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
-            android:checked="false"
-            android:text="@string/range"
-            android:textAppearance="@style/TextAppearance.Material3.BodyLarge.Emphasized"
-            app:switchPadding="@dimen/activity_horizontal_margin"
-            app:switchTextAppearance="@style/TextAppearance.Material3.BodyLarge.Emphasized" />
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/rouletteModeRange"
+                            style="@style/Widget.App.Button.TonalButton.Segment"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/range" />
 
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/horizontal_scroll_height"
-            android:scrollbars="none">
+                    </com.google.android.material.button.MaterialButtonToggleGroup>
 
-            <com.google.android.material.chip.ChipGroup
-                android:id="@+id/rouletteChipList"
-                style="@style/Widget.MaterialComponents.ChipGroup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:animateLayoutChanges="true"
-                android:paddingHorizontal="@dimen/activity_horizontal_margin"
-                app:chipSpacing="@dimen/chip_spacing"
-                app:singleLine="true">
+                </com.google.android.material.card.MaterialCardView>
 
-            </com.google.android.material.chip.ChipGroup>
-        </HorizontalScrollView>
+                <LinearLayout
+                    android:id="@+id/textOptionRoulette"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/recentButton"
+                        android:layout_width="@dimen/field_button_size"
+                        android:layout_height="@dimen/field_button_size"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:contentDescription="@string/recent_title"
+                        android:focusable="true"
+                        android:hapticFeedbackEnabled="false"
+                        android:padding="@dimen/field_button_icon_padding"
+                        android:src="@drawable/recent_vector_animation" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.App.TextInputLayout.Tonal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/insert_roulette_hint"
+                        app:endIconMode="clear_text">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/entryRoulette"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionDone"
+                            android:inputType="textAutoCorrect"
+                            android:maxLength="20"
+                            android:textCursorDrawable="@drawable/custom_cursor" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageView
+                        android:id="@+id/insertButton"
+                        android:layout_width="@dimen/field_button_size"
+                        android:layout_height="@dimen/field_button_size"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:contentDescription="@string/insert_roulette_hint"
+                        android:focusable="true"
+                        android:hapticFeedbackEnabled="false"
+                        android:padding="@dimen/field_button_icon_padding"
+                        android:src="@drawable/insert_vector_animation" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rangeOptionRoulette"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.App.TextInputLayout.Tonal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/min"
+                        app:startIconDrawable="@drawable/ic_range_min_24dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/rangeMinRoulette"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:maxLength="5"
+                            android:textCursorDrawable="@drawable/custom_cursor" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageView
+                        android:id="@+id/animatedRangeRoulette"
+                        android:layout_width="@dimen/range_icon_size"
+                        android:layout_height="@dimen/range_icon_size"
+                        android:contentDescription="@string/range"
+                        android:padding="@dimen/linear_vertical_padding"
+                        android:src="@drawable/animated_range_roulette" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.App.TextInputLayout.Tonal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/max"
+                        app:startIconDrawable="@drawable/ic_range_max_24dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/rangeMaxRoulette"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:maxLength="5"
+                            android:textCursorDrawable="@drawable/custom_cursor" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <!-- The options added so far, and the button to delete them all at once -->
+                <LinearLayout
+                    android:id="@+id/rouletteChipRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/card_padding"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <HorizontalScrollView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fadingEdgeLength="@dimen/chip_row_fading_edge"
+                        android:requiresFadingEdge="horizontal"
+                        android:scrollbars="none">
+
+                        <!-- The inset is inside the scrolled content, so the scroll view keeps its
+                             own bounds and the standard fading edge sits right on them -->
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/rouletteChipList"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="@dimen/card_padding"
+                            android:animateLayoutChanges="true"
+                            app:chipSpacing="@dimen/chip_spacing"
+                            app:singleLine="true" />
+
+                    </HorizontalScrollView>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/deleteAllRoulette"
+                        style="@style/Widget.Material3Expressive.Button.IconButton.Tonal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/delete_all_roulette"
+                        app:icon="@drawable/animated_delete" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
 
         <ImageView
             android:id="@+id/buttonSpinRoulette"
             android:layout_width="match_parent"
             android:layout_height="@dimen/image_button_height"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/linear_vertical_margin"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
             android:contentDescription="@string/spin_roulette"
@@ -227,16 +249,11 @@
 
         <TextView
             android:id="@+id/resultRoulette"
+            style="@style/Widget.App.PageResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
-            android:layout_marginVertical="@dimen/result_text_margin"
-            android:gravity="center_horizontal"
-            android:text="@string/result_placeholder"
-            android:textSize="@dimen/result_text_size"
-            android:textStyle="bold" />
+            android:text="@string/result_placeholder" />
 
     </LinearLayout>
 
 </ScrollView>
-

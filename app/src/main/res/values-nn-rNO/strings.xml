@@ -152,4 +152,21 @@
     <!-- Universal Dice Fragment -->
     <string name="blob_name">Random Blobs-bakgrunn</string>
     <string name="blob_description">Ein tilfeldig røyrleg bakgrunn, av estetiske omsyn</string>
+    <string name="back">Tilbake</string>
+    <string name="about_title">Om appen</string>
+    <string name="about_version">Versjon</string>
+    <string name="about_language_title">Språk</string>
+    <string name="about_language_summary">Vel språket Randomix skal bruke</string>
+    <string name="about_rate_title">Vurder appen</string>
+    <string name="about_rate_summary">Skriv ei vurdering i Play Butikk</string>
+    <string name="about_share_title">Del Randomix</string>
+    <string name="about_share_summary">Tips ein ven om appen</string>
+    <string name="about_no_app_found">Ingen app kan utføre denne handlinga!</string>
+    <string name="about_contact_title">Kontakt utviklaren</string>
+    <string name="amoled_description_on">Det mørke temaet brukar heilt svart, ideelt for OLED-skjermar</string>
+    <string name="amoled_description_off">Det mørke temaet brukar dei vanlege mørke flatene</string>
+    <string name="roulette_mode_options">Alternativ</string>
+    <string name="delete_all_roulette">Slett alle alternativa</string>
+    <string name="about_share_text">Randomix, lat tilfeldet avgjere: %1$s</string>
+    <string name="about_translate_summary">Hjelp til med å omsetje Randomix til språket ditt på Crowdin</string>
 </resources>

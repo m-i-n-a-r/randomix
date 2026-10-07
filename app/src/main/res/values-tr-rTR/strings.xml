@@ -152,4 +152,21 @@
     <!-- Universal Dice Fragment -->
     <string name="blob_name">Random Blobs arka planı</string>
     <string name="blob_description">Estetik amaçlı rastgele hareketli bir arka plan</string>
+    <string name="back">Geri</string>
+    <string name="about_title">Hakkında</string>
+    <string name="about_version">Sürüm</string>
+    <string name="about_language_title">Dil</string>
+    <string name="about_language_summary">Randomix\'ın kullanacağı dili seçin</string>
+    <string name="about_rate_title">Uygulamayı değerlendir</string>
+    <string name="about_rate_summary">Play Store\'da bir yorum bırakın</string>
+    <string name="about_share_title">Randomix\'ı paylaş</string>
+    <string name="about_share_summary">Uygulamayı bir arkadaşınıza önerin</string>
+    <string name="about_no_app_found">Bu işlemi gerçekleştirebilecek bir uygulama yok!</string>
+    <string name="about_contact_title">Geliştiriciyle iletişime geç</string>
+    <string name="amoled_description_on">Koyu tema, OLED ekranlar için ideal olan saf siyah kullanır</string>
+    <string name="amoled_description_off">Koyu tema standart koyu yüzeyleri kullanır</string>
+    <string name="roulette_mode_options">Seçenekler</string>
+    <string name="delete_all_roulette">Tüm seçenekleri sil</string>
+    <string name="about_share_text">Randomix, bırak şans konuşsun: %1$s</string>
+    <string name="about_translate_summary">Randomix\'i Crowdin\'de kendi diline çevirmeye yardım et</string>
 </resources>

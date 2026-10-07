@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Margins added for the window insets, to remove them before adding the new ones -->
+    <item name="view_add_insets_margin_top_tag" type="id" />
+    <item name="view_add_insets_margin_bottom_tag" type="id" />
+    <item name="view_add_insets_margin_left_tag" type="id" />
+    <item name="view_add_insets_margin_right_tag" type="id" />
+    <!-- Room left for the floating navbar, kept apart from the insets -->
+    <item name="tag_nav_label_fraction" type="id" />
+    <!-- A chip already fading out, no longer part of the options -->
+    <item name="tag_chip_removing" type="id" />
+    <item name="tag_page_insets" type="id" />
+</resources>

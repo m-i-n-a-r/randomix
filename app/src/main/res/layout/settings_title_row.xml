@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The title of the settings, the same of every other page. The developer has a page of their
+     own now, opened by the navbar button -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/titleSettings"
+    style="@style/Widget.App.PageTitle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/hello_settings_fragment" />

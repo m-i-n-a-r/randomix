@@ -152,4 +152,21 @@
     <!-- Universal Dice Fragment -->
     <string name="blob_name">Фон Random Blobs</string>
     <string name="blob_description">Случайный движущийся фон, в эстетических целях</string>
+    <string name="back">Назад</string>
+    <string name="about_title">О приложении</string>
+    <string name="about_version">Версия</string>
+    <string name="about_language_title">Язык</string>
+    <string name="about_language_summary">Выберите язык Randomix</string>
+    <string name="about_rate_title">Оценить приложение</string>
+    <string name="about_rate_summary">Оставьте отзыв в Google Play</string>
+    <string name="about_share_title">Поделиться Randomix</string>
+    <string name="about_share_summary">Расскажите другу о приложении</string>
+    <string name="about_no_app_found">Нет приложения для выполнения этого действия!</string>
+    <string name="about_contact_title">Связаться с разработчиком</string>
+    <string name="amoled_description_on">В тёмной теме используется чистый чёрный цвет, подходящий для OLED-экранов</string>
+    <string name="amoled_description_off">В тёмной теме используются стандартные тёмные оттенки</string>
+    <string name="roulette_mode_options">Варианты</string>
+    <string name="delete_all_roulette">Удалить все варианты</string>
+    <string name="about_share_text">Randomix — пусть решает случай: %1$s</string>
+    <string name="about_translate_summary">Помогите перевести Randomix на ваш язык на Crowdin</string>
 </resources>

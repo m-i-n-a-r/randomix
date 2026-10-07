@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/coinScroll"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,35 +14,24 @@
 
         <TextView
             android:id="@+id/titleCoin"
+            style="@style/Widget.App.PageTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:gravity="center_horizontal"
-            android:maxLines="1"
-            android:text="@string/hello_coin_fragment"
-            android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium.Emphasized"
-            android:textColor="?attr/colorTertiary" />
+            android:text="@string/hello_coin_fragment" />
 
         <TextView
             android:id="@+id/descriptionCoin"
+            style="@style/Widget.App.PageDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/linear_vertical_margin"
-            android:gravity="center_horizontal"
-            android:text="@string/description_coin"
-            android:textColor="?attr/colorOnBackground"
-            android:textSize="@dimen/description_text_size" />
+            android:text="@string/description_coin" />
 
         <TextView
             android:id="@+id/resultCoin"
+            style="@style/Widget.App.PageResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/result_text_margin"
-            android:layout_marginBottom="@dimen/result_text_margin"
-            android:gravity="center_horizontal"
-            android:text="@string/result_placeholder"
-            android:textSize="@dimen/result_text_size"
-            android:textStyle="bold" />
+            android:text="@string/result_placeholder" />
 
         <ImageView
             android:id="@+id/coinButtonAnimation"
@@ -51,6 +42,7 @@
             android:clickable="true"
             android:contentDescription="@string/flip_coin"
             android:focusable="true"
+            android:hapticFeedbackEnabled="false"
             android:src="@drawable/coin_head_vector_animation" />
 
     </LinearLayout>

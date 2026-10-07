@@ -1,5 +1,6 @@
 package com.minar.randomix.fragments
 
+import android.annotation.SuppressLint
 import android.content.SharedPreferences
 import android.graphics.drawable.Animatable
 import android.graphics.drawable.Animatable2
@@ -178,6 +179,7 @@ class RouletteFragment : Fragment() {
     }
 
     // A long press on the roulette fills it with generic values when empty, or clears it
+    @SuppressLint("SetTextI18n")
     private fun fillOrClear() {
         if (spinning) return
         if (inRangeMode) {

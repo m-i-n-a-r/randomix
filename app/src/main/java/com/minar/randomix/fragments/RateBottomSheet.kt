@@ -1,50 +1,70 @@
 package com.minar.randomix.fragments
 
+import android.content.ActivityNotFoundException
 import android.content.Intent
-import android.content.SharedPreferences
 import android.graphics.drawable.Animatable2
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
 import androidx.core.net.toUri
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.google.android.material.checkbox.MaterialCheckBox
-import com.minar.randomix.R
-import com.minar.randomix.activities.MainActivity
+import com.minar.randomix.databinding.RateBottomSheetBinding
+import com.minar.randomix.utilities.AppRater
 
-class RateBottomSheet(
-    private val activity: MainActivity,
-    private val editor: SharedPreferences.Editor
-) : BottomSheetDialogFragment() {
+class RateBottomSheet : BottomSheetDialogFragment() {
+    private var _binding: RateBottomSheetBinding? = null
+    private val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        val v = inflater.inflate(R.layout.rate_bottom_sheet, container, false)
-        val doNotShowAgain = "do_not_show_again"
+    companion object {
+        const val TAG = "rate_bottom_sheet"
+    }
 
-        val noRecentImage = v.findViewById<ImageView>(R.id.rateImage)
-        val animatedNoRecent = noRecentImage.drawable
-        if (animatedNoRecent is Animatable2) {
-            animatedNoRecent.registerAnimationCallback(object : Animatable2.AnimationCallback() {
-                override fun onAnimationEnd(drawable: Drawable) { animatedNoRecent.start() }
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = RateBottomSheetBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val animatedStar = binding.rateImage.drawable
+        if (animatedStar is Animatable2) {
+            animatedStar.registerAnimationCallback(object : Animatable2.AnimationCallback() {
+                override fun onAnimationEnd(drawable: Drawable) = animatedStar.start()
             })
-            animatedNoRecent.start()
+            animatedStar.start()
         }
 
-        v.findViewById<Button>(R.id.positiveButton).setOnClickListener {
-            activity.startActivity(
-                Intent(Intent.ACTION_VIEW, "market://details?id=${activity.packageName}".toUri())
-            )
-            editor.putBoolean(doNotShowAgain, true).commit()
+        binding.positiveButton.setOnClickListener {
+            val context = requireContext()
+            AppRater.doNotShowAgain(context, true)
+            try {
+                startActivity(
+                    Intent(Intent.ACTION_VIEW, "market://details?id=${context.packageName}".toUri())
+                )
+            } catch (_: ActivityNotFoundException) {
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        "https://play.google.com/store/apps/details?id=${context.packageName}".toUri()
+                    )
+                )
+            }
             dismiss()
         }
-        v.findViewById<Button>(R.id.negativeButton).setOnClickListener { dismiss() }
-        v.findViewById<MaterialCheckBox>(R.id.neverAgainCheckbox).setOnCheckedChangeListener { _, b ->
-            editor.putBoolean(doNotShowAgain, b).commit()
+        binding.negativeButton.setOnClickListener { dismiss() }
+        binding.neverAgainCheckbox.setOnCheckedChangeListener { _, checked ->
+            AppRater.doNotShowAgain(requireContext(), checked)
         }
-        return v
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

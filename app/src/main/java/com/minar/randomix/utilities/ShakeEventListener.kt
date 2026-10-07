@@ -1,9 +1,27 @@
 package com.minar.randomix.utilities
 
+import android.content.Context
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
+import android.hardware.SensorManager
 import kotlin.math.abs
+
+// Shaking the device acts like the main button of a page: started when the page is resumed and
+// while it waits for a throw, stopped otherwise
+class ShakeToThrow(context: Context, onShake: () -> Unit) {
+    private val sensorManager = context.getSystemService(SensorManager::class.java)
+    private val listener = ShakeEventListener().also { it.setOnShakeListener { onShake() } }
+
+    fun start() {
+        val accelerometer = sensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) ?: return
+        sensorManager.registerListener(listener, accelerometer, SensorManager.SENSOR_DELAY_UI)
+    }
+
+    fun stop() {
+        sensorManager?.unregisterListener(listener)
+    }
+}
 
 class ShakeEventListener : SensorEventListener {
 

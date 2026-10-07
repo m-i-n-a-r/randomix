@@ -2,35 +2,33 @@ package com.minar.randomix.fragments
 
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
-import android.annotation.SuppressLint
-import android.content.Context
-import android.content.res.ColorStateList
+import android.content.SharedPreferences
 import android.graphics.PorterDuff
 import android.graphics.drawable.Animatable
-import android.hardware.Sensor
-import android.hardware.SensorManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AlphaAnimation
 import android.view.animation.DecelerateInterpolator
+import android.view.animation.LinearInterpolator
 import android.widget.ImageView
-import android.widget.TextView
-import androidx.appcompat.view.ContextThemeWrapper
+import androidx.core.content.edit
+import androidx.core.view.children
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
-import com.google.android.material.button.MaterialButtonToggleGroup
 import com.google.android.material.chip.Chip
-import com.google.android.material.chip.ChipGroup
 import com.google.android.material.color.MaterialColors
 import com.minar.randomix.R
 import com.minar.randomix.activities.MainActivity
-import com.minar.randomix.utilities.ShakeEventListener
+import com.minar.randomix.databinding.FragmentUniversalDiceBinding
+import com.minar.randomix.utilities.ShakeToThrow
+import com.minar.randomix.utilities.addPageInsets
+import com.minar.randomix.utilities.animateNextLayoutChange
 import kotlin.random.Random
 
 // Available dice types
-
 enum class DiceType(val sides: Int, val iconRes: Int) {
     D4(4, R.drawable.ic_dice_d4),
     D6(6, R.drawable.ic_dice_d6),
@@ -40,59 +38,60 @@ enum class DiceType(val sides: Int, val iconRes: Int) {
     D20(20, R.drawable.ic_dice_d20),
 }
 
-// Fragments
-
 class UniversalDiceFragment : Fragment() {
-
-    private var act: MainActivity? = null
-    private var shakeEnabled = false
-    private lateinit var sensorManager: SensorManager
-    private lateinit var sensorListener: ShakeEventListener
+    private var _binding: FragmentUniversalDiceBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var sp: SharedPreferences
+    private var shake: ShakeToThrow? = null
 
     private var selectedDiceType = DiceType.D6
-    private var selectedDiceCount = 1   // 0 = risiko mode
+    private var selectedDiceCount = 1   // 0 = 3 vs 3 mode
     private var isAnimating = false
-    private var lastResults = listOf<Int>()
 
-    // Views – bound in onCreateView
-    private lateinit var mainDiceImage: ImageView
-    private lateinit var risikoLayout: View
-    private lateinit var resultText: TextView
-    private lateinit var diceTypeGroup: MaterialButtonToggleGroup
-    private lateinit var countChipGroup: ChipGroup
-    private lateinit var resultCardsContainer: ChipGroup
+    // The faces shown by the dice drawn with pips, to bring them back to the start before a throw
+    private var lastRisikoResults = listOf<Int>()
+    private var lastPipResult = 0
 
-    // Lifecycle
+    private val mainActivity get() = activity as? MainActivity
+    private val isRisikoMode get() = selectedDiceCount == 0
 
-    override fun onResume() {
-        super.onResume()
-        if (shakeEnabled) registerShake()
-    }
+    // A single D6 shows its face with pips, as a real die. The other types keep the numbers,
+    // since some of them share the same silhouette
+    private val isPipMode get() = selectedDiceType == DiceType.D6 && selectedDiceCount == 1
 
-    override fun onPause() {
-        if (shakeEnabled) sensorManager.unregisterListener(sensorListener)
-        super.onPause()
+    companion object {
+        const val RESET_DURATION = 500L
+        const val RISIKO_DURATION = 1800L
+        const val PIP_DURATION = 1200L
+        const val SHAKE_DURATION = 280L
+        const val SPIN_DURATION = 1150L
+
+        private val PIP_FACES = intArrayOf(
+            R.drawable.dice_1_vector_animation, R.drawable.dice_2_vector_animation,
+            R.drawable.dice_3_vector_animation, R.drawable.dice_4_vector_animation,
+            R.drawable.dice_5_vector_animation, R.drawable.dice_6_vector_animation,
+        )
+        private val PIP_RESETS = intArrayOf(
+            R.drawable.dice_1_to_start_vector_animation, R.drawable.dice_2_to_start_vector_animation,
+            R.drawable.dice_3_to_start_vector_animation, R.drawable.dice_4_to_start_vector_animation,
+            R.drawable.dice_5_to_start_vector_animation, R.drawable.dice_6_to_start_vector_animation,
+        )
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View {
-        val v = inflater.inflate(R.layout.fragment_universal_dice, container, false)
-        val sp = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        _binding = FragmentUniversalDiceBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-        if (sp.getBoolean("hide_descriptions", false))
-            v.findViewById<View>(R.id.descriptionDice).visibility = View.GONE
-
-        // Bind views
-        val displayZone = v.findViewById<View>(R.id.diceDisplayZone)
-        mainDiceImage = v.findViewById(R.id.universalDiceAnimation)
-        risikoLayout = v.findViewById(R.id.risikoLayout)
-        resultText = v.findViewById(R.id.resultDice)
-        diceTypeGroup = v.findViewById(R.id.diceTypeSelection)
-        countChipGroup = v.findViewById(R.id.diceCountChipGroup)
-        resultCardsContainer = v.findViewById(R.id.diceResultCards)
-
-        risikoLayout.isClickable = false
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        sp = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        binding.diceScroll.addPageInsets()
+        if (sp.getBoolean("hide_descriptions", false)) binding.descriptionDice.isVisible = false
 
         // Restore saved state
         selectedDiceType = runCatching {
@@ -104,21 +103,25 @@ class UniversalDiceFragment : Fragment() {
         setupCountChips()
         applyDiceMode()
 
-        displayZone.setOnClickListener { if (!isAnimating) mainThrow() }
-
-        // Shake to throw
-        act = activity as? MainActivity
-        act?.let { a ->
-            shakeEnabled = a.shakeAllowed()
-            if (shakeEnabled) {
-                sensorManager = a.getSystemService(Context.SENSOR_SERVICE) as SensorManager
-                sensorListener = ShakeEventListener().also { it.setOnShakeListener(::mainThrow) }
-            }
-        }
-        return v
+        binding.diceDisplayZone.setOnClickListener { mainThrow() }
+        if (mainActivity?.shakeAllowed() == true)
+            shake = ShakeToThrow(requireContext()) { mainThrow() }
     }
 
-    // Type toggle
+    override fun onResume() {
+        super.onResume()
+        if (!isAnimating) shake?.start()
+    }
+
+    override fun onPause() {
+        shake?.stop()
+        super.onPause()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
     private fun setupDiceTypeToggle() {
         val typeMap = mapOf(
@@ -130,19 +133,17 @@ class UniversalDiceFragment : Fragment() {
             R.id.diceTypeSelection20 to DiceType.D20,
         )
         typeMap.entries.firstOrNull { it.value == selectedDiceType }
-            ?.let { diceTypeGroup.check(it.key) }
+            ?.let { binding.diceTypeSelection.check(it.key) }
 
-        diceTypeGroup.addOnButtonCheckedListener { _, checkedId, isChecked ->
+        binding.diceTypeSelection.addOnButtonCheckedListener { _, checkedId, isChecked ->
             if (!isChecked) return@addOnButtonCheckedListener
             typeMap[checkedId]?.let { type ->
                 selectedDiceType = type
-                updateMainDiceImage()
+                applyDiceMode()
                 savePrefs()
             }
         }
     }
-
-    // Count chips
 
     private fun setupCountChips() {
         val chipToCount = mapOf(
@@ -158,281 +159,201 @@ class UniversalDiceFragment : Fragment() {
             R.id.chipCount10 to 10,
             R.id.chipCountRisiko to 0,
         )
-
         chipToCount.entries.firstOrNull { it.value == selectedDiceCount }
-            ?.let { countChipGroup.check(it.key) }
+            ?.let { binding.diceCountChipGroup.check(it.key) }
 
-        countChipGroup.setOnCheckedStateChangeListener { _, checkedIds ->
-            val id = checkedIds.firstOrNull() ?: return@setOnCheckedStateChangeListener
-            val count = chipToCount[id] ?: return@setOnCheckedStateChangeListener
+        binding.diceCountChipGroup.setOnCheckedStateChangeListener { _, checkedIds ->
+            val count = chipToCount[checkedIds.firstOrNull()] ?: return@setOnCheckedStateChangeListener
             selectedDiceCount = count
             applyDiceMode()
             savePrefs()
         }
     }
 
-    // Mode application
     private fun applyDiceMode() {
-        if (isRisikoMode) {
-            mainDiceImage.visibility = View.GONE
-            risikoLayout.visibility = View.VISIBLE
-            // Lock the type selector: risiko is always D6
-            diceTypeGroup.isEnabled = false
-            diceTypeGroup.alpha = 0.38f
-        } else {
-            risikoLayout.visibility = View.GONE
-            mainDiceImage.visibility = View.VISIBLE
-            diceTypeGroup.isEnabled = true
-            diceTypeGroup.alpha = 1f
-            updateMainDiceImage()
-        }
+        binding.diceContent.animateNextLayoutChange()
+        binding.risikoLayout.root.isVisible = isRisikoMode
+        binding.universalDiceAnimation.isVisible = !isRisikoMode
+        // 3 vs 3 is always played with D6, the type can't be chosen
+        binding.diceTypeSelection.isEnabled = !isRisikoMode
+        binding.diceResultCards.removeAllViews()
+        lastPipResult = 0
+        binding.universalDiceAnimation.setImageResource(
+            if (isPipMode) PIP_FACES[0] else selectedDiceType.iconRes
+        )
     }
 
-    private val isRisikoMode get() = selectedDiceCount == 0
-
-    private fun updateMainDiceImage() {
-        mainDiceImage.setImageResource(selectedDiceType.iconRes)
+    private fun savePrefs() = sp.edit {
+        putString("ud_dice_type", selectedDiceType.name)
+        putInt("ud_dice_count", selectedDiceCount)
     }
 
-    private fun savePrefs() {
-        PreferenceManager.getDefaultSharedPreferences(requireContext()).edit().apply {
-            putString("ud_dice_type", selectedDiceType.name)
-            putInt("ud_dice_count", selectedDiceCount)
-            apply()
-        }
-    }
-
-    // Throw
     private fun mainThrow() {
-        if (isAnimating) return
+        if (isAnimating || _binding == null) return
         isAnimating = true
-        if (shakeEnabled) sensorManager.unregisterListener(sensorListener)
-        act?.vibrate()
-        act?.playSound(4)
+        shake?.stop()
+        setControlsEnabled(false)
+        mainActivity?.vibrate()
+        mainActivity?.playSound(4)
 
-        if (isRisikoMode) {
-            // Reset the initial state with another animation
-            if (lastResults.isNotEmpty()) {
-                runRisikoResetAnimation()
-                // Delay the execution
-                requireView().postDelayed({ throwRisiko() }, 500)
-            } else throwRisiko()
+        when {
+            isRisikoMode -> {
+                // Bring the dice back to the initial state before the new throw
+                if (lastRisikoResults.isNotEmpty()) {
+                    runRisikoResetAnimation()
+                    binding.root.postDelayed(::throwRisiko, RESET_DURATION)
+                } else throwRisiko()
+            }
+
+            isPipMode -> {
+                if (lastPipResult != 0) {
+                    playAvd(binding.universalDiceAnimation, PIP_RESETS[lastPipResult - 1])
+                    binding.root.postDelayed(::throwPips, RESET_DURATION)
+                } else throwPips()
+            }
+
+            else -> throwNormal()
         }
-        else throwNormal()
+    }
+
+    private fun endThrow() {
+        isAnimating = false
+        setControlsEnabled(true)
+        if (isResumed) shake?.start()
+    }
+
+    // Type and number of dice can't change while the dice are rolling
+    private fun setControlsEnabled(enabled: Boolean) {
+        binding.diceTypeSelection.isEnabled = enabled && !isRisikoMode
+        binding.diceCountChipGroup.children.forEach { it.isEnabled = enabled }
     }
 
     private fun throwNormal() {
         val results = List(selectedDiceCount) { Random.nextInt(selectedDiceType.sides) + 1 }
-        animateSingleDie(mainDiceImage) {
-            if (!isAdded) {
-                isAnimating = false; return@animateSingleDie
-            }
-            showNormalResults(results)
-            isAnimating = false
-            if (shakeEnabled) registerShake()
+        animateSingleDie(binding.universalDiceAnimation) {
+            if (_binding == null) return@animateSingleDie
+            animateResultText("${getString(R.string.generic_result)} ${results.sum()}")
+            buildResultChips(results)
+            endThrow()
         }
+    }
+
+    private fun throwPips() {
+        if (_binding == null) return
+        val result = Random.nextInt(6) + 1
+        lastPipResult = result
+        playAvd(binding.universalDiceAnimation, PIP_FACES[result - 1])
+        animateResultText("${getString(R.string.generic_result)} $result")
+        binding.root.postDelayed({
+            if (_binding == null) return@postDelayed
+            endThrow()
+        }, PIP_DURATION)
     }
 
     private fun throwRisiko() {
+        if (_binding == null) return
         val results = List(6) { Random.nextInt(6) + 1 }
+        risikoDice().forEachIndexed { index, die -> playAvd(die, PIP_FACES[results[index] - 1]) }
+        (binding.risikoLayout.diceButtonAnimationVs.drawable as? Animatable)?.start()
 
-        val diceViews = listOf(
-            R.id.diceButtonAnimation1,
-            R.id.diceButtonAnimation2,
-            R.id.diceButtonAnimation3,
-            R.id.diceButtonAnimation4,
-            R.id.diceButtonAnimation5,
-            R.id.diceButtonAnimation6,
-        ).map { requireView().findViewById<ImageView>(it) }
-
-        val diceDrawables = listOf(
-            R.drawable.dice_1_vector_animation,
-            R.drawable.dice_2_vector_animation,
-            R.drawable.dice_3_vector_animation,
-            R.drawable.dice_4_vector_animation,
-            R.drawable.dice_5_vector_animation,
-            R.drawable.dice_6_vector_animation,
-        )
-
-        val vsAnim = requireView().findViewById<ImageView>(R.id.diceButtonAnimationVs)
-
-        results.forEachIndexed { i, value ->
-            diceViews[i].setImageResource(diceDrawables[value - 1])
-            (diceViews[i].drawable as? Animatable)?.start()
-        }
-        (vsAnim.drawable as? Animatable)?.start()
-
+        lastRisikoResults = results
         val team1 = results.take(3).sum()
         val team2 = results.drop(3).sum()
-        // Update last results used to animate the reset
-        lastResults = results
-        val resultStr = "${getString(R.string.generic_result)} $team1 — $team2"
-        animateResultText(resultStr)
+        animateResultText("${getString(R.string.generic_result)} $team1 — $team2")
 
-        requireView().postDelayed({
-            resultCardsContainer.removeAllViews()
-            isAnimating = false
-            if (shakeEnabled) registerShake()
-        }, 1800)
+        binding.root.postDelayed({
+            if (_binding == null) return@postDelayed
+            endThrow()
+        }, RISIKO_DURATION)
     }
 
-    // Dice animation
+    private fun risikoDice() = listOf(
+        binding.risikoLayout.diceButtonAnimation1,
+        binding.risikoLayout.diceButtonAnimation2,
+        binding.risikoLayout.diceButtonAnimation3,
+        binding.risikoLayout.diceButtonAnimation4,
+        binding.risikoLayout.diceButtonAnimation5,
+        binding.risikoLayout.diceButtonAnimation6,
+    )
+
+    private fun runRisikoResetAnimation() = risikoDice().forEachIndexed { index, die ->
+        playAvd(die, PIP_RESETS[lastRisikoResults[index] - 1])
+    }
+
+    private fun playAvd(view: ImageView, drawable: Int) {
+        view.setImageResource(drawable)
+        (view.drawable as? Animatable)?.start()
+    }
+
+    // A shake, then a spin while the die lights up in the accent and fades back
     private fun animateSingleDie(view: ImageView, onEnd: () -> Unit) {
         val gray = MaterialColors.getColor(view, com.google.android.material.R.attr.colorOutline)
-        val primary =
-            MaterialColors.getColor(view, com.google.android.material.R.attr.colorPrimaryFixed)
-
-        val shakeDuration = 280L
-        val spinDuration = 1150L
-        val totalMs = shakeDuration + spinDuration
-
+        val primary = MaterialColors.getColor(view, androidx.appcompat.R.attr.colorPrimary)
         view.setColorFilter(gray, PorterDuff.Mode.SRC_IN)
 
-        ObjectAnimator.ofFloat(view, "translationY", 0f, -20f, 16f, -12f, 8f, -4f, 0f).apply {
-            duration = shakeDuration
-            interpolator = android.view.animation.LinearInterpolator()
+        ObjectAnimator.ofFloat(view, View.TRANSLATION_Y, 0f, -20f, 16f, -12f, 8f, -4f, 0f).apply {
+            duration = SHAKE_DURATION
+            interpolator = LinearInterpolator()
             start()
         }
 
         view.postDelayed({
-            if (!isAdded) return@postDelayed
-
+            if (_binding == null) return@postDelayed
             view.pivotX = view.width / 2f
+            // The D4 is a triangle, its center of mass is lower than the center of the icon
             view.pivotY = if (selectedDiceType == DiceType.D4) view.height * (14f / 24f)
             else view.height / 2f
 
-            ObjectAnimator.ofFloat(view, "rotation", 0f, 360f).apply {
-                duration = spinDuration
+            ObjectAnimator.ofFloat(view, View.ROTATION, 0f, 360f).apply {
+                duration = SPIN_DURATION
                 interpolator = DecelerateInterpolator(2f)
                 start()
             }
-
-            ObjectAnimator.ofFloat(view, "translationX", 0f, 18f, 0f).apply {
-                duration = spinDuration
+            ObjectAnimator.ofFloat(view, View.TRANSLATION_X, 0f, 18f, 0f).apply {
+                duration = SPIN_DURATION
                 interpolator = DecelerateInterpolator(2f)
                 start()
             }
-
-            ValueAnimator.ofArgb(gray, primary).apply {
-                duration = spinDuration / 2
+            ValueAnimator.ofArgb(gray, primary, gray).apply {
+                duration = SPIN_DURATION
                 addUpdateListener {
-                    view.setColorFilter(
-                        it.animatedValue as Int,
-                        PorterDuff.Mode.SRC_IN
-                    )
+                    view.setColorFilter(it.animatedValue as Int, PorterDuff.Mode.SRC_IN)
                 }
                 start()
             }
-
-            view.postDelayed({
-                if (!isAdded) return@postDelayed
-                ValueAnimator.ofArgb(primary, gray).apply {
-                    duration = spinDuration / 2
-                    addUpdateListener {
-                        view.setColorFilter(
-                            it.animatedValue as Int,
-                            PorterDuff.Mode.SRC_IN
-                        )
-                    }
-                    start()
-                }
-            }, spinDuration / 2)
-
-        }, shakeDuration)
+        }, SHAKE_DURATION)
 
         view.postDelayed({
             view.pivotX = view.width / 2f
             view.pivotY = view.height / 2f
             view.clearColorFilter()
             onEnd()
-        }, totalMs + 80)
-    }
-
-    // Results
-    private fun showNormalResults(results: List<Int>) {
-        val total = results.sum()
-        val resultStr = "${getString(R.string.generic_result)} $total"
-        animateResultText(resultStr)
-        buildResultChips(results)
+        }, SHAKE_DURATION + SPIN_DURATION + 80)
     }
 
     private fun animateResultText(text: String) {
-        val animIn = AlphaAnimation(1f, 0f).apply { duration = 300 }
-        val animOut = AlphaAnimation(0f, 1f).apply { duration = 400 }
-        resultText.startAnimation(animIn)
-        resultText.postDelayed({
-            resultText.text = text
-            resultText.isSelected = true
-            resultText.startAnimation(animOut)
+        binding.resultDice.startAnimation(AlphaAnimation(1f, 0f).apply { duration = 300 })
+        binding.resultDice.postDelayed({
+            if (_binding == null) return@postDelayed
+            binding.resultDice.text = text
+            binding.resultDice.isSelected = true
+            binding.resultDice.startAnimation(AlphaAnimation(0f, 1f).apply { duration = 400 })
         }, 300)
     }
 
+    // One chip per die, the highest faces stand out
     private fun buildResultChips(results: List<Int>) {
-        resultCardsContainer.removeAllViews()
+        binding.diceResultCards.removeAllViews()
         if (results.size <= 1) return
-
-        val primary = com.google.android.material.R.attr.colorPrimaryFixed
-        val surface = com.google.android.material.R.attr.colorSurfaceVariant
-        val onPrimary = com.google.android.material.R.attr.colorOnPrimary
-        val onSurface = com.google.android.material.R.attr.colorOnSurfaceVariant
-
-        results.forEachIndexed { i, value ->
-            val isMax = value == selectedDiceType.sides
-            val bgAttr = if (isMax) primary else surface
-            val txtAttr = if (isMax) onPrimary else onSurface
-            val chip =
-                Chip(ContextThemeWrapper(requireContext(), R.style.Widget_App_Chip_Outline)).apply {
-                    text = value.toString()
-                    isCheckable = false
-                    isClickable = false
-                    isFocusable = false
-                    chipStrokeWidth = 0f
-                    chipBackgroundColor = ColorStateList.valueOf(
-                        MaterialColors.getColor(this, bgAttr)
-                    )
-                    setTextColor(MaterialColors.getColor(this, txtAttr))
-                    alpha = 0f
-                }
-            resultCardsContainer.addView(chip)
-            chip.postDelayed({
-                if (!isAdded) return@postDelayed
-                chip.startAnimation(AlphaAnimation(0f, 1f).apply { duration = 220 })
-                chip.alpha = 1f
-            }, i * 55L)
+        results.forEachIndexed { index, value ->
+            val chip = layoutInflater.inflate(
+                R.layout.dice_result_chip, binding.diceResultCards, false
+            ) as Chip
+            chip.text = value.toString()
+            chip.isChecked = value == selectedDiceType.sides
+            chip.alpha = 0f
+            binding.diceResultCards.addView(chip)
+            chip.animate().alpha(1f).setStartDelay(index * 55L).setDuration(220).start()
         }
     }
-
-    private fun registerShake() {
-        sensorManager.registerListener(
-            sensorListener,
-            sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
-            SensorManager.SENSOR_DELAY_UI
-        )
-    }
-
-    // Run the reset animation to return to the initial state
-    @SuppressLint("DiscouragedApi")
-    private fun runRisikoResetAnimation() {
-        val diceAnimations = listOf<ImageView>(
-            requireView().findViewById(R.id.diceButtonAnimation1),
-            requireView().findViewById(R.id.diceButtonAnimation2),
-            requireView().findViewById(R.id.diceButtonAnimation3),
-            requireView().findViewById(R.id.diceButtonAnimation4),
-            requireView().findViewById(R.id.diceButtonAnimation5),
-            requireView().findViewById(R.id.diceButtonAnimation6)
-        )
-        // Choose the correct drawable and run the reset animation
-        for ((index, result) in lastResults.withIndex()) {
-            val chosenDrawable = "dice_" + result + "_to_start_vector_animation"
-            val resId = resources.getIdentifier(
-                chosenDrawable,
-                "drawable",
-                "com.minar.randomix"
-            )
-            diceAnimations[index].setImageResource(resId)
-            val diceDrawable1 = diceAnimations[index].drawable
-            (diceDrawable1 as Animatable).start()
-        }
-    }
-
 }

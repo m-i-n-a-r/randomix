@@ -153,4 +153,21 @@
     <!-- Universal Dice Fragment -->
     <string name="blob_name">Fondu de Random Blobs</string>
     <string name="blob_description">Un fondu en movimientu aleatoriu, por motivos estéticos</string>
+    <string name="roulette_mode_options">Opciones</string>
+    <string name="delete_all_roulette">Desaniciar toles opciones</string>
+    <string name="about_share_text">Randomix, dexa que l\'azar fale: %1$s</string>
+    <string name="about_translate_summary">Ayuda a traducir Randomix a la to llingua en Crowdin</string>
+    <string name="back">Atrás</string>
+    <string name="about_title">Tocante a</string>
+    <string name="about_version">Versión</string>
+    <string name="about_language_title">Llingua</string>
+    <string name="about_language_summary">Escueyi la llingua qu\'usa Randomix</string>
+    <string name="about_rate_title">Valora l\'app</string>
+    <string name="about_rate_summary">Dexa una reseña en Play Store</string>
+    <string name="about_share_title">Comparti Randomix</string>
+    <string name="about_share_summary">Fala-y de l\'app a un amigu</string>
+    <string name="about_no_app_found">¡Nun hai nenguna app que pueda facer esto, sentímoslo!</string>
+    <string name="about_contact_title">Contacta col desendolcador</string>
+    <string name="amoled_description_on">El tema escuru usa\'l negru puru, ideal pa pantalles OLED</string>
+    <string name="amoled_description_off">El tema escuru usa les superficies escures estándar</string>
 </resources>

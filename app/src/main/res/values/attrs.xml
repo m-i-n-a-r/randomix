@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Translucent wash of the accent, for gradients that fade over content -->
+    <attr name="colorAccentVeil" format="color" />
+
+    <!-- Background of the tonal cards. A surface container, lifted from the black in Amoled -->
+    <attr name="colorTonalCard" format="color" />
+
+</resources>

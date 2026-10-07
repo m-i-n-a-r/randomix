@@ -152,4 +152,21 @@
     <!-- Universal Dice Fragment -->
     <string name="blob_name">Pozadina Random Blobs</string>
     <string name="blob_description">Nasumična pokretna pozadina, iz estetskih razloga</string>
+    <string name="back">Natrag</string>
+    <string name="about_title">O aplikaciji</string>
+    <string name="about_version">Verzija</string>
+    <string name="about_language_title">Jezik</string>
+    <string name="about_language_summary">Odaberite jezik Randomixa</string>
+    <string name="about_rate_title">Ocijeni aplikaciju</string>
+    <string name="about_rate_summary">Ostavite recenziju u Trgovini Play</string>
+    <string name="about_share_title">Podijeli Randomix</string>
+    <string name="about_share_summary">Preporučite aplikaciju prijatelju</string>
+    <string name="about_no_app_found">Nijedna aplikacija ne može izvršiti ovu radnju!</string>
+    <string name="about_contact_title">Kontaktiraj razvojnog programera</string>
+    <string name="amoled_description_on">Tamna tema koristi čistu crnu boju, idealnu za OLED zaslone</string>
+    <string name="amoled_description_off">Tamna tema koristi standardne tamne površine</string>
+    <string name="roulette_mode_options">Opcije</string>
+    <string name="delete_all_roulette">Izbriši sve opcije</string>
+    <string name="about_share_text">Randomix, neka odluči slučajnost: %1$s</string>
+    <string name="about_translate_summary">Pomozi prevesti Randomix na svoj jezik na Crowdinu</string>
 </resources>

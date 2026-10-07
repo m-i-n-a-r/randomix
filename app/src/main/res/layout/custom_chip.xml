@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- An option of the roulette or a custom answer: tapping it, or its cross, removes it -->
 <com.google.android.material.chip.Chip xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.App.Chip.Tonal.Entry"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:ellipsize="end"
-    android:text="@string/title_roulette"
-    android:textAlignment="center"
-    android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-    android:textColor="?attr/colorOnSurface"
-    app:chipStrokeColor="?attr/colorSurfaceVariant"
-    app:chipStrokeWidth="@dimen/text_box_stroke_width"
-    app:rippleColor="?attr/colorPrimary" />
+    android:layout_height="wrap_content" />

@@ -1,0 +1,6 @@
+- Brand new look: floating navbar, tonal cards and settings as tiles
+- New palette for every accent, in light, dark and Amoled
+- A button to delete all the roulette options at once
+- The 1-100 set really goes from 1 to 100
+- A single D6 shows its face with pips
+- Fixes and updated libraries

@@ -152,4 +152,21 @@
     <!-- Universal Dice Fragment -->
     <string name="blob_name">Random Blobs 背景</string>
     <string name="blob_description">随机移动的背景，用于美观目的</string>
+    <string name="back">返回</string>
+    <string name="about_title">关于</string>
+    <string name="about_version">版本</string>
+    <string name="about_language_title">语言</string>
+    <string name="about_language_summary">选择 Randomix 使用的语言</string>
+    <string name="about_rate_title">为应用评分</string>
+    <string name="about_rate_summary">在 Play 商店留下评价</string>
+    <string name="about_share_title">分享 Randomix</string>
+    <string name="about_share_summary">向朋友推荐这款应用</string>
+    <string name="about_no_app_found">没有应用可以执行此操作！</string>
+    <string name="about_contact_title">联系开发者</string>
+    <string name="amoled_description_on">深色主题使用纯黑色，适合 OLED 屏幕</string>
+    <string name="amoled_description_off">深色主题使用常规深色背景</string>
+    <string name="roulette_mode_options">选项</string>
+    <string name="delete_all_roulette">删除所有选项</string>
+    <string name="about_share_text">Randomix，让随机来决定：%1$s</string>
+    <string name="about_translate_summary">在 Crowdin 上帮助将 Randomix 翻译成你的语言</string>
 </resources>

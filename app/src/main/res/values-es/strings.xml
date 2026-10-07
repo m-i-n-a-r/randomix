@@ -152,4 +152,21 @@
     <!-- Universal Dice Fragment -->
     <string name="blob_name">Fondo Random Blobs</string>
     <string name="blob_description">Un fondo en movimiento aleatorio, con fines estéticos</string>
+    <string name="back">Atrás</string>
+    <string name="about_title">Acerca de</string>
+    <string name="about_version">Versión</string>
+    <string name="about_language_title">Idioma</string>
+    <string name="about_language_summary">Elige el idioma de Randomix</string>
+    <string name="about_rate_title">Valorar la aplicación</string>
+    <string name="about_rate_summary">Deja una reseña en Play Store</string>
+    <string name="about_share_title">Compartir Randomix</string>
+    <string name="about_share_summary">Recomienda la aplicación a un amigo</string>
+    <string name="about_no_app_found">¡Ninguna aplicación puede realizar esta acción!</string>
+    <string name="about_contact_title">Contactar con el desarrollador</string>
+    <string name="amoled_description_on">El tema oscuro usa negro puro, ideal para pantallas OLED</string>
+    <string name="amoled_description_off">El tema oscuro usa los tonos oscuros habituales</string>
+    <string name="roulette_mode_options">Opciones</string>
+    <string name="delete_all_roulette">Eliminar todas las opciones</string>
+    <string name="about_share_text">Randomix, deja que hable el azar: %1$s</string>
+    <string name="about_translate_summary">Ayuda a traducir Randomix a tu idioma en Crowdin</string>
 </resources>

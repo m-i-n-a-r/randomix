@@ -1,46 +1,36 @@
 package com.minar.randomix.fragments
 
-import android.content.Context
 import android.graphics.drawable.Animatable
-import android.hardware.Sensor
-import android.hardware.SensorManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AlphaAnimation
-import android.widget.ImageView
-import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
-import com.google.android.material.snackbar.Snackbar
 import com.minar.randomix.R
 import com.minar.randomix.activities.MainActivity
-import com.minar.randomix.utilities.ShakeEventListener
-import java.util.Random
+import com.minar.randomix.databinding.FragmentCoinBinding
+import com.minar.randomix.utilities.ShakeToThrow
+import com.minar.randomix.utilities.addPageInsets
+import kotlin.random.Random
 
-class CoinFragment : Fragment(), View.OnClickListener {
-
-    private var act: MainActivity? = null
-    private var shakeEnabled = false
-    private lateinit var sensorManager: SensorManager
-    private lateinit var sensorListener: ShakeEventListener
+class CoinFragment : Fragment() {
+    private var _binding: FragmentCoinBinding? = null
+    private val binding get() = _binding!!
+    private var shake: ShakeToThrow? = null
+    private var flipping = false
     private var notFirstFlip = false
     private var lastResult = false
     private var streakCount = 0
 
-    override fun onResume() {
-        super.onResume()
-        if (shakeEnabled) sensorManager.registerListener(
-            sensorListener,
-            sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
-            SensorManager.SENSOR_DELAY_UI
-        )
-    }
+    private val mainActivity get() = activity as? MainActivity
 
-    override fun onPause() {
-        if (shakeEnabled) sensorManager.unregisterListener(sensorListener)
-        super.onPause()
+    companion object {
+        const val RESET_DURATION = 500L
+        const val FLIP_DURATION = 1500L
+        const val COOLDOWN_DURATION = 2000L
     }
 
     override fun onCreateView(
@@ -48,134 +38,95 @@ class CoinFragment : Fragment(), View.OnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val v = inflater.inflate(R.layout.fragment_coin, container, false)
-        val sp = PreferenceManager.getDefaultSharedPreferences(requireContext())
-
-        if (sp.getBoolean("hide_descriptions", false))
-            v.findViewById<View>(R.id.descriptionCoin).visibility = View.GONE
-
-        v.findViewById<ImageView>(R.id.coinButtonAnimation).setOnClickListener(this)
-
-        act = activity as? MainActivity
-        act?.let { a ->
-            shakeEnabled = a.shakeAllowed()
-            if (shakeEnabled) {
-                sensorManager = a.getSystemService(Context.SENSOR_SERVICE) as SensorManager
-                sensorListener = ShakeEventListener().also { it.setOnShakeListener(::mainThrow) }
-            }
-        }
-        return v
+        _binding = FragmentCoinBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onClick(v: View) {
-        if (v.id == R.id.coinButtonAnimation) mainThrow()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val sp = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        binding.coinScroll.addPageInsets()
+        if (sp.getBoolean("hide_descriptions", false)) binding.descriptionCoin.isVisible = false
+
+        binding.coinButtonAnimation.setOnClickListener { mainThrow() }
+        if (mainActivity?.shakeAllowed() == true)
+            shake = ShakeToThrow(requireContext()) { mainThrow() }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (!flipping) shake?.start()
+    }
+
+    override fun onPause() {
+        shake?.stop()
+        super.onPause()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     private fun mainThrow() {
-        if (shakeEnabled) sensorManager.unregisterListener(sensorListener)
-        val coinAnimation = requireView().findViewById<ImageView>(R.id.coinButtonAnimation)
-        coinAnimation.isClickable = false
+        if (flipping || _binding == null) return
+        flipping = true
+        shake?.stop()
+        mainActivity?.vibrate()
+        mainActivity?.playSound(2)
 
-        act?.vibrate()
-        act?.playSound(2)
-
+        // From the second flip on, the coin first goes back to its initial state
         if (notFirstFlip) {
             runResetAnimation()
-            requireView().postDelayed(::flipAndRunMainAnimation, 500)
-        } else {
-            flipAndRunMainAnimation()
-        }
+            binding.root.postDelayed(::flipAndRunMainAnimation, RESET_DURATION)
+        } else flipAndRunMainAnimation()
+        notFirstFlip = true
 
-        requireView().postDelayed({
-            if (shakeEnabled) sensorManager.registerListener(
-                sensorListener,
-                sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
-                SensorManager.SENSOR_DELAY_UI
-            )
-            coinAnimation.isClickable = true
-        }, 2000)
-
-        if (!notFirstFlip) notFirstFlip = true
+        binding.root.postDelayed({
+            if (_binding == null) return@postDelayed
+            flipping = false
+            if (isResumed) shake?.start()
+        }, COOLDOWN_DURATION)
     }
 
     private fun flipAndRunMainAnimation() {
-        if (!isAdded) return
-        val textViewResult = requireView().findViewById<TextView>(R.id.resultCoin)
-        val coinAnimation = requireView().findViewById<ImageView>(R.id.coinButtonAnimation)
-        val resultHead = getString(R.string.result_head)
-        val resultTail = getString(R.string.result_tail)
+        if (_binding == null) return
+        val isHead = Random.nextBoolean()
+        val result = getString(if (isHead) R.string.result_head else R.string.result_tail)
+        binding.resultCoin.startAnimation(AlphaAnimation(1f, 0f).apply { duration = FLIP_DURATION })
 
-        val animIn = AlphaAnimation(1f, 0f).apply { duration = 1500 }
-        val animOut = AlphaAnimation(0f, 1f).apply { duration = 1000 }
-        textViewResult.startAnimation(animIn)
-
-        val n = Random().nextInt(2)
-        val resId: Int
-        val result: String
-        val isHead: Boolean
-
-        if (n == 1) {
-            resId = R.drawable.coin_head_vector_animation
-            result = resultHead
-            isHead = true
-        } else {
-            resId = R.drawable.coin_tail_vector_animation
-            result = resultTail
-            isHead = false
-        }
-
-        if (notFirstFlip && isHead == lastResult) streakCount++ else streakCount = 1
+        streakCount = if (streakCount > 0 && isHead == lastResult) streakCount + 1 else 1
         lastResult = isHead
 
-        coinAnimation.setImageResource(resId)
-        (coinAnimation.drawable as? Animatable)?.start()
+        binding.coinButtonAnimation.setImageResource(
+            if (isHead) R.drawable.coin_head_vector_animation
+            else R.drawable.coin_tail_vector_animation
+        )
+        (binding.coinButtonAnimation.drawable as? Animatable)?.start()
 
         val currentStreak = streakCount
-        requireView().postDelayed({
-            textViewResult.text = result
-            textViewResult.startAnimation(animOut)
-            when (currentStreak) {
-                3 -> {
-                    Snackbar.make(
-                        requireView(),
-                        "🔥 Three in a row!",
-                        Snackbar.LENGTH_LONG
-                    ).show()
-                }
+        binding.root.postDelayed({
+            if (_binding == null) return@postDelayed
+            binding.resultCoin.text = result
+            binding.resultCoin.startAnimation(AlphaAnimation(0f, 1f).apply { duration = 1000 })
+            streakMessage(currentStreak)?.let { mainActivity?.showSnackbar(it) }
+        }, FLIP_DURATION)
+    }
 
-                5 -> {
-                    Snackbar.make(requireView(), "🤯 FIVE IN A ROW!", Snackbar.LENGTH_LONG)
-                        .show()
-                }
-
-                10 -> {
-                    Snackbar.make(
-                        requireView(),
-                        "TEN? Seriously? Are you mad bro?",
-                        Snackbar.LENGTH_LONG
-                    )
-                        .show()
-                }
-
-                20 -> {
-                    Snackbar.make(
-                        requireView(),
-                        "This is literally impossible. It won't happen. No. Way. You can only" +
-                                " see this part of the easter egg in the source code. And if you " +
-                                "see this: star the repo!",
-                        Snackbar.LENGTH_LONG
-                    )
-                        .show()
-                }
-            }
-        }, 1500)
+    private fun streakMessage(streak: Int): String? = when (streak) {
+        3 -> "🔥 Three in a row!"
+        5 -> "🤯 FIVE IN A ROW!"
+        10 -> "TEN? Seriously? Are you mad bro?"
+        20 -> "This is literally impossible. It won't happen. No. Way. You can only see this " +
+                "part of the easter egg in the source code. And if you see this: star the repo!"
+        else -> null
     }
 
     private fun runResetAnimation() {
-        val coinAnimation = requireView().findViewById<ImageView>(R.id.coinButtonAnimation)
-        val resId = if (lastResult) R.drawable.coin_head_to_start_vector_animation
-        else R.drawable.coin_tail_to_start_vector_animation
-        coinAnimation.setImageResource(resId)
-        (coinAnimation.drawable as? Animatable)?.start()
+        binding.coinButtonAnimation.setImageResource(
+            if (lastResult) R.drawable.coin_head_to_start_vector_animation
+            else R.drawable.coin_tail_to_start_vector_animation
+        )
+        (binding.coinButtonAnimation.drawable as? Animatable)?.start()
     }
 }

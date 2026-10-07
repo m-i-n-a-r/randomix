@@ -152,4 +152,21 @@
     <!-- Universal Dice Fragment -->
     <string name="blob_name">רקע Random Blobs</string>
     <string name="blob_description">רקע נע אקראי, למטרות אסתטיות</string>
+    <string name="back">חזרה</string>
+    <string name="about_title">על האפליקציה</string>
+    <string name="about_version">גרסה</string>
+    <string name="about_language_title">שפה</string>
+    <string name="about_language_summary">בחירת השפה של Randomix</string>
+    <string name="about_rate_title">דירוג האפליקציה</string>
+    <string name="about_rate_summary">כתיבת ביקורת בחנות Play</string>
+    <string name="about_share_title">שיתוף Randomix</string>
+    <string name="about_share_summary">המלצה על האפליקציה לחברים</string>
+    <string name="about_no_app_found">אין אפליקציה שיכולה לבצע את הפעולה הזו!</string>
+    <string name="about_contact_title">יצירת קשר עם המפתח</string>
+    <string name="amoled_description_on">העיצוב הכהה משתמש בשחור מוחלט, המתאים למסכי OLED</string>
+    <string name="amoled_description_off">העיצוב הכהה משתמש בגוונים הכהים הרגילים</string>
+    <string name="roulette_mode_options">אפשרויות</string>
+    <string name="delete_all_roulette">מחיקת כל האפשרויות</string>
+    <string name="about_share_text">Randomix, תנו למזל לדבר: %1$s</string>
+    <string name="about_translate_summary">עזרו לתרגם את Randomix לשפה שלכם ב-Crowdin</string>
 </resources>

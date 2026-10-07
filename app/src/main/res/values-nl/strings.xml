@@ -152,4 +152,21 @@
     <!-- Universal Dice Fragment -->
     <string name="blob_name">Random Blobs achtergrond</string>
     <string name="blob_description">Een willekeurig bewegende achtergrond, voor esthetische doeleinden</string>
+    <string name="back">Terug</string>
+    <string name="about_title">Over</string>
+    <string name="about_version">Versie</string>
+    <string name="about_language_title">Taal</string>
+    <string name="about_language_summary">Kies de taal die Randomix gebruikt</string>
+    <string name="about_rate_title">De app beoordelen</string>
+    <string name="about_rate_summary">Laat een beoordeling achter in de Play Store</string>
+    <string name="about_share_title">Randomix delen</string>
+    <string name="about_share_summary">Vertel een vriend over de app</string>
+    <string name="about_no_app_found">Geen app kan deze actie uitvoeren!</string>
+    <string name="about_contact_title">Contact met de ontwikkelaar</string>
+    <string name="amoled_description_on">Het donkere thema gebruikt puur zwart, ideaal voor OLED-schermen</string>
+    <string name="amoled_description_off">Het donkere thema gebruikt de gebruikelijke donkere tinten</string>
+    <string name="roulette_mode_options">Opties</string>
+    <string name="delete_all_roulette">Alle opties verwijderen</string>
+    <string name="about_share_text">Randomix, laat het toeval spreken: %1$s</string>
+    <string name="about_translate_summary">Help Randomix naar jouw taal te vertalen op Crowdin</string>
 </resources>

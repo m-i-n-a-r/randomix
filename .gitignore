@@ -58,3 +58,14 @@ freeline_project_description.json
 
 ### Android Patch ###
 gen-external-apklibs
+### Local tooling ###
+# Kotlin compiler daemon data
+.kotlin/
+# Signed builds made from Android Studio
+/app/release/
+# Eclipse / VS Code Java project files
+.project
+.settings/
+.classpath
+# Claude Code local data
+.claude/

@@ -1,5 +1,8 @@
 <resources>
 
+    <!-- Empty on purpose, only light needs the fix: filled in on API 31+ -->
+    <style name="ThemeOverlay.App.MonetContainerFix" parent="" />
+
     <!-- Style for the light theme -->
     <style name="AppTheme" parent="AppTheme.Base" />
 
@@ -7,103 +10,75 @@
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:colorBackground">@color/colorBackground</item>
         <item name="colorSurfaceContainerLow">@color/colorBackground</item>
-        <item name="colorOutlineVariant">@color/textColorPrimary</item>
-        <item name="colorOnPrimary">@color/textColorPrimary</item>
+        <item name="colorOutlineVariant">@color/deepGray</item>
+        <item name="colorOnPrimary">@color/deepGray</item>
         <item name="colorPrimary">@color/colorAccent</item>
-        <item name="colorPrimaryContainer">@color/colorAccentTranslucent</item>
+        <item name="colorAccentVeil">@color/colorAccentTranslucent</item>
+        <item name="colorPrimaryContainer">@color/colorAccentPrimaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/colorAccentOnPrimaryContainer</item>
         <item name="colorSecondary">@color/colorAccent</item>
         <item name="colorOnSecondary">@color/textColorPrimary</item>
-        <item name="colorSecondaryContainer">@color/colorAccentTranslucent
-        </item> <!-- Navbar halo -->
-        <item name="colorTertiary">@color/colorAccentTranslucent</item>
-        <item name="colorTertiaryContainer">@color/colorAccentTranslucent</item>
+        <item name="colorSecondaryContainer">@color/colorAccentSecondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/colorAccentOnSecondaryContainer</item>
+        <item name="colorTertiary">@color/colorAccentDark</item>
+        <item name="colorTertiaryContainer">@color/colorAccentTertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/colorAccentOnTertiaryContainer</item>
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
         <item name="android:textColorSecondary">@color/textColorSecondary</item>
         <item name="android:textColorTertiary">@color/textColorSecondary</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
+        <item name="snackbarStyle">@style/Widget.App.Snackbar</item>
+        <item name="snackbarTextViewStyle">@style/MaterialSnackbarTextViewTheme</item>
         <item name="alertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
-        <item name="colorSurface">@color/colorBackground</item>
+        <item name="colorSurface">@color/colorSurface</item>
         <item name="colorOnSurface">@color/textColorPrimary</item>
         <item name="colorOnSurfaceVariant">@color/textColorPrimary</item>
         <item name="colorOnBackground">@color/textColorSecondary</item>
         <item name="materialSwitchStyle">@style/CustomMaterialSwitch</item>
-        <item name="bottomNavigationStyle">@style/CustomBottomNavigation</item>
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.App.BottomSheetDialog</item>
         <item name="colorOutline">@color/goodGray</item>
         <item name="colorSurfaceVariant">@color/goodGrayTranslucent</item>
-        <item name="android:dialogPreferenceStyle">@style/ThemeOverlay.App.PreferenceDialog.Monet
-        </item>
+        <item name="android:dialogPreferenceStyle">@style/ThemeOverlay.App.PreferenceDialog.Monet</item>
+        <item name="colorTonalCard">?attr/colorSurfaceContainerHigh</item>
     </style>
 
+    <!-- Monet theme -->
     <style name="AppTheme.Monet" parent="Theme.Material3Expressive.DynamicColors.DayNight.NoActionBar">
+        <item name="colorAccentVeil">?attr/colorTertiaryContainer</item>
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogMonet</item>
-        <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog.Monet
-        </item>
+        <item name="snackbarStyle">@style/Widget.App.Snackbar</item>
+        <item name="snackbarTextViewStyle">@style/MaterialSnackbarTextViewTheme</item>
+        <item name="materialSwitchStyle">@style/Widget.Material3.CompoundButton.MaterialSwitch</item>
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.App.BottomSheetDialog.Monet</item>
         <item name="alertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog.Monet</item>
-        <item name="windowNoTitle">true</item>
-        <item name="switchStyle">@style/Widget.Material3.CompoundButton.MaterialSwitch</item>
-        <item name="android:navigationBarColor">?attr/colorSurface</item>
+        <item name="android:dialogPreferenceStyle">@style/ThemeOverlay.App.PreferenceDialog.Monet</item>
+        <item name="colorTonalCard">?attr/colorSurfaceContainerHigh</item>
     </style>
 
-    <style name="AppTheme.Monet.PerfectDark" parent="Theme.Material3Expressive.DynamicColors.DayNight.NoActionBar">
-        <item name="android:colorBackground">@color/amoledBlack</item>
-        <item name="android:statusBarColor">@color/amoledBlack</item>
-        <item name="android:navigationBarColor">@color/amoledBlack</item>
-        <item name="android:windowLightStatusBar">false</item>
-        <item name="colorSurface">@color/amoledSurface</item>
-        <item name="colorSurfaceVariant">@color/amoledSurfaceVariant</item>
-        <item name="colorSurfaceContainerHighest">@color/amoledSurfaceVariant</item>
-        <item name="android:textColorPrimary">@color/textColorPrimaryInverse</item>
-        <item name="android:textColorSecondary">@color/textColorSecondaryInverse</item>
-        <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogDark</item>
-        <item name="colorBackgroundFloating">@color/amoledSurface</item>
-        <item name="windowNoTitle">true</item>
-        <item name="switchStyle">@style/Widget.Material3.CompoundButton.MaterialSwitch</item>
-    </style>
-
-    <style name="AppTheme.PerfectDark" parent="AppTheme.Base">
-        <item name="android:colorBackground">@color/amoledBlack</item>
-        <item name="android:statusBarColor">@color/amoledBlack</item>
-        <item name="android:navigationBarColor">@color/amoledBlack</item>
-        <item name="android:windowLightStatusBar">false</item>
-        <item name="colorSurface">@color/amoledSurface</item>
-        <item name="colorSurfaceVariant">@color/amoledSurfaceVariant</item>
-        <item name="colorSurfaceContainerHighest">@color/amoledSurfaceVariant</item>
-        <item name="colorSurfaceContainerLow">@color/amoledSurface</item>
-        <item name="android:textColorPrimary">@color/textColorPrimaryInverse</item>
-        <item name="android:textColorSecondary">@color/textColorSecondaryInverse</item>
-        <item name="android:textColorTertiary">@color/textColorSecondaryInverse</item>
-        <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogDark</item>
-        <item name="colorBackgroundFloating">@color/amoledSurface</item>
-    </style>
-
-    <style name="CustomBottomAppBarAmoled" parent="Widget.Material3.BottomAppBar">
-        <item name="colorSurface">@android:color/black</item>
-    </style>
-
+    <!-- Splash screen theme -->
     <style name="SplashTheme" parent="SplashTheme.Base.Legacy" />
 
     <style name="SplashTheme.Base" parent="Theme.Material3Expressive.DayNight.NoActionBar">
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:statusBarColor">@color/colorBackground</item>
         <item name="android:colorBackground">@color/colorBackground</item>
-        <item name="android:navigationBarColor">@color/goodGray</item>
-        <item name="colorAccent">@color/aquaAccent</item>
+        <item name="android:navigationBarColor">?attr/colorOutline</item>
     </style>
 
     <style name="SplashTheme.Base.Legacy">
         <item name="android:windowBackground">@drawable/static_randomix_light</item>
     </style>
 
+    <!-- Preference dialog theme -->
     <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.Material3Expressive.MaterialAlertDialog">
-        <item name="colorOnSurface">?attr/colorPrimary</item>
         <item name="alertDialogStyle">@style/MaterialAlertDialog.App</item>
         <item name="dialogCornerRadius">@dimen/rounded_corners</item>
+        <!-- Remove the accent-ish tint -->
         <item name="backgroundTint">?colorBackgroundFloating</item>
-        <item name="android:background">?colorBackgroundFloating</item>
+        <item name="android:backgroundTint">?colorBackgroundFloating</item>
     </style>
 
+    <!-- Preference dialog Monet theme -->
     <style name="ThemeOverlay.App.MaterialAlertDialog.Monet" parent="ThemeOverlay.Material3Expressive.MaterialAlertDialog">
         <item name="alertDialogStyle">@style/MaterialAlertDialog.App</item>
         <item name="dialogCornerRadius">@dimen/rounded_corners</item>
@@ -115,342 +90,355 @@
         <item name="android:background">@drawable/dialog_bg_monet</item>
     </style>
 
+    <!-- Note: shape appearance doesn't work with the preference dialogs (they're not material) -->
     <style name="MaterialAlertDialog.App" parent="MaterialAlertDialog.Material3Expressive">
         <item name="shapeAppearance">@style/ShapeAppearance.App.MediumComponent</item>
         <item name="shapeAppearanceOverlay">@null</item>
     </style>
 
-    <style name="CustomBottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
-        <item name="bottomSheetStyle">@style/CustomBottomSheet</item>
+    <!-- Snackbar style -->
+    <style name="Widget.App.Snackbar" parent="Widget.MaterialComponents.Snackbar">
+        <item name="android:background">@drawable/snackbar_background</item>
     </style>
 
-    <style name="CustomBottomSheet" parent="Widget.Material3.BottomSheet.Modal">
-        <item name="shapeAppearance">@style/ShapeAppearance.App.LargeComponent</item>
-        <item name="backgroundTint">?colorOnPrimary</item>
+    <style name="MaterialSnackbarTextViewTheme" parent="@style/Widget.MaterialComponents.Snackbar.TextView">
+        <item name="android:textColor">?attr/colorOnBackground</item>
+        <item name="android:maxLines">20</item>
     </style>
 
-    <style name="CustomBottomSheetDialogMonet" parent="ThemeOverlay.Material3.BottomSheetDialog">
-        <item name="bottomSheetStyle">@style/CustomBottomSheetMonet</item>
+    <!-- Bottom sheet -->
+    <style name="ModalBottomSheetDialog" parent="Widget.Material3.BottomSheet.Modal">
+        <!-- Remove the accent-ish tint -->
+        <item name="backgroundTint">?colorSurfaceContainerLow</item>
     </style>
 
-    <style name="CustomBottomSheetMonet" parent="Widget.Material3.BottomSheet.Modal">
-        <item name="shapeAppearance">@style/ShapeAppearance.App.LargeComponent</item>
+    <style name="ThemeOverlay.App.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="bottomSheetStyle">@style/ModalBottomSheetDialog</item>
     </style>
 
-    <style name="CustomBottomSheetDialogDark" parent="ThemeOverlay.Material3.BottomSheetDialog">
-        <item name="bottomSheetStyle">@style/CustomBottomSheetDark</item>
+    <style name="ThemeOverlay.App.BottomSheetDialog.Monet" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
 
-    <style name="CustomBottomSheetDark" parent="Widget.Material3.BottomSheet.Modal">
-        <item name="shapeAppearance">@style/ShapeAppearance.App.LargeComponent</item>
-        <item name="backgroundTint">@color/amoledSurface</item>
-    </style>
-
-    <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
-        <item name="cornerFamily">rounded</item>
+    <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerSize">@dimen/rounded_corners</item>
     </style>
 
-    <style name="ShapeAppearance.App.LargeComponent" parent="ShapeAppearance.Material3.LargeComponent">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">@dimen/rounded_corners</item>
-    </style>
-
-    <style name="CustomBottomNavigation" parent="Widget.Material3Expressive.BottomNavigationView">
-        <item name="backgroundTint">?attr/colorSurface</item>
-        <item name="itemTextColor">@drawable/bottom_navbar_item</item>
-        <item name="itemIconTint">@drawable/bottom_navbar_item</item>
-    </style>
-
+    <!-- Switch for non-monet accents, probably useless -->
     <style name="CustomMaterialSwitch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
-        <!-- I'll keep it -->
-        <item name="trackTint">@drawable/switch_track_tint</item>
-        <item name="thumbTint">@drawable/switch_thumb_tint</item>
+        <item name="thumbIconTint">?attr/colorPrimary</item>
     </style>
 
-    <style name="AppTheme.Aqua" parent="AppTheme">
-        <item name="colorPrimaryVariant">@color/aquaAccentTransparent</item>
-        <item name="colorPrimary">@color/aquaAccent</item>
-        <item name="colorPrimaryFixed">@color/aquaAccent</item>
-        <item name="colorSecondary">@color/aquaAccent</item>
-        <item name="colorPrimaryContainer">@color/aquaAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/aquaAccentTranslucent</item>
-        <item name="colorTertiary">@color/aquaAccent</item>
-        <item name="colorTertiaryContainer">@color/aquaAccentTranslucent</item>
-        <item name="colorOnPrimaryContainer">@color/aquaAccent</item>
+    <!-- Icon only segments of the dice type selector, inside the dice card -->
+    <style name="Widget.App.Button.TonalButton.IconOnly" parent="Widget.Material3Expressive.Button.TonalButton">
+        <item name="iconPadding">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minWidth">20dp</item>
+        <item name="android:minHeight">20dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="backgroundTint">@color/type_selector_background</item>
+        <item name="iconTint">@color/type_selector_icon</item>
+        <item name="strokeWidth">0dp</item>
     </style>
 
-    <style name="AppTheme.Blue" parent="AppTheme">
-        <item name="colorPrimaryVariant">@color/blueAccentTransparent</item>
-        <item name="colorPrimary">@color/blueAccent</item>
-        <item name="colorPrimaryFixed">@color/blueAccent</item>
-        <item name="colorSecondary">@color/blueAccent</item>
-        <item name="colorPrimaryContainer">@color/blueAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/blueAccentTranslucent</item>
-        <item name="colorTertiary">@color/blueAccent</item>
-        <item name="colorTertiaryContainer">@color/blueAccentTranslucent</item>
-        <item name="colorOnPrimaryContainer">@color/blueAccent</item>
+    <!-- The same, with a label instead of an icon: the mode of the roulette -->
+    <style name="Widget.App.Button.TonalButton.Segment" parent="Widget.App.Button.TonalButton.IconOnly">
+        <item name="android:textAppearance">@style/TextAppearance.Material3.LabelLarge</item>
+        <item name="android:textColor">@color/type_selector_icon</item>
     </style>
 
-    <style name="AppTheme.Green" parent="AppTheme">
-        <item name="colorPrimary">@color/greenAccent</item>
-        <item name="colorSecondary">@color/greenAccent</item>
-        <item name="colorPrimaryContainer">@color/greenAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/greenAccentTranslucent</item>
-        <item name="colorTertiary">@color/greenAccent</item>
-        <item name="colorTertiaryContainer">@color/greenAccentTranslucent</item>
-        <item name="colorPrimaryVariant">@color/greenAccentTransparent</item>
-        <item name="colorPrimaryFixed">@color/greenAccent</item>
-        <item name="colorOnPrimaryContainer">@color/greenAccent</item>
+    <!-- Tonal text field: filled with the veil, no box stroke and no underline, all corners round -->
+    <style name="Widget.App.TextInputLayout.Tonal" parent="Widget.Material3.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@color/tonal_field_background</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="boxCornerRadiusTopStart">@dimen/text_field_corner</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/text_field_corner</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/text_field_corner</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/text_field_corner</item>
+        <item name="hintTextColor">?attr/colorPrimary</item>
+        <item name="startIconTint">?attr/colorOnSecondaryContainer</item>
+        <item name="endIconTint">?attr/colorOnSecondaryContainer</item>
     </style>
 
-    <style name="AppTheme.Orange" parent="AppTheme">
-        <item name="colorPrimary">@color/orangeAccent</item>
-        <item name="colorSecondary">@color/orangeAccent</item>
-        <item name="colorPrimaryContainer">@color/orangeAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/orangeAccentTranslucent</item>
-        <item name="colorTertiary">@color/orangeAccent</item>
-        <item name="colorTertiaryContainer">@color/orangeAccentTranslucent</item>
-        <item name="colorPrimaryVariant">@color/orangeAccentTransparent</item>
-        <item name="colorPrimaryFixed">@color/orangeAccent</item>
-        <item name="colorOnPrimaryContainer">@color/orangeAccent</item>
+    <!-- The same, for the fields opening a dropdown -->
+    <style name="Widget.App.TextInputLayout.Tonal.ExposedDropdownMenu" parent="Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu">
+        <item name="boxBackgroundColor">@color/tonal_field_background</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="boxCornerRadiusTopStart">@dimen/text_field_corner</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/text_field_corner</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/text_field_corner</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/text_field_corner</item>
+        <item name="hintTextColor">?attr/colorPrimary</item>
+        <item name="startIconTint">?attr/colorOnSecondaryContainer</item>
+        <item name="endIconTint">?attr/colorOnSecondaryContainer</item>
     </style>
 
-    <style name="AppTheme.Yellow" parent="AppTheme">
-        <item name="colorPrimary">@color/yellowAccent</item>
-        <item name="colorSecondary">@color/yellowAccent</item>
-        <item name="colorPrimaryContainer">@color/yellowAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/yellowAccentTranslucent</item>
-        <item name="colorTertiary">@color/yellowAccent</item>
-        <item name="colorTertiaryContainer">@color/yellowAccentTranslucent</item>
-        <item name="colorPrimaryVariant">@color/yellowAccentTransparent</item>
-        <item name="colorPrimaryFixed">@color/yellowAccent</item>
-        <item name="colorOnPrimaryContainer">@color/yellowAccent</item>
+    <!-- Rounded like the inside of a tonal card, for what sits within one -->
+    <style name="ShapeAppearance.App.TonalInner" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/tonal_card_radius_inner</item>
     </style>
 
-    <style name="AppTheme.Teal" parent="AppTheme">
-        <item name="colorPrimary">@color/tealAccent</item>
-        <item name="colorSecondary">@color/tealAccent</item>
-        <item name="colorPrimaryContainer">@color/tealAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/tealAccentTranslucent</item>
-        <item name="colorTertiary">@color/tealAccent</item>
-        <item name="colorTertiaryContainer">@color/tealAccentTranslucent</item>
-        <item name="colorPrimaryVariant">@color/tealAccentTransparent</item>
-        <item name="colorPrimaryFixed">@color/tealAccent</item>
-        <item name="colorOnPrimaryContainer">@color/tealAccent</item>
+    <!-- Tonal elevated card, the look replacing the outlined cards -->
+    <style name="Widget.App.CardView.Tonal" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">?attr/colorTonalCard</item>
+        <item name="cardCornerRadius">@dimen/tonal_card_radius</item>
+        <item name="cardElevation">@dimen/tonal_card_elevation</item>
+        <item name="strokeWidth">0dp</item>
     </style>
 
-    <style name="AppTheme.Violet" parent="AppTheme">
-        <item name="colorPrimary">@color/violetAccent</item>
-        <item name="colorSecondary">@color/violetAccent</item>
-        <item name="colorPrimaryContainer">@color/violetAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/violetAccentTranslucent</item>
-        <item name="colorTertiary">@color/violetAccent</item>
-        <item name="colorTertiaryContainer">@color/violetAccentTranslucent</item>
-        <item name="colorPrimaryVariant">@color/violetAccentTransparent</item>
-        <item name="colorPrimaryFixed">@color/violetAccent</item>
-        <item name="colorOnPrimaryContainer">@color/violetAccent</item>
+    <!-- A card inside a tonal card: no shadow of its own, a denser veil than the fields -->
+    <style name="Widget.App.CardView.Tonal.Inner">
+        <item name="cardBackgroundColor">@color/inner_card_background</item>
+        <item name="cardCornerRadius">@dimen/tonal_card_radius_inner</item>
+        <item name="cardElevation">0dp</item>
     </style>
 
-    <style name="AppTheme.Pink" parent="AppTheme">
-        <item name="colorPrimary">@color/pinkAccent</item>
-        <item name="colorSecondary">@color/pinkAccent</item>
-        <item name="colorPrimaryContainer">@color/pinkAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/pinkAccentTranslucent</item>
-        <item name="colorTertiary">@color/pinkAccent</item>
-        <item name="colorTertiaryContainer">@color/pinkAccentTranslucent</item>
-        <item name="colorPrimaryVariant">@color/pinkAccentTransparent</item>
-        <item name="colorPrimaryFixed">@color/pinkAccent</item>
-        <item name="colorOnPrimaryContainer">@color/pinkAccent</item>
+    <!-- The three texts every tool page is made of: its title, a short description, the result.
+         The title owns the space below it, so the page keeps its rhythm with the descriptions
+         hidden too -->
+    <style name="Widget.App.PageTitle" parent="">
+        <item name="android:layout_marginTop">@dimen/activity_vertical_margin</item>
+        <item name="android:layout_marginBottom">@dimen/activity_vertical_margin</item>
+        <item name="android:layout_marginStart">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_marginEnd">@dimen/activity_horizontal_margin</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.HeadlineMedium.Emphasized</item>
+        <item name="android:textColor">?attr/colorTertiary</item>
     </style>
 
-    <style name="AppTheme.LightBlue" parent="AppTheme">
-        <item name="colorPrimary">@color/lightBlueAccent</item>
-        <item name="colorSecondary">@color/lightBlueAccent</item>
-        <item name="colorPrimaryContainer">@color/lightBlueAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/lightBlueAccentTranslucent</item>
-        <item name="colorTertiary">@color/lightBlueAccent</item>
-        <item name="colorTertiaryContainer">@color/lightBlueAccentTranslucent</item>
-        <item name="colorPrimaryVariant">@color/lightBlueAccentTransparent</item>
-        <item name="colorPrimaryFixed">@color/lightBlueAccent</item>
-        <item name="colorOnPrimaryContainer">@color/lightBlueAccent</item>
+    <style name="Widget.App.PageDescription" parent="">
+        <item name="android:layout_marginStart">@dimen/linear_vertical_margin</item>
+        <item name="android:layout_marginEnd">@dimen/linear_vertical_margin</item>
+        <item name="android:layout_marginBottom">@dimen/activity_vertical_margin</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.BodyMedium</item>
+        <item name="android:textColor">?attr/colorOnBackground</item>
     </style>
 
-    <style name="AppTheme.Red" parent="AppTheme">
-        <item name="colorPrimary">@color/redAccent</item>
-        <item name="colorSecondary">@color/redAccent</item>
-        <item name="colorPrimaryContainer">@color/redAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/redAccentTranslucent</item>
-        <item name="colorTertiary">@color/redAccent</item>
-        <item name="colorTertiaryContainer">@color/redAccentTranslucent</item>
-        <item name="colorPrimaryVariant">@color/redAccentTransparent</item>
-        <item name="colorPrimaryFixed">@color/redAccent</item>
-        <item name="colorOnPrimaryContainer">@color/redAccent</item>
+    <style name="Widget.App.PageResult" parent="">
+        <item name="android:layout_marginStart">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_marginEnd">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_marginTop">@dimen/result_text_margin</item>
+        <item name="android:layout_marginBottom">@dimen/result_text_margin</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">?attr/colorOnBackground</item>
+        <item name="android:textSize">@dimen/result_text_size</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="AppTheme.Lime" parent="AppTheme">
-        <item name="colorPrimary">@color/limeAccent</item>
-        <item name="colorSecondary">@color/limeAccent</item>
-        <item name="colorPrimaryContainer">@color/limeAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/limeAccentTranslucent</item>
-        <item name="colorTertiary">@color/limeAccent</item>
-        <item name="colorTertiaryContainer">@color/limeAccentTranslucent</item>
-        <item name="colorPrimaryVariant">@color/limeAccentTransparent</item>
-        <item name="colorPrimaryFixed">@color/limeAccent</item>
-        <item name="colorOnPrimaryContainer">@color/limeAccent</item>
-    </style>
-
-    <style name="AppTheme.Crimson" parent="AppTheme">
-        <item name="colorPrimary">@color/crimsonAccent</item>
-        <item name="colorSecondary">@color/crimsonAccent</item>
-        <item name="colorPrimaryContainer">@color/crimsonAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/crimsonAccentTranslucent</item>
-        <item name="colorTertiary">@color/crimsonAccent</item>
-        <item name="colorTertiaryContainer">@color/crimsonAccentTranslucent</item>
-        <item name="colorPrimaryVariant">@color/crimsonAccentTransparent</item>
-        <item name="colorPrimaryFixed">@color/crimsonAccent</item>
-        <item name="colorOnPrimaryContainer">@color/crimsonAccent</item>
-    </style>
-
-    <!-- Amoled themes -->
-
-    <style name="AppTheme.Aqua.PerfectDark" parent="AppTheme.PerfectDark">
-        <item name="colorAccent">@color/aquaAccent</item>
-        <item name="colorPrimary">@color/aquaAccent</item>
-        <item name="colorSecondary">@color/aquaAccent</item>
-        <item name="colorPrimaryContainer">@color/aquaAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/aquaAccentTranslucent</item>
-        <item name="colorTertiary">@color/aquaAccent</item>
-        <item name="colorTertiaryContainer">@color/aquaAccentTranslucent</item>
-    </style>
-
-    <style name="AppTheme.Blue.PerfectDark" parent="AppTheme.PerfectDark">
-        <item name="colorAccent">@color/blueAccent</item>
-        <item name="colorPrimary">@color/blueAccent</item>
-        <item name="colorSecondary">@color/blueAccent</item>
-        <item name="colorPrimaryContainer">@color/blueAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/blueAccentTranslucent</item>
-        <item name="colorTertiary">@color/blueAccent</item>
-        <item name="colorTertiaryContainer">@color/blueAccentTranslucent</item>
-    </style>
-
-    <style name="AppTheme.Green.PerfectDark" parent="AppTheme.PerfectDark">
-        <item name="colorAccent">@color/greenAccent</item>
-        <item name="colorPrimary">@color/greenAccent</item>
-        <item name="colorSecondary">@color/greenAccent</item>
-        <item name="colorPrimaryContainer">@color/greenAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/greenAccentTranslucent</item>
-        <item name="colorTertiary">@color/greenAccent</item>
-        <item name="colorTertiaryContainer">@color/greenAccentTranslucent</item>
-    </style>
-
-    <style name="AppTheme.Orange.PerfectDark" parent="AppTheme.PerfectDark">
-        <item name="colorAccent">@color/orangeAccent</item>
-        <item name="colorPrimary">@color/orangeAccent</item>
-        <item name="colorSecondary">@color/orangeAccent</item>
-        <item name="colorPrimaryContainer">@color/orangeAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/orangeAccentTranslucent</item>
-        <item name="colorTertiary">@color/orangeAccent</item>
-        <item name="colorTertiaryContainer">@color/orangeAccentTranslucent</item>
-    </style>
-
-    <style name="AppTheme.Yellow.PerfectDark" parent="AppTheme.PerfectDark">
-        <item name="colorAccent">@color/yellowAccent</item>
-        <item name="colorPrimary">@color/yellowAccent</item>
-        <item name="colorSecondary">@color/yellowAccent</item>
-        <item name="colorPrimaryContainer">@color/yellowAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/yellowAccentTranslucent</item>
-        <item name="colorTertiary">@color/yellowAccent</item>
-        <item name="colorTertiaryContainer">@color/yellowAccentTranslucent</item>
-    </style>
-
-    <style name="AppTheme.Teal.PerfectDark" parent="AppTheme.PerfectDark">
-        <item name="colorAccent">@color/tealAccent</item>
-        <item name="colorPrimary">@color/tealAccent</item>
-        <item name="colorSecondary">@color/tealAccent</item>
-        <item name="colorPrimaryContainer">@color/tealAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/tealAccentTranslucent</item>
-        <item name="colorTertiary">@color/tealAccent</item>
-        <item name="colorTertiaryContainer">@color/tealAccentTranslucent</item>
-    </style>
-
-    <style name="AppTheme.Violet.PerfectDark" parent="AppTheme.PerfectDark">
-        <item name="colorAccent">@color/violetAccent</item>
-        <item name="colorPrimary">@color/violetAccent</item>
-        <item name="colorSecondary">@color/violetAccent</item>
-        <item name="colorPrimaryContainer">@color/violetAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/violetAccentTranslucent</item>
-        <item name="colorTertiary">@color/violetAccent</item>
-        <item name="colorTertiaryContainer">@color/violetAccentTranslucent</item>
-    </style>
-
-    <style name="AppTheme.Pink.PerfectDark" parent="AppTheme.PerfectDark">
-        <item name="colorAccent">@color/pinkAccent</item>
-        <item name="colorPrimary">@color/pinkAccent</item>
-        <item name="colorSecondary">@color/pinkAccent</item>
-        <item name="colorPrimaryContainer">@color/pinkAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/pinkAccentTranslucent</item>
-        <item name="colorTertiary">@color/pinkAccent</item>
-        <item name="colorTertiaryContainer">@color/pinkAccentTranslucent</item>
-    </style>
-
-    <style name="AppTheme.LightBlue.PerfectDark" parent="AppTheme.PerfectDark">
-        <item name="colorAccent">@color/lightBlueAccent</item>
-        <item name="colorPrimary">@color/lightBlueAccent</item>
-        <item name="colorSecondary">@color/lightBlueAccent</item>
-        <item name="colorPrimaryContainer">@color/lightBlueAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/lightBlueAccentTranslucent</item>
-        <item name="colorTertiary">@color/lightBlueAccent</item>
-        <item name="colorTertiaryContainer">@color/lightBlueAccentTranslucent</item>
-    </style>
-
-    <style name="AppTheme.Red.PerfectDark" parent="AppTheme.PerfectDark">
-        <item name="colorAccent">@color/redAccent</item>
-        <item name="colorPrimary">@color/redAccent</item>
-        <item name="colorSecondary">@color/redAccent</item>
-        <item name="colorPrimaryContainer">@color/redAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/redAccentTranslucent</item>
-        <item name="colorTertiary">@color/redAccent</item>
-        <item name="colorTertiaryContainer">@color/redAccentTranslucent</item>
-    </style>
-
-    <style name="AppTheme.Lime.PerfectDark" parent="AppTheme.PerfectDark">
-        <item name="colorAccent">@color/limeAccent</item>
-        <item name="colorPrimary">@color/limeAccent</item>
-        <item name="colorSecondary">@color/limeAccent</item>
-        <item name="colorPrimaryContainer">@color/limeAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/limeAccentTranslucent</item>
-        <item name="colorTertiary">@color/limeAccent</item>
-        <item name="colorTertiaryContainer">@color/limeAccentTranslucent</item>
-    </style>
-
-    <style name="AppTheme.Crimson.PerfectDark" parent="AppTheme.PerfectDark">
-        <item name="colorAccent">@color/crimsonAccent</item>
-        <item name="colorPrimary">@color/crimsonAccent</item>
-        <item name="colorSecondary">@color/crimsonAccent</item>
-        <item name="colorPrimaryContainer">@color/crimsonAccentTranslucent</item>
-        <item name="colorSecondaryContainer">@color/crimsonAccentTranslucent</item>
-        <item name="colorTertiary">@color/crimsonAccent</item>
-        <item name="colorTertiaryContainer">@color/crimsonAccentTranslucent</item>
-    </style>
-
-    <!-- Style for custom chip -->
-    <style name="Widget.App.Chip.Outline" parent="Widget.Material3.Chip.Filter">
-        <item name="android:textAppearance">@style/TextAppearance.Material3.BodySmall</item>
-        <item name="android:textAlignment">center</item>
-        <item name="android:textColor">?attr/colorOnSurface</item>
+    <!-- Tonal chip: the veil of the fields when idle, the primary when checked, like the icon
+         segments. No stroke, as everywhere else -->
+    <style name="Widget.App.Chip.Tonal" parent="Widget.Material3.Chip.Filter">
+        <item name="android:textAppearance">@style/TextAppearance.Material3.LabelLarge</item>
+        <item name="android:textColor">@color/tonal_chip_text</item>
         <item name="android:ellipsize">end</item>
-        <item name="chipStrokeWidth">@dimen/text_box_stroke_width</item>
-        <item name="rippleColor">?attr/colorPrimary</item>
-        <item name="chipStrokeColor">?attr/colorSurfaceVariant</item>
+        <item name="chipBackgroundColor">@color/tonal_chip_background</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="chipCornerRadius">@dimen/chip_corner</item>
+        <item name="chipSurfaceColor">@android:color/transparent</item>
     </style>
 
-    <!-- Button group colors -->
-    <style name="ThemeOverlay.App.ToggleButton.Outlined" parent="">
-        <item name="colorContainerChecked">?attr/colorPrimaryContainer</item>
-        <item name="colorOnContainerChecked">?attr/colorOnPrimaryContainer</item>
-        <item name="colorContainerUnchecked">?attr/colorSurface</item>
-        <item name="colorOnContainerUnchecked">?attr/colorOnSurface</item>
+    <!-- The same, for an entry that removes itself when tapped, so it never looks checked -->
+    <style name="Widget.App.Chip.Tonal.Entry">
+        <item name="android:checkable">false</item>
+        <item name="closeIconVisible">true</item>
+        <item name="closeIcon">@drawable/ic_close_24dp</item>
+        <item name="closeIconTint">?attr/colorOnSecondaryContainer</item>
+        <item name="closeIconSize">@dimen/chip_close_icon_size</item>
+    </style>
+
+    <!-- A chip adding a ready made set of options -->
+    <style name="Widget.App.Chip.Tonal.Shortcut">
+        <item name="android:checkable">false</item>
+        <item name="chipIcon">@drawable/ic_add_24dp</item>
+        <item name="chipIconTint">?attr/colorOnSecondaryContainer</item>
+        <item name="chipIconVisible">true</item>
+    </style>
+
+    <!-- A result of the dice: filled like a checked segment when it is the highest face -->
+    <style name="Widget.App.Chip.Tonal.Result">
+        <item name="android:clickable">false</item>
+        <item name="android:focusable">false</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- A link to the developer in the about page, one of a row sharing the width -->
+    <style name="Widget.App.AuthorLink" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:paddingTop">@dimen/activity_vertical_margin</item>
+        <item name="android:paddingBottom">@dimen/activity_vertical_margin</item>
+        <item name="tint">?attr/colorPrimary</item>
+    </style>
+
+    <!-- Custom color styles -->
+    <style name="AppTheme.Accent" parent="AppTheme" />
+
+    <style name="AppTheme.Aqua" parent="AppTheme.Accent">
+        <item name="colorPrimary">@color/aqua</item>
+        <item name="colorSecondary">@color/aqua</item>
+        <item name="colorTertiary">@color/aquaDark</item>
+        <item name="colorAccentVeil">@color/aquaTranslucent</item>
+        <item name="colorPrimaryContainer">@color/aquaPrimaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/aquaOnPrimaryContainer</item>
+        <item name="colorSecondaryContainer">@color/aquaSecondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/aquaOnSecondaryContainer</item>
+        <item name="colorTertiaryContainer">@color/aquaTertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/aquaOnTertiaryContainer</item>
+    </style>
+
+    <style name="AppTheme.Blue" parent="AppTheme.Accent">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorSecondary">@color/blue</item>
+        <item name="colorTertiary">@color/blueDark</item>
+        <item name="colorAccentVeil">@color/blueTranslucent</item>
+        <item name="colorPrimaryContainer">@color/bluePrimaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/blueOnPrimaryContainer</item>
+        <item name="colorSecondaryContainer">@color/blueSecondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/blueOnSecondaryContainer</item>
+        <item name="colorTertiaryContainer">@color/blueTertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/blueOnTertiaryContainer</item>
+    </style>
+
+    <style name="AppTheme.Green" parent="AppTheme.Accent">
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorSecondary">@color/green</item>
+        <item name="colorTertiary">@color/greenDark</item>
+        <item name="colorAccentVeil">@color/greenTranslucent</item>
+        <item name="colorPrimaryContainer">@color/greenPrimaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/greenOnPrimaryContainer</item>
+        <item name="colorSecondaryContainer">@color/greenSecondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/greenOnSecondaryContainer</item>
+        <item name="colorTertiaryContainer">@color/greenTertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/greenOnTertiaryContainer</item>
+    </style>
+
+    <style name="AppTheme.Orange" parent="AppTheme.Accent">
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorSecondary">@color/orange</item>
+        <item name="colorTertiary">@color/orangeDark</item>
+        <item name="colorAccentVeil">@color/orangeTranslucent</item>
+        <item name="colorPrimaryContainer">@color/orangePrimaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/orangeOnPrimaryContainer</item>
+        <item name="colorSecondaryContainer">@color/orangeSecondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/orangeOnSecondaryContainer</item>
+        <item name="colorTertiaryContainer">@color/orangeTertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/orangeOnTertiaryContainer</item>
+    </style>
+
+    <style name="AppTheme.Yellow" parent="AppTheme.Accent">
+        <item name="colorPrimary">@color/yellow</item>
+        <item name="colorSecondary">@color/yellow</item>
+        <item name="colorTertiary">@color/yellowDark</item>
+        <item name="colorAccentVeil">@color/yellowTranslucent</item>
+        <item name="colorPrimaryContainer">@color/yellowPrimaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/yellowOnPrimaryContainer</item>
+        <item name="colorSecondaryContainer">@color/yellowSecondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/yellowOnSecondaryContainer</item>
+        <item name="colorTertiaryContainer">@color/yellowTertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/yellowOnTertiaryContainer</item>
+    </style>
+
+    <style name="AppTheme.Teal" parent="AppTheme.Accent">
+        <item name="colorPrimary">@color/teal</item>
+        <item name="colorSecondary">@color/teal</item>
+        <item name="colorTertiary">@color/tealDark</item>
+        <item name="colorAccentVeil">@color/tealTranslucent</item>
+        <item name="colorPrimaryContainer">@color/tealPrimaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/tealOnPrimaryContainer</item>
+        <item name="colorSecondaryContainer">@color/tealSecondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/tealOnSecondaryContainer</item>
+        <item name="colorTertiaryContainer">@color/tealTertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/tealOnTertiaryContainer</item>
+    </style>
+
+    <style name="AppTheme.Violet" parent="AppTheme.Accent">
+        <item name="colorPrimary">@color/violet</item>
+        <item name="colorSecondary">@color/violet</item>
+        <item name="colorTertiary">@color/violetDark</item>
+        <item name="colorAccentVeil">@color/violetTranslucent</item>
+        <item name="colorPrimaryContainer">@color/violetPrimaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/violetOnPrimaryContainer</item>
+        <item name="colorSecondaryContainer">@color/violetSecondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/violetOnSecondaryContainer</item>
+        <item name="colorTertiaryContainer">@color/violetTertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/violetOnTertiaryContainer</item>
+    </style>
+
+    <style name="AppTheme.Pink" parent="AppTheme.Accent">
+        <item name="colorPrimary">@color/pink</item>
+        <item name="colorSecondary">@color/pink</item>
+        <item name="colorTertiary">@color/pinkDark</item>
+        <item name="colorAccentVeil">@color/pinkTranslucent</item>
+        <item name="colorPrimaryContainer">@color/pinkPrimaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/pinkOnPrimaryContainer</item>
+        <item name="colorSecondaryContainer">@color/pinkSecondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/pinkOnSecondaryContainer</item>
+        <item name="colorTertiaryContainer">@color/pinkTertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/pinkOnTertiaryContainer</item>
+    </style>
+
+    <style name="AppTheme.LightBlue" parent="AppTheme.Accent">
+        <item name="colorPrimary">@color/lightBlue</item>
+        <item name="colorSecondary">@color/lightBlue</item>
+        <item name="colorTertiary">@color/lightBlueDark</item>
+        <item name="colorAccentVeil">@color/lightBlueTranslucent</item>
+        <item name="colorPrimaryContainer">@color/lightBluePrimaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/lightBlueOnPrimaryContainer</item>
+        <item name="colorSecondaryContainer">@color/lightBlueSecondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/lightBlueOnSecondaryContainer</item>
+        <item name="colorTertiaryContainer">@color/lightBlueTertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/lightBlueOnTertiaryContainer</item>
+    </style>
+
+    <style name="AppTheme.Red" parent="AppTheme.Accent">
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorSecondary">@color/red</item>
+        <item name="colorTertiary">@color/redDark</item>
+        <item name="colorAccentVeil">@color/redTranslucent</item>
+        <item name="colorPrimaryContainer">@color/redPrimaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/redOnPrimaryContainer</item>
+        <item name="colorSecondaryContainer">@color/redSecondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/redOnSecondaryContainer</item>
+        <item name="colorTertiaryContainer">@color/redTertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/redOnTertiaryContainer</item>
+    </style>
+
+    <style name="AppTheme.Lime" parent="AppTheme.Accent">
+        <item name="colorPrimary">@color/lime</item>
+        <item name="colorSecondary">@color/lime</item>
+        <item name="colorTertiary">@color/limeDark</item>
+        <item name="colorAccentVeil">@color/limeTranslucent</item>
+        <item name="colorPrimaryContainer">@color/limePrimaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/limeOnPrimaryContainer</item>
+        <item name="colorSecondaryContainer">@color/limeSecondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/limeOnSecondaryContainer</item>
+        <item name="colorTertiaryContainer">@color/limeTertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/limeOnTertiaryContainer</item>
+    </style>
+
+    <style name="AppTheme.Crimson" parent="AppTheme.Accent">
+        <item name="colorPrimary">@color/crimson</item>
+        <item name="colorSecondary">@color/crimson</item>
+        <item name="colorTertiary">@color/crimsonDark</item>
+        <item name="colorAccentVeil">@color/crimsonTranslucent</item>
+        <item name="colorPrimaryContainer">@color/crimsonPrimaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/crimsonOnPrimaryContainer</item>
+        <item name="colorSecondaryContainer">@color/crimsonSecondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/crimsonOnSecondaryContainer</item>
+        <item name="colorTertiaryContainer">@color/crimsonTertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/crimsonOnTertiaryContainer</item>
     </style>
 
 </resources>

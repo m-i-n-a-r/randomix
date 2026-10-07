@@ -1,22 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- A set of recent options, as a tonal tile: the pinned ones are filled like a checked segment -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/recentCard"
+    style="@style/Widget.App.CardView.Tonal.Inner"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/preference_tile_gap"
+    app:rippleColor="?attr/colorControlHighlight">
 
-    <TextView
-        android:id="@+id/recentText"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/field_button_size"
+        android:orientation="horizontal"
         android:paddingHorizontal="@dimen/activity_horizontal_margin"
-        android:paddingVertical="@dimen/linear_vertical_padding"
-        android:text="@string/recent_title"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:paddingVertical="@dimen/linear_vertical_padding">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/recentText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:textColor="?attr/colorOnSecondaryContainer" />
+
+        <ImageView
+            android:id="@+id/recentPin"
+            android:layout_width="@dimen/chip_close_icon_size"
+            android:layout_height="@dimen/chip_close_icon_size"
+            android:layout_marginStart="@dimen/card_padding"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_pin_24dp"
+            android:visibility="gone"
+            app:tint="?attr/colorOnSecondaryContainer" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

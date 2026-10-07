@@ -6,14 +6,14 @@ plugins {
 
 android {
     namespace = "com.minar.randomix"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.minar.randomix"
-        minSdk = 23
-        targetSdk = 36
-        versionCode = 41
-        versionName = "3.0"
+        minSdk = 24
+        targetSdk = 37
+        versionCode = 42
+        versionName = "4.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -32,6 +32,10 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     lint {
         abortOnError = false
     }
@@ -43,6 +47,9 @@ android {
 
 dependencies {
     implementation(libs.material)
+    implementation(libs.appcompat)
+    implementation(libs.activity)
+    implementation(libs.fragment)
     implementation(libs.constraintlayout)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
